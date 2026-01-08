@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Bible App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            /* Fallback for Korean */
+        }
+
+        .font-serif {
+            font-family: 'Noto Serif KR', serif;
+        }
+
+        /* 스크롤바 커스텀 */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: #555;
+        }
+
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: #888;
+        }
+
+        /* 하이라이트 애니메이션 */
+        .verse-highlight {
+            background-color: #fef08a;
+            transition: background-color 0.3s;
+        }
+
+        .dark .verse-highlight {
+            background-color: #854d0e;
+            color: #fefce8;
+        }
+    </style>
+</head>
+
+<body class="transition-colors duration-500 bg-[#f5f0e6] text-stone-800 overflow-hidden">
+    <div id="app" class="h-screen w-full flex flex-col">
+        <!-- 앱 컨텐츠가 이곳에 렌더링됩니다 -->
+    </div>
+
+    <script>
+        // ==========================================
+        // [데이터 및 상수]
+        // ==========================================
+        const SAMPLE_GENESIS = [
+            {
+                "abbrev": "gn",
+                "chapters": [
+                    [
+                        "In the beginning God created the heaven and the earth.",
+                        "And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.",
+                        "And God said, Let there be light: and there was light.",
+                        "And God saw the light, that it was good: and God divided the light from the darkness.",
+                        "And God called the light Day, and the darkness he called Night. And the evening and the morning were the first day.",
+                        "And God said, Let there be a firmament in the midst of the waters, and let it divide the waters from the waters.",
+                        "And God made the firmament, and divided the waters which were under the firmament from the waters which were above the firmament: and it was so.",
+                        "And God called the firmament Heaven. And the evening and the morning were the second day.",
+                        "And God said, Let the waters under the heaven be gathered together unto one place, and let the dry land appear: and it was so.",
+                        "And God called the dry land Earth; and the gathering together of the waters called he Seas: and God saw that it was good.",
+                        "And God said, Let the earth bring forth grass, the herb yielding seed, and the fruit tree yielding fruit after his kind, whose seed is in itself, upon the earth: and it was so.",
+                        "And the earth brought forth grass, and herb yielding seed after his kind, and the tree yielding fruit, whose seed was in itself, after his kind: and God saw that it was good.",
+                        "And the evening and the morning were the third day."
+                    ]
+                ]
+            }
+        ];
+
+        const BIBLE_NAMES_KO = {
+            gn: "창세기", ex: "출애굽기", lv: "레위기", nm: "민수기", dt: "신명기",
+            js: "여호수아", jud: "사사기", rt: "룻기", "1sm": "사무엘상", "2sm": "사무엘하",
+            "1kgs": "열왕기상", "2kgs": "열왕기하", "1ch": "역대상", "2ch": "역대하",
+            ezr: "에스라", ne: "느헤미야", et: "에스더", job: "욥기", ps: "시편",
+            prv: "잠언", ec: "전도서", so: "아가", is: "이사야", jr: "예레미야",
+            lm: "예레미야애가", ez: "에스겔", dn: "다니엘", ho: "호세아", jl: "요엘",
+            am: "아모스", ob: "오바댜", jn: "요나", mi: "미가", na: "나훔",
+            hk: "하박국", zp: "스바냐", hg: "학개", zc: "스가랴", ml: "말라기",
+            mt: "마태복음", mk: "마가복음", lk: "누가복음", jo: "요한복음",
+            act: "사도행전", rm: "로마서", "1co": "고린도전서", "2co": "고린도후서",
+            gl: "갈라디아서", eph: "에베소서", ph: "빌립보서", cl: "골로새서",
+            "1ts": "데살로니가전서", "2ts": "데살로니가후서", "1tm": "디모데전서",
+            "2tm": "디모데후서", tt: "디도서", phm: "빌레몬서", hb: "히브리서",
+            jm: "야고보서", "1pe": "베드로전서", "2pe": "베드로후서", "1jo": "요한일서",
+            "2jo": "요한이서", "3jo": "요한삼서", jd: "유다서", re: "요한계시록"
+        };
+
+        const BIBLE_NAMES_EN = {
+            gn: "Genesis", ex: "Exodus", lv: "Leviticus", nm: "Numbers", dt: "Deuteronomy",
+            js: "Joshua", jud: "Judges", rt: "Ruth", "1sm": "1 Samuel", "2sm": "2 Samuel",
+            "1kgs": "1 Kings", "2kgs": "2 Kings", "1ch": "1 Chronicles", "2ch": "2 Chronicles",
+            ezr: "Ezra", ne: "Nehemiah", et: "Esther", job: "Job", ps: "Psalms",
+            prv: "Proverbs", ec: "Ecclesiastes", so: "Song of Solomon", is: "Isaiah", jr: "Jeremiah",
+            lm: "Lamentations", ez: "Ezekiel", dn: "Daniel", ho: "Hosea", jl: "Joel",
+            am: "Amos", ob: "Obadiah", jn: "Jonah", mi: "Micah", na: "Nahum",
+            hk: "Habakkuk", zp: "Zephaniah", hg: "Haggai", zc: "Zechariah", ml: "Malachi",
+            mt: "Matthew", mk: "Mark", lk: "Luke", jo: "John",
+            act: "Acts", rm: "Romans", "1co": "1 Corinthians", "2co": "2 Corinthians",
+            gl: "Galatians", eph: "Ephesians", ph: "Philippians", cl: "Colossians",
+            "1ts": "1 Thessalonians", "2ts": "2 Thessalonians", "1tm": "1 Timothy",
+            "2tm": "2 Timothy", tt: "Titus", phm: "Philemon", hb: "Hebrews",
+            jm: "James", "1pe": "1 Peter", "2pe": "2 Peter", "1jo": "1 John",
+            "2jo": "2 John", "3jo": "3 John", jd: "Jude", re: "Revelation"
+        };
+
+        const UI_STRINGS = {
+            en: {
+                title: "HOLY BIBLE",
+                subtitle: "The Holy Scriptures",
+                openBtn: "Open Bible",
+                continueBtn: "Continue",
+                viewChapter: "Chapter",
+                uploadFile: "Open Custom Data File",
+                sampleLoaded: "Create by DayYoung",
+                toc: "Table of Contents",
+                oldTestament: "Old Testament",
+                oldTestamentSub: "Classic",
+                newTestament: "New Testament",
+                newTestamentSub: "Modern",
+                selectChapter: "Select Chapter",
+                prevChapter: "Previous",
+                nextChapter: "Next",
+                meditation: "Meditation and Reading",
+                noData: "No data available.",
+                language: "Language"
+            },
+            ko: {
+                title: "HOLY BIBLE",
+                subtitle: "성경전서",
+                openBtn: "성경 열기",
+                continueBtn: "이어보기",
+                viewChapter: "장",
+                uploadFile: "전체 데이터 파일 열기",
+                sampleLoaded: "현재 샘플 데이터(창세기)만 로드되었습니다.",
+                toc: "성경 목차",
+                oldTestament: "구약 성경",
+                oldTestamentSub: "Old Testament",
+                newTestament: "신약 성경",
+                newTestamentSub: "New Testament",
+                selectChapter: "장을 선택하세요",
+                prevChapter: "이전 장",
+                nextChapter: "다음 장",
+                meditation: "묵상과 독서 (절을 클릭하면 이미지가 변경됩니다)",
+                noData: "데이터가 없습니다.",
+                language: "언어"
+            }
+        };
+
+        const BOOK_KEYWORDS = {
+            gn: "genesis", ex: "exodus", lv: "leviticus", nm: "numbers bible", dt: "deuteronomy",
+            js: "joshua", jud: "judges bible", rt: "ruth", "1sm": "samuel", "2sm": "king david",
+            "1kgs": "solomon", "2kgs": "elijah", "1ch": "chronicles", "2ch": "chronicles",
+            ezr: "ezra", ne: "nehemiah", et: "esther", job: "job", ps: "psalms",
+            prv: "proverbs", ec: "ecclesiastes", so: "song of songs", is: "isaiah", jr: "jeremiah",
+            lm: "lamentations", ez: "ezekiel", dn: "daniel", ho: "hosea", jl: "joel",
+            am: "amos", ob: "obadiah", jn: "jonah", mi: "micah", na: "nahum",
+            hk: "habakkuk", zp: "zephaniah", hg: "haggai", zc: "zechariah", ml: "malachi",
+            mt: "matthew", mk: "mark", lk: "luke", jo: "john",
+            act: "acts", rm: "romans", "1co": "corinthians", "2co": "corinthians",
+            gl: "galatians", eph: "ephesians", ph: "philippians", cl: "colossians",
+            "1ts": "thessalonians", "2ts": "thessalonians", "1tm": "timothy", "2tm": "timothy",
+            tt: "titus", phm: "philemon", hb: "hebrews", jm: "james",
+            "1pe": "peter", "2pe": "peter", "1jo": "john", "2jo": "john", "3jo": "john",
+            jd: "jude", re: "revelation"
+        };
+
+        const CHAPTER_KEYWORDS = {};
+        const VERSE_IMAGES = {};
+        const CHAPTER_IMAGES = {
+            "gn_0": "images/genesis/ch1.png",
+            "gn_1": "images/genesis/ch2.png",
+            "gn_2": "images/genesis/ch3.png",
+            "gn_3": "images/genesis/ch4.png",
+            "gn_4": "images/genesis/ch5.png",
+            "gn_5": "images/genesis/ch6.png",
+            "gn_6": "images/genesis/ch7.png",
+            "gn_7": "images/genesis/ch8.png",
+            "gn_8": "images/genesis/ch9.png",
+            "gn_9": "images/genesis/ch10.png"
+        };
+
+        const CLASSIC_IMAGES = {
+            default: "https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&q=80&w=1600&h=900"
+        };
+
+        const state = {
+            bibleData: null,
+            view: 'start',
+            currentTestament: null,
+            currentBookIndex: null,
+            currentChapterIndex: 0,
+            fontSize: 18,
+            isDarkMode: false,
+            savedPosition: null,
+            isSpeaking: false,
+            speakingVerseIndex: -1,
+            isAutoPlay: false,
+            currentImageUrl: "",
+            currentImageContext: null, // 현재 이미지의 문맥(verse:키, chapter:키, book:키)
+
+            // Multilingual support
+            availableVersions: [],
+            currentVersion: {
+                abbreviation: 'en_kjv',
+                language: 'English',
+                name: 'King James Version'
+            },
+            uiLang: 'en' // 'en' or 'ko'
+        };
+
+        function cleanData(data) {
+            return data.map(book => ({
+                ...book,
+                chapters: book.chapters.map(chapter =>
+                    chapter.map(verse => {
+                        if (typeof verse === 'string') {
+                            return verse.replace(/&#x27;/g, "'").replace(/&quot;/g, '"');
+                        }
+                        return verse;
+                    })
+                )
+            }));
+        }
+
+        function getBookName(book) {
+            const names = state.uiLang === 'ko' ? BIBLE_NAMES_KO : BIBLE_NAMES_EN;
+            // Handle fallback if not found in language map, try to find in english or just use abbrev
+            return names[book.abbrev] || BIBLE_NAMES_EN[book.abbrev] || book.abbrev;
+        }
+
+        function getUiString(key) {
+            const strings = UI_STRINGS[state.uiLang] || UI_STRINGS['en'];
+            return strings[key] || key;
+        }
+
+        // 이미지 미리 불러오기 (Preload) Helper
+        function preloadImage(url) {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.onload = () => resolve(url);
+                img.onerror = () => reject(url);
+                img.src = url;
+            });
+        }
+
+        // 이미지 업데이트 로직: 우선 수동 제작 이미지를 확인합니다.
+        function tryUpdateImage(book, chapterIdx, verseIdx, force = false) {
+            const chapterKey = `${book.abbrev}_${chapterIdx}`;
+
+            // 1. 해당 장의 전용 이미지가 있는지 확인
+            const chapterImageUrl = CHAPTER_IMAGES[chapterKey];
+
+            if (chapterImageUrl) {
+                state.currentImageUrl = chapterImageUrl;
+            } else {
+                // 전용 이미지가 없으면 기본 이미지 사용
+                state.currentImageUrl = CLASSIC_IMAGES.default;
+            }
+
+            updateImageDOM();
+        }
+
+        function savePosition(bookIdx, chapterIdx) {
+            const position = {
+                bookIndex: bookIdx,
+                chapterIndex: chapterIdx,
+                timestamp: new Date().toISOString()
+            };
+            state.savedPosition = position;
+            localStorage.setItem('bible_saved_position', JSON.stringify(position));
+        }
+
+        function toggleTheme() {
+            state.isDarkMode = !state.isDarkMode;
+            if (state.isDarkMode) {
+                document.body.classList.add('bg-stone-900', 'text-stone-200');
+                document.body.classList.remove('bg-[#f5f0e6]', 'text-stone-800');
+            } else {
+                document.body.classList.add('bg-[#f5f0e6]', 'text-stone-800');
+                document.body.classList.remove('bg-stone-900', 'text-stone-200');
+            }
+            render();
+        }
+
+        function getVoice() {
+            const voices = window.speechSynthesis.getVoices();
+            let langCode = 'en-US'; // Default
+            if (state.currentVersion.language === 'Korean') langCode = 'ko-KR';
+            else if (state.currentVersion.language === 'Chinese') langCode = 'zh-CN';
+            else if (state.currentVersion.language === 'Spanish') langCode = 'es-ES';
+            else if (state.currentVersion.language === 'French') langCode = 'fr-FR';
+            else if (state.currentVersion.language === 'German') langCode = 'de-DE';
+            else if (state.currentVersion.language === 'Russian') langCode = 'ru-RU';
+            else if (state.currentVersion.language === 'Japanese') langCode = 'ja-JP';
+            // Add other mappings as needed
+
+            // Priority: Google, Microsoft, then generic
+            let voice = voices.find(v => v.lang === langCode && v.name.includes('Google'));
+            if (voice) return voice;
+
+            voice = voices.find(v => v.lang === langCode && v.name.includes('Microsoft'));
+            if (voice) return voice;
+
+            voice = voices.find(v => v.lang.startsWith(langCode.split('-')[0]));
+            return voice || voices[0];
+        }
+
+        function stopSpeaking() {
+            if (window.speechSynthesis) window.speechSynthesis.cancel();
+            state.isSpeaking = false;
+            state.speakingVerseIndex = -1;
+            state.isAutoPlay = false;
+            updateHighlight();
+            updateSpeakerIcon();
+        }
+
+        function onClickVerse(index) {
+            if (window.speechSynthesis) window.speechSynthesis.cancel();
+
+            const book = state.bibleData[state.currentBookIndex];
+
+            // 이미지 업데이트 시도 (force = true)
+            tryUpdateImage(book, state.currentChapterIndex, index, true);
+
+            state.isSpeaking = true;
+            state.isAutoPlay = false;
+            updateSpeakerIcon();
+
+            const verses = book.chapters[state.currentChapterIndex];
+            setTimeout(() => {
+                speakVerse(verses, index);
+            }, 10);
+        }
+
+        function playChapter() {
+            if (!window.speechSynthesis) {
+                alert("이 브라우저는 음성 재생을 지원하지 않습니다.");
+                return;
+            }
+            if (state.isSpeaking) {
+                stopSpeaking();
+                return;
+            }
+
+            const book = state.bibleData[state.currentBookIndex];
+            const verses = book.chapters[state.currentChapterIndex];
+
+            // 챕터 재생 시작 시 이미지 확인
+            tryUpdateImage(book, state.currentChapterIndex, 0);
+
+            state.isSpeaking = true;
+            state.isAutoPlay = true;
+            updateSpeakerIcon();
+
+            speakVerse(verses, 0);
+        }
+
+        function speakVerse(verses, index) {
+            if (!state.isSpeaking || index >= verses.length) {
+                stopSpeaking();
+                return;
+            }
+
+            state.speakingVerseIndex = index;
+            const book = state.bibleData[state.currentBookIndex];
+
+            // 선택된 절 이미지 업데이트
+            tryUpdateImage(book, state.currentChapterIndex, index);
+
+            updateHighlight();
+
+            const el = document.getElementById(`verse-${index}`);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+
+            const text = verses[index];
+            const utterance = new SpeechSynthesisUtterance(text);
+            const voice = getVoice();
+            if (voice) {
+                utterance.voice = voice;
+                utterance.lang = voice.lang;
+            } else {
+                utterance.lang = 'en-US';
+            }
+            utterance.rate = 1.0;
+
+            utterance.onend = () => {
+                if (state.isSpeaking && state.isAutoPlay) {
+                    speakVerse(verses, index + 1);
+                } else {
+                    stopSpeaking();
+                }
+            };
+
+            utterance.onerror = (e) => {
+                if (e.error === 'canceled' || e.error === 'interrupted') return;
+                console.error("TTS Error", e.error);
+                stopSpeaking();
+            };
+
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function updateHighlight() {
+            document.querySelectorAll('.verse-item').forEach(el => el.classList.remove('verse-highlight'));
+            if (state.speakingVerseIndex !== -1) {
+                const el = document.getElementById(`verse-${state.speakingVerseIndex}`);
+                if (el) el.classList.add('verse-highlight');
+            }
+        }
+
+        function updateSpeakerIcon() {
+            const btn = document.getElementById('tts-btn');
+            if (btn) {
+                const icon = state.isSpeaking ? 'square' : 'volume-2';
+                btn.innerHTML = `<i data-lucide="${icon}"></i>`;
+                lucide.createIcons();
+                if (state.isSpeaking) btn.classList.add('text-red-500');
+                else btn.classList.remove('text-red-500');
+            }
+        }
+
+        // 이미지 DOM 업데이트: Preload가 완료된 후에 호출되므로 즉시 변경
+        function updateImageDOM() {
+            const img = document.getElementById('bible-image');
+            const imgMobile = document.getElementById('bible-image-mobile');
+
+            // PC 이미지
+            if (img) {
+                // 페이드 애니메이션 제거 (회색 화면 방지) -> 즉시 교체
+                img.src = state.currentImageUrl;
+            }
+
+            // 모바일 이미지
+            if (imgMobile) {
+                imgMobile.src = state.currentImageUrl;
+            }
+        }
+
+        function goHome() { state.view = 'start'; stopSpeaking(); render(); }
+        function goTestament() { state.view = 'testament'; stopSpeaking(); render(); }
+        function goBookList(testament) { state.currentTestament = testament; state.view = 'books'; render(); }
+        function goChapterList(bookIndex) { state.currentBookIndex = bookIndex; state.view = 'chapters'; render(); }
+
+        function goReader(chapterIndex) {
+            stopSpeaking();
+            state.currentChapterIndex = chapterIndex;
+            state.view = 'reader';
+            const book = state.bibleData[state.currentBookIndex];
+
+            // 초기 진입: 우선 기본 이미지로 설정 후 업데이트 시도
+            // (화면 렌더링을 위해 기본값 설정, 이후 tryUpdateImage가 완료되면 바뀜)
+            state.currentImageUrl = CLASSIC_IMAGES.default;
+            tryUpdateImage(book, chapterIndex, 0);
+
+            savePosition(state.currentBookIndex, chapterIndex);
+            render();
+        }
+
+        function handleContinue() {
+            if (state.savedPosition && state.bibleData && state.bibleData[state.savedPosition.bookIndex]) {
+                state.currentBookIndex = state.savedPosition.bookIndex;
+                state.currentChapterIndex = state.savedPosition.chapterIndex;
+                state.view = 'reader';
+                const book = state.bibleData[state.currentBookIndex];
+
+                state.currentImageUrl = CLASSIC_IMAGES.default;
+                tryUpdateImage(book, state.currentChapterIndex, 0);
+
+                render();
+            } else {
+                alert("Saved position not found.");
+            }
+        }
+
+        function navigateChapter(direction) {
+            stopSpeaking();
+            if (state.currentBookIndex === null || !state.bibleData) return;
+            let newChapter = state.currentChapterIndex + direction;
+            let newBook = state.currentBookIndex;
+            const currentBookData = state.bibleData[state.currentBookIndex];
+
+            if (newChapter < 0) {
+                if (state.currentBookIndex > 0) { newBook--; newChapter = state.bibleData[newBook].chapters.length - 1; }
+                else return;
+            } else if (newChapter >= currentBookData.chapters.length) {
+                if (state.currentBookIndex < state.bibleData.length - 1) { newBook++; newChapter = 0; }
+                else return;
+            }
+
+            state.currentBookIndex = newBook;
+            state.currentChapterIndex = newChapter;
+            const book = state.bibleData[newBook];
+
+            // 챕터 변경 시 이미지 업데이트
+            tryUpdateImage(book, newChapter, 0);
+
+            savePosition(newBook, newChapter);
+            render();
+        }
+
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    state.bibleData = cleanData(JSON.parse(e.target.result));
+                    alert("Bible data loaded successfully.");
+                    render();
+                } catch (error) { alert("Invalid file format."); }
+            };
+            reader.readAsText(file);
+        }
+
+        function render() {
+            const app = document.getElementById('app');
+            const isDark = state.isDarkMode;
+
+            const bgClass = isDark ? 'bg-stone-900 text-stone-200' : 'bg-[#faf7f2] text-stone-800';
+            const headerBg = isDark ? 'bg-stone-800' : 'bg-white';
+            const cardBg = isDark ? 'bg-stone-800 hover:bg-stone-700' : 'bg-white hover:bg-stone-100 border border-stone-200';
+            const btnBg = isDark ? 'bg-stone-800 hover:bg-blue-900 text-stone-300' : 'bg-white hover:bg-stone-200 text-stone-700 border border-stone-200';
+
+            if (state.view === 'start') {
+                const isSampleData = state.bibleData && state.bibleData.length < 66;
+                const bookCoverBg = isDark ? 'bg-stone-800 border-stone-950' : 'bg-[#8B4513] border-[#5D2906] text-[#FFD700]';
+                const mainBg = isDark ? 'bg-stone-900 text-stone-200' : 'bg-[#f5f0e6] text-stone-800';
+
+                app.innerHTML = `
+                    <div class="h-full flex flex-col items-center justify-center p-6 ${mainBg}">
+                        <div class="w-full max-w-md aspect-[3/4] rounded-r-3xl rounded-l-md shadow-2xl flex flex-col items-center justify-between p-12 border-l-8 ${bookCoverBg}">
+                            <div class="text-center space-y-2 mt-10">
+                                <h1 class="text-4xl font-serif font-bold tracking-widest border-b-2 border-current pb-2 mb-2">${getUiString('title')}</h1>
+                                <p class="text-sm tracking-widest opacity-80">${getUiString('subtitle')}</p>
+                                <div class="mt-2 text-xs opacity-70">${state.currentVersion.name}</div>
+                            </div>
+                            <div class="flex flex-col gap-4 w-full">
+                                <button onclick="goTestament()" class="w-full py-4 bg-black/20 hover:bg-black/30 backdrop-blur-sm rounded-lg text-lg font-serif transition-all border border-white/10 flex items-center justify-center gap-2">
+                                    <i data-lucide="book"></i> ${getUiString('openBtn')}
+                                </button>
+                                ${state.savedPosition && state.bibleData ? `
+                                    <button onclick="handleContinue()" class="w-full py-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg text-base transition-all border border-white/10 flex items-center justify-center gap-2">
+                                        <i data-lucide="bookmark"></i> ${getUiString('continueBtn')} 
+                                        <span class="text-sm">(${state.bibleData[state.savedPosition.bookIndex] ? getBookName(state.bibleData[state.savedPosition.bookIndex]) : ''} ${state.savedPosition.chapterIndex + 1}${getUiString('viewChapter')})</span>
+                                    </button>` : ''}
+                                
+                                <div class="relative w-full">
+                                     <select onchange="changeVersion(this.value)" class="w-full py-2 px-3 bg-white/10 hover:bg-white/20 rounded text-sm text-center appearance-none cursor-pointer outline-none border border-white/10 text-white">
+                                        ${state.availableVersions.map(langGroup =>
+                    `<optgroup label="${langGroup.language}">
+                                                ${langGroup.versions.map(v =>
+                        `<option value="${v.abbreviation}" ${state.currentVersion.abbreviation === v.abbreviation ? 'selected' : ''}>${v.name}</option>`
+                    ).join('')}
+                                            </optgroup>`
+                ).join('')}
+                                    </select>
+                                    <div class="absolute inset-y-0 right-2 flex items-center pointer-events-none opacity-50"><i data-lucide="chevron-down" size="14"></i></div>
+                                </div>
+                                <div class="pt-4 border-t border-white/10">
+                                    <label class="w-full py-2 bg-white/5 hover:bg-white/10 rounded text-sm flex items-center justify-center gap-2 opacity-70 hover:opacity-100 transition-opacity cursor-pointer">
+                                        <i data-lucide="upload" size="14"></i> ${getUiString('uploadFile')}
+                                        <input type="file" accept=".json" onchange="handleFileUpload(event)" class="hidden" />
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-xs opacity-30">
+                           ${getUiString('sampleLoaded')}
+                        </div>
+                    </div>`;
+            } else if (['testament', 'books', 'chapters'].includes(state.view)) {
+                let title = '', content = '', backFn = 'goHome()';
+
+                if (state.view === 'testament') {
+                    title = getUiString('toc');
+                    content = `
+                        <div class="flex flex-row h-full p-6 gap-6 justify-center items-center max-w-4xl mx-auto min-h-[calc(100vh-80px)]">
+                            <button onclick="goBookList('old')" class="flex-1 h-[400px] rounded-l-md rounded-r-sm shadow-2xl flex flex-col items-center justify-center text-3xl font-serif font-bold transition-transform hover:-translate-y-1 ${cardBg} border-r-2 border-stone-300">
+                                ${getUiString('oldTestament')}<span class="text-sm opacity-50 mt-4 font-sans">${getUiString('oldTestamentSub')}</span>
+                            </button>
+                            <div class="w-[2px] h-[380px] bg-stone-300/50 shadow-inner"></div>
+                            <button onclick="goBookList('new')" class="flex-1 h-[400px] rounded-r-md rounded-l-sm shadow-2xl flex flex-col items-center justify-center text-3xl font-serif font-bold transition-transform hover:-translate-y-1 ${cardBg} border-l-2 border-stone-300">
+                                ${getUiString('newTestament')}<span class="text-sm opacity-50 mt-4 font-sans">${getUiString('newTestamentSub')}</span>
+                            </button>
+                        </div>`;
+                } else if (state.view === 'books') {
+                    title = state.currentTestament === 'old' ? getUiString('oldTestament') : getUiString('newTestament');
+                    backFn = 'goTestament()';
+                    const isFull = state.bibleData && state.bibleData.length >= 66;
+                    let books = [];
+                    let baseIndex = 0;
+                    if (isFull) {
+                        if (state.currentTestament === 'old') { books = state.bibleData.slice(0, 39); }
+                        else { books = state.bibleData.slice(39); baseIndex = 39; }
+                    } else { books = state.bibleData || []; }
+                    content = `
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 p-4 max-w-5xl mx-auto">
+                        ${books.length > 0 ? books.map((book, idx) => `
+                                <button onclick="goChapterList(${baseIndex + idx})" class="p-4 rounded-lg text-center shadow-sm transition-all hover:shadow-md ${cardBg} flex flex-col justify-center min-h-[80px]">
+                                    <div class="font-serif font-bold text-lg leading-none mb-1">${getBookName(book)}</div>
+                                    <div class="text-[10px] opacity-50 uppercase">${book.abbrev}</div>
+                                </button>`).join('') : `<div class="col-span-full text-center py-10 opacity-50">${getUiString('noData')}</div>`
+                        }
+                        </div>`;
+                } else if (state.view === 'chapters') {
+                    const book = state.bibleData[state.currentBookIndex];
+                    title = getBookName(book);
+                    backFn = `goBookList('${state.currentTestament}')`;
+                    content = `
+                        <div class="p-4">
+                            <h3 class="text-center mb-6 opacity-60 font-serif">${getUiString('selectChapter')}</h3>
+                            <div class="grid grid-cols-5 sm:grid-cols-8 md:grid-cols-10 gap-2 max-w-4xl mx-auto">
+                                ${Array.from({ length: book.chapters.length }).map((_, idx) => `
+                                    <button onclick="goReader(${idx})" class="aspect-square rounded flex items-center justify-center font-bold text-lg transition-colors shadow-sm ${btnBg}">
+                                        ${idx + 1}
+                                    </button>`).join('')}
+                            </div>
+                        </div>`;
+                }
+
+                app.innerHTML = `
+                    <div class="${bgClass} h-full flex flex-col">
+                        <header class="flex-none px-4 py-3 flex items-center justify-between shadow-sm z-10 ${headerBg}">
+                            <div class="flex items-center gap-3">
+                                <button onclick="${backFn}" class="p-2 rounded-full hover:bg-black/5"><i data-lucide="chevron-left"></i></button>
+                                <h2 class="text-xl font-serif font-bold truncate max-w-[200px]">${title}</h2>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-black/5"><i data-lucide="${isDark ? 'sun' : 'moon'}"></i></button>
+                                <button onclick="goHome()" class="p-2 rounded-full hover:bg-black/5"><i data-lucide="menu"></i></button>
+                            </div>
+                        </header>
+                        <main class="flex-1 overflow-y-auto">${content}</main>
+                    </div>`;
+            } else if (state.view === 'reader') {
+                const book = state.bibleData[state.currentBookIndex];
+                const chapterContent = book ? book.chapters[state.currentChapterIndex] : [];
+                const title = getBookName(book);
+
+                app.innerHTML = `
+                    <div class="h-full flex flex-col ${bgClass}">
+                        <header class="flex-none px-4 py-3 flex items-center justify-between shadow-sm z-10 ${headerBg}">
+                            <div class="flex items-center gap-2">
+                                <button onclick="goChapterList(${state.currentBookIndex})" class="p-2 -ml-2 rounded-full hover:bg-black/5"><i data-lucide="chevron-left"></i></button>
+                                <div class="text-left">
+                                    <h2 class="font-serif font-bold text-lg leading-tight">${title}</h2>
+                                    <p class="text-xs opacity-60">${state.currentChapterIndex + 1}${getUiString('viewChapter')}</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-1 bg-black/5 rounded-full px-2 py-1">
+                                <button onclick="changeFontSize(-2)" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 font-serif text-sm">A-</button>
+                                <button onclick="playChapter()" id="tts-btn" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 text-stone-600 transition-colors" title="${getUiString('readAloud')}"><i data-lucide="volume-2" size="18"></i></button>
+                                <button onclick="changeFontSize(2)" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 font-serif font-bold text-lg">A+</button>
+                            </div>
+                        </header>
+                        
+                        <main class="flex-1 overflow-hidden">
+                            <div class="h-full flex flex-col lg:flex-row">
+                                <div class="hidden lg:block lg:w-1/2 h-full bg-stone-200 relative overflow-hidden">
+                                    <img id="bible-image" src="${state.currentImageUrl}" 
+                                         onerror="this.src='${CLASSIC_IMAGES.default}'"
+                                         class="w-full h-full object-cover opacity-90 transition-opacity duration-1000"
+                                         alt="Bible Illustration" />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8 text-white">
+                                        <h3 class="text-3xl font-serif font-bold mb-2">${title} ${state.currentChapterIndex + 1}</h3>
+                                        <p class="opacity-80 text-sm">${getUiString('meditation')}</p>
+                                    </div>
+                                </div>
+                                <div class="lg:hidden w-full h-40 bg-stone-200 relative flex-none">
+                                     <img id="bible-image-mobile" src="${state.currentImageUrl}" 
+                                          onerror="this.src='${CLASSIC_IMAGES.default}'"
+                                          class="w-full h-full object-cover object-top opacity-90" />
+                                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 text-white">
+                                        <h3 class="text-xl font-serif font-bold">${title} ${state.currentChapterIndex + 1}</h3>
+                                     </div>
+                                </div>
+                                <div class="flex-1 h-full overflow-y-auto bg-transparent relative">
+                                    <div class="px-5 py-8 md:px-10 md:py-12 max-w-2xl mx-auto">
+                                        <div class="space-y-4 font-serif transition-all" style="font-size: ${state.fontSize}px">
+                                            ${chapterContent.map((verse, idx) => `
+                                                <div id="verse-${idx}" class="verse-item flex gap-3 p-2 rounded transition-colors group cursor-pointer hover:bg-black/5" onclick="onClickVerse(${idx})">
+                                                    <span class="text-xs font-sans font-bold opacity-40 mt-2 select-none min-w-[20px] text-right">${idx + 1}</span>
+                                                    <p class="flex-1 leading-loose">${verse}</p>
+                                                </div>`).join('')}
+                                        </div>
+                                        <div class="flex justify-between items-center mt-12 mb-8 pt-8 border-t border-dashed border-current/20">
+                                            <button onclick="navigateChapter(-1)" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-black/5 disabled:opacity-30" ${state.currentBookIndex === 0 && state.currentChapterIndex === 0 ? 'disabled' : ''}><i data-lucide="chevron-left" size="20"></i> ${getUiString('prevChapter')}</button>
+                                            <button onclick="navigateChapter(1)" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-black/5 disabled:opacity-30" ${state.currentBookIndex === state.bibleData.length - 1 && state.currentChapterIndex === book.chapters.length - 1 ? 'disabled' : ''}>${getUiString('nextChapter')} <i data-lucide="chevron-right" size="20"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+                    </div>`;
+            }
+            lucide.createIcons();
+            if (state.view === 'reader' && state.isSpeaking) {
+                updateSpeakerIcon();
+                updateHighlight();
+            }
+        }
+
+        function changeFontSize(amount) {
+            state.fontSize = Math.max(14, Math.min(32, state.fontSize + amount));
+            render();
+        }
+
+        async function loadBibleData(versionAbbrev) {
+            try {
+                const response = await fetch(`./json/${versionAbbrev}.json`);
+                if (response.ok) {
+                    state.bibleData = cleanData(await response.json());
+                    render();
+                    return true;
+                }
+            } catch (e) { console.error("Failed to load bible data", e); }
+            return false;
+        }
+
+        async function changeVersion(abbrev) {
+            // Find version in availableVersions
+            let selectedVersion = null;
+            let selectedLangGroup = null;
+
+            for (const group of state.availableVersions) {
+                const v = group.versions.find(v => v.abbreviation === abbrev);
+                if (v) {
+                    selectedVersion = v;
+                    selectedLangGroup = group;
+                    break;
+                }
+            }
+
+            if (selectedVersion) {
+                state.currentVersion = {
+                    ...selectedVersion,
+                    language: selectedLangGroup.language
+                };
+
+                // Update UI Language based on selected Bible language if supported
+                if (state.currentVersion.language === 'Korean') state.uiLang = 'ko';
+                else state.uiLang = 'en';
+
+                const success = await loadBibleData(abbrev);
+                if (success) {
+                    localStorage.setItem('bible_selected_version', abbrev);
+                } else {
+                    alert("Failed to load selected version.");
+                }
+            }
+        }
+
+        async function initApp() {
+            const saved = localStorage.getItem('bible_saved_position');
+            if (saved) state.savedPosition = JSON.parse(saved);
+
+            // Load Index
+            try {
+                const indexResp = await fetch('./json/index.json');
+                if (indexResp.ok) {
+                    state.availableVersions = await indexResp.json();
+                }
+            } catch (e) { console.error("Failed to load index", e); }
+
+            // Default to saved version or English KJV
+            const lastVersion = localStorage.getItem('bible_selected_version') || 'en_kjv';
+
+            // Set initial state for currentVersion based on index if available
+            if (state.availableVersions.length > 0) {
+                for (const group of state.availableVersions) {
+                    const v = group.versions.find(v => v.abbreviation === lastVersion);
+                    if (v) {
+                        state.currentVersion = { ...v, language: group.language };
+                        state.uiLang = (group.language === 'Korean') ? 'ko' : 'en';
+                        break;
+                    }
+                }
+            }
+
+            await loadBibleData(lastVersion);
+
+            if (!state.bibleData) {
+                state.bibleData = cleanData(SAMPLE_GENESIS);
+            }
+            render();
+        }
+
+        window.onload = initApp;
+    </script>
+</body>
+
+</html>
