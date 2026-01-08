@@ -166,13 +166,38 @@ def create_video_file(assets, chapter_num):
 
 def main():
     try:
+        from upload_youtube import upload_video
+    except ImportError:
+        print("Upload module not found.")
+        upload_video = None
+
+    try:
         genesis_data = load_bible_data()
         
-        # Process Chapter 6 only
-        chapter_num = 6
-        ch_idx = 5 # 0-indexed
-        verses = get_chapter_verses(genesis_data, ch_idx)
-        process_chapter(chapter_num, verses)
+        # Process Chapters 11 to 50
+        for chapter_num in range(11, 51): 
+            ch_idx = chapter_num - 1 # 0-indexed
+            verses = get_chapter_verses(genesis_data, ch_idx)
+            
+            # Generate Video
+            process_chapter(chapter_num, verses)
+            
+            # Upload Video
+            video_path = os.path.join(MOVIES_DIR, f"genesis_chapter_{chapter_num}.mp4")
+            if upload_video and os.path.exists(video_path):
+                print(f"Uploading Chapter {chapter_num}...")
+                title = f"AI Bible - Genesis {chapter_num}"
+                desc = f"AI Bible - Genesis Chapter {chapter_num} #aibible"
+                tags = ["bible", "ai", "genesis", "aibible", "audiobible"]
+                
+                # Retry upload logic
+                for _ in range(3):
+                    try:
+                        upload_video(video_path, title, desc, tags=tags)
+                        break
+                    except Exception as e:
+                        print(f"Upload failed for Chapter {chapter_num}, retrying... {e}")
+                        time.sleep(10)
             
     except Exception as e:
         print(f"Error: {e}")
