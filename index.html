@@ -248,7 +248,12 @@
                 chapters: book.chapters.map(chapter =>
                     chapter.map(verse => {
                         if (typeof verse === 'string') {
-                            return verse.replace(/&#x27;/g, "'").replace(/&quot;/g, '"');
+                            // 1. Remove { ... Heb. ... } blocks entirely
+                            // 2. Remove remaining { and } characters but keep content
+                            return verse.replace(/&#x27;/g, "'")
+                                .replace(/&quot;/g, '"')
+                                .replace(/\{[^}]*?Heb\.[^}]*?\}/g, "")
+                                .replace(/\{|\}/g, "");
                         }
                         return verse;
                     })

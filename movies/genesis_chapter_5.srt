@@ -1,0 +1,128 @@
+1
+00:00:00,000 --> 00:00:08,230
+This is the book of the generations of Adam. In the day that God created man, in the likeness of God made he him;
+
+2
+00:00:08,230 --> 00:00:16,440
+Male and female created he them; and blessed them, and called their name Adam, in the day when they were created.
+
+3
+00:00:16,440 --> 00:00:25,850
+And Adam lived an hundred and thirty years, and begat a son in his own likeness, after his image; and called his name Seth:
+
+4
+00:00:25,850 --> 00:00:33,429
+And the days of Adam after he had begotten Seth were eight hundred years: and he begat sons and daughters:
+
+5
+00:00:33,429 --> 00:00:39,070
+And all the days that Adam lived were nine hundred and thirty years: and he died.
+
+6
+00:00:39,070 --> 00:00:43,890
+And Seth lived an hundred and five years, and begat Enos:
+
+7
+00:00:43,890 --> 00:00:50,799
+And Seth lived after he begat Enos eight hundred and seven years, and begat sons and daughters:
+
+8
+00:00:50,799 --> 00:00:56,059
+And all the days of Seth were nine hundred and twelve years: and he died.
+
+9
+00:00:56,059 --> 00:00:59,799
+And Enos lived ninety years, and begat Cainan:
+
+10
+00:00:59,799 --> 00:01:06,979
+And Enos lived after he begat Cainan eight hundred and fifteen years, and begat sons and daughters:
+
+11
+00:01:06,979 --> 00:01:12,279
+And all the days of Enos were nine hundred and five years: and he died.
+
+12
+00:01:12,279 --> 00:01:19,789
+And Cainan lived seventy years, and begat Mahalaleel: Mahalaleel: Gr. Maleleel
+
+13
+00:01:19,789 --> 00:01:27,399
+And Cainan lived after he begat Mahalaleel eight hundred and forty years, and begat sons and daughters:
+
+14
+00:01:27,399 --> 00:01:32,629
+And all the days of Cainan were nine hundred and ten years: and he died.
+
+15
+00:01:32,629 --> 00:01:37,189
+And Mahalaleel lived sixty and five years, and begat Jared:
+
+16
+00:01:37,189 --> 00:01:44,700
+And Mahalaleel lived after he begat Jared eight hundred and thirty years, and begat sons and daughters:
+
+17
+00:01:44,700 --> 00:01:50,650
+And all the days of Mahalaleel were eight hundred ninety and five years: and he died.
+
+18
+00:01:50,650 --> 00:01:55,880
+And Jared lived an hundred sixty and two years, and he begat Enoch:
+
+19
+00:01:55,880 --> 00:02:02,290
+And Jared lived after he begat Enoch eight hundred years, and begat sons and daughters:
+
+20
+00:02:02,290 --> 00:02:07,910
+And all the days of Jared were nine hundred sixty and two years: and he died.
+
+21
+00:02:07,910 --> 00:02:16,240
+And Enoch lived sixty and five years, and begat Methuselah: Methuselah: Gr. Mathusala
+
+22
+00:02:16,240 --> 00:02:23,939
+And Enoch walked with God after he begat Methuselah three hundred years, and begat sons and daughters:
+
+23
+00:02:23,939 --> 00:02:28,759
+And all the days of Enoch were three hundred sixty and five years:
+
+24
+00:02:28,759 --> 00:02:33,699
+And Enoch walked with God: and he was not; for God took him.
+
+25
+00:02:33,699 --> 00:02:39,000
+And Methuselah lived an hundred eighty and seven years, and begat Lamech:
+
+26
+00:02:39,000 --> 00:02:46,900
+And Methuselah lived after he begat Lamech seven hundred eighty and two years, and begat sons and daughters:
+
+27
+00:02:46,900 --> 00:02:52,849
+And all the days of Methuselah were nine hundred sixty and nine years: and he died.
+
+28
+00:02:52,849 --> 00:02:57,719
+And Lamech lived an hundred eighty and two years, and begat a son:
+
+29
+00:02:57,719 --> 00:03:14,539
+And he called his name Noah, saying, This same shall comfort us concerning our work and toil of our hands, because of the ground which the LORD hath cursed. Noah: Gr. Noe: that is Rest, or, Comfort
+
+30
+00:03:14,539 --> 00:03:22,239
+And Lamech lived after he begat Noah five hundred ninety and five years, and begat sons and daughters:
+
+31
+00:03:22,239 --> 00:03:28,189
+And all the days of Lamech were seven hundred seventy and seven years: and he died.
+
+32
+00:03:28,189 --> 00:03:34,619
+And Noah was five hundred years old: and Noah begat Shem, Ham, and Japheth.
+

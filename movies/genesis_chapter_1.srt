@@ -1,0 +1,124 @@
+1
+00:00:00,000 --> 00:00:03,430
+In the beginning God created the heaven and the earth.
+
+2
+00:00:03,430 --> 00:00:13,869
+And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.
+
+3
+00:00:13,869 --> 00:00:18,070
+And God said, Let there be light: and there was light.
+
+4
+00:00:18,070 --> 00:00:24,310
+And God saw the light, that it was good: and God divided the light from the darkness.
+
+5
+00:00:24,310 --> 00:00:31,560
+And God called the light Day, and the darkness he called Night. And the evening and the morning were the first day.
+
+6
+00:00:31,560 --> 00:00:39,359
+And God said, Let there be a firmament in the midst of the waters, and let it divide the waters from the waters.
+
+7
+00:00:39,359 --> 00:00:48,719
+And God made the firmament, and divided the waters which were under the firmament from the waters which were above the firmament: and it was so.
+
+8
+00:00:48,719 --> 00:00:54,359
+And God called the firmament Heaven. And the evening and the morning were the second day.
+
+9
+00:00:54,359 --> 00:01:04,150
+And God said, Let the waters under the heaven be gathered together unto one place, and let the dry land appear: and it was so.
+
+10
+00:01:04,150 --> 00:01:12,620
+And God called the dry land Earth; and the gathering together of the waters called he Seas: and God saw that it was good.
+
+11
+00:01:12,620 --> 00:01:26,250
+And God said, Let the earth bring forth grass, the herb yielding seed, and the fruit tree yielding fruit after his kind, whose seed is in itself, upon the earth: and it was so.
+
+12
+00:01:26,250 --> 00:01:39,430
+And the earth brought forth grass, and herb yielding seed after his kind, and the tree yielding fruit, whose seed was in itself, after his kind: and God saw that it was good.
+
+13
+00:01:39,430 --> 00:01:42,410
+And the evening and the morning were the third day.
+
+14
+00:01:42,410 --> 00:01:55,060
+And God said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:
+
+15
+00:01:55,060 --> 00:02:01,660
+And let them be for lights in the firmament of the heaven to give light upon the earth: and it was so.
+
+16
+00:02:01,660 --> 00:02:11,020
+And God made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.
+
+17
+00:02:11,020 --> 00:02:16,159
+And God set them in the firmament of the heaven to give light upon the earth,
+
+18
+00:02:16,159 --> 00:02:24,060
+And to rule over the day and over the night, and to divide the light from the darkness: and God saw that it was good.
+
+19
+00:02:24,060 --> 00:02:27,060
+And the evening and the morning were the fourth day.
+
+20
+00:02:27,060 --> 00:02:40,810
+And God said, Let the waters bring forth abundantly the moving creature that hath life, and fowl that may fly above the earth in the open firmament of heaven. moving: or, creeping
+
+21
+00:02:40,810 --> 00:02:55,259
+And God created great whales, and every living creature that moveth, which the waters brought forth abundantly, after their kind, and every winged fowl after his kind: and God saw that it was good.
+
+22
+00:02:55,259 --> 00:03:05,509
+And God blessed them, saying, Be fruitful, and multiply, and fill the waters in the seas, and let fowl multiply in the earth.
+
+23
+00:03:05,509 --> 00:03:08,459
+And the evening and the morning were the fifth day.
+
+24
+00:03:08,459 --> 00:03:19,959
+And God said, Let the earth bring forth the living creature after his kind, cattle, and creeping thing, and beast of the earth after his kind: and it was so.
+
+25
+00:03:19,959 --> 00:03:31,579
+And God made the beast of the earth after his kind, and cattle after their kind, and every thing that creepeth upon the earth after his kind: and God saw that it was good.
+
+26
+00:03:31,579 --> 00:03:49,219
+And God said, Let us make man in our image, after our likeness: and let them have dominion over the fish of the sea, and over the fowl of the air, and over the cattle, and over all the earth, and over every creeping thing that creepeth upon the earth.
+
+27
+00:03:49,219 --> 00:03:57,789
+So God created man in his own image, in the image of God created he him; male and female created he them.
+
+28
+00:03:57,789 --> 00:04:15,529
+And God blessed them, and God said unto them, Be fruitful, and multiply, and replenish the earth, and subdue it: and have dominion over the fish of the sea, and over the fowl of the air, and over every living thing that moveth upon the earth.
+
+29
+00:04:15,529 --> 00:04:29,689
+And God said, Behold, I have given you every herb bearing seed, which is upon the face of all the earth, and every tree, in the which is the fruit of a tree yielding seed; to you it shall be for meat.
+
+30
+00:04:29,689 --> 00:04:42,649
+And to every beast of the earth, and to every fowl of the air, and to every thing that creepeth upon the earth, wherein there is life, I have given every green herb for meat: and it was so.
+
+31
+00:04:42,649 --> 00:04:51,629
+And God saw every thing that he had made, and, behold, it was very good. And the evening and the morning were the sixth day.
+
