@@ -2,5 +2,5 @@ video_assets/
 movies/
 chrome_user_data/
 short/
-images/
+#images/
 secret/
