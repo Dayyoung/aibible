@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Holy Bible App</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -64,9 +67,11 @@
     </div>
 
     <script>
+
         // ==========================================
         // [데이터 및 상수]
         // ==========================================
+
         const SAMPLE_GENESIS = [
             {
                 "abbrev": "gn",
@@ -411,12 +416,12 @@
             }, 10);
         }
 
-        function playChapter() {
+        function playChapter(force = false) {
             if (!window.speechSynthesis) {
                 alert("이 브라우저는 음성 재생을 지원하지 않습니다.");
                 return;
             }
-            if (state.isSpeaking) {
+            if (state.isSpeaking && !force) {
                 stopSpeaking();
                 return;
             }
@@ -436,41 +441,58 @@
 
         function speakVerse(verses, index) {
             if (!state.isSpeaking || index >= verses.length) {
+                // Auto-play logic: If finished and auto-play is on, go to next chapter
+                if (index >= verses.length && state.isAutoPlay) {
+                    let nextBook = state.currentBookIndex;
+                    let nextChapter = state.currentChapterIndex + 1;
+                    const bookData = state.bibleData[state.currentBookIndex];
+
+                    if (nextChapter >= bookData.chapters.length) {
+                        // Go to next book
+                        if (nextBook < state.bibleData.length - 1) {
+                            nextBook++;
+                            nextChapter = 0;
+                        } else {
+                            stopSpeaking(); // End of Bible
+                            return;
+                        }
+                    } else {
+                        // Manually transition to keep "speaking" state true
+                        state.currentBookIndex = nextBook;
+                        state.currentChapterIndex = nextChapter;
+                        const nextBookData = state.bibleData[nextBook];
+                        tryUpdateImage(nextBookData, nextChapter, 0);
+                        savePosition(nextBook, nextChapter);
+                        render();
+                        // Force play next chapter
+                        playChapter(true);
+                        return;
+                    }
+                }
                 stopSpeaking();
                 return;
             }
-
             state.speakingVerseIndex = index;
             const book = state.bibleData[state.currentBookIndex];
-
             // 선택된 절 이미지 업데이트
             tryUpdateImage(book, state.currentChapterIndex, index);
-
             updateHighlight();
-
             const el = document.getElementById(`verse-${index}`);
             if (el) {
-                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-
-            const text = verses[index];
-            const utterance = new SpeechSynthesisUtterance(text);
-            const voice = getVoice();
-            if (voice) {
-                utterance.voice = voice;
-                utterance.lang = voice.lang;
-            } else {
-                utterance.lang = 'en-US';
-            }
-            utterance.rate = 1.0;
-
-            utterance.onend = () => {
-                if (state.isSpeaking && state.isAutoPlay) {
-                    speakVerse(verses, index + 1);
-                } else {
-                    stopSpeaking();
-                }
-            };
+                el.scrollIntoView({
+                    behavior: 'smooth', block: 'center'
+                });
+            } const text = verses[index]; const utterance = new
+                SpeechSynthesisUtterance(text); const voice = getVoice(); if (voice) {
+                    utterance.voice = voice;
+                    utterance.lang = voice.lang;
+                } else { utterance.lang = 'en-US'; } utterance.rate = 1.0; utterance.onend = () => {
+                    if (state.isSpeaking && state.isAutoPlay) {
+                        speakVerse(verses, index + 1);
+                    } else {
+                        stopSpeaking();
+                    }
+                };
 
             utterance.onerror = (e) => {
                 if (e.error === 'canceled' || e.error === 'interrupted') return;
@@ -561,20 +583,26 @@
             const currentBookData = state.bibleData[state.currentBookIndex];
 
             if (newChapter < 0) {
-                if (state.currentBookIndex > 0) { newBook--; newChapter = state.bibleData[newBook].chapters.length - 1; }
-                else return;
+                if (state.currentBookIndex > 0) {
+                    newBook--;
+                    newChapter = state.bibleData[newBook].chapters.length - 1;
+                } else {
+                    return;
+                }
             } else if (newChapter >= currentBookData.chapters.length) {
-                if (state.currentBookIndex < state.bibleData.length - 1) { newBook++; newChapter = 0; }
-                else return;
+                if (state.currentBookIndex < state.bibleData.length - 1) {
+                    newBook++;
+                    newChapter = 0;
+                } else {
+                    return;
+                }
             }
 
             state.currentBookIndex = newBook;
             state.currentChapterIndex = newChapter;
             const book = state.bibleData[newBook];
-
             // 챕터 변경 시 이미지 업데이트
             tryUpdateImage(book, newChapter, 0);
-
             savePosition(newBook, newChapter);
             render();
         }
@@ -584,7 +612,6 @@
             const chapter = state.currentChapterIndex + 1;
             // Use English name for file path construction
             const bookNameEn = BIBLE_NAMES_EN[book.abbrev] || book.abbrev;
-
             let filename = "";
             if (book.abbrev === 'gn') {
                 filename = `genesis_chapter_${chapter}.mp4`;
@@ -592,30 +619,21 @@
                 const safeName = bookNameEn.replace(/ /g, "_");
                 filename = `${safeName}_Chapter_${chapter}.mp4`;
             }
-
             state.currentVideoUrl = `movies/${filename}`;
             state.isVideoModalOpen = true;
             stopSpeaking();
             render();
         }
-
-        function closeVideo() {
-            state.isVideoModalOpen = false;
-            state.currentVideoUrl = "";
-            render();
-        }
-
-        function handleFileUpload(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                try {
-                    state.bibleData = cleanData(JSON.parse(e.target.result));
-                    alert("Bible data loaded successfully.");
-                    render();
-                } catch (error) { alert("Invalid file format."); }
-            };
+        function closeVideo() { state.isVideoModalOpen = false; state.currentVideoUrl = ""; render(); } function
+            handleFileUpload(event) {
+            const file = event.target.files[0]; if (!file) return; const reader = new
+                FileReader(); reader.onload = (e) => {
+                    try {
+                        state.bibleData = cleanData(JSON.parse(e.target.result));
+                        alert("Bible data loaded successfully.");
+                        render();
+                    } catch (error) { alert("Invalid file format."); }
+                };
             reader.readAsText(file);
         }
 
@@ -629,51 +647,64 @@
             const btnBg = isDark ? 'bg-stone-800 hover:bg-blue-900 text-stone-300' : 'bg-white hover:bg-stone-200 text-stone-700 border border-stone-200';
 
             if (state.view === 'start') {
-                const isSampleData = state.bibleData && state.bibleData.length < 66;
-                const bookCoverBg = isDark ? 'bg-stone-800 border-stone-950' : 'bg-[#8B4513] border-[#5D2906] text-[#FFD700]';
-                const mainBg = isDark ? 'bg-stone-900 text-stone-200' : 'bg-[#f5f0e6] text-stone-800';
+                const isSampleData = state.bibleData && state.bibleData.length < 66; const bookCoverBg = isDark
+                    ? 'bg-stone-800 border-stone-950' : 'bg-[#8B4513] border-[#5D2906] text-[#FFD700]'; const
+                        mainBg = isDark ? 'bg-stone-900 text-stone-200' : 'bg-[#f5f0e6] text-stone-800'; app.innerHTML = ` <div
+                    class="h-full flex flex-col items-center justify-center p-6 ${mainBg}"
+                    style="padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom);">
+                    <div
+                        class="w-full max-w-md aspect-[3/4] rounded-r-3xl rounded-l-md shadow-2xl flex flex-col items-center justify-between p-12 border-l-8 ${bookCoverBg}">
+                        <div class="text-center space-y-2 mt-10">
+                            <h1
+                                class="text-4xl font-serif font-bold tracking-widest border-b-2 border-current pb-2 mb-2">
+                                ${getUiString('title')}</h1>
+                            <p class="text-sm tracking-widest opacity-80">${getUiString('subtitle')}</p>
+                            <div class="mt-2 text-xs opacity-70">${state.currentVersion.name}</div>
+                        </div>
+                        <div class="flex flex-col gap-4 w-full">
+                            <button onclick="goTestament()"
+                                class="w-full py-4 bg-black/20 hover:bg-black/30 backdrop-blur-sm rounded-lg text-lg font-serif transition-all border border-white/10 flex items-center justify-center gap-2">
+                                <i data-lucide="book"></i> ${getUiString('openBtn')}
+                            </button>
+                            ${state.savedPosition && state.bibleData ? `
+                            <button onclick="handleContinue()"
+                                class="w-full py-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg text-base transition-all border border-white/10 flex items-center justify-center gap-2">
+                                <i data-lucide="bookmark"></i> ${getUiString('continueBtn')}
+                                <span class="text-sm">(${state.bibleData[state.savedPosition.bookIndex] ?
+                                    getBookName(state.bibleData[state.savedPosition.bookIndex]) : ''}
+                                    ${state.savedPosition.chapterIndex + 1}${getUiString('viewChapter')})</span>
+                            </button>` : ''}
 
-                app.innerHTML = `
-                    <div class="h-full flex flex-col items-center justify-center p-6 ${mainBg}">
-                        <div class="w-full max-w-md aspect-[3/4] rounded-r-3xl rounded-l-md shadow-2xl flex flex-col items-center justify-between p-12 border-l-8 ${bookCoverBg}">
-                            <div class="text-center space-y-2 mt-10">
-                                <h1 class="text-4xl font-serif font-bold tracking-widest border-b-2 border-current pb-2 mb-2">${getUiString('title')}</h1>
-                                <p class="text-sm tracking-widest opacity-80">${getUiString('subtitle')}</p>
-                                <div class="mt-2 text-xs opacity-70">${state.currentVersion.name}</div>
+                            <div class="relative w-full">
+                                <select onchange="changeVersion(this.value)"
+                                    class="w-full py-2 px-3 bg-white/10 hover:bg-white/20 rounded text-sm text-center appearance-none cursor-pointer outline-none border border-white/10 text-white">
+                                    ${state.availableVersions.map(langGroup =>
+                                        `<optgroup label="${langGroup.language}">
+                                        ${langGroup.versions.map(v =>
+                                            `<option value="${v.abbreviation}"
+                                            ${state.currentVersion.abbreviation === v.abbreviation ? 'selected' : ''}>
+                                            ${v.name}</option>`
+                                        ).join('')}
+                                    </optgroup>`
+                                    ).join('')}
+                                </select>
+                                <div
+                                    class="absolute inset-y-0 right-2 flex items-center pointer-events-none opacity-50">
+                                    <i data-lucide="chevron-down" size="14"></i></div>
                             </div>
-                            <div class="flex flex-col gap-4 w-full">
-                                <button onclick="goTestament()" class="w-full py-4 bg-black/20 hover:bg-black/30 backdrop-blur-sm rounded-lg text-lg font-serif transition-all border border-white/10 flex items-center justify-center gap-2">
-                                    <i data-lucide="book"></i> ${getUiString('openBtn')}
-                                </button>
-                                ${state.savedPosition && state.bibleData ? `
-                                    <button onclick="handleContinue()" class="w-full py-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg text-base transition-all border border-white/10 flex items-center justify-center gap-2">
-                                        <i data-lucide="bookmark"></i> ${getUiString('continueBtn')} 
-                                        <span class="text-sm">(${state.bibleData[state.savedPosition.bookIndex] ? getBookName(state.bibleData[state.savedPosition.bookIndex]) : ''} ${state.savedPosition.chapterIndex + 1}${getUiString('viewChapter')})</span>
-                                    </button>` : ''}
-                                
-                                <div class="relative w-full">
-                                     <select onchange="changeVersion(this.value)" class="w-full py-2 px-3 bg-white/10 hover:bg-white/20 rounded text-sm text-center appearance-none cursor-pointer outline-none border border-white/10 text-white">
-                                        ${state.availableVersions.map(langGroup =>
-                    `<optgroup label="${langGroup.language}">
-                                                ${langGroup.versions.map(v =>
-                        `<option value="${v.abbreviation}" ${state.currentVersion.abbreviation === v.abbreviation ? 'selected' : ''}>${v.name}</option>`
-                    ).join('')}
-                                            </optgroup>`
-                ).join('')}
-                                    </select>
-                                    <div class="absolute inset-y-0 right-2 flex items-center pointer-events-none opacity-50"><i data-lucide="chevron-down" size="14"></i></div>
-                                </div>
-                                <div class="pt-4 border-t border-white/10">
-                                    <label class="w-full py-2 bg-white/5 hover:bg-white/10 rounded text-sm flex items-center justify-center gap-2 opacity-70 hover:opacity-100 transition-opacity cursor-pointer">
-                                        <i data-lucide="upload" size="14"></i> ${getUiString('uploadFile')}
-                                        <input type="file" accept=".json" onchange="handleFileUpload(event)" class="hidden" />
-                                    </label>
-                                </div>
+                            <div class="pt-4 border-t border-white/10">
+                                <label
+                                    class="w-full py-2 bg-white/5 hover:bg-white/10 rounded text-sm flex items-center justify-center gap-2 opacity-70 hover:opacity-100 transition-opacity cursor-pointer">
+                                    <i data-lucide="upload" size="14"></i> ${getUiString('uploadFile')}
+                                    <input type="file" accept=".json" onchange="handleFileUpload(event)"
+                                        class="hidden" />
+                                </label>
                             </div>
                         </div>
-                        <div class="mt-4 text-xs opacity-30">
-                           ${getUiString('sampleLoaded')}
-                        </div>
+                    </div>
+                    <div class="mt-4 text-xs opacity-30">
+                        ${getUiString('sampleLoaded')}
+                    </div>
                     </div>`;
             } else if (['testament', 'books', 'chapters'].includes(state.view)) {
                 let title = '', content = '', backFn = 'goHome()';
@@ -681,17 +712,23 @@
                 if (state.view === 'testament') {
                     title = getUiString('toc');
                     content = `
-                        <div class="flex flex-row h-full p-6 gap-6 justify-center items-center max-w-4xl mx-auto min-h-[calc(100vh-80px)]">
-                            <button onclick="goBookList('old')" class="flex-1 h-[400px] rounded-l-md rounded-r-sm shadow-2xl flex flex-col items-center justify-center text-3xl font-serif font-bold transition-transform hover:-translate-y-1 ${cardBg} border-r-2 border-stone-300">
-                                ${getUiString('oldTestament')}<span class="text-sm opacity-50 mt-4 font-sans">${getUiString('oldTestamentSub')}</span>
-                            </button>
-                            <div class="w-[2px] h-[380px] bg-stone-300/50 shadow-inner"></div>
-                            <button onclick="goBookList('new')" class="flex-1 h-[400px] rounded-r-md rounded-l-sm shadow-2xl flex flex-col items-center justify-center text-3xl font-serif font-bold transition-transform hover:-translate-y-1 ${cardBg} border-l-2 border-stone-300">
-                                ${getUiString('newTestament')}<span class="text-sm opacity-50 mt-4 font-sans">${getUiString('newTestamentSub')}</span>
-                            </button>
-                        </div>`;
+                    <div
+                        class="flex flex-col md:flex-row h-full p-4 md:p-6 gap-4 md:gap-8 justify-center items-center max-w-4xl mx-auto min-h-[calc(100vh-80px)]">
+                        <button onclick="goBookList('old')"
+                            class="w-full md:flex-1 h-[200px] md:h-[400px] rounded-2xl shadow-xl flex flex-col items-center justify-center text-2xl md:text-3xl font-serif font-bold transition-transform hover:-translate-y-1 ${cardBg}">
+                            ${getUiString('oldTestament')}<span
+                                class="text-sm opacity-50 mt-2 md:mt-4 font-sans">${getUiString('oldTestamentSub')}</span>
+                        </button>
+                        <div class="hidden md:block w-[2px] h-[380px] bg-stone-300/50 shadow-inner"></div>
+                        <button onclick="goBookList('new')"
+                            class="w-full md:flex-1 h-[200px] md:h-[400px] rounded-2xl shadow-xl flex flex-col items-center justify-center text-2xl md:text-3xl font-serif font-bold transition-transform hover:-translate-y-1 ${cardBg}">
+                            ${getUiString('newTestament')}<span
+                                class="text-sm opacity-50 mt-2 md:mt-4 font-sans">${getUiString('newTestamentSub')}</span>
+                        </button>
+                    </div>`;
                 } else if (state.view === 'books') {
-                    title = state.currentTestament === 'old' ? getUiString('oldTestament') : getUiString('newTestament');
+                    title = state.currentTestament === 'old' ? getUiString('oldTestament') :
+                        getUiString('newTestament');
                     backFn = 'goTestament()';
                     const isFull = state.bibleData && state.bibleData.length >= 66;
                     let books = [];
@@ -701,43 +738,52 @@
                         else { books = state.bibleData.slice(39); baseIndex = 39; }
                     } else { books = state.bibleData || []; }
                     content = `
-                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 p-4 max-w-5xl mx-auto">
+                    <div
+                        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 p-4 max-w-5xl mx-auto">
                         ${books.length > 0 ? books.map((book, idx) => `
-                                <button onclick="goChapterList(${baseIndex + idx})" class="p-4 rounded-lg text-center shadow-sm transition-all hover:shadow-md ${cardBg} flex flex-col justify-center min-h-[80px]">
-                                    <div class="font-serif font-bold text-lg leading-none mb-1">${getBookName(book)}</div>
-                                    <div class="text-[10px] opacity-50 uppercase">${book.abbrev}</div>
-                                </button>`).join('') : `<div class="col-span-full text-center py-10 opacity-50">${getUiString('noData')}</div>`
+                        <button onclick="goChapterList(${baseIndex + idx})"
+                            class="p-4 rounded-lg text-center shadow-sm transition-all hover:shadow-md ${cardBg} flex flex-col justify-center min-h-[80px]">
+                            <div class="font-serif font-bold text-lg leading-none mb-1">${getBookName(book)}</div>
+                            <div class="text-[10px] opacity-50 uppercase">${book.abbrev}</div>
+                        </button>`).join('') : `<div class="col-span-full text-center py-10 opacity-50">
+                            ${getUiString('noData')}</div>`
                         }
-                        </div>`;
+                    </div>`;
                 } else if (state.view === 'chapters') {
                     const book = state.bibleData[state.currentBookIndex];
                     title = getBookName(book);
                     backFn = `goBookList('${state.currentTestament}')`;
                     content = `
-                        <div class="p-4">
-                            <h3 class="text-center mb-6 opacity-60 font-serif">${getUiString('selectChapter')}</h3>
-                            <div class="grid grid-cols-5 sm:grid-cols-8 md:grid-cols-10 gap-2 max-w-4xl mx-auto">
-                                ${Array.from({ length: book.chapters.length }).map((_, idx) => `
-                                    <button onclick="goReader(${idx})" class="aspect-square rounded flex items-center justify-center font-bold text-lg transition-colors shadow-sm ${btnBg}">
-                                        ${idx + 1}
-                                    </button>`).join('')}
-                            </div>
-                        </div>`;
+                    <div class="p-4">
+                        <h3 class="text-center mb-6 opacity-60 font-serif">${getUiString('selectChapter')}</h3>
+                        <div class="grid grid-cols-5 sm:grid-cols-8 md:grid-cols-10 gap-2 max-w-4xl mx-auto">
+                            ${Array.from({ length: book.chapters.length }).map((_, idx) => `
+                            <button onclick="goReader(${idx})"
+                                class="aspect-square rounded flex items-center justify-center font-bold text-lg transition-colors shadow-sm ${btnBg}">
+                                ${idx + 1}
+                            </button>`).join('')}
+                        </div>
+                    </div>`;
                 }
 
                 app.innerHTML = `
                     <div class="${bgClass} h-full flex flex-col">
-                        <header class="flex-none px-4 py-3 flex items-center justify-between shadow-sm z-10 ${headerBg}">
+                        <header class="flex-none px-4 py-3 flex items-center justify-between shadow-sm z-10 ${headerBg}"
+                            style="padding-top: calc(0.75rem + env(safe-area-inset-top));">
                             <div class="flex items-center gap-3">
-                                <button onclick="${backFn}" class="p-2 rounded-full hover:bg-black/5"><i data-lucide="chevron-left"></i></button>
+                                <button onclick="${backFn}" class="p-2 rounded-full hover:bg-black/5"><i
+                                        data-lucide="chevron-left"></i></button>
                                 <h2 class="text-xl font-serif font-bold truncate max-w-[200px]">${title}</h2>
                             </div>
                             <div class="flex items-center gap-2">
-                                <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-black/5"><i data-lucide="${isDark ? 'sun' : 'moon'}"></i></button>
-                                <button onclick="goHome()" class="p-2 rounded-full hover:bg-black/5"><i data-lucide="menu"></i></button>
+                                <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-black/5"><i
+                                        data-lucide="${isDark ? 'sun' : 'moon'}"></i></button>
+                                <button onclick="goHome()" class="p-2 rounded-full hover:bg-black/5"><i
+                                        data-lucide="menu"></i></button>
                             </div>
                         </header>
-                        <main class="flex-1 overflow-y-auto">${content}</main>
+                        <main class="flex-1 overflow-y-auto" style="padding-bottom: env(safe-area-inset-bottom);">
+                            ${content}</main>
                     </div>`;
             } else if (state.view === 'reader') {
                 const book = state.bibleData[state.currentBookIndex];
@@ -746,65 +792,101 @@
 
                 app.innerHTML = `
                     <div class="h-full flex flex-col ${bgClass}">
-                        <header class="flex-none px-4 py-3 flex items-center justify-between shadow-sm z-10 ${headerBg}">
+                        <header class="flex-none px-4 py-3 flex items-center justify-between shadow-sm z-10 ${headerBg}"
+                            style="padding-top: calc(0.75rem + env(safe-area-inset-top));">
                             <div class="flex items-center gap-2">
-                                <button onclick="goChapterList(${state.currentBookIndex})" class="p-2 -ml-2 rounded-full hover:bg-black/5"><i data-lucide="chevron-left"></i></button>
+                                <button onclick="goChapterList(${state.currentBookIndex})"
+                                    class="p-2 -ml-2 rounded-full hover:bg-black/5"><i
+                                        data-lucide="chevron-left"></i></button>
                                 <div class="text-left">
                                     <h2 class="font-serif font-bold text-lg leading-tight">${title}</h2>
-                                    <p class="text-xs opacity-60">${state.currentChapterIndex + 1}${getUiString('viewChapter')}</p>
+                                    <p class="text-xs opacity-60">${state.currentChapterIndex +
+                    1}${getUiString('viewChapter')}</p>
                                 </div>
                             </div>
                             <div class="flex items-center gap-1 bg-black/5 rounded-full px-2 py-1">
-                                <button onclick="playVideo()" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 text-stone-600 transition-colors" title="Play Video"><i data-lucide="video" size="18"></i></button>
-                                <button onclick="changeFontSize(-2)" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 font-serif text-sm">A-</button>
-                                <button onclick="playChapter()" id="tts-btn" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 text-stone-600 transition-colors" title="${getUiString('readAloud')}"><i data-lucide="volume-2" size="18"></i></button>
-                                <button onclick="changeFontSize(2)" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 font-serif font-bold text-lg">A+</button>
+                                <button onclick="playVideo()"
+                                    class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 text-stone-600 transition-colors"
+                                    title="Play Video"><i data-lucide="video" size="18"></i></button>
+                                <button onclick="changeFontSize(-2)"
+                                    class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 font-serif text-sm">A-</button>
+                                <button onclick="playChapter()" id="tts-btn"
+                                    class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 text-stone-600 transition-colors"
+                                    title="${getUiString('readAloud')}"><i data-lucide="volume-2"
+                                        size="18"></i></button>
+                                <button onclick="changeFontSize(2)"
+                                    class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 font-serif font-bold text-lg">A+</button>
                             </div>
                         </header>
-                        
+
                         <main class="flex-1 overflow-hidden">
                             <div class="h-full flex flex-col lg:flex-row">
                                 <div class="hidden lg:block lg:w-1/2 h-full bg-stone-200 relative overflow-hidden">
-                                    <img id="bible-image" src="${state.currentImageUrl}" 
-                                         onerror="this.src='${CLASSIC_IMAGES.default}'"
-                                         class="w-full h-full object-cover opacity-90 transition-opacity duration-1000"
-                                         alt="Bible Illustration" />
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8 text-white">
-                                        <h3 class="text-3xl font-serif font-bold mb-2">${title} ${state.currentChapterIndex + 1}</h3>
+                                    <img id="bible-image" src="${state.currentImageUrl}"
+                                        onerror="this.src='${CLASSIC_IMAGES.default}'"
+                                        class="w-full h-full object-cover opacity-90 transition-opacity duration-1000"
+                                        alt="Bible Illustration" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8 text-white">
+                                        <h3 class="text-3xl font-serif font-bold mb-2">${title}
+                                            ${state.currentChapterIndex + 1}</h3>
                                         <p class="opacity-80 text-sm">${getUiString('meditation')}</p>
                                     </div>
                                 </div>
                                 <div class="lg:hidden w-full h-40 bg-stone-200 relative flex-none">
-                                     <img id="bible-image-mobile" src="${state.currentImageUrl}" 
-                                          onerror="this.src='${CLASSIC_IMAGES.default}'"
-                                          class="w-full h-full object-cover object-top opacity-90" />
-                                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 text-white">
-                                        <h3 class="text-xl font-serif font-bold">${title} ${state.currentChapterIndex + 1}</h3>
-                                     </div>
+                                    <img id="bible-image-mobile" src="${state.currentImageUrl}"
+                                        onerror="this.src='${CLASSIC_IMAGES.default}'"
+                                        class="w-full h-full object-cover object-top opacity-90" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 text-white">
+                                        <h3 class="text-xl font-serif font-bold">${title} ${state.currentChapterIndex +
+                    1}</h3>
+                                    </div>
                                 </div>
-                                <div class="flex-1 h-full overflow-y-auto bg-transparent relative">
+                                <div class="flex-1 h-full overflow-y-auto bg-transparent relative"
+                                    style="padding-bottom: env(safe-area-inset-bottom);">
                                     <div class="px-5 py-8 md:px-10 md:py-12 max-w-2xl mx-auto">
-                                        <div class="space-y-4 font-serif transition-all" style="font-size: ${state.fontSize}px">
+                                        <div class="space-y-4 font-serif transition-all"
+                                            style="font-size: ${state.fontSize}px">
                                             ${chapterContent.map((verse, idx) => `
-                                                <div id="verse-${idx}" class="verse-item flex gap-3 p-2 rounded transition-colors group cursor-pointer hover:bg-black/5" onclick="onClickVerse(${idx})">
-                                                    <span class="text-xs font-sans font-bold opacity-40 mt-2 select-none min-w-[20px] text-right">${idx + 1}</span>
-                                                    <p class="flex-1 leading-loose">${verse}</p>
-                                                </div>`).join('')}
+                                            <div id="verse-${idx}"
+                                                class="verse-item flex gap-3 p-2 rounded transition-colors group cursor-pointer hover:bg-black/5"
+                                                onclick="onClickVerse(${idx})">
+                                                <span
+                                                    class="text-xs font-sans font-bold opacity-40 mt-2 select-none min-w-[20px] text-right">${idx
+                        + 1}</span>
+                                                <p class="flex-1 leading-loose">${verse}</p>
+                                            </div>`).join('')}
                                         </div>
-                                        <div class="flex justify-between items-center mt-12 mb-8 pt-8 border-t border-dashed border-current/20">
-                                            <button onclick="navigateChapter(-1)" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-black/5 disabled:opacity-30" ${state.currentBookIndex === 0 && state.currentChapterIndex === 0 ? 'disabled' : ''}><i data-lucide="chevron-left" size="20"></i> ${getUiString('prevChapter')}</button>
-                                            <button onclick="navigateChapter(1)" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-black/5 disabled:opacity-30" ${state.currentBookIndex === state.bibleData.length - 1 && state.currentChapterIndex === book.chapters.length - 1 ? 'disabled' : ''}>${getUiString('nextChapter')} <i data-lucide="chevron-right" size="20"></i></button>
+                                        <div
+                                            class="flex justify-between items-center mt-12 mb-8 pt-8 border-t border-dashed border-current/20">
+                                            <button onclick="navigateChapter(-1)"
+                                                class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-black/5 disabled:opacity-30"
+                                                ${state.currentBookIndex === 0 && state.currentChapterIndex === 0
+                        ? 'disabled' : ''}><i data-lucide="chevron-left" size="20"></i>
+                                                ${getUiString('prevChapter')}</button>
+                                            <button onclick="navigateChapter(1)"
+                                                class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-black/5 disabled:opacity-30"
+                                                ${state.currentBookIndex === state.bibleData.length - 1 &&
+                        state.currentChapterIndex === book.chapters.length - 1 ? 'disabled' : ''
+                    }>${getUiString('nextChapter')} <i data-lucide="chevron-right"
+                                                    size="20"></i></button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </main>
-                        
+
                         ${state.isVideoModalOpen ? `
-                        <div class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4" onclick="closeVideo()">
-                            <div class="relative w-full max-w-4xl bg-black rounded-lg overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
-                                <button onclick="closeVideo()" class="absolute top-4 right-4 z-10 p-2 bg-black/50 text-white rounded-full hover:bg-white/20"><i data-lucide="x"></i></button>
-                                <video src="${state.currentVideoUrl}" controls autoplay class="w-full h-full max-h-[80vh]"></video>
+                        <div class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+                            onclick="closeVideo()">
+                            <div class="relative w-full max-w-4xl bg-black rounded-lg overflow-hidden shadow-2xl"
+                                onclick="event.stopPropagation()">
+                                <button onclick="closeVideo()"
+                                    class="absolute top-4 right-4 z-10 p-2 bg-black/50 text-white rounded-full hover:bg-white/20"><i
+                                        data-lucide="x"></i></button>
+                                <video src="${state.currentVideoUrl}" controls autoplay
+                                    class="w-full h-full max-h-[80vh]"></video>
                             </div>
                         </div>
                         ` : ''}
