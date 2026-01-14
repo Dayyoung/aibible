@@ -268,8 +268,13 @@
                 language: 'English',
                 name: 'King James Version'
             },
-            uiLang: 'en' // 'en' or 'ko'
+            uiLang: 'en', // 'en' or 'ko'
+
+            // Video Player State
+            isVideoModalOpen: false,
+            currentVideoUrl: ""
         };
+        window.state = state;
 
         function cleanData(data) {
             return data.map(book => ({
@@ -320,6 +325,12 @@
 
             if (chapterImageUrl) {
                 state.currentImageUrl = chapterImageUrl;
+            } else if (book.abbrev !== 'gn') {
+                // 창세기 이후의 장의 좌측이미지는 images/genesis 폴더의 이미지를 랜덤하게 사용
+                // images/genesis/ch1.png ~ ch50.png 중 랜덤 선택
+                // 1부터 50까지의 난수 생성
+                const randomNum = Math.floor(Math.random() * 50) + 1;
+                state.currentImageUrl = `images/genesis/ch${randomNum}.png`;
             } else {
                 // 전용 이미지가 없으면 기본 이미지 사용
                 state.currentImageUrl = CLASSIC_IMAGES.default;
@@ -568,6 +579,32 @@
             render();
         }
 
+        function playVideo() {
+            const book = state.bibleData[state.currentBookIndex];
+            const chapter = state.currentChapterIndex + 1;
+            // Use English name for file path construction
+            const bookNameEn = BIBLE_NAMES_EN[book.abbrev] || book.abbrev;
+
+            let filename = "";
+            if (book.abbrev === 'gn') {
+                filename = `genesis_chapter_${chapter}.mp4`;
+            } else {
+                const safeName = bookNameEn.replace(/ /g, "_");
+                filename = `${safeName}_Chapter_${chapter}.mp4`;
+            }
+
+            state.currentVideoUrl = `movies/${filename}`;
+            state.isVideoModalOpen = true;
+            stopSpeaking();
+            render();
+        }
+
+        function closeVideo() {
+            state.isVideoModalOpen = false;
+            state.currentVideoUrl = "";
+            render();
+        }
+
         function handleFileUpload(event) {
             const file = event.target.files[0];
             if (!file) return;
@@ -718,6 +755,7 @@
                                 </div>
                             </div>
                             <div class="flex items-center gap-1 bg-black/5 rounded-full px-2 py-1">
+                                <button onclick="playVideo()" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 text-stone-600 transition-colors" title="Play Video"><i data-lucide="video" size="18"></i></button>
                                 <button onclick="changeFontSize(-2)" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 font-serif text-sm">A-</button>
                                 <button onclick="playChapter()" id="tts-btn" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 text-stone-600 transition-colors" title="${getUiString('readAloud')}"><i data-lucide="volume-2" size="18"></i></button>
                                 <button onclick="changeFontSize(2)" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 font-serif font-bold text-lg">A+</button>
@@ -761,6 +799,15 @@
                                 </div>
                             </div>
                         </main>
+                        
+                        ${state.isVideoModalOpen ? `
+                        <div class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4" onclick="closeVideo()">
+                            <div class="relative w-full max-w-4xl bg-black rounded-lg overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
+                                <button onclick="closeVideo()" class="absolute top-4 right-4 z-10 p-2 bg-black/50 text-white rounded-full hover:bg-white/20"><i data-lucide="x"></i></button>
+                                <video src="${state.currentVideoUrl}" controls autoplay class="w-full h-full max-h-[80vh]"></video>
+                            </div>
+                        </div>
+                        ` : ''}
                     </div>`;
             }
             lucide.createIcons();
