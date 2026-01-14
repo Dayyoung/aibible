@@ -770,8 +770,8 @@
                 }
 
                 app.innerHTML = `
-                    <div class="${bgClass} h-full flex flex-col">
-                        <header class="flex-none px-4 py-3 flex items-center justify-between shadow-sm z-10 ${headerBg}"
+                    <div class="${bgClass} h-full flex flex-col pt-[calc(3.5rem+env(safe-area-inset-top))]">
+                        <header class="fixed top-0 left-0 right-0 h-[calc(3.5rem+env(safe-area-inset-top))] px-4 py-3 flex items-center justify-between shadow-sm z-50 ${headerBg}"
                             style="padding-top: calc(0.75rem + env(safe-area-inset-top));">
                             <div class="flex items-center gap-3">
                                 <button onclick="${backFn}" class="p-2 rounded-full hover:bg-black/5"><i
@@ -794,8 +794,8 @@
                 const title = getBookName(book);
 
                 app.innerHTML = `
-                    <div class="h-full flex flex-col ${bgClass}">
-                        <header class="flex-none px-4 py-3 flex items-center justify-between shadow-sm z-10 ${headerBg}"
+                    <div class="h-full flex flex-col ${bgClass} pt-[calc(3.5rem+env(safe-area-inset-top))]">
+                        <header class="fixed top-0 left-0 right-0 h-[calc(3.5rem+env(safe-area-inset-top))] px-4 py-3 flex items-center justify-between shadow-sm z-10 ${headerBg}"
                             style="padding-top: calc(0.75rem + env(safe-area-inset-top));">
                             <div class="flex items-center gap-2">
                                 <button onclick="goChapterList(${state.currentBookIndex})"
