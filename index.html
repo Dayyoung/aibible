@@ -389,11 +389,13 @@
             return voice || voices[0];
         }
 
-        function stopSpeaking() {
+        function stopSpeaking(fullStop = true) {
             if (window.speechSynthesis) window.speechSynthesis.cancel();
             state.isSpeaking = false;
-            state.speakingVerseIndex = -1;
             state.isAutoPlay = false;
+            if (fullStop) {
+                state.speakingVerseIndex = -1;
+            }
             updateHighlight();
             updateSpeakerIcon();
         }
@@ -422,7 +424,7 @@
                 return;
             }
             if (state.isSpeaking && !force) {
-                stopSpeaking();
+                stopSpeaking(false);
                 return;
             }
 
@@ -436,7 +438,8 @@
             state.isAutoPlay = true;
             updateSpeakerIcon();
 
-            speakVerse(verses, 0);
+            const startIndex = state.speakingVerseIndex !== -1 ? state.speakingVerseIndex : 0;
+            speakVerse(verses, startIndex);
         }
 
         function speakVerse(verses, index) {
