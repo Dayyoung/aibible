@@ -476,6 +476,10 @@
                         // Transition to next chapter/book
                         state.currentBookIndex = nextBook;
                         state.currentChapterIndex = nextChapter;
+
+                        // Reset verse index to start from the beginning of the new chapter
+                        state.speakingVerseIndex = -1;
+
                         const nextBookData = state.bibleData[nextBook];
                         tryUpdateImage(nextBookData, nextChapter, 0);
                         savePosition(nextBook, nextChapter);
