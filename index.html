@@ -251,6 +251,17 @@
             default: "https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&q=80&w=1600&h=900"
         };
 
+        const now = new Date();
+        const APP_VERSION = `v${now.getFullYear()}.${String(now.getMonth() + 1).padStart(2, '0')}.${String(now.getDate()).padStart(2, '0')}.${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}`;
+
+        function getFooterHTML(isDark) {
+            return `
+            <footer class="w-full h-[100px] flex flex-col items-center justify-center text-xs opacity-40 font-sans pointer-events-none select-none pb-safe">
+                <p class="font-bold tracking-widest">BibleForAi.com 2026</p>
+                <p class="mt-1 font-mono opacity-70">${APP_VERSION}</p>
+            </footer>`;
+        }
+
         const state = {
             bibleData: null,
             view: 'start',
@@ -449,6 +460,7 @@
                     let nextBook = state.currentBookIndex;
                     let nextChapter = state.currentChapterIndex + 1;
                     const bookData = state.bibleData[state.currentBookIndex];
+                    let proceed = true;
 
                     if (nextChapter >= bookData.chapters.length) {
                         // Go to next book
@@ -456,11 +468,12 @@
                             nextBook++;
                             nextChapter = 0;
                         } else {
-                            stopSpeaking(); // End of Bible
-                            return;
+                            proceed = false;
                         }
-                    } else {
-                        // Manually transition to keep "speaking" state true
+                    }
+
+                    if (proceed) {
+                        // Transition to next chapter/book
                         state.currentBookIndex = nextBook;
                         state.currentChapterIndex = nextChapter;
                         const nextBookData = state.bibleData[nextBook];
@@ -468,9 +481,12 @@
                         savePosition(nextBook, nextChapter);
                         render();
                         // Force play next chapter
-                        playChapter(true);
+                        setTimeout(() => playChapter(true), 50);
                         return;
                     }
+
+                    stopSpeaking(); // End of Bible
+                    return;
                 }
                 stopSpeaking();
                 return;
@@ -708,6 +724,7 @@
                     <div class="mt-4 text-xs opacity-30">
                         ${getUiString('sampleLoaded')}
                     </div>
+                    ${getFooterHTML(state.isDarkMode)}
                     </div>`;
             } else if (['testament', 'books', 'chapters'].includes(state.view)) {
                 let title = '', content = '', backFn = 'goHome()';
@@ -785,8 +802,10 @@
                                         data-lucide="menu"></i></button>
                             </div>
                         </header>
-                        <main class="flex-1 overflow-y-auto" style="padding-bottom: env(safe-area-inset-bottom);">
-                            ${content}</main>
+                        <main class="flex-1 overflow-y-auto">
+                            ${content}
+                            ${getFooterHTML(isDark)}
+                        </main>
                     </div>`;
             } else if (state.view === 'reader') {
                 const book = state.bibleData[state.currentBookIndex];
@@ -846,8 +865,7 @@
                     1}</h3>
                                     </div>
                                 </div>
-                                <div class="flex-1 h-full overflow-y-auto bg-transparent relative"
-                                    style="padding-bottom: env(safe-area-inset-bottom);">
+                                <div class="flex-1 h-full overflow-y-auto bg-transparent relative">
                                     <div class="px-5 py-8 md:px-10 md:py-12 max-w-2xl mx-auto">
                                         <div class="space-y-4 font-serif transition-all"
                                             style="font-size: ${state.fontSize}px">
@@ -875,7 +893,9 @@
                     }>${getUiString('nextChapter')} <i data-lucide="chevron-right"
                                                     size="20"></i></button>
                                         </div>
+                                        </div>
                                     </div>
+                                    ${getFooterHTML(isDark)}
                                 </div>
                             </div>
                         </main>
