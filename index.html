@@ -139,7 +139,7 @@
                 continueBtn: "Continue",
                 viewChapter: "Chapter",
                 uploadFile: "Open Custom Data File",
-                sampleLoaded: "Create by DayYoung",
+                sampleLoaded: "Created by BibleForAI",
                 toc: "Table of Contents",
                 oldTestament: "Old Testament",
                 oldTestamentSub: "Classic",
@@ -288,7 +288,9 @@
 
             // Video Player State
             isVideoModalOpen: false,
-            currentVideoUrl: ""
+            isVideoModalOpen: false,
+            currentVideoUrl: "",
+            autoPlayTimer: null
         };
         window.state = state;
 
@@ -401,9 +403,14 @@
         }
 
         function stopSpeaking(fullStop = true) {
-            if (window.speechSynthesis) window.speechSynthesis.cancel();
+            if (state.autoPlayTimer) {
+                clearTimeout(state.autoPlayTimer);
+                state.autoPlayTimer = null;
+            }
             state.isSpeaking = false;
             state.isAutoPlay = false;
+            if (window.speechSynthesis) window.speechSynthesis.cancel();
+
             if (fullStop) {
                 state.speakingVerseIndex = -1;
             }
@@ -412,7 +419,7 @@
         }
 
         function onClickVerse(index) {
-            if (window.speechSynthesis) window.speechSynthesis.cancel();
+            stopSpeaking(false); // Stop any previous auto-play cleanly
 
             const book = state.bibleData[state.currentBookIndex];
 
@@ -424,7 +431,7 @@
             updateSpeakerIcon();
 
             const verses = book.chapters[state.currentChapterIndex];
-            setTimeout(() => {
+            state.autoPlayTimer = setTimeout(() => {
                 speakVerse(verses, index);
             }, 10);
         }
@@ -484,8 +491,9 @@
                         tryUpdateImage(nextBookData, nextChapter, 0);
                         savePosition(nextBook, nextChapter);
                         render();
+                        render();
                         // Force play next chapter
-                        setTimeout(() => playChapter(true), 50);
+                        state.autoPlayTimer = setTimeout(() => playChapter(true), 50);
                         return;
                     }
 
@@ -831,15 +839,12 @@
                                 </div>
                             </div>
                             <div class="flex items-center gap-1 bg-black/5 rounded-full px-2 py-1">
-                                <button onclick="playVideo()"
-                                    class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 text-stone-600 transition-colors"
-                                    title="Play Video"><i data-lucide="video" size="18"></i></button>
-                                <button onclick="changeFontSize(-2)"
-                                    class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 font-serif text-sm">A-</button>
                                 <button onclick="playChapter()" id="tts-btn"
                                     class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 text-stone-600 transition-colors"
                                     title="${getUiString('readAloud')}"><i data-lucide="volume-2"
                                         size="18"></i></button>
+                                <button onclick="changeFontSize(-2)"
+                                    class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 font-serif text-sm">A-</button>
                                 <button onclick="changeFontSize(2)"
                                     class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 font-serif font-bold text-lg">A+</button>
                             </div>
@@ -898,10 +903,9 @@
                                                     size="20"></i></button>
                                         </div>
                                         </div>
+                                        ${getFooterHTML(isDark)}
                                     </div>
-                                    ${getFooterHTML(isDark)}
                                 </div>
-                            </div>
                         </main>
 
                         ${state.isVideoModalOpen ? `
