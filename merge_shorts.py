@@ -1,5 +1,6 @@
 import os
 import datetime
+import re
 from moviepy import *
 
 def merge_todays_shorts():
@@ -10,12 +11,17 @@ def merge_todays_shorts():
 
     today = datetime.date.today()
     todays_files = []
+    output_filename = f"{today.strftime('%Y_%m_%d')}.mp4"
 
     print(f"Scanning for videos in {short_dir} modified on {today}...")
 
     # Find files
     for f in os.listdir(short_dir):
         if f.lower().endswith(('.mp4', '.mov', '.avi', '.mkv')):
+            # Skip the output file if it's already there
+            if f == output_filename:
+                continue
+                
             filepath = os.path.join(short_dir, f)
             mtime = datetime.date.fromtimestamp(os.path.getmtime(filepath))
             
@@ -26,8 +32,12 @@ def merge_todays_shorts():
         print("No video files found modified today.")
         return
 
-    # Sort by modification time to maintain order
-    todays_files.sort(key=lambda x: os.path.getmtime(x))
+    # Sort by numerical value in filename
+    def extract_number(filename):
+        numbers = re.findall(r'\d+', filename)
+        return int(numbers[0]) if numbers else 0
+
+    todays_files.sort(key=lambda x: extract_number(os.path.basename(x)))
     print(f"Found {len(todays_files)} videos to merge:")
     for tf in todays_files:
         print(f" - {os.path.basename(tf)}")
