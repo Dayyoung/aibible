@@ -38,15 +38,20 @@ def merge_todays_shorts():
     for tf in sorted_filepaths:
         print(f" - {os.path.basename(tf)} (Modified: {datetime.datetime.fromtimestamp(os.path.getmtime(tf))})")
 
+    # Output directory
+    output_dir = os.path.join(desktop_dir, "bible")
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
     # Generate unique output filename: YYYY_MM_DD.mp4, YYYY_MM_DD(1).mp4, etc.
     base_name = today.strftime('%Y_%m_%d')
     output_filename = f"{base_name}.mp4"
-    output_path = os.path.join(desktop_dir, output_filename)
+    output_path = os.path.join(output_dir, output_filename)
     
     counter = 1
     while os.path.exists(output_path):
         output_filename = f"{base_name}({counter}).mp4"
-        output_path = os.path.join(desktop_dir, output_filename)
+        output_path = os.path.join(output_dir, output_filename)
         counter += 1
 
     # Load clips
