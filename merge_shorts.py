@@ -4,58 +4,61 @@ import re
 from moviepy import *
 
 def merge_todays_shorts():
-    short_dir = os.path.join(os.getcwd(), "short")
-    if not os.path.exists(short_dir):
-        print(f"Directory not found: {short_dir}")
+    # Source directory is now the Desktop
+    desktop_dir = os.path.expanduser("~/Desktop")
+    if not os.path.exists(desktop_dir):
+        print(f"Directory not found: {desktop_dir}")
         return
 
     today = datetime.date.today()
     todays_files = []
-    output_filename = f"{today.strftime('%Y_%m_%d')}.mp4"
+    
+    print(f"Scanning for videos on Desktop modified on {today}...")
 
-    print(f"Scanning for videos in {short_dir} modified on {today}...")
-
-    # Find files
-    for f in os.listdir(short_dir):
+    # Find files modified today on Desktop
+    for f in os.listdir(desktop_dir):
         if f.lower().endswith(('.mp4', '.mov', '.avi', '.mkv')):
-            # Skip the output file if it's already there
-            if f == output_filename:
-                continue
-                
-            filepath = os.path.join(short_dir, f)
-            mtime = datetime.date.fromtimestamp(os.path.getmtime(filepath))
+            filepath = os.path.join(desktop_dir, f)
+            mtime_dt = datetime.datetime.fromtimestamp(os.path.getmtime(filepath))
             
-            if mtime == today:
-                todays_files.append(filepath)
+            # Check if modified today
+            if mtime_dt.date() == today:
+                todays_files.append((filepath, mtime_dt))
 
     if not todays_files:
-        print("No video files found modified today.")
+        print("No video files found modified today on Desktop.")
         return
 
-    # Sort by numerical value in filename
-    def extract_number(filename):
-        numbers = re.findall(r'\d+', filename)
-        return int(numbers[0]) if numbers else 0
+    # Sort by modification time (oldest first)
+    todays_files.sort(key=lambda x: x[1])
+    
+    sorted_filepaths = [x[0] for x in todays_files]
+    
+    print(f"Found {len(sorted_filepaths)} videos to merge:")
+    for tf in sorted_filepaths:
+        print(f" - {os.path.basename(tf)} (Modified: {datetime.datetime.fromtimestamp(os.path.getmtime(tf))})")
 
-    todays_files.sort(key=lambda x: extract_number(os.path.basename(x)))
-    print(f"Found {len(todays_files)} videos to merge:")
-    for tf in todays_files:
-        print(f" - {os.path.basename(tf)}")
+    # Generate unique output filename: YYYY_MM_DD.mp4, YYYY_MM_DD(1).mp4, etc.
+    base_name = today.strftime('%Y_%m_%d')
+    output_filename = f"{base_name}.mp4"
+    output_path = os.path.join(desktop_dir, output_filename)
+    
+    counter = 1
+    while os.path.exists(output_path):
+        output_filename = f"{base_name}({counter}).mp4"
+        output_path = os.path.join(desktop_dir, output_filename)
+        counter += 1
 
     # Load clips
     clips = []
     try:
-        for tf in todays_files:
+        for tf in sorted_filepaths:
             clip = VideoFileClip(tf)
             clips.append(clip)
             
         if clips:
-            final_clip = concatenate_videoclips(clips)
-            
-            output_filename = f"{today.strftime('%Y_%m_%d')}.mp4"
-            output_path = os.path.join(short_dir, output_filename)
-            
             print(f"Merging into {output_path}...")
+            final_clip = concatenate_videoclips(clips)
             final_clip.write_videofile(output_path, codec='libx264', audio_codec='aac')
             print(f"Successfully created: {output_path}")
             
