@@ -1012,6 +1012,57 @@
             if (!state.bibleData) {
                 state.bibleData = cleanData(SAMPLE_GENESIS);
             }
+
+            // [URL Parameter Handling]
+            const urlParams = new URLSearchParams(window.location.search);
+            const chapterQuery = urlParams.get('chapter');
+            const numberQuery = urlParams.get('number') || urlParams.get('chapter_number');
+
+            if (chapterQuery && numberQuery && state.bibleData) {
+                const query = chapterQuery.toLowerCase().trim();
+                const chapterNum = parseInt(numberQuery) - 1;
+
+                let foundBookIndex = -1;
+                // 1. Perfect Match (Abbrev or Name)
+                for (let i = 0; i < state.bibleData.length; i++) {
+                    const b = state.bibleData[i];
+                    if (b.abbrev.toLowerCase() === query ||
+                        (BIBLE_NAMES_EN[b.abbrev] || "").toLowerCase() === query ||
+                        (BIBLE_NAMES_KO[b.abbrev] || "") === query) {
+                        foundBookIndex = i;
+                        break;
+                    }
+                }
+
+                // 2. Fuzzy Match if not found
+                if (foundBookIndex === -1) {
+                    for (let i = 0; i < state.bibleData.length; i++) {
+                        const b = state.bibleData[i];
+                        const en = (BIBLE_NAMES_EN[b.abbrev] || "").toLowerCase();
+                        const keywords = (BOOK_KEYWORDS[b.abbrev] || "").toLowerCase();
+                        if (en.includes(query) || query.includes(en) || keywords.includes(query) ||
+                            (query.startsWith('gen') && b.abbrev === 'gn')) {
+                            foundBookIndex = i;
+                            break;
+                        }
+                    }
+                }
+
+                if (foundBookIndex !== -1 && !isNaN(chapterNum)) {
+                    const book = state.bibleData[foundBookIndex];
+                    if (chapterNum >= 0 && chapterNum < book.chapters.length) {
+                        state.currentBookIndex = foundBookIndex;
+                        state.currentChapterIndex = chapterNum;
+                        state.view = 'reader';
+                        // Update image for the start of the chapter
+                        state.currentImageUrl = CLASSIC_IMAGES.default;
+                        tryUpdateImage(book, chapterNum, 0);
+                        // Save this as the new position
+                        savePosition(foundBookIndex, chapterNum);
+                    }
+                }
+            }
+
             render();
         }
 
