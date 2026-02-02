@@ -423,13 +423,16 @@
         }
 
         function updateURL(chapter, number, verse) {
-            const params = new URLSearchParams(window.location.search);
+            const params = new URLSearchParams();
             if (chapter) params.set('chapter', chapter);
             if (number) params.set('number', number);
             if (verse) params.set('verse', verse);
-            else params.delete('verse');
-            const newURL = window.location.pathname + '?' + params.toString();
+            const newURL = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
             window.history.replaceState({ chapter, number, verse }, '', newURL);
+        }
+
+        function clearURL() {
+            window.history.replaceState({}, '', window.location.pathname);
         }
 
         function copyShareURL() {
@@ -596,10 +599,10 @@
             }
         }
 
-        function goHome() { state.view = 'start'; stopSpeaking(); render(); }
-        function goTestament() { state.view = 'testament'; stopSpeaking(); render(); }
-        function goBookList(testament) { state.currentTestament = testament; state.view = 'books'; render(); }
-        function goChapterList(bookIndex) { state.currentBookIndex = bookIndex; state.view = 'chapters'; render(); }
+        function goHome() { state.view = 'start'; stopSpeaking(); clearURL(); render(); }
+        function goTestament() { state.view = 'testament'; stopSpeaking(); clearURL(); render(); }
+        function goBookList(testament) { state.currentTestament = testament; state.view = 'books'; clearURL(); render(); }
+        function goChapterList(bookIndex) { state.currentBookIndex = bookIndex; state.view = 'chapters'; clearURL(); render(); }
 
         function goReader(chapterIndex) {
             stopSpeaking();
