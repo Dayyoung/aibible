@@ -745,27 +745,21 @@
                             <div class="relative w-full">
                                 <select onchange="changeVersion(this.value)"
                                     class="w-full py-2 px-3 bg-white/10 hover:bg-white/20 rounded text-sm text-center appearance-none cursor-pointer outline-none border border-white/10 text-white">
-                                    ${state.availableVersions.map(langGroup =>
-                                        `<optgroup label="${langGroup.language}">
-                                        ${langGroup.versions.map(v =>
+                                    ${state.availableVersions.map(langGroup => {
+                                        const displayLang = langGroup.language === 'Korean' ? '한국어' :
+                                            langGroup.language === 'English' ? 'English' : langGroup.language;
+                                        return `<optgroup label="${displayLang}">
+                                            ${langGroup.versions.map(v =>
                                             `<option value="${v.abbreviation}"
-                                            ${state.currentVersion.abbreviation === v.abbreviation ? 'selected' : ''}>
-                                            ${v.name}</option>`
+                                                ${state.currentVersion.abbreviation === v.abbreviation ? 'selected' : ''}>
+                                                ${v.name}</option>`
                                         ).join('')}
-                                    </optgroup>`
-                                    ).join('')}
+                                        </optgroup>`;
+                                    }).join('')}
                                 </select>
                                 <div
                                     class="absolute inset-y-0 right-2 flex items-center pointer-events-none opacity-50">
                                     <i data-lucide="chevron-down" size="14"></i></div>
-                            </div>
-                            <div class="pt-4 border-t border-white/10">
-                                <label
-                                    class="w-full py-2 bg-white/5 hover:bg-white/10 rounded text-sm flex items-center justify-center gap-2 opacity-70 hover:opacity-100 transition-opacity cursor-pointer">
-                                    <i data-lucide="upload" size="14"></i> ${getUiString('uploadFile')}
-                                    <input type="file" accept=".json" onchange="handleFileUpload(event)"
-                                        class="hidden" />
-                                </label>
                             </div>
                         </div>
                     </div>
@@ -1032,8 +1026,15 @@
                 }
             } catch (e) { console.error("Failed to load index", e); }
 
-            // Default to saved version or English KJV
-            const lastVersion = localStorage.getItem('bible_selected_version') || 'en_kjv';
+            // [Browser Language Support]
+            const browserLang = navigator.language || navigator.userLanguage;
+            const isBrowserKorean = browserLang.startsWith('ko');
+
+            // Default to saved version or based on browser language
+            let lastVersion = localStorage.getItem('bible_selected_version');
+            if (!lastVersion) {
+                lastVersion = isBrowserKorean ? 'ko_ko' : 'en_kjv';
+            }
 
             // Set initial state for currentVersion based on index if available
             if (state.availableVersions.length > 0) {
@@ -1041,7 +1042,7 @@
                     const v = group.versions.find(v => v.abbreviation === lastVersion);
                     if (v) {
                         state.currentVersion = { ...v, language: group.language };
-                        state.uiLang = (group.language === 'Korean') ? 'ko' : 'en';
+                        state.uiLang = (group.language === 'Korean' || group.language === '한국어') ? 'ko' : 'en';
                         break;
                     }
                 }
