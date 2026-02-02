@@ -50,13 +50,13 @@
 
         /* 하이라이트 애니메이션 */
         .verse-highlight {
-            background-color: #fef08a;
+            background-color: #bfdbfe;
             transition: background-color 0.3s;
         }
 
         .dark .verse-highlight {
-            background-color: #854d0e;
-            color: #fefce8;
+            background-color: #1e3a8a;
+            color: #eff6ff;
         }
     </style>
 </head>
@@ -418,10 +418,23 @@
             updateSpeakerIcon();
         }
 
+        function updateURL(chapter, number, verse) {
+            const params = new URLSearchParams(window.location.search);
+            if (chapter) params.set('chapter', chapter);
+            if (number) params.set('number', number);
+            if (verse) params.set('verse', verse);
+            else params.delete('verse');
+            const newURL = window.location.pathname + '?' + params.toString();
+            window.history.replaceState({ chapter, number, verse }, '', newURL);
+        }
+
         function onClickVerse(index) {
             stopSpeaking(false); // Stop any previous auto-play cleanly
 
             const book = state.bibleData[state.currentBookIndex];
+
+            // URL 업데이트 (Book Abbrev, Chapter Number, Verse Number)
+            updateURL(book.abbrev, state.currentChapterIndex + 1, index + 1);
 
             // 이미지 업데이트 시도 (force = true)
             tryUpdateImage(book, state.currentChapterIndex, index, true);
@@ -581,6 +594,9 @@
             state.view = 'reader';
             const book = state.bibleData[state.currentBookIndex];
 
+            // URL 업데이트
+            updateURL(book.abbrev, chapterIndex + 1);
+
             // 초기 진입: 우선 기본 이미지로 설정 후 업데이트 시도
             // (화면 렌더링을 위해 기본값 설정, 이후 tryUpdateImage가 완료되면 바뀜)
             state.currentImageUrl = CLASSIC_IMAGES.default;
@@ -632,6 +648,10 @@
             state.currentBookIndex = newBook;
             state.currentChapterIndex = newChapter;
             const book = state.bibleData[newBook];
+
+            // URL 업데이트
+            updateURL(book.abbrev, newChapter + 1);
+
             // 챕터 변경 시 이미지 업데이트
             tryUpdateImage(book, newChapter, 0);
             savePosition(newBook, newChapter);
@@ -1017,10 +1037,12 @@
             const urlParams = new URLSearchParams(window.location.search);
             const chapterQuery = urlParams.get('chapter');
             const numberQuery = urlParams.get('number') || urlParams.get('chapter_number');
+            const verseQuery = urlParams.get('verse');
 
             if (chapterQuery && numberQuery && state.bibleData) {
                 const query = chapterQuery.toLowerCase().trim();
                 const chapterNum = parseInt(numberQuery) - 1;
+                const verseNum = verseQuery ? parseInt(verseQuery) - 1 : -1;
 
                 let foundBookIndex = -1;
                 // 1. Perfect Match (Abbrev or Name)
@@ -1054,13 +1076,23 @@
                         state.currentBookIndex = foundBookIndex;
                         state.currentChapterIndex = chapterNum;
                         state.view = 'reader';
+
+                        // 하이라이트 설정
+                        if (!isNaN(verseNum) && verseNum !== -1) {
+                            state.speakingVerseIndex = verseNum;
+                        }
+
                         // Update image for the start of the chapter
                         state.currentImageUrl = CLASSIC_IMAGES.default;
-                        tryUpdateImage(book, chapterNum, 0);
+                        tryUpdateImage(book, chapterNum, Math.max(0, verseNum));
                         // Save this as the new position
                         savePosition(foundBookIndex, chapterNum);
                     }
                 }
+            } else if (state.view === 'reader' && state.bibleData && state.currentBookIndex !== null) {
+                // If already in reader but no URL params (e.g. from continue), sync URL
+                const book = state.bibleData[state.currentBookIndex];
+                updateURL(book.abbrev, state.currentChapterIndex + 1);
             }
 
             render();
