@@ -16,14 +16,14 @@ HISTORY_FILE = "video_history.json"
 # Since we group by book, we just need to sort chapters within a book.
 
 def get_playlists(youtube):
-    """Retrieves all playlists on the channel."""
+    """Retrieves all playlists on the channel including privacy status."""
     playlists = {}
     next_page_token = None
     
     try:
         while True:
             request = youtube.playlists().list(
-                part="snippet,id",
+                part="snippet,id,status",
                 mine=True,
                 maxResults=50,
                 pageToken=next_page_token
@@ -32,7 +32,11 @@ def get_playlists(youtube):
             
             for item in response.get("items", []):
                 title = item["snippet"]["title"]
-                playlists[title] = item["id"]
+                status = item["status"]["privacyStatus"]
+                playlists[title] = {
+                    "id": item["id"],
+                    "privacyStatus": status
+                }
             
             next_page_token = response.get("nextPageToken")
             if not next_page_token:
@@ -43,6 +47,30 @@ def get_playlists(youtube):
         logging.error(f"Error fetching playlists: {e}")
         check_quota_error(e)
         return {}
+
+def update_playlist_privacy(youtube, playlist_id, title, description):
+    """Updates a playlist's privacy status to public."""
+    try:
+        request = youtube.playlists().update(
+            part="snippet,status",
+            body={
+                "id": playlist_id,
+                "snippet": {
+                    "title": title,
+                    "description": description
+                },
+                "status": {
+                    "privacyStatus": "public"
+                }
+            }
+        )
+        request.execute()
+        logging.info(f"Updated playlist {title} to PUBLIC.")
+        return True
+    except HttpError as e:
+        logging.error(f"Error updating playlist {title}: {e}")
+        check_quota_error(e)
+        return False
 
 def create_playlist(youtube, title, description):
     """Creates a new playlist."""
@@ -55,7 +83,7 @@ def create_playlist(youtube, title, description):
                     "description": description
                 },
                 "status": {
-                    "privacyStatus": "public" # or unlisted/private
+                    "privacyStatus": "public"
                 }
             }
         )
@@ -228,28 +256,37 @@ def run_playlist_manager():
         logging.info(f"Processing Book: {book} ({len(videos)} videos)")
         
         # Get or Create Playlist
-        playlist_title = f"{book} (Bible Reading)" # Standardized Title
-        playlist_id = existing_playlists.get(playlist_title)
+        playlist_title = f"{book} (NIRV)" # Standardized Title (1 per book, total 66)
+        playlist_info = existing_playlists.get(playlist_title)
         
         # Checking flexible match if standardized not found
-        if not playlist_id:
-             for title, pid in existing_playlists.items():
+        if not playlist_info:
+             for title, info in existing_playlists.items():
                  if book in title and "Bible" in title:
-                     playlist_id = pid
+                     playlist_info = info
+                     playlist_title = title # Use the matching title
                      break
 
-        if not playlist_id:
+        if not playlist_info:
             logging.info(f"Playlist for {book} not found. Creating...")
             desc = f"Audio bible reading of the book of {book} (NIRV)."
             playlist_id = create_playlist(youtube, playlist_title, desc)
             if playlist_id:
-                existing_playlists[playlist_title] = playlist_id # Cache it
+                existing_playlists[playlist_title] = {"id": playlist_id, "privacyStatus": "public"}
                 time.sleep(2) # Avoid aggressive creation
             else:
                 logging.error(f"Failed to create playlist for {book}. Skipping.")
                 continue
         else:
-            logging.info(f"Found playlist: {book} -> ID: {playlist_id}")
+            playlist_id = playlist_info["id"]
+            logging.info(f"Found playlist: {playlist_title} -> ID: {playlist_id}")
+            # If not public, update to public as requested
+            if playlist_info["privacyStatus"] != "public":
+                logging.info(f"Playlist {playlist_title} is {playlist_info['privacyStatus']}. Updating to PUBLIC...")
+                desc = f"Audio bible reading of the book of {book} (NIRV)."
+                update_playlist_privacy(youtube, playlist_id, playlist_title, desc)
+                playlist_info["privacyStatus"] = "public"
+                time.sleep(1)
 
         # Get existing items in playlist to avoid duplicates
         existing_video_ids = get_playlist_items(youtube, playlist_id)

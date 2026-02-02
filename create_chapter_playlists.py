@@ -12,14 +12,14 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 HISTORY_FILE = "video_history.json"
 
 def get_playlists(youtube):
-    """Retrieves all playlists on the channel."""
+    """Retrieves all playlists on the channel including privacy status."""
     playlists = {}
     next_page_token = None
     
     try:
         while True:
             request = youtube.playlists().list(
-                part="snippet,id",
+                part="snippet,id,status",
                 mine=True,
                 maxResults=50,
                 pageToken=next_page_token
@@ -28,7 +28,11 @@ def get_playlists(youtube):
             
             for item in response.get("items", []):
                 title = item["snippet"]["title"]
-                playlists[title] = item["id"]
+                status = item["status"]["privacyStatus"]
+                playlists[title] = {
+                    "id": item["id"],
+                    "privacyStatus": status
+                }
             
             next_page_token = response.get("nextPageToken")
             if not next_page_token:
@@ -39,6 +43,30 @@ def get_playlists(youtube):
         logging.error(f"Error fetching playlists: {e}")
         check_quota_error(e)
         return {}
+
+def update_playlist_privacy(youtube, playlist_id, title, description):
+    """Updates a playlist's privacy status to public."""
+    try:
+        request = youtube.playlists().update(
+            part="snippet,status",
+            body={
+                "id": playlist_id,
+                "snippet": {
+                    "title": title,
+                    "description": description
+                },
+                "status": {
+                    "privacyStatus": "public"
+                }
+            }
+        )
+        request.execute()
+        logging.info(f"Updated playlist {title} to PUBLIC.")
+        return True
+    except HttpError as e:
+        logging.error(f"Error updating playlist {title}: {e}")
+        check_quota_error(e)
+        return False
 
 def create_playlist(youtube, title, description):
     """Creates a new playlist."""
@@ -124,13 +152,20 @@ def run():
                 desc = f"Audio bible reading of {book} Chapter {chapter} (NIRV translation)."
                 playlist_id = create_playlist(youtube, playlist_title, desc)
                 if playlist_id:
-                    existing_playlists[playlist_title] = playlist_id
+                    existing_playlists[playlist_title] = {"id": playlist_id, "privacyStatus": "public"}
                     time.sleep(1) # Avoid rate limit
                 else:
                     continue
             else:
-                playlist_id = existing_playlists[playlist_title]
-                # logging.info(f"Playlist already exists: {playlist_title}")
+                playlist_info = existing_playlists[playlist_title]
+                playlist_id = playlist_info["id"]
+                # If not public, update to public as requested
+                if playlist_info["privacyStatus"] != "public":
+                    logging.info(f"Playlist {playlist_title} is {playlist_info['privacyStatus']}. Updating to PUBLIC...")
+                    desc = f"Audio bible reading of {book} Chapter {chapter} (NIRV translation)."
+                    update_playlist_privacy(youtube, playlist_id, playlist_title, desc)
+                    playlist_info["privacyStatus"] = "public"
+                    time.sleep(1)
             
             # In chapter-level playlists, we usually don't need to check items if it's 1:1,
             # but for safety let's skip if we just created it or if we want to be sure.
