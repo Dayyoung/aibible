@@ -150,7 +150,9 @@
                 nextChapter: "Next",
                 meditation: "Meditation and Reading",
                 noData: "No data available.",
-                language: "Language"
+                language: "Language",
+                share: "Share",
+                copied: "Link copied to clipboard!"
             },
             ko: {
                 title: "HOLY BIBLE",
@@ -170,7 +172,9 @@
                 nextChapter: "다음 장",
                 meditation: "묵상과 독서 (절을 클릭하면 이미지가 변경됩니다)",
                 noData: "데이터가 없습니다.",
-                language: "언어"
+                language: "언어",
+                share: "공유하기",
+                copied: "주소가 복사되었습니다!"
             }
         };
 
@@ -426,6 +430,15 @@
             else params.delete('verse');
             const newURL = window.location.pathname + '?' + params.toString();
             window.history.replaceState({ chapter, number, verse }, '', newURL);
+        }
+
+        function copyShareURL() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                alert(getUiString('copied'));
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
         }
 
         function onClickVerse(index) {
@@ -859,6 +872,10 @@
                                 </div>
                             </div>
                             <div class="flex items-center gap-1 bg-black/5 rounded-full px-2 py-1">
+                                <button onclick="copyShareURL()"
+                                    class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 text-stone-600 transition-colors"
+                                    title="${getUiString('share')}"><i data-lucide="share-2"
+                                        size="18"></i></button>
                                 <button onclick="playChapter()" id="tts-btn"
                                     class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 text-stone-600 transition-colors"
                                     title="${getUiString('readAloud')}"><i data-lucide="volume-2"
@@ -1096,6 +1113,17 @@
             }
 
             render();
+
+            // Render 이후 스크롤 및 하이라이트 재처리 (특히 URL로 직접 들어왔을 때)
+            if (state.view === 'reader' && state.speakingVerseIndex !== -1) {
+                setTimeout(() => {
+                    updateHighlight();
+                    const el = document.getElementById(`verse-${state.speakingVerseIndex}`);
+                    if (el) {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }, 300);
+            }
         }
 
         window.onload = initApp;
