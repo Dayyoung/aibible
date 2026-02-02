@@ -423,16 +423,27 @@
         }
 
         function updateURL(chapter, number, verse) {
+            const currentParams = new URLSearchParams(window.location.search);
+            const lang = currentParams.get('lang');
+
             const params = new URLSearchParams();
+            if (lang) params.set('lang', lang);
             if (chapter) params.set('chapter', chapter);
             if (number) params.set('number', number);
             if (verse) params.set('verse', verse);
+
             const newURL = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
-            window.history.replaceState({ chapter, number, verse }, '', newURL);
+            window.history.replaceState({ chapter, number, verse, lang }, '', newURL);
         }
 
         function clearURL() {
-            window.history.replaceState({}, '', window.location.pathname);
+            const currentParams = new URLSearchParams(window.location.search);
+            const lang = currentParams.get('lang');
+            if (lang) {
+                window.history.replaceState({}, '', window.location.pathname + '?lang=' + lang);
+            } else {
+                window.history.replaceState({}, '', window.location.pathname);
+            }
         }
 
         function copyShareURL() {
@@ -1026,14 +1037,22 @@
                 }
             } catch (e) { console.error("Failed to load index", e); }
 
+            // [URL Parameter Handling - Early for lang]
+            const urlParams = new URLSearchParams(window.location.search);
+            const langParam = urlParams.get('lang');
+
             // [Browser Language Support]
             const browserLang = navigator.language || navigator.userLanguage;
-            const isBrowserKorean = browserLang.startsWith('ko');
+            let isKorean = browserLang.startsWith('ko');
+            if (langParam === 'ko') isKorean = true;
+            else if (langParam === 'en') isKorean = false;
 
             // Default to saved version or based on browser language
             let lastVersion = localStorage.getItem('bible_selected_version');
-            if (!lastVersion) {
-                lastVersion = isBrowserKorean ? 'ko_ko' : 'en_kjv';
+            if (!lastVersion || langParam) {
+                if (langParam === 'ko') lastVersion = 'ko_ko';
+                else if (langParam === 'en') lastVersion = 'en_kjv';
+                else if (!lastVersion) lastVersion = isKorean ? 'ko_ko' : 'en_kjv';
             }
 
             // Set initial state for currentVersion based on index if available
@@ -1055,7 +1074,6 @@
             }
 
             // [URL Parameter Handling]
-            const urlParams = new URLSearchParams(window.location.search);
             const chapterQuery = urlParams.get('chapter');
             const numberQuery = urlParams.get('number') || urlParams.get('chapter_number');
             const verseQuery = urlParams.get('verse');
