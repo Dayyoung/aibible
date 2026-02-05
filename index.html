@@ -10,6 +10,7 @@
     <title>Holy Bible App</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="youtube_mapping.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap');
 
@@ -152,6 +153,7 @@
                 noData: "No data available.",
                 language: "Language",
                 share: "Share",
+                youtube: "Watch on YouTube",
                 copied: "Link copied to clipboard!"
             },
             ko: {
@@ -174,6 +176,7 @@
                 noData: "데이터가 없습니다.",
                 language: "언어",
                 share: "공유하기",
+                youtube: "유튜브에서 보기",
                 copied: "주소가 복사되었습니다!"
             }
         };
@@ -453,6 +456,18 @@
             }).catch(err => {
                 console.error('Failed to copy: ', err);
             });
+        }
+
+        function openYouTube() {
+            if (state.currentBookIndex === null || !state.bibleData) return;
+            const book = state.bibleData[state.currentBookIndex];
+            const key = `${book.abbrev}_${state.currentChapterIndex}`;
+            const videoId = (typeof YOUTUBE_VIDEOS !== 'undefined') ? YOUTUBE_VIDEOS[key] : null;
+            if (videoId) {
+                window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
+            } else {
+                window.open(`https://www.youtube.com/@bibleForAI/videos`, '_blank');
+            }
         }
 
         function onClickVerse(index) {
@@ -883,6 +898,10 @@
                                 <button onclick="copyShareURL()"
                                     class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 text-stone-600 transition-colors"
                                     title="${getUiString('share')}"><i data-lucide="share-2"
+                                        size="18"></i></button>
+                                <button onclick="openYouTube()"
+                                    class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 text-stone-600 transition-colors"
+                                    title="${getUiString('youtube')}"><i data-lucide="youtube"
                                         size="18"></i></button>
                                 <button onclick="playChapter()" id="tts-btn"
                                     class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/50 text-stone-600 transition-colors"
