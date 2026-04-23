@@ -4,3 +4,7 @@ chrome_user_data/
 short/
 #images/
 secret/
+*.pyc
+__pycache__/
+token.json
+*.json
