@@ -19,9 +19,12 @@ const MIME_TYPES = {
 const server = http.createServer((req, res) => {
     console.log(`${req.method} ${req.url}`);
 
-    // Parse URL path
-    let filePath = req.url === '/' ? '/index.html' : req.url;
-    filePath = path.join(__dirname, filePath.split('?')[0]);
+    // Parse URL path — serve index.html for directory requests
+    let filePath = req.url.split('?')[0];
+    if (filePath === '/' || filePath.endsWith('/')) {
+        filePath += 'index.html';
+    }
+    filePath = path.join(__dirname, filePath);
 
     // Check if path is outside the folder (security check)
     if (!filePath.startsWith(__dirname)) {
