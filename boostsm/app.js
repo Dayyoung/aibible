@@ -998,9 +998,7 @@ const ui = {
             orders.load();
         } else {
             state.user = null;
-            container.innerHTML = `
-                <button class="btn-primary" onclick="ui.openAuthModal()">Sign In</button>
-            `;
+            container.innerHTML = '';
         }
     },
 
