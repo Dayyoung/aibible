@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = 8888;
+const ROOT = __dirname;
 
 const MIME_TYPES = {
     '.html': 'text/html',
@@ -13,21 +14,32 @@ const MIME_TYPES = {
     '.jpg': 'image/jpeg',
     '.gif': 'image/gif',
     '.svg': 'image/svg+xml',
-    '.ico': 'image/x-icon'
+    '.ico': 'image/x-icon',
+    '.mp4': 'video/mp4',
+    '.mp3': 'audio/mpeg',
+    '.srt': 'text/plain'
 };
 
 const server = http.createServer((req, res) => {
     console.log(`${req.method} ${req.url}`);
 
-    // Parse URL path — serve index.html for directory requests
     let filePath = req.url.split('?')[0];
+
+    // Redirect obsolete /boostsm/kr/ requests to /boostsm/
+    if (filePath === '/boostsm/kr' || filePath === '/boostsm/kr/' || filePath.startsWith('/boostsm/kr/')) {
+        const urlParts = req.url.split('?');
+        const search = urlParts[1] ? '?' + urlParts[1] : '';
+        res.writeHead(301, { 'Location': '/boostsm/' + search });
+        res.end();
+        return;
+    }
+
     if (filePath === '/' || filePath.endsWith('/')) {
         filePath += 'index.html';
     }
-    filePath = path.join(__dirname, filePath);
+    filePath = path.join(ROOT, filePath);
 
-    // Check if path is outside the folder (security check)
-    if (!filePath.startsWith(__dirname)) {
+    if (!filePath.startsWith(ROOT)) {
         res.statusCode = 403;
         res.end('Forbidden');
         return;
@@ -35,6 +47,7 @@ const server = http.createServer((req, res) => {
 
     fs.stat(filePath, (err, stats) => {
         if (err || !stats.isFile()) {
+            // If path is a directory, serve its index.html
             if (!err && stats.isDirectory()) {
                 const urlParts = req.url.split('?');
                 const pathname = urlParts[0];
@@ -65,5 +78,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-    console.log(`Server is running at http://localhost:${PORT}`);
+    console.log(`AIBible server running at http://localhost:${PORT}`);
 });

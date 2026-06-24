@@ -45,6 +45,14 @@ TRANSLATION_DICT = {
     "패키지": "Package",
     "늘리기": "Growth",
     "올리기": "Booster",
+    "공유": "Shares",
+    "구독형": "Subscription",
+    "연령지정": "Age Targeted",
+    "자동": "Auto",
+    "몰래보기": "Anonymous View",
+    "스토리": "Story",
+    "좋아요팔로워": "Likes & Followers",
+    "개인계정": "Personal Profile",
 
     # Review Subjects
     "안전하게 작업해주셔서 감사합니다": "Thank you for the safe delivery!",
@@ -140,8 +148,9 @@ def parse_product_detail(product_no):
                 surcharge = int(surcharge_match.group(1).replace(",", ""))
             
             total_krw = base_price + surcharge
-            # Convert KRW to USD and double it
+            # Convert KRW to USD and apply 100% margin (double it)
             usd_price = round((total_krw / 1300.0) * 2.0, 2)
+            krw_price = total_krw * 2
             
             # Clean package label
             label = re.sub(r'\s*\(\+[\d,]+원\)', '', opt_text).strip()
@@ -151,7 +160,7 @@ def parse_product_detail(product_no):
             options.append({
                 "id": opt_val,
                 "label": label,
-                "krw": total_krw,
+                "krw": krw_price,
                 "usd": usd_price
             })
             
@@ -160,7 +169,7 @@ def parse_product_detail(product_no):
         options.append({
             "id": "default",
             "label": "Standard Package",
-            "krw": base_price,
+            "krw": base_price * 2,
             "usd": round((base_price / 1300.0) * 2.0, 2)
         })
         
@@ -168,47 +177,62 @@ def parse_product_detail(product_no):
 
 def scrape_categories():
     products_data = []
+    seen_ids = set()
     
     for category_name, url in CATEGORIES.items():
-        print(f"Scraping category: {category_name}")
-        html = fetch_html(url)
-        if not html:
-            continue
+        page = 1
+        seen_ids_in_cat = set()
         
-        # Regex to find product links
-        matches = re.findall(r'href="(/product/([^/]+)/(\d+)/category/\d+/display/\d+/)"', html)
-        seen_ids = set()
-        
-        for full_path, name_slug, product_no in matches:
-            if product_no in seen_ids:
-                continue
-            seen_ids.add(product_no)
-            
-            raw_name = urllib.parse.unquote(name_slug)
-            translated_name = translate_text(raw_name)
-            
-            print(f" - Found product {product_no}: {raw_name} -> {translated_name}")
-            options = parse_product_detail(product_no)
-            
-            if not options:
-                continue
+        while True:
+            page_url = f"{url}?page={page}"
+            print(f"Scraping category: {category_name} (Page {page})")
+            html = fetch_html(page_url)
+            if not html:
+                break
                 
-            price_usd = options[0]["usd"]
+            matches = re.findall(r'href="(/product/([^/]+)/(\d+)/category/\d+/display/\d+/)"', html)
+            if not matches:
+                break
+                
+            new_products_found = False
+            for full_path, name_slug, product_no in matches:
+                if product_no in seen_ids:
+                    continue
+                seen_ids.add(product_no)
+                seen_ids_in_cat.add(product_no)
+                new_products_found = True
+                
+                raw_name = urllib.parse.unquote(name_slug)
+                translated_name = translate_text(raw_name)
+                
+                print(f" - Found product {product_no}: {raw_name} -> {translated_name}")
+                options = parse_product_detail(product_no)
+                
+                if not options:
+                    continue
+                    
+                price_usd = options[0]["usd"]
+                
+                products_data.append({
+                    "id": product_no,
+                    "name": translated_name,
+                    "raw_name": raw_name,
+                    "category": category_name,
+                    "image": f"https://instarter.co.kr/web/product/medium/prd_{product_no}.png",
+                    "price": price_usd,
+                    "options": options
+                })
+                time.sleep(0.3)
+                
+            if not new_products_found:
+                break
+                
+            page += 1
             
-            products_data.append({
-                "id": product_no,
-                "name": translated_name,
-                "raw_name": raw_name,
-                "category": category_name,
-                "image": f"https://instarter.co.kr/web/product/medium/prd_{product_no}.png",
-                "price": price_usd,
-                "options": options
-            })
-            time.sleep(0.5)
-            
-    with open("bibleforai/boostsm/products.json", "w", encoding="utf-8") as f:
+    output_path = "/Users/dayyoung/project/aibible/boostsm/products.json"
+    with open(output_path, "w", encoding="utf-8") as f:
         json.dump(products_data, f, ensure_ascii=False, indent=2)
-    print("Saved products.json")
+    print(f"Saved products.json to {output_path}")
 
 def scrape_reviews():
     url = "https://instarter.co.kr/board/%EC%83%81%ED%92%88-%EC%82%AC%EC%9A%A9%ED%9B%84%EA%B8%B0/4/"
@@ -262,7 +286,7 @@ def scrape_reviews():
             {"product": "Global Instagram Followers Increase", "title": "Very practical and reliable service, definitely buying again.", "rating": 5, "author": "S***", "date": "26.06.18"}
         ]
         
-    with open("bibleforai/boostsm/reviews.json", "w", encoding="utf-8") as f:
+    with open("/Users/dayyoung/project/aibible/boostsm/reviews.json", "w", encoding="utf-8") as f:
         json.dump(reviews, f, ensure_ascii=False, indent=2)
     print("Saved reviews.json")
 
