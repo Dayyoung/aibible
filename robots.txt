@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+Allow: /category/
+Allow: /products.json
+Disallow: /dashboard
+Disallow: /cart
+
+# AI Crawlers specific configurations
+User-agent: GPTBot
+Allow: /
+Disallow: /cart
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://bibleforai.com/sitemap.xml

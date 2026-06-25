@@ -25,11 +25,19 @@ const server = http.createServer((req, res) => {
 
     let filePath = req.url.split('?')[0];
 
-    // Redirect obsolete /boostsm/kr/ requests to /boostsm/
-    if (filePath === '/boostsm/kr' || filePath === '/boostsm/kr/' || filePath.startsWith('/boostsm/kr/')) {
+    // Redirect obsolete /boostsm/ URLs to the root / (SEO safety)
+    if (filePath === '/boostsm' || filePath === '/boostsm/') {
         const urlParts = req.url.split('?');
         const search = urlParts[1] ? '?' + urlParts[1] : '';
-        res.writeHead(301, { 'Location': '/boostsm/' + search });
+        res.writeHead(301, { 'Location': '/' + search });
+        res.end();
+        return;
+    }
+    if (filePath.startsWith('/boostsm/')) {
+        const urlParts = req.url.split('?');
+        const remainder = filePath.substring(9); // remove '/boostsm/'
+        const search = urlParts[1] ? '?' + urlParts[1] : '';
+        res.writeHead(301, { 'Location': '/' + remainder + search });
         res.end();
         return;
     }
@@ -47,7 +55,6 @@ const server = http.createServer((req, res) => {
 
     fs.stat(filePath, (err, stats) => {
         if (err || !stats.isFile()) {
-            // If path is a directory, serve its index.html
             if (!err && stats.isDirectory()) {
                 const urlParts = req.url.split('?');
                 const pathname = urlParts[0];
@@ -78,5 +85,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-    console.log(`AIBible server running at http://localhost:${PORT}`);
+    console.log(`Server is running at http://localhost:${PORT}`);
 });

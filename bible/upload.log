@@ -1,0 +1,14 @@
+/Users/dayyoung/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+An error occurred: module 'importlib.metadata' has no attribute 'packages_distributions'
+/Users/dayyoung/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:237: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+No new videos found in movies folder.
+Loaded 1192 videos from history.
+Found 892 pending uploads (Sorted by Bible Order).
+Processing pending upload: 1_Kings_Chapter_10.mp4
+Starting upload for: 1 Kings Chapter 10 (NIRV)
+Uploading file...
+Failed to upload 1_Kings_Chapter_10.mp4: <HttpError 403 when requesting None returned "The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.". Details: "[{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]">
+QUOTA/LIMIT ERROR DETECTED. Stopping uploads.
+Quota/Limit Exceeded

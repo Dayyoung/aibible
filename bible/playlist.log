@@ -1,0 +1,216 @@
+An error occurred: module 'importlib.metadata' has no attribute 'packages_distributions'
+/Users/dayyoung/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:237: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+/Users/dayyoung/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+2026-01-12 07:35:35,273 - INFO - Starting Playlist Manager...
+2026-01-12 07:35:35,275 - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-01-12 07:35:35,279 - INFO - Fetching all channel videos to sync IDs...
+2026-01-12 07:35:39,895 - INFO - Fetched 463 videos from channel.
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Leviticus Chapter 13 (NIRV): OOsKXqc6HU8
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Leviticus Chapter 14 (NIRV): NcAi0M4vPGI
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Leviticus Chapter 15 (NIRV): 31aquGV-9Yw
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Leviticus Chapter 16 (NIRV): DjX9_AE9EQ4
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Leviticus Chapter 17 (NIRV): 816hxd1BTmw
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Leviticus Chapter 18 (NIRV): 1zIr35TzLMY
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Leviticus Chapter 19 (NIRV): T8cqs-k_r0o
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Leviticus Chapter 20 (NIRV): b1-5s8UUwIM
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Leviticus Chapter 21 (NIRV): uoxKfeoVA68
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Leviticus Chapter 22 (NIRV): Ske5lZy_h40
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Leviticus Chapter 23 (NIRV): -VhYS2bi7ak
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Leviticus Chapter 24 (NIRV): qrhiJx491Ms
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Leviticus Chapter 25 (NIRV): AXas0Xnrf1E
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Leviticus Chapter 26 (NIRV): mpCj6H6_x8I
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Leviticus Chapter 27 (NIRV): OB8kVw6pzgg
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Numbers Chapter 1 (NIRV): PIMjHaBiu8I
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Numbers Chapter 2 (NIRV): 0ax5LtlLRaI
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Numbers Chapter 3 (NIRV): Wj7EFioAmyc
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Numbers Chapter 4 (NIRV): x4t_5X3Acw0
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Numbers Chapter 5 (NIRV): n0_qgr9lmmw
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Numbers Chapter 6 (NIRV): JoiaRbvWse4
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Numbers Chapter 7 (NIRV): 1U3MNqhdYus
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Numbers Chapter 8 (NIRV): aS2xkndE92I
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Numbers Chapter 9 (NIRV): Hgp3MFPNWaE
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Numbers Chapter 10 (NIRV): ycKqqDeee-E
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Numbers Chapter 11 (NIRV): n5EMAa4fz14
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Numbers Chapter 12 (NIRV): JyhG6FO3GS0
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Numbers Chapter 13 (NIRV): 014E33fPy_k
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Numbers Chapter 14 (NIRV): s4hnLT2-g2c
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Numbers Chapter 15 (NIRV): 0TMsyUDvEXw
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Numbers Chapter 16 (NIRV): 6JePW74hXRE
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Numbers Chapter 17 (NIRV): TN_Ru3Nit_w
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Numbers Chapter 18 (NIRV): nkNSKHOvFMc
+2026-01-12 07:35:39,895 - INFO - Matched Video ID for Numbers Chapter 19 (NIRV): 5PumRpNhW9o
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Numbers Chapter 20 (NIRV): ttV6TInsBxQ
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Numbers Chapter 21 (NIRV): 6CbhilCqAqI
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Numbers Chapter 22 (NIRV): V5LIDiSvplI
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Numbers Chapter 23 (NIRV): cBSVY6kkzqc
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Numbers Chapter 24 (NIRV): HkxRHr7Aso4
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Numbers Chapter 25 (NIRV): fk-yZs9J1aI
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Numbers Chapter 26 (NIRV): OcO30MWbrdg
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Numbers Chapter 27 (NIRV): gyCW-_ec5tk
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Numbers Chapter 28 (NIRV): EoF7m3Tiifc
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Numbers Chapter 29 (NIRV): yCbPDhRFBdk
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Numbers Chapter 30 (NIRV): OwTxKdnXZJQ
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Numbers Chapter 31 (NIRV): fhSTue1FETE
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Numbers Chapter 32 (NIRV): yjRMzyM2KKQ
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Numbers Chapter 33 (NIRV): TqWtfShKLTk
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Numbers Chapter 34 (NIRV): SPZatPuN_Gg
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Numbers Chapter 35 (NIRV): MO7WkPp9-9g
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Numbers Chapter 36 (NIRV): fK5aEXWgrQ8
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 1 (NIRV): Zs3EP5Lz2Rc
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 2 (NIRV): U5hpwSI0Ngk
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 3 (NIRV): EcG8_yNcIOE
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 4 (NIRV): LgVvzdIRuhk
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 5 (NIRV): 3fr4xx0nHVM
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 6 (NIRV): 0DDPVERXyzo
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 7 (NIRV): 9bheZahup6c
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 8 (NIRV): GlZbZToZcAU
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 9 (NIRV): Td49FOCloko
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 10 (NIRV): V_icyJEAN28
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 11 (NIRV): OZ8mTiEIyk0
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 12 (NIRV): 4XplscBTXUs
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 13 (NIRV): jqClWtoYu-g
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 14 (NIRV): mfIbhdB4YBI
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 15 (NIRV): Tf9RkojL0zo
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 16 (NIRV): fD1aQHF2Bc0
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 17 (NIRV): Ne24TLQjro4
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 18 (NIRV): NBSTrhiI_Ew
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 19 (NIRV): XXGlF2z604w
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 20 (NIRV): JXUHhPdv7Pw
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 21 (NIRV): Ys7RZlqKTTk
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 22 (NIRV): Wa6jlf3b9W0
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 23 (NIRV): wyoUaqgpg4o
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 24 (NIRV): Vu5RoZsPxL0
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 25 (NIRV): zk_hnOlJo8U
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 26 (NIRV): Sg3jn4txvyg
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 27 (NIRV): xztlx2q0aTo
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 28 (NIRV): VSQj71WEYTE
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 29 (NIRV): Wc-kNQVAjpk
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 30 (NIRV): sXarFU1dA9A
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 31 (NIRV): vFzJyLuaSDM
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 32 (NIRV): 4Tb5FA7BVEI
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 33 (NIRV): KL3FpdhJgkE
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Deuteronomy Chapter 34 (NIRV): W0HpV4WO4NE
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Joshua Chapter 1 (NIRV): Xd40QKViyXw
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Joshua Chapter 2 (NIRV): -Bm4q9765RE
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Joshua Chapter 3 (NIRV): wD5fqe6ZwT4
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Joshua Chapter 4 (NIRV): 8MdTvp0_bM0
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Joshua Chapter 5 (NIRV): 60FtVEHJrLM
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Joshua Chapter 6 (NIRV): d25ND4y9nTg
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Joshua Chapter 7 (NIRV): SDYSBtcG4XQ
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Joshua Chapter 8 (NIRV): 1yzWAuTWRRA
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Joshua Chapter 9 (NIRV): LyX2LLzqaoE
+2026-01-12 07:35:39,896 - INFO - Matched Video ID for Joshua Chapter 10 (NIRV): CSjcCfyIzM0
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Joshua Chapter 11 (NIRV): NYHdZQ16hLU
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Joshua Chapter 12 (NIRV): OE4UtRm4h24
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Joshua Chapter 13 (NIRV): 0xrCpp5Gfd0
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Joshua Chapter 14 (NIRV): nZIO0_aMqpI
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Joshua Chapter 15 (NIRV): nriYvmtH5Sg
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Joshua Chapter 16 (NIRV): ZSszSYUyvp0
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Joshua Chapter 18 (NIRV): Tfue7dzfozY
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Joshua Chapter 19 (NIRV): vcb7b2sXXi4
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Joshua Chapter 20 (NIRV): 343DWZD9qQw
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Joshua Chapter 21 (NIRV): hr29GpZOwvQ
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Joshua Chapter 22 (NIRV): wsJiN12y2g4
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Joshua Chapter 23 (NIRV): xAT5NrvKcBU
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Joshua Chapter 24 (NIRV): aIelULyp_Sg
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Judges Chapter 1 (NIRV): czJrUx03Cbk
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Judges Chapter 2 (NIRV): zei21v6XdHo
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Judges Chapter 3 (NIRV): 9mkU400GEvI
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Judges Chapter 4 (NIRV): 6LTZGXjrUQg
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Judges Chapter 5 (NIRV): xpUnBMKBLb0
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Judges Chapter 6 (NIRV): WntyrJVRkEQ
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Judges Chapter 7 (NIRV): -IVWgKUX28o
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Judges Chapter 8 (NIRV): T-naeLe3ACc
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Judges Chapter 9 (NIRV): EWoZ200gDYA
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Judges Chapter 10 (NIRV): 78t62TlF-qU
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Judges Chapter 11 (NIRV): MSB7T5jkXKc
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Judges Chapter 12 (NIRV): hs4Ct2KdKng
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Judges Chapter 13 (NIRV): nkbwgFE9qdI
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Judges Chapter 14 (NIRV): 2khVup6n2yA
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Judges Chapter 15 (NIRV): 5cRjUBaura8
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Judges Chapter 16 (NIRV): viRXmGw0_AE
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Judges Chapter 17 (NIRV): ffYCdC31DnY
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Judges Chapter 18 (NIRV): 4IPKEy97f_o
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Judges Chapter 19 (NIRV): 8HMzQqJpfdk
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Judges Chapter 20 (NIRV): Xm2HXSkpcro
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Judges Chapter 21 (NIRV): o3eOJ9FQyYE
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Ruth Chapter 1 (NIRV): hmqLSn_YXwg
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Ruth Chapter 2 (NIRV): XDJtHqKzmpc
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Ruth Chapter 3 (NIRV): w5afaxLHoqw
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for Ruth Chapter 4 (NIRV): VWvREGoabT4
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for 1 Samuel Chapter 1 (NIRV): 9BDqTEfjTH0
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for 1 Samuel Chapter 2 (NIRV): UXLe8CdKvqE
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for 1 Samuel Chapter 3 (NIRV): x992tLYA1x0
+2026-01-12 07:35:39,897 - INFO - Matched Video ID for 1 Samuel Chapter 4 (NIRV): XaV2F4hPOLc
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 5 (NIRV): Wys3n0_kO0w
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 6 (NIRV): bVGTRYUPCII
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 7 (NIRV): Z1JQ_YRjJRg
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 8 (NIRV): b7F6DF4UOkk
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 9 (NIRV): 53JhCG_daos
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 10 (NIRV): jTbpPMI10Hs
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 11 (NIRV): Ca1Fa2j2GtM
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 12 (NIRV): XebB7hKs8To
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 13 (NIRV): KMUpF1bXyW8
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 14 (NIRV): Oa4yYQK30Ls
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 15 (NIRV): 9GGpwG7PS2k
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 17 (NIRV): axN3qa92ZK8
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 18 (NIRV): JsGJsQkXKXE
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 19 (NIRV): 7NpvTk0mdpA
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 20 (NIRV): gMZ9KN4jBGY
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 21 (NIRV): BMshYmxYFW0
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 23 (NIRV): zMeA7m7sPDE
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 22 (NIRV): buVn9Mxv2zo
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 26 (NIRV): mivaF1HdKIs
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 27 (NIRV): AMI1TUlKZDQ
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 31 (NIRV): Sr-3UTn3oe8
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 25 (NIRV): FR7WwinHnaQ
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 8 (NIRV): rlAEeJkGKrY
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 9 (NIRV): gjNhIX6_Nd4
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 24 (NIRV): tte_RMKKHHc
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 30 (NIRV): P-UebEgsqng
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Kings Chapter 8 (NIRV): x9CnHZXVaiU
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 11 (NIRV): zsEW_qmdf0w
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Kings Chapter 9 (NIRV): zkLIpgVAWvA
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 10 (NIRV): X__KOdh1rqQ
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 12 (NIRV): tQhOZ0hFyzQ
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 13 (NIRV): kZqK3KEovT0
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 17 (NIRV): 4YljfGuoIDs
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 16 (NIRV): twRppnfpjmw
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 14 (NIRV): f5wckfJWfXQ
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 15 (NIRV): 7RT1AE34kac
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 24 (NIRV): YATOdcwRZns
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 18 (NIRV): PplHodI_SwQ
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Kings Chapter 1 (NIRV): ws-UWgMcLjk
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 19 (NIRV): eY24OsalseQ
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Kings Chapter 2 (NIRV): BVJD7naTK48
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Kings Chapter 3 (NIRV): o-Jp2ffMTTg
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Kings Chapter 7 (NIRV): L7RBCNMz0VI
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 22 (NIRV): MMne3FHKqwg
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 23 (NIRV): n8ir2X8JIgM
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Kings Chapter 6 (NIRV): V-XPuBhxLE4
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Kings Chapter 4 (NIRV): xQ7ci46fNI0
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 21 (NIRV): fm2-BG5-2Xg
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 20 (NIRV): t9kyxo3c91Q
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Kings Chapter 5 (NIRV): VLOsiczm24U
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 29 (NIRV): acRxihFpiKo
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 4 (NIRV): sGh6I5fXITE
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 5 (NIRV): jfDjQ8BTnX4
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 1 Samuel Chapter 28 (NIRV): tj5BlGzdbGY
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 7 (NIRV): YFs_Nl9ZRXQ
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 6 (NIRV): vfuk6RaaPBs
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 2 (NIRV): sOro2rb5dxE
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 3 (NIRV): yV85nDPBXag
+2026-01-12 07:35:39,898 - INFO - Matched Video ID for 2 Samuel Chapter 1 (NIRV): N1aAENvqIt8
+2026-01-12 07:35:39,899 - INFO - Updating video_history.json with found Video IDs...
+2026-01-12 07:35:39,906 - INFO - Fetching existing playlists...
+2026-01-12 07:35:40,132 - INFO - Found 4 playlists.
+2026-01-12 07:35:40,132 - INFO - Processing Book: Leviticus (15 videos)
+2026-01-12 07:35:40,132 - INFO - Playlist for Leviticus not found. Creating...
+2026-01-12 07:35:41,088 - INFO - Created playlist: Leviticus (Bible Reading)
+2026-01-12 07:35:44,066 - INFO - Added video OOsKXqc6HU8 to playlist PL0wY0Ytc50f_ACPujDpCWSJRzJ7rEJBr4
+2026-01-12 07:35:45,765 - WARNING - Encountered 403 Forbidden with reason "quotaExceeded"
+2026-01-12 07:35:45,765 - ERROR - Error adding video NcAi0M4vPGI to playlist PL0wY0Ytc50f_ACPujDpCWSJRzJ7rEJBr4: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&alt=json returned "The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.". Details: "[{'message': 'The request cannot be completed because you have exceeded your <a href="/youtube/v3/getting-started#quota">quota</a>.', 'domain': 'youtube.quota', 'reason': 'quotaExceeded'}]">
+2026-01-12 07:35:45,765 - CRITICAL - QUOTA/LIMIT ERROR DETECTED. Stopping script.
+Quota/Limit Exceeded
