@@ -95,13 +95,13 @@ const translations = {
         "success-toast-msg": "Order placed successfully! Redirecting...",
         "promo-tag-insta": "Instagram",
         "promo-tag-youtube": "YouTube",
-        "promo-tag-combo": "All-in-One",
+        "promo-tag-combo": "TikTok & X",
         "promo-title-insta": "Boost Instagram Followers & Likes",
         "promo-title-youtube": "YouTube Subs, Views & Watch Time",
-        "promo-title-combo": "Unified Account SMM Management",
+        "promo-title-combo": "TikTok & X Viral Booster",
         "promo-text-insta": "Stable domestic-only Korean users provision!",
         "promo-text-youtube": "Custom management for partner monetization prerequisites!",
-        "promo-text-combo": "Bundled packages discount per platform!",
+        "promo-text-combo": "Explode short-form video views, retweets, and post likes!",
         "promo-btn-text": "Go to Service →",
         "sec-intro-title": "Why SMM Growth is <span>Essential</span>",
         "sec-intro-desc": "Don't struggle with algorithms alone. Here's how we help you reach your goals.",
@@ -126,7 +126,9 @@ const translations = {
         "trust-privacy-title": "Absolute Privacy Shield",
         "trust-privacy-desc": "No password required. Your orders are processed completely anonymously, ensuring your personal security.",
         "trust-refill-title": "30-Day Refill Guarantee",
-        "trust-refill-desc": "Any organic drops are covered. Simply click the Refill button in your dashboard, and we'll restore your counts for free."
+        "trust-refill-desc": "Any organic drops are covered. Simply click the Refill button in your dashboard, and we'll restore your counts for free.",
+        "chart-title": "BibleForAI Cumulative Client Growth (2015-2026)",
+        "chart-subtitle": "Steady organic growth over 11 years of SMM service leadership"
     },
     ko: {
         "logo-subtitle": "소셜미디어 성장의 시작!",
@@ -192,13 +194,13 @@ const translations = {
         "success-toast-msg": "주문이 성공적으로 완료되었습니다! 잠시 후 이동합니다...",
         "promo-tag-insta": "인스타그램",
         "promo-tag-youtube": "유튜브",
-        "promo-tag-combo": "올인원 패키지",
+        "promo-tag-combo": "틱톡 & X",
         "promo-title-insta": "인스타그램 팔로워, 좋아요 늘리기",
         "promo-title-youtube": "유튜브 구독자·조회수·시청시간까지",
-        "promo-title-combo": "한 번 주문으로 계정 통합 관리",
+        "promo-title-combo": "틱톡 & X 바이럴 부스터",
         "promo-text-insta": "국내 유일 한국인 구매 안정적 제공!",
         "promo-text-youtube": "수익화 조건 맞춤 관리!",
-        "promo-text-combo": "플랫폼별 서비스 묶음 할인!",
+        "promo-text-combo": "틱톡 숏폼 영상 조회수 및 X 트윗 리트윗·좋아요 급증!",
         "promo-btn-text": "서비스 바로 가기 →",
         "sec-intro-title": "소셜미디어가 <span>자연스럽게 성장</span>해야 하는 이유",
         "sec-intro-desc": "플랫폼 알고리즘과 혼자 외롭게 싸우지 마세요. 검증된 SMM 솔루션이 목표 달성을 돕습니다.",
@@ -223,7 +225,9 @@ const translations = {
         "trust-privacy-title": "완벽한 프라이버시 보호",
         "trust-privacy-desc": "계정 비밀번호를 요구하지 않습니다. 모든 서비스는 100% 철저한 익명성과 강력한 보안 환경에서 비밀리에 안전하게 수행됩니다.",
         "trust-refill-title": "30일 무상 A/S 리필 보장",
-        "trust-refill-desc": "서비스 이용 후 플랫폼 자체 필터링 등으로 미세한 이탈 발생 시 마이페이지에서 단 한 번의 클릭으로 신속하게 무상 리필해 드립니다."
+        "trust-refill-desc": "서비스 이용 후 플랫폼 자체 필터링 등으로 미세한 이탈 발생 시 마이페이지에서 단 한 번의 클릭으로 신속하게 무상 리필해 드립니다.",
+        "chart-title": "BibleForAI 연도별 누적 고객사 성장 곡선",
+        "chart-subtitle": "SMM 전문 솔루션 분야 11년 동안 검증된 안정적인 우상향 그래프"
     }
 };
 

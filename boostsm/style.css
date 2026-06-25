@@ -1180,3 +1180,104 @@ footer {
     color: var(--bg-dark);
     border-color: var(--text-main);
 }
+
+/* Brand logo icon markers in promo header */
+.promo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.promo-header .promo-tag {
+    margin-bottom: 0;
+}
+
+.brand-icons {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.promo-insta .brand-icons {
+    color: #e1306c;
+}
+
+.promo-youtube .brand-icons {
+    color: #ff0000;
+}
+
+.promo-combo .brand-icons {
+    color: #00f0ff;
+}
+
+.brand-icons svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+/* Stats Layout with Graph */
+.stats-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+@media (min-width: 992px) {
+    .stats-wrapper {
+        grid-template-columns: 1fr 1.2fr;
+    }
+}
+
+.growth-chart-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2.25rem 2rem;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition);
+}
+
+.growth-chart-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.08);
+}
+
+.chart-header {
+    margin-bottom: 1.5rem;
+}
+
+.chart-title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.25rem;
+}
+
+.chart-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+}
+
+.growth-chart-svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.growth-chart-svg text {
+    font-family: var(--font-body);
+    font-weight: 500;
+}
