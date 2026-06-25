@@ -60,7 +60,7 @@ const translations = {
         "btn-signout": "Sign Out",
         "dash-col-profile": "User Profile",
         "dash-col-wallet": "Wallet Balance",
-        "dash-wallet-val": "$0.00",
+        "dash-wallet-val": "$0",
         "dash-col-purchases": "Purchases",
         "dash-profile-sub": "Please sign in to save records permanently.",
         "dash-wallet-sub": "Points balance for fast checkouts",
@@ -776,7 +776,7 @@ const ui = {
         const name = isKorean ? (prod.name_ko || prod.name) : (prod.name_en || prod.name);
         const desc = isKorean ? (prod.description_ko || '') : (prod.description_en || '');
         const priceLabel = isKorean ? '시작 가격' : 'Starting from';
-        const price = isKorean ? `₩${(prod.price_krw || 0).toLocaleString()}` : `$${(prod.price_usd || prod.price || 0).toFixed(2)}`;
+        const price = isKorean ? `₩${(prod.price_krw || 0).toLocaleString()}` : `$${Math.round(prod.price_usd || prod.price || 0)}`;
         const buyBtnText = isKorean ? '구매하기' : 'Buy Now';
 
         card.innerHTML = `
@@ -898,7 +898,7 @@ const ui = {
             const option = document.createElement('option');
             option.value = opt.id;
             const label = isKorean ? (opt.label_ko || opt.label) : (opt.label_en || opt.label);
-            const price = isKorean ? `₩${(opt.krw || 0).toLocaleString()}` : `$${(opt.usd || 0).toFixed(2)}`;
+            const price = isKorean ? `₩${(opt.krw || 0).toLocaleString()}` : `$${Math.round(opt.usd || 0)}`;
             option.innerText = `${label} - ${price}`;
             select.appendChild(option);
         });
@@ -927,7 +927,7 @@ const ui = {
         if (opt) {
             state.selectedOption = opt;
             const isKorean = state.language === 'ko';
-            const price = isKorean ? `₩${(opt.krw || 0).toLocaleString()}` : `$${(opt.usd || 0).toFixed(2)}`;
+            const price = isKorean ? `₩${(opt.krw || 0).toLocaleString()}` : `$${Math.round(opt.usd || 0)}`;
             document.getElementById('modal-price-display').innerText = price;
         }
     },
@@ -963,7 +963,7 @@ const ui = {
                         purchase_units: [{
                             amount: {
                                 currency_code: 'USD',
-                                value: state.selectedOption.usd.toString()
+                                value: Math.round(state.selectedOption.usd || 0).toString()
                             },
                             description: `${state.selectedProduct.name} - ${state.selectedOption.label}`
                         }]
@@ -976,7 +976,7 @@ const ui = {
                         const isKorean = state.language === 'ko';
                         const name = isKorean ? (state.selectedProduct.name_ko || state.selectedProduct.name) : (state.selectedProduct.name_en || state.selectedProduct.name);
                         const label = isKorean ? (state.selectedOption.label_ko || state.selectedOption.label) : (state.selectedOption.label_en || state.selectedOption.label);
-                        const amount = isKorean ? `₩${(state.selectedOption.krw || 0).toLocaleString()}` : `$${(state.selectedOption.usd || 0).toFixed(2)}`;
+                        const amount = isKorean ? `₩${(state.selectedOption.krw || 0).toLocaleString()}` : `$${Math.round(state.selectedOption.usd || 0)}`;
 
                         const orderData = {
                             id: details.id,
@@ -1043,9 +1043,9 @@ const ui = {
 
         let total = 0;
         state.cart.forEach((item, index) => {
-            const priceVal = isKorean ? (item.krw || item.price * 1300) : (item.usd || item.price);
+            const priceVal = isKorean ? (item.krw || item.price * 1300) : Math.round(item.usd || item.price);
             total += priceVal;
-            const priceStr = isKorean ? `₩${priceVal.toLocaleString()}` : `$${priceVal.toFixed(2)}`;
+            const priceStr = isKorean ? `₩${priceVal.toLocaleString()}` : `$${priceVal}`;
             
             const row = document.createElement('div');
             row.className = 'price-display-box';
@@ -1065,7 +1065,7 @@ const ui = {
             container.appendChild(row);
         });
 
-        document.getElementById('cart-subtotal').innerText = isKorean ? `₩${total.toLocaleString()}` : `$${total.toFixed(2)}`;
+        document.getElementById('cart-subtotal').innerText = isKorean ? `₩${total.toLocaleString()}` : `$${total}`;
     },
 
     updateCartBadge: function() {
