@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /boostsm/
+Allow: /boostsm/category/
+Allow: /boostsm/products.json
+Disallow: /boostsm/dashboard
+Disallow: /boostsm/cart
+
+# AI Crawlers specific configurations
+User-agent: GPTBot
+Allow: /boostsm/
+Disallow: /boostsm/cart
+
+User-agent: ChatGPT-User
+Allow: /boostsm/
+
+User-agent: Claude-Web
+Allow: /boostsm/
+
+User-agent: Google-Extended
+Allow: /boostsm/
+
+Sitemap: https://bibleforai.com/boostsm/sitemap.xml
