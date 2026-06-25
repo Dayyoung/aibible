@@ -127,8 +127,12 @@ const translations = {
         "trust-privacy-desc": "No password required. Your orders are processed completely anonymously, ensuring your personal security.",
         "trust-refill-title": "30-Day Refill Guarantee",
         "trust-refill-desc": "Any organic drops are covered. Simply click the Refill button in your dashboard, and we'll restore your counts for free.",
-        "chart-title": "BibleForAI Cumulative Client Growth (2015-2026)",
-        "chart-subtitle": "Steady organic growth over 11 years of SMM service leadership"
+        "stats-badge": "11 Years of SMM Leadership, BibleForAI",
+        "stats-title": "Trust Built Over 11 Years, Adding Confidence to Your Choice",
+        "stats-desc": "Since our service launched, order volume has steadily increased, surpassing a 96% repurchase rate in 2026.",
+        "chart-order-label": "Cumulative Orders",
+        "chart-since-label": "Since 2015",
+        "chart-badge-repurchase": "Repurchase Rate 96%"
     },
     ko: {
         "logo-subtitle": "소셜미디어 성장의 시작!",
@@ -226,8 +230,12 @@ const translations = {
         "trust-privacy-desc": "계정 비밀번호를 요구하지 않습니다. 모든 서비스는 100% 철저한 익명성과 강력한 보안 환경에서 비밀리에 안전하게 수행됩니다.",
         "trust-refill-title": "30일 무상 A/S 리필 보장",
         "trust-refill-desc": "서비스 이용 후 플랫폼 자체 필터링 등으로 미세한 이탈 발생 시 마이페이지에서 단 한 번의 클릭으로 신속하게 무상 리필해 드립니다.",
-        "chart-title": "BibleForAI 연도별 누적 고객사 성장 곡선",
-        "chart-subtitle": "SMM 전문 솔루션 분야 11년 동안 검증된 안정적인 우상향 그래프"
+        "stats-badge": "서비스 업력 11년차, BibleForAI",
+        "stats-title": "11년 동안 쌓아온 믿음, 당신의 선택에 신뢰를 더합니다.",
+        "stats-desc": "서비스 오픈 이후 꾸준히 주문량이 증가하며 2026년에는 재구매율 96% 돌파하였습니다.",
+        "chart-order-label": "누적 주문량",
+        "chart-since-label": "Since 2015",
+        "chart-badge-repurchase": "재구매율 96%"
     }
 };
 
