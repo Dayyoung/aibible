@@ -19,12 +19,10 @@ const state = {
         if (saved) return saved;
         
         let defaultLang = 'en';
-        const userLangs = navigator.languages || [navigator.language || navigator.userLanguage || ''];
-        for (const lang of userLangs) {
-            if (lang && lang.toLowerCase().startsWith('ko')) {
-                defaultLang = 'ko';
-                break;
-            }
+        // Get the primary browser language
+        const primaryLang = (navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage || '';
+        if (primaryLang && primaryLang.toLowerCase().startsWith('ko')) {
+            defaultLang = 'ko';
         }
         return defaultLang;
     })()
