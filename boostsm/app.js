@@ -387,6 +387,9 @@ const router = {
     navigate: function(view, params = null) {
         state.currentView = view;
         
+        // Close mobile menu
+        ui.closeMobileMenu();
+        
         // Hide all views
         document.querySelectorAll('.view-section').forEach(el => el.style.display = 'none');
         
@@ -542,6 +545,39 @@ const ui = {
         this.checkAuthStatus();
         this.setupHeaderScroll();
         this.setupFAQ();
+        this.setupMobileMenuEvents();
+    },
+
+    toggleMobileMenu: function() {
+        const nav = document.querySelector('.header-container nav');
+        const toggleBtn = document.getElementById('menu-toggle');
+        if (nav && toggleBtn) {
+            nav.classList.toggle('active');
+            toggleBtn.classList.toggle('active');
+        }
+    },
+
+    closeMobileMenu: function() {
+        const nav = document.querySelector('.header-container nav');
+        const toggleBtn = document.getElementById('menu-toggle');
+        if (nav && nav.classList.contains('active')) {
+            nav.classList.remove('active');
+        }
+        if (toggleBtn && toggleBtn.classList.contains('active')) {
+            toggleBtn.classList.remove('active');
+        }
+    },
+
+    setupMobileMenuEvents: function() {
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('.header-container nav');
+            const toggleBtn = document.getElementById('menu-toggle');
+            if (nav && nav.classList.contains('active') && toggleBtn) {
+                if (!nav.contains(e.target) && !toggleBtn.contains(e.target)) {
+                    this.closeMobileMenu();
+                }
+            }
+        });
     },
 
     setupHeaderScroll: function() {
