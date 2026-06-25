@@ -1059,3 +1059,124 @@ footer {
     line-height: 1.5;
     color: var(--text-muted);
 }
+
+/* Promo Banners Grid */
+.promo-banners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.promo-card {
+    border-radius: 16px;
+    padding: 2.25rem 2rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px;
+}
+
+.promo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Gradients for each brand type */
+.promo-insta {
+    background: linear-gradient(135deg, rgba(225, 48, 108, 0.08) 0%, rgba(240, 94, 35, 0.08) 100%),
+                radial-gradient(circle at 100% 0%, rgba(225, 48, 108, 0.15) 0%, transparent 60%),
+                var(--bg-card);
+}
+.promo-insta:hover {
+    border-color: rgba(225, 48, 108, 0.35);
+    box-shadow: 0 10px 25px rgba(225, 48, 108, 0.12);
+}
+
+.promo-youtube {
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.05) 0%, rgba(31, 31, 31, 0.1) 100%),
+                radial-gradient(circle at 100% 0%, rgba(255, 0, 0, 0.12) 0%, transparent 60%),
+                var(--bg-card);
+}
+.promo-youtube:hover {
+    border-color: rgba(255, 0, 0, 0.35);
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.1);
+}
+
+.promo-combo {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(6, 182, 212, 0.08) 100%),
+                radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.15) 0%, transparent 60%),
+                var(--bg-card);
+}
+.promo-combo:hover {
+    border-color: rgba(139, 92, 246, 0.35);
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.12);
+}
+
+.promo-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.25rem;
+    width: max-content;
+}
+
+.promo-insta .promo-tag {
+    background: rgba(225, 48, 108, 0.12);
+    color: #e1306c;
+}
+
+.promo-youtube .promo-tag {
+    background: rgba(255, 0, 0, 0.12);
+    color: #ff0000;
+}
+
+.promo-combo .promo-tag {
+    background: rgba(6, 182, 212, 0.12);
+    color: #00f0ff;
+}
+
+.promo-title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.promo-text {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.promo-btn {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    width: max-content;
+}
+
+.promo-btn:hover {
+    background: var(--text-main);
+    color: var(--bg-dark);
+    border-color: var(--text-main);
+}
