@@ -367,23 +367,6 @@
         </div>
     </div>
 
-    <!-- Code Display Modal (awesome-design-md templates) -->
-    <div class="modal-backdrop" id="code-modal">
-        <div class="modal-card code-modal-card" style="max-width: 650px;">
-            <button class="modal-close" onclick="closeCodeModal()"><i class="fa-solid fa-xmark"></i></button>
-            <h3 id="code-modal-title">Design visual spec code</h3>
-            <p id="code-modal-desc" class="modal-desc" data-i18n="lbl-copy-instructions">Copy the DESIGN.md visual rules below to guide your AI coding agent.</p>
-            
-            <div class="code-box-wrapper" style="position: relative; margin-bottom: 1.5rem;">
-                <button class="btn-copy-code" onclick="copyCodeToClipboard()" style="position: absolute; top: 0.75rem; right: 0.75rem; background: var(--primary); border: none; color: #ffffff; padding: 0.4rem 0.8rem; border-radius: 6px; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; cursor: pointer; transition: var(--transition); display: flex; align-items: center; gap: 0.25rem;">
-                    <i class="fa-solid fa-copy"></i> <span id="copy-btn-text" data-i18n="btn-copy">Copy Spec</span>
-                </button>
-                <pre class="code-display-block" id="code-display-pre" style="background: #020305; border: 1px solid var(--border); border-radius: 10px; padding: 3rem 1.5rem 1.5rem 1.5rem; text-align: left; max-height: 350px; overflow-y: auto; font-family: monospace; font-size: 0.78rem; line-height: 1.5; color: #a7f3d0; white-space: pre-wrap; word-break: break-all;"></pre>
-            </div>
-
-            <button class="btn-primary" style="width: 100%;" onclick="triggerPremiumBuildFromCode()" data-i18n="btn-scaffold-dfy">Order Premium CDN Deployment ($100)</button>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer>

@@ -1723,12 +1723,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const codeBackdrop = document.getElementById('code-modal');
-    if (codeBackdrop) {
-        codeBackdrop.addEventListener('click', (e) => {
-            if (e.target === codeBackdrop) closeCodeModal();
-        });
-    }
+
 });
 
 // Render Category Filter Tabs
@@ -1751,70 +1746,7 @@ function renderCategoryTabs() {
     });
 }
 
-// Dynamic DESIGN.md Generator
-function generateDesignMd(brandKey) {
-    const brand = brandStyles[brandKey];
-    if (!brand) return "";
 
-    return `# ${brand.name_en} DESIGN.md Visual Specification
-
-## 1. Visual Theme & Atmosphere
-- **Mood / Density:** ${brand.desc_en}
-- **Design Philosophy:** ${brand.tokens.layout}
-- **Aesthetic Direction:** Custom digital design system optimized for high-impact responsive pages.
-
-## 2. Color Palette & Roles
-- **Primary Color:** ${brand.tokens.primary} (Core branding, focus elements, primary actions)
-- **Accent Color:** ${brand.tokens.accent} (Highlights, secondary signals, visual indicators)
-- **Background Canvas:** ${brand.tokens.bg} (Main layout base)
-- **Text Main:** ${brand.tokens.fg} (High contrast body text)
-- **Border / Divider:** ${brand.tokens.border} (Section divisions, card edges)
-
-## 3. Typography Rules
-- **Font Family:** ${brand.tokens.fonts}
-- **Hierarchy Scale:**
-  - H1 Display: 3.25rem / Leading 1.1 (Monumental display headings)
-  - H2 Section: 2.0rem / Leading 1.25 (Sub-sections and secondary features)
-  - H3 Card Header: 1.25rem / Leading 1.4 (Interactive components)
-  - Body Text: 0.95rem / Leading 1.6 (Paragraph reads and annotations)
-  - Monospace (Metadata/Codes): 0.8rem / Leading 1.5 (Technical footnotes)
-
-## 4. Component Stylings
-- **Buttons / Calls to Action:**
-  - Shape: ${brand.tokens.radius.includes('0') ? 'Sharp square corners (zero-radius)' : `Rounded with border-radius of ${brand.tokens.radius}`}
-  - Transitions: 0.2s smooth cubic-bezier transitions on hover.
-  - Hover states: Light opacity shifts or colored shadow borders matching the accent theme.
-- **Card Layout Blocks:**
-  - background: ${brand.tokens.bg === '#ffffff' ? '#fafafa' : 'rgba(255,255,255,0.02)'};
-  - border: 1px solid ${brand.tokens.border};
-  - border-radius: ${brand.tokens.radius};
-- **Interactive Form Inputs:**
-  - Padding: 0.65rem 1rem.
-  - Border highlight: Focus expands to 1px solid ${brand.tokens.primary}.
-
-## 5. Layout Principles
-- **Grid Layout:** CSS grid system with 1.5rem to 2.5rem margins and dynamic gap flows.
-- **Whitespace Ratio:** High-padding separators to allow breathing room and clean scanning.
-
-## 6. Depth & Elevation
-- **Shadow Tokens:** ${brand.tokens.shadow}
-- **Layering Base:** Stacked cards with explicit overlay dividers.
-
-## 7. Do's and Don'ts
-- **DO:** Stay authentic to ${brand.name_en}'s core visual tokens: ${brand.tokens.primary} on ${brand.tokens.bg}.
-- **DO:** Keep typographical hierarchies strict to enforce reading ease.
-- **DON'T:** Introduce conflicting neon or secondary gradients not defined in the palette.
-- **DON'T:** Use excessive margins that break vertical rhythm on mobile.
-
-## 8. Responsive Behavior
-- **Breakpoints:** Mobile (under 768px: single columns), Tablet (768px - 1024px: 2 columns), Desktop (over 1024px: full columns).
-- **Minimum Tap Target:** 48px x 48px interactive boundaries for all touch actions.
-
-## 9. Agent Prompt Guide
-- **Quick Reference Prompt:**
-  "Build a landing page matching the ${brand.name_en} design spec. Set background to ${brand.tokens.bg}, text main to ${brand.tokens.fg}, primary to ${brand.tokens.primary}, and accent to ${brand.tokens.accent}. Use the font family: ${brand.tokens.fonts}."
-`;
-}
 
 // Render Style Catalog (sorted by popularity score descending)
 function renderCatalog() {
@@ -1857,7 +1789,6 @@ function renderCatalog() {
             <h3>${name}</h3>
             <p>${desc}</p>
             <div class="catalog-actions">
-                <button class="btn-catalog-free" onclick="openCodeModal('${key}')" data-i18n="btn-get-spec">${translations[lang]['btn-get-spec']}</button>
                 <button class="btn-catalog-premium" onclick="openPurchaseModal('${key}')" data-i18n="btn-order-build">${translations[lang]['btn-order-build']}</button>
             </div>
         `;
@@ -1874,57 +1805,7 @@ function renderCatalog() {
     }
 }
 
-// Code modal controls
-function openCodeModal(styleKey) {
-    const item = brandStyles[styleKey];
-    if (!item) return;
 
-    currentPackage = {
-        key: styleKey,
-        name_en: item.name_en,
-        name_ko: item.name_ko,
-        price: premiumPackage.price
-    };
-
-    const isKo = currentLang === 'ko';
-    document.getElementById('code-modal-title').innerText = isKo ? item.name_ko : item.name_en;
-    
-    // Generate code dynamically
-    const dynamicCode = generateDesignMd(styleKey);
-    document.getElementById('code-display-pre').innerText = dynamicCode;
-    
-    // Reset copy button
-    const copyBtnText = document.getElementById('copy-btn-text');
-    copyBtnText.innerText = translations[currentLang]['btn-copy'];
-
-    document.getElementById('code-modal').classList.add('active');
-}
-
-function closeCodeModal() {
-    document.getElementById('code-modal').classList.remove('active');
-}
-
-function copyCodeToClipboard() {
-    const codeText = document.getElementById('code-display-pre').innerText;
-    
-    navigator.clipboard.writeText(codeText).then(() => {
-        const copyBtnText = document.getElementById('copy-btn-text');
-        copyBtnText.innerText = translations[currentLang]['btn-copy-done'];
-        
-        setTimeout(() => {
-            copyBtnText.innerText = translations[currentLang]['btn-copy'];
-        }, 2000);
-    }).catch(err => {
-        console.error('Failed to copy text: ', err);
-    });
-}
-
-function triggerPremiumBuildFromCode() {
-    closeCodeModal();
-    if (currentPackage) {
-        openPurchaseModal(currentPackage.key);
-    }
-}
 
 // Purchase modal controls
 function openPurchaseModal(styleKey) {
