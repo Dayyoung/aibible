@@ -15,7 +15,7 @@ const state = {
     selectedOption: null,
     paypalSdkLoaded: false,
     language: (() => {
-        const saved = localStorage.getItem('boostsm_lang');
+        const saved = localStorage.getItem('bibleforai_lang');
         if (saved) return saved;
         
         let defaultLang = 'en';
@@ -1081,7 +1081,7 @@ const ui = {
         
         if (details.isTest) {
             clientId = 'AeZhTof6R4GGZ8tp2dz1l1tIt970_y_G1uTufgjs-7_rYxRNsre2GKd5LUaiAqDmdOlYzABi-_HgSpe4';
-            secret = 'EK11QteIhpnSRe3e9F0sXElkrvK0hW8UAu9_PJAd6jw-Y7Xo5Awc5OkUGCztudtazWhr-KU6imgm1Glg';
+            secret = '[REDACTED]';
         }
 
         const orderData = {
@@ -1369,7 +1369,7 @@ function applyTranslations() {
 
 function changeLanguage(lang) {
     state.language = lang;
-    localStorage.setItem('boostsm_lang', lang);
+    localStorage.setItem('bibleforai_lang', lang);
     
     applyTranslations();
     

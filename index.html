@@ -5,6 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BibleForAI | AI-Powered Business Solutions</title>
     <meta name="description" content="Empower your digital presence and business strategy with BibleForAI's premium web services. Explore our SMM Growth Booster, B2C Lead Database, and more.">
+    <meta name="keywords" content="BibleForAI, AI Solutions, SMM Growth Booster, B2C Lead Database, B2B Database, AI Landing Page, Marketing Automation">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bibleforai.com/">
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bibleforai.com/">
+    <meta property="og:title" content="BibleForAI | AI-Powered Business Solutions">
+    <meta property="og:description" content="Empower your digital presence and business strategy with BibleForAI's premium web services. Explore our SMM Growth Booster, B2C Lead Database, and more.">
+    <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+    <meta property="og:site_name" content="BibleForAI">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bibleforai.com/">
+    <meta name="twitter:title" content="BibleForAI | AI-Powered Business Solutions">
+    <meta name="twitter:description" content="Empower your digital presence and business strategy with BibleForAI's premium web services. Explore our SMM Growth Booster, B2C Lead Database, and more.">
+    <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+    <!-- JSON-LD Structured Data Markups (SEO/AEO/GEO Optimization) -->
+    
+    <!-- Schema 1: Website & Organization Entity info -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BibleForAI",
+      "url": "https://bibleforai.com/",
+      "logo": "https://bibleforai.com/assets/logo.png",
+      "email": "snsherocom@gmail.com",
+      "description": "Empower your digital presence and business strategy with BibleForAI's premium web services, including social media growth and compliant lead databases.",
+      "foundingDate": "2015",
+      "sameAs": [
+        "https://www.instagram.com/bibleforai",
+        "https://twitter.com/bibleforai"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "BibleForAI",
+      "url": "https://bibleforai.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://bibleforai.com/?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Schema 2: Platform Solutions Service Directory -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "BibleForAI Digital Solutions Platform",
+      "description": "Suite of AI-driven business tools and automation services designed to maximize social reach, lead generation, and conversions.",
+      "provider": {
+        "@type": "Organization",
+        "name": "BibleForAI",
+        "url": "https://bibleforai.com/"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Business & Marketing Automation Catalog",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Active Solutions",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "SMM Growth Booster",
+                  "url": "https://bibleforai.com/boostsm/",
+                  "description": "Safe, organic, and password-free automated social media growth booster for Instagram, YouTube, TikTok, X, and Facebook."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "B2C Lead Database",
+                  "url": "https://bibleforai.com/b2cdb/",
+                  "description": "GDPR-compliant, opt-in verified customer leads including phone numbers, email directories, WhatsApp activity profiles, and Telegram targets."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "B2B Core Database",
+                  "url": "https://bibleforai.com/b2bdb/",
+                  "description": "Segmented contact info of corporate decision-makers, executives, and founders for direct outreach campaigns."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "AI Landing Page Creator",
+                  "url": "https://bibleforai.com/landPage/",
+                  "description": "Instant high-converting promotional landing pages tailored by AI for business services."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+    </script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,6 +137,8 @@
             --border-card: rgba(255, 255, 255, 0.06);
             --primary-purple: #8b5cf6;
             --primary-cyan: #06b6d4;
+            --primary-emerald: #10b981;
+            --primary-indigo: #6366f1;
             --text-main: #f3f4f6;
             --text-muted: #9ca3af;
             --font-heading: 'Outfit', sans-serif;
@@ -180,7 +298,7 @@
 
         .solutions-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
         }
 
@@ -236,6 +354,24 @@
             transform: translateY(-8px);
             border-color: var(--primary-cyan);
             box-shadow: 0 15px 35px rgba(6, 182, 212, 0.12), 0 0 15px rgba(6, 182, 212, 0.1);
+        }
+
+        .card-active-b2b {
+            border-color: rgba(16, 185, 129, 0.15);
+        }
+        .card-active-b2b:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-emerald);
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.12), 0 0 15px rgba(16, 185, 129, 0.1);
+        }
+
+        .card-active-land {
+            border-color: rgba(99, 102, 241, 0.15);
+        }
+        .card-active-land:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-indigo);
+            box-shadow: 0 15px 35px rgba(99, 102, 241, 0.12), 0 0 15px rgba(99, 102, 241, 0.1);
         }
 
         .card-disabled {
@@ -366,6 +502,28 @@
             box-shadow: 0 8px 25px rgba(6, 182, 212, 0.35);
         }
 
+        .btn-b2b {
+            background: var(--primary-emerald);
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+        }
+        .btn-b2b:hover {
+            background: #059669;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+        }
+
+        .btn-land {
+            background: var(--primary-indigo);
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+        }
+        .btn-land:hover {
+            background: #4f46e5;
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.35);
+        }
+
         .btn-disabled {
             background: rgba(255, 255, 255, 0.03);
             color: rgba(255, 255, 255, 0.2);
@@ -445,10 +603,10 @@
 
     <!-- Navigation Header -->
     <header>
-        <div class="logo-container">
+        <a href="/" class="logo-container" style="text-decoration: none; color: inherit;">
             <div class="logo-icon"><i class="fa-solid fa-brain"></i></div>
             <div class="logo-text">Bible<span>ForAI</span></div>
-        </div>
+        </a>
         <select class="lang-selector" onchange="toggleLang(this.value)">
             <option value="en">🌐 English</option>
             <option value="ko">🇰🇷 한국어</option>
@@ -493,45 +651,31 @@
                     <a href="/b2cdb/" class="card-btn btn-db" id="b2c-btn">Launch Database</a>
                 </div>
 
-                <!-- B2B Database (Coming Soon) -->
-                <div class="card card-disabled">
+                <!-- B2B Database Banner (Active) -->
+                <div class="card card-active-b2b" onmousemove="updateCardCoordinates(event, this)">
                     <div class="card-header">
-                        <div class="card-icon icon-disabled"><i class="fa-solid fa-building-user"></i></div>
-                        <span class="status-badge badge-soon" data-i18n="badge-soon">Coming Soon</span>
+                        <div class="card-icon" style="background: linear-gradient(135deg, var(--primary-emerald), var(--primary-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 1.8rem; font-weight: 800;"><i class="fa-solid fa-building-user"></i></div>
+                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
                     </div>
                     <div class="card-body">
                         <h3 id="b2b-title">B2B Core Database</h3>
                         <p id="b2b-desc">Target corporate decision makers, corporate executives, and businesses with curated, industry-segmented corporate email lists.</p>
                     </div>
-                    <button class="card-btn btn-disabled" id="b2b-btn" disabled>Unavailable</button>
+                    <a href="/b2bdb/" class="card-btn btn-b2b" id="b2b-btn">Launch Database</a>
                 </div>
 
-                <!-- AI Landing Page (Coming Soon) -->
-                <div class="card card-disabled">
+                <!-- AI Landing Page (Active) -->
+                <div class="card card-active-land" onmousemove="updateCardCoordinates(event, this)">
                     <div class="card-header">
-                        <div class="card-icon icon-disabled"><i class="fa-solid fa-code"></i></div>
-                        <span class="status-badge badge-soon" data-i18n="badge-soon">Coming Soon</span>
+                        <div class="card-icon" style="background: linear-gradient(135deg, var(--primary-indigo), var(--primary-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 1.8rem; font-weight: 800;"><i class="fa-solid fa-code"></i></div>
+                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
                     </div>
                     <div class="card-body">
                         <h3 id="land-title">AI Landing Page Creator</h3>
                         <p id="land-desc">Instantly build, customize, and deploy optimized promotional landing pages designed for high lead conversion and marketing automation.</p>
                     </div>
-                    <button class="card-btn btn-disabled" id="land-btn" disabled>Unavailable</button>
+                    <a href="/landPage/" class="card-btn btn-land" id="land-btn">Launch Creator</a>
                 </div>
-
-                <!-- Steam Keys (Coming Soon) -->
-                <div class="card card-disabled">
-                    <div class="card-header">
-                        <div class="card-icon icon-disabled"><i class="fa-solid fa-key"></i></div>
-                        <span class="status-badge badge-soon" data-i18n="badge-soon">Coming Soon</span>
-                    </div>
-                    <div class="card-body">
-                        <h3 id="steam-title">Steam Game Key Vault</h3>
-                        <p id="steam-desc">Explore our automated retail catalog of licensed steam product keys, bundle redemptions, and premium game license unlocks.</p>
-                    </div>
-                    <button class="card-btn btn-disabled" id="steam-btn" disabled>Unavailable</button>
-                </div>
-
             </div>
         </section>
     </main>
@@ -571,15 +715,11 @@
                 
                 "b2b-title": "B2B Core Database",
                 "b2b-desc": "Target corporate decision makers, corporate executives, and businesses with curated, industry-segmented corporate email lists.",
-                "b2b-btn": "Coming Soon",
+                "b2b-btn": "Launch Database",
                 
                 "land-title": "AI Landing Page Creator",
                 "land-desc": "Instantly build, customize, and deploy optimized promotional landing pages designed for high lead conversion and marketing automation.",
-                "land-btn": "Coming Soon",
-                
-                "steam-title": "Steam Game Key Vault",
-                "steam-desc": "Explore our automated retail catalog of licensed steam product keys, bundle redemptions, and premium game license unlocks.",
-                "steam-btn": "Coming Soon"
+                "land-btn": "Launch Creator"
             },
             ko: {
                 "hero-title": "AI 솔루션으로 비즈니스 성장을 극대화하세요",
@@ -598,21 +738,17 @@
                 
                 "b2b-title": "B2B 전문 데이터베이스",
                 "b2b-desc": "특정 업종, 직무, 의사결정권자들을 타겟팅한 기업 이메일 및 담당자 정보를 제공하는 B2B 맞춤형 데이터 서비스입니다.",
-                "b2b-btn": "커밍순",
+                "b2b-btn": "데이터베이스 바로가기",
                 
                 "land-title": "AI 랜딩페이지 빌더",
                 "land-desc": "높은 마케팅 전환율을 보장하는 고성능 비즈니스 홍보용 랜딩페이지를 AI 기술을 활용하여 빠르고 정교하게 구축해 드립니다.",
-                "land-btn": "커밍순",
-                
-                "steam-title": "게임 스팀키 스토어",
-                "steam-desc": "라이선스 검증이 완료된 정품 스팀 패키지 키, 인기 게임 번들 상품권 등을 안전하게 자동 발송하는 키 유통 마켓 서비스입니다.",
-                "steam-btn": "커밍순"
+                "land-btn": "랜딩빌더 바로가기"
             }
         };
 
         // Initialize Language based on system or local storage
         let currentLang = localStorage.getItem('bibleforai_lang') || (() => {
-            const browserLang = navigator.language || navigator.userLanguage || '';
+            const browserLang = (navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage || '';
             return browserLang.toLowerCase().startsWith('ko') ? 'ko' : 'en';
         })();
 
@@ -647,10 +783,6 @@
             document.getElementById('land-title').innerText = dict['land-title'];
             document.getElementById('land-desc').innerText = dict['land-desc'];
             document.getElementById('land-btn').innerText = dict['land-btn'];
-
-            document.getElementById('steam-title').innerText = dict['steam-title'];
-            document.getElementById('steam-desc').innerText = dict['steam-desc'];
-            document.getElementById('steam-btn').innerText = dict['steam-btn'];
 
             // Badges
             document.querySelectorAll('[data-i18n="badge-active"]').forEach(el => {

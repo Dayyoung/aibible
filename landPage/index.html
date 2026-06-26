@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BibleForAI - AI Landing Page Creator | Build High-Converting Landing Pages</title>
+    <meta name="description" content="Scaffold brand-aligned, conversion-optimized landing pages for free. Curated design systems from Stripe, Linear, Notion, Vercel, and Claude. Premium deployment at $100/page.">
+    <meta name="keywords" content="AI Landing Page, Landing Page Builder, awesome-design-md benchmark, free landing page template, stripe style page, linear style design, custom landing page deployment">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bibleforai.com/landPage/">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bibleforai.com/landPage/">
+    <meta property="og:title" content="BibleForAI - AI Landing Page Creator | Free Templates">
+    <meta property="og:description" content="Access visual spec templates curated from awesome-design-md. Get free Stripe, Linear, Notion styles, or order custom hosted builds.">
+    <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+    <meta property="og:site_name" content="BibleForAI Landing Page Creator">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bibleforai.com/landPage/">
+    <meta name="twitter:title" content="BibleForAI - AI Landing Page Creator">
+    <meta name="twitter:description" content="Generate visual specifications for free or deploy custom SEO-optimized pages for $100/page.">
+    <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AeZhTof6R4GGZ8tp2dz1l1tIt970_y_G1uTufgjs-7_rYxRNsre2GKd5LUaiAqDmdOlYzABi-_HgSpe4&currency=USD"></script>
+
+    <!-- JSON-LD Structured Data Markups (SEO/AEO/GEO Optimization) -->
+
+    <!-- Schema 1: FAQPage Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the awesome-design-md benchmark and how are templates free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our style catalog is benchmarked against the awesome-design-md repository, providing structured markdown design guidelines (DESIGN.md) for brands like Stripe, Notion, and Linear. Copying these visual specifications to instruct your AI coding agents is completely free."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the $100 premium custom build include?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For $100 per page, our professional team uses AI agents to custom-craft your landing page, set up premium global CDN hosting, link your custom domain, integrate cold lead databases/SMM boosters, and ensure 100% responsive, fast-loading SEO optimization."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I request a custom design based on an existing webpage reference?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! When ordering a custom landing page, you can paste the 'Reference URL / Original Page Address' you want us to clone or adapt. If you do not have a reference, simply select the 'None' option and our AI will build a tailor-made style."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are the deployed landing pages optimized for search engines?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. All premium landing pages are coded using clean semantic HTML5, fast-loading scripts, structured JSON-LD schemas, Open Graph tags, canonical pointers, and sitemaps to secure high rankings on search and answer engines."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema 2: Landing Page Service Product Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "BibleForAI Premium Landing Page Deployment",
+      "image": "https://bibleforai.com/assets/og-preview.png",
+      "description": "Done-for-you professional AI-engineered landing page development and global CDN hosting integration, based on premium brand design specifications.",
+      "brand": {
+        "@type": "Brand",
+        "name": "BibleForAI"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.95",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "2400"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "100.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="app-header">
+        <div class="header-container">
+            <a href="/" class="logo-group">
+                <span class="logo-title">BibleForAI</span>
+                <span class="logo-subtitle" data-i18n="logo-subtitle">LANDING PAGE!</span>
+            </a>
+            
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#" id="nav-home" onclick="navigate('home')" class="active" data-i18n="nav-home">Home</a></li>
+                    <li><a href="#" id="nav-catalog" onclick="navigate('catalog')" data-i18n="nav-catalog">Style Catalog</a></li>
+                    <li><a href="#" id="nav-pricing" onclick="navigate('pricing')" data-i18n="nav-pricing">Pricing</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-orders" onclick="navigate('orders')">
+                    <i class="fa-solid fa-receipt"></i> <span class="btn-text" data-i18n="btn-orders">My Orders</span>
+                </button>
+                <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)" style="margin-left: 0.75rem; padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #ffffff; font-size: 0.82rem; font-weight: 500; cursor: pointer; outline: none; transition: var(--transition);">
+                    <option value="en">🌐 English</option>
+                    <option value="ko">🇰🇷 한국어</option>
+                </select>
+                <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <ul class="mobile-nav-links">
+            <li><a href="#" onclick="navigate('home'); toggleMobileMenu()" data-i18n="nav-home">Home</a></li>
+            <li><a href="#" onclick="navigate('catalog'); toggleMobileMenu()" data-i18n="nav-catalog">Style Catalog</a></li>
+            <li><a href="#" onclick="navigate('pricing'); toggleMobileMenu()" data-i18n="nav-pricing">Pricing</a></li>
+            <li><a href="#" onclick="navigate('orders'); toggleMobileMenu()"><i class="fa-solid fa-receipt"></i> <span data-i18n="btn-orders">My Orders</span></a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <main>
+        
+        <!-- Home View -->
+        <section id="home-view" class="view-section active">
+            <div class="hero">
+                <div class="badge" data-i18n="hero-badge">AI Design Blueprints</div>
+                <h1 class="hero-title" data-i18n="hero-title">AI Landing Page Creator!</h1>
+                <p class="hero-desc" data-i18n="hero-desc">Scaffold visual spec templates for free. Request premium custom deployment and hosted builds for $100 per page.</p>
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="navigate('catalog')" data-i18n="btn-catalog">Browse Free Styles <i class="fa-solid fa-palette"></i></button>
+                    <button class="btn-secondary" onclick="openPurchaseModal('custom')" data-i18n="btn-order-custom">Order Premium Page</button>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-num">5+</span>
+                    <span class="stat-label" data-i18n="stat-brand-styles">Brand Styles</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">Free</span>
+                    <span class="stat-label" data-i18n="stat-md-scaffolds">Markdown Specs</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">$100</span>
+                    <span class="stat-label" data-i18n="stat-custom-build">Premium Custom Build</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">100%</span>
+                    <span class="stat-label" data-i18n="stat-cdn">CDN Hosted Ready</span>
+                </div>
+            </div>
+
+            <!-- Promotion Box -->
+            <div class="section-container">
+                <h2 class="section-title" data-i18n="sec-prop-title">Premium Styles, Free Scaffolding</h2>
+                <p class="section-subtitle" data-i18n="sec-prop-subtitle">Generate brand-aligned layouts using awesome-design-md specifications. Copy the configurations for free or pay for full hosted setups.</p>
+                
+                <div class="card-grid">
+                    <div class="feature-card">
+                        <div class="card-icon"><i class="fa-solid fa-cloud-arrow-down"></i></div>
+                        <h3 data-i18n="feat-free-title">Free Markdown Spec</h3>
+                        <p data-i18n="feat-free-desc">All templates are completely free to extract. Simply copy the DESIGN.md code to direct your AI agent in seconds.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <h3 data-i18n="feat-hosted-title">Fully Managed Hosting</h3>
+                        <p data-i18n="feat-hosted-desc">Our premium package hooks your landing page to globally optimized edge networks (CDN) for sub-second load times.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="card-icon"><i class="fa-solid fa-link"></i></div>
+                        <h3 data-i18n="feat-domain-title">Custom Domain Setup</h3>
+                        <p data-i18n="feat-domain-desc">We configure SSL protocols, DNS registers, and connect your business landing pages directly to your custom domain.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Style Catalog View -->
+        <section id="catalog-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="nav-catalog">Style Catalog</h2>
+                <p data-i18n="catalog-sub">Explore popular brand design layouts. Copy the visual codes for free, or launch a premium custom deployment.</p>
+            </div>
+            
+            <!-- Search bar -->
+            <div class="catalog-search-wrapper" style="max-width: 400px; margin: 0 auto 1.5rem auto; position: relative; padding: 0 1.5rem;">
+                <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 2.25rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.88rem;"></i>
+                <input type="text" id="catalog-search" oninput="renderCatalog()" placeholder="Search brand styles..." data-i18n="search-placeholder" style="width: 100%; padding: 0.75rem 1rem 0.75rem 2.5rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 12px; color: #ffffff; font-family: var(--font-body); font-size: 0.92rem; outline: none; transition: var(--transition);">
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="category-tabs" id="catalog-category-tabs" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-bottom: 2.5rem; max-width: 1000px; margin-left: auto; margin-right: auto; padding: 0 1.5rem;">
+                <!-- Dynamically loaded tabs -->
+            </div>
+            
+            <div class="catalog-grid" id="catalog-grid-items">
+                <!-- Dynamically loaded styles -->
+            </div>
+        </section>
+
+        <!-- Pricing View -->
+        <section id="pricing-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="nav-pricing">Pricing</h2>
+                <p data-i18n="pricing-sub">Pay per page. Free templates forever. Premium custom hosting and integrations are fully managed.</p>
+            </div>
+            
+            <div class="pricing-container">
+                <div class="pricing-card">
+                    <span class="pricing-badge" data-i18n="badge-managed">Done-For-You Build</span>
+                    <h3 data-i18n="lbl-custom-tier">Premium Custom Deployment</h3>
+                    <div class="pricing-amt">$100 <span class="pricing-unit">/ page</span></div>
+                    <p class="pricing-desc" data-i18n="tier-custom-desc">Fully engineered landing page customized for your business. Deployed on secure CDNs and connected to your custom domain.</p>
+                    <ul class="pricing-list">
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="p-feat1">Stripe, Linear, or Notion Layout Customization</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="p-feat2">Custom Domain Integration & SSL Setup</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="p-feat3">Globally Hosted CDN Edge Network</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="p-feat4">SMM / B2C Lead Database Integration</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="p-feat5">Mobile Responsive & SEO Validation Checked</span></li>
+                    </ul>
+                    <button class="btn-primary" style="width: 100%;" onclick="openPurchaseModal('custom')" data-i18n="btn-order-custom">Order Custom Page</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Orders View -->
+        <section id="orders-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="view-orders-title">My Purchase History</h2>
+                <p data-i18n="view-orders-sub">Review your successful orders. Your data is stored locally in your browser workspace.</p>
+            </div>
+            <div class="orders-container">
+                <div class="table-wrapper">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th data-i18n="th-date">Order Date</th>
+                                <th data-i18n="th-order-id">Transaction ID</th>
+                                <th data-i18n="th-product">Product</th>
+                                <th data-i18n="th-tier">Style Selected</th>
+                                <th data-i18n="th-ref-url">Reference URL</th>
+                                <th data-i18n="th-qty">Pages Count</th>
+                                <th data-i18n="th-total">Total Paid</th>
+                                <th data-i18n="th-status">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-tbody">
+                            <!-- Dynamic history loaded by script -->
+                        </tbody>
+                    </table>
+                    <div id="no-orders-msg" class="no-data-msg">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <p data-i18n="no-orders-msg">No purchase records found. Make your first order to see history here!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Purchase Modal -->
+    <div class="modal-backdrop" id="purchase-modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="modal-product-title" data-i18n="modal-title">Configure Order</h3>
+            <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">Configure quantity and complete secure PayPal payment.</p>
+            
+            <div class="order-summary-box">
+                <div class="summary-row">
+                    <span data-i18n="modal-base-pkg">Selected Design Style:</span>
+                    <strong id="modal-package-name">-</strong>
+                </div>
+                <div class="summary-row">
+                    <span data-i18n="modal-base-price-label">Base Price:</span>
+                    <strong id="modal-base-price">$100.00</strong>
+                </div>
+            </div>
+
+            <!-- Email validation field -->
+            <div class="email-control-group" style="margin-bottom: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="order-email" style="font-weight: 600; font-size: 0.92rem; color: var(--text-main); text-align: left;" data-i18n="modal-email-label">Email Address *</label>
+                <input type="email" id="order-email" required placeholder="name@example.com" data-i18n="modal-email-placeholder" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: #ffffff; padding: 0.65rem 1rem; border-radius: 8px; font-family: var(--font-body); font-size: 0.92rem; outline: none; width: 100%; transition: var(--transition);">
+                <span id="email-error" style="color: #ef4444; font-size: 0.78rem; display: none; text-align: left;" data-i18n="modal-email-error"><i class="fa-solid fa-triangle-exclamation"></i> Please enter a valid email address.</span>
+            </div>
+
+            <!-- Reference URL / Original Page Address -->
+            <div class="refurl-control-group" style="margin-bottom: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <label for="order-refurl" style="font-weight: 600; font-size: 0.92rem; color: var(--text-main);" data-i18n="modal-refurl-label">Reference URL / Benchmark Page</label>
+                    <label style="display: flex; align-items: center; gap: 0.25rem; font-size: 0.78rem; color: var(--text-muted); cursor: pointer;">
+                        <input type="checkbox" id="refurl-none" onchange="toggleReferenceUrl(this.checked)" style="accent-color: var(--primary);">
+                        <span data-i18n="modal-refurl-none">None (Not Selected)</span>
+                    </label>
+                </div>
+                <input type="url" id="order-refurl" placeholder="https://example.com/reference-landing-page" data-i18n="modal-refurl-placeholder" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: #ffffff; padding: 0.65rem 1rem; border-radius: 8px; font-family: var(--font-body); font-size: 0.92rem; outline: none; width: 100%; transition: var(--transition);">
+                <span id="refurl-error" style="color: #ef4444; font-size: 0.78rem; display: none; text-align: left;" data-i18n="modal-refurl-error"><i class="fa-solid fa-triangle-exclamation"></i> Please enter a valid URL.</span>
+            </div>
+
+            <div class="quantity-control-group">
+                <label for="order-quantity" data-i18n="modal-pages-count">Pages Count:</label>
+                <div class="qty-selector">
+                    <button class="qty-btn" onclick="adjustQty(-1)"><i class="fa-solid fa-minus"></i></button>
+                    <input type="number" id="order-quantity" value="1" min="1" oninput="updateModalPrice()">
+                    <button class="qty-btn" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <div class="total-price-box">
+                <span data-i18n="modal-total-amt">Total Amount:</span>
+                <span class="price-val" id="modal-total-price">$100.00</span>
+            </div>
+
+            <!-- PayPal Button Container -->
+            <div class="paypal-wrapper">
+                <div id="paypal-button-container"></div>
+            </div>
+            
+            <!-- Hidden Sandbox Test Button -->
+            <button id="paypal-test-button" class="btn-test-checkout" style="display: block; width: 100%; margin-top: 1.2rem; margin-bottom: 1.1rem; background: rgba(255, 255, 255, 0.02); border: 1px dashed rgba(255, 255, 255, 0.15); color: var(--text-muted); opacity: 0.4; font-family: var(--font-heading); font-weight: 600; font-size: 0.8rem; padding: 0.6rem; border-radius: 8px; cursor: pointer; transition: var(--transition);" onmouseover="this.style.opacity=1; this.style.background='rgba(99, 102, 241, 0.1)'; this.style.borderColor='var(--primary)';" onmouseout="this.style.opacity=0.4; this.style.background='rgba(255, 255, 255, 0.02)'; this.style.borderColor='rgba(255, 255, 255, 0.15)';" onclick="triggerTestCheckout()">
+                <i class="fa-solid fa-flask"></i> <span data-i18n="modal-test-btn">Run Sandbox Test Checkout</span>
+            </button>
+            
+            <div class="payment-badges">
+                <span><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL Secured Checkout</span></span>
+                <span><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal Verified</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Code Display Modal (awesome-design-md templates) -->
+    <div class="modal-backdrop" id="code-modal">
+        <div class="modal-card code-modal-card" style="max-width: 650px;">
+            <button class="modal-close" onclick="closeCodeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="code-modal-title">Design visual spec code</h3>
+            <p id="code-modal-desc" class="modal-desc" data-i18n="lbl-copy-instructions">Copy the DESIGN.md visual rules below to guide your AI coding agent.</p>
+            
+            <div class="code-box-wrapper" style="position: relative; margin-bottom: 1.5rem;">
+                <button class="btn-copy-code" onclick="copyCodeToClipboard()" style="position: absolute; top: 0.75rem; right: 0.75rem; background: var(--primary); border: none; color: #ffffff; padding: 0.4rem 0.8rem; border-radius: 6px; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; cursor: pointer; transition: var(--transition); display: flex; align-items: center; gap: 0.25rem;">
+                    <i class="fa-solid fa-copy"></i> <span id="copy-btn-text" data-i18n="btn-copy">Copy Spec</span>
+                </button>
+                <pre class="code-display-block" id="code-display-pre" style="background: #020305; border: 1px solid var(--border); border-radius: 10px; padding: 3rem 1.5rem 1.5rem 1.5rem; text-align: left; max-height: 350px; overflow-y: auto; font-family: monospace; font-size: 0.78rem; line-height: 1.5; color: #a7f3d0; white-space: pre-wrap; word-break: break-all;"></pre>
+            </div>
+
+            <button class="btn-primary" style="width: 100%;" onclick="triggerPremiumBuildFromCode()" data-i18n="btn-scaffold-dfy">Order Premium CDN Deployment ($100)</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="/" class="logo-group" style="text-decoration: none; margin-bottom: 1rem;">
+                    <span class="logo-title">BibleForAI</span>
+                    <span class="logo-subtitle" data-i18n="logo-subtitle">LANDING PAGE!</span>
+                </a>
+                <p data-i18n="hero-desc">Scaffold brand-aligned visual spec templates for free. Request premium custom CDN deployment at only $100 per page.</p>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="foot-channels">Quick Links</h4>
+                <ul>
+                    <li><a href="#" onclick="navigate('catalog')" data-i18n="nav-catalog">Style Catalog</a></li>
+                    <li><a href="#" onclick="navigate('pricing')" data-i18n="nav-pricing">Pricing</a></li>
+                    <li><a href="#" onclick="navigate('orders')" data-i18n="btn-orders">My Orders</a></li>
+                </ul>
+            </div>
+            <div class="footer-support">
+                <h4 data-i18n="foot-legal">Legal & Compliance</h4>
+                <ul>
+                    <li data-i18n="foot-gdpr">GDPR Consent Records</li>
+                    <li data-i18n="foot-canspam">CAN-SPAM Verified</li>
+                    <li data-i18n="foot-match">98% Quality Match</li>
+                    <li data-i18n="foot-contact">Contact support: snsherocom@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="foot-copy">&copy; 2026 BibleForAI LANDING PAGE. All rights reserved. Secure SMM & Lead databases.</p>
+        </div>
+    </footer>
+
+    <!-- App Logic script -->
+    <script src="app.js"></script>
+</body>
+</html>
