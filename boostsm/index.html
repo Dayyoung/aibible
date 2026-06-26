@@ -150,19 +150,44 @@
     <!-- Header -->
     <header id="app-header">
         <div class="header-container">
+                <button class="menu-toggle" id="menu-toggle" onclick="ui.toggleMobileMenu()" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
             <a href="/" class="logo-group">
                 <span class="logo-title">BibleForAI.com</span>
                 <span class="logo-subtitle" data-i18n="logo-subtitle">Boost Your Social Media!</span>
             </a>
             
             <nav>
-                <ul class="nav-links">
-                    <li><a href="#" id="nav-home" onclick="router.navigate('home')" class="active" data-i18n="nav-home">Home</a></li>
-                    <li><a href="#" id="nav-instagram" onclick="router.navigate('category', 'Instagram')" data-i18n="nav-instagram">Instagram</a></li>
-                    <li><a href="#" id="nav-youtube" onclick="router.navigate('category', 'YouTube')" data-i18n="nav-youtube">YouTube</a></li>
-                    <li><a href="#" id="nav-tiktok" onclick="router.navigate('category', 'TikTok_X')" data-i18n="nav-tiktok">TikTok & X</a></li>
-                    <li><a href="#" id="nav-facebook" onclick="router.navigate('category', 'Threads_Facebook')" data-i18n="nav-facebook">Threads & FB</a></li>
-                    <li><a href="#" id="nav-seo" onclick="router.navigate('category', 'SEO_Spotify')" data-i18n="nav-seo">SEO & Spotify</a></li>
+                <ul class="nav-links unified-service-menu">
+                    <li class="mobile-menu-heading">Database & Scraping</li>
+                    <li><a href="/b2bdb/"><i class="fa-solid fa-building-user"></i> B2B Core Database</a></li>
+                    <li><a href="/b2cdb/"><i class="fa-solid fa-database"></i> B2C Lead Database</a></li>
+                    <li><a href="/databoost/"><i class="fa-solid fa-spider"></i> DATABOOST — Web Scraping</a></li>
+                    <li class="mobile-menu-heading">Design & Coding</li>
+                    <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI Landing Page</a></li>
+                    <li><a href="/opencode/"><i class="fa-solid fa-code"></i> OpenCode AI</a></li>
+                    <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> SHOPBOOST — E-Commerce Entry</a></li>
+                    <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> FLOWBOOST — Workflow Automation</a></li>
+                    <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST — Product Photography</a></li>
+                    <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST — AI Presentations</a></li>
+                    <li class="mobile-menu-heading">Marketing & SEO</li>
+                    <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> SMM Growth Booster</a></li>
+                    <li><a href="/prboost/"><i class="fa-solid fa-globe"></i> PRBOOST — Global PR</a></li>
+                    <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> MAILBOOST — Email Marketing</a></li>
+                    <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — AI SEO</a></li>
+                    <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST — Market Research</a></li>
+                    <li class="mobile-menu-heading">Media & Audio</li>
+                    <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> CLIPBOOST — Short-Form Video</a></li>
+                    <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> VOICEBOOST — AI Voice</a></li>
+                    <li><a href="/transboost/"><i class="fa-solid fa-language"></i> TRANSBOOST — Translation</a></li>
+                    <li class="mobile-menu-heading">Strategy & Analytics</li>
+                    <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> AIBOOST — AI Consulting</a></li>
+                    <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST — Data Analytics</a></li>
+                    <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST — AI Chatbot</a></li>
                 </ul>
             </nav>
 
@@ -170,11 +195,6 @@
                 <div id="auth-status-container"></div>
 
                 <!-- Hamburger Mobile Menu Toggle -->
-                <button class="menu-toggle" id="menu-toggle" onclick="ui.toggleMobileMenu()" aria-label="Toggle Menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
             </div>
         </div>
     </header>

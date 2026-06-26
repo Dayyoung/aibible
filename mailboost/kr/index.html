@@ -127,6 +127,12 @@
     <!-- Header -->
     <header id="app-header">
         <div class="header-container">
+                <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="메뉴 열기">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
             <a href="/" class="logo-group">
                 <span class="logo-title">BibleForAI</span>
                 <span class="logo-subtitle" data-i18n="logo-subtitle">메일부스트</span>
@@ -147,21 +153,38 @@
                     <option value="en">🌐 English</option>
                     <option value="ko" selected>🇰🇷 한국어</option>
                 </select>
-                <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="메뉴 열기">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
             </div>
         </div>
     </header>
 
     <!-- Mobile Navigation Drawer -->
     <div class="mobile-drawer" id="mobile-drawer">
-        <ul class="mobile-nav-links">
-            <li><a href="#" onclick="navigate('home'); toggleMobileMenu()" data-i18n="nav-home">홈</a></li>
-            <li><a href="#" onclick="navigate('email'); toggleMobileMenu()" data-i18n="nav-pricing">가격</a></li>
-            <li><a href="#" onclick="navigate('orders'); toggleMobileMenu()"><i class="fa-solid fa-receipt"></i> <span data-i18n="btn-orders">내 주문 내역</span></a></li>
+        <ul class="mobile-nav-links unified-service-menu">
+            <li class="mobile-menu-heading">데이터베이스·스크래핑</li>
+            <li><a href="/b2bdb/"><i class="fa-solid fa-building-user"></i> B2B 전문 데이터베이스</a></li>
+            <li><a href="/b2cdb/"><i class="fa-solid fa-database"></i> B2C 고객 데이터베이스</a></li>
+            <li><a href="/databoost/"><i class="fa-solid fa-spider"></i> DATABOOST — 웹 스크래핑</a></li>
+            <li class="mobile-menu-heading">디자인·코딩</li>
+            <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI 랜딩페이지 빌더</a></li>
+            <li><a href="/opencode/"><i class="fa-solid fa-code"></i> OpenCode AI</a></li>
+            <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> SHOPBOOST — 이커머스 입점</a></li>
+            <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> FLOWBOOST — 업무 자동화</a></li>
+            <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST — AI 제품 사진</a></li>
+            <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST — AI 프레젠테이션</a></li>
+            <li class="mobile-menu-heading">마케팅·SEO</li>
+            <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> 소셜 미디어 부스터</a></li>
+            <li><a href="/prboost/"><i class="fa-solid fa-globe"></i> PRBOOST — 글로벌 PR</a></li>
+            <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> MAILBOOST — 이메일 마케팅</a></li>
+            <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — AI SEO</a></li>
+            <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST — 시장 조사</a></li>
+            <li class="mobile-menu-heading">미디어·오디오</li>
+            <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> CLIPBOOST — 숏폼 영상</a></li>
+            <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> VOICEBOOST — AI 음성</a></li>
+            <li><a href="/transboost/"><i class="fa-solid fa-language"></i> TRANSBOOST — AI 번역</a></li>
+            <li class="mobile-menu-heading">전략·분석</li>
+            <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> AIBOOST — AI 컨설팅</a></li>
+            <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST — 데이터 분석</a></li>
+            <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST — AI 챗봇</a></li>
         </ul>
     </div>
 

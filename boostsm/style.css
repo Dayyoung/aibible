@@ -1577,3 +1577,74 @@ footer {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
+/* Unified left hamburger/service drawer */
+.header-container {
+    justify-content: flex-start;
+    gap: 1rem;
+}
+.logo-group {
+    margin-right: auto;
+}
+.menu-toggle {
+    display: flex !important;
+    order: -1;
+    margin-left: 0 !important;
+    margin-right: 0.85rem;
+    z-index: 260;
+}
+.header-container nav {
+    position: fixed !important;
+    top: 0 !important;
+    left: -320px !important;
+    right: auto !important;
+    width: 300px !important;
+    max-width: 86vw;
+    height: 100vh !important;
+    z-index: 1000;
+    background: rgba(10, 11, 14, 0.96);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid var(--border);
+    border-left: 0 !important;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+    padding: 5rem 1.25rem 2rem !important;
+    transition: left 0.3s ease !important;
+    display: block !important;
+    overflow-y: auto;
+}
+.header-container nav.active {
+    left: 0 !important;
+    right: auto !important;
+}
+.unified-service-menu {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.15rem !important;
+}
+.unified-service-menu .mobile-menu-heading {
+    margin: 1rem 0 0.35rem;
+    padding: 0.2rem 0.35rem;
+    color: var(--primary);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+.unified-service-menu a {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.55rem 0.35rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+.unified-service-menu a:hover {
+    background: rgba(255,255,255,0.06);
+}
+.unified-service-menu i {
+    width: 1.1rem;
+    color: var(--primary);
+    text-align: center;
+}
+
