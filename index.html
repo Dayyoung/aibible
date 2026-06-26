@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BibleForAI | AI-Powered Business Solutions</title>
     <meta name="description" content="Empower your digital presence and business strategy with BibleForAI's premium web services. Explore our SMM Growth Booster, B2C Lead Database, and more.">
-    <meta name="keywords" content="BibleForAI, AI Solutions, SMM Growth Booster, B2C Lead Database, B2B Database, AI Landing Page, Marketing Automation">
+    <meta name="keywords" content="BibleForAI, AI Solutions, SMM Growth Booster, B2C Lead Database, B2B Database, AI Landing Page, Marketing Automation, AI Chatbot, Customer Support Automation, WhatsApp Chatbot, Messenger Bot">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://bibleforai.com/">
 
@@ -140,6 +140,15 @@
                   "name": "MAILBOOST — Email Marketing & Newsletter",
                   "url": "https://bibleforai.com/mailboost/",
                   "description": "Professional email marketing, responsive newsletter design, SPF/DKIM authentication setup, and automation workflows for business growth."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "CHATBOOST — AI Chatbot & Support Automation",
+                  "url": "https://bibleforai.com/chatboost/",
+                  "description": "AI-powered chatbot and customer support automation. Deploy intelligent chatbots across website, WhatsApp, and Messenger with 24/7 availability and custom AI training."
                 }
               }
             ]
@@ -434,6 +443,15 @@
             box-shadow: 0 15px 35px rgba(245, 158, 11, 0.12), 0 0 15px rgba(245, 158, 11, 0.1);
         }
 
+        .card-active-chat {
+            border-color: rgba(20, 184, 166, 0.15);
+        }
+        .card-active-chat:hover {
+            transform: translateY(-8px);
+            border-color: #14b8a6;
+            box-shadow: 0 15px 35px rgba(20, 184, 166, 0.12), 0 0 15px rgba(20, 184, 166, 0.1);
+        }
+
         .card-disabled {
             opacity: 0.6;
             cursor: not-allowed;
@@ -499,6 +517,12 @@
             color: #f59e0b;
             background: rgba(245, 158, 11, 0.06);
             border-color: rgba(245, 158, 11, 0.15);
+        }
+
+        .icon-chat {
+            color: #14b8a6;
+            background: rgba(20, 184, 166, 0.06);
+            border-color: rgba(20, 184, 166, 0.15);
         }
 
         .icon-disabled {
@@ -639,6 +663,17 @@
         .btn-mail:hover {
             background: #d97706;
             box-shadow: 0 8px 25px rgba(245, 158, 11, 0.35);
+        }
+
+        .btn-chat {
+            background: #14b8a6;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(20, 184, 166, 0.2);
+        }
+        .btn-chat:hover {
+            background: #0d9488;
+            box-shadow: 0 8px 25px rgba(20, 184, 166, 0.35);
         }
 
         .btn-disabled {
@@ -832,6 +867,19 @@
                     </div>
                     <a href="/mailboost/" class="card-btn btn-mail" id="mail-btn">Launch Email Service</a>
                 </div>
+
+                <!-- CHATBOOST Banner (Active) -->
+                <div class="card card-active-chat" onmousemove="updateCardCoordinates(event, this)">
+                    <div class="card-header">
+                        <div class="card-icon icon-chat"><i class="fa-solid fa-robot"></i></div>
+                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 id="chat-title">CHATBOOST — AI Chatbot</h3>
+                        <p id="chat-desc">Deploy intelligent AI chatbots across your website, WhatsApp & Messenger. 24/7 customer support automation with custom AI training.</p>
+                    </div>
+                    <a href="/chatboost/" class="card-btn btn-chat" id="chat-btn">Launch Chatbot Service</a>
+                </div>
             </div>
         </section>
     </main>
@@ -849,6 +897,7 @@
                 <a href="/prboost/" id="foot-pr-link">PRBOOST</a>
                 <a href="/clipboost/" id="foot-clip-link">CLIPBOOST</a>
                 <a href="/mailboost/" id="foot-mail-link">MAILBOOST</a>
+                <a href="/chatboost/" id="foot-chat-link">CHATBOOST</a>
             </div>
         </div>
     </footer>
@@ -890,7 +939,11 @@
 
                 "mail-title": "MAILBOOST — Email Marketing",
                 "mail-desc": "Professional responsive newsletter design, SPF/DKIM setup, automation workflows & analytics for email campaign success.",
-                "mail-btn": "Launch Email Service"
+                "mail-btn": "Launch Email Service",
+
+                "chat-title": "CHATBOOST — AI Chatbot",
+                "chat-desc": "Deploy intelligent AI chatbots across your website, WhatsApp & Messenger. 24/7 customer support automation with custom AI training.",
+                "chat-btn": "Launch Chatbot Service"
             },
             ko: {
                 "hero-title": "AI 솔루션으로 비즈니스 성장을 극대화하세요",
@@ -925,7 +978,11 @@
 
                 "mail-title": "MAILBOOST — 이메일 마케팅",
                 "mail-desc": "전문 반응형 뉴스레터 디자인, SPF/DKIM 설정, 자동화 워크플로우 및 분석으로 이메일 캠페인을 성공으로 이끕니다.",
-                "mail-btn": "이메일 서비스 바로가기"
+                "mail-btn": "이메일 서비스 바로가기",
+
+                "chat-title": "CHATBOOST — AI 챗봇",
+                "chat-desc": "웹사이트, 왓츠앱, 메신저에 지능형 AI 챗봇을 배포하세요. 24시간 고객 응대 자동화와 맞춤형 AI 학습을 제공합니다.",
+                "chat-btn": "챗봇 서비스 바로가기"
             }
         };
 
@@ -978,6 +1035,10 @@
             document.getElementById('mail-title').innerText = dict['mail-title'];
             document.getElementById('mail-desc').innerText = dict['mail-desc'];
             document.getElementById('mail-btn').innerText = dict['mail-btn'];
+
+            document.getElementById('chat-title').innerText = dict['chat-title'];
+            document.getElementById('chat-desc').innerText = dict['chat-desc'];
+            document.getElementById('chat-btn').innerText = dict['chat-btn'];
 
             // Badges
             document.querySelectorAll('[data-i18n="badge-active"]').forEach(el => {
