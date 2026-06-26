@@ -231,6 +231,15 @@
                   "url": "https://bibleforai.com/pitchboost/",
                   "description": "Professional AI-powered pitch deck and presentation design. Win clients with stunning investor decks, company profiles, and business proposals crafted by AI and expert designers."
                 }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "INSIGHTBOOST — AI Data Analysis & Business Intelligence Reports",
+                  "url": "https://bibleforai.com/insightboost/",
+                  "description": "AI-powered data analysis and business intelligence reports. Turn raw data into actionable insights with ML models, interactive dashboards, and professional analytics deliverables."
+                }
               }
             ]
           }
@@ -605,6 +614,15 @@
             box-shadow: 0 15px 35px rgba(13, 148, 136, 0.12), 0 0 15px rgba(13, 148, 136, 0.1);
         }
 
+        .card-active-insight {
+            border-color: rgba(6, 182, 212, 0.15);
+        }
+        .card-active-insight:hover {
+            transform: translateY(-8px);
+            border-color: #06b6d4;
+            box-shadow: 0 15px 35px rgba(6, 182, 212, 0.12), 0 0 15px rgba(6, 182, 212, 0.1);
+        }
+
         .card-disabled {
             opacity: 0.6;
             cursor: not-allowed;
@@ -730,6 +748,12 @@
             color: #f97316;
             background: rgba(249, 115, 22, 0.06);
             border-color: rgba(249, 115, 22, 0.15);
+        }
+
+        .icon-insight {
+            color: #06b6d4;
+            background: rgba(6, 182, 212, 0.06);
+            border-color: rgba(6, 182, 212, 0.15);
         }
 
         .icon-disabled {
@@ -980,6 +1004,17 @@
         .btn-pitch:hover {
             background: #ea580c;
             box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+        }
+
+        .btn-insight {
+            background: #06b6d4;
+            color: #07050f;
+            border: none;
+            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.2);
+        }
+        .btn-insight:hover {
+            background: #0891b2;
+            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.35);
         }
 
         .btn-disabled {
@@ -1303,6 +1338,19 @@
                     </div>
                     <a href="/pitchboost/" class="card-btn btn-pitch" id="pitch-btn">Launch Presentations</a>
                 </div>
+
+                <!-- INSIGHTBOOST Card -->
+                <div class="card card-active-insight" onmousemove="updateCardCoordinates(event, this)">
+                    <div class="card-header">
+                        <div class="card-icon icon-insight"><i class="fa-solid fa-chart-bar"></i></div>
+                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 id="insight-title">INSIGHTBOOST — AI Data Analytics</h3>
+                        <p id="insight-desc">AI-powered data analysis & BI reports. Turn raw data into actionable insights with ML models, interactive dashboards, and professional analytics deliverables.</p>
+                    </div>
+                    <a href="/insightboost/" class="card-btn btn-insight" id="insight-btn">Launch Analytics</a>
+                </div>
             </div>
         </section>
     </main>
@@ -1330,6 +1378,7 @@
                 <a href="/voiceboost/" id="foot-voice-link">VOICEBOOST</a>
                 <a href="/transboost/" id="foot-trans-link">TRANSBOOST</a>
                 <a href="/pitchboost/" id="foot-pitch-link">PITCHBOOST</a>
+                <a href="/insightboost/" id="foot-insight-link">INSIGHTBOOST</a>
             </div>
         </div>
     </footer>
@@ -1411,7 +1460,11 @@
 
                 "pitch-title": "PITCHBOOST — AI Presentations",
                 "pitch-desc": "Professional AI-powered pitch deck & presentation design. Win clients with stunning decks, company profiles, and business proposals with data visualization.",
-                "pitch-btn": "Launch Presentations"
+                "pitch-btn": "Launch Presentations",
+
+                "insight-title": "INSIGHTBOOST — AI Data Analytics",
+                "insight-desc": "AI-powered data analysis & BI reports. Turn raw data into actionable insights with ML models, interactive dashboards, and professional analytics deliverables.",
+                "insight-btn": "Launch Analytics"
             },
             ko: {
                 "hero-title": "AI 솔루션으로 비즈니스 성장을 극대화하세요",
@@ -1486,7 +1539,11 @@
 
                 "pitch-title": "PITCHBOOST — AI 프레젠테이션",
                 "pitch-desc": "전문 AI 기반 피치덱 및 프레젠테이션 디자인. 데이터 시각화와 함께 멋진 덱, 회사 소개서, 비즈니스 제안서로 고객을 사로잡으세요.",
-                "pitch-btn": "프레젠테이션 서비스 바로가기"
+                "pitch-btn": "프레젠테이션 서비스 바로가기",
+
+                "insight-title": "INSIGHTBOOST — AI 데이터 분석",
+                "insight-desc": "AI 기반 데이터 분석 및 BI 리포트. ML 모델, 인터랙티브 대시보드, 전문 분석 결과물로 원시 데이터를 실행 가능한 인사이트로 전환하세요.",
+                "insight-btn": "분석 서비스 바로가기"
             }
         };
 
@@ -1579,6 +1636,10 @@
             document.getElementById('pitch-title').innerText = dict['pitch-title'];
             document.getElementById('pitch-desc').innerText = dict['pitch-desc'];
             document.getElementById('pitch-btn').innerText = dict['pitch-btn'];
+
+            document.getElementById('insight-title').innerText = dict['insight-title'];
+            document.getElementById('insight-desc').innerText = dict['insight-desc'];
+            document.getElementById('insight-btn').innerText = dict['insight-btn'];
 
             // Badges
             document.querySelectorAll('[data-i18n="badge-active"]').forEach(el => {
