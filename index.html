@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BibleForAI | AI-Powered Business Solutions</title>
     <meta name="description" content="Empower your digital presence and business strategy with BibleForAI's premium web services. Explore our SMM Growth Booster, B2C Lead Database, and more.">
-    <meta name="keywords" content="BibleForAI, AI Solutions, SMM Growth Booster, B2C Lead Database, B2B Database, AI Landing Page, Marketing Automation, AI Chatbot, Customer Support Automation, WhatsApp Chatbot, Messenger Bot, AI Consulting, AI Strategy, AI Implementation, AI Voice Cloning, AI Voiceover, AI Audio Production, AI Translation, Global Localization, Translation Services, AI Workflow Automation, AI Product Photography, Market Research, Web Scraping, Email Marketing, AI SEO, Short-Form Video, Pitch Deck Design, Presentation Design, AI Presentation, Investor Deck, Business Proposal, PPT Design, Marketplace Entry, Amazon Store Setup, Shopee, Lazada, Rakuten, Global E-Commerce">
+    <meta name="keywords" content="BibleForAI, AI Solutions, SMM Growth Booster, B2C Lead Database, B2B Database, AI Landing Page, Marketing Automation, AI Chatbot, Customer Support Automation, WhatsApp Chatbot, Messenger Bot, AI Consulting, AI Strategy, AI Implementation, AI Voice Cloning, AI Voiceover, AI Audio Production, AI Translation, Global Localization, Translation Services, AI Workflow Automation, AI Product Photography, Market Research, Web Scraping, Email Marketing, AI SEO, Short-Form Video, Pitch Deck Design, Presentation Design, AI Presentation, Investor Deck, Business Proposal, PPT Design, Marketplace Entry, Amazon Store Setup, Shopee, Lazada, Rakuten, Global E-Commerce, Overseas Buyer Discovery, Export Sales Leads, Importer List">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://bibleforai.com/">
 
@@ -248,6 +248,15 @@
                   "name": "SHOPBOOST — Global E-Commerce Marketplace Entry",
                   "url": "https://bibleforai.com/shopboost/",
                   "description": "Professional marketplace entry service for Amazon, Shopee, Lazada, Rakuten, and global e-commerce platforms. Includes brand registration, product optimization, and logistics configuration."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "BUYERBOOST — Global Buyer Discovery",
+                  "url": "https://bibleforai.com/buyerboost/",
+                  "description": "Overseas buyer discovery for exporters, including importer and distributor research, contact-route validation, segmentation, and outreach-ready notes."
                 }
               }
             ]
@@ -660,6 +669,15 @@
             box-shadow: 0 15px 35px rgba(255, 107, 53, 0.12), 0 0 15px rgba(255, 107, 53, 0.1);
         }
 
+        .card-active-buyer {
+            border-color: rgba(2, 132, 199, 0.15);
+        }
+        .card-active-buyer:hover {
+            transform: translateY(-8px);
+            border-color: #0284c7;
+            box-shadow: 0 15px 35px rgba(2, 132, 199, 0.12), 0 0 15px rgba(2, 132, 199, 0.1);
+        }
+
         .card-disabled {
             opacity: 0.6;
             cursor: not-allowed;
@@ -803,6 +821,12 @@
             color: #FF6B35;
             background: rgba(255, 107, 53, 0.06);
             border-color: rgba(255, 107, 53, 0.15);
+        }
+
+        .icon-buyer {
+            color: #0284c7;
+            background: rgba(2, 132, 199, 0.06);
+            border-color: rgba(2, 132, 199, 0.15);
         }
 
         .icon-disabled {
@@ -1086,6 +1110,17 @@
         .btn-shop:hover {
             background: #e55a25;
             box-shadow: 0 8px 25px rgba(255, 107, 53, 0.35);
+        }
+
+        .btn-buyer {
+            background: #0284c7;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(2, 132, 199, 0.2);
+        }
+        .btn-buyer:hover {
+            background: #0369a1;
+            box-shadow: 0 8px 25px rgba(2, 132, 199, 0.35);
         }
 
         .btn-disabled {
@@ -1486,6 +1521,7 @@
             <a href="/aiboost/" class="sidebar-link"><i class="fa-solid fa-brain"></i> <span id="side-title-ai">AI Consulting</span></a>
             <a href="/insightboost/" class="sidebar-link"><i class="fa-solid fa-chart-bar"></i> <span id="side-title-insight">AI Data Analytics</span></a>
             <a href="/chatboost/" class="sidebar-link"><i class="fa-solid fa-robot"></i> <span id="side-title-chat">AI Chatbot</span></a>
+            <a href="/buyerboost/" class="sidebar-link"><i class="fa-solid fa-handshake"></i> <span id="side-title-buyer">Global Buyer Discovery</span></a>
         </div>
     </div>
     <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
@@ -1555,6 +1591,7 @@
                 <a href="/insightboost/" id="foot-insight-link">INSIGHTBOOST</a>
                 <a href="https://opencode.ai/go?ref=CFP69RVVCJ" target="_blank" id="foot-opencode-link">OpenCode AI</a>
                 <a href="/shopboost/" id="foot-shop-link">SHOPBOOST</a>
+                <a href="/buyerboost/" id="foot-buyer-link">BUYERBOOST</a>
             </div>
         </div>
     </footer>
@@ -1659,7 +1696,11 @@
 
                 "shop-title": "SHOPBOOST — E-Commerce Entry",
                 "shop-desc": "Launch your products on Amazon, Shopee, Lazada & Rakuten. Professional marketplace setup, brand registration, and logistics configuration.",
-                "shop-btn": "Launch Shop Service"
+                "shop-btn": "Launch Shop Service",
+
+                "buyer-title": "BUYERBOOST — Global Buyer Discovery",
+                "buyer-desc": "Find qualified overseas buyers, importers, distributors, and business partners with verified contact routes and AI-assisted outreach assets.",
+                "buyer-btn": "Launch Buyer Service"
             },
             ko: {
                 "hero-title": "AI 솔루션으로 비즈니스 성장을 극대화하세요",
@@ -1757,7 +1798,11 @@
 
                 "shop-title": "SHOPBOOST — 이커머스 입점",
                 "shop-desc": "아마존, 쇼피, 라자다, 라쿠텐에서 제품을 판매하세요. 전문가의 마켓플레이스 설정, 브랜드 등록 및 물류 구성 서비스.",
-                "shop-btn": "서비스 바로가기"
+                "shop-btn": "서비스 바로가기",
+
+                "buyer-title": "BUYERBOOST — 해외 바이어 발굴",
+                "buyer-desc": "검증된 연락 경로와 AI 아웃리치 자료로 해외 바이어, 수입사, 유통사, 비즈니스 파트너를 발굴하세요.",
+                "buyer-btn": "바이어 서비스 바로가기"
             }
         };
 
@@ -1847,7 +1892,8 @@
             { id: 'pitch', category: 'media', link: '/pitchboost/', icon: 'fa-solid fa-chart-line', cardClass: 'card-active-pitch', btnClass: 'btn-pitch', iconBoxClass: 'icon-pitch', popularity: 79 },
             { id: 'insight', category: 'strategy', link: '/insightboost/', icon: 'fa-solid fa-chart-bar', cardClass: 'card-active-insight', btnClass: 'btn-insight', iconBoxClass: 'icon-insight', popularity: 75 },
             { id: 'opencode', category: 'design-dev', link: '/opencode/', icon: 'fa-solid fa-code', cardClass: 'card-active-opencode', btnClass: 'btn-opencode', iconBoxClass: 'icon-opencode', popularity: 94 },
-            { id: 'shop', category: 'strategy', link: '/shopboost/', icon: 'fa-solid fa-store', cardClass: 'card-active-shop', btnClass: 'btn-shop', iconBoxClass: 'icon-shop', popularity: 77 }
+            { id: 'shop', category: 'strategy', link: '/shopboost/', icon: 'fa-solid fa-store', cardClass: 'card-active-shop', btnClass: 'btn-shop', iconBoxClass: 'icon-shop', popularity: 77 },
+            { id: 'buyer', category: 'strategy', link: '/buyerboost/', icon: 'fa-solid fa-handshake', cardClass: 'card-active-buyer', btnClass: 'btn-buyer', iconBoxClass: 'icon-buyer', popularity: 80 }
         ];
 
         let activeCategory = 'all';
