@@ -168,6 +168,15 @@
                   "url": "https://bibleforai.com/mkboost/",
                   "description": "AI-powered global market research, TAM/SAM/SOM sizing, competitive intelligence, and industry trend analysis with multi-source verified data."
                 }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "DATABOOST — Web Scraping & Data Extraction",
+                  "url": "https://bibleforai.com/databoost/",
+                  "description": "Custom web scraping and automated data extraction services. Convert any website into structured Excel, CSV, or JSON data with Python-based crawling and anti-bot bypass."
+                }
               }
             ]
           }
@@ -488,6 +497,15 @@
             box-shadow: 0 15px 35px rgba(14, 165, 233, 0.12), 0 0 15px rgba(14, 165, 233, 0.1);
         }
 
+        .card-active-data {
+            border-color: rgba(132, 204, 22, 0.15);
+        }
+        .card-active-data:hover {
+            transform: translateY(-8px);
+            border-color: #84cc16;
+            box-shadow: 0 15px 35px rgba(132, 204, 22, 0.12), 0 0 15px rgba(132, 204, 22, 0.1);
+        }
+
         .card-disabled {
             opacity: 0.6;
             cursor: not-allowed;
@@ -571,6 +589,12 @@
             color: #0ea5e9;
             background: rgba(14, 165, 233, 0.06);
             border-color: rgba(14, 165, 233, 0.15);
+        }
+
+        .icon-data {
+            color: #84cc16;
+            background: rgba(132, 204, 22, 0.06);
+            border-color: rgba(132, 204, 22, 0.15);
         }
 
         .icon-disabled {
@@ -744,6 +768,17 @@
         .btn-mk:hover {
             background: #0284c7;
             box-shadow: 0 8px 25px rgba(14, 165, 233, 0.35);
+        }
+
+        .btn-data {
+            background: #84cc16;
+            color: #000000;
+            border: none;
+            box-shadow: 0 4px 15px rgba(132, 204, 22, 0.2);
+        }
+        .btn-data:hover {
+            background: #65a30d;
+            box-shadow: 0 8px 25px rgba(132, 204, 22, 0.35);
         }
 
         .btn-disabled {
@@ -976,6 +1011,19 @@
                     </div>
                     <a href="/mkboost/" class="card-btn btn-mk" id="mk-btn">Launch Research Service</a>
                 </div>
+
+                <!-- DATABOOST Banner (Active) -->
+                <div class="card card-active-data" onmousemove="updateCardCoordinates(event, this)">
+                    <div class="card-header">
+                        <div class="card-icon icon-data"><i class="fa-solid fa-spider"></i></div>
+                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 id="data-title">DATABOOST — Web Scraping</h3>
+                        <p id="data-desc">Custom web scraping & data extraction. Convert any website into structured Excel, CSV, or JSON with Python crawlers and anti-bot bypass.</p>
+                    </div>
+                    <a href="/databoost/" class="card-btn btn-data" id="data-btn">Launch Scraping Service</a>
+                </div>
             </div>
         </section>
     </main>
@@ -996,6 +1044,7 @@
                 <a href="/chatboost/" id="foot-chat-link">CHATBOOST</a>
                 <a href="/searchboost/" id="foot-search-link">SEARCHBOOST</a>
                 <a href="/mkboost/" id="foot-mk-link">MKBOOST</a>
+                <a href="/databoost/" id="foot-data-link">DATABOOST</a>
             </div>
         </div>
     </footer>
@@ -1049,7 +1098,11 @@
 
                 "mk-title": "MKBOOST — Market Research",
                 "mk-desc": "Global market intelligence, TAM/SAM/SOM sizing, competitor benchmarking, and industry trend forecasting with multi-source verified data.",
-                "mk-btn": "Launch Research Service"
+                "mk-btn": "Launch Research Service",
+
+                "data-title": "DATABOOST — Web Scraping",
+                "data-desc": "Custom web scraping & data extraction. Convert any website into structured Excel, CSV, or JSON with Python crawlers and anti-bot bypass.",
+                "data-btn": "Launch Scraping Service"
             },
             ko: {
                 "hero-title": "AI 솔루션으로 비즈니스 성장을 극대화하세요",
@@ -1096,7 +1149,11 @@
 
                 "mk-title": "MKBOOST — 시장 조사",
                 "mk-desc": "글로벌 시장 인텔리전스, TAM/SAM/SOM 분석, 경쟁사 벤치마킹, 산업 트렌드 예측을 다중 소스 검증 데이터로 제공합니다.",
-                "mk-btn": "리서치 서비스 바로가기"
+                "mk-btn": "리서치 서비스 바로가기",
+
+                "data-title": "DATABOOST — 웹 스크래핑",
+                "data-desc": "맞춤형 웹 스크래핑 및 데이터 추출. Python 크롤러와 안티봇 우회로 모든 웹사이트를 Excel, CSV, JSON으로 변환합니다.",
+                "data-btn": "스크래핑 서비스 바로가기"
             }
         };
 
@@ -1161,6 +1218,10 @@
             document.getElementById('mk-title').innerText = dict['mk-title'];
             document.getElementById('mk-desc').innerText = dict['mk-desc'];
             document.getElementById('mk-btn').innerText = dict['mk-btn'];
+
+            document.getElementById('data-title').innerText = dict['data-title'];
+            document.getElementById('data-desc').innerText = dict['data-desc'];
+            document.getElementById('data-btn').innerText = dict['data-btn'];
 
             // Badges
             document.querySelectorAll('[data-i18n="badge-active"]').forEach(el => {
