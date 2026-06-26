@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BibleForAI | AI-Powered Business Solutions</title>
     <meta name="description" content="Empower your digital presence and business strategy with BibleForAI's premium web services. Explore our SMM Growth Booster, B2C Lead Database, and more.">
-    <meta name="keywords" content="BibleForAI, AI Solutions, SMM Growth Booster, B2C Lead Database, B2B Database, AI Landing Page, Marketing Automation, AI Chatbot, Customer Support Automation, WhatsApp Chatbot, Messenger Bot, AI Consulting, AI Strategy, AI Implementation">
+    <meta name="keywords" content="BibleForAI, AI Solutions, SMM Growth Booster, B2C Lead Database, B2B Database, AI Landing Page, Marketing Automation, AI Chatbot, Customer Support Automation, WhatsApp Chatbot, Messenger Bot, AI Consulting, AI Strategy, AI Implementation, AI Voice Cloning, AI Voiceover, AI Audio Production">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://bibleforai.com/">
 
@@ -203,6 +203,15 @@
                   "name": "AIBOOST — AI Consulting & Implementation Strategy",
                   "url": "https://bibleforai.com/aiboost/",
                   "description": "Professional AI consulting and implementation strategy. From AI readiness assessment to enterprise-wide transformation with custom AI solutions and strategic roadmaps."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "VOICEBOOST — AI Voice Cloning & Audio Production",
+                  "url": "https://bibleforai.com/voiceboost/",
+                  "description": "AI voice cloning, professional voiceovers, and audio production. Clone any voice, generate voiceovers in 30+ languages, and produce studio-quality AI audio content for videos, ads, and podcasts."
                 }
               }
             ]
@@ -560,6 +569,15 @@
             box-shadow: 0 15px 35px rgba(99, 102, 241, 0.12), 0 0 15px rgba(99, 102, 241, 0.1);
         }
 
+        .card-active-voice {
+            border-color: rgba(234, 179, 8, 0.15);
+        }
+        .card-active-voice:hover {
+            transform: translateY(-8px);
+            border-color: #eab308;
+            box-shadow: 0 15px 35px rgba(234, 179, 8, 0.12), 0 0 15px rgba(234, 179, 8, 0.1);
+        }
+
         .card-disabled {
             opacity: 0.6;
             cursor: not-allowed;
@@ -667,6 +685,12 @@
             color: #6366f1;
             background: rgba(99, 102, 241, 0.06);
             border-color: rgba(99, 102, 241, 0.15);
+        }
+
+        .icon-voice {
+            color: #eab308;
+            background: rgba(234, 179, 8, 0.06);
+            border-color: rgba(234, 179, 8, 0.15);
         }
 
         .icon-disabled {
@@ -884,6 +908,17 @@
         .btn-ai:hover {
             background: #4f46e5;
             box-shadow: 0 8px 25px rgba(99, 102, 241, 0.35);
+        }
+
+        .btn-voice {
+            background: #eab308;
+            color: #0c0a09;
+            border: none;
+            box-shadow: 0 4px 15px rgba(234, 179, 8, 0.2);
+        }
+        .btn-voice:hover {
+            background: #ca8a04;
+            box-shadow: 0 8px 25px rgba(234, 179, 8, 0.35);
         }
 
         .btn-disabled {
@@ -1168,6 +1203,19 @@
                     </div>
                     <a href="/aiboost/" class="card-btn btn-ai" id="ai-btn">Launch Consulting</a>
                 </div>
+
+                <!-- VOICEBOOST Banner (Active) -->
+                <div class="card card-active-voice" onmousemove="updateCardCoordinates(event, this)">
+                    <div class="card-header">
+                        <div class="card-icon icon-voice"><i class="fa-solid fa-microphone"></i></div>
+                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 id="voice-title">VOICEBOOST — AI Voice Cloning</h3>
+                        <p id="voice-desc">Clone any voice, generate professional voiceovers in 30+ languages, and produce AI audio content. Videos, ads, podcasts, and brand audio — no studio needed.</p>
+                    </div>
+                    <a href="/voiceboost/" class="card-btn btn-voice" id="voice-btn">Launch Voice Service</a>
+                </div>
             </div>
         </section>
     </main>
@@ -1192,6 +1240,7 @@
                 <a href="/imgboost/" id="foot-img-link">IMGBOOST</a>
                 <a href="/flowboost/" id="foot-flow-link">FLOWBOOST</a>
                 <a href="/aiboost/" id="foot-ai-link">AIBOOST</a>
+                <a href="/voiceboost/" id="foot-voice-link">VOICEBOOST</a>
             </div>
         </div>
     </footer>
@@ -1261,7 +1310,11 @@
 
                 "ai-title": "AIBOOST — AI Consulting",
                 "ai-desc": "Professional AI consulting & implementation. Strategy assessment, PoC development, and enterprise-wide transformation with proven methodology.",
-                "ai-btn": "Launch Consulting"
+                "ai-btn": "Launch Consulting",
+
+                "voice-title": "VOICEBOOST — AI Voice Cloning",
+                "voice-desc": "Clone any voice, generate professional voiceovers in 30+ languages, and produce AI audio content. Videos, ads, podcasts, and brand audio — no studio needed.",
+                "voice-btn": "Launch Voice Service"
             },
             ko: {
                 "hero-title": "AI 솔루션으로 비즈니스 성장을 극대화하세요",
@@ -1324,7 +1377,11 @@
 
                 "ai-title": "AIBOOST — AI 컨설팅",
                 "ai-desc": "전문 AI 컨설팅 및 구축 서비스. 전략 진단, PoC 개발, 전사적 전환까지 검증된 방법론으로 지원합니다.",
-                "ai-btn": "컨설팅 서비스 바로가기"
+                "ai-btn": "컨설팅 서비스 바로가기",
+
+                "voice-title": "VOICEBOOST — AI 음성 복제",
+                "voice-desc": "어떤 목소리든 복제하고 30개 이상 언어로 전문 보이스오버를 제작합니다. 영상, 광고, 팟캐스트, 브랜드 오디오까지 — 스튜디오 불필요.",
+                "voice-btn": "음성 서비스 바로가기"
             }
         };
 
@@ -1405,6 +1462,10 @@
             document.getElementById('ai-title').innerText = dict['ai-title'];
             document.getElementById('ai-desc').innerText = dict['ai-desc'];
             document.getElementById('ai-btn').innerText = dict['ai-btn'];
+
+            document.getElementById('voice-title').innerText = dict['voice-title'];
+            document.getElementById('voice-desc').innerText = dict['voice-desc'];
+            document.getElementById('voice-btn').innerText = dict['voice-btn'];
 
             // Badges
             document.querySelectorAll('[data-i18n="badge-active"]').forEach(el => {
