@@ -159,6 +159,15 @@
                   "url": "https://bibleforai.com/searchboost/",
                   "description": "AI-powered SEO optimization, keyword research, blog content writing, and search ranking improvement with white-hat Google-compliant strategies."
                 }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "MKBOOST — Market Research & Competitive Intelligence",
+                  "url": "https://bibleforai.com/mkboost/",
+                  "description": "AI-powered global market research, TAM/SAM/SOM sizing, competitive intelligence, and industry trend analysis with multi-source verified data."
+                }
               }
             ]
           }
@@ -470,6 +479,15 @@
             box-shadow: 0 15px 35px rgba(236, 72, 153, 0.12), 0 0 15px rgba(236, 72, 153, 0.1);
         }
 
+        .card-active-mk {
+            border-color: rgba(14, 165, 233, 0.15);
+        }
+        .card-active-mk:hover {
+            transform: translateY(-8px);
+            border-color: #0ea5e9;
+            box-shadow: 0 15px 35px rgba(14, 165, 233, 0.12), 0 0 15px rgba(14, 165, 233, 0.1);
+        }
+
         .card-disabled {
             opacity: 0.6;
             cursor: not-allowed;
@@ -547,6 +565,12 @@
             color: #ec4899;
             background: rgba(236, 72, 153, 0.06);
             border-color: rgba(236, 72, 153, 0.15);
+        }
+
+        .icon-mk {
+            color: #0ea5e9;
+            background: rgba(14, 165, 233, 0.06);
+            border-color: rgba(14, 165, 233, 0.15);
         }
 
         .icon-disabled {
@@ -709,6 +733,17 @@
         .btn-search:hover {
             background: #db2777;
             box-shadow: 0 8px 25px rgba(236, 72, 153, 0.35);
+        }
+
+        .btn-mk {
+            background: #0ea5e9;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.2);
+        }
+        .btn-mk:hover {
+            background: #0284c7;
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.35);
         }
 
         .btn-disabled {
@@ -928,6 +963,19 @@
                     </div>
                     <a href="/searchboost/" class="card-btn btn-search" id="search-btn">Launch SEO Service</a>
                 </div>
+
+                <!-- MKBOOST Banner (Active) -->
+                <div class="card card-active-mk" onmousemove="updateCardCoordinates(event, this)">
+                    <div class="card-header">
+                        <div class="card-icon icon-mk"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 id="mk-title">MKBOOST — Market Research</h3>
+                        <p id="mk-desc">Global market intelligence, TAM/SAM/SOM sizing, competitor benchmarking, and industry trend forecasting with multi-source verified data.</p>
+                    </div>
+                    <a href="/mkboost/" class="card-btn btn-mk" id="mk-btn">Launch Research Service</a>
+                </div>
             </div>
         </section>
     </main>
@@ -947,6 +995,7 @@
                 <a href="/mailboost/" id="foot-mail-link">MAILBOOST</a>
                 <a href="/chatboost/" id="foot-chat-link">CHATBOOST</a>
                 <a href="/searchboost/" id="foot-search-link">SEARCHBOOST</a>
+                <a href="/mkboost/" id="foot-mk-link">MKBOOST</a>
             </div>
         </div>
     </footer>
@@ -996,7 +1045,11 @@
 
                 "search-title": "SEARCHBOOST — AI SEO & Content",
                 "search-desc": "Dominate Google rankings with AI-powered SEO optimization, keyword research, blog content writing, and white-hat content strategy.",
-                "search-btn": "Launch SEO Service"
+                "search-btn": "Launch SEO Service",
+
+                "mk-title": "MKBOOST — Market Research",
+                "mk-desc": "Global market intelligence, TAM/SAM/SOM sizing, competitor benchmarking, and industry trend forecasting with multi-source verified data.",
+                "mk-btn": "Launch Research Service"
             },
             ko: {
                 "hero-title": "AI 솔루션으로 비즈니스 성장을 극대화하세요",
@@ -1039,7 +1092,11 @@
 
                 "search-title": "SEARCHBOOST — AI SEO & 콘텐츠",
                 "search-desc": "AI 기반 SEO 최적화, 키워드 리서치, 블로그 콘텐츠 작성 및 화이트햇 콘텐츠 전략으로 Google 랭킹을 정복하세요.",
-                "search-btn": "SEO 서비스 바로가기"
+                "search-btn": "SEO 서비스 바로가기",
+
+                "mk-title": "MKBOOST — 시장 조사",
+                "mk-desc": "글로벌 시장 인텔리전스, TAM/SAM/SOM 분석, 경쟁사 벤치마킹, 산업 트렌드 예측을 다중 소스 검증 데이터로 제공합니다.",
+                "mk-btn": "리서치 서비스 바로가기"
             }
         };
 
@@ -1100,6 +1157,10 @@
             document.getElementById('search-title').innerText = dict['search-title'];
             document.getElementById('search-desc').innerText = dict['search-desc'];
             document.getElementById('search-btn').innerText = dict['search-btn'];
+
+            document.getElementById('mk-title').innerText = dict['mk-title'];
+            document.getElementById('mk-desc').innerText = dict['mk-desc'];
+            document.getElementById('mk-btn').innerText = dict['mk-btn'];
 
             // Badges
             document.querySelectorAll('[data-i18n="badge-active"]').forEach(el => {
