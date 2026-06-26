@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BibleForAI - FLOWBOOST | AI Workflow Automation</title>
+    <meta name="description" content="AI-powered business workflow automation with n8n, Make & Zapier. Automate repetitive tasks, CRM sync, and reporting built by experts.">
+    <meta name="keywords" content="Workflow Automation, n8n, Make, Zapier, AI Automation, Business Process Automation, CRM Integration, API Development">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bibleforai.com/flowboost/">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bibleforai.com/flowboost/">
+    <meta property="og:title" content="BibleForAI - FLOWBOOST | AI Workflow Automation">
+    <meta property="og:description" content="Automate repetitive business tasks with n8n, Make & Zapier. CRM integration, API development, and reporting automation by experts.">
+    <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+    <meta property="og:site_name" content="BibleForAI FLOWBOOST">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bibleforai.com/flowboost/">
+    <meta name="twitter:title" content="BibleForAI - FLOWBOOST | AI Workflow Automation">
+    <meta name="twitter:description" content="Automate repetitive business tasks with n8n, Make & Zapier. CRM integration, API development, and reporting automation by experts.">
+    <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+    <!-- JSON-LD Structured Data Markups (SEO/AEO/GEO Optimization) -->
+
+    <!-- Schema 1: FAQPage Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What workflow automation platforms does FLOWBOOST support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "FLOWBOOST builds automation workflows on n8n, Make (formerly Integromat), and Zapier. We choose the best platform for each use case — n8n for self-hosted enterprise needs, Make for complex multi-step scenarios, and Zapier for quick SaaS integrations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you integrate with our existing CRM and internal tools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We build custom API integrations for proprietary systems, legacy software, and any tool with REST or GraphQL endpoints. Our enterprise package includes dedicated API gateway setup and custom code nodes in Python or Node.js."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to build an automation workflow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Simple single workflows are delivered within 3–5 business days. Business packages with interconnected workflows take 7–10 days. Enterprise full-suite deployments typically take 2–4 weeks including testing and handover documentation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide ongoing maintenance and support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All packages include post-launch support. The Starter package includes 14 days, Business includes 30 days, Enterprise includes a dedicated Solutions Architect, and Custom packages include lifetime maintenance with SLA guarantees."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema 2: FLOWBOOST Service/Product Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "BibleForAI FLOWBOOST — AI Workflow Automation",
+      "image": "https://bibleforai.com/assets/og-preview.png",
+      "description": "AI-powered business process automation built on n8n, Make, and Zapier. Custom API integrations, CRM sync, automated reporting, and AI decision nodes.",
+      "brand": {
+        "@type": "Brand",
+        "name": "BibleForAI"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "850"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "500.00",
+        "highPrice": "5000.00",
+        "offerCount": "4"
+      }
+    }
+    </script>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="app-header">
+        <div class="header-container">
+            <a href="/" class="logo-group">
+                <span class="logo-title">BibleForAI</span>
+                <span class="logo-subtitle" data-i18n="logo-subtitle">WORKFLOW AUTOMATION!</span>
+            </a>
+            
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#" id="nav-home" onclick="navigate('home')" class="active" data-i18n="nav-home">Home</a></li>
+                    <li><a href="#" id="nav-workflow" onclick="navigate('workflow')" data-i18n="nav-workflow">Workflows</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-orders" onclick="navigate('orders')">
+                    <i class="fa-solid fa-receipt"></i> <span class="btn-text" data-i18n="btn-orders">My Orders</span>
+                </button>
+                <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)" style="margin-left: 0.75rem; padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #ffffff; font-size: 0.82rem; font-weight: 500; cursor: pointer; outline: none; transition: var(--transition);">
+                    <option value="en">🌐 English</option>
+                    <option value="ko">🇰🇷 한국어</option>
+                </select>
+                <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <ul class="mobile-nav-links">
+            <li><a href="#" onclick="navigate('home'); toggleMobileMenu()" data-i18n="nav-home">Home</a></li>
+            <li><a href="#" onclick="navigate('workflow'); toggleMobileMenu()" data-i18n="nav-workflow">Workflows</a></li>
+            <li><a href="#" onclick="navigate('orders'); toggleMobileMenu()"><i class="fa-solid fa-receipt"></i> <span data-i18n="btn-orders">My Orders</span></a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <main>
+        
+        <!-- Home View -->
+        <section id="home-view" class="view-section active">
+            <div class="hero">
+                <div class="badge" data-i18n="hero-badge">AI-Powered Automation</div>
+                <h1 class="hero-title" data-i18n="hero-title">BibleForAI - FLOWBOOST!</h1>
+                <p class="hero-desc" data-i18n="hero-desc">Automate repetitive business tasks with n8n, Make & Zapier workflows powered by AI.</p>
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="navigate('workflow')" data-i18n="btn-explore">Explore Workflows <i class="fa-solid fa-arrow-right"></i></button>
+                    <a href="#compliance-section" class="btn-secondary" data-i18n="btn-compliance">How It Works</a>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-num">200+</span>
+                    <span class="stat-label" data-i18n="stat-automations">Automations Built</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">30h+</span>
+                    <span class="stat-label" data-i18n="stat-time-saved">Avg. Time Saved</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">99.9%</span>
+                    <span class="stat-label" data-i18n="stat-accuracy">Execution Accuracy</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">24/7</span>
+                    <span class="stat-label" data-i18n="stat-support">Post-Launch Support</span>
+                </div>
+            </div>
+
+            <!-- Automation Solutions -->
+            <div class="section-container">
+                <h2 class="section-title" data-i18n="sec-channels-title">Our Workflow Automation Solutions</h2>
+                <p class="section-subtitle" data-i18n="sec-channels-subtitle">From simple email triggers to enterprise-grade multi-department process automation — built with leading no-code and low-code platforms.</p>
+                <div class="card-grid">
+                    <div class="data-card" onclick="navigate('workflow')">
+                        <div class="card-icon workflow-color"><i class="fa-solid fa-diagram-project"></i></div>
+                        <h3 data-i18n="card-workflow-title">Workflow Automation</h3>
+                        <p data-i18n="card-workflow-desc">End-to-end automation workflows connecting your CRM, email, spreadsheets, and 2000+ apps with n8n, Make, and Zapier.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('workflow')">
+                        <div class="card-icon integration-color"><i class="fa-solid fa-plug"></i></div>
+                        <h3 data-i18n="card-integration-title">API & Custom Integration</h3>
+                        <p data-i18n="card-integration-desc">Custom API development and third-party integrations for proprietary systems, legacy software, and enterprise tools.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('workflow')">
+                        <div class="card-icon ai-color"><i class="fa-solid fa-brain"></i></div>
+                        <h3 data-i18n="card-ai-title">AI Decision Automation</h3>
+                        <p data-i18n="card-ai-desc">Embed AI-powered decision nodes into your workflows with OpenAI, Claude, and custom ML models for intelligent process routing.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('workflow')">
+                        <div class="card-icon reporting-color"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3 data-i18n="card-reporting-title">Automated Reporting</h3>
+                        <p data-i18n="card-reporting-desc">Real-time dashboards, scheduled reports, and KPI tracking delivered to Slack, email, or Google Sheets automatically.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('workflow')">
+                        <div class="card-icon scaling-color"><i class="fa-solid fa-arrows-spin"></i></div>
+                        <h3 data-i18n="card-scaling-title">Scaling & Maintenance</h3>
+                        <p data-i18n="card-scaling-desc">Ongoing workflow optimization, error handling, monitoring, and scaling as your business processes grow in complexity.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compliance Section -->
+            <div id="compliance-section" class="section-container compliance-bg">
+                <div class="compliance-content">
+                    <div class="compliance-text">
+                        <h2 data-i18n="comp-title">Enterprise-Grade Workflow Infrastructure</h2>
+                        <p data-i18n="comp-desc">Our AI workflow automation system uses battle-tested platforms (n8n, Make, Zapier) combined with custom code nodes to create resilient, scalable business process automation.</p>
+                        <div class="compliance-bullets">
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet1-bold">Platform Agnostic:</strong> <span data-i18n="comp-bullet1-text">Works across n8n, Make (Integromat), and Zapier — choose the best tool for each workflow.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet2-bold">Error-Proof Design:</strong> <span data-i18n="comp-bullet2-text">Every workflow includes error handling, retry logic, and Slack/email alerting for failed executions.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet3-bold">Enterprise Security:</strong> <span data-i18n="comp-bullet3-text">SOC 2 compliant platforms, encrypted credential storage, and role-based access controls.</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="compliance-graphic">
+                        <i class="fa-solid fa-diagram-project"></i>
+                        <div class="glow-pulse"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workflow Automation View -->
+        <section id="workflow-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="card-workflow-title">Workflow Automation</h2>
+                <p data-i18n="view-workflow-sub">Browse pre-built and custom workflow automation packages. From single process automation to full enterprise suites.</p>
+            </div>
+            <div class="packages-grid" id="workflow-packages">
+                <!-- Loaded dynamically by JS -->
+            </div>
+        </section>
+
+        <!-- My Orders View -->
+        <section id="orders-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="view-orders-title">My Purchase History</h2>
+                <p data-i18n="view-orders-sub">Review your successful orders. Your data is stored locally in your browser workspace.</p>
+            </div>
+            <div class="orders-container">
+                <div class="table-wrapper">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th data-i18n="th-date">Order Date</th>
+                                <th data-i18n="th-order-id">Transaction ID</th>
+                                <th data-i18n="th-product">Product</th>
+                                <th data-i18n="th-tier">Package Tier</th>
+                                <th data-i18n="th-platform">Platform</th>
+                                <th data-i18n="th-qty">Quantity</th>
+                                <th data-i18n="th-total">Total Paid</th>
+                                <th data-i18n="th-status">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-tbody">
+                            <!-- Loaded dynamically by JS -->
+                        </tbody>
+                    </table>
+                    <div id="no-orders-msg" class="no-data-msg">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <p data-i18n="no-orders-msg">No purchase records found. Make your first order to see history here!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Purchase Modal -->
+    <div class="modal-backdrop" id="purchase-modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="modal-product-title" data-i18n="modal-title">Configure Order</h3>
+            <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">Select your preferred automation platform and complete secure PayPal payment.</p>
+            
+            <div class="order-summary-box">
+                <div class="summary-row">
+                    <span data-i18n="modal-base-pkg">Base Package:</span>
+                    <strong id="modal-package-name">-</strong>
+                </div>
+                <div class="summary-row">
+                    <span data-i18n="modal-base-price-label">Base Price:</span>
+                    <strong id="modal-base-price">$0.00</strong>
+                </div>
+            </div>
+
+            <div class="email-control-group" style="margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="order-email" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-align: left;" data-i18n="modal-email-label">Email Address *</label>
+                <input type="email" id="order-email" required placeholder="name@example.com" data-i18n="modal-email-placeholder" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: #ffffff; padding: 0.65rem 1rem; border-radius: 8px; font-family: var(--font-body); font-size: 0.95rem; outline: none; width: 100%; transition: var(--transition);">
+                <span id="email-error" style="color: #ef4444; font-size: 0.78rem; display: none; text-align: left;" data-i18n="modal-email-error"><i class="fa-solid fa-triangle-exclamation"></i> Please enter a valid email address.</span>
+            </div>
+
+            <div class="platform-control-group" style="margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="order-platform" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-align: left;" data-i18n="modal-platform-label">Preferred Platform:</label>
+                <select id="order-platform" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: #ffffff; padding: 0.65rem 1rem; border-radius: 8px; font-family: var(--font-body); font-size: 0.95rem; outline: none; width: 100%; transition: var(--transition); cursor: pointer;">
+                    <option value="n8n" style="background:#0c0f17; color:#fff;">n8n (Self-Hosted / Cloud)</option>
+                    <option value="Make" style="background:#0c0f17; color:#fff;">Make (formerly Integromat)</option>
+                    <option value="Zapier" style="background:#0c0f17; color:#fff;">Zapier</option>
+                    <option value="Custom" style="background:#0c0f17; color:#fff;">Custom (Python/Node.js)</option>
+                    <option value="Any" style="background:#0c0f17; color:#fff;">Any — Expert's Choice</option>
+                </select>
+            </div>
+
+            <div class="quantity-control-group">
+                <label for="order-quantity" data-i18n="modal-qty">Quantity:</label>
+                <div class="qty-selector">
+                    <button class="qty-btn" onclick="adjustQty(-1)"><i class="fa-solid fa-minus"></i></button>
+                    <input type="number" id="order-quantity" value="1" min="1" oninput="updateModalPrice()">
+                    <button class="qty-btn" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <div class="total-price-box">
+                <span data-i18n="modal-total-amt">Total Amount:</span>
+                <span class="price-val" id="modal-total-price">$0.00</span>
+            </div>
+
+            <!-- Developer Test Button (Sandbox) -->
+            <button id="paypal-test-button" class="btn-test-checkout" style="display: block; width: 100%; margin-top: 0.6rem; margin-bottom: 0.4rem; background: rgba(255, 255, 255, 0.04); border: 1px dashed rgba(255, 255, 255, 0.2); color: var(--text-muted); opacity: 0.65; font-family: var(--font-heading); font-weight: 600; font-size: 0.78rem; padding: 0.5rem; border-radius: 8px; cursor: pointer; transition: var(--transition);" onmouseover="this.style.opacity=1; this.style.background='rgba(244, 63, 94, 0.1)'; this.style.borderColor='var(--primary)';" onmouseout="this.style.opacity=0.65; this.style.background='rgba(255, 255, 255, 0.04)'; this.style.borderColor='rgba(255, 255, 255, 0.2)';" onclick="triggerTestCheckout()">
+                <i class="fa-solid fa-flask"></i> <span data-i18n="modal-test-btn">Run Sandbox Test Checkout</span>
+            </button>
+
+            <!-- PayPal Button Container -->
+            <div class="paypal-wrapper">
+                <div id="paypal-button-container"></div>
+            </div>
+            
+            <div class="payment-badges">
+                <span><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL Secured Checkout</span></span>
+                <span><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal Verified</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="/" class="logo-group" style="text-decoration: none; margin-bottom: 1rem;">
+                    <span class="logo-title">BibleForAI</span>
+                    <span class="logo-subtitle" data-i18n="logo-subtitle">WORKFLOW AUTOMATION!</span>
+                </a>
+                <p data-i18n="hero-desc">Automate repetitive business tasks with n8n, Make & Zapier workflows powered by AI.</p>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="foot-channels">Workflow Solutions</h4>
+                <ul>
+                    <li><a href="#" onclick="navigate('workflow')" data-i18n="nav-workflow">Workflows</a></li>
+                </ul>
+            </div>
+            <div class="footer-support">
+                <h4 data-i18n="foot-legal">Platform & Security</h4>
+                <ul>
+                    <li data-i18n="foot-gdpr">n8n / Make / Zapier Experts</li>
+                    <li data-i18n="foot-canspam">Custom API Integrations</li>
+                    <li data-i18n="foot-match">99.9% Uptime SLA</li>
+                    <li data-i18n="foot-contact">Contact support: snsherocom@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="foot-copy">&copy; 2026 BibleForAI FLOWBOOST. All rights reserved. AI Workflow Automation.</p>
+        </div>
+    </footer>
+
+    <!-- App Logic script -->
+    <script src="app.js"></script>
+</body>
+</html>

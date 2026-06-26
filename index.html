@@ -186,6 +186,15 @@
                   "url": "https://bibleforai.com/imgboost/",
                   "description": "AI-powered product photography and visual content generation. Get studio-quality product images, AI model photos, and e-commerce visuals without expensive traditional photoshoots."
                 }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "FLOWBOOST — AI Workflow & Business Automation",
+                  "url": "https://bibleforai.com/flowboost/",
+                  "description": "AI-powered business workflow automation with n8n, Make, and Zapier. Custom API integrations, CRM data sync, and automated reporting solutions."
+                }
               }
             ]
           }
@@ -524,6 +533,15 @@
             box-shadow: 0 15px 35px rgba(192, 38, 211, 0.12), 0 0 15px rgba(192, 38, 211, 0.1);
         }
 
+        .card-active-flow {
+            border-color: rgba(244, 63, 94, 0.15);
+        }
+        .card-active-flow:hover {
+            transform: translateY(-8px);
+            border-color: #f43f5e;
+            box-shadow: 0 15px 35px rgba(244, 63, 94, 0.12), 0 0 15px rgba(244, 63, 94, 0.1);
+        }
+
         .card-disabled {
             opacity: 0.6;
             cursor: not-allowed;
@@ -619,6 +637,12 @@
             color: #C026D3;
             background: rgba(192, 38, 211, 0.06);
             border-color: rgba(192, 38, 211, 0.15);
+        }
+
+        .icon-flow {
+            color: #f43f5e;
+            background: rgba(244, 63, 94, 0.06);
+            border-color: rgba(244, 63, 94, 0.15);
         }
 
         .icon-disabled {
@@ -814,6 +838,17 @@
         .btn-img:hover {
             background: #a21caf;
             box-shadow: 0 8px 25px rgba(192, 38, 211, 0.35);
+        }
+
+        .btn-flow {
+            background: #f43f5e;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(244, 63, 94, 0.2);
+        }
+        .btn-flow:hover {
+            background: #e11d48;
+            box-shadow: 0 8px 25px rgba(244, 63, 94, 0.35);
         }
 
         .btn-disabled {
@@ -1072,6 +1107,19 @@
                     </div>
                     <a href="/imgboost/" class="card-btn btn-img" id="img-btn">Launch Photography Service</a>
                 </div>
+
+                <!-- FLOWBOOST Banner (Active) -->
+                <div class="card card-active-flow" onmousemove="updateCardCoordinates(event, this)">
+                    <div class="card-header">
+                        <div class="card-icon icon-flow"><i class="fa-solid fa-diagram-project"></i></div>
+                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 id="flow-title">FLOWBOOST — AI Workflow Automation</h3>
+                        <p id="flow-desc">Automate repetitive business processes with n8n, Make & Zapier. CRM sync, API integration, AI decision nodes, and reporting dashboards.</p>
+                    </div>
+                    <a href="/flowboost/" class="card-btn btn-flow" id="flow-btn">Launch Workflow Service</a>
+                </div>
             </div>
         </section>
     </main>
@@ -1094,6 +1142,7 @@
                 <a href="/mkboost/" id="foot-mk-link">MKBOOST</a>
                 <a href="/databoost/" id="foot-data-link">DATABOOST</a>
                 <a href="/imgboost/" id="foot-img-link">IMGBOOST</a>
+                <a href="/flowboost/" id="foot-flow-link">FLOWBOOST</a>
             </div>
         </div>
     </footer>
@@ -1155,7 +1204,11 @@
 
                 "img-title": "IMGBOOST — AI Product Photography",
                 "img-desc": "Studio-quality product images and AI model photos without expensive photoshoots. Full commercial license for e-commerce, social media & ads.",
-                "img-btn": "Launch Photography Service"
+                "img-btn": "Launch Photography Service",
+
+                "flow-title": "FLOWBOOST — AI Workflow Automation",
+                "flow-desc": "Automate repetitive business processes with n8n, Make & Zapier. CRM sync, API integration, AI decision nodes, and reporting dashboards.",
+                "flow-btn": "Launch Workflow Service"
             },
             ko: {
                 "hero-title": "AI 솔루션으로 비즈니스 성장을 극대화하세요",
@@ -1210,7 +1263,11 @@
 
                 "img-title": "IMGBOOST — AI 제품 사진",
                 "img-desc": "고비용 촬영 없이 스튜디오급 제품 이미지와 AI 모델 사진을 제공합니다. 이커머스, SNS, 광고용 완전 상업 라이선스 포함.",
-                "img-btn": "사진 서비스 바로가기"
+                "img-btn": "사진 서비스 바로가기",
+
+                "flow-title": "FLOWBOOST — AI 업무 자동화",
+                "flow-desc": "n8n, Make, Zapier로 반복적인 비즈니스 프로세스를 자동화하세요. CRM 연동, API 통합, AI 의사결정 노드, 보고서 대시보드 제공.",
+                "flow-btn": "워크플로우 서비스 바로가기"
             }
         };
 
@@ -1283,6 +1340,10 @@
             document.getElementById('img-title').innerText = dict['img-title'];
             document.getElementById('img-desc').innerText = dict['img-desc'];
             document.getElementById('img-btn').innerText = dict['img-btn'];
+
+            document.getElementById('flow-title').innerText = dict['flow-title'];
+            document.getElementById('flow-desc').innerText = dict['flow-desc'];
+            document.getElementById('flow-btn').innerText = dict['flow-btn'];
 
             // Badges
             document.querySelectorAll('[data-i18n="badge-active"]').forEach(el => {

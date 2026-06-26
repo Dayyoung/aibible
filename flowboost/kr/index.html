@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <base href="../">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BibleForAI - FLOWBOOST | AI 업무 자동화</title>
+    <meta name="description" content="n8n, Make, Zapier를 활용한 AI 기반 비즈니스 워크플로우 자동화. 반복 업무, CRM 연동, 보고서 자동화를 전문가가 구축해드립니다.">
+    <meta name="keywords" content="워크플로우 자동화, n8n, Make, Zapier, AI 자동화, 비즈니스 프로세스 자동화, CRM 연동, API 개발">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bibleforai.com/flowboost/kr/">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bibleforai.com/flowboost/kr/">
+    <meta property="og:title" content="BibleForAI - FLOWBOOST | AI 업무 자동화">
+    <meta property="og:description" content="n8n, Make, Zapier로 반복 업무를 AI 기반 워크플로우로 자동화하세요. CRM 연동, API 통합, 보고서 자동화 전문가 구축.">
+    <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+    <meta property="og:site_name" content="BibleForAI FLOWBOOST">
+    <meta property="og:locale" content="ko_KR">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bibleforai.com/flowboost/kr/">
+    <meta name="twitter:title" content="BibleForAI - FLOWBOOST | AI 업무 자동화">
+    <meta name="twitter:description" content="n8n, Make, Zapier로 반복 업무를 AI 기반 워크플로우로 자동화하세요. CRM 연동, API 통합, 보고서 자동화 전문가 구축.">
+    <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+    <!-- JSON-LD Structured Data Markups -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "FLOWBOOST는 어떤 자동화 플랫폼을 지원하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "FLOWBOOST는 n8n, Make(구 Integromat), Zapier에서 자동화 워크플로우를 구축합니다. 각 활용 사례에 최적의 플랫폼을 선택합니다 — n8n은 자체 호스팅 엔터프라이즈용, Make는 복잡한 다단계 시나리오용, Zapier는 빠른 SaaS 통합용입니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "기존 CRM 및 내부 도구와 연동할 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네. 독자 시스템, 레거시 소프트웨어, REST/GraphQL 엔드포인트가 있는 모든 도구에 대해 커스텀 API 통합을 구축합니다. 엔터프라이즈 패키지에는 전용 API 게이트웨이 설정과 Python/Node.js 커스텀 코드 노드가 포함됩니다."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "BibleForAI FLOWBOOST — AI 업무 자동화",
+      "image": "https://bibleforai.com/assets/og-preview.png",
+      "description": "n8n, Make, Zapier 기반 AI 비즈니스 프로세스 자동화. 커스텀 API 통합, CRM 연동, 자동 보고서, AI 의사결정 노드 제공.",
+      "brand": { "@type": "Brand", "name": "BibleForAI" },
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "worstRating": "1", "ratingCount": "850" },
+      "offers": { "@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": "500.00", "highPrice": "5000.00", "offerCount": "4" }
+    }
+    </script>
+    
+    <!-- Noto Sans KR Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+
+    <style>
+        /* Korean Font Override */
+        body, p, span, div, li, a, button, input, select, textarea, label, h3, h4, th, td, strong {
+            font-family: 'Noto Sans KR', 'Inter', 'Outfit', sans-serif !important;
+        }
+        h1, h2, .hero-title, .section-title {
+            font-family: 'Noto Sans KR', 'Outfit', sans-serif !important;
+        }
+    </style>
+
+    <script>
+        // Force Korean language
+        localStorage.setItem('bibleforai_lang', 'ko');
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="app-header">
+        <div class="header-container">
+            <a href="/" class="logo-group">
+                <span class="logo-title">BibleForAI</span>
+                <span class="logo-subtitle" data-i18n="logo-subtitle">업무 자동화!</span>
+            </a>
+            
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#" id="nav-home" onclick="navigate('home')" class="active" data-i18n="nav-home">홈</a></li>
+                    <li><a href="#" id="nav-workflow" onclick="navigate('workflow')" data-i18n="nav-workflow">워크플로우</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-orders" onclick="navigate('orders')">
+                    <i class="fa-solid fa-receipt"></i> <span class="btn-text" data-i18n="btn-orders">내 주문 내역</span>
+                </button>
+                <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)" style="margin-left: 0.75rem; padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #ffffff; font-size: 0.82rem; font-weight: 500; cursor: pointer; outline: none; transition: var(--transition);">
+                    <option value="en">🌐 English</option>
+                    <option value="ko" selected>🇰🇷 한국어</option>
+                </select>
+                <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <ul class="mobile-nav-links">
+            <li><a href="#" onclick="navigate('home'); toggleMobileMenu()" data-i18n="nav-home">홈</a></li>
+            <li><a href="#" onclick="navigate('workflow'); toggleMobileMenu()" data-i18n="nav-workflow">워크플로우</a></li>
+            <li><a href="#" onclick="navigate('orders'); toggleMobileMenu()"><i class="fa-solid fa-receipt"></i> <span data-i18n="btn-orders">내 주문 내역</span></a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <main>
+        
+        <!-- Home View -->
+        <section id="home-view" class="view-section active">
+            <div class="hero">
+                <div class="badge" data-i18n="hero-badge">AI 기반 자동화</div>
+                <h1 class="hero-title" data-i18n="hero-title">BibleForAI - FLOWBOOST!</h1>
+                <p class="hero-desc" data-i18n="hero-desc">n8n, Make, Zapier로 반복적인 업무를 AI 기반 워크플로우로 자동화하세요.</p>
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="navigate('workflow')" data-i18n="btn-explore">워크플로우 둘러보기 <i class="fa-solid fa-arrow-right"></i></button>
+                    <a href="#compliance-section" class="btn-secondary" data-i18n="btn-compliance">작동 방식</a>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-num">200+</span>
+                    <span class="stat-label" data-i18n="stat-automations">구축 자동화 수</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">30h+</span>
+                    <span class="stat-label" data-i18n="stat-time-saved">평균 시간 절감</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">99.9%</span>
+                    <span class="stat-label" data-i18n="stat-accuracy">실행 정확도</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">24/7</span>
+                    <span class="stat-label" data-i18n="stat-support">사후 기술 지원</span>
+                </div>
+            </div>
+
+            <!-- Automation Solutions -->
+            <div class="section-container">
+                <h2 class="section-title" data-i18n="sec-channels-title">워크플로우 자동화 솔루션</h2>
+                <p class="section-subtitle" data-i18n="sec-channels-subtitle">간단한 이메일 트리거부터 전사적 멀티부서 프로세스 자동화까지 — 검증된 노코드 및 로우코드 플랫폼으로 구축합니다.</p>
+                <div class="card-grid">
+                    <div class="data-card" onclick="navigate('workflow')">
+                        <div class="card-icon workflow-color"><i class="fa-solid fa-diagram-project"></i></div>
+                        <h3 data-i18n="card-workflow-title">워크플로우 자동화</h3>
+                        <p data-i18n="card-workflow-desc">CRM, 이메일, 스프레드시트, 2000개 이상의 앱을 연결하는 엔드투엔드 자동화 워크플로우를 n8n, Make, Zapier로 구축합니다.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">가격 확인하기</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('workflow')">
+                        <div class="card-icon integration-color"><i class="fa-solid fa-plug"></i></div>
+                        <h3 data-i18n="card-integration-title">API 및 커스텀 통합</h3>
+                        <p data-i18n="card-integration-desc">독자 시스템, 레거시 소프트웨어, 엔터프라이즈 도구를 위한 맞춤형 API 개발 및 서드파티 통합.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">가격 확인하기</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('workflow')">
+                        <div class="card-icon ai-color"><i class="fa-solid fa-brain"></i></div>
+                        <h3 data-i18n="card-ai-title">AI 의사결정 자동화</h3>
+                        <p data-i18n="card-ai-desc">OpenAI, Claude, 커스텀 ML 모델을 활용한 AI 의사결정 노드를 워크플로우에 탑재하여 지능형 프로세스 라우팅을 구현합니다.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">가격 확인하기</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('workflow')">
+                        <div class="card-icon reporting-color"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3 data-i18n="card-reporting-title">자동화 보고서</h3>
+                        <p data-i18n="card-reporting-desc">실시간 대시보드, 예약 보고서, KPI 추적을 Slack, 이메일, Google Sheets로 자동 전달합니다.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">가격 확인하기</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('workflow')">
+                        <div class="card-icon scaling-color"><i class="fa-solid fa-arrows-spin"></i></div>
+                        <h3 data-i18n="card-scaling-title">확장 및 유지보수</h3>
+                        <p data-i18n="card-scaling-desc">비즈니스 프로세스가 복잡해짐에 따라 지속적인 워크플로우 최적화, 오류 처리, 모니터링 및 확장을 지원합니다.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">가격 확인하기</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compliance Section -->
+            <div id="compliance-section" class="section-container compliance-bg">
+                <div class="compliance-content">
+                    <div class="compliance-text">
+                        <h2 data-i18n="comp-title">엔터프라이즈급 워크플로우 인프라</h2>
+                        <p data-i18n="comp-desc">당사의 AI 워크플로우 자동화 시스템은 검증된 플랫폼(n8n, Make, Zapier)과 커스텀 코드 노드를 결합하여 복원력 있고 확장 가능한 비즈니스 프로세스 자동화를 구현합니다.</p>
+                        <div class="compliance-bullets">
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet1-bold">플랫폼 독립적:</strong> <span data-i18n="comp-bullet1-text">n8n, Make(Integromat), Zapier 등 모든 플랫폼에서 작동 — 워크플로우별 최적의 도구를 선택합니다.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet2-bold">오류 방지 설계:</strong> <span data-i18n="comp-bullet2-text">모든 워크플로우에 오류 처리, 재시도 로직, 실패 알림(Slack/이메일)이 내장되어 있습니다.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet3-bold">기업용 보안:</strong> <span data-i18n="comp-bullet3-text">SOC 2 규격 준수 플랫폼, 암호화된 자격증명 저장소, 역할 기반 접근 제어를 지원합니다.</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="compliance-graphic">
+                        <i class="fa-solid fa-diagram-project"></i>
+                        <div class="glow-pulse"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workflow Automation View -->
+        <section id="workflow-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="card-workflow-title">워크플로우 자동화</h2>
+                <p data-i18n="view-workflow-sub">사전 구축된 템플릿과 커스텀 워크플로우 자동화 패키지를 둘러보세요. 단일 프로세스 자동화부터 전사적 솔루션까지.</p>
+            </div>
+            <div class="packages-grid" id="workflow-packages">
+                <!-- Loaded dynamically by JS -->
+            </div>
+        </section>
+
+        <!-- My Orders View -->
+        <section id="orders-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="view-orders-title">내 구매 히스토리</h2>
+                <p data-i18n="view-orders-sub">성공한 주문 내역을 검토하세요. 데이터는 브라우저 로컬스토리지에 안전하게 보관됩니다.</p>
+            </div>
+            <div class="orders-container">
+                <div class="table-wrapper">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th data-i18n="th-date">주문 날짜</th>
+                                <th data-i18n="th-order-id">트랜잭션 ID</th>
+                                <th data-i18n="th-product">상품명</th>
+                                <th data-i18n="th-tier">패키지 등급</th>
+                                <th data-i18n="th-platform">플랫폼</th>
+                                <th data-i18n="th-qty">수량</th>
+                                <th data-i18n="th-total">총 결제금액</th>
+                                <th data-i18n="th-status">상태</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-tbody">
+                            <!-- Loaded dynamically by JS -->
+                        </tbody>
+                    </table>
+                    <div id="no-orders-msg" class="no-data-msg">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <p data-i18n="no-orders-msg">구매 기록이 없습니다. 첫 주문을 완료하시면 내역이 여기에 표시됩니다!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Purchase Modal -->
+    <div class="modal-backdrop" id="purchase-modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="modal-product-title" data-i18n="modal-title">주문 설정</h3>
+            <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">선호하는 자동화 플랫폼을 선택하고 안전한 PayPal 결제를 진행하세요.</p>
+            
+            <div class="order-summary-box">
+                <div class="summary-row">
+                    <span data-i18n="modal-base-pkg">기본 패키지:</span>
+                    <strong id="modal-package-name">-</strong>
+                </div>
+                <div class="summary-row">
+                    <span data-i18n="modal-base-price-label">기본 가격:</span>
+                    <strong id="modal-base-price">$0.00</strong>
+                </div>
+            </div>
+
+            <div class="email-control-group" style="margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="order-email" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-align: left;" data-i18n="modal-email-label">이메일 주소 *</label>
+                <input type="email" id="order-email" required placeholder="name@example.com" data-i18n="modal-email-placeholder" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: #ffffff; padding: 0.65rem 1rem; border-radius: 8px; font-family: var(--font-body); font-size: 0.95rem; outline: none; width: 100%; transition: var(--transition);">
+                <span id="email-error" style="color: #ef4444; font-size: 0.78rem; display: none; text-align: left;" data-i18n="modal-email-error"><i class="fa-solid fa-triangle-exclamation"></i> 올바른 이메일 주소를 입력해주세요.</span>
+            </div>
+
+            <div class="platform-control-group" style="margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="order-platform" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-align: left;" data-i18n="modal-platform-label">선호 플랫폼:</label>
+                <select id="order-platform" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: #ffffff; padding: 0.65rem 1rem; border-radius: 8px; font-family: var(--font-body); font-size: 0.95rem; outline: none; width: 100%; transition: var(--transition); cursor: pointer;">
+                    <option value="n8n" style="background:#0c0f17; color:#fff;">n8n (자체 호스팅 / 클라우드)</option>
+                    <option value="Make" style="background:#0c0f17; color:#fff;">Make (구 Integromat)</option>
+                    <option value="Zapier" style="background:#0c0f17; color:#fff;">Zapier</option>
+                    <option value="Custom" style="background:#0c0f17; color:#fff;">Custom (Python/Node.js)</option>
+                    <option value="Any" style="background:#0c0f17; color:#fff;">Any — 전문가 추천</option>
+                </select>
+            </div>
+
+            <div class="quantity-control-group">
+                <label for="order-quantity" data-i18n="modal-qty">수량:</label>
+                <div class="qty-selector">
+                    <button class="qty-btn" onclick="adjustQty(-1)"><i class="fa-solid fa-minus"></i></button>
+                    <input type="number" id="order-quantity" value="1" min="1" oninput="updateModalPrice()">
+                    <button class="qty-btn" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <div class="total-price-box">
+                <span data-i18n="modal-total-amt">총 결제금액:</span>
+                <span class="price-val" id="modal-total-price">$0.00</span>
+            </div>
+
+            <!-- Developer Test Button (Sandbox) -->
+            <button id="paypal-test-button" class="btn-test-checkout" style="display: block; width: 100%; margin-top: 0.6rem; margin-bottom: 0.4rem; background: rgba(255, 255, 255, 0.04); border: 1px dashed rgba(255, 255, 255, 0.2); color: var(--text-muted); opacity: 0.65; font-family: var(--font-heading); font-weight: 600; font-size: 0.78rem; padding: 0.5rem; border-radius: 8px; cursor: pointer; transition: var(--transition);" onmouseover="this.style.opacity=1; this.style.background='rgba(244, 63, 94, 0.1)'; this.style.borderColor='var(--primary)';" onmouseout="this.style.opacity=0.65; this.style.background='rgba(255, 255, 255, 0.04)'; this.style.borderColor='rgba(255, 255, 255, 0.2)';" onclick="triggerTestCheckout()">
+                <i class="fa-solid fa-flask"></i> <span data-i18n="modal-test-btn">샌드박스 테스트 결제 진행</span>
+            </button>
+
+            <!-- PayPal Button Container -->
+            <div class="paypal-wrapper">
+                <div id="paypal-button-container"></div>
+            </div>
+            
+            <div class="payment-badges">
+                <span><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL 보안 결제 지원</span></span>
+                <span><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal 인증됨</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="/" class="logo-group" style="text-decoration: none; margin-bottom: 1rem;">
+                    <span class="logo-title">BibleForAI</span>
+                    <span class="logo-subtitle" data-i18n="logo-subtitle">업무 자동화!</span>
+                </a>
+                <p data-i18n="hero-desc">n8n, Make, Zapier로 반복적인 업무를 AI 기반 워크플로우로 자동화하세요.</p>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="foot-channels">워크플로우 솔루션</h4>
+                <ul>
+                    <li><a href="#" onclick="navigate('workflow')" data-i18n="nav-workflow">워크플로우</a></li>
+                </ul>
+            </div>
+            <div class="footer-support">
+                <h4 data-i18n="foot-legal">플랫폼 및 보안</h4>
+                <ul>
+                    <li data-i18n="foot-gdpr">n8n / Make / Zapier 전문가</li>
+                    <li data-i18n="foot-canspam">커스텀 API 통합</li>
+                    <li data-i18n="foot-match">99.9% 가동률 SLA</li>
+                    <li data-i18n="foot-contact">문의 지원: snsherocom@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="foot-copy">&copy; 2026 BibleForAI FLOWBOOST. All rights reserved. AI 업무 자동화.</p>
+        </div>
+    </footer>
+
+    <!-- App Logic script -->
+    <script src="../app.js"></script>
+</body>
+</html>
