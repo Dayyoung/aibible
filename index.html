@@ -1768,7 +1768,6 @@
         })();
 
         document.querySelector('.lang-selector').value = currentLang;
-        applyTranslations(currentLang);
 
         function toggleLang(lang) {
             currentLang = lang;
@@ -1852,6 +1851,9 @@
         ];
 
         let activeCategory = 'all';
+
+        // Initial render after servicesCatalog is initialized
+        applyTranslations(currentLang);
 
         function toggleSidebar() {
             document.getElementById('sidebar').classList.toggle('active');
