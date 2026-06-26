@@ -132,6 +132,15 @@
                   "url": "https://bibleforai.com/clipboost/",
                   "description": "AI-powered short-form video content production for TikTok, Instagram Reels, and YouTube Shorts with trend-aligned editing and strategy consulting."
                 }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "MAILBOOST — Email Marketing & Newsletter",
+                  "url": "https://bibleforai.com/mailboost/",
+                  "description": "Professional email marketing, responsive newsletter design, SPF/DKIM authentication setup, and automation workflows for business growth."
+                }
               }
             ]
           }
@@ -416,6 +425,15 @@
             box-shadow: 0 15px 35px rgba(249, 115, 22, 0.12), 0 0 15px rgba(249, 115, 22, 0.1);
         }
 
+        .card-active-mail {
+            border-color: rgba(245, 158, 11, 0.15);
+        }
+        .card-active-mail:hover {
+            transform: translateY(-8px);
+            border-color: #f59e0b;
+            box-shadow: 0 15px 35px rgba(245, 158, 11, 0.12), 0 0 15px rgba(245, 158, 11, 0.1);
+        }
+
         .card-disabled {
             opacity: 0.6;
             cursor: not-allowed;
@@ -475,6 +493,12 @@
             color: #f97316;
             background: rgba(249, 115, 22, 0.06);
             border-color: rgba(249, 115, 22, 0.15);
+        }
+
+        .icon-mail {
+            color: #f59e0b;
+            background: rgba(245, 158, 11, 0.06);
+            border-color: rgba(245, 158, 11, 0.15);
         }
 
         .icon-disabled {
@@ -604,6 +628,17 @@
         .btn-clip:hover {
             background: #ea580c;
             box-shadow: 0 8px 25px rgba(249, 115, 22, 0.35);
+        }
+
+        .btn-mail {
+            background: #f59e0b;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
+        }
+        .btn-mail:hover {
+            background: #d97706;
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.35);
         }
 
         .btn-disabled {
@@ -784,6 +819,19 @@
                     </div>
                     <a href="/clipboost/" class="card-btn btn-clip" id="clip-btn">Launch Video Service</a>
                 </div>
+
+                <!-- MAILBOOST Banner (Active) -->
+                <div class="card card-active-mail" onmousemove="updateCardCoordinates(event, this)">
+                    <div class="card-header">
+                        <div class="card-icon icon-mail"><i class="fa-solid fa-envelope"></i></div>
+                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 id="mail-title">MAILBOOST — Email Marketing</h3>
+                        <p id="mail-desc">Professional responsive newsletter design, SPF/DKIM setup, automation workflows & analytics for email campaign success.</p>
+                    </div>
+                    <a href="/mailboost/" class="card-btn btn-mail" id="mail-btn">Launch Email Service</a>
+                </div>
             </div>
         </section>
     </main>
@@ -800,6 +848,7 @@
                 <a href="/b2cdb/" id="foot-db-link">B2C Database</a>
                 <a href="/prboost/" id="foot-pr-link">PRBOOST</a>
                 <a href="/clipboost/" id="foot-clip-link">CLIPBOOST</a>
+                <a href="/mailboost/" id="foot-mail-link">MAILBOOST</a>
             </div>
         </div>
     </footer>
@@ -837,7 +886,11 @@
 
                 "clip-title": "CLIPBOOST — Short-Form Video",
                 "clip-desc": "AI-powered short-form video content for TikTok, Reels & Shorts. Trend-aligned editing with professional motion graphics.",
-                "clip-btn": "Launch Video Service"
+                "clip-btn": "Launch Video Service",
+
+                "mail-title": "MAILBOOST — Email Marketing",
+                "mail-desc": "Professional responsive newsletter design, SPF/DKIM setup, automation workflows & analytics for email campaign success.",
+                "mail-btn": "Launch Email Service"
             },
             ko: {
                 "hero-title": "AI 솔루션으로 비즈니스 성장을 극대화하세요",
@@ -868,7 +921,11 @@
 
                 "clip-title": "CLIPBOOST — 숏폼 영상",
                 "clip-desc": "틱톡, 릴스, 쇼츠를 위한 AI 기반 숏폼 영상 콘텐츠. 트렌드 최적화 편집과 전문 모션 그래픽을 제공합니다.",
-                "clip-btn": "영상 서비스 바로가기"
+                "clip-btn": "영상 서비스 바로가기",
+
+                "mail-title": "MAILBOOST — 이메일 마케팅",
+                "mail-desc": "전문 반응형 뉴스레터 디자인, SPF/DKIM 설정, 자동화 워크플로우 및 분석으로 이메일 캠페인을 성공으로 이끕니다.",
+                "mail-btn": "이메일 서비스 바로가기"
             }
         };
 
@@ -917,6 +974,10 @@
             document.getElementById('clip-title').innerText = dict['clip-title'];
             document.getElementById('clip-desc').innerText = dict['clip-desc'];
             document.getElementById('clip-btn').innerText = dict['clip-btn'];
+
+            document.getElementById('mail-title').innerText = dict['mail-title'];
+            document.getElementById('mail-desc').innerText = dict['mail-desc'];
+            document.getElementById('mail-btn').innerText = dict['mail-btn'];
 
             // Badges
             document.querySelectorAll('[data-i18n="badge-active"]').forEach(el => {

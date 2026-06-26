@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BibleForAI - MAILBOOST | Email Marketing & Newsletter Automation</title>
+    <meta name="description" content="Professional email marketing, newsletter design, SPF/DKIM setup, and automation workflows. Accelerate your business growth with AI-powered email solutions.">
+    <meta name="keywords" content="Email Marketing, Newsletter Design, Email Automation, SPF DKIM Setup, Email Campaign, Mailchimp Alternative, Email Deliverability">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bibleforai.com/mailboost/">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bibleforai.com/mailboost/">
+    <meta property="og:title" content="BibleForAI - MAILBOOST | Email Marketing & Newsletter">
+    <meta property="og:description" content="Professional email marketing, newsletter design, SPF/DKIM setup, and automation workflows. AI-powered solutions for business growth.">
+    <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+    <meta property="og:site_name" content="BibleForAI MAILBOOST">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bibleforai.com/mailboost/">
+    <meta name="twitter:title" content="BibleForAI - MAILBOOST | Email Marketing & Newsletter">
+    <meta name="twitter:description" content="Professional email marketing, newsletter design, SPF/DKIM setup, and automation workflows. AI-powered solutions for business growth.">
+    <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+    <!-- JSON-LD Structured Data Markups (SEO/AEO/GEO Optimization) -->
+
+    <!-- Schema 1: FAQPage Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does the MAILBOOST email marketing service include?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MAILBOOST provides professional responsive HTML newsletter templates, SPF/DKIM/DMARC email authentication setup, automation workflows (drip campaigns, welcome sequences), A/B testing, and performance analytics dashboards. All packages include deliverability optimization to ensure your emails reach inboxes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does MAILBOOST improve email deliverability?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We configure SPF, DKIM, and DMARC authentication protocols to verify your sending domain, implement proper list hygiene practices including automatic bounce handling, spam trap detection, and inactive subscriber cleaning, ensuring your campaigns comply with CAN-SPAM and GDPR regulations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I automate my email campaigns with MAILBOOST?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! The Growth and Enterprise packages include full automation workflow setup — drip campaigns, welcome sequences, behavioral triggers, and abandoned cart emails that run 24/7 on autopilot. Enterprise clients also receive custom API integration with their existing CRM systems."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How quickly can I start sending emails after purchase?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Starter packages are delivered within 1-2 business days. Growth packages with full automation setup typically take 3-5 business days. Enterprise custom integrations are scoped individually but we aim for 7-10 business day turnaround."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema 2: Email Marketing Service/Product Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "BibleForAI MAILBOOST Email Marketing Services",
+      "image": "https://bibleforai.com/assets/og-preview.png",
+      "description": "Professional email marketing, newsletter design, SPF/DKIM setup, and automation workflows for businesses worldwide.",
+      "brand": {
+        "@type": "Brand",
+        "name": "BibleForAI"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "62"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "49.00",
+        "highPrice": "249.00",
+        "offerCount": "3"
+      }
+    }
+    </script>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="app-header">
+        <div class="header-container">
+            <a href="/" class="logo-group">
+                <span class="logo-title">BibleForAI</span>
+                <span class="logo-subtitle" data-i18n="logo-subtitle">MAILBOOST</span>
+            </a>
+            
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#" id="nav-home" onclick="navigate('home')" class="active" data-i18n="nav-home">Home</a></li>
+                    <li><a href="#" id="nav-email" onclick="navigate('email')" data-i18n="nav-pricing">Pricing</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-orders" onclick="navigate('orders')">
+                    <i class="fa-solid fa-receipt"></i> <span class="btn-text" data-i18n="btn-orders">My Orders</span>
+                </button>
+                <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)" style="margin-left: 0.75rem; padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #ffffff; font-size: 0.82rem; font-weight: 500; cursor: pointer; outline: none; transition: var(--transition);">
+                    <option value="en">🌐 English</option>
+                    <option value="ko">🇰🇷 한국어</option>
+                </select>
+                <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <ul class="mobile-nav-links">
+            <li><a href="#" onclick="navigate('home'); toggleMobileMenu()" data-i18n="nav-home">Home</a></li>
+            <li><a href="#" onclick="navigate('email'); toggleMobileMenu()" data-i18n="nav-pricing">Pricing</a></li>
+            <li><a href="#" onclick="navigate('orders'); toggleMobileMenu()"><i class="fa-solid fa-receipt"></i> <span data-i18n="btn-orders">My Orders</span></a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <main>
+        
+        <!-- Home View -->
+        <section id="home-view" class="view-section active">
+            <div class="hero">
+                <div class="badge" data-i18n="hero-badge">Email Marketing Automation</div>
+                <h1 class="hero-title" data-i18n="hero-title">MAILBOOST — Email Marketing</h1>
+                <p class="hero-desc" data-i18n="hero-desc">Professional email campaigns, newsletters & automation. Boost engagement with AI-powered email solutions.</p>
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="navigate('email')" data-i18n="btn-explore">View Packages <i class="fa-solid fa-arrow-right"></i></button>
+                    <a href="#compliance-section" class="btn-secondary" data-i18n="btn-compliance">Learn About Deliverability</a>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-num">500+</span>
+                    <span class="stat-label" data-i18n="stat-templates">Templates Built</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">99.9%</span>
+                    <span class="stat-label" data-i18n="stat-deliverability">Deliverability</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">100%</span>
+                    <span class="stat-label" data-i18n="stat-automation">Automation Rate</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">48h</span>
+                    <span class="stat-label" data-i18n="stat-delivery">Setup Time</span>
+                </div>
+            </div>
+
+            <!-- Service Categories -->
+            <div class="section-container">
+                <h2 class="section-title" data-i18n="sec-channels-title">Complete Email Marketing Solutions</h2>
+                <p class="section-subtitle" data-i18n="sec-channels-subtitle">From responsive newsletter design to full automation workflows — everything you need for professional email campaigns.</p>
+                <div class="card-grid">
+                    <div class="data-card" onclick="navigate('email')">
+                        <div class="card-icon newsletter-color"><i class="fa-solid fa-envelope-open-text"></i></div>
+                        <h3 data-i18n="card-newsletter-title">Newsletter Design</h3>
+                        <p data-i18n="card-newsletter-desc">Beautiful, responsive HTML email templates optimized for all devices and email clients. Custom branding included.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('email')">
+                        <div class="card-icon automation-color"><i class="fa-solid fa-gears"></i></div>
+                        <h3 data-i18n="card-automation-title">Automation Workflows</h3>
+                        <p data-i18n="card-automation-desc">Set up drip campaigns, welcome sequences, and behavioral triggers that run on autopilot 24/7.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('email')">
+                        <div class="card-icon analytics-color"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3 data-i18n="card-analytics-title">Performance Analytics</h3>
+                        <p data-i18n="card-analytics-desc">Track opens, clicks, conversions, and ROI with real-time dashboards and detailed campaign reports.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('email')">
+                        <div class="card-icon deliverability-color"><i class="fa-solid fa-shield-check"></i></div>
+                        <h3 data-i18n="card-deliverability-title">Deliverability Setup</h3>
+                        <p data-i18n="card-deliverability-desc">SPF, DKIM, DMARC authentication setup to ensure your emails land in inboxes — not spam folders.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compliance Section -->
+            <div id="compliance-section" class="section-container compliance-bg">
+                <div class="compliance-content">
+                    <div class="compliance-text">
+                        <h2 data-i18n="comp-title">Email Deliverability & Best Practices</h2>
+                        <p data-i18n="comp-desc">Our email marketing system follows global best practices with proper authentication protocols, list hygiene, and compliance with CAN-SPAM and GDPR regulations.</p>
+                        <div class="compliance-bullets">
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet1-bold">SPF/DKIM/DMARC:</strong> <span data-i18n="comp-bullet1-text">Full email authentication setup to maximize inbox placement and domain reputation.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet2-bold">CAN-SPAM & GDPR:</strong> <span data-i18n="comp-bullet2-text">All campaigns include unsubscribe links and comply with global privacy regulations.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet3-bold">List Hygiene:</strong> <span data-i18n="comp-bullet3-text">Automatic bounce handling, spam trap detection, and inactive subscriber cleaning.</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="compliance-graphic">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <div class="glow-pulse"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Email Pricing View -->
+        <section id="email-view" class="view-section">
+            <div class="page-header">
+                <h2>Email Marketing & Newsletter</h2>
+                <p data-i18n="view-email-sub">Choose the perfect email marketing package for your business. All plans include responsive templates and deliverability setup.</p>
+            </div>
+            <div class="packages-grid" id="email-packages">
+                <!-- Loaded dynamically by JS -->
+            </div>
+        </section>
+
+        <!-- My Orders View -->
+        <section id="orders-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="view-orders-title">My Purchase History</h2>
+                <p data-i18n="view-orders-sub">Review your successful orders. Your data is stored locally in your browser workspace.</p>
+            </div>
+            <div class="orders-container">
+                <div class="table-wrapper">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th data-i18n="th-date">Order Date</th>
+                                <th data-i18n="th-order-id">Transaction ID</th>
+                                <th data-i18n="th-product">Product</th>
+                                <th data-i18n="th-tier">Package Tier</th>
+                                <th data-i18n="th-industry">Industry / Niche</th>
+                                <th data-i18n="th-qty">Quantity</th>
+                                <th data-i18n="th-total">Total Paid</th>
+                                <th data-i18n="th-status">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-tbody">
+                            <!-- Loaded dynamically by JS -->
+                        </tbody>
+                    </table>
+                    <div id="no-orders-msg" class="no-data-msg">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <p data-i18n="no-orders-msg">No purchase records found. Make your first order to see history here!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Purchase Modal -->
+    <div class="modal-backdrop" id="purchase-modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="modal-product-title" data-i18n="modal-title">Configure Order</h3>
+            <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">Configure details and complete secure PayPal payment.</p>
+            
+            <div class="order-summary-box">
+                <div class="summary-row">
+                    <span data-i18n="modal-base-pkg">Base Package:</span>
+                    <strong id="modal-package-name">-</strong>
+                </div>
+                <div class="summary-row">
+                    <span data-i18n="modal-base-price-label">Base Price:</span>
+                    <strong id="modal-base-price">$0.00</strong>
+                </div>
+            </div>
+
+            <div class="email-control-group" style="margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="order-email" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-align: left;" data-i18n="modal-email-label">Email Address *</label>
+                <input type="email" id="order-email" required placeholder="name@example.com" data-i18n="modal-email-placeholder" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: #ffffff; padding: 0.65rem 1rem; border-radius: 8px; font-family: var(--font-body); font-size: 0.95rem; outline: none; width: 100%; transition: var(--transition);">
+                <span id="email-error" style="color: #ef4444; font-size: 0.78rem; display: none; text-align: left;" data-i18n="modal-email-error"><i class="fa-solid fa-triangle-exclamation"></i> Please enter a valid email address.</span>
+            </div>
+
+            <div class="industry-control-group" style="margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="order-industry" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-align: left;" data-i18n="modal-industry-label">Industry / Niche:</label>
+                <select id="order-industry" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: #ffffff; padding: 0.65rem 1rem; border-radius: 8px; font-family: var(--font-body); font-size: 0.95rem; outline: none; width: 100%; transition: var(--transition); cursor: pointer;">
+                    <option value="General" style="background:#0c0f17; color:#fff;">General (All Industries)</option>
+                    <option value="E-commerce" style="background:#0c0f17; color:#fff;">E-commerce / Retail</option>
+                    <option value="SaaS" style="background:#0c0f17; color:#fff;">SaaS / Technology</option>
+                    <option value="Finance" style="background:#0c0f17; color:#fff;">Finance / Banking</option>
+                    <option value="Healthcare" style="background:#0c0f17; color:#fff;">Healthcare / Medical</option>
+                    <option value="Education" style="background:#0c0f17; color:#fff;">Education / E-Learning</option>
+                    <option value="Real Estate" style="background:#0c0f17; color:#fff;">Real Estate</option>
+                    <option value="Travel" style="background:#0c0f17; color:#fff;">Travel / Hospitality</option>
+                    <option value="Fashion" style="background:#0c0f17; color:#fff;">Fashion / Beauty</option>
+                    <option value="Food" style="background:#0c0f17; color:#fff;">Food & Beverage</option>
+                    <option value="Media" style="background:#0c0f17; color:#fff;">Media / Publishing</option>
+                    <option value="Nonprofit" style="background:#0c0f17; color:#fff;">Nonprofit / Charity</option>
+                </select>
+            </div>
+
+            <div class="quantity-control-group">
+                <label for="order-quantity" data-i18n="modal-qty">Quantity:</label>
+                <div class="qty-selector">
+                    <button class="qty-btn" onclick="adjustQty(-1)"><i class="fa-solid fa-minus"></i></button>
+                    <input type="number" id="order-quantity" value="1" min="1" oninput="updateModalPrice()">
+                    <button class="qty-btn" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <div class="total-price-box">
+                <span data-i18n="modal-total-amt">Total Amount:</span>
+                <span class="price-val" id="modal-total-price">$0.00</span>
+            </div>
+
+            <!-- PayPal Button Container -->
+            <div class="paypal-wrapper">
+                <div id="paypal-button-container"></div>
+            </div>
+            
+            <!-- Hidden Developer Test Button -->
+            <button id="paypal-test-button" class="btn-test-checkout" style="display: block; width: 100%; margin-top: 1.2rem; margin-bottom: 1.1rem; background: rgba(255, 255, 255, 0.02); border: 1px dashed rgba(255, 255, 255, 0.15); color: var(--text-muted); opacity: 0.4; font-family: var(--font-heading); font-weight: 600; font-size: 0.8rem; padding: 0.6rem; border-radius: 8px; cursor: pointer; transition: var(--transition);" onmouseover="this.style.opacity=1; this.style.background='rgba(16, 185, 129, 0.1)'; this.style.borderColor='var(--primary)';" onmouseout="this.style.opacity=0.4; this.style.background='rgba(255, 255, 255, 0.02)'; this.style.borderColor='rgba(255, 255, 255, 0.15)';" onclick="triggerTestCheckout()">
+                <i class="fa-solid fa-flask"></i> <span data-i18n="modal-test-btn">Run Sandbox Test Checkout</span>
+            </button>
+            
+            <div class="payment-badges">
+                <span><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL Secured Checkout</span></span>
+                <span><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal Verified</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="/" class="logo-group" style="text-decoration: none; margin-bottom: 1rem;">
+                    <span class="logo-title">BibleForAI</span>
+                    <span class="logo-subtitle" data-i18n="logo-subtitle">MAILBOOST</span>
+                </a>
+                <p data-i18n="hero-desc">Professional email campaigns, newsletters & automation. Boost engagement with AI-powered email solutions.</p>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="foot-channels">Services</h4>
+                <ul>
+                    <li><a href="#" onclick="navigate('email')" data-i18n="nav-pricing">Pricing</a></li>
+                    <li><a href="/">BibleForAI Home</a></li>
+                </ul>
+            </div>
+            <div class="footer-support">
+                <h4 data-i18n="foot-legal">Compliance</h4>
+                <ul>
+                    <li data-i18n="foot-gdpr">GDPR Compliant</li>
+                    <li data-i18n="foot-canspam">CAN-SPAM Verified</li>
+                    <li data-i18n="foot-match">99.9% Uptime</li>
+                    <li data-i18n="foot-contact">Contact support: snsherocom@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="foot-copy">&copy; 2026 BibleForAI MAILBOOST. All rights reserved. Email marketing & automation.</p>
+        </div>
+    </footer>
+
+    <!-- App Logic script -->
+    <script src="app.js"></script>
+</body>
+</html>
