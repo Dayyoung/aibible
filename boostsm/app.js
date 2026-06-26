@@ -83,6 +83,9 @@ const translations = {
         "modal-select-options": "Select Options / Quantity",
         "modal-price-label": "Total Price (USD)",
         "modal-paypal-loading": "Loading PayPal Checkout...",
+        "modal-email-label": "Email Address [Required]",
+        "modal-email-placeholder": "e.g. yourname@example.com",
+        "modal-email-error": "Please enter a valid email address.",
         "modal-cart-title": "Shopping Cart",
         "modal-cart-subtotal": "Subtotal",
         "modal-cart-checkout": "Checkout All",
@@ -186,6 +189,9 @@ const translations = {
         "modal-select-options": "옵션 / 수량 선택",
         "modal-price-label": "총 금액 (KRW)",
         "modal-paypal-loading": "PayPal 결제 로딩 중...",
+        "modal-email-label": "이메일 주소 [필수]",
+        "modal-email-placeholder": "예: yourname@example.com",
+        "modal-email-error": "올바른 이메일 주소를 입력해주세요.",
         "modal-cart-title": "장바구니",
         "modal-cart-subtotal": "소계",
         "modal-cart-checkout": "전체 결제하기",
@@ -857,6 +863,12 @@ const ui = {
         
         inputEl.value = '';
         inputEl.classList.remove('is-invalid');
+
+        const emailEl = document.getElementById('modal-email-input');
+        if (emailEl) {
+            emailEl.value = '';
+            emailEl.classList.remove('is-invalid');
+        }
         
         if (isKorean) {
             if (prod.category === 'Instagram') {
@@ -930,12 +942,59 @@ const ui = {
         }
     },
 
+    validateEmailField: function() {
+        const emailInput = document.getElementById('modal-email-input');
+        const emailError = document.getElementById('modal-email-error');
+        if (!emailInput) return true;
+        
+        const email = emailInput.value.trim();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const isKo = state.language === 'ko';
+        
+        if (!email || !emailPattern.test(email)) {
+            emailInput.classList.add('is-invalid');
+            if (emailError) {
+                emailError.innerText = isKo ? "올바른 이메일 주소를 입력해주세요." : "Please enter a valid email address.";
+            }
+            return false;
+        } else {
+            emailInput.classList.remove('is-invalid');
+            return true;
+        }
+    },
+
+    validateTargetField: function() {
+        const linkInput = document.getElementById('modal-target-input');
+        const linkError = document.getElementById('modal-input-error');
+        if (!linkInput) return true;
+        
+        const linkVal = linkInput.value.trim();
+        const isKo = state.language === 'ko';
+        
+        if (!linkVal) {
+            linkInput.classList.add('is-invalid');
+            if (linkError) {
+                linkError.innerText = isKo ? "사용자 이름 또는 게시물 링크를 입력해주세요." : "Please enter your username or post link to proceed.";
+            }
+            return false;
+        } else {
+            linkInput.classList.remove('is-invalid');
+            return true;
+        }
+    },
+
     initPayPalButtons: function() {
         const container = document.getElementById('paypal-button-container');
         container.innerHTML = '';
         
         const loader = document.getElementById('modal-paypal-loading');
         loader.style.display = 'block';
+
+        // Ensure Developer Test Button is visible
+        const testBtn = document.getElementById('paypal-test-button');
+        if (testBtn) {
+            testBtn.style.display = 'block';
+        }
 
         const loadButtons = () => {
             loader.style.display = 'none';
@@ -946,17 +1005,15 @@ const ui = {
                     shape:  'rect',
                     label:  'paypal'
                 },
-                createOrder: function(data, actions) {
-                    // Link verification before payment popup
-                    const linkInput = document.getElementById('modal-target-input');
-                    const linkVal = linkInput.value.trim();
-                    if (!linkVal) {
-                        linkInput.classList.add('is-invalid');
-                        document.getElementById('modal-input-error').innerText = "Please enter your username or post link to proceed.";
-                        throw new Error("Missing link parameter.");
+                onClick: function(data, actions) {
+                    const isTargetValid = ui.validateTargetField();
+                    const isEmailValid = ui.validateEmailField();
+                    if (!isTargetValid || !isEmailValid) {
+                        return actions.reject();
                     }
-                    linkInput.classList.remove('is-invalid');
-
+                    return actions.resolve();
+                },
+                createOrder: function(data, actions) {
                     return actions.order.create({
                         purchase_units: [{
                             amount: {
@@ -969,37 +1026,13 @@ const ui = {
                 },
                 onApprove: function(data, actions) {
                     return actions.order.capture().then(function(details) {
-                        const linkInput = document.getElementById('modal-target-input').value.trim();
-                        // Order success callback
-                        const isKorean = state.language === 'ko';
-                        const name = isKorean ? (state.selectedProduct.name_ko || state.selectedProduct.name) : (state.selectedProduct.name_en || state.selectedProduct.name);
-                        const label = isKorean ? (state.selectedOption.label_ko || state.selectedOption.label) : (state.selectedOption.label_en || state.selectedOption.label);
-                        const amount = isKorean ? `₩${(state.selectedOption.krw || 0).toLocaleString()}` : `$${Math.round(state.selectedOption.usd || 0)}`;
-
-                        const orderData = {
-                            id: details.id,
-                            product: `${name} - ${label}`,
-                            amount: amount,
-                            link: linkInput,
-                            status: "Completed",
-                            date: new Date().toLocaleDateString()
-                        };
-                        
-                        orders.add(orderData);
+                        ui.saveSmmOrder(details);
                         ui.closeProductModal();
-                        
-                        // Show success alert
-                        const toast = document.getElementById('success-toast');
-                        toast.classList.add('active');
-                        
-                        setTimeout(() => {
-                            toast.classList.remove('active');
-                            window.location.href = "https://forms.gle/zd98tg6UvK6A5FUs8";
-                        }, 2200);
                     });
                 },
                 onError: function(err) {
                     console.error("PayPal integration error: ", err);
+                    alert('An error occurred during payment processing. Please try again.');
                 }
             }).render('#paypal-button-container');
         };
@@ -1016,6 +1049,91 @@ const ui = {
             };
             document.head.appendChild(script);
         }
+    },
+
+    triggerTestCheckout: function() {
+        const isTargetValid = this.validateTargetField();
+        const isEmailValid = this.validateEmailField();
+        if (!isTargetValid || !isEmailValid) {
+            return;
+        }
+        
+        const mockDetails = {
+            id: 'TEST-PAYID-' + Math.random().toString(36).substr(2, 9).toUpperCase(),
+            isTest: true
+        };
+        
+        this.saveSmmOrder(mockDetails);
+        this.closeProductModal();
+    },
+
+    saveSmmOrder: function(details) {
+        const linkVal = document.getElementById('modal-target-input').value.trim();
+        const emailVal = document.getElementById('modal-email-input') ? document.getElementById('modal-email-input').value.trim() : '';
+        
+        const isKorean = state.language === 'ko';
+        const name = isKorean ? (state.selectedProduct.name_ko || state.selectedProduct.name) : (state.selectedProduct.name_en || state.selectedProduct.name);
+        const label = isKorean ? (state.selectedOption.label_ko || state.selectedOption.label) : (state.selectedOption.label_en || state.selectedOption.label);
+        const amount = isKorean ? `₩${(state.selectedOption.krw || 0).toLocaleString()}` : `$${Math.round(state.selectedOption.usd || 0)}`;
+
+        let clientId = 'Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK';
+        let secret = '';
+        
+        if (details.isTest) {
+            clientId = 'AeZhTof6R4GGZ8tp2dz1l1tIt970_y_G1uTufgjs-7_rYxRNsre2GKd5LUaiAqDmdOlYzABi-_HgSpe4';
+            secret = 'EK11QteIhpnSRe3e9F0sXElkrvK0hW8UAu9_PJAd6jw-Y7Xo5Awc5OkUGCztudtazWhr-KU6imgm1Glg';
+        }
+
+        const orderData = {
+            id: details.id,
+            email: emailVal,
+            product: `${name} - ${label}`,
+            amount: amount,
+            link: linkVal,
+            status: "Completed",
+            date: new Date().toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            }),
+            clientId: clientId,
+            secret: secret
+        };
+        
+        orders.add(orderData);
+        
+        // Show success alert toast
+        const toast = document.getElementById('success-toast');
+        if (toast) {
+            toast.classList.add('active');
+        }
+        
+        // Format order data as a clean, human-readable text receipt instead of raw JSON
+        const receiptText = 
+`===================================
+   BIBLEFORAI - SMM BOOSTER RECEIPT
+===================================
+Order Date     : ${orderData.date}
+Transaction ID : ${orderData.id}
+Customer Email : ${orderData.email}
+Product Name   : ${orderData.product}
+Target Link    : ${orderData.link}
+Total Paid     : ${orderData.amount}
+Status         : ${orderData.status}
+-----------------------------------
+Payment Method : PayPal Secure Checkout
+===================================`;
+        const encodedReceipt = encodeURIComponent(receiptText);
+        const redirectUrl = `https://docs.google.com/forms/d/e/1FAIpQLScMPqbEWWttS5mb1m_krsO_kco24ImpgvYVSbc7zO0nEVmYFw/viewform?entry.1059822061=${encodedReceipt}`;
+        
+        setTimeout(() => {
+            if (toast) {
+                toast.classList.remove('active');
+            }
+            window.location.href = redirectUrl;
+        }, 2200);
     },
 
     openCartModal: function() {
