@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BibleForAI | AI-Powered Business Solutions</title>
     <meta name="description" content="Empower your digital presence and business strategy with BibleForAI's premium web services. Explore our SMM Growth Booster, B2C Lead Database, and more.">
-    <meta name="keywords" content="BibleForAI, AI Solutions, SMM Growth Booster, B2C Lead Database, B2B Database, AI Landing Page, Marketing Automation, AI Chatbot, Customer Support Automation, WhatsApp Chatbot, Messenger Bot">
+    <meta name="keywords" content="BibleForAI, AI Solutions, SMM Growth Booster, B2C Lead Database, B2B Database, AI Landing Page, Marketing Automation, AI Chatbot, Customer Support Automation, WhatsApp Chatbot, Messenger Bot, AI Consulting, AI Strategy, AI Implementation">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://bibleforai.com/">
 
@@ -194,6 +194,15 @@
                   "name": "FLOWBOOST — AI Workflow & Business Automation",
                   "url": "https://bibleforai.com/flowboost/",
                   "description": "AI-powered business workflow automation with n8n, Make, and Zapier. Custom API integrations, CRM data sync, and automated reporting solutions."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "AIBOOST — AI Consulting & Implementation Strategy",
+                  "url": "https://bibleforai.com/aiboost/",
+                  "description": "Professional AI consulting and implementation strategy. From AI readiness assessment to enterprise-wide transformation with custom AI solutions and strategic roadmaps."
                 }
               }
             ]
@@ -542,6 +551,15 @@
             box-shadow: 0 15px 35px rgba(244, 63, 94, 0.12), 0 0 15px rgba(244, 63, 94, 0.1);
         }
 
+        .card-active-ai {
+            border-color: rgba(99, 102, 241, 0.15);
+        }
+        .card-active-ai:hover {
+            transform: translateY(-8px);
+            border-color: #6366f1;
+            box-shadow: 0 15px 35px rgba(99, 102, 241, 0.12), 0 0 15px rgba(99, 102, 241, 0.1);
+        }
+
         .card-disabled {
             opacity: 0.6;
             cursor: not-allowed;
@@ -643,6 +661,12 @@
             color: #f43f5e;
             background: rgba(244, 63, 94, 0.06);
             border-color: rgba(244, 63, 94, 0.15);
+        }
+
+        .icon-ai {
+            color: #6366f1;
+            background: rgba(99, 102, 241, 0.06);
+            border-color: rgba(99, 102, 241, 0.15);
         }
 
         .icon-disabled {
@@ -849,6 +873,17 @@
         .btn-flow:hover {
             background: #e11d48;
             box-shadow: 0 8px 25px rgba(244, 63, 94, 0.35);
+        }
+
+        .btn-ai {
+            background: #6366f1;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+        }
+        .btn-ai:hover {
+            background: #4f46e5;
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.35);
         }
 
         .btn-disabled {
@@ -1120,6 +1155,19 @@
                     </div>
                     <a href="/flowboost/" class="card-btn btn-flow" id="flow-btn">Launch Workflow Service</a>
                 </div>
+
+                <!-- AIBOOST Banner (Active) -->
+                <div class="card card-active-ai" onmousemove="updateCardCoordinates(event, this)">
+                    <div class="card-header">
+                        <div class="card-icon icon-ai"><i class="fa-solid fa-brain"></i></div>
+                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 id="ai-title">AIBOOST — AI Consulting</h3>
+                        <p id="ai-desc">Professional AI consulting & implementation. Strategy assessment, PoC development, and enterprise-wide transformation with proven methodology.</p>
+                    </div>
+                    <a href="/aiboost/" class="card-btn btn-ai" id="ai-btn">Launch Consulting</a>
+                </div>
             </div>
         </section>
     </main>
@@ -1143,6 +1191,7 @@
                 <a href="/databoost/" id="foot-data-link">DATABOOST</a>
                 <a href="/imgboost/" id="foot-img-link">IMGBOOST</a>
                 <a href="/flowboost/" id="foot-flow-link">FLOWBOOST</a>
+                <a href="/aiboost/" id="foot-ai-link">AIBOOST</a>
             </div>
         </div>
     </footer>
@@ -1208,7 +1257,11 @@
 
                 "flow-title": "FLOWBOOST — AI Workflow Automation",
                 "flow-desc": "Automate repetitive business processes with n8n, Make & Zapier. CRM sync, API integration, AI decision nodes, and reporting dashboards.",
-                "flow-btn": "Launch Workflow Service"
+                "flow-btn": "Launch Workflow Service",
+
+                "ai-title": "AIBOOST — AI Consulting",
+                "ai-desc": "Professional AI consulting & implementation. Strategy assessment, PoC development, and enterprise-wide transformation with proven methodology.",
+                "ai-btn": "Launch Consulting"
             },
             ko: {
                 "hero-title": "AI 솔루션으로 비즈니스 성장을 극대화하세요",
@@ -1267,7 +1320,11 @@
 
                 "flow-title": "FLOWBOOST — AI 업무 자동화",
                 "flow-desc": "n8n, Make, Zapier로 반복적인 비즈니스 프로세스를 자동화하세요. CRM 연동, API 통합, AI 의사결정 노드, 보고서 대시보드 제공.",
-                "flow-btn": "워크플로우 서비스 바로가기"
+                "flow-btn": "워크플로우 서비스 바로가기",
+
+                "ai-title": "AIBOOST — AI 컨설팅",
+                "ai-desc": "전문 AI 컨설팅 및 구축 서비스. 전략 진단, PoC 개발, 전사적 전환까지 검증된 방법론으로 지원합니다.",
+                "ai-btn": "컨설팅 서비스 바로가기"
             }
         };
 
@@ -1344,6 +1401,10 @@
             document.getElementById('flow-title').innerText = dict['flow-title'];
             document.getElementById('flow-desc').innerText = dict['flow-desc'];
             document.getElementById('flow-btn').innerText = dict['flow-btn'];
+
+            document.getElementById('ai-title').innerText = dict['ai-title'];
+            document.getElementById('ai-desc').innerText = dict['ai-desc'];
+            document.getElementById('ai-btn').innerText = dict['ai-btn'];
 
             // Badges
             document.querySelectorAll('[data-i18n="badge-active"]').forEach(el => {
