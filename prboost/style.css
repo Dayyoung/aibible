@@ -810,11 +810,11 @@ main {
     background: var(--bg-modal);
     border: 1px solid var(--border);
     border-radius: 20px;
-    padding: 2.5rem;
-    max-width: 480px;
+    padding: 1.8rem;
+    max-width: 460px;
     width: 90%;
     position: relative;
-    max-height: 90vh;
+    max-height: 85vh;
     overflow-y: auto;
 }
 
@@ -836,29 +836,29 @@ main {
 
 .modal-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.3rem;
-    margin-bottom: 0.3rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
 }
 
 .modal-desc {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--text-muted);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .order-summary-box {
     background: rgba(255,255,255,0.03);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
 }
 
 .summary-row {
     display: flex;
     justify-content: space-between;
-    padding: 0.3rem 0;
-    font-size: 0.9rem;
+    padding: 0.15rem 0;
+    font-size: 0.85rem;
 }
 
 .summary-row span {
@@ -929,36 +929,36 @@ main {
 .total-price-box {
     background: rgba(5, 150, 105, 0.08);
     border: 1px solid rgba(5, 150, 105, 0.2);
-    border-radius: 12px;
-    padding: 1rem;
+    border-radius: 10px;
+    padding: 0.7rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     font-weight: 600;
 }
 
 .total-price-box span:first-child {
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .price-val {
     font-family: var(--font-heading);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: var(--primary);
 }
 
 .paypal-wrapper {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
 .payment-badges {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
-    margin-top: 1rem;
-    padding-top: 1rem;
+    margin-top: 0.8rem;
+    padding-top: 0.8rem;
     border-top: 1px solid var(--border);
 }
 

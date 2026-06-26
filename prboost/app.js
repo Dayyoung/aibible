@@ -457,6 +457,16 @@ function openPurchaseModal(categoryKey, packageId) {
     // Open Modal
     document.getElementById('purchase-modal').classList.add('active');
     
+    // Auto-scroll to show PayPal button
+    setTimeout(() => {
+        const modalCard = document.querySelector('.modal-card');
+        const totalBox = document.querySelector('.total-price-box');
+        if (modalCard && totalBox) {
+            // Scroll so the total price box is at the top of the modal
+            modalCard.scrollTop = totalBox.offsetTop - 10;
+        }
+    }, 800);
+    
     // Load PayPal Buttons
     initPayPalButtons();
 }
