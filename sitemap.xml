@@ -2,31 +2,109 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://bibleforai.com/</loc>
-        <lastmod>2026-06-26</lastmod>
+        <lastmod>2026-06-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://bibleforai.com/boostsm/</loc>
-        <lastmod>2026-06-26</lastmod>
+        <lastmod>2026-06-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://bibleforai.com/b2cdb/</loc>
-        <lastmod>2026-06-26</lastmod>
+        <lastmod>2026-06-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://bibleforai.com/b2bdb/</loc>
-        <lastmod>2026-06-26</lastmod>
+        <lastmod>2026-06-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://bibleforai.com/landPage/</loc>
-        <lastmod>2026-06-26</lastmod>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bibleforai.com/prboost/</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bibleforai.com/clipboost/</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bibleforai.com/mailboost/</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bibleforai.com/chatboost/</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bibleforai.com/searchboost/</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bibleforai.com/mkboost/</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bibleforai.com/databoost/</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bibleforai.com/imgboost/</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bibleforai.com/flowboost/</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bibleforai.com/aiboost/</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bibleforai.com/voiceboost/</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bibleforai.com/transboost/</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bibleforai.com/pitchboost/</loc>
+        <lastmod>2026-06-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>

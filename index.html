@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BibleForAI | AI-Powered Business Solutions</title>
     <meta name="description" content="Empower your digital presence and business strategy with BibleForAI's premium web services. Explore our SMM Growth Booster, B2C Lead Database, and more.">
-    <meta name="keywords" content="BibleForAI, AI Solutions, SMM Growth Booster, B2C Lead Database, B2B Database, AI Landing Page, Marketing Automation, AI Chatbot, Customer Support Automation, WhatsApp Chatbot, Messenger Bot, AI Consulting, AI Strategy, AI Implementation, AI Voice Cloning, AI Voiceover, AI Audio Production">
+    <meta name="keywords" content="BibleForAI, AI Solutions, SMM Growth Booster, B2C Lead Database, B2B Database, AI Landing Page, Marketing Automation, AI Chatbot, Customer Support Automation, WhatsApp Chatbot, Messenger Bot, AI Consulting, AI Strategy, AI Implementation, AI Voice Cloning, AI Voiceover, AI Audio Production, AI Translation, Global Localization, Translation Services, AI Workflow Automation, AI Product Photography, Market Research, Web Scraping, Email Marketing, AI SEO, Short-Form Video, Pitch Deck Design, Presentation Design, AI Presentation, Investor Deck, Business Proposal, PPT Design">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://bibleforai.com/">
 
@@ -212,6 +212,24 @@
                   "name": "VOICEBOOST — AI Voice Cloning & Audio Production",
                   "url": "https://bibleforai.com/voiceboost/",
                   "description": "AI voice cloning, professional voiceovers, and audio production. Clone any voice, generate voiceovers in 30+ languages, and produce studio-quality AI audio content for videos, ads, and podcasts."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "TRANSBOOST — AI Translation & Global Localization",
+                  "url": "https://bibleforai.com/transboost/",
+                  "description": "Professional AI-powered translation and global localization services. 100+ languages, certified human expert review, cultural adaptation, and SEO localization for documents, websites, and apps."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "PITCHBOOST — AI-Powered Presentation & Pitch Deck Design",
+                  "url": "https://bibleforai.com/pitchboost/",
+                  "description": "Professional AI-powered pitch deck and presentation design. Win clients with stunning investor decks, company profiles, and business proposals crafted by AI and expert designers."
                 }
               }
             ]
@@ -578,6 +596,15 @@
             box-shadow: 0 15px 35px rgba(234, 179, 8, 0.12), 0 0 15px rgba(234, 179, 8, 0.1);
         }
 
+        .card-active-trans {
+            border-color: rgba(13, 148, 136, 0.15);
+        }
+        .card-active-trans:hover {
+            transform: translateY(-8px);
+            border-color: #0D9488;
+            box-shadow: 0 15px 35px rgba(13, 148, 136, 0.12), 0 0 15px rgba(13, 148, 136, 0.1);
+        }
+
         .card-disabled {
             opacity: 0.6;
             cursor: not-allowed;
@@ -691,6 +718,18 @@
             color: #eab308;
             background: rgba(234, 179, 8, 0.06);
             border-color: rgba(234, 179, 8, 0.15);
+        }
+
+        .icon-trans {
+            color: #0D9488;
+            background: rgba(13, 148, 136, 0.06);
+            border-color: rgba(13, 148, 136, 0.15);
+        }
+
+        .icon-pitch {
+            color: #f97316;
+            background: rgba(249, 115, 22, 0.06);
+            border-color: rgba(249, 115, 22, 0.15);
         }
 
         .icon-disabled {
@@ -919,6 +958,28 @@
         .btn-voice:hover {
             background: #ca8a04;
             box-shadow: 0 8px 25px rgba(234, 179, 8, 0.35);
+        }
+
+        .btn-trans {
+            background: #0D9488;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(13, 148, 136, 0.2);
+        }
+        .btn-trans:hover {
+            background: #0f766e;
+            box-shadow: 0 8px 25px rgba(13, 148, 136, 0.35);
+        }
+
+        .btn-pitch {
+            background: #f97316;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.25);
+        }
+        .btn-pitch:hover {
+            background: #ea580c;
+            box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
         }
 
         .btn-disabled {
@@ -1216,6 +1277,32 @@
                     </div>
                     <a href="/voiceboost/" class="card-btn btn-voice" id="voice-btn">Launch Voice Service</a>
                 </div>
+
+                <!-- TRANSBOOST Banner (Active) -->
+                <div class="card card-active-trans" onmousemove="updateCardCoordinates(event, this)">
+                    <div class="card-header">
+                        <div class="card-icon icon-trans"><i class="fa-solid fa-language"></i></div>
+                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 id="trans-title">TRANSBOOST — AI Translation</h3>
+                        <p id="trans-desc">Professional AI-powered translation & global localization. 100+ languages, certified human review, cultural adaptation, and SEO localization for documents, websites & apps.</p>
+                    </div>
+                    <a href="/transboost/" class="card-btn btn-trans" id="trans-btn">Launch Translation</a>
+                </div>
+
+                <!-- PITCHBOOST Card -->
+                <div class="solution-card">
+                    <div class="card-header">
+                        <div class="card-icon icon-pitch"><i class="fa-solid fa-chart-line"></i></div>
+                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 id="pitch-title">PITCHBOOST — AI Presentations</h3>
+                        <p id="pitch-desc">Professional AI-powered pitch deck & presentation design. Win clients with stunning decks, company profiles, and business proposals with data visualization.</p>
+                    </div>
+                    <a href="/pitchboost/" class="card-btn btn-pitch" id="pitch-btn">Launch Presentations</a>
+                </div>
             </div>
         </section>
     </main>
@@ -1241,6 +1328,8 @@
                 <a href="/flowboost/" id="foot-flow-link">FLOWBOOST</a>
                 <a href="/aiboost/" id="foot-ai-link">AIBOOST</a>
                 <a href="/voiceboost/" id="foot-voice-link">VOICEBOOST</a>
+                <a href="/transboost/" id="foot-trans-link">TRANSBOOST</a>
+                <a href="/pitchboost/" id="foot-pitch-link">PITCHBOOST</a>
             </div>
         </div>
     </footer>
@@ -1314,7 +1403,15 @@
 
                 "voice-title": "VOICEBOOST — AI Voice Cloning",
                 "voice-desc": "Clone any voice, generate professional voiceovers in 30+ languages, and produce AI audio content. Videos, ads, podcasts, and brand audio — no studio needed.",
-                "voice-btn": "Launch Voice Service"
+                "voice-btn": "Launch Voice Service",
+
+                "trans-title": "TRANSBOOST — AI Translation",
+                "trans-desc": "Professional AI-powered translation & global localization. 100+ languages, certified human review, cultural adaptation, and SEO localization.",
+                "trans-btn": "Launch Translation",
+
+                "pitch-title": "PITCHBOOST — AI Presentations",
+                "pitch-desc": "Professional AI-powered pitch deck & presentation design. Win clients with stunning decks, company profiles, and business proposals with data visualization.",
+                "pitch-btn": "Launch Presentations"
             },
             ko: {
                 "hero-title": "AI 솔루션으로 비즈니스 성장을 극대화하세요",
@@ -1381,7 +1478,15 @@
 
                 "voice-title": "VOICEBOOST — AI 음성 복제",
                 "voice-desc": "어떤 목소리든 복제하고 30개 이상 언어로 전문 보이스오버를 제작합니다. 영상, 광고, 팟캐스트, 브랜드 오디오까지 — 스튜디오 불필요.",
-                "voice-btn": "음성 서비스 바로가기"
+                "voice-btn": "음성 서비스 바로가기",
+
+                "trans-title": "TRANSBOOST — AI 번역",
+                "trans-desc": "전문 AI 기반 번역 및 글로벌 현지화. 100개 이상 언어, 인증된 전문가 검토, 문화적 각색, SEO 현지화를 제공합니다.",
+                "trans-btn": "번역 서비스 바로가기",
+
+                "pitch-title": "PITCHBOOST — AI 프레젠테이션",
+                "pitch-desc": "전문 AI 기반 피치덱 및 프레젠테이션 디자인. 데이터 시각화와 함께 멋진 덱, 회사 소개서, 비즈니스 제안서로 고객을 사로잡으세요.",
+                "pitch-btn": "프레젠테이션 서비스 바로가기"
             }
         };
 
@@ -1466,6 +1571,14 @@
             document.getElementById('voice-title').innerText = dict['voice-title'];
             document.getElementById('voice-desc').innerText = dict['voice-desc'];
             document.getElementById('voice-btn').innerText = dict['voice-btn'];
+
+            document.getElementById('trans-title').innerText = dict['trans-title'];
+            document.getElementById('trans-desc').innerText = dict['trans-desc'];
+            document.getElementById('trans-btn').innerText = dict['trans-btn'];
+
+            document.getElementById('pitch-title').innerText = dict['pitch-title'];
+            document.getElementById('pitch-desc').innerText = dict['pitch-desc'];
+            document.getElementById('pitch-btn').innerText = dict['pitch-btn'];
 
             // Badges
             document.querySelectorAll('[data-i18n="badge-active"]').forEach(el => {

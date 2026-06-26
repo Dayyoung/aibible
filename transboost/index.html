@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BibleForAI - TRANSBOOST | AI Translation & Global Localization</title>
+    <meta name="description" content="Professional AI-powered translation and global localization services for your business. Reach every market in any language with AI accuracy and expert human review.">
+    <meta name="keywords" content="Translation Services, Global Localization, AI Translation, Business Translation, Document Translation, Website Localization, Multilingual Content, Language Services">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bibleforai.com/transboost/">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bibleforai.com/transboost/">
+    <meta property="og:title" content="BibleForAI - TRANSBOOST | AI Translation & Global Localization">
+    <meta property="og:description" content="Professional AI-powered translation and global localization services for your business. Reach every market in any language.">
+    <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+    <meta property="og:site_name" content="BibleForAI TRANSBOOST">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bibleforai.com/transboost/">
+    <meta name="twitter:title" content="BibleForAI - TRANSBOOST | AI Translation & Global Localization">
+    <meta name="twitter:description" content="Professional AI-powered translation and global localization services for your business. Reach every market in any language.">
+    <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+    <!-- JSON-LD Structured Data Markups (SEO/AEO/GEO Optimization) -->
+
+    <!-- Schema 1: FAQPage Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What languages does TRANSBOOST support for translation and localization?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TRANSBOOST supports 100+ languages including English, Korean, Japanese, Chinese, Spanish, French, German, Arabic, Russian, Portuguese, and many more. Our AI-powered engine combined with native-speaking linguists ensures accurate translations across all major world languages."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the AI + Human Expert Review process work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our pipeline first processes your content through state-of-the-art neural machine translation models for speed and consistency. Then, certified native-speaking linguists review every translation for accuracy, cultural nuance, and natural fluency. This hybrid approach delivers enterprise-quality results at a fraction of traditional costs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of content can TRANSBOOST translate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We handle documents (PDF, Word, Excel), websites, mobile apps, marketing materials, technical manuals, legal documents, e-commerce listings, video subtitles, and more. Our Enterprise and Ultimate packages include SEO localization and cultural adaptation for market-specific optimization."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the turnaround time for translations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Starter package: 48 hours. Growth package: 24 hours express delivery. Enterprise: 3-5 business days. Ultimate: custom timeline based on project scope with dedicated linguist team. Rush delivery options are available for all packages upon request."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema 2: Translation Service Product Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "BibleForAI TRANSBOOST — AI Translation & Global Localization",
+      "image": "https://bibleforai.com/assets/og-preview.png",
+      "description": "Professional AI-powered translation and global localization services. Documents, websites, apps, and marketing content translated with AI accuracy and certified human expert review across 100+ languages.",
+      "brand": {
+        "@type": "Brand",
+        "name": "BibleForAI"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "2100"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "29.00",
+        "highPrice": "499.00",
+        "offerCount": "4"
+      }
+    }
+    </script>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="app-header">
+        <div class="header-container">
+            <a href="/" class="logo-group">
+                <span class="logo-title">BibleForAI</span>
+                <span class="logo-subtitle" data-i18n="logo-subtitle">TRANSBOOST</span>
+            </a>
+            
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#" id="nav-home" onclick="navigate('home')" class="active" data-i18n="nav-home">Home</a></li>
+                    <li><a href="#" id="nav-translation" onclick="navigate('translation')" data-i18n="nav-translation">Packages</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-orders" onclick="navigate('orders')">
+                    <i class="fa-solid fa-receipt"></i> <span class="btn-text" data-i18n="btn-orders">My Orders</span>
+                </button>
+                <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)" style="margin-left: 0.75rem; padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #ffffff; font-size: 0.82rem; font-weight: 500; cursor: pointer; outline: none; transition: var(--transition);">
+                    <option value="en">🌐 English</option>
+                    <option value="ko">🇰🇷 한국어</option>
+                </select>
+                <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <ul class="mobile-nav-links">
+            <li><a href="#" onclick="navigate('home'); toggleMobileMenu()" data-i18n="nav-home">Home</a></li>
+            <li><a href="#" onclick="navigate('translation'); toggleMobileMenu()" data-i18n="nav-translation">Packages</a></li>
+            <li><a href="#" onclick="navigate('orders'); toggleMobileMenu()"><i class="fa-solid fa-receipt"></i> <span data-i18n="btn-orders">My Orders</span></a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <main>
+        
+        <!-- Home View -->
+        <section id="home-view" class="view-section active">
+            <div class="hero">
+                <div class="badge" data-i18n="hero-badge">AI-Powered Translation</div>
+                <h1 class="hero-title" data-i18n="hero-title">BibleForAI - TRANSBOOST!</h1>
+                <p class="hero-desc" data-i18n="hero-desc">Professional AI-powered translation and global localization for your business. Reach every market in any language.</p>
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="navigate('translation')" data-i18n="btn-explore">Explore Packages <i class="fa-solid fa-arrow-right"></i></button>
+                    <a href="#compliance-section" class="btn-secondary" data-i18n="btn-compliance">How It Works</a>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-num">50M+</span>
+                    <span class="stat-label" data-i18n="stat-words">Words Translated</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">100+</span>
+                    <span class="stat-label" data-i18n="stat-languages">Languages Supported</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">99%</span>
+                    <span class="stat-label" data-i18n="stat-accuracy">Translation Accuracy</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">24h</span>
+                    <span class="stat-label" data-i18n="stat-delivery">Express Delivery</span>
+                </div>
+            </div>
+
+            <!-- Package Categories -->
+            <div class="section-container">
+                <h2 class="section-title" data-i18n="sec-channels-title">Choose Your Translation Package</h2>
+                <p class="section-subtitle" data-i18n="sec-channels-subtitle">From basic document translation to full enterprise localization suites. AI-powered accuracy with human expert review.</p>
+                <div class="card-grid">
+                    <div class="data-card" onclick="navigate('translation')">
+                        <div class="card-icon" style="background: rgba(13, 148, 136, 0.15); color: #0D9488;"><i class="fa-solid fa-language"></i></div>
+                        <h3 data-i18n="card-translation-title">Translation & Localization</h3>
+                        <p data-i18n="card-translation-desc">Professional translation services covering documents, websites, apps, marketing materials, and technical content. AI-powered with certified human proofreading.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How It Works Section -->
+            <div id="compliance-section" class="section-container compliance-bg">
+                <div class="compliance-content">
+                    <div class="compliance-text">
+                        <h2 data-i18n="comp-title">AI + Expert Human Review</h2>
+                        <p data-i18n="comp-desc">Our translation pipeline combines cutting-edge AI language models with certified human linguists to deliver accurate, culturally adapted translations that resonate with your target audience.</p>
+                        <div class="compliance-bullets">
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet1-bold">AI Translation Engine:</strong> <span data-i18n="comp-bullet1-text">Powered by state-of-the-art neural machine translation for speed and consistency.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet2-bold">Human Expert Review:</strong> <span data-i18n="comp-bullet2-text">Every translation is reviewed by native-speaking certified linguists.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet3-bold">Cultural Adaptation:</strong> <span data-i18n="comp-bullet3-text">Content is adapted for local cultural context, idioms, and market expectations.</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="compliance-graphic">
+                        <i class="fa-solid fa-globe"></i>
+                        <div class="glow-pulse"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Translation Packages View -->
+        <section id="translation-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="card-translation-title">Translation & Localization</h2>
+                <p data-i18n="view-translation-sub">Select a package and get your content translated by our AI-powered system with expert human review. Fast, accurate, and culturally adapted.</p>
+            </div>
+            <div class="packages-grid" id="translation-packages">
+                <!-- Loaded dynamically by JS -->
+            </div>
+        </section>
+
+        <!-- My Orders View -->
+        <section id="orders-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="view-orders-title">My Purchase History</h2>
+                <p data-i18n="view-orders-sub">Review your successful orders. Your data is stored locally in your browser workspace.</p>
+            </div>
+            <div class="orders-container">
+                <div class="table-wrapper">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th data-i18n="th-date">Order Date</th>
+                                <th data-i18n="th-order-id">Transaction ID</th>
+                                <th data-i18n="th-product">Product</th>
+                                <th data-i18n="th-tier">Package Tier</th>
+                                <th data-i18n="th-language">Target Language</th>
+                                <th data-i18n="th-qty">Quantity</th>
+                                <th data-i18n="th-total">Total Paid</th>
+                                <th data-i18n="th-status">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-tbody">
+                            <!-- Loaded dynamically by JS -->
+                        </tbody>
+                    </table>
+                    <div id="no-orders-msg" class="no-data-msg">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <p data-i18n="no-orders-msg">No purchase records found. Make your first order to see history here!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Purchase Modal -->
+    <div class="modal-backdrop" id="purchase-modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="modal-product-title" data-i18n="modal-title">Configure Order</h3>
+            <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">Select your target language and complete secure PayPal payment.</p>
+            
+            <div class="order-summary-box">
+                <div class="summary-row">
+                    <span data-i18n="modal-base-pkg">Base Package:</span>
+                    <strong id="modal-package-name">-</strong>
+                </div>
+                <div class="summary-row">
+                    <span data-i18n="modal-base-price-label">Base Price:</span>
+                    <strong id="modal-base-price">$0.00</strong>
+                </div>
+            </div>
+
+            <div class="email-control-group" style="margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="order-email" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-align: left;" data-i18n="modal-email-label">Email Address *</label>
+                <input type="email" id="order-email" required placeholder="name@example.com" data-i18n="modal-email-placeholder" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: #ffffff; padding: 0.65rem 1rem; border-radius: 8px; font-family: var(--font-body); font-size: 0.95rem; outline: none; width: 100%; transition: var(--transition);">
+                <span id="email-error" style="color: #ef4444; font-size: 0.78rem; display: none; text-align: left;" data-i18n="modal-email-error"><i class="fa-solid fa-triangle-exclamation"></i> Please enter a valid email address.</span>
+            </div>
+
+            <div class="language-control-group" style="margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="order-language" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-align: left;" data-i18n="modal-language-label">Target Language:</label>
+                <select id="order-language" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: #ffffff; padding: 0.65rem 1rem; border-radius: 8px; font-family: var(--font-body); font-size: 0.95rem; outline: none; width: 100%; transition: var(--transition); cursor: pointer;">
+                    <option value="English" style="background:#0c0f17; color:#fff;">English</option>
+                    <option value="Korean" style="background:#0c0f17; color:#fff;">Korean (한국어)</option>
+                    <option value="Japanese" style="background:#0c0f17; color:#fff;">Japanese (日本語)</option>
+                    <option value="Chinese (Simplified)" style="background:#0c0f17; color:#fff;">Chinese - Simplified (简体中文)</option>
+                    <option value="Chinese (Traditional)" style="background:#0c0f17; color:#fff;">Chinese - Traditional (繁體中文)</option>
+                    <option value="Spanish" style="background:#0c0f17; color:#fff;">Spanish (Español)</option>
+                    <option value="French" style="background:#0c0f17; color:#fff;">French (Français)</option>
+                    <option value="German" style="background:#0c0f17; color:#fff;">German (Deutsch)</option>
+                    <option value="Arabic" style="background:#0c0f17; color:#fff;">Arabic (العربية)</option>
+                    <option value="Russian" style="background:#0c0f17; color:#fff;">Russian (Русский)</option>
+                    <option value="Portuguese" style="background:#0c0f17; color:#fff;">Portuguese (Português)</option>
+                    <option value="Italian" style="background:#0c0f17; color:#fff;">Italian (Italiano)</option>
+                    <option value="Vietnamese" style="background:#0c0f17; color:#fff;">Vietnamese (Tiếng Việt)</option>
+                    <option value="Thai" style="background:#0c0f17; color:#fff;">Thai (ภาษาไทย)</option>
+                    <option value="Hindi" style="background:#0c0f17; color:#fff;">Hindi (हिन्दी)</option>
+                </select>
+            </div>
+
+            <div class="quantity-control-group">
+                <label for="order-quantity" data-i18n="modal-qty">Quantity:</label>
+                <div class="qty-selector">
+                    <button class="qty-btn" onclick="adjustQty(-1)"><i class="fa-solid fa-minus"></i></button>
+                    <input type="number" id="order-quantity" value="1" min="1" oninput="updateModalPrice()">
+                    <button class="qty-btn" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <div class="total-price-box">
+                <span data-i18n="modal-total-amt">Total Amount:</span>
+                <span class="price-val" id="modal-total-price">$0.00</span>
+            </div>
+
+            <!-- Developer Test Button (Sandbox) -->
+            <button id="paypal-test-button" class="btn-test-checkout" style="display: block; width: 100%; margin-top: 0.6rem; margin-bottom: 0.4rem; background: rgba(255, 255, 255, 0.04); border: 1px dashed rgba(255, 255, 255, 0.2); color: var(--text-muted); opacity: 0.65; font-family: var(--font-heading); font-weight: 600; font-size: 0.78rem; padding: 0.5rem; border-radius: 8px; cursor: pointer; transition: var(--transition);" onmouseover="this.style.opacity=1; this.style.background='rgba(13, 148, 136, 0.1)'; this.style.borderColor='var(--primary)';" onmouseout="this.style.opacity=0.65; this.style.background='rgba(255, 255, 255, 0.04)'; this.style.borderColor='rgba(255, 255, 255, 0.2)';" onclick="triggerTestCheckout()">
+                <i class="fa-solid fa-flask"></i> <span data-i18n="modal-test-btn">Run Sandbox Test Checkout</span>
+            </button>
+
+            <!-- PayPal Button Container -->
+            <div class="paypal-wrapper">
+                <div id="paypal-button-container"></div>
+            </div>
+            
+            <div class="payment-badges">
+                <span><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL Secured Checkout</span></span>
+                <span><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal Verified</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="/" class="logo-group" style="text-decoration: none; margin-bottom: 1rem;">
+                    <span class="logo-title">BibleForAI</span>
+                    <span class="logo-subtitle" data-i18n="logo-subtitle">TRANSBOOST</span>
+                </a>
+                <p data-i18n="hero-desc">Professional AI-powered translation and global localization for your business.</p>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="foot-channels">Packages</h4>
+                <ul>
+                    <li><a href="#" onclick="navigate('translation')" data-i18n="nav-translation">Packages</a></li>
+                </ul>
+            </div>
+            <div class="footer-support">
+                <h4 data-i18n="foot-legal">Quality Assurance</h4>
+                <ul>
+                    <li data-i18n="foot-gdpr">AI-Powered Translation</li>
+                    <li data-i18n="foot-canspam">Human Expert Review</li>
+                    <li data-i18n="foot-match">Cultural Adaptation</li>
+                    <li data-i18n="foot-contact">Contact support: snsherocom@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="foot-copy">&copy; 2026 BibleForAI TRANSBOOST. All rights reserved. AI-powered translation and localization services.</p>
+        </div>
+    </footer>
+
+    <!-- App Logic script -->
+    <script src="app.js"></script>
+</body>
+</html>
