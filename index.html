@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BibleForAI | AI-Powered Business Solutions</title>
     <meta name="description" content="Empower your digital presence and business strategy with BibleForAI's premium web services. Explore our SMM Growth Booster, B2C Lead Database, and more.">
-    <meta name="keywords" content="BibleForAI, AI Solutions, SMM Growth Booster, B2C Lead Database, B2B Database, AI Landing Page, Marketing Automation, AI Chatbot, Customer Support Automation, WhatsApp Chatbot, Messenger Bot, AI Consulting, AI Strategy, AI Implementation, AI Voice Cloning, AI Voiceover, AI Audio Production, AI Translation, Global Localization, Translation Services, AI Workflow Automation, AI Product Photography, Market Research, Web Scraping, Email Marketing, AI SEO, Short-Form Video, Pitch Deck Design, Presentation Design, AI Presentation, Investor Deck, Business Proposal, PPT Design">
+    <meta name="keywords" content="BibleForAI, AI Solutions, SMM Growth Booster, B2C Lead Database, B2B Database, AI Landing Page, Marketing Automation, AI Chatbot, Customer Support Automation, WhatsApp Chatbot, Messenger Bot, AI Consulting, AI Strategy, AI Implementation, AI Voice Cloning, AI Voiceover, AI Audio Production, AI Translation, Global Localization, Translation Services, AI Workflow Automation, AI Product Photography, Market Research, Web Scraping, Email Marketing, AI SEO, Short-Form Video, Pitch Deck Design, Presentation Design, AI Presentation, Investor Deck, Business Proposal, PPT Design, Marketplace Entry, Amazon Store Setup, Shopee, Lazada, Rakuten, Global E-Commerce">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://bibleforai.com/">
 
@@ -240,6 +240,15 @@
                   "url": "https://bibleforai.com/insightboost/",
                   "description": "AI-powered data analysis and business intelligence reports. Turn raw data into actionable insights with ML models, interactive dashboards, and professional analytics deliverables."
                 }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "SHOPBOOST — Global E-Commerce Marketplace Entry",
+                  "url": "https://bibleforai.com/shopboost/",
+                  "description": "Professional marketplace entry service for Amazon, Shopee, Lazada, Rakuten, and global e-commerce platforms. Includes brand registration, product optimization, and logistics configuration."
+                }
               }
             ]
           }
@@ -277,11 +286,12 @@
             box-sizing: border-box;
         }
 
-        body {
+        html, body {
             font-family: var(--font-heading);
             background-color: var(--bg-dark);
             color: var(--text-main);
             min-height: 100vh;
+            width: 100%;
             overflow-x: hidden;
             display: flex;
             flex-direction: column;
@@ -524,6 +534,15 @@
             box-shadow: 0 15px 35px rgba(249, 115, 22, 0.12), 0 0 15px rgba(249, 115, 22, 0.1);
         }
 
+        .card-active-pitch {
+            border-color: rgba(249, 115, 22, 0.15);
+        }
+        .card-active-pitch:hover {
+            transform: translateY(-8px);
+            border-color: #f97316;
+            box-shadow: 0 15px 35px rgba(249, 115, 22, 0.12), 0 0 15px rgba(249, 115, 22, 0.1);
+        }
+
         .card-active-mail {
             border-color: rgba(245, 158, 11, 0.15);
         }
@@ -621,6 +640,24 @@
             transform: translateY(-8px);
             border-color: #06b6d4;
             box-shadow: 0 15px 35px rgba(6, 182, 212, 0.12), 0 0 15px rgba(6, 182, 212, 0.1);
+        }
+
+        .card-active-opencode {
+            border-color: rgba(16, 185, 129, 0.15);
+        }
+        .card-active-opencode:hover {
+            transform: translateY(-8px);
+            border-color: #10b981;
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.12), 0 0 15px rgba(16, 185, 129, 0.1);
+        }
+
+        .card-active-shop {
+            border-color: rgba(255, 107, 53, 0.15);
+        }
+        .card-active-shop:hover {
+            transform: translateY(-8px);
+            border-color: #FF6B35;
+            box-shadow: 0 15px 35px rgba(255, 107, 53, 0.12), 0 0 15px rgba(255, 107, 53, 0.1);
         }
 
         .card-disabled {
@@ -754,6 +791,18 @@
             color: #06b6d4;
             background: rgba(6, 182, 212, 0.06);
             border-color: rgba(6, 182, 212, 0.15);
+        }
+
+        .icon-opencode {
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.06);
+            border-color: rgba(16, 185, 129, 0.15);
+        }
+
+        .icon-shop {
+            color: #FF6B35;
+            background: rgba(255, 107, 53, 0.06);
+            border-color: rgba(255, 107, 53, 0.15);
         }
 
         .icon-disabled {
@@ -1017,6 +1066,28 @@
             box-shadow: 0 8px 25px rgba(6, 182, 212, 0.35);
         }
 
+        .btn-opencode {
+            background: linear-gradient(135deg, #10b981, #06b6d4);
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+        }
+        .btn-opencode:hover {
+            background: linear-gradient(135deg, #059669, #0891b2);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+        }
+
+        .btn-shop {
+            background: #FF6B35;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.2);
+        }
+        .btn-shop:hover {
+            background: #e55a25;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.35);
+        }
+
         .btn-disabled {
             background: rgba(255, 255, 255, 0.03);
             color: rgba(255, 255, 255, 0.2);
@@ -1086,7 +1157,266 @@
                 justify-content: center;
             }
         }
-    </style>
+    
+        /* Hamburger Drawer Sidebar */
+        .hamburger-btn {
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        .hamburger-btn:hover {
+            color: var(--primary-purple);
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -320px;
+            width: 320px;
+            height: 100vh;
+            background: rgba(9, 7, 15, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-right: 1px solid var(--border-card);
+            z-index: 1000;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 2rem 1.5rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .sidebar.active {
+            transform: translateX(320px);
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 1rem;
+        }
+
+        .sidebar-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sidebar-close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .sidebar-close:hover {
+            color: #ef4444;
+        }
+
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .sidebar-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .sidebar-category {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .sidebar-category-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-cyan);
+            margin-bottom: 0.25rem;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+            padding-bottom: 0.25rem;
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 0.6rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid transparent;
+        }
+
+        .sidebar-link:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--border-card);
+            transform: translateX(5px);
+        }
+
+        .sidebar-link i {
+            width: 16px;
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--primary-purple);
+        }
+
+        /* Search, Filter & Sort Controls */
+        .catalog-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            width: 100%;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+            max-width: 450px;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .search-box input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-card);
+            padding: 0.9rem 1rem 0.9rem 3rem;
+            border-radius: 16px;
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary-purple);
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.15);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .sort-box select {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-card);
+            padding: 0.9rem 2.5rem 0.9rem 1.2rem;
+            border-radius: 16px;
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+            cursor: pointer;
+            transition: var(--transition);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1rem;
+        }
+
+        .sort-box select:focus {
+            border-color: var(--primary-cyan);
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.15);
+        }
+
+        .category-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2.5rem;
+            width: 100%;
+        }
+
+        .category-tab {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-card);
+            padding: 0.6rem 1.2rem;
+            border-radius: 100px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .category-tab:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .category-tab.active {
+            color: #ffffff;
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-cyan));
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.25);
+        }
+
+        @media (max-width: 768px) {
+            .catalog-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .search-box {
+                max-width: 100%;
+            }
+            .category-tabs {
+                gap: 0.4rem;
+            }
+            .category-tab {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+</style>
 </head>
 <body>
 
@@ -1096,15 +1426,69 @@
 
     <!-- Navigation Header -->
     <header>
-        <a href="/" class="logo-container" style="text-decoration: none; color: inherit;">
-            <div class="logo-icon"><i class="fa-solid fa-brain"></i></div>
-            <div class="logo-text">Bible<span>ForAI</span></div>
-        </a>
+        <div style="display: flex; align-items: center; gap: 0.85rem;">
+            <button class="hamburger-btn" onclick="toggleSidebar()" aria-label="Open Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <a href="/" class="logo-container" style="text-decoration: none; color: inherit;">
+                <div class="logo-icon"><i class="fa-solid fa-brain"></i></div>
+                <div class="logo-text">Bible<span>ForAI</span></div>
+            </a>
+        </div>
         <select class="lang-selector" onchange="toggleLang(this.value)">
             <option value="en">🌐 English</option>
             <option value="ko">🇰🇷 한국어</option>
         </select>
     </header>
+
+    <!-- Left Sidebar Drawer -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">BibleForAI Services</span>
+            <button class="sidebar-close" onclick="toggleSidebar()">&times;</button>
+        </div>
+        
+        <div class="sidebar-category">
+            <span class="sidebar-category-title" id="side-cat-database">Database & Scraping</span>
+            <a href="/b2bdb/" class="sidebar-link"><i class="fa-solid fa-building-user"></i> <span id="side-title-b2b">B2B Core Database</span></a>
+            <a href="/b2cdb/" class="sidebar-link"><i class="fa-solid fa-database"></i> <span id="side-title-b2c">B2C Lead Database</span></a>
+            <a href="/databoost/" class="sidebar-link"><i class="fa-solid fa-spider"></i> <span id="side-title-data">Web Scraping</span></a>
+        </div>
+        
+        <div class="sidebar-category">
+            <span class="sidebar-category-title" id="side-cat-designdev">Design & Coding</span>
+            <a href="/landPage/" class="sidebar-link"><i class="fa-solid fa-code"></i> <span id="side-title-land">AI Landing Page</span></a>
+            <a href="/opencode/" class="sidebar-link"><i class="fa-solid fa-code"></i> <span id="side-title-opencode">OpenCode AI</span></a>
+            <a href="/shopboost/" class="sidebar-link"><i class="fa-solid fa-store"></i> <span id="side-title-shop">E-Commerce Entry</span></a>
+            <a href="/flowboost/" class="sidebar-link"><i class="fa-solid fa-diagram-project"></i> <span id="side-title-flow">Flow Automation</span></a>
+            <a href="/imgboost/" class="sidebar-link"><i class="fa-solid fa-camera-retro"></i> <span id="side-title-img">Product Photography</span></a>
+            <a href="/pitchboost/" class="sidebar-link"><i class="fa-solid fa-chart-line"></i> <span id="side-title-pitch">AI Presentations</span></a>
+        </div>
+
+        <div class="sidebar-category">
+            <span class="sidebar-category-title" id="side-cat-marketing">Marketing & SEO</span>
+            <a href="/boostsm/" class="sidebar-link"><i class="fa-solid fa-arrow-up-right-dots"></i> <span id="side-title-smm">SMM Growth Booster</span></a>
+            <a href="/prboost/" class="sidebar-link"><i class="fa-solid fa-globe"></i> <span id="side-title-pr">PRBOOST Global PR</span></a>
+            <a href="/mailboost/" class="sidebar-link"><i class="fa-solid fa-envelope"></i> <span id="side-title-mail">Email Marketing</span></a>
+            <a href="/searchboost/" class="sidebar-link"><i class="fa-solid fa-magnifying-glass"></i> <span id="side-title-search">AI SEO & Content</span></a>
+            <a href="/mkboost/" class="sidebar-link"><i class="fa-solid fa-magnifying-glass-chart"></i> <span id="side-title-mk">Market Research</span></a>
+        </div>
+
+        <div class="sidebar-category">
+            <span class="sidebar-category-title" id="side-cat-media">Media & Audio</span>
+            <a href="/clipboost/" class="sidebar-link"><i class="fa-solid fa-clapperboard"></i> <span id="side-title-clip">Short-Form Video</span></a>
+            <a href="/voiceboost/" class="sidebar-link"><i class="fa-solid fa-microphone"></i> <span id="side-title-voice">AI Voice Cloning</span></a>
+            <a href="/transboost/" class="sidebar-link"><i class="fa-solid fa-language"></i> <span id="side-title-trans">AI Translation</span></a>
+        </div>
+
+        <div class="sidebar-category">
+            <span class="sidebar-category-title" id="side-cat-strategy">Strategy & Analytics</span>
+            <a href="/aiboost/" class="sidebar-link"><i class="fa-solid fa-brain"></i> <span id="side-title-ai">AI Consulting</span></a>
+            <a href="/insightboost/" class="sidebar-link"><i class="fa-solid fa-chart-bar"></i> <span id="side-title-insight">AI Data Analytics</span></a>
+            <a href="/chatboost/" class="sidebar-link"><i class="fa-solid fa-robot"></i> <span id="side-title-chat">AI Chatbot</span></a>
+        </div>
+    </div>
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
 
     <!-- Hero Headline Section -->
     <main>
@@ -1116,242 +1500,32 @@
         <!-- Solutions Banners Section -->
         <section class="solutions-container">
             <div class="section-label" id="sec-label">Our Service Catalog</div>
-            <div class="solutions-grid">
-                
-                <!-- SMM Booster Banner (Active) -->
-                <div class="card card-active-boost" onmousemove="updateCardCoordinates(event, this)">
-                    <div class="card-header">
-                        <div class="card-icon icon-boost"><i class="fa-solid fa-arrow-up-right-dots"></i></div>
-                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
-                    </div>
-                    <div class="card-body">
-                        <h3 id="smm-title">SMM Growth Booster</h3>
-                        <p id="smm-desc">Optimize your social channels, generate active organic engagement, and gain immediate presence across Instagram, YouTube, TikTok, and X.</p>
-                    </div>
-                    <a href="/boostsm/" class="card-btn btn-boost" id="smm-btn">Launch Service</a>
+            
+            <!-- Search, Filter & Sort Bar -->
+            <div class="catalog-controls">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="catalog-search" oninput="filterCatalog()" placeholder="Search services...">
                 </div>
-
-                <!-- B2C Database Banner (Active) -->
-                <div class="card card-active-db" onmousemove="updateCardCoordinates(event, this)">
-                    <div class="card-header">
-                        <div class="card-icon icon-db"><i class="fa-solid fa-database"></i></div>
-                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
-                    </div>
-                    <div class="card-body">
-                        <h3 id="b2c-title">B2C Lead Database</h3>
-                        <p id="b2c-desc">Secure legally compliant, opt-in verified customer leads. Enhance your SMM conversion and CRM efficiency with highly accurate email & phone records.</p>
-                    </div>
-                    <a href="/b2cdb/" class="card-btn btn-db" id="b2c-btn">Launch Database</a>
-                </div>
-
-                <!-- B2B Database Banner (Active) -->
-                <div class="card card-active-b2b" onmousemove="updateCardCoordinates(event, this)">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, var(--primary-emerald), var(--primary-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 1.8rem; font-weight: 800;"><i class="fa-solid fa-building-user"></i></div>
-                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
-                    </div>
-                    <div class="card-body">
-                        <h3 id="b2b-title">B2B Core Database</h3>
-                        <p id="b2b-desc">Target corporate decision makers, corporate executives, and businesses with curated, industry-segmented corporate email lists.</p>
-                    </div>
-                    <a href="/b2bdb/" class="card-btn btn-b2b" id="b2b-btn">Launch Database</a>
-                </div>
-
-                <!-- AI Landing Page (Active) -->
-                <div class="card card-active-land" onmousemove="updateCardCoordinates(event, this)">
-                    <div class="card-header">
-                        <div class="card-icon" style="background: linear-gradient(135deg, var(--primary-indigo), var(--primary-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 1.8rem; font-weight: 800;"><i class="fa-solid fa-code"></i></div>
-                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
-                    </div>
-                    <div class="card-body">
-                        <h3 id="land-title">AI Landing Page Creator</h3>
-                        <p id="land-desc">Instantly build, customize, and deploy optimized promotional landing pages designed for high lead conversion and marketing automation.</p>
-                    </div>
-                    <a href="/landPage/" class="card-btn btn-land" id="land-btn">Launch Creator</a>
-                </div>
-
-                <!-- PRBOOST Banner (Active) -->
-                <div class="card card-active-pr" onmousemove="updateCardCoordinates(event, this)">
-                    <div class="card-header">
-                        <div class="card-icon icon-pr"><i class="fa-solid fa-globe"></i></div>
-                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
-                    </div>
-                    <div class="card-body">
-                        <h3 id="pr-title">PRBOOST — Global PR</h3>
-                        <p id="pr-desc">Get DoFollow backlinks from high-authority overseas magazines. Boost your SEO, brand trust, and global visibility with guest posting.</p>
-                    </div>
-                    <a href="/prboost/" class="card-btn btn-pr" id="pr-btn">Launch PR Service</a>
-                </div>
-
-                <!-- CLIPBOOST Banner (Active) -->
-                <div class="card card-active-clip" onmousemove="updateCardCoordinates(event, this)">
-                    <div class="card-header">
-                        <div class="card-icon icon-clip"><i class="fa-solid fa-clapperboard"></i></div>
-                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
-                    </div>
-                    <div class="card-body">
-                        <h3 id="clip-title">CLIPBOOST — Short-Form Video</h3>
-                        <p id="clip-desc">AI-powered short-form video content for TikTok, Reels & Shorts. Trend-aligned editing with professional motion graphics.</p>
-                    </div>
-                    <a href="/clipboost/" class="card-btn btn-clip" id="clip-btn">Launch Video Service</a>
-                </div>
-
-                <!-- MAILBOOST Banner (Active) -->
-                <div class="card card-active-mail" onmousemove="updateCardCoordinates(event, this)">
-                    <div class="card-header">
-                        <div class="card-icon icon-mail"><i class="fa-solid fa-envelope"></i></div>
-                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
-                    </div>
-                    <div class="card-body">
-                        <h3 id="mail-title">MAILBOOST — Email Marketing</h3>
-                        <p id="mail-desc">Professional responsive newsletter design, SPF/DKIM setup, automation workflows & analytics for email campaign success.</p>
-                    </div>
-                    <a href="/mailboost/" class="card-btn btn-mail" id="mail-btn">Launch Email Service</a>
-                </div>
-
-                <!-- CHATBOOST Banner (Active) -->
-                <div class="card card-active-chat" onmousemove="updateCardCoordinates(event, this)">
-                    <div class="card-header">
-                        <div class="card-icon icon-chat"><i class="fa-solid fa-robot"></i></div>
-                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
-                    </div>
-                    <div class="card-body">
-                        <h3 id="chat-title">CHATBOOST — AI Chatbot</h3>
-                        <p id="chat-desc">Deploy intelligent AI chatbots across your website, WhatsApp & Messenger. 24/7 customer support automation with custom AI training.</p>
-                    </div>
-                    <a href="/chatboost/" class="card-btn btn-chat" id="chat-btn">Launch Chatbot Service</a>
-                </div>
-
-                <!-- SEARCHBOOST Banner (Active) -->
-                <div class="card card-active-search" onmousemove="updateCardCoordinates(event, this)">
-                    <div class="card-header">
-                        <div class="card-icon icon-search"><i class="fa-solid fa-magnifying-glass"></i></div>
-                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
-                    </div>
-                    <div class="card-body">
-                        <h3 id="search-title">SEARCHBOOST — AI SEO & Content</h3>
-                        <p id="search-desc">Dominate Google rankings with AI-powered SEO optimization, keyword research, blog content writing, and white-hat content strategy.</p>
-                    </div>
-                    <a href="/searchboost/" class="card-btn btn-search" id="search-btn">Launch SEO Service</a>
-                </div>
-
-                <!-- MKBOOST Banner (Active) -->
-                <div class="card card-active-mk" onmousemove="updateCardCoordinates(event, this)">
-                    <div class="card-header">
-                        <div class="card-icon icon-mk"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
-                    </div>
-                    <div class="card-body">
-                        <h3 id="mk-title">MKBOOST — Market Research</h3>
-                        <p id="mk-desc">Global market intelligence, TAM/SAM/SOM sizing, competitor benchmarking, and industry trend forecasting with multi-source verified data.</p>
-                    </div>
-                    <a href="/mkboost/" class="card-btn btn-mk" id="mk-btn">Launch Research Service</a>
-                </div>
-
-                <!-- DATABOOST Banner (Active) -->
-                <div class="card card-active-data" onmousemove="updateCardCoordinates(event, this)">
-                    <div class="card-header">
-                        <div class="card-icon icon-data"><i class="fa-solid fa-spider"></i></div>
-                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
-                    </div>
-                    <div class="card-body">
-                        <h3 id="data-title">DATABOOST — Web Scraping</h3>
-                        <p id="data-desc">Custom web scraping & data extraction. Convert any website into structured Excel, CSV, or JSON with Python crawlers and anti-bot bypass.</p>
-                    </div>
-                    <a href="/databoost/" class="card-btn btn-data" id="data-btn">Launch Scraping Service</a>
-                </div>
-
-                <!-- IMGBOOST Banner (Active) -->
-                <div class="card card-active-img" onmousemove="updateCardCoordinates(event, this)">
-                    <div class="card-header">
-                        <div class="card-icon icon-img"><i class="fa-solid fa-camera-retro"></i></div>
-                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
-                    </div>
-                    <div class="card-body">
-                        <h3 id="img-title">IMGBOOST — AI Product Photography</h3>
-                        <p id="img-desc">Studio-quality product images and AI model photos without expensive photoshoots. Full commercial license for e-commerce, social media & ads.</p>
-                    </div>
-                    <a href="/imgboost/" class="card-btn btn-img" id="img-btn">Launch Photography Service</a>
-                </div>
-
-                <!-- FLOWBOOST Banner (Active) -->
-                <div class="card card-active-flow" onmousemove="updateCardCoordinates(event, this)">
-                    <div class="card-header">
-                        <div class="card-icon icon-flow"><i class="fa-solid fa-diagram-project"></i></div>
-                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
-                    </div>
-                    <div class="card-body">
-                        <h3 id="flow-title">FLOWBOOST — AI Workflow Automation</h3>
-                        <p id="flow-desc">Automate repetitive business processes with n8n, Make & Zapier. CRM sync, API integration, AI decision nodes, and reporting dashboards.</p>
-                    </div>
-                    <a href="/flowboost/" class="card-btn btn-flow" id="flow-btn">Launch Workflow Service</a>
-                </div>
-
-                <!-- AIBOOST Banner (Active) -->
-                <div class="card card-active-ai" onmousemove="updateCardCoordinates(event, this)">
-                    <div class="card-header">
-                        <div class="card-icon icon-ai"><i class="fa-solid fa-brain"></i></div>
-                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
-                    </div>
-                    <div class="card-body">
-                        <h3 id="ai-title">AIBOOST — AI Consulting</h3>
-                        <p id="ai-desc">Professional AI consulting & implementation. Strategy assessment, PoC development, and enterprise-wide transformation with proven methodology.</p>
-                    </div>
-                    <a href="/aiboost/" class="card-btn btn-ai" id="ai-btn">Launch Consulting</a>
-                </div>
-
-                <!-- VOICEBOOST Banner (Active) -->
-                <div class="card card-active-voice" onmousemove="updateCardCoordinates(event, this)">
-                    <div class="card-header">
-                        <div class="card-icon icon-voice"><i class="fa-solid fa-microphone"></i></div>
-                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
-                    </div>
-                    <div class="card-body">
-                        <h3 id="voice-title">VOICEBOOST — AI Voice Cloning</h3>
-                        <p id="voice-desc">Clone any voice, generate professional voiceovers in 30+ languages, and produce AI audio content. Videos, ads, podcasts, and brand audio — no studio needed.</p>
-                    </div>
-                    <a href="/voiceboost/" class="card-btn btn-voice" id="voice-btn">Launch Voice Service</a>
-                </div>
-
-                <!-- TRANSBOOST Banner (Active) -->
-                <div class="card card-active-trans" onmousemove="updateCardCoordinates(event, this)">
-                    <div class="card-header">
-                        <div class="card-icon icon-trans"><i class="fa-solid fa-language"></i></div>
-                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
-                    </div>
-                    <div class="card-body">
-                        <h3 id="trans-title">TRANSBOOST — AI Translation</h3>
-                        <p id="trans-desc">Professional AI-powered translation & global localization. 100+ languages, certified human review, cultural adaptation, and SEO localization for documents, websites & apps.</p>
-                    </div>
-                    <a href="/transboost/" class="card-btn btn-trans" id="trans-btn">Launch Translation</a>
-                </div>
-
-                <!-- PITCHBOOST Card -->
-                <div class="solution-card">
-                    <div class="card-header">
-                        <div class="card-icon icon-pitch"><i class="fa-solid fa-chart-line"></i></div>
-                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
-                    </div>
-                    <div class="card-body">
-                        <h3 id="pitch-title">PITCHBOOST — AI Presentations</h3>
-                        <p id="pitch-desc">Professional AI-powered pitch deck & presentation design. Win clients with stunning decks, company profiles, and business proposals with data visualization.</p>
-                    </div>
-                    <a href="/pitchboost/" class="card-btn btn-pitch" id="pitch-btn">Launch Presentations</a>
-                </div>
-
-                <!-- INSIGHTBOOST Card -->
-                <div class="card card-active-insight" onmousemove="updateCardCoordinates(event, this)">
-                    <div class="card-header">
-                        <div class="card-icon icon-insight"><i class="fa-solid fa-chart-bar"></i></div>
-                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
-                    </div>
-                    <div class="card-body">
-                        <h3 id="insight-title">INSIGHTBOOST — AI Data Analytics</h3>
-                        <p id="insight-desc">AI-powered data analysis & BI reports. Turn raw data into actionable insights with ML models, interactive dashboards, and professional analytics deliverables.</p>
-                    </div>
-                    <a href="/insightboost/" class="card-btn btn-insight" id="insight-btn">Launch Analytics</a>
+                <div class="sort-box">
+                    <select id="catalog-sort" onchange="filterCatalog()">
+                        <option value="popularity" id="sort-opt-pop">🔥 Popularity</option>
+                        <option value="name-asc" id="sort-opt-asc">🔠 Name (A-Z)</option>
+                        <option value="name-desc" id="sort-opt-desc">🔠 Name (Z-A)</option>
+                    </select>
                 </div>
             </div>
+            
+            <div class="category-tabs" id="category-tabs">
+                <button class="category-tab active" onclick="setCategory('all')" id="cat-tab-all" data-cat="all">All</button>
+                <button class="category-tab" onclick="setCategory('database')" id="cat-tab-database" data-cat="database">Database & Scraping</button>
+                <button class="category-tab" onclick="setCategory('design-dev')" id="cat-tab-designdev" data-cat="design-dev">Design & Coding</button>
+                <button class="category-tab" onclick="setCategory('marketing')" id="cat-tab-marketing" data-cat="marketing">Marketing & SEO</button>
+                <button class="category-tab" onclick="setCategory('media')" id="cat-tab-media" data-cat="media">Media & Audio</button>
+                <button class="category-tab" onclick="setCategory('strategy')" id="cat-tab-strategy" data-cat="strategy">Strategy & Analytics</button>
+            </div>
+
+            <div class="solutions-grid" id="solutions-grid"></div>
         </section>
     </main>
 
@@ -1379,6 +1553,8 @@
                 <a href="/transboost/" id="foot-trans-link">TRANSBOOST</a>
                 <a href="/pitchboost/" id="foot-pitch-link">PITCHBOOST</a>
                 <a href="/insightboost/" id="foot-insight-link">INSIGHTBOOST</a>
+                <a href="https://opencode.ai/go?ref=CFP69RVVCJ" target="_blank" id="foot-opencode-link">OpenCode AI</a>
+                <a href="/shopboost/" id="foot-shop-link">SHOPBOOST</a>
             </div>
         </div>
     </footer>
@@ -1389,6 +1565,17 @@
         const trans = {
             en: {
                 "hero-title": "Empower Business Growth with AI Solutions",
+                "sidebar-title": "BibleForAI Services",
+                "search-placeholder": "Search services...",
+                "sort-popularity": "🔥 Popularity",
+                "sort-name-asc": "🔠 Name (A-Z)",
+                "sort-name-desc": "🔠 Name (Z-A)",
+                "cat-all": "All",
+                "cat-database": "Database & Scraping",
+                "cat-designdev": "Design & Coding",
+                "cat-marketing": "Marketing & SEO",
+                "cat-media": "Media & Audio",
+                "cat-strategy": "Strategy & Analytics",
                 "hero-desc": "Maximize reach, database intelligence, and organic engagement through our advanced, AI-driven digital ecosystems.",
                 "sec-label": "Our Service Catalog",
                 "badge-active": "Active",
@@ -1464,7 +1651,15 @@
 
                 "insight-title": "INSIGHTBOOST — AI Data Analytics",
                 "insight-desc": "AI-powered data analysis & BI reports. Turn raw data into actionable insights with ML models, interactive dashboards, and professional analytics deliverables.",
-                "insight-btn": "Launch Analytics"
+                "insight-btn": "Launch Analytics",
+                
+                "opencode-title": "OpenCode AI",
+                "opencode-desc": "Access numerous premium AI models for 1 month for just $5. Empower your coding workflow with unlimited AI assistance.",
+                "opencode-btn": "Launch OpenCode",
+
+                "shop-title": "SHOPBOOST — E-Commerce Entry",
+                "shop-desc": "Launch your products on Amazon, Shopee, Lazada & Rakuten. Professional marketplace setup, brand registration, and logistics configuration.",
+                "shop-btn": "Launch Shop Service"
             },
             ko: {
                 "hero-title": "AI 솔루션으로 비즈니스 성장을 극대화하세요",
@@ -1543,7 +1738,15 @@
 
                 "insight-title": "INSIGHTBOOST — AI 데이터 분석",
                 "insight-desc": "AI 기반 데이터 분석 및 BI 리포트. ML 모델, 인터랙티브 대시보드, 전문 분석 결과물로 원시 데이터를 실행 가능한 인사이트로 전환하세요.",
-                "insight-btn": "분석 서비스 바로가기"
+                "insight-btn": "분석 서비스 바로가기",
+                
+                "opencode-title": "OpenCode AI",
+                "opencode-desc": "단 5달러(약 6,500원)로 수많은 최신 AI 모델을 1달 동안 제한 없이 구독하고 사용해 보세요. 개발 생산성을 극대화하는 맞춤형 AI 코딩 솔루션입니다.",
+                "opencode-btn": "서비스 바로가기",
+
+                "shop-title": "SHOPBOOST — 이커머스 입점",
+                "shop-desc": "아마존, 쇼피, 라자다, 라쿠텐에서 제품을 판매하세요. 전문가의 마켓플레이스 설정, 브랜드 등록 및 물류 구성 서비스.",
+                "shop-btn": "서비스 바로가기"
             }
         };
 
@@ -1569,77 +1772,38 @@
             document.getElementById('hero-desc').innerText = dict['hero-desc'];
             document.getElementById('sec-label').innerText = dict['sec-label'];
             
-            document.getElementById('smm-title').innerText = dict['smm-title'];
-            document.getElementById('smm-desc').innerText = dict['smm-desc'];
-            document.getElementById('smm-btn').innerText = dict['smm-btn'];
-
-            document.getElementById('b2c-title').innerText = dict['b2c-title'];
-            document.getElementById('b2c-desc').innerText = dict['b2c-desc'];
-            document.getElementById('b2c-btn').innerText = dict['b2c-btn'];
-
-            document.getElementById('b2b-title').innerText = dict['b2b-title'];
-            document.getElementById('b2b-desc').innerText = dict['b2b-desc'];
-            document.getElementById('b2b-btn').innerText = dict['b2b-btn'];
-
-            document.getElementById('land-title').innerText = dict['land-title'];
-            document.getElementById('land-desc').innerText = dict['land-desc'];
-            document.getElementById('land-btn').innerText = dict['land-btn'];
-
-            document.getElementById('pr-title').innerText = dict['pr-title'];
-            document.getElementById('pr-desc').innerText = dict['pr-desc'];
-            document.getElementById('pr-btn').innerText = dict['pr-btn'];
-
-            document.getElementById('clip-title').innerText = dict['clip-title'];
-            document.getElementById('clip-desc').innerText = dict['clip-desc'];
-            document.getElementById('clip-btn').innerText = dict['clip-btn'];
-
-            document.getElementById('mail-title').innerText = dict['mail-title'];
-            document.getElementById('mail-desc').innerText = dict['mail-desc'];
-            document.getElementById('mail-btn').innerText = dict['mail-btn'];
-
-            document.getElementById('chat-title').innerText = dict['chat-title'];
-            document.getElementById('chat-desc').innerText = dict['chat-desc'];
-            document.getElementById('chat-btn').innerText = dict['chat-btn'];
-
-            document.getElementById('search-title').innerText = dict['search-title'];
-            document.getElementById('search-desc').innerText = dict['search-desc'];
-            document.getElementById('search-btn').innerText = dict['search-btn'];
-
-            document.getElementById('mk-title').innerText = dict['mk-title'];
-            document.getElementById('mk-desc').innerText = dict['mk-desc'];
-            document.getElementById('mk-btn').innerText = dict['mk-btn'];
-
-            document.getElementById('data-title').innerText = dict['data-title'];
-            document.getElementById('data-desc').innerText = dict['data-desc'];
-            document.getElementById('data-btn').innerText = dict['data-btn'];
-
-            document.getElementById('img-title').innerText = dict['img-title'];
-            document.getElementById('img-desc').innerText = dict['img-desc'];
-            document.getElementById('img-btn').innerText = dict['img-btn'];
-
-            document.getElementById('flow-title').innerText = dict['flow-title'];
-            document.getElementById('flow-desc').innerText = dict['flow-desc'];
-            document.getElementById('flow-btn').innerText = dict['flow-btn'];
-
-            document.getElementById('ai-title').innerText = dict['ai-title'];
-            document.getElementById('ai-desc').innerText = dict['ai-desc'];
-            document.getElementById('ai-btn').innerText = dict['ai-btn'];
-
-            document.getElementById('voice-title').innerText = dict['voice-title'];
-            document.getElementById('voice-desc').innerText = dict['voice-desc'];
-            document.getElementById('voice-btn').innerText = dict['voice-btn'];
-
-            document.getElementById('trans-title').innerText = dict['trans-title'];
-            document.getElementById('trans-desc').innerText = dict['trans-desc'];
-            document.getElementById('trans-btn').innerText = dict['trans-btn'];
-
-            document.getElementById('pitch-title').innerText = dict['pitch-title'];
-            document.getElementById('pitch-desc').innerText = dict['pitch-desc'];
-            document.getElementById('pitch-btn').innerText = dict['pitch-btn'];
-
-            document.getElementById('insight-title').innerText = dict['insight-title'];
-            document.getElementById('insight-desc').innerText = dict['insight-desc'];
-            document.getElementById('insight-btn').innerText = dict['insight-btn'];
+            // Translate Controls
+            document.querySelector('.sidebar-title').innerText = dict['sidebar-title'];
+            document.getElementById('catalog-search').placeholder = dict['search-placeholder'];
+            
+            document.getElementById('sort-opt-pop').innerText = dict['sort-popularity'];
+            document.getElementById('sort-opt-asc').innerText = dict['sort-name-asc'];
+            document.getElementById('sort-opt-desc').innerText = dict['sort-name-desc'];
+            
+            document.getElementById('cat-tab-all').innerText = dict['cat-all'];
+            document.getElementById('cat-tab-database').innerText = dict['cat-database'];
+            document.getElementById('cat-tab-designdev').innerText = dict['cat-designdev'];
+            document.getElementById('cat-tab-marketing').innerText = dict['cat-marketing'];
+            document.getElementById('cat-tab-media').innerText = dict['cat-media'];
+            document.getElementById('cat-tab-strategy').innerText = dict['cat-strategy'];
+            
+            // Translate Sidebar category titles
+            document.getElementById('side-cat-database').innerText = dict['cat-database'];
+            document.getElementById('side-cat-designdev').innerText = dict['cat-designdev'];
+            document.getElementById('side-cat-marketing').innerText = dict['cat-marketing'];
+            document.getElementById('side-cat-media').innerText = dict['cat-media'];
+            document.getElementById('side-cat-strategy').innerText = dict['cat-strategy'];
+            
+            // Translate Sidebar links
+            servicesCatalog.forEach(pkg => {
+                const el = document.getElementById(`side-title-${pkg.id}`);
+                if (el) {
+                    el.innerText = dict[`${pkg.id}-title`].split('—')[0].split(' - ')[0].trim();
+                }
+            });
+            
+            // Render grid
+            renderServices();
 
             // Badges
             document.querySelectorAll('[data-i18n="badge-active"]').forEach(el => {
@@ -1651,6 +1815,124 @@
         }
 
         // Micro-interaction: Track mouse coordinates on card overlay for lighting effect
+        
+        // Service Catalog Data definition
+        const servicesCatalog = [
+            { id: 'smm', category: 'marketing', link: '/boostsm/', icon: 'fa-solid fa-arrow-up-right-dots', cardClass: 'card-active-boost', btnClass: 'btn-boost', iconBoxClass: 'icon-boost', popularity: 95 },
+            { id: 'b2c', category: 'database', link: '/b2cdb/', icon: 'fa-solid fa-database', cardClass: 'card-active-db', btnClass: 'btn-db', iconBoxClass: 'icon-db', popularity: 90 },
+            { id: 'b2b', category: 'database', link: '/b2bdb/', icon: 'fa-solid fa-building-user', cardClass: 'card-active-b2b', btnClass: 'btn-b2b', iconBoxClass: '', popularity: 92 },
+            { id: 'land', category: 'design-dev', link: '/landPage/', icon: 'fa-solid fa-code', cardClass: 'card-active-land', btnClass: 'btn-land', iconBoxClass: '', popularity: 88 },
+            { id: 'pr', category: 'marketing', link: '/prboost/', icon: 'fa-solid fa-globe', cardClass: 'card-active-pr', btnClass: 'btn-pr', iconBoxClass: 'icon-pr', popularity: 82 },
+            { id: 'clip', category: 'media', link: '/clipboost/', icon: 'fa-solid fa-clapperboard', cardClass: 'card-active-clip', btnClass: 'btn-clip', iconBoxClass: 'icon-clip', popularity: 85 },
+            { id: 'mail', category: 'marketing', link: '/mailboost/', icon: 'fa-solid fa-envelope', cardClass: 'card-active-mail', btnClass: 'btn-mail', iconBoxClass: 'icon-mail', popularity: 80 },
+            { id: 'chat', category: 'strategy', link: '/chatboost/', icon: 'fa-solid fa-robot', cardClass: 'card-active-chat', btnClass: 'btn-chat', iconBoxClass: 'icon-chat', popularity: 87 },
+            { id: 'search', category: 'marketing', link: '/searchboost/', icon: 'fa-solid fa-magnifying-glass', cardClass: 'card-active-search', btnClass: 'btn-search', iconBoxClass: 'icon-search', popularity: 84 },
+            { id: 'mk', category: 'marketing', link: '/mkboost/', icon: 'fa-solid fa-magnifying-glass-chart', cardClass: 'card-active-mk', btnClass: 'btn-mk', iconBoxClass: 'icon-mk', popularity: 78 },
+            { id: 'data', category: 'database', link: '/databoost/', icon: 'fa-solid fa-spider', cardClass: 'card-active-data', btnClass: 'btn-data', iconBoxClass: 'icon-data', popularity: 86 },
+            { id: 'img', category: 'design-dev', link: '/imgboost/', icon: 'fa-solid fa-camera-retro', cardClass: 'card-active-img', btnClass: 'btn-img', iconBoxClass: 'icon-img', popularity: 83 },
+            { id: 'flow', category: 'design-dev', link: '/flowboost/', icon: 'fa-solid fa-diagram-project', cardClass: 'card-active-flow', btnClass: 'btn-flow', iconBoxClass: 'icon-flow', popularity: 81 },
+            { id: 'ai', category: 'strategy', link: '/aiboost/', icon: 'fa-solid fa-brain', cardClass: 'card-active-ai', btnClass: 'btn-ai', iconBoxClass: 'icon-ai', popularity: 89 },
+            { id: 'voice', category: 'media', link: '/voiceboost/', icon: 'fa-solid fa-microphone', cardClass: 'card-active-voice', btnClass: 'btn-voice', iconBoxClass: 'icon-voice', popularity: 77 },
+            { id: 'trans', category: 'media', link: '/transboost/', icon: 'fa-solid fa-language', cardClass: 'card-active-trans', btnClass: 'btn-trans', iconBoxClass: 'icon-trans', popularity: 76 },
+            { id: 'pitch', category: 'media', link: '/pitchboost/', icon: 'fa-solid fa-chart-line', cardClass: 'card-active-pitch', btnClass: 'btn-pitch', iconBoxClass: 'icon-pitch', popularity: 79 },
+            { id: 'insight', category: 'strategy', link: '/insightboost/', icon: 'fa-solid fa-chart-bar', cardClass: 'card-active-insight', btnClass: 'btn-insight', iconBoxClass: 'icon-insight', popularity: 75 },
+            { id: 'opencode', category: 'design-dev', link: '/opencode/', icon: 'fa-solid fa-code', cardClass: 'card-active-opencode', btnClass: 'btn-opencode', iconBoxClass: 'icon-opencode', popularity: 94 },
+            { id: 'shop', category: 'strategy', link: '/shopboost/', icon: 'fa-solid fa-store', cardClass: 'card-active-shop', btnClass: 'btn-shop', iconBoxClass: 'icon-shop', popularity: 77 }
+        ];
+
+        let activeCategory = 'all';
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.getElementById('sidebar-overlay').classList.toggle('active');
+        }
+
+        function setCategory(cat) {
+            activeCategory = cat;
+            
+            // Toggle active state on tab buttons
+            document.querySelectorAll('.category-tab').forEach(btn => {
+                if (btn.getAttribute('data-cat') === cat) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            renderServices();
+        }
+
+        function filterCatalog() {
+            renderServices();
+        }
+
+        function renderServices() {
+            const grid = document.getElementById('solutions-grid');
+            if (!grid) return;
+            
+            const query = document.getElementById('catalog-search').value.toLowerCase().trim();
+            const sortVal = document.getElementById('catalog-sort').value;
+            const dict = trans[currentLang];
+            
+            // Filter
+            let filtered = servicesCatalog.filter(pkg => {
+                const title = (dict[`${pkg.id}-title`] || "").toLowerCase();
+                const desc = (dict[`${pkg.id}-desc`] || "").toLowerCase();
+                const matchesSearch = title.includes(query) || desc.includes(query);
+                
+                const matchesCategory = (activeCategory === 'all' || pkg.category === activeCategory);
+                
+                return matchesSearch && matchesCategory;
+            });
+            
+            // Sort
+            if (sortVal === 'popularity') {
+                filtered.sort((a, b) => b.popularity - a.popularity);
+            } else if (sortVal === 'name-asc') {
+                filtered.sort((a, b) => {
+                    const nameA = dict[`${a.id}-title`] || "";
+                    const nameB = dict[`${b.id}-title`] || "";
+                    return nameA.localeCompare(nameB, currentLang === 'ko' ? 'ko' : 'en');
+                });
+            } else if (sortVal === 'name-desc') {
+                filtered.sort((a, b) => {
+                    const nameA = dict[`${a.id}-title`] || "";
+                    const nameB = dict[`${b.id}-title`] || "";
+                    return nameB.localeCompare(nameA, currentLang === 'ko' ? 'ko' : 'en');
+                });
+            }
+            
+            // Render
+            grid.innerHTML = filtered.map(pkg => {
+                const title = dict[`${pkg.id}-title`] || "";
+                const desc = dict[`${pkg.id}-desc`] || "";
+                const btnText = dict[`${pkg.id}-btn`] || "Launch";
+                const badgeActive = dict['badge-active'] || "Active";
+                
+                // Keep the exact gradient icons that were coded in the static structure
+                let iconStyleHtml = "";
+                if (pkg.id === 'b2b') {
+                    iconStyleHtml = 'style="background: linear-gradient(135deg, var(--primary-emerald), var(--primary-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 1.8rem; font-weight: 800;"';
+                } else if (pkg.id === 'land') {
+                    iconStyleHtml = 'style="background: linear-gradient(135deg, var(--primary-indigo), var(--primary-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 1.8rem; font-weight: 800;"';
+                }
+                
+                return `
+                    <div class="card ${pkg.cardClass}" onmousemove="updateCardCoordinates(event, this)">
+                        <div class="card-header">
+                            <div class="card-icon ${pkg.iconBoxClass || ''}" ${iconStyleHtml}><i class="${pkg.icon}"></i></div>
+                            <span class="status-badge badge-active" data-i18n="badge-active">${badgeActive}</span>
+                        </div>
+                        <div class="card-body">
+                            <h3>${title}</h3>
+                            <p>${desc}</p>
+                        </div>
+                        <a href="${pkg.link}" class="card-btn ${pkg.btnClass}">${btnText}</a>
+                    </div>
+                `;
+            }).join('');
+        }
+
         function updateCardCoordinates(e, card) {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
