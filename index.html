@@ -150,6 +150,15 @@
                   "url": "https://bibleforai.com/chatboost/",
                   "description": "AI-powered chatbot and customer support automation. Deploy intelligent chatbots across website, WhatsApp, and Messenger with 24/7 availability and custom AI training."
                 }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "SEARCHBOOST — AI SEO & Content Marketing",
+                  "url": "https://bibleforai.com/searchboost/",
+                  "description": "AI-powered SEO optimization, keyword research, blog content writing, and search ranking improvement with white-hat Google-compliant strategies."
+                }
               }
             ]
           }
@@ -452,6 +461,15 @@
             box-shadow: 0 15px 35px rgba(20, 184, 166, 0.12), 0 0 15px rgba(20, 184, 166, 0.1);
         }
 
+        .card-active-search {
+            border-color: rgba(236, 72, 153, 0.15);
+        }
+        .card-active-search:hover {
+            transform: translateY(-8px);
+            border-color: #ec4899;
+            box-shadow: 0 15px 35px rgba(236, 72, 153, 0.12), 0 0 15px rgba(236, 72, 153, 0.1);
+        }
+
         .card-disabled {
             opacity: 0.6;
             cursor: not-allowed;
@@ -523,6 +541,12 @@
             color: #14b8a6;
             background: rgba(20, 184, 166, 0.06);
             border-color: rgba(20, 184, 166, 0.15);
+        }
+
+        .icon-search {
+            color: #ec4899;
+            background: rgba(236, 72, 153, 0.06);
+            border-color: rgba(236, 72, 153, 0.15);
         }
 
         .icon-disabled {
@@ -674,6 +698,17 @@
         .btn-chat:hover {
             background: #0d9488;
             box-shadow: 0 8px 25px rgba(20, 184, 166, 0.35);
+        }
+
+        .btn-search {
+            background: #ec4899;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.2);
+        }
+        .btn-search:hover {
+            background: #db2777;
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.35);
         }
 
         .btn-disabled {
@@ -880,6 +915,19 @@
                     </div>
                     <a href="/chatboost/" class="card-btn btn-chat" id="chat-btn">Launch Chatbot Service</a>
                 </div>
+
+                <!-- SEARCHBOOST Banner (Active) -->
+                <div class="card card-active-search" onmousemove="updateCardCoordinates(event, this)">
+                    <div class="card-header">
+                        <div class="card-icon icon-search"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <span class="status-badge badge-active" data-i18n="badge-active">Active</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 id="search-title">SEARCHBOOST — AI SEO & Content</h3>
+                        <p id="search-desc">Dominate Google rankings with AI-powered SEO optimization, keyword research, blog content writing, and white-hat content strategy.</p>
+                    </div>
+                    <a href="/searchboost/" class="card-btn btn-search" id="search-btn">Launch SEO Service</a>
+                </div>
             </div>
         </section>
     </main>
@@ -898,6 +946,7 @@
                 <a href="/clipboost/" id="foot-clip-link">CLIPBOOST</a>
                 <a href="/mailboost/" id="foot-mail-link">MAILBOOST</a>
                 <a href="/chatboost/" id="foot-chat-link">CHATBOOST</a>
+                <a href="/searchboost/" id="foot-search-link">SEARCHBOOST</a>
             </div>
         </div>
     </footer>
@@ -943,7 +992,11 @@
 
                 "chat-title": "CHATBOOST — AI Chatbot",
                 "chat-desc": "Deploy intelligent AI chatbots across your website, WhatsApp & Messenger. 24/7 customer support automation with custom AI training.",
-                "chat-btn": "Launch Chatbot Service"
+                "chat-btn": "Launch Chatbot Service",
+
+                "search-title": "SEARCHBOOST — AI SEO & Content",
+                "search-desc": "Dominate Google rankings with AI-powered SEO optimization, keyword research, blog content writing, and white-hat content strategy.",
+                "search-btn": "Launch SEO Service"
             },
             ko: {
                 "hero-title": "AI 솔루션으로 비즈니스 성장을 극대화하세요",
@@ -982,7 +1035,11 @@
 
                 "chat-title": "CHATBOOST — AI 챗봇",
                 "chat-desc": "웹사이트, 왓츠앱, 메신저에 지능형 AI 챗봇을 배포하세요. 24시간 고객 응대 자동화와 맞춤형 AI 학습을 제공합니다.",
-                "chat-btn": "챗봇 서비스 바로가기"
+                "chat-btn": "챗봇 서비스 바로가기",
+
+                "search-title": "SEARCHBOOST — AI SEO & 콘텐츠",
+                "search-desc": "AI 기반 SEO 최적화, 키워드 리서치, 블로그 콘텐츠 작성 및 화이트햇 콘텐츠 전략으로 Google 랭킹을 정복하세요.",
+                "search-btn": "SEO 서비스 바로가기"
             }
         };
 
@@ -1039,6 +1096,10 @@
             document.getElementById('chat-title').innerText = dict['chat-title'];
             document.getElementById('chat-desc').innerText = dict['chat-desc'];
             document.getElementById('chat-btn').innerText = dict['chat-btn'];
+
+            document.getElementById('search-title').innerText = dict['search-title'];
+            document.getElementById('search-desc').innerText = dict['search-desc'];
+            document.getElementById('search-btn').innerText = dict['search-btn'];
 
             // Badges
             document.querySelectorAll('[data-i18n="badge-active"]').forEach(el => {
