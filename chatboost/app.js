@@ -200,6 +200,17 @@ let currentLang = localStorage.getItem('bibleforai_lang') || (() => {
     return browserLang.toLowerCase().startsWith('ko') ? 'ko' : 'en';
 })();
 
+function formatPrice(usdPrice, includeUnit = true) {
+    const isKo = currentLang === 'ko';
+    if (isKo) {
+        const krw = Math.round(usdPrice * 1300);
+        return includeUnit ? `₩${krw.toLocaleString()} KRW` : `₩${krw.toLocaleString()}`;
+    } else {
+        const formatted = (usdPrice % 1 === 0) ? usdPrice.toLocaleString() : usdPrice.toFixed(2);
+        return includeUnit ? `$${formatted} USD` : `$${formatted}`;
+    }
+}
+
 function applyTranslations() {
     const lang = currentLang;
     const isKo = lang === 'ko';
@@ -342,8 +353,8 @@ function renderAllPackages() {
                     <h3>${name}</h3>
                     <p class="package-desc">${desc}</p>
                     <div class="package-price-box">
-                        <span class="price">$${pkg.price}</span>
-                        <span class="currency">USD</span>
+                        <span class="price">${formatPrice(pkg.price, false)}</span>
+                        <span class="currency">${currentLang === 'ko' ? 'KRW' : 'USD'}</span>
                     </div>
                     <ul class="package-features">
                         ${features.map(feat => `<li><i class="fa-solid fa-circle-check"></i> ${feat}</li>`).join('')}
@@ -387,7 +398,7 @@ function openPurchaseModal(categoryKey, packageId) {
     // Fill Modal elements
     document.getElementById('modal-product-title').innerText = `${catTitle}`;
     document.getElementById('modal-package-name').innerText = pkgName;
-    document.getElementById('modal-base-price').innerText = `$${pkg.price.toLocaleString()} USD`;
+    document.getElementById('modal-base-price').innerText = formatPrice(pkg.price);
     document.getElementById('order-quantity').value = orderQuantity;
     
     // Reset Email inputs
@@ -444,7 +455,7 @@ function updateModalPrice() {
     orderQuantity = val;
     
     const totalPrice = currentPackage.basePrice * orderQuantity;
-    document.getElementById('modal-total-price').innerText = `$${totalPrice.toLocaleString()} USD`;
+    document.getElementById('modal-total-price').innerText = formatPrice(totalPrice);
 }
 
 // Email Address Validation
@@ -475,15 +486,20 @@ function validateEmailField() {
 
 // Sandbox Test Checkout Trigger
 function triggerTestCheckout() {
-    if (!validateEmailField()) {
-        return;
+    // Developer sandbox: auto-fill mock email if field is empty
+    const emailInput = document.getElementById('order-email');
+    if (emailInput && !emailInput.value.trim()) {
+        emailInput.value = 'sandbox@test.dev';
+        emailInput.style.borderColor = 'var(--border)';
+        const emailError = document.getElementById('email-error');
+        if (emailError) emailError.style.display = 'none';
     }
-    
+
     const mockDetails = {
         id: 'TEST-PAYID-' + Math.random().toString(36).substr(2, 9).toUpperCase(),
         isTest: true
     };
-    
+
     saveLocalOrder(mockDetails);
     closeModal();
 }
@@ -573,7 +589,7 @@ function saveLocalOrder(paypalDetails) {
         email: customerEmail,
         quantity: orderQuantity,
         basePrice: currentPackage.basePrice,
-        total: (currentPackage.basePrice * orderQuantity).toFixed(2),
+        total: formatPrice(currentPackage.basePrice * orderQuantity),
         status: paypalDetails.isTest ? 'Test Completed' : 'Completed',
         method: 'PayPal Secure Checkout'
     };
@@ -581,6 +597,32 @@ function saveLocalOrder(paypalDetails) {
     orders.unshift(order);
     localStorage.setItem('bibleforai_chatboost_orders', JSON.stringify(orders));
     renderOrders();
+    redirectToGoogleForm(order);
+}
+
+function redirectToGoogleForm(order) {
+    const isKo = currentLang === 'ko';
+    const dict = translations[currentLang];
+    const receiptText = 
+`===================================
+   ${dict["receipt-header"]}
+===================================
+${dict["receipt-date"].padEnd(15)} : ${order.date}
+${dict["receipt-txid"].padEnd(15)} : ${order.transactionId}
+${dict["receipt-email"].padEnd(15)} : ${order.email}
+${dict["receipt-type"].padEnd(15)} : ${order.product}
+${dict["receipt-size"].padEnd(15)} : ${order.tier}
+${dict["receipt-platform"].padEnd(15)} : ${order.platform}
+${dict["receipt-qty"].padEnd(15)} : ${order.quantity}
+${dict["receipt-baseprice"].padEnd(15)} : ${formatPrice(Number(order.basePrice))}
+${dict["receipt-total"].padEnd(15)} : ${formatPrice(Number(order.total))}
+${dict["receipt-status"].padEnd(15)} : ${isKo ? "완료됨" : order.status}
+-----------------------------------
+${dict["receipt-method"].padEnd(15)} : ${dict["receipt-method-val"]}
+===================================`;
+    const encodedReceipt = encodeURIComponent(receiptText);
+    const url = `https://docs.google.com/forms/d/e/1FAIpQLScMPqbEWWttS5mb1m_krsO_kco24ImpgvYVSbc7zO0nEVmYFw/viewform?entry.1059822061=${encodedReceipt}`;
+    setTimeout(() => { window.open(url, '_blank'); }, 500);
 }
 
 function renderOrders() {
@@ -607,7 +649,7 @@ function renderOrders() {
             <td>${order.tier}</td>
             <td>${order.platform}</td>
             <td>${order.quantity}</td>
-            <td style="font-weight: 700; color: var(--accent);">$${parseFloat(order.total).toLocaleString()} USD</td>
+            <td style="font-weight: 700; color: var(--accent);">${order.total}</td>
             <td><span style="background: rgba(20,184,166,0.15); color: #14b8a6; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.78rem; font-weight: 600;">${order.status}</span></td>
         </tr>
     `).join('');

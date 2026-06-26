@@ -256,6 +256,17 @@ let currentLang = localStorage.getItem('bibleforai_lang') || (() => {
     return browserLang.toLowerCase().startsWith('ko') ? 'ko' : 'en';
 })();
 
+function formatPrice(usdPrice, includeUnit = true) {
+    const isKo = currentLang === 'ko';
+    if (isKo) {
+        const krw = Math.round(usdPrice * 1300);
+        return includeUnit ? `₩${krw.toLocaleString()} KRW` : `₩${krw.toLocaleString()}`;
+    } else {
+        const formatted = (usdPrice % 1 === 0) ? usdPrice.toLocaleString() : usdPrice.toFixed(2);
+        return includeUnit ? `$${formatted} USD` : `$${formatted}`;
+    }
+}
+
 function applyTranslations() {
     const lang = currentLang;
     const isKo = lang === 'ko';
@@ -385,8 +396,8 @@ function renderAllPackages() {
                     <h3>${name}</h3>
                     <p class="package-desc">${desc}</p>
                     <div class="package-price-box">
-                        <span class="price">$${pkg.price}</span>
-                        <span class="currency">USD</span>
+                        <span class="price">${formatPrice(pkg.price, false)}</span>
+                        <span class="currency">${currentLang === 'ko' ? 'KRW' : 'USD'}</span>
                     </div>
                     <ul class="package-features">
                         ${features.map(feat => `<li><i class="fa-solid fa-circle-check"></i> ${feat}</li>`).join('')}
@@ -432,7 +443,7 @@ function openPurchaseModal(categoryKey, packageId) {
     
     document.getElementById('modal-product-title').innerText = `${catTitle}`;
     document.getElementById('modal-package-name').innerText = pkgName;
-    document.getElementById('modal-base-price').innerText = `$${pkg.price.toLocaleString()} USD`;
+    document.getElementById('modal-base-price').innerText = formatPrice(pkg.price);
     document.getElementById('order-quantity').value = orderQuantity;
     
     const emailInput = document.getElementById('order-email');
@@ -497,7 +508,7 @@ function updateModalPrice() {
     orderQuantity = val;
     
     const totalPrice = currentPackage.basePrice * orderQuantity;
-    document.getElementById('modal-total-price').innerText = `$${totalPrice.toLocaleString()} USD`;
+    document.getElementById('modal-total-price').innerText = formatPrice(totalPrice);
 }
 
 function validateEmailField() {
@@ -526,6 +537,14 @@ function validateEmailField() {
 }
 
 function triggerTestCheckout() {
+    // Developer sandbox: auto-fill mock email if field is empty
+    const emailInput = document.getElementById('order-email');
+    if (emailInput && !emailInput.value.trim()) {
+        emailInput.value = 'sandbox@test.dev';
+        emailInput.style.borderColor = 'var(--border)';
+        const emailError = document.getElementById('email-error');
+        if (emailError) emailError.style.display = 'none';
+    }
     if (!validateEmailField()) {
         return;
     }
@@ -614,7 +633,7 @@ function saveLocalOrder(details) {
         site: targetSite || 'N/A',
         quantity: orderQuantity,
         basePrice: currentPackage.basePrice,
-        totalPaid: `$${(currentPackage.basePrice * orderQuantity).toLocaleString()} USD`,
+        totalPaid: formatPrice(currentPackage.basePrice * orderQuantity),
         status: 'Completed',
         clientId: clientId,
         secret: secret
@@ -638,7 +657,7 @@ ${dict["receipt-type"].padEnd(15)} : ${newOrder.category}
 ${dict["receipt-size"].padEnd(15)} : ${newOrder.package}
 ${dict["receipt-site"].padEnd(15)} : ${newOrder.site}
 ${dict["receipt-qty"].padEnd(15)} : ${newOrder.quantity}
-${dict["receipt-baseprice"].padEnd(15)} : $${newOrder.basePrice.toLocaleString()} USD
+${dict["receipt-baseprice"].padEnd(15)} : ${formatPrice(newOrder.basePrice)}
 ${dict["receipt-total"].padEnd(15)} : ${newOrder.totalPaid}
 ${dict["receipt-status"].padEnd(15)} : ${isKo ? "완료됨" : newOrder.status}
 -----------------------------------

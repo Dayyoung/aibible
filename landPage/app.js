@@ -1615,7 +1615,7 @@ const translations = {
         "btn-orders": "내 주문 내역",
         "hero-badge": "AI 디자인 블루프린트",
         "hero-title": "AI 랜딩페이지 빌더!",
-        "hero-desc": "디자인 사양서 템플릿을 무료로 가져가세요. 글로벌 CDN 배포 및 맞춤 도메인 설정이 완료된 구축형 상품은 페이지당 100달러에 제공됩니다.",
+        "hero-desc": "디자인 사양서 템플릿을 무료로 가져가세요. 글로벌 CDN 배포 및 맞춤 도메인 설정이 완료된 구축형 상품은 페이지당 130,000원에 제공됩니다.",
         "btn-catalog": "무료 스타일 둘러보기",
         "btn-order-custom": "맞춤형 페이지 주문하기",
         
@@ -1707,6 +1707,17 @@ let currentLang = localStorage.getItem('bibleforai_lang') || (() => {
     const browserLang = (navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage || '';
     return browserLang.toLowerCase().startsWith('ko') ? 'ko' : 'en';
 })();
+
+function formatPrice(usdPrice, includeUnit = true) {
+    const isKo = currentLang === 'ko';
+    if (isKo) {
+        const krw = Math.round(usdPrice * 1300);
+        return includeUnit ? `₩${krw.toLocaleString()} KRW` : `₩${krw.toLocaleString()}`;
+    } else {
+        const formatted = (usdPrice % 1 === 0) ? usdPrice.toLocaleString() : usdPrice.toFixed(2);
+        return includeUnit ? `$${formatted} USD` : `$${formatted}`;
+    }
+}
 
 // Document Ready
 document.addEventListener('DOMContentLoaded', () => {
@@ -1839,7 +1850,7 @@ function openPurchaseModal(styleKey) {
 
     // Reset inputs
     document.getElementById('modal-package-name').innerText = styleName;
-    document.getElementById('modal-base-price').innerText = `$${premiumPackage.price.toFixed(2)}`;
+    document.getElementById('modal-base-price').innerText = formatPrice(premiumPackage.price);
     document.getElementById('order-quantity').value = orderQuantity;
     document.getElementById('order-email').value = '';
     document.getElementById('email-error').style.display = 'none';
@@ -1886,7 +1897,7 @@ function updateModalPrice() {
     }
 
     const total = currentPackage.price * orderQuantity;
-    document.getElementById('modal-total-price').innerText = `$${total.toFixed(2)}`;
+    document.getElementById('modal-total-price').innerText = formatPrice(total);
 
     // Re-render PayPal buttons with new total amount
     if (window.paypal && paypalButtonInstance) {
@@ -1920,7 +1931,7 @@ function processOrderCompleted(txId) {
         tier: currentLang === 'ko' ? pkg.name_ko : pkg.name_en,
         refUrl: urlVal,
         qty: qty,
-        total: '$' + total.toFixed(2),
+        total: formatPrice(total),
         status: 'Completed'
     };
 
@@ -1942,7 +1953,7 @@ ${translations[lang]['receipt-type']}: ${orderData.product}
 ${translations[lang]['receipt-size']}: ${orderData.tier}
 ${translations[lang]['receipt-refurl']}: ${orderData.refUrl}
 ${translations[lang]['receipt-qty']}: ${orderData.qty}
-${translations[lang]['receipt-baseprice']}: $${pkg.price.toFixed(2)}
+${translations[lang]['receipt-baseprice']}: ${formatPrice(pkg.price)}
 ${translations[lang]['receipt-total']}: ${orderData.total}
 ${translations[lang]['receipt-status']}: ${orderData.status}
 ${translations[lang]['receipt-method']}: ${translations[lang]['receipt-method-val']}
@@ -2084,6 +2095,22 @@ function renderPayPalButtons() {
 
 // Sandbox Test trigger
 function triggerTestCheckout() {
+    // Developer sandbox: auto-fill mock email if field is empty
+    const emailInput = document.getElementById('order-email');
+    if (emailInput && !emailInput.value.trim()) {
+        emailInput.value = 'sandbox@test.dev';
+        emailInput.style.borderColor = 'rgba(255,255,255,0.06)';
+        const emailError = document.getElementById('email-error');
+        if (emailError) emailError.style.display = 'none';
+    }
+    const urlInput = document.getElementById('order-refurl');
+    const noneCheckbox = document.getElementById('refurl-none');
+    if (urlInput && !urlInput.value.trim() && noneCheckbox) {
+        noneCheckbox.checked = true;
+        const urlError = document.getElementById('refurl-error');
+        if (urlError) urlError.style.display = 'none';
+        urlInput.style.borderColor = 'rgba(255,255,255,0.06)';
+    }
     const inputsValid = validateInputs();
     if (!inputsValid) return;
 
@@ -2165,7 +2192,7 @@ function applyTranslations() {
     const descMeta = document.querySelector('meta[name="description"]');
     if (descMeta) {
         descMeta.content = isKo ?
-            "Stripe, Linear, Notion, Vercel 스타일 가이드라인을 기반으로 랜딩화면 사양을 무료로 구상해보세요. CDN 호스팅 배포가 포함된 대행 구축은 페이지당 100달러입니다." :
+            "Stripe, Linear, Notion, Vercel 스타일 가이드라인을 기반으로 랜딩화면 사양을 무료로 구상해보세요. CDN 호스팅 배포가 포함된 대행 구축은 페이지당 130,000원입니다." :
             "Scaffold brand-aligned, conversion-optimized landing pages for free. Curated design systems from Stripe, Linear, Notion, Vercel, and Claude. Premium deployment at $100/page.";
     }
 
@@ -2174,7 +2201,7 @@ function applyTranslations() {
     if (ogTitle) ogTitle.content = isKo ? "BibleForAI - AI 랜딩페이지 빌더" : "BibleForAI - AI Landing Page Creator | Free Templates";
     
     const ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc) ogDesc.content = isKo ? "마크다운 기반 브랜드 설계 가이드를 무료 복사하고 AI 코딩 도구를 지시해 보세요. 100달러 대행 호스팅 패키지 제공." : "Access visual spec templates curated from awesome-design-md. Get free Stripe, Linear, Notion styles, or order custom hosted builds.";
+    if (ogDesc) ogDesc.content = isKo ? "마크다운 기반 브랜드 설계 가이드를 무료 복사하고 AI 코딩 도구를 지시해 보세요. 130,000원 대행 호스팅 패키지 제공." : "Access visual spec templates curated from awesome-design-md. Get free Stripe, Linear, Notion styles, or order custom hosted builds.";
 
     const twTitle = document.querySelector('meta[name="twitter:title"]');
     if (twTitle) twTitle.content = isKo ? "AI 랜딩페이지 빌더" : "BibleForAI - AI Landing Page Creator";

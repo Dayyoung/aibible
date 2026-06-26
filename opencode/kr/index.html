@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenCode AI - 개발자를 위한 최신 AI 모델 허브 | BibleForAI</title>
+    <meta name="description" content="GPT-4o, Claude 3.5 Sonnet, Gemini 1.5 Pro, Llama 3 등 수많은 최신 AI 모델을 단 5달러(약 6,500원)에 구독하고 사용해 보세요. 최고의 코딩 어시스턴트입니다.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        // Force Korean language on Korean page
+        localStorage.setItem('bibleforai_lang', 'ko');
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo-group" style="text-decoration: none;">
+                <span class="logo-title">BibleForAI</span>
+                <span class="logo-subtitle">OpenCode AI</span>
+            </a>
+            <div class="nav-actions">
+                <a href="/" class="nav-link" style="text-decoration: none;"><i class="fa-solid fa-house"></i> 홈</a>
+                <select class="lang-selector" onchange="changeLanguage(this.value)">
+                    <option value="en">🌐 English</option>
+                    <option value="ko" selected>🇰🇷 한국어</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="badge-tag">
+            <i class="fa-solid fa-terminal"></i> v1.2.0 - 활성화된 샌드박스
+        </div>
+        <h1>차세대 AI 코딩 개발 작업 공간</h1>
+        <p>세계에서 가장 강력한 AI 모델들을 단 하나의 구독으로 통합 관리하세요. 디버깅, 리팩토링, 코드 작성을 단 몇 초 만에 완료합니다.</p>
+        <button class="cta-btn-main" onclick="purchaseSubscription()">
+            개발자 프리패스 시작하기 <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </section>
+
+    <!-- Code Playground Preview -->
+    <section class="code-preview-section">
+        <div class="terminal-box">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+                <div class="terminal-title">main.js — OpenCode Playground</div>
+            </div>
+            <div class="terminal-body">
+                <span class="comment">// 여러 개의 고성능 AI 모델에 동시에 질의합니다</span><br>
+                <span class="keyword">const</span> workspace = <span class="keyword">new</span> <span class="string">OpenCodeWorkspace</span>();<br>
+                <span class="keyword">await</span> workspace.initialize({<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;models: [<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Claude 3.5 Sonnet"</span>,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"GPT-4o"</span>,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Gemini 1.5 Pro"</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;],<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;budgetLimit: <span class="string">"₩6,500/월"</span><br>
+                });<br><br>
+                <span class="comment">// 재귀 알고리즘 최적화 수행</span><br>
+                <span class="keyword">const</span> optimized = <span class="keyword">await</span> workspace.optimizeCode(<span class="string">"./src/algorithm.rs"</span>);<br>
+                console.log(<span class="string">"성능 향상:"</span>, optimized.performanceGain); <span class="comment">// +420% 속도 향상</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Grid -->
+    <section class="features-section">
+        <h2 class="section-title">현대적인 개발 워크플로우를 위한 설계</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-cubes"></i></div>
+                <h3>통합 멀티모델 허브</h3>
+                <p>GPT-4o, Claude 3.5 Sonnet, Gemini 1.5 Pro의 답변을 나란히 비교하여 프로젝트에 가장 적합한 코드를 선택하세요.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-code-merge"></i></div>
+                <h3>Git & IDE 완벽 연동</h3>
+                <p>커밋 로그 분석, 문서화 주석 자동 작성, 그리고 유닛 테스트 생성을 터미널 명령어 하나로 해결할 수 있습니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h3>설정 없는 즉각적인 활용</h3>
+                <p>번거로운 API 키 등록이나 로컬 서버 세팅 과정 없이 즉각적으로 완벽한 AI 개발 도구를 활용할 수 있습니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="pricing-card">
+            <div class="pricing-badge">월간 프리패스</div>
+            <div class="pricing-price">₩6,500<span>/월</span></div>
+            <p class="pricing-desc">월 단 5달러(₩6,500원)로 수많은 최신 모델들을 제한 없이 구독 가능합니다. 오늘부터 스마트한 개발을 시작해보세요.</p>
+            <ul class="pricing-list">
+                <li><i class="fa-solid fa-circle-check"></i> Claude 3.5 Sonnet & GPT-4o</li>
+                <li><i class="fa-solid fa-circle-check"></i> Gemini 1.5 Pro & Llama 3</li>
+                <li><i class="fa-solid fa-circle-check"></i> 무제한 워크스페이스 대화 & 코드 완성</li>
+                <li><i class="fa-solid fa-circle-check"></i> 코드 설명 및 리팩토링 기능 제공</li>
+                <li><i class="fa-solid fa-circle-check"></i> API 키 설정 없이 즉시 사용</li>
+            </ul>
+            <button class="pricing-btn" onclick="purchaseSubscription()">
+                지금 바로 구독 시작
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <span class="footer-text">&copy; 2026 BibleForAI OpenCode AI. All rights reserved.</span>
+            <a href="/" class="footer-link">카탈로그로 돌아가기</a>
+        </div>
+    </footer>
+
+    <script>
+        function changeLanguage(val) {
+            if (val === 'en') {
+                localStorage.setItem('bibleforai_lang', 'en');
+                window.location.href = '/opencode/';
+            }
+        }
+
+        function purchaseSubscription() {
+            window.location.href = 'https://opencode.ai/go?ref=CFP69RVVCJ';
+        }
+    </script>
+</body>
+</html>

@@ -200,6 +200,17 @@ let currentLang = localStorage.getItem('bibleforai_lang') || (() => {
     return browserLang.toLowerCase().startsWith('ko') ? 'ko' : 'en';
 })();
 
+function formatPrice(usdPrice, includeUnit = true) {
+    const isKo = currentLang === 'ko';
+    if (isKo) {
+        const krw = Math.round(usdPrice * 1300);
+        return includeUnit ? `₩${krw.toLocaleString()} KRW` : `₩${krw.toLocaleString()}`;
+    } else {
+        const formatted = (usdPrice % 1 === 0) ? usdPrice.toLocaleString() : usdPrice.toFixed(2);
+        return includeUnit ? `$${formatted} USD` : `$${formatted}`;
+    }
+}
+
 function applyTranslations() {
     const lang = currentLang;
     const isKo = lang === 'ko';
@@ -299,8 +310,8 @@ function renderAllPackages() {
                     <h3>${name}</h3>
                     <p class="package-desc">${desc}</p>
                     <div class="package-price-box">
-                        <span class="price">$${pkg.price}</span>
-                        <span class="currency">USD</span>
+                        <span class="price">${formatPrice(pkg.price, false)}</span>
+                        <span class="currency">${currentLang === 'ko' ? 'KRW' : 'USD'}</span>
                     </div>
                     <ul class="package-features">
                         ${features.map(feat => `<li><i class="fa-solid fa-circle-check"></i> ${feat}</li>`).join('')}
@@ -332,7 +343,7 @@ function openPurchaseModal(categoryKey, packageId) {
     
     document.getElementById('modal-product-title').innerText = catTitle;
     document.getElementById('modal-package-name').innerText = pkgName;
-    document.getElementById('modal-base-price').innerText = `$${pkg.price.toLocaleString()} USD`;
+    document.getElementById('modal-base-price').innerText = formatPrice(pkg.price);
     document.getElementById('order-quantity').value = orderQuantity;
     
     const emailInput = document.getElementById('order-email');
@@ -365,7 +376,7 @@ function updateModalPrice() {
     orderQuantity = parseInt(document.getElementById('order-quantity').value) || 1;
     if (orderQuantity < 1) { orderQuantity = 1; document.getElementById('order-quantity').value = 1; }
     const total = currentPackage ? currentPackage.basePrice * orderQuantity : 0;
-    document.getElementById('modal-total-price').innerText = `$${total.toLocaleString()} USD`;
+    document.getElementById('modal-total-price').innerText = formatPrice(total);
 }
 
 function adjustQty(delta) {
@@ -447,7 +458,7 @@ function renderOrders() {
             <td>${o.tier || '-'}</td>
             <td>${o.deckType || '-'}</td>
             <td>${o.qty || 1}</td>
-            <td><strong>$${o.total.toLocaleString()}</strong></td>
+            <td><strong>${o.total}</strong></td>
             <td><span class="status-badge status-ok">${o.status || 'Completed'}</span></td>
         </tr>
     `).join('');
@@ -455,6 +466,13 @@ function renderOrders() {
 
 function triggerTestCheckout() {
     if (!currentPackage) return;
+    // Developer sandbox: auto-fill mock email if field is empty
+    const emailInput = document.getElementById('order-email');
+    if (emailInput && !emailInput.value.trim()) {
+        emailInput.value = 'sandbox@test.dev';
+        const err = document.getElementById('email-error');
+        if (err) err.style.display = 'none';
+    }
     const email = document.getElementById('order-email').value;
     if (!email || !email.includes('@')) {
         const err = document.getElementById('email-error');
@@ -484,15 +502,26 @@ function triggerTestCheckout() {
 }
 
 function redirectToGoogleForm(order) {
-    const params = new URLSearchParams({
-        'entry.2005620554': order.txid || '',
-        'entry.1045781291': order.email || '',
-        'entry.1065046570': order.product || '',
-        'entry.1166974658': order.tier || '',
-        'entry.839337160': order.deckType || '',
-        'entry.1864286345': order.qty || 1,
-        'entry.1234567890': order.total || 0
-    });
-    const url = `https://docs.google.com/forms/d/e/1FAIpQLScMPqbEWWttS5mb1m_krsO_kco24ImpgvYVSbc7zO0nEVmYFw/viewform?${params.toString()}`;
+    const isKo = currentLang === 'ko';
+    const dict = translations[currentLang];
+    const receiptText = 
+`===================================
+   ${dict["receipt-header"]}
+===================================
+${dict["receipt-date"].padEnd(15)} : ${order.date}
+${dict["receipt-txid"].padEnd(15)} : ${order.txid}
+${dict["receipt-email"].padEnd(15)} : ${order.email}
+${dict["receipt-type"].padEnd(15)} : ${order.product}
+${dict["receipt-size"].padEnd(15)} : ${order.tier}
+${dict["receipt-deck"].padEnd(15)} : ${order.deckType}
+${dict["receipt-qty"].padEnd(15)} : ${order.qty}
+${dict["receipt-baseprice"].padEnd(15)} : ${formatPrice(order.basePrice)}
+${dict["receipt-total"].padEnd(15)} : ${formatPrice(order.total)}
+${dict["receipt-status"].padEnd(15)} : ${isKo ? "완료됨" : order.status}
+-----------------------------------
+${dict["receipt-method"].padEnd(15)} : ${dict["receipt-method-val"]}
+===================================`;
+    const encodedReceipt = encodeURIComponent(receiptText);
+    const url = `https://docs.google.com/forms/d/e/1FAIpQLScMPqbEWWttS5mb1m_krsO_kco24ImpgvYVSbc7zO0nEVmYFw/viewform?entry.1059822061=${encodedReceipt}`;
     setTimeout(() => { window.open(url, '_blank'); }, 500);
 }

@@ -313,6 +313,17 @@ let currentLang = localStorage.getItem('bibleforai_lang') || (() => {
     return browserLang.toLowerCase().startsWith('ko') ? 'ko' : 'en';
 })();
 
+function formatPrice(usdPrice, includeUnit = true) {
+    const isKo = currentLang === 'ko';
+    if (isKo) {
+        const krw = Math.round(usdPrice * 1300);
+        return includeUnit ? `₩${krw.toLocaleString()} KRW` : `₩${krw.toLocaleString()}`;
+    } else {
+        const formatted = (usdPrice % 1 === 0) ? usdPrice.toLocaleString() : usdPrice.toFixed(2);
+        return includeUnit ? `$${formatted} USD` : `$${formatted}`;
+    }
+}
+
 // Document Ready
 document.addEventListener('DOMContentLoaded', () => {
     // Set initial active views
@@ -487,7 +498,7 @@ function renderPackages() {
             <h3 class="package-name">${name}</h3>
             <p class="package-desc">${desc}</p>
             <div class="price-box">
-                <span class="price-amt">$${pkg.price}</span>
+                <span class="price-amt">${formatPrice(pkg.price, false)}</span>
             </div>
             <ul class="features-list">
                 ${featuresHtml}
@@ -511,7 +522,7 @@ function openPurchaseModal(packageId) {
 
     // Set fields
     document.getElementById('modal-package-name').innerText = isKo ? pkg.name_ko : pkg.name_en;
-    document.getElementById('modal-base-price').innerText = `$${pkg.price.toFixed(2)}`;
+    document.getElementById('modal-base-price').innerText = formatPrice(pkg.price);
     document.getElementById('order-quantity').value = orderQuantity;
     document.getElementById('order-email').value = '';
     document.getElementById('email-error').style.display = 'none';
@@ -560,7 +571,7 @@ function updateModalPrice() {
     }
 
     const total = currentPackage.price * orderQuantity;
-    document.getElementById('modal-total-price').innerText = `$${total.toFixed(2)}`;
+    document.getElementById('modal-total-price').innerText = formatPrice(total);
 
     // Re-render PayPal buttons with new total amount
     if (window.paypal && paypalButtonInstance) {
@@ -664,6 +675,14 @@ function renderPayPalButtons() {
 
 // Trigger developer sandbox test checkout
 function triggerTestCheckout() {
+    // Developer sandbox: auto-fill mock email if field is empty
+    const emailInput = document.getElementById('order-email');
+    if (emailInput && !emailInput.value.trim()) {
+        emailInput.value = 'sandbox@test.dev';
+        emailInput.style.borderColor = 'rgba(255,255,255,0.06)';
+        const emailError = document.getElementById('email-error');
+        if (emailError) emailError.style.display = 'none';
+    }
     const emailValid = validateEmailField();
     if (!emailValid) return;
 
@@ -697,7 +716,7 @@ function processOrderCompleted(txId) {
         tier: currentLang === 'ko' ? pkg.name_ko : pkg.name_en,
         filters: filtersSnapshot,
         qty: qty,
-        total: '$' + total.toFixed(2),
+        total: formatPrice(total),
         status: 'Completed'
     };
 
@@ -719,7 +738,7 @@ ${translations[lang]['receipt-type']}: ${orderData.product}
 ${translations[lang]['receipt-size']}: ${orderData.tier}
 ${translations[lang]['receipt-filters']}: ${orderData.filters}
 ${translations[lang]['receipt-qty']}: ${orderData.qty}
-${translations[lang]['receipt-baseprice']}: $${pkg.price.toFixed(2)}
+${translations[lang]['receipt-baseprice']}: ${formatPrice(pkg.price)}
 ${translations[lang]['receipt-total']}: ${orderData.total}
 ${translations[lang]['receipt-status']}: ${orderData.status}
 ${translations[lang]['receipt-method']}: ${translations[lang]['receipt-method-val']}

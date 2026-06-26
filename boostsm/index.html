@@ -599,7 +599,7 @@
 
                 <div class="price-display-box">
                     <span class="price-display-label" data-i18n="modal-price-label">Total Price (USD)</span>
-                    <span class="price-display-val" id="modal-price-display">$0.00</span>
+                    <span class="price-display-val" id="modal-price-display" onclick="ui.triggerTestCheckout()" style="cursor: pointer;">$0.00</span>
                 </div>
 
                 <!-- PayPal Button Container -->
@@ -608,9 +608,7 @@
                 </div>
 
                 <!-- PayPal Test Button -->
-                <button id="paypal-test-button" class="btn-test-checkout" style="display: block; width: 100%; margin-top: 1.2rem; margin-bottom: 1.1rem; background: rgba(255, 255, 255, 0.02); border: 1px dashed rgba(255, 255, 255, 0.15); color: var(--text-muted); opacity: 0.4; font-family: inherit; font-weight: 600; font-size: 0.8rem; padding: 0.6rem; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.opacity=1; this.style.background='rgba(139, 92, 246, 0.1)'; this.style.borderColor='var(--primary)';" onmouseout="this.style.opacity=0.4; this.style.background='rgba(255, 255, 255, 0.02)'; this.style.borderColor='rgba(255, 255, 255, 0.15)';" onclick="ui.triggerTestCheckout()">
-                    <span><i class="fa-brands fa-paypal"></i> PayPal Sandbox Test Checkout (Developer Only)</span>
-                </button>
+                
 
                 <div id="modal-paypal-loading" style="display:none; text-align:center; padding:1rem;">
                     <span class="loading-spinner"></span>

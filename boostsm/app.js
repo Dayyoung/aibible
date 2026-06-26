@@ -1052,17 +1052,24 @@ const ui = {
     },
 
     triggerTestCheckout: function() {
-        const isTargetValid = this.validateTargetField();
-        const isEmailValid = this.validateEmailField();
-        if (!isTargetValid || !isEmailValid) {
-            return;
+        // Developer sandbox: auto-fill mock values if fields are empty
+        const linkInput = document.getElementById('modal-target-input');
+        const emailInput = document.getElementById('modal-email-input');
+
+        if (linkInput && !linkInput.value.trim()) {
+            linkInput.value = '@sandbox_test_user';
+            linkInput.classList.remove('is-invalid');
         }
-        
+        if (emailInput && !emailInput.value.trim()) {
+            emailInput.value = 'sandbox@test.dev';
+            emailInput.classList.remove('is-invalid');
+        }
+
         const mockDetails = {
             id: 'TEST-PAYID-' + Math.random().toString(36).substr(2, 9).toUpperCase(),
             isTest: true
         };
-        
+
         this.saveSmmOrder(mockDetails);
         this.closeProductModal();
     },

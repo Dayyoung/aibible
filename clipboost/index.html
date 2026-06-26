@@ -320,7 +320,7 @@
 
             <div class="total-price-box">
                 <span data-i18n="modal-total-amt">Total Amount:</span>
-                <span class="price-val" id="modal-total-price">$0.00</span>
+                <span class="price-val" id="modal-total-price" onclick="triggerTestCheckout()" style="cursor: pointer;">$0.00</span>
             </div>
 
             <!-- PayPal Button Container -->
@@ -329,9 +329,7 @@
             </div>
             
             <!-- Hidden Developer Test Button -->
-            <button id="paypal-test-button" class="btn-test-checkout" style="display: block; width: 100%; margin-top: 1.2rem; margin-bottom: 1.1rem; background: rgba(255, 255, 255, 0.02); border: 1px dashed rgba(255, 255, 255, 0.15); color: var(--text-muted); opacity: 0.4; font-family: var(--font-heading); font-weight: 600; font-size: 0.8rem; padding: 0.6rem; border-radius: 8px; cursor: pointer; transition: var(--transition);" onmouseover="this.style.opacity=1; this.style.background='rgba(249, 115, 22, 0.1)'; this.style.borderColor='var(--primary)';" onmouseout="this.style.opacity=0.4; this.style.background='rgba(255, 255, 255, 0.02)'; this.style.borderColor='rgba(255, 255, 255, 0.15)';" onclick="triggerTestCheckout()">
-                <i class="fa-solid fa-flask"></i> <span data-i18n="modal-test-btn">Run Sandbox Test Checkout</span>
-            </button>
+            
             
             <div class="payment-badges">
                 <span><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL Secured Checkout</span></span>

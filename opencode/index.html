@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenCode AI - Unified AI for Developers | BibleForAI</title>
+    <meta name="description" content="Access premium AI models like GPT-4o, Claude 3.5 Sonnet, Gemini 1.5 Pro, and Llama 3 for just $5 USD/month. Complete coding assistant.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        // Check saved language and redirect to Korean version if applicable
+        const savedLang = localStorage.getItem('bibleforai_lang');
+        if (savedLang === 'ko') {
+            window.location.replace('/opencode/kr/');
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo-group" style="text-decoration: none;">
+                <span class="logo-title">BibleForAI</span>
+                <span class="logo-subtitle">OpenCode AI</span>
+            </a>
+            <div class="nav-actions">
+                <a href="/" class="nav-link" style="text-decoration: none;"><i class="fa-solid fa-house"></i> Home</a>
+                <select class="lang-selector" onchange="changeLanguage(this.value)">
+                    <option value="en" selected>🌐 English</option>
+                    <option value="ko">🇰🇷 한국어</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="badge-tag">
+            <i class="fa-solid fa-terminal"></i> v1.2.0 - Active Sandbox
+        </div>
+        <h1>Next-Gen AI Coding Workspace</h1>
+        <p>Empower your development workflow with unified access to the world's most powerful AI models. Debug, refactor, and write clean code in seconds.</p>
+        <button class="cta-btn-main" onclick="purchaseSubscription()">
+            Get Developer Pass <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </section>
+
+    <!-- Code Playground Preview -->
+    <section class="code-preview-section">
+        <div class="terminal-box">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+                <div class="terminal-title">main.js — OpenCode Playground</div>
+            </div>
+            <div class="terminal-body">
+                <span class="comment">// Query multiple premium models simultaneously</span><br>
+                <span class="keyword">const</span> workspace = <span class="keyword">new</span> <span class="string">OpenCodeWorkspace</span>();<br>
+                <span class="keyword">await</span> workspace.initialize({<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;models: [<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Claude 3.5 Sonnet"</span>,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"GPT-4o"</span>,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Gemini 1.5 Pro"</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;],<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;budgetLimit: <span class="string">"$5.00/mo"</span><br>
+                });<br><br>
+                <span class="comment">// Optimize recursive algorithm</span><br>
+                <span class="keyword">const</span> optimized = <span class="keyword">await</span> workspace.optimizeCode(<span class="string">"./src/algorithm.rs"</span>);<br>
+                console.log(<span class="string">"Performance Gain:"</span>, optimized.performanceGain); <span class="comment">// +420% speedup</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Grid -->
+    <section class="features-section">
+        <h2 class="section-title">Engineered For Modern Workflows</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-cubes"></i></div>
+                <h3>Multi-Model Hub</h3>
+                <p>Compare outputs from GPT-4o, Claude 3.5 Sonnet, and Gemini 1.5 Pro side-by-side to choose the best solution.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-code-merge"></i></div>
+                <h3>Git & IDE Integration</h3>
+                <p>Review commits, write docstrings, and autogenerate unit tests with a simple terminal command.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Zero Latency Play</h3>
+                <p>No complex setup, no local server configuration, and no expensive individual platform tokens.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="pricing-card">
+            <div class="pricing-badge">Monthly Pass</div>
+            <div class="pricing-price">$5<span>/month</span></div>
+            <p class="pricing-desc">Access all premium AI models with unlimited coding capabilities. Start coding smart today.</p>
+            <ul class="pricing-list">
+                <li><i class="fa-solid fa-circle-check"></i> Claude 3.5 Sonnet & GPT-4o</li>
+                <li><i class="fa-solid fa-circle-check"></i> Gemini 1.5 Pro & Llama 3</li>
+                <li><i class="fa-solid fa-circle-check"></i> Unlimited Workspace Chats</li>
+                <li><i class="fa-solid fa-circle-check"></i> Code explanation & refactoring</li>
+                <li><i class="fa-solid fa-circle-check"></i> Full organization API keys</li>
+            </ul>
+            <button class="pricing-btn" onclick="purchaseSubscription()">
+                Get Started Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <span class="footer-text">&copy; 2026 BibleForAI OpenCode AI. All rights reserved.</span>
+            <a href="/" class="footer-link">Back to Catalog</a>
+        </div>
+    </footer>
+
+    <script>
+        function changeLanguage(val) {
+            if (val === 'ko') {
+                localStorage.setItem('bibleforai_lang', 'ko');
+                window.location.href = '/opencode/kr/';
+            }
+        }
+
+        function purchaseSubscription() {
+            window.location.href = 'https://opencode.ai/go?ref=CFP69RVVCJ';
+        }
+    </script>
+</body>
+</html>
