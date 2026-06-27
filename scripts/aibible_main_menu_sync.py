@@ -32,6 +32,7 @@ CATALOG = [
     {'id': 'law', 'cat': 'strategy'},
     {'id': 'cert', 'cat': 'strategy'},
     {'id': 'hr', 'cat': 'strategy'},
+    {'id': 'sys', 'cat': 'design-dev'},
 ]
 
 
@@ -57,21 +58,24 @@ def patch_index_html():
 
 
 def patch_all_service_pages():
-    new_item = '            <li><a href="/repboost/"><i class=\"fa-solid fa-circle\"></i> REPBOOST</a></li>\n'
+    new_items = [
+        '            <li><a href=\"/repboost/\"><i class=\"fa-solid fa-circle\"></i> REPBOOST</a></li>\n',
+        '            <li><a href=\"/sysboost/\"><i class=\"fa-solid fa-circle\"></i> SYSBOOST</a></li>\n',
+    ]
+    marker = '            <li><a href=\"/salesboost/\"><i class=\"fa-solid fa-circle\"></i> SALESBOOST</a></li>\n'
     for path in ROOT.rglob('index.html'):
         if path == ROOT / 'index.html':
             continue
         text = path.read_text()
-        if 'repboost' in text:
-            continue
-        # Insert after last existing *boost link if possible
-        marker = '            <li><a href="/salesboost/"><i class="fa-solid fa-circle"></i> SALESBOOST</a></li>\n'
-        if marker in text:
-            text = text.replace(marker, marker + new_item, 1)
-        else:
-            # Fallback: append before </ul>
-            text = text.replace('</ul>', new_item + '</ul>', 1)
-        path.write_text(text)
+        updated = False
+        for item in new_items:
+            if item.split('"')[1].split('/')[1] in text:
+                continue
+            if marker in text:
+                text = text.replace(marker, marker + item, 1)
+                updated = True
+        if updated:
+            path.write_text(text)
 
 
 if __name__ == '__main__':

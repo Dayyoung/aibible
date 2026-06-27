@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="../">
+    <title>BibleForAI — SYSBOOST | 기업업무 시스템 통합</title>
+    <meta name="description" content="ERP, CRM, SCM을 하나의 시스템으로 통합하는 자동화 솔루션입니다.">
+    <link rel="canonical" href="https://bibleforai.com/sysboost/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bibleforai.com/sysboost/">
+    <meta property="og:title" content="BibleForAI — SYSBOOST | Business System Integration">
+    <meta property="og:description" content="Design ERP, CRM, and SCM workflows as one operating system with government, alerts, and dashboards.">
+    <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bibleforai.com/sysboost/">
+    <meta name="twitter:title" content="BibleForAI — SYSBOOST | Business System Integration">
+    <meta name="twitter:description" content="Unify ERP, CRM, and SCM workflows into one governed operating system with automation and real-time dashboards.">
+    <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+</head>
+<body>
+<header id="app-header">
+    <div class="header-container">
+        <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <a href="/" class="logo-group">
+            <span class="logo-title">BibleForAI</span>
+            <span class="logo-subtitle" data-i18n="logo-subtitle">SYSBOOST</span>
+        </a>
+        <nav class="desktop-nav"><ul class="nav-links">
+            <li><a href="#home" id="nav-home" class="active" data-i18n="nav-home">Home</a></li>
+            <li><a href="#packages" id="nav-packages" data-i18n="nav-packages">System Modules</a></li>
+                    <li><a href="/sysboost/"><i class="fa-solid fa-circle"></i> SYSBOOST</a></li>
+</ul></nav>
+        <div class="header-actions">
+            <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)">
+                <option value="en">🌐 English</option>
+                <option value="ko" selected>🇰🇷 한국어</option>
+            </select>
+        </div>
+    </div>
+</header>
+<div class="mobile-drawer" id="mobile-drawer">
+    <ul class="mobile-nav-links unified-service-menu">
+        <li class="mobile-menu-heading">Database & Scraping</li>
+        <li><a href="/b2bdb/"><i class="fa-solid fa-building-user"></i> B2B Core Database</a></li>
+        <li><a href="/b2cdb/"><i class="fa-solid fa-database"></i> B2C Lead Database</a></li>
+        <li><a href="/databoost/"><i class="fa-solid fa-spider"></i> DATABOOST — Web Scraping</a></li>
+        <li class="mobile-menu-heading">Design & Coding</li>
+        <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI Landing Page</a></li>
+        <li><a href="/opencode/"><i class="fa-solid fa-code"></i> OpenCode AI</a></li>
+        <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> SHOPBOOST — E-Commerce Entry</a></li>
+        <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> FLOWBOOST — Workflow Automation</a></li>
+        <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST — Product Photography</a></li>
+        <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST — AI Presentations</a></li>
+        <li class="mobile-menu-heading">Marketing & SEO</li>
+        <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> SMM Growth Booster</a></li>
+        <li><a href="/prboost/"><i class="fa-solid fa-globe"></i> PRBOOST — Global PR</a></li>
+        <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> MAILBOOST — Email Marketing</a></li>
+        <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — AI SEO</a></li>
+        <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST — Market Research</a></li>
+        <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> CONTENTBOOST — AI Publishing</a></li>
+        <li class="mobile-menu-heading">Media & Audio</li>
+        <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> CLIPBOOST — Short-Form Video</a></li>
+        <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> VOICEBOOST — AI Voice</a></li>
+        <li><a href="/transboost/"><i class="fa-solid fa-language"></i> TRANSBOOST — Translation</a></li>
+        <li class="mobile-menu-heading">Strategy & Analytics</li>
+        <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> AIBOOST — AI Consulting</a></li>
+        <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST — Data Analytics</a></li>
+        <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST — AI Chatbot</a></li>
+        <li><a href="/buyerboost/"><i class="fa-solid fa-handshake"></i> BUYERBOOST — Buyer Discovery</a></li>
+        <li><a href="/salesboost/"><i class="fa-solid fa-receipt"></i> SALESBOOST — Sales Enablement</a></li>
+        <li><a href="/researchboost/"><i class="fa-solid fa-chart-line"></i> RESEARCHBOOST — Market Research</a></li>
+        <li><a href="/hrboost/"><i class="fa-solid fa-users"></i> HRBOOST — Global Hiring</a></li>
+        <li><a href="/sysboost/"><i class="fa-solid fa-network-wired"></i> SYSBOOST — Business Systems</a></li>
+    </ul>
+</div>
+<main>
+    <section id="home-view" class="view-section active">
+        <div class="hero">
+            <div class="badge" data-i18n="hero-badge">Business System Integration</div>
+            <h1 class="hero-title" data-i18n="hero-title">SYSBOOST — Operating System for Business</h1>
+            <p class="hero-desc" data-i18n="hero-desc">Design ERP, CRM, and SCM workflows as one integrated system with automation, alerts, and real-time dashboards.</p>
+            <div class="hero-actions">
+                <a href="#packages" class="btn-primary" data-i18n="btn-explore">Explore System Packages <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="stats-bar">
+            <div class="stat-item"><span class="stat-num" data-i18n="stat-countries">20+</span><span class="stat-label" data-i18n="stat-countries-label">Modules Supported</span></div>
+            <div class="stat-item"><span class="stat-num" data-i18n="stat-onboard">14 days</span><span class="stat-label" data-i18n="stat-onboard-label">Avg. Build Time</span></div>
+            <div class="stat-item"><span class="stat-num" data-i18n="stat-compliance">SOC2</span><span class="stat-label" data-i18n="stat-compliance-label">Security Ready</span></div>
+            <div class="stat-item"><span class="stat-num" data-i18n="stat-retention">99.9%</span><span class="stat-label" data-i18n="stat-retention-label">Uptime Track Record</span></div>
+        </div>
+        <div class="section-container">
+            <h2 class="section-title" data-i18n="sec-title">Built as One Business Operating System</h2>
+            <p class="section-subtitle" data-i18n="sec-subtitle">SYSBOOST replaces disconnected spreadsheets and tools with governed modules that automate operations and scale with your business.</p>
+            <div class="card-grid">
+                <div class="data-card">
+                    <div class="card-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                    <h3 data-i18n="card-1-title">ERP + Finance</h3>
+                    <p data-i18n="card-1-desc">Order-to-cash and procure-to-pay workflows with approval chains, journal entries, and settlement views.</p>
+                    <span class="card-link"><span data-i18n="btn-explore">Explore System Packages</span> <i class="fa-solid fa-chevron-right"></i></span>
+                </div>
+                <div class="data-card">
+                    <div class="card-icon"><i class="fa-solid fa-users-gear"></i></div>
+                    <h3 data-i18n="card-2-title">CRM + GTM Ops</h3>
+                    <p data-i18n="card-2-desc">Lead pipelines, forecasting, territory rules, and follow-up automation inside one customer system.</p>
+                    <span class="card-link"><span data-i18n="btn-explore">Explore System Packages</span> <i class="fa-solid fa-chevron-right"></i></span>
+                </div>
+                <div class="data-card">
+                    <div class="card-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                    <h3 data-i18n="card-3-title">SCM + Logistics</h3>
+                    <p data-i18n="card-3-desc">Supplier, carrier, inventory, and fulfillment orchestration with exception handling and alerting.</p>
+                    <span class="card-link"><span data-i18n="btn-explore">Explore System Packages</span> <i class="fa-solid fa-chevron-right"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="section-container" id="packages">
+            <h2 class="section-title" data-i18n="pkg-title">System Integration Packages</h2>
+            <p class="section-subtitle" data-i18n="pkg-subtitle">Choose a system package sized to your operations maturity and integration breadth.</p>
+            <div class="packages-grid" id="sys-packages"></div>
+        </div>
+    </section>
+    <section id="orders-view" class="view-section">
+        <div class="page-header"><h2 data-i18n="view-orders-title">My Purchase History</h2><p data-i18n="view-orders-sub">Review your successful orders. Your data is stored locally in your browser workspace.</p></div>
+        <div class="orders-container">
+            <div class="table-wrapper">
+                <table class="orders-table"><thead><tr><th data-i18n="th-date">Order Date</th><th data-i18n="th-order-id">Transaction ID</th><th data-i18n="th-product">Product</th><th data-i18n="th-tier">Target Module</th><th data-i18n="th-country">Target Scope</th><th data-i18n="th-country">Primary Module</th><th data-i18n="th-qty">Quantity</th><th data-i18n="th-total">Total Paid</th><th data-i18n="th-status">Status</th></tr></thead><tbody id="orders-tbody"></tbody></table>
+                <div id="no-orders-msg" class="no-data-msg"><i class="fa-solid fa-folder-open"></i><p data-i18n="no-orders-msg">No purchase records found. Start a new hiring batch to see history here!</p></div>
+            </div>
+        </div>
+    </section>
+</main>
+<div class="modal-backdrop" id="purchase-modal">
+    <div class="modal-card">
+        <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+        <h3 id="modal-product-title" data-i18n="modal-title">Configure Order</h3>
+        <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">Configure quantity and complete secure PayPal payment.</p>
+        <div class="order-summary-box">
+            <div class="summary-row"><span data-i18n="modal-base-pkg">Base Package:</span><strong id="modal-package-name">-</strong></div>
+            <div class="summary-row"><span data-i18n="modal-base-price-label">Base Price:</span><strong id="modal-base-price">$0.00</strong></div>
+        </div>
+        <div class="email-control-group">
+            <label for="order-email" data-i18n="modal-email-label">Work Email *</label>
+            <input type="email" id="order-email" required placeholder="name@company.com">
+            <span id="email-error" style="color:#ef4444;font-size:.78rem;display:none;" data-i18n="modal-email-error"><i class="fa-solid fa-triangle-exclamation"></i> Please enter a valid email address.</span>
+        </div>
+        <div class="country-control-group">
+            <label for="order-country" data-i18n="modal-country-label">Target Scope</label>
+            <select id="order-country">
+                <option value="Global">Global</option>
+                <option value="Enterprise Group">Enterprise Group</option>
+                <option value="Business Division">Business Division</option>
+                <option value="Single Site">Single Site</option>
+            </select>
+        </div>
+        <div class="module-control-group">
+            <label for="order-module" data-i18n="modal-module-label">Primary Module</label>
+            <select id="order-module">
+                <option value="ERP Core">ERP Core</option>
+                <option value="CRM / GTM">CRM / GTM</option>
+                <option value="SCM / Logistics">SCM / Logistics</option>
+                <option value="Combined Stack">Combined Stack</option>
+            </select>
+        </div>
+        <div class="quantity-control-group">
+            <label for="order-quantity" data-i18n="modal-qty">Quantity:</label>
+            <div class="qty-selector">
+                <button class="qty-btn" onclick="adjustQty(-1)"><i class="fa-solid fa-minus"></i></button>
+                <input type="number" id="order-quantity" value="1" min="1" oninput="updateModalPrice()">
+                <button class="qty-btn" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
+            </div>
+        </div>
+        <div class="total-price-box"><span data-i18n="modal-total-amt">Total Amount:</span><span class="price-val" id="modal-total-price">$0.00</span></div>
+        <button onclick="triggerTestCheckout()" data-i18n="modal-test-btn" class="test-checkout-btn">Run Sandbox Test Checkout</button>
+        <div class="paypal-wrapper" id="paypal-wrapper"><div id="paypal-button-container"></div></div>
+        <div class="payment-badges"><span><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL Secured Checkout</span></span><span><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal Verified</span></span></div>
+    </div>
+</div>
+<footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <a href="/" class="logo-group" style="text-decoration:none;margin-bottom:1rem"><span class="logo-title">BibleForAI</span><span class="logo-subtitle" data-i18n="logo-subtitle">SYSBOOST</span></a>
+            <p data-i18n="hero-desc">Design ERP, CRM, and SCM workflows as one operating system with government, alerts, and dashboards.</p>
+        </div>
+        <div class="footer-links">
+            <h4 data-i18n="foot-talent">System Operations</h4>
+            <ul><li><a href="#packages" data-i18n="nav-packages">System Modules</a></li></ul>
+        </div>
+        <div class="footer-support">
+            <h4 data-i18n="foot-legal">Security & Compliance</h4>
+            <ul><li data-i18n="foot-gdpr">SOC2 & Privacy Ready</li><li data-i18n="foot-contact">Contact support: snsherocom@gmail.com</li></ul>
+        </div>
+    </div>
+    <div class="footer-bottom"><p data-i18n="foot-copy">© 2026 BibleForAI SYSBOOST. All rights reserved.</p></div>
+</footer>
+<script>
+  if (typeof localStorage !== 'undefined') {
+    try { localStorage.setItem('bibleforai_lang', 'ko'); } catch (e) {}
+  }
+</script>
+<script src="../app.js"></script>
+</body>
+</html>
