@@ -696,6 +696,15 @@
             box-shadow: 0 15px 35px rgba(124, 58, 237, 0.12), 0 0 15px rgba(124, 58, 237, 0.1);
         }
 
+        .card-active-law {
+            border-color: rgba(124, 58, 237, 0.15);
+        }
+        .card-active-law:hover {
+            transform: translateY(-8px);
+            border-color: #7c3aed;
+            box-shadow: 0 15px 35px rgba(124, 58, 237, 0.12), 0 0 15px rgba(124, 58, 237, 0.1);
+        }
+
         .card-disabled {
             opacity: 0.6;
             cursor: not-allowed;
@@ -848,6 +857,12 @@
         }
 
         .icon-content {
+            color: #7c3aed;
+            background: rgba(124, 58, 237, 0.06);
+            border-color: rgba(124, 58, 237, 0.15);
+        }
+
+        .icon-law {
             color: #7c3aed;
             background: rgba(124, 58, 237, 0.06);
             border-color: rgba(124, 58, 237, 0.15);
@@ -1558,6 +1573,7 @@
             <a href="/insightboost/" class="sidebar-link"><i class="fa-solid fa-chart-bar"></i> <span id="side-title-insight">AI Data Analytics</span></a>
             <a href="/chatboost/" class="sidebar-link"><i class="fa-solid fa-robot"></i> <span id="side-title-chat">AI Chatbot</span></a>
             <a href="/buyerboost/" class="sidebar-link"><i class="fa-solid fa-handshake"></i> <span id="side-title-buyer">Global Buyer Discovery</span></a>
+            <a href="/lawboost/" class="sidebar-link"><i class="fa-solid fa-scale-balanced"></i> <span id="side-title-law">Global Legal Advisory</span></a>
         </div>
     </div>
     <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
@@ -1629,6 +1645,7 @@
                 <a href="/shopboost/" id="foot-shop-link">SHOPBOOST</a>
                 <a href="/buyerboost/" id="foot-buyer-link">BUYERBOOST</a>
                 <a href="/contentboost/" id="foot-content-link">CONTENTBOOST</a>
+                <a href="/lawboost/" id="foot-law-link">LAWBOOST</a>
             </div>
         </div>
     </footer>
@@ -1741,7 +1758,11 @@
 
                 "content-title": "CONTENTBOOST — AI Publishing System",
                 "content-desc": "Build a multilingual AI content engine for generation, translation, SEO metadata, and social distribution across global channels.",
-                "content-btn": "Launch Publishing Service"
+                "content-btn": "Launch Publishing Service",
+
+                "law-title": "LAWBOOST — Global Legal Advisory",
+                "law-desc": "Cross-border legal support: company incorporation, trademark registration, corporate governance, international tax, and cross-border litigation.",
+                "law-btn": "Launch Legal Service"
             },
             ko: {
                 "hero-title": "AI 솔루션으로 비즈니스 성장을 극대화하세요",
@@ -1847,7 +1868,11 @@
 
                 "content-title": "CONTENTBOOST — AI 발행 시스템",
                 "content-desc": "생성, 번역, SEO 메타데이터, SNS 배포를 연결하는 다국어 AI 콘텐츠 엔진을 구축하세요.",
-                "content-btn": "발행 서비스 바로가기"
+                "content-btn": "발행 서비스 바로가기",
+
+                "law-title": "LAWBOOST — 글로벌 법률 자문",
+                "law-desc": "회사 설립, 상표 등록, 기업거버넌스, 국제 세무, 국경간 소송 등 해외 법률 지원을 한번에 해결하세요.",
+                "law-btn": "법률 서비스 바로가기"
             }
         };
 
@@ -1939,7 +1964,8 @@
             { id: 'opencode', category: 'design-dev', link: '/opencode/', icon: 'fa-solid fa-code', cardClass: 'card-active-opencode', btnClass: 'btn-opencode', iconBoxClass: 'icon-opencode', popularity: 94 },
             { id: 'shop', category: 'strategy', link: '/shopboost/', icon: 'fa-solid fa-store', cardClass: 'card-active-shop', btnClass: 'btn-shop', iconBoxClass: 'icon-shop', popularity: 77 },
             { id: 'buyer', category: 'strategy', link: '/buyerboost/', icon: 'fa-solid fa-handshake', cardClass: 'card-active-buyer', btnClass: 'btn-buyer', iconBoxClass: 'icon-buyer', popularity: 80 },
-            { id: 'content', category: 'marketing', link: '/contentboost/', icon: 'fa-solid fa-newspaper', cardClass: 'card-active-content', btnClass: 'btn-content', iconBoxClass: 'icon-content', popularity: 86 }
+            { id: 'content', category: 'marketing', link: '/contentboost/', icon: 'fa-solid fa-newspaper', cardClass: 'card-active-content', btnClass: 'btn-content', iconBoxClass: 'icon-content', popularity: 86 },
+            { id: 'law', category: 'strategy', link: '/lawboost/', icon: 'fa-solid fa-scale-balanced', cardClass: 'card-active-law', btnClass: 'btn-law', iconBoxClass: 'icon-law', popularity: 76 }
         ];
 
         let activeCategory = 'all';
