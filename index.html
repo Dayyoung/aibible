@@ -1832,8 +1832,23 @@
             display: flex;
             flex-wrap: wrap;
             gap: 0.6rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.5rem;
             width: 100%;
+        }
+
+        .catalog-results-count {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+        }
+        .catalog-results-count span {
+            color: var(--primary-cyan);
+            font-weight: 700;
         }
 
         .category-tab {
@@ -1980,6 +1995,7 @@
                         <option value="popularity" id="sort-opt-pop">🔥 Popularity</option>
                         <option value="name-asc" id="sort-opt-asc">🔠 Name (A-Z)</option>
                         <option value="name-desc" id="sort-opt-desc">🔠 Name (Z-A)</option>
+                        <option value="newest" id="sort-opt-newest">📅 Recently Added</option>
                     </select>
                 </div>
             </div>
@@ -1992,6 +2008,8 @@
                 <button class="category-tab" onclick="setCategory('media')" id="cat-tab-media" data-cat="media">Media & Audio</button>
                 <button class="category-tab" onclick="setCategory('strategy')" id="cat-tab-strategy" data-cat="strategy">Strategy & Analytics</button>
             </div>
+
+            <div class="catalog-results-count" id="results-count"></div>
 
             <div class="solutions-grid" id="solutions-grid"></div>
         </section>
@@ -2042,6 +2060,8 @@
                 "sort-popularity": "🔥 Popularity",
                 "sort-name-asc": "🔠 Name (A-Z)",
                 "sort-name-desc": "🔠 Name (Z-A)",
+                "sort-newest": "📅 Recently Added",
+                "results-count-text": "Found <span>{count}</span> services",
                 "cat-all": "All",
                 "cat-database": "Database & Scraping",
                 "cat-designdev": "Design & Coding",
@@ -2204,6 +2224,8 @@
                 "sort-popularity": "🔥 인기순",
                 "sort-name-asc": "🔠 이름 (가→하)",
                 "sort-name-desc": "🔠 이름 (하→가)",
+                "sort-newest": "📅 최신 추가순",
+                "results-count-text": "총 <span>{count}</span>건의 서비스가 표시됨",
                 "cat-all": "전체",
                 "cat-database": "데이터베이스·스크래핑",
                 "cat-designdev": "디자인·코딩",
@@ -2389,6 +2411,7 @@
             document.getElementById('sort-opt-pop').innerText = dict['sort-popularity'];
             document.getElementById('sort-opt-asc').innerText = dict['sort-name-asc'];
             document.getElementById('sort-opt-desc').innerText = dict['sort-name-desc'];
+            document.getElementById('sort-opt-newest').innerText = dict['sort-newest'];
             
             document.getElementById('cat-tab-all').innerText = dict['cat-all'];
             document.getElementById('cat-tab-database').innerText = dict['cat-database'];
@@ -2528,6 +2551,19 @@
                     const nameB = dict[`${b.id}-title`] || "";
                     return nameB.localeCompare(nameA, currentLang === 'ko' ? 'ko' : 'en');
                 });
+            } else if (sortVal === 'newest') {
+                filtered.sort((a, b) => {
+                    const idxA = servicesCatalog.indexOf(a);
+                    const idxB = servicesCatalog.indexOf(b);
+                    return idxB - idxA;
+                });
+            }
+
+            // Render results count label
+            const resultsCountEl = document.getElementById('results-count');
+            if (resultsCountEl) {
+                const countText = dict['results-count-text'].replace('{count}', filtered.length);
+                resultsCountEl.innerHTML = countText;
             }
             
             // Render
