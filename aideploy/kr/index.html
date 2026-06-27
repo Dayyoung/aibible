@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BibleForAI - AIDEPLOY | AI 배포 및 릴리스 엔지니어링</title>
+    <meta name="description" content="AI 시스템 배포 서비스: 컨테이너화, CI/CD, 클라우드 롤아웃, 모니터링, 릴리스 자동화.">
+    <meta name="keywords" content="AI 배포, 릴리스 엔지니어링, MLOps, CI/CD, 클라우드 AI, 도커, 배포 자동화">
+    <meta name="robots" content="index, follow">
+    <base href="../" />
+    <link rel="canonical" href="https://bibleforai.com/aideploy/kr/">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bibleforai.com/aideploy/kr/">
+    <meta property="og:title" content="BibleForAI - AIDEPLOY | AI 배포 및 릴리스 엔지니어링">
+    <meta property="og:description" content="AI 시스템을 안전하게 프로덕션에 배포하세요. 컨테이너화, CI/CD, 롤아웃, 모니터링, 롤백 자동화를 제공합니다.">
+    <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+    <meta property="og:site_name" content="BibleForAI AIDEPLOY">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bibleforai.com/aideploy/kr/">
+    <meta name="twitter:title" content="BibleForAI - AIDEPLOY | AI 배포 및 릴리스 엔지니어링">
+    <meta name="twitter:description" content="AI 시스템을 안전하게 프로덕션에 배포하세요. 컨테이너화, CI/CD, 롤아웃, 모니터링, 롤백 자동화를 제공합니다.">
+    <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+    <!-- JSON-LD Structured Data Markups (SEO/AEO/GEO Optimization) -->
+
+    <!-- Schema 1: FAQPage Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "BibleForAI AIDEPLOY는 어떤 클라우드 환경을 지원하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AWS, Google Cloud, Azure를 기본 지원하며, 쿠버네티스 및 서버리스 런타임 등 최신 컨테이너 플랫폼에도 배포를 지원합니다. 지연 시간, 규제 준수, 비용 요구사항에 맞춰 최적 환경을 제안합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "AI 릴리스의 안정성은 어떻게 확보하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "블루/그린 및 카나리 배포, 자동 헬스체크, 모델 드리프트 모니터링, 자동 롤백, 최소 권한 접근 제어를 적용해 배포 리스크를 낮추고 운영 안정성을 유지합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "머신러닝 파이프라인의 지속적 배포를 지원하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "지원합니다. Scale 패키지에서는 모델 레지스트리 연동, 파이프라인 오케스트레이션, 자동 검증, 릴리스 승인 워크플로를 통해 모델 업데이트를 안전하고 재현 가능하게 배포할 수 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "일반적인 배포 완료 기간은 얼마인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Starter는 5영업일, Growth는 10영업일, Scale(엔터프라이즈)는 15영업일을 기준으로 합니다. 복잡도에 따라 긴급 배포 일정도 논의할 수 있습니다."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema 2: AIDEPLOY Service/Product Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "BibleForAI AIDEPLOY — AI 배포 및 릴리스 엔지니어링",
+      "image": "https://bibleforai.com/assets/og-preview.png",
+      "description": "컨테이너화, CI/CD 구축, 클라우드 롤아웃, 모니터링, 롤백 자동화를 포함한 AI 배포 및 릴리스 엔지니어링 서비스.",
+      "brand": {
+        "@type": "Brand",
+        "name": "BibleForAI"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "1800"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "149.00",
+        "highPrice": "799.00",
+        "offerCount": "3"
+      }
+    }
+    </script>
+
+    <!-- Font Override for KR -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+</head>
+<body>
+
+<!-- Header -->
+<header id="app-header">
+    <div class="header-container">
+            <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="메뉴 열기">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+        <a href="/" class="logo-group">
+            <span class="logo-title">BibleForAI</span>
+            <span class="logo-subtitle" data-i18n="logo-subtitle">AI 배포</span>
+        </a>
+
+        <nav class="desktop-nav">
+            <ul class="nav-links">
+                <li><a href="#" id="nav-home" onclick="navigate('home')" class="active" data-i18n="nav-home">홈</a></li>
+                <li><a href="#" id="nav-deploy" onclick="navigate('deploy')" data-i18n="nav-deploy">배포 패키지</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <button class="btn-orders" onclick="navigate('orders')">
+                <i class="fa-solid fa-receipt"></i> <span class="btn-text" data-i18n="btn-orders">내 주문 내역</span>
+            </button>
+            <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)" style="margin-left: 0.75rem; padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #ffffff; font-size: 0.82rem; font-weight: 500; cursor: pointer; outline: none; transition: var(--transition);">
+                <option value="en">🌐 English</option>
+                <option value="ko" selected>🇰🇷 한국어</option>
+            </select>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-drawer" id="mobile-drawer">
+    <ul class="mobile-nav-links unified_service_menu">
+        <li class="mobile-menu-heading">Database & Scraping</li>
+        <li><a href="/b2bdb/"><i class="fa-solid fa-building-user"></i> B2B Core Database</a></li>
+        <li><a href="/b2cdb/"><i class="fa-solid fa-database"></i> B2C Lead Database</a></li>
+        <li><a href="/databoost/"><i class="fa-solid fa-spider"></i> DATABOOST — Web Scraping</a></li>
+        <li class="mobile-menu-heading">Design & Coding</li>
+        <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI Landing Page</a></li>
+        <li><a href="/opencode/"><i class="fa-solid fa-code"></i> OpenCode AI</a></li>
+        <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> SHOPBOOST — E-Commerce Entry</a></li>
+        <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> FLOWBOOST — Workflow Automation</a></li>
+        <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST — Product Photography</a></li>
+        <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST — AI Presentations</a></li>
+        <li class="mobile-menu-heading">Marketing & SEO</li>
+        <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> SMM Growth Booster</a></li>
+        <li><a href="/prboost/"><i class="fa-solid fa-globe"></i> PRBOOST — Global PR</a></li>
+        <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> MAILBOOST — Email Marketing</a></li>
+        <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — AI SEO</a></li>
+        <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST — Market Research</a></li>
+        <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> CONTENTBOOST — AI Publishing</a></li>
+        <li class="mobile-menu-heading">Media & Audio</li>
+        <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> CLIPBOOST — Short-Form Video</a></li>
+        <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> VOICEBOOST — AI Voice</a></li>
+        <li><a href="/transboost/"><i class="fa-solid fa-language"></i> TRANSBOOST — Translation</a></li>
+        <li class="mobile-menu-heading">Strategy & Analytics</li>
+        <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> AIBOOST — AI Consulting</a></li>
+        <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST — Data Analytics</a></li>
+        <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST — AI Chatbot</a></li>
+        <li><a href="/buyerboost/"><i class="fa-solid fa-handshake"></i> BUYERBOOST — Buyer Discovery</a></li>
+        <li><a href="/salesboost/"><i class="fa-solid fa-receipt"></i> SALESBOOST — Sales Enablement</a></li>
+        <li><a href="/researchboost/"><i class="fa-solid fa-chart-line"></i> RESEARCHBOOST — Market Research</a></li>
+    </ul>
+</div>
+
+<!-- Main Content Area -->
+<main>
+
+    <!-- Home View -->
+    <section id="home-view" class="view-section active">
+        <div class="hero">
+            <div class="badge" data-i18n="hero-badge">AI 릴리스 엔지니어링</div>
+            <h1 class="hero-title" data-i18n="hero-title">BibleForAI - AIDEPLOY!</h1>
+            <p class="hero-desc" data-i18n="hero-desc">AI 시스템을 프로덕션에 안전하게 배포하세요. 컨테이너화, CI/CD, 클라우드 롤아웃, 모니터링, 롤백 자동화까지 제공합니다.</p>
+            <div class="hero-actions">
+                <button class="btn-primary" onclick="navigate('deploy')" data-i18n="btn-explore">패키지 둘러보기 <i class="fa-solid fa-arrow-right"></i></button>
+                <a href="#compliance-section" class="btn-secondary" data-i18n="btn-compliance">서비스 특징</a>
+            </div>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-num">99.9%</span>
+                <span class="stat-label" data-i18n="stat-uptime">가동률 목표</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">35%</span>
+                <span class="stat-label" data-i18n="stat-incident">장애 감소</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">&lt;4h</span>
+                <span class="stat-label" data-i18n="stat-rollback">롤백 시간</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">24/7</span>
+                <span class="stat-label" data-i18n="stat-monitoring">모니터링</span>
+            </div>
+        </div>
+
+        <!-- Tier Cards -->
+        <div class="section-container">
+            <h2 class="section-title" data-i18n="sec-deploy-title">배포 패키지 선택</h2>
+            <p class="section-subtitle" data-i18n="sec-deploy-subtitle">프로덕션급 릴리스 파이프라인, 관측성, 롤백 자동화로 AI 시스템을 출시하세요.</p>
+            <div class="card-grid">
+                <div class="tier-card" onclick="navigate('deploy')">
+                    <div class="tier-icon icon-starter"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <h3 data-i18n="card-deploy-title">배포 및 릴리스 엔지니어링</h3>
+                    <p data-i18n="card-deploy-desc">컨테이너화, 릴리스 파이프라인 구축, 환경 롤아웃, 수명 주기 관리를 포함한 프로덕션 패키징 서비스입니다.</p>
+                    <span class="card-link"><span data-i18n="card-view-pricing">가격 확인</span> <i class="fa-solid fa-chevron-right"></i></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deploy Packages View -->
+    <section id="deploy-view" class="view-section">
+        <div class="section-container">
+            <h2 class="section-title" data-i18n="view-deploy-title">AI 배포 패키지</h2>
+            <p class="section-subtitle" data-i18n="view-deploy-sub">원하는 배포 범위를 선택하고 안전한 결제를 진행하세요.</p>
+
+            <div class="package-grid">
+                <div class="package-card" id="pkg-starter" data-id="default">
+                    <div class="package-header">
+                        <h3 data-i18n="pkg-starter">Starter</h3>
+                        <div class="package-price"><span class="price-value" data-i18n="pkg-starter-price">$149</span> <span class="price-period">/ engagement</span></div>
+                        <div class="package-desc" data-i18n="pkg-starter-desc">소규모 AI 시스템을 위한 빠른 배포.</div>
+                    </div>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-deploy-pkg">컨테이너 기반 배포 패키지</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-cicd-basic">기본 CI/CD 파이프라인</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-env-set">환경 구성 및 검증</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-runbook">운영 런북</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-support">5영업일 완료</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-slo">기본 안정성 점검</span></li>
+                    </ul>
+                    <button class="btn-buy" onclick="openPurchaseModal('starter', 149, 'aideploy-starter')">
+                        <span data-i18n="btn-order-now">주문하기</span> <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+
+                <div class="package-card featured" id="pkg-growth" data-id="default">
+                    <div class="featured-badge" data-i18n="featured-badge">Best Seller</div>
+                    <div class="package-header">
+                        <h3 data-i18n="pkg-growth">Growth</h3>
+                        <div class="package-price"><span class="price-value" data-i18n="pkg-growth-price">$349</span> <span class="price-period">/ engagement</span></div>
+                        <div class="package-desc" data-i18n="pkg-growth-desc">성장기 AI 시스템의 프로덕션 안정화.</div>
+                    </div>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-starter-plus">Starter 포함</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-cicd-pro">고급 CI/CD 파이프라인</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-monitor">모니터링 및 알림 구성</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-scale">오토스케일 설정</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-rollback">롤백 자동화</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-slo-plus">SLO 목표 및 보고</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-delivery">10영업일 완료</span></li>
+                    </ul>
+                    <button class="btn-buy" onclick="openPurchaseModal('growth', 349, 'aideploy-growth')">
+                        <span data-i18n="btn-order-now">주문하기</span> <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+
+                <div class="package-card" id="pkg-scale" data-id="default">
+                    <div class="package-header">
+                        <h3 data-i18n="pkg-scale">Scale</h3>
+                        <div class="package-price"><span class="price-value" data-i18n="pkg-scale-price">$799</span> <span class="price-period">/ engagement</span></div>
+                        <div class="package-desc" data-i18n="pkg-scale-desc">핵심 AI 서비스용 엔터프라이즈 릴리스 운영.</div>
+                    </div>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-growth-plus">Growth 포함</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-model-registry">모델 레지스트리와 릴리스 게이트</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-incident">장기 대응 및 포스트모템</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-compliance">컴플라이언스 감사 준비</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-monthly">전담 릴리스 매니저</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-advanced">고급 변경 관리</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-delivery-scale">15영업일 완료</span></li>
+                    
+        <li><a href="/ipboost/"><i class="fa-solid fa-shield-halved"></i> IPBOOST — IP & Brand Protection</a></ul>
+                    <button class="btn-buy" onclick="openPurchaseModal('scale', 799, 'aideploy-scale')">
+                        <span data-i18n="btn-order-now">주문하기</span> <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Orders View -->
+    <section id="orders-view" class="view-section">
+        <div class="section-container">
+            <h2 class="section-title" data-i18n="view-orders-title">내 구매 내역</h2>
+            <p class="section-subtitle" data-i18n="view-orders-sub">주문 완료 내역을 확인하세요. 데이터는 브라우저 로컬스토리지에 저장됩니다.</p>
+            <div class="orders-table-wrap">
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th data-i18n="th-date">주문 날짜</th>
+                            <th data-i18n="th-order-id">트랜잭션 ID</th>
+                            <th data-i18n="th-product">상품명</th>
+                            <th data-i18n="th-tier">패키지 등급</th>
+                            <th data-i18n="th-account">계정 이메일</th>
+                            <th data-i18n="th-qty">수량</th>
+                            <th data-i18n="th-total">총 결제금액</th>
+                            <th data-i18n="th-status">상태</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-tbody">
+                        <tr id="no-orders-row">
+                            <td colspan="8" data-i18n="no-orders-msg">구매 기록이 없습니다. 첫 주문을 완료하시면 내역이 여기에 표시됩니다!</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Purchase Modal -->
+    <div class="modal-overlay" id="purchase-modal">
+        <div class="modal">
+            <button class="modal-close" onclick="closePurchaseModal()" aria-label="Close modal">&times;</button>
+            <h3 class="modal-title" data-i18n="modal-title">주문 설정</h3>
+            <p class="modal-desc" data-i18n="modal-desc">배포 대상을 선택하고 안전한 PayPal 결제를 진행하세요.</p>
+
+            <form id="purchase-form" onsubmit="handlePurchaseSubmit(event)" novalidate>
+                <div class="form-group">
+                    <label class="form-label" data-i18n="modal-email-label">계정 이메일 *</label>
+                    <input type="email" id="form-email" placeholder="name@example.com" class="form-input" required />
+                    <div class="form-error" id="form-email-error" data-i18n="modal-email-error">올바른 이메일 주소를 입력해주세요.</div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="modal-base-pkg">기본 패키지:</label>
+                        <div class="form-value" id="form-package-name">-</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="modal-base-price-label">기본 가격:</label>
+                        <div class="form-value" id="form-package-price">-</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" data-i18n="modal-deployment-label">Deployment Target</label>
+                    <select id="form-deployment-target" class="form-input">
+                        <option value="AWS">AWS</option>
+                        <option value="Azure">Azure</option>
+                        <option value="GCP">Google Cloud</option>
+                        <option value="Kubernetes">Kubernetes</option>
+                        <option value="On-Premise">On Premise</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" data-i18n="modal-repo-label">Repository URL</label>
+                    <input type="url" id="form-repo" placeholder="https" class="form-input" />
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="modal-qty">수량:</label>
+                        <input type="number" id="form-qty" class="form-input" value="1" min="1" max="10" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="modal-total-amt">총 결제금액:</label>
+                        <div class="form-value" id="form-total">-</div>
+                    </div>
+                </div>
+
+                <!-- Developer sandbox test checkout (shown before PayPal) -->
+                <button type="button" class="btn-test" id="btn-test-checkout" onclick="runTestCheckout()" data-i18n="modal-test-btn">
+                    <i class="fa-solid fa-flask"></i> 샌드박스 테스트 결제 진행
+                </button>
+
+                <!-- PayPal container -->
+                <div id="paypal-button-container"></div>
+
+                <div class="payment-badges">
+                    <span class="badge-pill" data-i18n="badge-ssl"><i class="fa-solid fa-lock"></i> SSL 보안 결제 지원</span>
+                    <span class="badge-pill" data-i18n="badge-paypal"><i class="fa-brands fa-paypal"></i> PayPal 인증됨</span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h4 data-i18n="foot-channels">배포 패키지</h4>
+            <a href="#" data-i18n="foot-starter">Starter Deployment</a>
+            <a href="#" data-i18n="foot-growth">Growth Deployment</a>
+            <a href="#" data-i18n="foot-scale">Scale Deployment</a>
+        </div>
+        <div class="footer-col">
+            <h4 data-i18n="foot-legal">서비스 품질</h4>
+            <a href="#" data-i18n="foot-cicd">CI/CD 자동화</a>
+            <a href="#" data-i18n="foot-monitor">모니터링 및 안정성</a>
+            <a href="#" data-i18n="foot-rollback">롤백 자동화</a>
+        </div>
+        <div class="footer-col">
+            <h4 data-i18n="foot-gdpr">릴리스 관리</h4>
+            <a href="#" data-i18n="foot-target">타겟 플랫폼 가이드</a>
+            <a href="#" data-i18n="foot-delivery">배포 SLA</a>
+            <a href="#" data-i18n="foot-post">출시 후 지원</a>
+        </div>
+        <div class="footer-col">
+            <h4 data-i18n="foot-contact">문의</h4>
+            <a href="mailto:snsherocom@gmail.com">snsherocom@gmail.com</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p data-i18n="foot-copy">&copy; 2026 BibleForAI AIDEPLOY. All rights reserved. AI deployment and release engineering.</p>
+    </div>
+</footer>
+
+<!-- App logic -->
+<script>
+    // Force Korean localStorage on load for /kr/ page
+    try { localStorage.setItem('bibleforai_lang', 'ko'); } catch (e) {}
+</script>
+<script src="../app.js"></script>
+
+</body>
+</html>

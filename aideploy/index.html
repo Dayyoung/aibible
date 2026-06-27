@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BibleForAI - AIDEPLOY | AI Deployment & Release Engineering</title>
+    <meta name="description" content="Production-ready AI deployment services: containerization, CI/CD, cloud rollout, monitoring, and release engineering for AI products.">
+    <meta name="keywords" content="AI Deployment, Release Engineering, MLOps, CI/CD, Cloud AI, Docker, AI Ops, Deployment Automation">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bibleforai.com/aideploy/">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bibleforai.com/aideploy/">
+    <meta property="og:title" content="BibleForAI - AIDEPLOY | AI Deployment & Release Engineering">
+    <meta property="og:description" content="Ship AI systems safely into production. Deploy with release pipelines, monitoring, and rollback safeguards.">
+    <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+    <meta property="og:site_name" content="BibleForAI AIDEPLOY">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bibleforai.com/aideploy/">
+    <meta name="twitter:title" content="BibleForAI - AIDEPLOY | AI Deployment & Release Engineering">
+    <meta name="twitter:description" content="Ship AI systems safely into production with release pipelines, monitoring, and rollback safeguards.">
+    <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+    <!-- JSON-LD Structured Data Markups (SEO/AEO/GEO Optimization) -->
+
+    <!-- Schema 1: FAQPage Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which cloud platforms does BibleForAI AIDEPLOY support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our deployment services support AWS, Google Cloud, Azure, and modern container platforms including Kubernetes and serverless runtimes. We select the best target environment based on your latency, compliance, and cost constraints."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you secure AI releases in production?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We use blue/green and canary rollout strategies, automated health checks, model drift monitoring, rollback automation, and least-privilege access controls to reduce deployment risk and keep your AI systems stable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you support continuous delivery for machine learning pipelines?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The Scale package includes model registry integration, pipeline orchestration, automated validation, and release promotion workflow so teams can ship model updates safely and reproducibly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How fast can the deployment be completed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Typical timelines are 5 business days for Starter, 10 business days for Growth, and 15 business days for Scale enterprise engagements. Rush delivery may be available depending on complexity."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema 2: AIDEPLOY Service/Product Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "BibleForAI AIDEPLOY — AI Deployment & Release Engineering",
+      "image": "https://bibleforai.com/assets/og-preview.png",
+      "description": "Professional AI deployment and release engineering service covering containerization, CI/CD setup, cloud rollout, monitoring, and rollback automation.",
+      "brand": {
+        "@type": "Brand",
+        "name": "BibleForAI"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "1800"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "149.00",
+        "highPrice": "799.00",
+        "offerCount": "3"
+      }
+    }
+    </script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+
+</head>
+<body>
+
+<!-- Header -->
+<header id="app-header">
+    <div class="header-container">
+            <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+        <a href="/" class="logo-group">
+            <span class="logo-title">BibleForAI</span>
+            <span class="logo-subtitle" data-i18n="logo-subtitle">AI DEPLOYMENT</span>
+        </a>
+
+        <nav class="desktop-nav">
+            <ul class="nav-links">
+                <li><a href="#" id="nav-home" onclick="navigate('home')" class="active" data-i18n="nav-home">Home</a></li>
+                <li><a href="#" id="nav-deploy" onclick="navigate('deploy')" data-i18n="nav-deploy">Deployment Packages</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <button class="btn-orders" onclick="navigate('orders')">
+                <i class="fa-solid fa-receipt"></i> <span class="btn-text" data-i18n="btn-orders">My Orders</span>
+            </button>
+            <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)" style="margin-left: 0.75rem; padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #ffffff; font-size: 0.82rem; font-weight: 500; cursor: pointer; outline: none; transition: var(--transition);">
+                <option value="en">🌐 English</option>
+                <option value="ko">🇰🇷 한국어</option>
+            </select>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-drawer" id="mobile-drawer">
+    <ul class="mobile-nav-links unified_service_menu">
+        <li class="mobile-menu-heading">Database & Scraping</li>
+        <li><a href="/b2bdb/"><i class="fa-solid fa-building-user"></i> B2B Core Database</a></li>
+        <li><a href="/b2cdb/"><i class="fa-solid fa-database"></i> B2C Lead Database</a></li>
+        <li><a href="/databoost/"><i class="fa-solid fa-spider"></i> DATABOOST — Web Scraping</a></li>
+        <li class="mobile-menu-heading">Design & Coding</li>
+        <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI Landing Page</a></li>
+        <li><a href="/opencode/"><i class="fa-solid fa-code"></i> OpenCode AI</a></li>
+        <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> SHOPBOOST — E-Commerce Entry</a></li>
+        <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> FLOWBOOST — Workflow Automation</a></li>
+        <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST — Product Photography</a></li>
+        <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST — AI Presentations</a></li>
+        <li class="mobile-menu-heading">Marketing & SEO</li>
+        <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> SMM Growth Booster</a></li>
+        <li><a href="/prboost/"><i class="fa-solid fa-globe"></i> PRBOOST — Global PR</a></li>
+        <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> MAILBOOST — Email Marketing</a></li>
+        <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — AI SEO</a></li>
+        <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST — Market Research</a></li>
+        <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> CONTENTBOOST — AI Publishing</a></li>
+        <li class="mobile-menu-heading">Media & Audio</li>
+        <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> CLIPBOOST — Short-Form Video</a></li>
+        <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> VOICEBOOST — AI Voice</a></li>
+        <li><a href="/transboost/"><i class="fa-solid fa-language"></i> TRANSBOOST — Translation</a></li>
+        <li class="mobile-menu-heading">Strategy & Analytics</li>
+        <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> AIBOOST — AI Consulting</a></li>
+        <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST — Data Analytics</a></li>
+        <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST — AI Chatbot</a></li>
+        <li><a href="/buyerboost/"><i class="fa-solid fa-handshake"></i> BUYERBOOST — Buyer Discovery</a></li>
+        <li><a href="/salesboost/"><i class="fa-solid fa-receipt"></i> SALESBOOST — Sales Enablement</a></li>
+        <li><a href="/researchboost/"><i class="fa-solid fa-chart-line"></i> RESEARCHBOOST — Market Research</a></li>
+        <li><a href="/ipboost/"><i class="fa-solid fa-shield-halved"></i> IPBOOST — IP & Brand Protection</a></li>
+    </ul>
+</div>
+
+<!-- Main Content Area -->
+<main>
+
+    <!-- Home View -->
+    <section id="home-view" class="view-section active">
+        <div class="hero">
+            <div class="badge" data-i18n="hero-badge">AI Release Engineering</div>
+            <h1 class="hero-title" data-i18n="hero-title">BibleForAI - AIDEPLOY!</h1>
+            <p class="hero-desc" data-i18n="hero-desc">Deploy AI systems confidently. From containerization and CI/CD to cloud rollout, monitoring, and release defense.</p>
+            <div class="hero-actions">
+                <button class="btn-primary" onclick="navigate('deploy')" data-i18n="btn-explore">Explore Packages <i class="fa-solid fa-arrow-right"></i></button>
+                <a href="#compliance-section" class="btn-secondary" data-i18n="btn-compliance">How It Works</a>
+            </div>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-num">99.9%</span>
+                <span class="stat-label" data-i18n="stat-uptime">Target Uptime</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">35%</span>
+                <span class="stat-label" data-i18n="stat-incident">Incident Reduction</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num"><4h</span>
+                <span class="stat-label" data-i18n="stat-rollback">Rollback Time</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">24/7</span>
+                <span class="stat-label" data-i18n="stat-monitoring">Monitoring</span>
+            </div>
+        </div>
+
+        <!-- Tier Cards -->
+        <div class="section-container">
+            <h2 class="section-title" data-i18n="sec-deploy-title">Choose Your Deployment Package</h2>
+            <p class="section-subtitle" data-i18n="sec-deploy-subtitle">Launch AI systems with production-grade release pipelines, observability, and rollback automation.</p>
+            <div class="card-grid">
+                <div class="tier-card" onclick="navigate('deploy')">
+                    <div class="tier-icon icon-starter"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <h3 data-i18n="card-deploy-title">Deployment & Release Engineering</h3>
+                    <p data-i18n="card-deploy-desc">Production packaging for AI systems including containerization, release pipeline setup, environment rollout, and lifecycle support.</p>
+                    <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deploy Packages View -->
+    <section id="deploy-view" class="view-section">
+        <div class="section-container">
+            <h2 class="section-title" data-i18n="view-deploy-title">AI Deployment Packages</h2>
+            <p class="section-subtitle" data-i18n="view-deploy-sub">Select a deployment engagement for your AI project and complete secure checkout.</p>
+
+            <div class="package-grid">
+                <div class="package-card" id="pkg-starter" data-id="default">
+                    <div class="package-header">
+                        <h3 data-i18n="pkg-starter">Starter</h3>
+                        <div class="package-price"><span class="price-value" data-i18n="pkg-starter-price">$149</span> <span class="price-period">/ engagement</span></div>
+                        <div class="package-desc" data-i18n="pkg-starter-desc">Fast deployment for small AI systems.</div>
+                    </div>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-deploy-pkg">Containerized deployment package</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-cicd-basic">Basic CI/CD pipeline</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-env-set">Environment setup and validation</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-runbook">Operational runbook</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-support">5 business day delivery</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-slo">Standard reliability checks</span></li>
+                    </ul>
+                    <button class="btn-buy" onclick="openPurchaseModal('starter', 149, 'aideploy-starter')">
+                        <span data-i18n="btn-order-now">Order Now</span> <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+
+                <div class="package-card featured" id="pkg-growth" data-id="default">
+                    <div class="featured-badge" data-i18n="featured-badge">Best Seller</div>
+                    <div class="package-header">
+                        <h3 data-i18n="pkg-growth">Growth</h3>
+                        <div class="package-price"><span class="price-value" data-i18n="pkg-growth-price">$349</span> <span class="price-period">/ engagement</span></div>
+                        <div class="package-desc" data-i18n="pkg-growth-desc">Production hardening for scaling AI systems.</div>
+                    </div>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-starter-plus">Everything in Starter</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-cicd-pro">Advanced CI/CD pipelines</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-monitor">Monitoring & alert configuration</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-scale">Auto-scaling setup</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-rollback">Automated rollback automation</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-slo-plus">SLO targets and reporting</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-delivery">10 business day delivery</span></li>
+                    </ul>
+                    <button class="btn-buy" onclick="openPurchaseModal('growth', 349, 'aideploy-growth')">
+                        <span data-i18n="btn-order-now">Order Now</span> <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+
+                <div class="package-card" id="pkg-scale" data-id="default">
+                    <div class="package-header">
+                        <h3 data-i18n="pkg-scale">Scale</h3>
+                        <div class="package-price"><span class="price-value" data-i18n="pkg-scale-price">$799</span> <span class="price-period">/ engagement</span></div>
+                        <div class="package-desc" data-i18n="pkg-scale-desc">Enterprise release operations for mission-critical AI.</div>
+                    </div>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-growth-plus">Everything in Growth</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-model-registry">MLOps with model registry and release gate</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-incident">Incident response and postmortems</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-compliance">Compliance audit readiness</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-monthly">Dedicated release manager</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-advanced">Advanced change management</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span data-i18n="feat-delivery-scale">15 business day delivery</span></li>
+                    </ul>
+                    <button class="btn-buy" onclick="openPurchaseModal('scale', 799, 'aideploy-scale')">
+                        <span data-i18n="btn-order-now">Order Now</span> <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Orders View -->
+    <section id="orders-view" class="view-section">
+        <div class="section-container">
+            <h2 class="section-title" data-i18n="view-orders-title">My Purchase History</h2>
+            <p class="section-subtitle" data-i18n="view-orders-sub">Review your successful orders. Your data is stored locally in your browser workspace.</p>
+            <div class="orders-table-wrap">
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th data-i18n="th-date">Order Date</th>
+                            <th data-i18n="th-order-id">Transaction ID</th>
+                            <th data-i18n="th-product">Product</th>
+                            <th data-i18n="th-tier">Package Tier</th>
+                            <th data-i18n="th-account">Account Email</th>
+                            <th data-i18n="th-qty">Quantity</th>
+                            <th data-i18n="th-total">Total Paid</th>
+                            <th data-i18n="th-status">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-tbody">
+                        <tr id="no-orders-row">
+                            <td colspan="8" data-i18n="no-orders-msg">No purchase records found. Make your first order to see history here!</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Purchase Modal -->
+    <div class="modal-overlay" id="purchase-modal">
+        <div class="modal">
+            <button class="modal-close" onclick="closePurchaseModal()" aria-label="Close modal">&times;</button>
+            <h3 class="modal-title" data-i18n="modal-title">Configure Order</h3>
+            <p class="modal-desc" data-i18n="modal-desc">Choose target account details and complete secure PayPal payment.</p>
+
+            <form id="purchase-form" onsubmit="handlePurchaseSubmit(event)" novalidate>
+                <div class="form-group">
+                    <label class="form-label" data-i18n="modal-email-label">Account Email *</label>
+                    <input type="email" id="form-email" placeholder="name@example.com" class="form-input" required />
+                    <div class="form-error" id="form-email-error" data-i18n="modal-email-error">Please enter a valid email address.</div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="modal-base-pkg">Base Package:</label>
+                        <div class="form-value" id="form-package-name">-</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="modal-base-price-label">Base Price:</label>
+                        <div class="form-value" id="form-package-price">-</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" data-i18n="modal-deployment-label">Deployment Target</label>
+                    <select id="form-deployment-target" class="form-input">
+                        <option value="AWS">AWS</option>
+                        <option value="Azure">Azure</option>
+                        <option value="GCP">Google Cloud</option>
+                        <option value="Kubernetes">Kubernetes</option>
+                        <option value="On-Premise">On Premise</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" data-i18n="modal-repo-label">Repository URL</label>
+                    <input type="url" id="form-repo" placeholder="https" class="form-input" />
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="modal-qty">Quantity:</label>
+                        <input type="number" id="form-qty" class="form-input" value="1" min="1" max="10" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="modal-total-amt">Total Amount:</label>
+                        <div class="form-value" id="form-total">-</div>
+                    </div>
+                </div>
+
+                <!-- Developer sandbox test checkout (shown before PayPal) -->
+                <button type="button" class="btn-test" id="btn-test-checkout" onclick="runTestCheckout()" data-i18n="modal-test-btn">
+                    <i class="fa-solid fa-flask"></i> Run Sandbox Test Checkout
+                </button>
+
+                <!-- PayPal container -->
+                <div id="paypal-button-container"></div>
+
+                <div class="payment-badges">
+                    <span class="badge-pill" data-i18n="badge-ssl"><i class="fa-solid fa-lock"></i> SSL Secured Checkout</span>
+                    <span class="badge-pill" data-i18n="badge-paypal"><i class="fa-brands fa-paypal"></i> PayPal Verified</span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h4 data-i18n="foot-channels">Deployment Packages</h4>
+            <a href="#" data-i18n="foot-starter">Starter Deployment</a>
+            <a href="#" data-i18n="foot-growth">Growth Deployment</a>
+            <a href="#" data-i18n="foot-scale">Scale Deployment</a>
+        </div>
+        <div class="footer-col">
+            <h4 data-i18n="foot-legal">Service Quality</h4>
+            <a href="#" data-i18n="foot-cicd">CI/CD Automation</a>
+            <a href="#" data-i18n="foot-monitor">Monitoring & Reliability</a>
+            <a href="#" data-i18n="foot-rollback">Rollback Automation</a>
+        </div>
+        <div class="footer-col">
+            <h4 data-i18n="foot-gdpr">Release Management</h4>
+            <a href="#" data-i18n="foot-target">Target Platform Guidance</a>
+            <a href="#" data-i18n="foot-delivery">Delivery SLA</a>
+            <a href="#" data-i18n="foot-post">Post-Launch Support</a>
+        </div>
+        <div class="footer-col">
+            <h4 data-i18n="foot-contact">Contact</h4>
+            <a href="mailto:snsherocom@gmail.com">snsherocom@gmail.com</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p data-i18n="foot-copy">&copy; 2026 BibleForAI AIDEPLOY. All rights reserved. AI deployment and release engineering.</p>
+    </div>
+</footer>
+
+<!-- App logic -->
+<script src="app.js"></script>
+
+</body>
+</html>

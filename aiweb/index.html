@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BibleForAI - AIWEB — AI Website Creation</title>
+    <meta name="description" content="Launch modern, conversion-optimized websites with AI — landing pages, business sites, AI platforms, and enterprise web.">
+    <meta name="keywords" content="AI Website, AI Web Design, Landing Page, AI Site Builder, Modern Website, SEO Website">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bibleforai.com/aiweb/">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bibleforai.com/aiweb/">
+    <meta property="og:title" content="BibleForAI - AIWEB | AI Website Creation">
+    <meta property="og:description" content="Launch modern, conversion-optimized websites with AI — from landing pages to enterprise web platforms.">
+    <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+    <meta property="og:site_name" content="BibleForAI AIWEB">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bibleforai.com/aiweb/">
+    <meta name="twitter:title" content="BibleForAI - AIWEB | AI Website Creation">
+    <meta name="twitter:description" content="Launch modern, conversion-optimized websites with AI.">
+    <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+    <!-- JSON-LD Structured Data Markups -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What types of websites can BibleForAI build with AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We build landing pages, small business sites, AI product platforms, and enterprise web apps using AI-assisted wireframing, copywriting, and design workflows."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are the delivered websites production-ready?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Each delivery includes responsive layouts, SEO metadata, OG tags, performance budgets, and deploy-ready assets with clear handoff instructions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a typical website project take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Landing pages are fast-tracked, while business and AI platform sites typically ship in 1–3 weeks depending on pages and integrations."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "BibleForAI AI Website Creation",
+      "image": "https://bibleforai.com/assets/og-preview.png",
+      "description": "AI-powered website creation services including landing pages, business sites, AI platforms, and enterprise web applications.",
+      "brand": { "@type": "Brand", "name": "BibleForAI" },
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "bestRating": "5", "worstRating": "1", "ratingCount": "1800" },
+      "offers": { "@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": "149", "highPrice": "1199", "offerCount": "4" }
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="app-header">
+        <div class="header-container">
+            <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <a href="/" class="logo-group">
+                <span class="logo-title">BibleForAI</span>
+                <span class="logo-subtitle" data-i18n="logo-subtitle">AI WEBSITE CREATION</span>
+            </a>
+
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#" id="nav-home" onclick="navigate('home')" class="active" data-i18n="nav-home">Home</a></li>
+                    <li><a href="#" id="nav-websites" onclick="navigate('websites')" data-i18n="nav-websites">Website Packages</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-orders" onclick="navigate('orders')">
+                    <i class="fa-solid fa-receipt"></i> <span class="btn-text" data-i18n="btn-orders">My Orders</span>
+                </button>
+                <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)" style="margin-left: 0.75rem; padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #ffffff; font-size: 0.82rem; font-weight: 500; cursor: pointer; outline: none; transition: var(--transition);">
+                    <option value="en">🌐 English</option>
+                    <option value="ko">🇰🇷 한국어</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Unified left hamburger/service drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <ul class="mobile-nav-links unified-service-menu">
+            <li class="mobile-menu-heading">Database & Scraping</li>
+            <li><a href="/b2bdb/"><i class="fa-solid fa-building-user"></i> B2B Core Database</a></li>
+            <li><a href="/b2cdb/"><i class="fa-solid fa-database"></i> B2C Lead Database</a></li>
+            <li><a href="/databoost/"><i class="fa-solid fa-spider"></i> DATABOOST — Web Scraping</a></li>
+            <li class="mobile-menu-heading">Design & Coding</li>
+            <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI Landing Page</a></li>
+            <li><a href="/opencode/"><i class="fa-solid fa-code"></i> OpenCode AI</a></li>
+            <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> SHOPBOOST — E-Commerce Entry</a></li>
+            <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> FLOWBOOST — Workflow Automation</a></li>
+            <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST — Product Photography</a></li>
+            <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST — AI Presentations</a></li>
+            <li class="mobile-menu-heading">Marketing & SEO</li>
+            <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> SMM Growth Booster</a></li>
+            <li><a href="/prboost/"><i class="fa-solid fa-globe"></i> PRBOOST — Global PR</a></li>
+            <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> MAILBOOST — Email Marketing</a></li>
+            <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — AI SEO</a></li>
+            <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST — Market Research</a></li>
+            <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> CONTENTBOOST — AI Publishing</a></li>
+            <li class="mobile-menu-heading">Media & Audio</li>
+            <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> CLIPBOOST — Short-Form Video</a></li>
+            <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> VOICEBOOST — AI Voice</a></li>
+            <li><a href="/transboost/"><i class="fa-solid fa-language"></i> TRANSBOOST — Translation</a></li>
+            <li class="mobile-menu-heading">Strategy & Analytics</li>
+            <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> AIBOOST — AI Consulting</a></li>
+            <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST — Data Analytics</a></li>
+            <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST — AI Chatbot</a></li>
+            <li><a href="/buyerboost/"><i class="fa-solid fa-handshake"></i> BUYERBOOST — Buyer Discovery</a></li>
+            <li><a href="/salesboost/"><i class="fa-solid fa-receipt"></i> SALESBOOST — Sales Enablement</a></li>
+            <li><a href="/researchboost/"><i class="fa-solid fa-chart-line"></i> RESEARCHBOOST — Market Research</a></li>
+            <li><a href="/ipboost/"><i class="fa-solid fa-shield-halved"></i> IPBOOST — IP & Brand Protection</a></li>
+            <li><a href="/aiweb/"><i class="fa-solid fa-globe"></i> AIWEBSITE — AI Website</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Home View -->
+        <section id="home-view" class="view-section active">
+            <div class="hero">
+                <div class="badge" data-i18n="hero-badge">AI-Powered Web Design</div>
+                <h1 class="hero-title" data-i18n="hero-title">BibleForAI - AIWEB!</h1>
+                <p class="hero-desc" data-i18n="hero-desc">Launch modern, conversion-optimized websites with AI — from landing pages to enterprise web platforms.</p>
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="navigate('websites')" data-i18n="btn-explore">Explore Packages <i class="fa-solid fa-arrow-right"></i></button>
+                    <a href="#compliance-section" class="btn-secondary" data-i18n="btn-compliance">How It Works</a>
+                </div>
+            </div>
+
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-num">500+</span>
+                    <span class="stat-label" data-i18n="stat-projects">Websites Shipped</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">96</span>
+                    <span class="stat-label" data-i18n="stat-performance">Core Web Vitals</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">+34%</span>
+                    <span class="stat-label" data-i18n="stat-conversion">Conversion Lift</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">1–2w</span>
+                    <span class="stat-label" data-i18n="stat-delivery">Delivery Time</span>
+                </div>
+            </div>
+
+            <div class="section-container">
+                <h2 class="section-title" data-i18n="sec-channels-title">Choose Your Website Package</h2>
+                <p class="section-subtitle" data-i18n="sec-channels-subtitle">Select a package matched to your business stage. We handle wireframes, copy, design, and launch-ready code.</p>
+                <div class="card-grid">
+                    <div class="data-card" onclick="navigate('websites')">
+                        <div class="card-icon aiweb-color"><i class="fa-solid fa-globe"></i></div>
+                        <h3 data-i18n="card-websites-title">AI Website Creation</h3>
+                        <p data-i18n="card-websites-desc">Modern, responsive websites built with AI-assisted design and copy to help you convert visitors into customers.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="compliance-section" class="section-container compliance-bg">
+                <div class="compliance-content">
+                    <div class="compliance-text">
+                        <h2 data-i18n="comp-title">Built for Launch</h2>
+                        <p data-i18n="comp-desc">Every delivery is production-ready: responsive layouts, SEO metadata, performance budgets, and clean deployable code.</p>
+                        <div class="compliance-bullets">
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet1-bold">AI-First Workflow:</strong> <span data-i18n="comp-bullet1-text">Wireframes, copy, and layouts generated and iterated with AI.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet2-bold">Performance-First:</strong> <span data-i18n="comp-bullet2-text">Optimized for loading speed and conversions with measurable targets.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet3-bold">Launch-Ready:</strong> <span data-i18n="comp-bullet3-text">Delivered as deployable assets with clear handoff instructions.</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="compliance-graphic">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <div class="glow-pulse"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Websites View -->
+        <section id="websites-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="card-websites-title">AI Website Creation</h2>
+                <p data-i18n="view-websites-sub">Pick the package that fits your launch goal. From quick landing pages to full AI product platforms.</p>
+            </div>
+            <div class="packages-grid" id="packages-container" data-i18n="card-websites-title">Loading packages...</div>
+        </section>
+
+        <!-- My Orders View -->
+        <section id="orders-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="view-orders-title">My Purchase History</h2>
+                <p data-i18n="view-orders-sub">Review your successful orders. Your data is stored locally in your browser workspace.</p>
+            </div>
+            <div class="orders-container">
+                <div class="table-wrapper">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th data-i18n="th-date">Order Date</th>
+                                <th data-i18n="th-order-id">Transaction ID</th>
+                                <th data-i18n="th-product">Product</th>
+                                <th data-i18n="th-tier">Package Tier</th>
+                                <th data-i18n="th-platform">Target Platform</th>
+                                <th data-i18n="th-qty">Quantity</th>
+                                <th data-i18n="th-total">Total Paid</th>
+                                <th data-i18n="th-status">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-tbody">
+                            <tr><td colspan="8"><div class="no-data-msg" id="no-orders-msg" data-i18n="no-orders-msg"><i class="fa-solid fa-folder-open"></i><p>No purchase records found. Make your first order to see history here!</p></div></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Purchase Modal -->
+    <div class="modal-backdrop" id="purchase-modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="modal-product-title" data-i18n="modal-title">Configure Order</h3>
+            <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">Choose your target platform and complete secure PayPal payment.</p>
+
+            <div class="order-summary-box">
+                <div class="summary-row">
+                    <span data-i18n="modal-base-pkg">Base Package:</span>
+                    <strong id="modal-package-name">-</strong>
+                </div>
+                <div class="summary-row">
+                    <span data-i18n="modal-base-price-label">Base Price:</span>
+                    <strong id="modal-base-price">$0</strong>
+                </div>
+            </div>
+
+            <div class="email-control-group" style="margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="order-email" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-align: left;" data-i18n="modal-email-label">Email Address *</label>
+                <input type="email" id="order-email" required placeholder="name@example.com" data-i18n="modal-email-placeholder" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: #ffffff; padding: 0.65rem 1rem; border-radius: 8px; font-family: var(--font-body); font-size: 0.95rem; outline: none; width: 100%; transition: var(--transition);">
+                <span id="email-error" style="color: #ef4444; font-size: 0.78rem; display: none; text-align: left;" data-i18n="modal-email-error"><i class="fa-solid fa-triangle-exclamation"></i> Please enter a valid email address.</span>
+            </div>
+
+            <div class="industry-control-group" style="margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="order-country" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-align: left;" data-i18n="modal-platform-label">Target Platform:</label>
+                <select id="order-country" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: #ffffff; padding: 0.65rem 1rem; border-radius: 8px; font-family: var(--font-body); font-size: 0.95rem; outline: none; width: 100%; transition: var(--transition); cursor: pointer;">
+                    <option value="Web" style="background:#0c0f17; color:#fff;">Web</option>
+                    <option value="Mobile App" style="background:#0c0f17; color:#fff;">Mobile App</option>
+                    <option value="SaaS" style="background:#0c0f17; color:#fff;">SaaS</option>
+                </select>
+            </div>
+
+            <div class="quantity-control-group">
+                <label for="order-quantity" data-i18n="modal-qty">Quantity:</label>
+                <div class="qty-selector">
+                    <button class="qty-btn" onclick="adjustQty(-1)"><i class="fa-solid fa-minus"></i></button>
+                    <input type="number" id="order-quantity" value="1" min="1" oninput="updateModalPrice()">
+                    <button class="qty-btn" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <div class="total-price-box">
+                <span data-i18n="modal-total-amt">Total Amount:</span>
+                <span class="price-val" id="modal-total-price" onclick="triggerTestCheckout()" style="cursor: pointer;">$0</span>
+            </div>
+
+            <button class="test-checkout-btn" onclick="triggerTestCheckout()" data-i18n="modal-test-btn">Run Sandbox Test Checkout</button>
+
+            <div class="paypal-wrapper">
+                <div id="paypal-button-container"></div>
+            </div>
+
+            <div class="payment-badges">
+                <span><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL Secured Checkout</span></span>
+                <span><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal Verified</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="/" class="logo-group" style="text-decoration: none; margin-bottom: 1rem;">
+                    <span class="logo-title">BibleForAI</span>
+                    <span class="logo-subtitle" data-i18n="logo-subtitle">AI WEBSITE CREATION</span>
+                </a>
+                <p data-i18n="hero-desc">Launch modern, conversion-optimized websites with AI — from landing pages to enterprise web platforms.</p>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="foot-channels">Website Packages</h4>
+                <ul>
+                    <li><a href="#" onclick="navigate('websites')" data-i18n="nav-websites">Website Packages</a></li>
+                </ul>
+            </div>
+            <div class="footer-support">
+                <h4 data-i18n="foot-legal">Service Quality</h4>
+                <ul>
+                    <li data-i18n="foot-gdpr">Launch-Ready Delivery</li>
+                    <li data-i18n="foot-canspam">Performance Optimized</li>
+                    <li data-i18n="foot-match">AI-Assisted Design</li>
+                    <li data-i18n="foot-contact">Contact support: snsherocom@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="foot-copy">&copy; 2026 BibleForAI AIWEB. All rights reserved. AI-powered website creation.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

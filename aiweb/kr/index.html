@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <base href="../">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BibleForAI - AIWEB | AI 웹사이트 제작</title>
+    <meta name="description" content="AI로 모던하고 전환 최적화된 웹사이트를 제작합니다. 랜딩페이지, 비즈니스 사이트, AI 플랫폼, 엔터프라이즈 웹까지.">
+    <meta name="keywords" content="AI 웹사이트, AI 웹 디자인, 랜딩페이지, AI 사이트 구축, 모던 웹사이트, SEO 웹사이트">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bibleforai.com/aiweb/kr/">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bibleforai.com/aiweb/kr/">
+    <meta property="og:title" content="BibleForAI - AIWEB | AI 웹사이트 제작">
+    <meta property="og:description" content="AI로 모던하고 전환 최적화된 웹사이트를 제작합니다. 랜딩페이지부터 엔터프라이즈 웹 플랫폼까지.">
+    <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+    <meta property="og:site_name" content="BibleForAI AIWEB">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bibleforai.com/aiweb/kr/">
+    <meta name="twitter:title" content="BibleForAI - AIWEB | AI 웹사이트 제작">
+    <meta name="twitter:description" content="AI로 모던하고 전환 최적화된 웹사이트를 제작합니다.">
+    <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "어떤 종류의 웹사이트를 제작하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "랜딩페이지, 비즈니스 사이트, AI 플랫폼 사이트, 엔터프라이즈 웹앱까지 AI-assisted 워크플로우로 제작합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "산출물은 바로 배포 가능한 상태인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네. 반응형 레이아웃, SEO 메타데이터, 성능 기준, 배포 가능한 코드와 인수인계 가이드를 함께 제공합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "프로젝트完成까지平均多久?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "랜딩페이지는 빠르게, 비즈니스/AI 플랫폼 사이트는 보통 1~3주 내에 완료됩니다."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Noto Sans KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+    <style>
+      :root { --font-body: 'Noto Sans KR', 'Inter', sans-serif; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="app-header">
+        <div class="header-container">
+            <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <a href="/" class="logo-group">
+                <span class="logo-title">BibleForAI</span>
+                <span class="logo-subtitle" data-i18n="logo-subtitle">AI WEBSITE CREATION</span>
+            </a>
+
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#" id="nav-home" onclick="navigate('home')" class="active" data-i18n="nav-home">Home</a></li>
+                    <li><a href="#" id="nav-websites" onclick="navigate('websites')" data-i18n="nav-websites">Website Packages</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-orders" onclick="navigate('orders')">
+                    <i class="fa-solid fa-receipt"></i> <span class="btn-text" data-i18n="btn-orders">My Orders</span>
+                </button>
+                <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)" style="margin-left: 0.75rem; padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #ffffff; font-size: 0.82rem; font-weight: 500; cursor: pointer; outline: none; transition: var(--transition);">
+                    <option value="en">🌐 English</option>
+                    <option value="ko" selected>🇰🇷 한국어</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Unified left hamburger/service drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <ul class="mobile-nav-links unified-service-menu">
+            <li class="mobile-menu-heading">Database & Scraping</li>
+            <li><a href="/b2bdb/"><i class="fa-solid fa-building-user"></i> B2B Core Database</a></li>
+            <li><a href="/b2cdb/"><i class="fa-solid fa-database"></i> B2C Lead Database</a></li>
+            <li><a href="/databoost/"><i class="fa-solid fa-spider"></i> DATABOOST — Web Scraping</a></li>
+            <li class="mobile-menu-heading">Design & Coding</li>
+            <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI Landing Page</a></li>
+            <li><a href="/opencode/"><i class="fa-solid fa-code"></i> OpenCode AI</a></li>
+            <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> SHOPBOOST — E-Commerce Entry</a></li>
+            <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> FLOWBOOST — Workflow Automation</a></li>
+            <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST — Product Photography</a></li>
+            <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST — AI Presentations</a></li>
+            <li class="mobile-menu-heading">Marketing & SEO</li>
+            <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> SMM Growth Booster</a></li>
+            <li><a href="/prboost/"><i class="fa-solid fa-globe"></i> PRBOOST — Global PR</a></li>
+            <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> MAILBOOST — Email Marketing</a></li>
+            <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — AI SEO</a></li>
+            <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST — Market Research</a></li>
+            <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> CONTENTBOOST — AI Publishing</a></li>
+            <li class="mobile-menu-heading">Media & Audio</li>
+            <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> CLIPBOOST — Short-Form Video</a></li>
+            <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> VOICEBOOST — AI Voice</a></li>
+            <li><a href="/transboost/"><i class="fa-solid fa-language"></i> TRANSBOOST — Translation</a></li>
+            <li class="mobile-menu-heading">Strategy & Analytics</li>
+            <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> AIBOOST — AI Consulting</a></li>
+            <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST — Data Analytics</a></li>
+            <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST — AI Chatbot</a></li>
+            <li><a href="/buyerboost/"><i class="fa-solid fa-handshake"></i> BUYERBOOST — Buyer Discovery</a></li>
+            <li><a href="/salesboost/"><i class="fa-solid fa-receipt"></i> SALESBOOST — Sales Enablement</a></li>
+            <li><a href="/researchboost/"><i class="fa-solid fa-chart-line"></i> RESEARCHBOOST — Market Research</a></li>
+            <li><a href="/aiweb/"><i class="fa-solid fa-globe"></i> AIWEBSITE — AI Website</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <main>
+        <section id="home-view" class="view-section active">
+            <div class="hero">
+                <div class="badge" data-i18n="hero-badge">AI 기반 웹 디자인</div>
+                <h1 class="hero-title" data-i18n="hero-title">BibleForAI - AIWEB!</h1>
+                <p class="hero-desc" data-i18n="hero-desc">AI로 모던하고 전환 최적화된 웹사이트를 제작합니다. 랜딩페이지부터 엔터프라이즈 웹 플랫폼까지.</p>
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="navigate('websites')" data-i18n="btn-explore">패키지 둘러보기 <i class="fa-solid fa-arrow-right"></i></button>
+                    <a href="#compliance-section" class="btn-secondary" data-i18n="btn-compliance">제작 프로세스</a>
+                </div>
+            </div>
+
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-num">500+</span>
+                    <span class="stat-label" data-i18n="stat-projects">완료 프로젝트</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">96</span>
+                    <span class="stat-label" data-i18n="stat-performance">코어 웹 바이탈</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">+34%</span>
+                    <span class="stat-label" data-i18n="stat-conversion">전환율 개선</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">1~2주</span>
+                    <span class="stat-label" data-i18n="stat-delivery">평균 납기</span>
+                </div>
+            </div>
+
+            <div class="section-container">
+                <h2 class="section-title" data-i18n="sec-channels-title">원하는 웹사이트 패키지 선택</h2>
+                <p class="section-subtitle" data-i18n="sec-channels-subtitle">비즈니스 단계에 맞춰 패키지를 선택하세요. 와이어프레임, 카피, 디자인, 배포 코드까지 지원합니다.</p>
+                <div class="card-grid">
+                    <div class="data-card" onclick="navigate('websites')">
+                        <div class="card-icon aiweb-color"><i class="fa-solid fa-globe"></i></div>
+                        <h3 data-i18n="card-websites-title">AI 웹사이트 제작</h3>
+                        <p data-i18n="card-websites-desc">AI가 지원하는 디자인과 카피로 모던한 반응형 웹사이트를 구축해 방문자를 고객으로 전환합니다.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">가격 확인하기</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="compliance-section" class="section-container compliance-bg">
+                <div class="compliance-content">
+                    <div class="compliance-text">
+                        <h2 data-i18n="comp-title">런칭 준비 완료</h2>
+                        <p data-i18n="comp-desc">모든 결과물은 즉시 배포 가능한 수준으로 제공됩니다: 반응형 레이아웃, SEO 메타, 성능 기준, 정리된 코드.</p>
+                        <div class="compliance-bullets">
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet1-bold">AI 우선 워크플로우:</strong> <span data-i18n="comp-bullet1-text">와이어프레임, 카피, 레이아웃을 AI로 생성하고 반복합니다.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet2-bold">성능 중심 설계:</strong> <span data-i18n="comp-bullet2-text">로딩 속도와 전환율을 측정 가능한 기준으로 최적화합니다.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet3-bold">런칭 가능 상태:</strong> <span data-i18n="comp-bullet3-text">배포 가능한 산출물과 명확한 인수인계 가이드를 제공합니다.</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="compliance-graphic">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <div class="glow-pulse"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Websites View -->
+        <section id="websites-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="card-websites-title">AI Website Creation</h2>
+                <p data-i18n="view-websites-sub">Select a package matched to your business stage. We handle wireframes, copy, design, and launch-ready code.</p>
+            </div>
+            <div class="packages-grid" id="packages-container">Loading packages...</div>
+        </section>
+
+        <!-- My Orders View -->
+        <section id="orders-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="view-orders-title">내 구매 히스토리</h2>
+                <p data-i18n="view-orders-sub">성공한 주문 내역을 검토하세요. 데이터는 브라우저 로컬스토리지에 안전하게 보관됩니다.</p>
+            </div>
+            <div class="orders-container">
+                <div class="table-wrapper">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th data-i18n="th-date">Order Date</th>
+                                <th data-i18n="th-order-id">Transaction ID</th>
+                                <th data-i18n="th-product">Product</th>
+                                <th data-i18n="th-tier">Package Tier</th>
+                                <th data-i18n="th-platform">Target Platform</th>
+                                <th data-i18n="th-qty">Quantity</th>
+                                <th data-i18n="th-total">Total Paid</th>
+                                <th data-i18n="th-status">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-tbody">
+                            <tr><td colspan="8"><div class="no-data-msg" id="no-orders-msg"><i class="fa-solid fa-folder-open"></i><p>No purchase records found. Make your first order to see history here!</p></div></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Purchase Modal -->
+    <div class="modal-backdrop" id="purchase-modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="modal-product-title" data-i18n="modal-title">Configure Order</h3>
+            <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">Choose your target platform and complete secure PayPal payment.</p>
+
+            <div class="order-summary-box">
+                <div class="summary-row">
+                    <span data-i18n="modal-base-pkg">Base Package:</span>
+                    <strong id="modal-package-name">-</strong>
+                </div>
+                <div class="summary-row">
+                    <span data-i18n="modal-base-price-label">Base Price:</span>
+                    <strong id="modal-base-price">$0</strong>
+                </div>
+            </div>
+
+            <div class="email-control-group" style="margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="order-email" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-align: left;" data-i18n="modal-email-label">Email Address *</label>
+                <input type="email" id="order-email" required placeholder="name@example.com" data-i18n="modal-email-placeholder" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: #ffffff; padding: 0.65rem 1rem; border-radius: 8px; font-family: var(--font-body); font-size: 0.95rem; outline: none; width: 100%; transition: var(--transition);">
+                <span id="email-error" style="color: #ef4444; font-size: 0.78rem; display: none; text-align: left;" data-i18n="modal-email-error"><i class="fa-solid fa-triangle-exclamation"></i> Please enter a valid email address.</span>
+            </div>
+
+            <div class="industry-control-group" style="margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="order-country" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-align: left;" data-i18n="modal-platform-label">Target Platform:</label>
+                <select id="order-country" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: #ffffff; padding: 0.65rem 1rem; border-radius: 8px; font-family: var(--font-body); font-size: 0.95rem; outline: none; width: 100%; transition: var(--transition); cursor: pointer;">
+                    <option value="Global" style="background:#0c0f17; color:#fff;">Global (All Countries)</option>
+                    <option value="United States" style="background:#0c0f17; color:#fff;">United States (USA)</option>
+                    <option value="United Kingdom" style="background:#0c0f17; color:#fff;">United Kingdom (UK)</option>
+                    <option value="Germany" style="background:#0c0f17; color:#fff;">Germany</option>
+                    <option value="France" style="background:#0c0f17; color:#fff;">France</option>
+                    <option value="Canada" style="background:#0c0f17; color:#fff;">Canada</option>
+                    <option value="Australia" style="background:#0c0f17; color:#fff;">Australia</option>
+                    <option value="Singapore" style="background:#0c0f17; color:#fff;">Singapore</option>
+                    <option value="United Arab Emirates" style="background:#0c0f17; color:#fff;">United Arab Emirates (UAE)</option>
+                    <option value="Qatar" style="background:#0c0f17; color:#fff;">Qatar</option>
+                    <option value="Saudi Arabia" style="background:#0c0f17; color:#fff;">Saudi Arabia</option>
+                    <option value="Spain" style="background:#0c0f17; color:#fff;">Spain</option>
+                    <option value="Italy" style="background:#0c0f17; color:#fff;">Italy</option>
+                    <option value="India" style="background:#0c0f17; color:#fff;">India</option>
+                    <option value="Japan" style="background:#0c0f17; color:#fff;">Japan</option>
+                    <option value="South Korea" style="background:#0c0f17; color:#fff;">South Korea</option>
+                    <option value="China" style="background:#0c0f17; color:#fff;">China</option>
+                    <option value="Thailand" style="background:#0c0f17; color:#fff;">Thailand</option>
+                    <option value="Malaysia" style="background:#0c0f17; color:#fff;">Malaysia</option>
+                    <option value="Indonesia" style="background:#0c0f17; color:#fff;">Indonesia</option>
+                    <option value="Brazil" style="background:#0c0f17; color:#fff;">Brazil</option>
+                    <option value="Mexico" style="background:#0c0f17; color:#fff;">Mexico</option>
+                    <option value="Russia" style="background:#0c0f17; color:#fff;">Russia</option>
+                </select>
+            </div>
+
+            <div class="quantity-control-group">
+                <label for="order-quantity" data-i18n="modal-qty">Quantity:</label>
+                <div class="qty-selector">
+                    <button class="qty-btn" onclick="adjustQty(-1)"><i class="fa-solid fa-minus"></i></button>
+                    <input type="number" id="order-quantity" value="1" min="1" oninput="updateModalPrice()">
+                    <button class="qty-btn" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <div class="total-price-box">
+                <span data-i18n="modal-total-amt">Total Amount:</span>
+                <span class="price-val" id="modal-total-price" onclick="triggerTestCheckout()" style="cursor: pointer;">$0</span>
+            </div>
+
+            <button class="test-checkout-btn" onclick="triggerTestCheckout()" data-i18n="modal-test-btn">Run Sandbox Test Checkout</button>
+
+            <div class="paypal-wrapper" id="paypal-wrapper">
+                <div id="paypal-button-container"></div>
+            </div>
+
+            <div class="payment-badges">
+                <span><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL Secured Checkout</span></span>
+                <span><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal Verified</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="/" class="logo-group" style="text-decoration: none; margin-bottom: 1rem;">
+                    <span class="logo-title">BibleForAI</span>
+                    <span class="logo-subtitle" data-i18n="logo-subtitle">AI WEBSITE CREATION</span>
+                </a>
+                <p data-i18n="hero-desc">AI로 모던하고 전환 최적화된 웹사이트를 제작합니다. 랜딩페이지부터 엔터프라이즈 웹 플랫폼까지.</p>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="foot-channels">Website Packages</h4>
+                <ul>
+                    <li><a href="#" onclick="navigate('websites')" data-i18n="nav-websites">Website Packages</a></li>
+                </ul>
+            </div>
+            <div class="footer-support">
+                <h4 data-i18n="foot-legal">Service Quality</h4>
+                <ul>
+                    <li data-i18n="foot-gdpr">Launch-Ready Delivery</li>
+                    <li data-i18n="foot-canspam">Performance Optimized</li>
+                    <li data-i18n="foot-match">AI-Assisted Design</li>
+                    <li data-i18n="foot-contact">Contact support: snsherocom@gmail.com</li>
+                
+        <li><a href="/ipboost/"><i class="fa-solid fa-shield-halved"></i> IPBOOST — IP & Brand Protection</a></ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="foot-copy">&copy; 2026 BibleForAI AIWEB. All rights reserved. AI-powered website creation.</p>
+        </div>
+    </footer>
+
+    <script src="../app.js"></script>
+</body>
+</html>
