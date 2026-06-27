@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      BibleForAI — WEBCREATE | Web Design & No-Code Website Build
+    </title>
+    <meta
+      name="description"
+      content="Professional web design and no-code website build service. Responsive, high-converting websites tailored for global brands with fast delivery."
+    />
+    <meta
+      name="keywords"
+      content="Web Design, No-Code Website, Website Builder, Landing Page Design, Brand Website, Responsive Web, UI/UX Design, Site Redesign, Figma to Web, Copy & Launch Website"
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://bibleforai.com/webcreate/" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bibleforai.com/webcreate/" />
+    <meta
+      property="og:title"
+      content="BibleForAI — WEBCREATE | Web Design & No-Code Build"
+    />
+    <meta
+      property="og:description"
+      content="Get a modern, high-converting brand website built with no-code tools and professional design."
+    />
+    <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png" />
+    <meta property="og:site_name" content="BibleForAI WEBCREATE" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ko_KR" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://bibleforai.com/webcreate/" />
+    <meta
+      name="twitter:title"
+      content="BibleForAI — WEBCREATE | Web Design & No-Code Build"
+    />
+    <meta
+      name="twitter:description"
+      content="Get a modern, high-converting brand website built with no-code tools and professional design."
+    />
+    <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png" />
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is included in the WEBCREATE service?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "WEBCREATE includes brand website design, no-code build, responsive layout, SEO setup, copy support, and polished launch ready for traffic acquisition."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you deliver a production-ready website?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The final deliverable is a fully functional, fast, and professional website optimized for conversion and brand credibility."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does a typical website project take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most projects are completed within 7 to 14 business days depending on page count and asset readiness."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you work with existing brand guidelines?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. You can share logos, colors, and references. WEBCREATE aligns design and tone to your brand before development begins."
+            }
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "BibleForAI WEBCREATE — Web Design & No-Code Website Build",
+        "image": "https://bibleforai.com/assets/og-preview.png",
+        "description": "Modern brand websites built with design quality and no-code execution for fast launch.",
+        "brand": { "@type": "Brand", "name": "BibleForAI" },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "bestRating": "5",
+          "worstRating": "1",
+          "ratingCount": "460"
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "USD",
+          "lowPrice": "79.00",
+          "highPrice": "1599.00",
+          "offerCount": "12"
+        }
+      }
+    </script>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Fonts & Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- PayPal SDK -->
+    <script
+      src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"
+    ></script>
+  </head>
+  <body>
+    <header id="app-header">
+      <div class="header-container">
+        <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <a href="/" class="logo-group">
+          <span class="logo-title">BibleForAI</span>
+          <span class="logo-subtitle" data-i18n="logo-subtitle">WEBCREATE!</span>
+        </a>
+        <nav class="desktop-nav">
+          <ul class="nav-links">
+            <li>
+              <a href="#" id="nav-home" onclick="navigate('home')" class="active" data-i18n="nav-home">Home</a>
+            </li>
+            <li>
+              <a href="#" id="nav-brand" onclick="navigate('brand')" data-i18n="nav-brand">Brand Website</a>
+            </li>
+            <li>
+              <a href="#" id="nav-landing" onclick="navigate('landing')" data-i18n="nav-landing">Landing Page</a>
+            </li>
+            <li>
+              <a href="#" id="nav-redesign" onclick="navigate('redesign')" data-i18n="nav-redesign">Redesign</a>
+            </li>
+            <li>
+              <a href="#" id="nav-copy" onclick="navigate('copy')" data-i18n="nav-copy">Copy & Launch</a>
+            </li>
+            <li>
+              <a href="#" id="nav-mvp" onclick="navigate('mvp')" data-i18n="nav-mvp">MVP Site</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="btn-orders" onclick="navigate('orders')">
+            <i class="fa-solid fa-receipt"></i>
+            <span class="btn-text" data-i18n="btn-orders">My Orders</span>
+          </button>
+          <select
+            class="lang-selector"
+            id="language-selector"
+            onchange="changeLanguage(this.value)"
+            style="margin-left: 0.75rem; padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #ffffff; font-size: 0.82rem; font-weight: 500; cursor: pointer; outline: none; transition: var(--transition);"
+          >
+            <option value="en">🌐 English</option>
+            <option value="ko">🇰🇷 한국어</option>
+          </select>
+        </div>
+      </div>
+    </header>
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+      <ul class="mobile-nav-links unified_service_menu">
+        <li class="mobile-menu-heading">Database & Scraping</li>
+        <li>
+          <a href="/b2bdb/"
+            ><i class="fa-solid fa-building-user"></i> B2B Core Database</a
+          >
+        </li>
+        <li>
+          <a href="/b2cdb/"
+            ><i class="fa-solid fa-database"></i> B2C Lead Database</a
+          >
+        </li>
+        <li>
+          <a href="/databoost/"
+            ><i class="fa-solid fa-spider"></i> DATABOOST — Web Scraping</a
+          >
+        </li>
+        <li class="mobile-menu-heading">Design & Coding</li>
+        <li>
+          <a href="/landPage/"
+            ><i class="fa-solid fa-code"></i> AI Landing Page</a
+          >
+        </li>
+        <li>
+          <a href="/opencode/"
+            ><i class="fa-solid fa-code"></i> OpenCode AI</a
+          >
+        </li>
+        <li>
+          <a href="/shopboost/"
+            ><i class="fa-solid fa-store"></i> SHOPBOOST — E-Commerce Entry</a
+          >
+        </li>
+        <li>
+          <a href="/flowboost/"
+            ><i class="fa-solid fa-diagram-project"></i> FLOWBOOST — Workflow Automation</a
+          >
+        </li>
+        <li>
+          <a href="/imgboost/"
+            ><i class="fa-solid fa-camera-retro"></i> IMGBOOST — Product Photography</a
+          >
+        </li>
+        <li>
+          <a href="/pitchboost/"
+            ><i class="fa-solid fa-chart-line"></i> PITCHBOOST — AI Presentations</a
+          >
+        </li>
+        <li class="mobile-menu-heading">Marketing & SEO</li>
+        <li>
+          <a href="/boostsm/"
+            ><i class="fa-solid fa-arrow-up-right-dots"></i> SMM Growth Booster</a
+          >
+        </li>
+        <li>
+          <a href="/prboost/"
+            ><i class="fa-solid fa-globe"></i> PRBOOST — Global PR</a
+          >
+        </li>
+        <li>
+          <a href="/mailboost/"
+            ><i class="fa-solid fa-envelope"></i> MAILBOOST — Email Marketing</a
+          >
+        </li>
+        <li>
+          <a href="/searchboost/"
+            ><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — AI SEO</a
+          >
+        </li>
+        <li>
+          <a href="/mkboost/"
+            ><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST — Market Research</a
+          >
+        </li>
+        <li>
+          <a href="/contentboost/"
+            ><i class="fa-solid fa-newspaper"></i> CONTENTBOOST — AI Publishing</a
+          >
+        </li>
+        <li class="mobile-menu-heading">Media & Audio</li>
+        <li>
+          <a href="/clipboost/"
+            ><i class="fa-solid fa-clapperboard"></i> CLIPBOOST — Short-Form Video</a
+          >
+        </li>
+        <li>
+          <a href="/voiceboost/"
+            ><i class="fa-solid fa-microphone"></i> VOICEBOOST — AI Voice</a
+          >
+        </li>
+        <li>
+          <a href="/transboost/"
+            ><i class="fa-solid fa-language"></i> TRANSBOOST — Translation</a
+          >
+        </li>
+        <li class="mobile-menu-heading">Strategy & Analytics</li>
+        <li>
+          <a href="/aiboost/"
+            ><i class="fa-solid fa-brain"></i> AIBOOST — AI Consulting</a
+          >
+        </li>
+        <li>
+          <a href="/insightboost/"
+            ><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST — Data Analytics</a
+          >
+        </li>
+        <li>
+          <a href="/chatboost/"
+            ><i class="fa-solid fa-robot"></i> CHATBOOST — AI Chatbot</a
+          >
+        </li>
+        <li>
+          <a href="/buyerboost/"
+            ><i class="fa-solid fa-handshake"></i> BUYERBOOST — Buyer Discovery</a
+          >
+        </li>
+        <li>
+          <a href="/researchboost/"
+            ><i class="fa-solid fa-chart-line"></i> RESEARCHBOOST — Market Research</a
+          >
+        </li>
+      </ul>
+    </div>
+    <main>
+      <section id="home-view" class="view-section active">
+        <div class="hero">
+          <div class="badge" data-i18n="hero-badge">Web Design & No-Code Build</div>
+          <h1 class="hero-title" data-i18n="hero-title">BibleForAI — WEBCREATE!</h1>
+          <p class="hero-desc" data-i18n="hero-desc">
+            Professional web design and no-code website build for fast, modern,
+            and conversion-focused launches.
+          </p>
+          <div class="hero-actions">
+            <button
+              class="btn-primary"
+              onclick="navigate('brand')"
+              data-i18n="btn-explore"
+            >
+              Explore Services <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <a href="#compliance-section" class="btn-secondary" data-i18n="btn-compliance">
+              Check Compliance
+            </a>
+          </div>
+        </div>
+        <div class="stats-bar">
+          <div class="stat-item">
+            <span class="stat-num" data-i18n="stat-projects">120+</span>
+            <span class="stat-label" data-i18n="stat-projects-label">Projects</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-i18n="stat-pages">48h</span>
+            <span class="stat-label" data-i18n="stat-pages-label">Prototype Ready</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-i18n="stat-conversion">98%</span>
+            <span class="stat-label" data-i18n="stat-conversion-label">Launch Success</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-i18n="stat-support">4.9★</span>
+            <span class="stat-label" data-i18n="stat-support-label">Client Satisfaction</span>
+          </div>
+        </div>
+        <div class="section-container">
+          <h2 class="section-title" data-i18n="sec-channels-title">
+            Modern Website Delivery
+          </h2>
+          <p class="section-subtitle" data-i18n="sec-channels-subtitle">
+            Choose a delivery path based on your brand goals and launch timeline.
+          </p>
+          <div class="card-grid">
+            <div class="data-card" onclick="navigate('brand')">
+              <div class="card-icon web-brand"><i class="fa-solid fa-palette"></i></div>
+              <h3 data-i18n="card-brand-title">Brand Website</h3>
+              <p data-i18n="card-brand-desc">
+                A polished brand presence configured for trust, clarity, and
+                storytelling.
+              </p>
+              <span class="card-link"
+                ><span data-i18n="card-view-pricing">View Pricing</span>
+                <i class="fa-solid fa-chevron-right"></i
+              ></span>
+            </div>
+            <div class="data-card" onclick="navigate('landing')">
+              <div class="card-icon web-landing"><i class="fa-solid fa-rocket"></i></div>
+              <h3 data-i18n="card-landing-title">Landing Page</h3>
+              <p data-i18n="card-landing-desc">
+                A campaign-focused page built to convert visitors into leads or
+                purchases fast.
+              </p>
+              <span class="card-link"
+                ><span data-i18n="card-view-pricing">View Pricing</span>
+                <i class="fa-solid fa-chevron-right"></i
+              ></span>
+            </div>
+            <div class="data-card" onclick="navigate('redesign')">
+              <div class="card-icon web-redesign"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+              <h3 data-i18n="card-redesign-title">Redesign</h3>
+              <p data-i18n="card-redesign-desc">
+                Refresh an outdated website into a modern, mobile-first,
+                high-performing experience.
+              </p>
+              <span class="card-link"
+                ><span data-i18n="card-view-pricing">View Pricing</span>
+                <i class="fa-solid fa-chevron-right"></i
+              ></span>
+            </div>
+            <div class="data-card" onclick="navigate('copy')">
+              <div class="card-icon web-copy"><i class="fa-solid fa-pen-nib"></i></div>
+              <h3 data-i18n="card-copy-title">Copy & Launch</h3>
+              <p data-i18n="card-copy-desc">
+                Clear brand copy with optimized page structure for search and
+                conversion.
+              </p>
+              <span class="card-link"
+                ><span data-i18n="card-view-pricing">View Pricing</span>
+                <i class="fa-solid fa-chevron-right"></i
+              ></span>
+            </div>
+            <div class="data-card" onclick="navigate('mvp')">
+              <div class="card-icon web-mvp"><i class="fa-solid fa-bolt"></i></div>
+              <h3 data-i18n="card-mvp-title">MVP Site</h3>
+              <p data-i18n="card-mvp-desc">
+                Launch a minimal but professional site fast to validate markets
+                and messaging.
+              </p>
+              <span class="card-link"
+                ><span data-i18n="card-view-pricing">View Pricing</span>
+                <i class="fa-solid fa-chevron-right"></i
+              ></span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="orders-view" class="view-section">
+        <div class="section-container">
+          <h2 class="section-title" data-i18n="orders-title">My Orders</h2>
+          <p class="section-subtitle" data-i18n="orders-subtitle">
+            Review your purchase history for WEBCREATE service.
+          </p>
+          <div class="orders-wrapper">
+            <table class="orders-table">
+              <thead>
+                <tr id="orders-head-row">
+                  <th data-i18n="th-date">Date</th>
+                  <th data-i18n="th-txid">Transaction ID</th>
+                  <th data-i18n="th-product">Product</th>
+                  <th data-i18n="th-tier">Package Tier</th>
+                  <th data-i18n="th-project">Project</th>
+                  <th data-i18n="th-total">Total Paid</th>
+                  <th data-i18n="th-status">Status</th>
+                </tr>
+              </thead>
+              <tbody id="orders-body"></tbody>
+            </table>
+            <p id="no-orders-msg" class="no-orders" data-i18n="no-orders-msg">
+              No purchase records found.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Compliance Section -->
+      <div id="compliance-section" class="section-container compliance-bg">
+        <div class="compliance-content">
+          <div class="compliance-text">
+            <h3 data-i18n="comp-title">Professional Web Delivery</h3>
+            <p data-i18n="comp-desc">
+              WEBCREATE helps brands launch with structured design, clear copy,
+              and reliable production workflow.
+            </p>
+            <ul class="compliance-list">
+              <li data-i18n="comp-bullet1">
+                <strong data-i18n="comp-bullet1-bold">Responsive Design:</strong>
+                <span data-i18n="comp-bullet1-text">Mobile-first layouts with brand consistency.</span>
+              </li>
+              <li data-i18n="comp-bullet2">
+                <strong data-i18n="comp-bullet2-bold">No-Code Build:</strong>
+                <span data-i18n="comp-bullet2-text">Fast builds with maintainable systems.</span>
+              </li>
+              <li data-i18n="comp-bullet3">
+                <strong data-i18n="comp-bullet3-bold">Launch Ready:</strong>
+                <span data-i18n="comp-bullet3-text">Optimized for traffic, forms, and conversion.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="compliance-card">
+            <i class="fa-solid fa-laptop-code compliance-icon"></i>
+            <span class="badge-ssl" data-i18n="badge-ssl">SSL Secured Checkout</span>
+            <span class="badge-paypal" data-i18n="badge-paypal">PayPal Verified</span>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-inner">
+        <div>
+          <span class="footer-brand">BibleForAI</span>
+          <span class="footer-note" data-i18n="foot-note">Design. Build. Launch.</span>
+        </div>
+        <div class="footer-links">
+          <a href="/boostsm/" data-i18n="foot-smm">SMM Growth Booster</a>
+          <a href="/b2cdb/" data-i18n="foot-leads">Lead Database</a>
+          <a href="/prboost/" data-i18n="foot-pr">Global PR</a>
+          <a href="/lawboost/" data-i18n="foot-legal">Legal Advisory</a>
+          <a href="/webcreate/" data-i18n="foot-web">Web Design</a>
+        </div>
+        <p class="footer-copy" data-i18n="foot-copy">&copy; 2026 BibleForAI WEBCREATE. All rights reserved.</p>
+      </div>
+    </footer>
+    <!-- Purchase Modal -->
+    <div class="modal-overlay" id="purchase-modal">
+      <div class="modal-card" id="modal-card">
+        <div class="modal-header">
+          <h3 data-i18n="modal-title">Configure Order</h3>
+          <button class="modal-close" onclick="closePurchaseModal()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <p class="modal-desc" data-i18n="modal-desc">Configure your project details and complete secure payment.</p>
+        <div class="modal-body">
+          <label class="form-label" data-i18n="modal-project-label">Project Type</label>
+          <select id="modal-project" class="form-input"></select>
+          <label class="form-label" data-i18n="modal-email-label">Email Address *</label>
+          <input id="modal-email" class="form-input" placeholder="name@company.com" />
+          <div class="form-row">
+            <div>
+              <label class="form-label" data-i18n="modal-time-label">Timeline</label>
+              <select id="modal-timeline" class="form-input">
+                <option value="Rush">Rush</option>
+                <option value="Standard">Standard</option>
+                <option value="Flexible">Flexible</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label" data-i18n="modal-qty">Pages</label>
+              <input id="modal-qty" class="form-input" type="number" min="1" value="1" />
+            </div>
+          </div>
+          <p class="modal-price-line">
+            <span data-i18n="modal-total-amt">Total:</span>
+            <span class="price-value" id="modal-total">$0.00</span>
+          </p>
+          <button class="btn-order" id="btn-order" data-i18n="order-button">
+            Order Now
+          </button>
+          <div id="paypal-button-container"></div>
+          <button
+            class="btn-test hidden"
+            id="test-button"
+            onclick="runSandboxCheckout()"
+            data-i18n="modal-test-btn"
+          >
+            Run Sandbox Test Checkout
+          </button>
+          <p class="modal-footnote hidden" id="test-result" data-i18n="test-result"></p>
+        </div>
+        <div class="modal-badges">
+          <span class="badge-ssl" data-i18n="badge-ssl">SSL Secured Checkout</span>
+          <span class="badge-paypal" data-i18n="badge-paypal">PayPal Verified</span>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
