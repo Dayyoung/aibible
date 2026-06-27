@@ -885,6 +885,15 @@
             box-shadow: 0 15px 35px rgba(6, 182, 212, 0.12), 0 0 15px rgba(6, 182, 212, 0.1);
         }
 
+        .card-active-ip {
+            border-color: rgba(244, 63, 94, 0.15);
+        }
+        .card-active-ip:hover {
+            transform: translateY(-8px);
+            border-color: #f43f5e;
+            box-shadow: 0 15px 35px rgba(244, 63, 94, 0.12), 0 0 15px rgba(244, 63, 94, 0.1);
+        }
+
         .card-disabled {
             opacity: 0.6;
             cursor: not-allowed;
@@ -1386,6 +1395,17 @@
             box-shadow: 0 8px 25px rgba(6, 182, 212, 0.35);
         }
 
+        .btn-ip {
+            background: #f43f5e;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(244, 63, 94, 0.2);
+        }
+        .btn-ip:hover {
+            background: #e11d48;
+            box-shadow: 0 8px 25px rgba(244, 63, 94, 0.35);
+        }
+
         .btn-disabled {
             background: rgba(255, 255, 255, 0.03);
             color: rgba(255, 255, 255, 0.2);
@@ -1788,6 +1808,7 @@
             <a href="/buyerboost/" class="sidebar-link"><i class="fa-solid fa-handshake"></i> <span id="side-title-buyer">Global Buyer Discovery</span></a>
             <a href="/lawboost/" class="sidebar-link"><i class="fa-solid fa-scale-balanced"></i> <span id="side-title-law">Global Legal Advisory</span></a>
             <a href="/certboost/" class="sidebar-link"><i class="fa-solid fa-certificate"></i> <span id="side-title-cert">Certification Consulting</span></a>
+            <a href="/ipboost/" class="sidebar-link"><i class="fa-solid fa-shield-halved"></i> <span id="side-title-ip">IP Protection</span></a>
         </div>
     </div>
     <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
@@ -1993,7 +2014,11 @@
 
                 "cert-title": "CERTBOOST — Global Certification",
                 "cert-desc": "Internationally usable compliance certification consulting for ISO 27001, GDPR, SOC 2 Type II, HIPAA, and cross-border certification.",
-                "cert-btn": "Launch Compliance Service"
+                "cert-btn": "Launch Compliance Service",
+
+                "ip-title": "IPBOOST — Brand Protection",
+                "ip-desc": "File trademarks, patents, and copyrights with AI-guided workflows and local counsel networks across 100+ jurisdictions.",
+                "ip-btn": "Launch IP Service"
             },
             ko: {
                 "hero-title": "AI 솔루션으로 비즈니스 성장을 극대화하세요",
@@ -2119,7 +2144,11 @@
 
                 "cert-title": "CERTBOOST — 글로벌 인증 컨설팅",
                 "cert-desc": "ISO 27001, GDPR 심사 대비, SOC 2 Type II, HIPAA 등 글로벌 비즈니스를 위한 해외 및 다국적 보안·컴플라이언스 인증 컨설팅을 지원합니다.",
-                "cert-btn": "인증 서비스 바로가기"
+                "cert-btn": "인증 서비스 바로가기",
+
+                "ip-title": "IPBOOST — 브랜드 지식재산권 보호",
+                "ip-desc": "AI 기반 워크플로우와 글로벌 특허 대리인 네트워크를 통해 전 세계 100+ 국가에서 상표, 특허, 저작권을 안전하게 출원하고 보호하세요.",
+                "ip-btn": "지식재산권 서비스 바로가기"
             }
         };
 
@@ -2216,7 +2245,8 @@
             { id: 'sales', category: 'strategy', link: '/salesboost/', icon: 'fa-solid fa-receipt', cardClass: 'card-active-sales', btnClass: 'btn-sales', iconBoxClass: 'icon-sales', popularity: 77 },
             { id: 'law', category: 'strategy', link: '/lawboost/', icon: 'fa-solid fa-scale-balanced', cardClass: 'card-active-law', btnClass: 'btn-law', iconBoxClass: 'icon-law', popularity: 76 },
             { id: 'aiweb', category: 'design-dev', link: '/aiweb/', icon: 'fa-solid fa-globe', cardClass: 'card-active-aiweb', btnClass: 'btn-aiweb', iconBoxClass: '', popularity: 83 },
-            { id: 'cert', category: 'strategy', link: '/certboost/', icon: 'fa-solid fa-certificate', cardClass: 'card-active-cert', btnClass: 'btn-cert', iconBoxClass: 'icon-cert', popularity: 75 }
+            { id: 'cert', category: 'strategy', link: '/certboost/', icon: 'fa-solid fa-certificate', cardClass: 'card-active-cert', btnClass: 'btn-cert', iconBoxClass: 'icon-cert', popularity: 75 },
+            { id: 'ip', category: 'strategy', link: '/ipboost/', icon: 'fa-solid fa-shield-halved', cardClass: 'card-active-ip', btnClass: 'btn-ip', iconBoxClass: 'icon-ip', popularity: 82 }
         ];
 
         let activeCategory = 'all';
