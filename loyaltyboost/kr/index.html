@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>BibleForAI - LOYALTYBOOST | 고객 충성도 및 리텐션</title>
+    <meta name="description" content="LOYALTYBOOST — AI 기반 고객 충성도 및 리텐션 프로그램 컨설팅. B2C 브랜드를 위한 반복 구매 전략.">
+    <meta name="keywords" content="LOYALTYBOOST, 고객 충성도, 리텐션 프로그램, 충성도 컨설팅, 리워드 프로그램, B2C 충성도, BibleForAI">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bibleforai.com/loyaltyboost/kr/">
+    <base href="../">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bibleforai.com/loyaltyboost/">
+    <meta property="og:title" content="BibleForAI - LOYALTYBOOST | Customer Loyalty & Retention">
+    <meta property="og:description" content="LOYALTYBOOST — AI-powered loyalty and retention consulting. Retain more customers and turn them into long-term advocates.">
+    <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+    <meta property="og:site_name" content="BibleForAI LOYALTYBOOST">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bibleforai.com/loyaltyboost/">
+    <meta name="twitter:title" content="BibleForAI - LOYALTYBOOST | Customer Loyalty & Retention">
+    <meta name="twitter:description" content="LOYALTYBOOST — AI-powered loyalty and retention consulting. Retain more customers and turn them into long-term advocates.">
+    <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+    <!-- Noto Sans KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="app-header">
+        <div class="header-container">
+            <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="메뉴 열기">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <a href="/" class="logo-group">
+                <span class="logo-title">BibleForAI</span>
+                <span class="logo-subtitle" data-i18n="logo-subtitle">LOYALTYBOOST!</span>
+            </a>
+
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#" id="nav-home" onclick="navigate('home')" class="active" data-i18n="nav-home">홈</a></li>
+                    <li><a href="#" id="nav-starter" onclick="navigate('starter')" data-i18n="nav-starter">스타터</a></li>
+                    <li><a href="#" id="nav-pro" onclick="navigate('pro')" data-i18n="nav-pro">프로</a></li>
+                    <li><a href="#" id="nav-enterprise" onclick="navigate('enterprise')" data-i18n="nav-enterprise">엔터프라이즈</a></li>
+                    <li><a href="/repboost/"><i class="fa-solid fa-circle"></i> REPBOOST</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-orders" onclick="navigate('orders')">
+                    <i class="fa-solid fa-receipt"></i> <span class="btn-text" data-i18n="btn-orders">내 주문 내역</span>
+                </button>
+                <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)" style="margin-left: 0.75rem; padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #ffffff; font-size: 0.82rem; font-weight: 500; cursor: pointer; outline: none; transition: var(--transition);">
+                    <option value="ko" selected>🇰🇷 한국어</option>
+                    <option value="en">🌐 English</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <ul class="mobile-nav-links unified-service-menu">
+            <li class="mobile-menu-heading">Database & Scraping</li>
+            <li><a href="/b2bdb/"><i class="fa-solid fa-building-user"></i> B2B Core Database</a></li>
+            <li><a href="/b2cdb/"><i class="fa-solid fa-database"></i> B2C Lead Database</a></li>
+            <li><a href="/databoost/"><i class="fa-solid fa-spider"></i> DATABOOST — Web Scraping</a></li>
+            <li class="mobile-menu-heading">Design & Coding</li>
+            <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI Landing Page</a></li>
+            <li><a href="/opencode/"><i class="fa-solid fa-code"></i> OpenCode AI</a></li>
+            <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> SHOPBOOST — E-Commerce Entry</a></li>
+            <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> FLOWBOOST — Workflow Automation</a></li>
+            <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST — Product Photography</a></li>
+            <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST — AI Presentations</a></li>
+            <li class="mobile-menu-heading">Marketing & SEO</li>
+            <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> SMM Growth Booster</a></li>
+            <li><a href="/prboost/"><i class="fa-solid fa-globe"></i> PRBOOST — Global PR</a></li>
+            <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> MAILBOOST — Email Marketing</a></li>
+            <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — AI SEO</a></li>
+            <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST — Market Research</a></li>
+            <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> CONTENTBOOST — AI Publishing</a></li>
+            <li class="mobile-menu-heading">Media & Audio</li>
+            <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> CLIPBOOST — Short-Form Video</a></li>
+            <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> VOICEBOOST — AI Voice</a></li>
+            <li><a href="/transboost/"><i class="fa-solid fa-language"></i> TRANSBOOST — Translation</a></li>
+            <li class="mobile-menu-heading">Strategy & Analytics</li>
+            <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> AIBOOST — AI Consulting</a></li>
+            <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST — Data Analytics</a></li>
+            <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST — AI Chatbot</a></li>
+            <li><a href="/buyerboost/"><i class="fa-solid fa-handshake"></i> BUYERBOOST — Buyer Discovery</a></li>
+            <li><a href="/salesboost/"><i class="fa-solid fa-receipt"></i> SALESBOOST — Sales Enablement</a></li>
+            <li><a href="/researchboost/"><i class="fa-solid fa-chart-line"></i> RESEARCHBOOST — Market Research</a></li>
+            <li><a href="/loyaltyboost/"><i class="fa-solid fa-crown"></i> LOYALTYBOOST — Loyalty & Retention</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <main>
+
+        <!-- Home View -->
+        <section id="home-view" class="view-section active">
+            <div class="hero">
+                <div class="badge" data-i18n="hero-badge">AI-Powered Loyalty & Retention</div>
+                <h1 class="hero-title" data-i18n="hero-title">LOYALTYBOOST — Customer Loyalty & Retention</h1>
+                <p class="hero-desc" data-i18n="hero-desc">Turn buyers into repeat buyers with custom loyalty programs, reward design, and retention consulting for B2C brands.</p>
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="navigate('starter')" data-i18n="btn-explore">Explore Packages <i class="fa-solid fa-arrow-right"></i></button>
+                    <a href="#how-it-works" class="btn-secondary" data-i18n="btn-how">How It Works</a>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-num">Repeat Buyers</span>
+                    <span class="stat-label" data-i18n="stat-repeat">Higher Retention</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">Rewards</span>
+                    <span class="stat-label" data-i18n="stat-rewards">Tiered Loyalty</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">Retention</span>
+                    <span class="stat-label" data-i18n="stat-retention">Loyalty Design</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">LTV</span>
+                    <span class="stat-label" data-i18n="stat-ltv">Lifetime Value</span>
+                </div>
+            </div>
+
+            <!-- Service Categories -->
+            <div class="section-container">
+                <h2 class="section-title" data-i18n="sec-packages-title">Choose Your Retention Package</h2>
+                <p class="section-subtitle" data-i18n="sec-packages-subtitle">Pick a loyalty consulting package, share your business model, and we will build a repeat-purchase system tailored to your customers.</p>
+                <div class="card-grid">
+                    <div class="data-card" onclick="navigate('starter')">
+                        <div class="card-icon starter-color"><i class="fa-solid fa-star"></i></div>
+                        <h3 data-i18n="card-starter-title">Starter Loyalty</h3>
+                        <p data-i18n="card-starter-desc">Mini loyalty plan with basic reward flows. Great for new stores that want a quick retention lift.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('pro')">
+                        <div class="card-icon pro-color"><i class="fa-solid fa-crown"></i></div>
+                        <h3 data-i18n="card-pro-title">Pro Retention</h3>
+                        <p data-i18n="card-pro-desc">Tiered reward design, referral prompts, and email or chat automation rules.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('enterprise')">
+                        <div class="card-icon enterprise-color"><i class="fa-solid fa-building-columns"></i></div>
+                        <h3 data-i18n="card-enterprise-title">Enterprise LTV</h3>
+                        <p data-i18n="card-enterprise-desc">Full lifecycle retention playbook with cohort analysis, advanced automation and review consulting.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How It Works Section -->
+            <div id="how-it-works" class="section-container how-it-works-bg">
+                <div class="compliance-content">
+                    <div class="compliance-text">
+                        <h2 data-i18n="how-title">How LOYALTYBOOST Works</h2>
+                        <p data-i18n="how-desc">We combine behavioral insights with AI-assisted program design to make every customer relationship more valuable over time.</p>
+                        <div class="compliance-bullets">
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-comments"></i>
+                                <span><strong data-i18n="how-step1-bold">1. Consultation:</strong> <span data-i18n="how-step1-text">We review your purchase history, channels and retention goals.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-pen-fancy"></i>
+                                <span><strong data-i18n="how-step2-bold">2. Program Design:</strong> <span data-i18n="how-step2-text">We create a tailored points, tier and reward structure for your brand.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-robot"></i>
+                                <span><strong data-i18n="how-step3-bold">3. Automation Setup:</strong> <span data-i18n="how-step3-text">We map rewards, triggers and follow-up flows into your CRM or messaging tools.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-chart-line"></i>
+                                <span><strong data-i18n="how-step4-bold">4. Review:</strong> <span data-i18n="how-step4-text">We review KPIs, optimize communications, and expand winning retention loops.</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Industries Section -->
+            <div class="section-container">
+                <h2 class="section-title" data-i18n="sec-industries-title">Industries We <span>Serve</span></h2>
+                <div class="industry-grid">
+                    <div class="industry-card"><i class="fa-solid fa-shirt"></i><span>Apparel</span></div>
+                    <div class="industry-card"><i class="fa-solid fa-mug-hot"></i><span>F&B</span></div>
+                    <div class="industry-card"><i class="fa-solid fa-laptop"></i><span>SaaS</span></div>
+                    <div class="industry-card"><i class="fa-solid fa-bag-shopping"></i><span>D2C Retail</span></div>
+                    <div class="industry-card"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Beauty</span></div>
+                    <div class="industry-card"><i class="fa-solid fa-plane"></i><span>Travel</span></div>
+                </div>
+            </div>
+
+            <!-- Purchase Modal -->
+            <div id="purchase-modal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 id="modal-title" data-i18n="modal-title">주문 설정</h3>
+                        <p id="modal-desc" class="modal-subtitle" data-i18n="modal-desc">세부사항을 설정하고 안전한 PayPal 결제를 진행하세요.</p>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-row">
+                            <span id="modal-base-pkg" data-i18n="modal-base-pkg">기본 패키지:</span>
+                            <strong id="modal-package-name"></strong>
+                        </div>
+                        <div class="modal-row">
+                            <span id="modal-base-price-label" data-i18n="modal-base-price-label">기본 가격:</span>
+                            <strong id="modal-base-price"></strong>
+                        </div>
+                        <div class="modal-field">
+                            <label for="order-email" id="modal-email-label" data-i18n="modal-email-label">이메일 주소 *</label>
+                            <input type="email" id="order-email" placeholder="name@example.com" autocomplete="email" />
+                            <span id="order-email-error" class="field-error" data-i18n="modal-email-error">올바른 이메일 주소를 입력해주세요.</span>
+                        </div>
+                        <div class="modal-field">
+                            <label for="order-brand" id="modal-brand-label" data-i18n="modal-brand-label">브랜드명</label>
+                            <input type="text" id="order-brand" placeholder="예: 뷰티코" />
+                        </div>
+                        <div class="modal-field">
+                            <label for="order-industry" id="modal-industry-label" data-i18n="modal-industry-label">업종</label>
+                            <input type="text" id="order-industry" placeholder="예: D2C 스킨케어" />
+                        </div>
+                        <div class="modal-field">
+                            <label for="order-goals" id="modal-goals-label" data-i18n="modal-goals-label">리텐션 목표</label>
+                            <textarea id="order-goals" rows="3" placeholder="예: 재구매율 및 추천 가입 증가"></textarea>
+                        </div>
+                        <div class="modal-row">
+                            <span id="modal-qty" data-i18n="modal-qty">수량:</span>
+                            <input type="number" id="order-qty" class="qty-input" value="1" min="1" max="20"/>
+                        </div>
+                        <div class="modal-total-row">
+                            <span id="modal-total-amt" data-i18n="modal-total-amt">총 결제금액:</span>
+                            <strong id="modal-total-price"></strong>
+                        </div>
+                        <div id="paypal-test-group" class="compact-checkout-group">
+                            <button id="test-checkout-btn" class="btn-secondary" onclick="openTestCheckoutModal()" data-i18n="modal-test-btn">샌드박스 테스트 결제 진행</button>
+                            <div id="paypal-button-container" class="paypal-wrapper"></div>
+                        </div>
+                    </div>
+                    <div class="modal-footer-badges">
+                        <span class="badge-item"><i class="fa-solid fa-shield-halved"></i> <span id="badge-ssl" data-i18n="badge-ssl">SSL 보안 결제 지원</span></span>
+                        <span class="badge-item"><i class="fa-brands fa-paypal"></i> <span id="badge-paypal" data-i18n="badge-paypal">PayPal 인증됨</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders View -->
+            <section id="orders-view" class="view-section">
+                <div class="section-container">
+                    <h2 class="section-title" id="view-orders-title" data-i18n="view-orders-title">내 구매 히스토리</h2>
+                    <p class="section-subtitle" id="view-orders-sub" data-i18n="view-orders-sub">완료한 주문 내역을 확인하세요.</p>
+                    <div class="table-wrapper">
+                        <table class="orders-table">
+                            <thead>
+                                <tr>
+                                    <th id="th-date" data-i18n="th-date">주문 날짜</th>
+                                    <th id="th-order-id" data-i18n="th-order-id">거래 ID</th>
+                                    <th id="th-product" data-i18n="th-product">상품</th>
+                                    <th id="th-tier" data-i18n="th-tier">패키지 등급</th>
+                                    <th id="th-brand" data-i18n="th-brand">브랜드</th>
+                                    <th id="th-qty" data-i18n="th-qty">수량</th>
+                                    <th id="th-total" data-i18n="th-total">총 결제금액</th>
+                                    <th id="th-status" data-i18n="th-status">상태</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orders-body"></tbody>
+                        </table>
+                        <p id="no-orders-msg" class="empty-state" data-i18n="no-orders-msg">구매 기록이 없습니다.</p>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4 id="foot-packages" data-i18n="foot-packages">Loyalty Packages</h4>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="navigate('starter')">Starter Loyalty</a></li>
+                    <li><a href="#" onclick="navigate('pro')">Pro Retention</a></li>
+                    <li><a href="#" onclick="navigate('enterprise')">Enterprise LTV</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 id="foot-why" data-i18n="foot-why">Why LOYALTYBOOST</h4>
+                <ul class="footer-links">
+                    <li><span id="foot-repeat" data-i18n="foot-repeat">Repeat Buyer Program</span></li>
+                    <li><span id="foot-rewards" data-i18n="foot-rewards">Tiered Rewards</span></li>
+                    <li><span id="foot-automation" data-i18n="foot-automation">Retention Automation</span></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-contact">
+                <h4>Support</h4>
+                <p id="foot-contact" data-i18n="foot-contact">snsherocom@gmail.com</p>
+                <p id="foot-copy" data-i18n="foot-copy">&copy; 2026 BibleForAI LOYALTYBOOST. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        localStorage.setItem('bibleforai_lang', 'ko');
+    </script>
+    <script src="../app.js"></script>
+</body>
+</html>

@@ -33,6 +33,7 @@ CATALOG = [
     {'id': 'cert', 'cat': 'strategy'},
     {'id': 'hr', 'cat': 'strategy'},
     {'id': 'sys', 'cat': 'design-dev'},
+    {'id': 'loyalty', 'cat': 'strategy'},
 ]
 
 
