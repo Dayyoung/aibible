@@ -90,7 +90,7 @@ function changeLanguage(lang) {
 }
 
 function applyTranslations() {
-  const lang = localStorage.getItem('bibleforai_lang') || 'en';
+  const lang = localStorage.getItem('bibleforai_lang') || 'ko';
   const textMap = {
     en: {
       'logo-subtitle': 'LOYALTYBOOST!',

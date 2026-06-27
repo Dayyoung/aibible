@@ -315,10 +315,9 @@
                         </div>
                         <div class="modal-total-row">
                             <span id="modal-total-amt" data-i18n="modal-total-amt">Total Amount:</span>
-                            <strong id="modal-total-price"></strong>
+                            <strong id="modal-total-price" onclick="openTestCheckoutModal()" style="cursor: pointer; user-select: none;" title="클릭하여 테스트 결제"></strong>
                         </div>
                         <div id="paypal-test-group" class="compact-checkout-group">
-                            <button id="test-checkout-btn" class="btn-secondary" onclick="openTestCheckoutModal()" data-i18n="modal-test-btn">Run Sandbox Test Checkout</button>
                             <div id="paypal-button-container" class="paypal-wrapper"></div>
                         </div>
                     </div>

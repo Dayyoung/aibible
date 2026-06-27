@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDUOOST — Online Course Platform | Managed Enrollment & Growth</title>
+    <meta name="description" content="Launch or scale online courses and academies with EDUOOST. Managed course production, instructor matching, global enrollment funnels, and LMS setup for Udemy, Teachable, Thinkific, Coursera, Podia, and custom platforms.">
+    <meta name="keywords" content="EDUOOST, Online Courses, Course Creation, LMS Setup, Course Platform, Managed Course Production, Global Enrollment, Academy Growth, Udemy Setup, Teachable, Thinkific, Coursera, AI Course Platform">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bibleforai.com/eduooost/">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bibleforai.com/eduooost/">
+    <meta property="og:title" content="EDUOOST — Online Course Platform | Managed Enrollment & Growth">
+    <meta property="og:description" content="Launch or scale online courses and academies with managed course production, instructor matching, global enrollment funnels, and LMS setup for all major platforms.">
+    <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+    <meta property="og:site_name" content="BibleForAI EDUOOST">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bibleforai.com/eduooost/">
+    <meta name="twitter:title" content="EDUOOST — Online Course Platform | Managed Enrollment & Growth">
+    <meta name="twitter:description" content="Launch or scale online courses and academies with managed course production, instructor matching, global enrollment funnels, and LMS setup for all major platforms.">
+    <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is EDUOOST and which course platforms do you support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "EDUOOST is a managed online course platform service. We support Udemy, Teachable, Thinkific, Coursera, Podia, and custom LMS systems with course structure design, video production, and enrollment funnel setup."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide instructor recruitment and content production?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We can recruit domain experts, curriculum designers, video producers, and editors to build your course catalog from scratch or improve existing content for higher completion rates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does global enrollment funnel setup work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We design and implement localized landing pages, checkout flows, email nurture sequences, and paid acquisition funnels across multiple regions and languages to maximize course purchases."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does course platform setup take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A standard setup typically takes 7–14 days, including platform selection, course structure design, content guidance, integration of payment and analytics tools, and QA testing across desktop and mobile."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "EDUOOST — Managed Online Course Platform & Global Enrollment",
+      "description": "Launch or scale online courses and academies with managed course production, instructor matching, global enrollment funnels, and LMS setup for Udemy, Teachable, Thinkific, Coursera, Podia, and custom platforms.",
+      "brand": {
+        "@type": "Brand",
+        "name": "BibleForAI"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "19.00",
+        "highPrice": "4599.00",
+        "offerCount": "6"
+      }
+    }
+    </script>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="app-header">
+        <div class="header-container">
+                <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+            <a href="/" class="logo-group">
+                <span class="logo-title">BibleForAI</span>
+                <span class="logo-subtitle" data-i18n="logo-subtitle">EDUOOST!</span>
+            </a>
+            
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#" id="nav-home" onclick="navigate('home')" class="active" data-i18n="nav-home">Home</a></li>
+                    <li><a href="#" id="nav-platform" onclick="navigate('platform')" data-i18n="nav-platform">Platform Setup</a></li>
+                    <li><a href="#" id="nav-content" onclick="navigate('content')" data-i18n="nav-content">Course Content</a></li>
+                    <li><a href="#" id="nav-enrollment" onclick="navigate('enrollment')" data-i18n="nav-enrollment">Enrollment</a></li>
+                    <li><a href="/repboost/"><i class="fa-solid fa-circle"></i> REPBOOST</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-orders" onclick="navigate('orders')">
+                    <i class="fa-solid fa-receipt"></i> <span class="btn-text" data-i18n="btn-orders">My Orders</span>
+                </button>
+                <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)" style="margin-left: 0.75rem; padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #ffffff; font-size: 0.82rem; font-weight: 500; cursor: pointer; outline: none; transition: var(--transition);">
+                    <option value="en">🌐 English</option>
+                    <option value="ko">🇰🇷 한국어</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <ul class="mobile-nav-links unified_service_menu">
+            <li class="mobile-menu-heading">Database & Scraping</li>
+            <li><a href="/b2bdb/"><i class="fa-solid fa-building-user"></i> B2B Core Database</a></li>
+            <li><a href="/b2cdb/"><i class="fa-solid fa-database"></i> B2C Lead Database</a></li>
+            <li><a href="/databoost/"><i class="fa-solid fa-spider"></i> DATABOOST — Web Scraping</a></li>
+            <li class="mobile-menu-heading">Design & Coding</li>
+            <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI Landing Page</a></li>
+            <li><a href="/opencode/"><i class="fa-solid fa-code"></i> OpenCode AI</a></li>
+            <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> SHOPBOOST — E-Commerce Entry</a></li>
+            <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> FLOWBOOST — Workflow Automation</a></li>
+            <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST — Product Photography</a></li>
+            <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST — AI Presentations</a></li>
+            <li class="mobile-menu-heading">Marketing & SEO</li>
+            <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> SMM Growth Booster</a></li>
+            <li><a href="/prboost/"><i class="fa-solid fa-globe"></i> PRBOOST — Global PR</a></li>
+            <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> MAILBOOST — Email Marketing</a></li>
+            <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — AI SEO</a></li>
+            <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST — Market Research</a></li>
+            <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> CONTENTBOOST — AI Publishing</a></li>
+            <li class="mobile-menu-heading">Media & Audio</li>
+            <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> CLIPBOOST — Short-Form Video</a></li>
+            <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> VOICEBOOST — AI Voice</a></li>
+            <li><a href="/transboost/"><i class="fa-solid fa-language"></i> TRANSBOOST — Translation</a></li>
+            <li class="mobile-menu-heading">Strategy & Analytics</li>
+            <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> AIBOOST — AI Consulting</a></li>
+            <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST — Data Analytics</a></li>
+            <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST — AI Chatbot</a></li>
+            <li><a href="/buyerboost/"><i class="fa-solid fa-handshake"></i> BUYERBOOST — Buyer Discovery</a></li>
+            <li><a href="/salesboost/"><i class="fa-solid fa-receipt"></i> SALESBOOST — Sales Enablement</a></li>
+            <li><a href="/researchboost/"><i class="fa-solid fa-chart-line"></i> RESEARCHBOOST — Market Research</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <main>
+        
+        <!-- Home View -->
+        <section id="home-view" class="view-section active">
+            <div class="hero eduooost-hero">
+                <div class="hero-content">
+                    <div class="badge" data-i18n="hero-badge">Managed Online Course Platform</div>
+                    <h1 class="hero-title" data-i18n="hero-title">EDUOOST — Launch & Grow Academies</h1>
+                    <p class="hero-desc" data-i18n="hero-desc">From course structure and production to global enrollment funnels, we turn expertise into sellable online academies.</p>
+                    <div class="hero-actions">
+                        <button class="btn-primary" onclick="navigate('platform')" data-i18n="btn-explore">Explore Setup Options <i class="fa-solid fa-arrow-right"></i></button>
+                        <a href="#how-it-works" class="btn-secondary" data-i18n="btn-how">How It Works</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-num"><i class="fa-solid fa-layer-group"></i> 6 Platforms</span>
+                    <span class="stat-label" data-i18n="stat-platforms">Core Platforms</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num"><i class="fa-solid fa-user-group"></i> Instructors</span>
+                    <span class="stat-label" data-i18n="stat-instructors">Managed Matching</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num"><i class="fa-solid fa-globe"></i> Global</span>
+                    <span class="stat-label" data-i18n="stat-global">Enrollment Reach</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">7–14 days</span>
+                    <span class="stat-label" data-i18n="stat-delivery">Setup Speed</span>
+                </div>
+            </div>
+
+            <!-- Overview Section -->
+            <div class="section-container">
+                <h2 class="section-title" data-i18n="overview-title">What EDUOOST Handles End to End</h2>
+                <p class="section-subtitle" data-i18n="overview-subtitle">We manage your course infrastructure so you can focus on content and audience.</p>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-icon"><i class="fa-solid fa-swatchbook"></i></div>
+                        <h3 data-i18n="step-curriculum">Curriculum Design</h3>
+                        <p data-i18n="step-curriculum-desc">Outline modules, lesson flows, assessments, and learning outcomes tailored to your expertise.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon"><i class="fa-solid fa-video"></i></div>
+                        <h3 data-i18n="step-production">Course Production</h3>
+                        <p data-i18n="step-production-desc">Professional video setup, editing, subtitles, and worksheets for polished final courses.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                        <h3 data-i18n="step-instructor">Instructor Matching</h3>
+                        <p data-i18n="step-instructor-desc">Recruit qualified instructors and support staff to scale delivery without hiring overhead.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon"><i class="fa-solid fa-network-wired"></i></div>
+                        <h3 data-i18n="step-enrollment">Enrollment Funnel</h3>
+                        <p data-i18n="step-enrollment-desc">Landing pages, checkout flows, email automation, and paid acquisition funnels across regions.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3 data-i18n="step-analytics">Analytics & Optimization</h3>
+                        <p data-i18n="step-analytics-desc">Track course performance, completion rates, and iterate content for higher conversions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Packages Section -->
+            <div id="packages-section" class="section-container">
+                <h2 class="section-title" data-i18n="packages-title">Course Platform Services</h2>
+                <p class="section-subtitle" data-i18n="packages-subtitle">Choose a setup tier based on your platform and growth goals.</p>
+                <div class="card-grid">
+                    
+                    <!-- Platform -->
+                    <div class="data-card" onclick="openPurchaseModal('platform','platform-starter')">
+                        <div class="card-icon platform-color"><i class="fa-solid fa-rocket"></i></div>
+                        <h3 data-i18n="cat-platform-title">Platform Setup</h3>
+                        <p data-i18n="cat-platform-desc">Full academy setup on Udemy, Teachable, Thinkific, Coursera, Podia, or a custom LMS.</p>
+                    </div>
+                    <!-- Content -->
+                    <div class="data-card" onclick="openPurchaseModal('content','content-pro')">
+                        <div class="card-icon content-color"><i class="fa-solid fa-film"></i></div>
+                        <h3 data-i18n="cat-content-title">Course Content</h3>
+                        <p data-i18n="cat-content-desc">Course structure, lecture design, video, quizzes, assets, and instructor scripts.</p>
+                    </div>
+                    <!-- Instructor -->
+                    <div class="data-card" onclick="openPurchaseModal('instructor','recruit-basic')">
+                        <div class="card-icon instructor-color"><i class="fa-solid fa-user-tie"></i></div>
+                        <h3 data-i18n="cat-instructor-title">Instructor Recruiting</h3>
+                        <p data-i18n="cat-instructor-desc">Source and vet instructors, coaches, and subject matter experts for your catalog.</p>
+                    </div>
+                    <!-- Funnel -->
+                    <div class="data-card" onclick="openPurchaseModal('funnel','funnel-boost')">
+                        <div class="card-icon funnel-color"><i class="fa-solid fa-bullhorn"></i></div>
+                        <h3 data-i18n="cat-funnel-title">Enrollment Funnel</h3>
+                        <p data-i18n="cat-funnel-desc">Audience-specific landing pages, checkout, upsells, and retargeting for new students.</p>
+                    </div>
+                    <!-- Live -->
+                    <div class="data-card" onclick="openPurchaseModal('live','live-basic')">
+                        <div class="card-icon live-color"><i class="fa-solid fa-tower-broadcast"></i></div>
+                        <h3 data-i18n="cat-live-title">Live Class Ops</h3>
+                        <p data-i18n="cat-live-desc">Zoom and webinar setup, scheduling, attendance, replay publishing, and support.</p>
+                    </div>
+                    <!-- Analytics -->
+                    <div class="data-card" onclick="openPurchaseModal('analytics','analytics-basic')">
+                        <div class="card-icon analytics-color"><i class="fa-solid fa-chart-pie"></i></div>
+                        <h3 data-i18n="cat-analytics-title">Growth Analytics</h3>
+                        <p data-i18n="cat-analytics-desc">Track enrollments, completion rates, refunds, A/B test pages, and content ROI.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How It Works -->
+            <div id="how-it-works" class="section-container">
+                <h2 class="section-title" data-i18n="how-title">How EDUOOST Works</h2>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-icon"><i class="fa-solid fa-comments"></i></div>
+                        <h3 data-i18n="hw-step1-title">Discovery Call</h3>
+                        <p data-i18n="hw-step1-desc">Share your course topic, target students, goals, and platform preference.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon"><i class="fa-solid fa-sitemap"></i></div>
+                        <h3 data-i18n="hw-step2-title">Blueprint</h3>
+                        <p data-i18n="hw-step2-desc">We design the curriculum outline, platform flow, and content production plan.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon"><i class="fa-solid fa-gears"></i></div>
+                        <h3 data-i18n="hw-step3-title">Build & Launch</h3>
+                        <p data-i18n="hw-step3-desc">Course setup, content upload, checkout configuration, and QA before go-live.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon"><i class="fa-solid fa-rocket"></i></div>
+                        <h3 data-i18n="hw-step4-title">Growth Engine</h3>
+                        <p data-i18n="hw-step4-desc">Enrollment funnels, email nurture, paid ads, and optimization for scaling.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compliances Section Style Placeholder -->
+            <div class="section-container compliance-bg">
+                <h2 class="section-title" data-i18n="comp-title">Trust & Delivery Standards</h2>
+                <p class="section-subtitle" data-i18n="comp-desc">We follow course platform terms of service and maintain transparent delivery milestones.</p>
+                <ul class="comp-list">
+                    <li><strong data-i18n="comp-bullet1-bold">Platform Compliance:</strong> <span data-i18n="comp-bullet1-text">Udemy, Teachable, Thinkific, Coursera, Podia, and custom LMS-compatible setup and guidance.</span></li>
+                    <li><strong data-i18n="comp-bullet2-bold">Secure Payments:</strong> <span data-i18n="comp-bullet2-text">PayPal, Stripe, or native platform checkout with buyer protection and receipts.</span></li>
+                    <li><strong data-i18n="comp-bullet3-bold">Support SLA:</strong> <span data-i18n="comp-bullet3-text">Clear milestones, scope controls, and ongoing optimization support included.</span></li>
+                </ul>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="section-container">
+                <h2 class="section-title" data-i18n="faq-title">Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Can you create a course if I only have a topic idea?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer"><p>Yes. We can outline curriculum, recruit an instructor, and produce polished course content from an idea.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Do you handle marketing after the course is live?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer"><p>Yes. We support enrollment funnels, email nurture, and paid acquisition, with performance tracking.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Which platforms do you support for course hosting?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer"><p>We support Udemy, Teachable, Thinkific, Coursera, Podia, and custom LMS platforms.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>How do you deliver project milestones?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer"><p>Milestones are shared through a shared workspace. Final deliverables include scripts, video masters, and platform handover.</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders View -->
+            <div id="orders-view" class="view-section">
+                <div class="section-container">
+                    <h2 class="section-title" data-i18n="view-orders-title">My Purchase History</h2>
+                    <p class="section-subtitle" data-i18n="view-orders-sub">Review your successful orders. Your data is stored locally in your browser workspace.</p>
+                    
+                    <div class="orders-table-wrapper">
+                        <table class="orders-table">
+                            <thead>
+                                <tr>
+                                    <th data-i18n="th-date">Order Date</th>
+                                    <th data-i18n="th-order-id">Transaction ID</th>
+                                    <th data-i18n="th-product">Product</th>
+                                    <th data-i18n="th-tier">Package Tier</th>
+                                    <th data-i18n="th-platform">Platform</th>
+                                    <th data-i18n="th-qty">Quantity</th>
+                                    <th data-i18n="th-total">Total Paid</th>
+                                    <th data-i18n="th-status">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orders-tbody"></tbody>
+                        </table>
+                        <p id="no-orders-msg" class="no-orders-msg" data-i18n="no-orders-msg">No purchase records found. Make your first order to see history here!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Modal -->
+            <div class="modal-overlay" id="purchase-modal">
+                <div class="modal-panel">
+                    <div class="modal-header">
+                        <h3 class="modal-title" data-i18n="modal-title">Configure Order</h3>
+                        <p class="modal-desc" data-i18n="modal-desc">Select a package and complete your secure PayPal checkout.</p>
+                        <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="modal-card">
+                            <div class="modal-pkg-row">
+                                <div>
+                                    <div class="modal-label" data-i18n="modal-base-pkg">Base Package:</div>
+                                    <div class="modal-pkg-name" id="modal-product-title"></div>
+                                    <div class="modal-pkg-name" id="modal-package-name"></div>
+                                </div>
+                                <div class="modal-price-box">
+                                    <div class="modal-label" data-i18n="modal-base-price-label">Base Price:</div>
+                                    <div class="modal-price" id="modal-base-price"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label data-i18n="modal-email-label">Email Address *</label>
+                                <input type="email" id="order-email" placeholder="name@example.com" autocomplete="email">
+                                <div class="field-error" id="email-error" style="display:none;"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label data-i18n="modal-platform-label">Preferred Platform</label>
+                                <select id="order-platform">
+                                    <option value="Udemy">Udemy</option>
+                                    <option value="Teachable">Teachable</option>
+                                    <option value="Thinkific">Thinkific</option>
+                                    <option value="Coursera">Coursera</option>
+                                    <option value="Podia">Podia</option>
+                                    <option value="Custom LMS">Custom LMS</option>
+                                </select>
+                            </div>
+
+                            <div class="modal-qty-row">
+                                <label data-i18n="modal-qty">Quantity:</label>
+                                <div class="qty-controls">
+                                    <button onclick="adjustQty(-1)">−</button>
+                                    <input type="number" id="order-quantity" value="1" min="1" readonly>
+                                    <button onclick="adjustQty(1)">+</button>
+                                </div>
+                            </div>
+
+                            <div class="total-price-box">
+                                <span data-i18n="modal-total-amt">Total Amount:</span>
+                                <span class="modal-price-total" id="modal-total-price"></span>
+                            </div>
+
+                            <div class="payment-area">
+                                <button id="paypal-test-button" class="test-button" onclick="triggerTestCheckout()">
+                                    <i class="fa-solid fa-flask"></i> <span data-i18n="modal-test-btn">Run Sandbox Test Checkout</span>
+                                </button>
+                                <div id="paypal-button-container"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <span class="logo-title">BibleForAI</span>
+                        <span class="logo-subtitle">EDUOOST</span>
+                    </div>
+                    <div class="footer-links">
+                        <a href="#faq-title" data-i18n="foot-faq">FAQ</a>
+                        <a href="/index.html#footer" data-i18n="foot-home">Home</a>
+                        <a href="/contact/" data-i18n="foot-contact-link">Contact</a>
+                    </div>
+                    <div class="footer-bottom">
+                        <span data-i18n="foot-copy">© 2026 BibleForAI EDUOOST. All rights reserved. Managed online course platform service.</span>
+                        <div class="badges">
+                            <span class="badge-secure"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="badge-ssl">SSL Secured Checkout</span></span>
+                            <span class="badge-secure"><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal Verified</span></span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

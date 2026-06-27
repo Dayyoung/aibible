@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BibleForAI - BOOKBOOST | Smart Appointment Booking Automation</title>
+    <meta name="description" content="Automate your booking and appointment scheduling with AI-powered SMART calendars, reminders, and calendar integrations. 24/7 automated booking for service businesses worldwide.">
+    <meta name="keywords" content="Appointment Booking Software, Online Booking System, AI Scheduling Automation, Calendar Integration, Automated Reminders, Booking Page, Service Reservation">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bibleforai.com/bookboost/">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bibleforai.com/bookboost/">
+    <meta property="og:title" content="BibleForAI - BOOKBOOST | AI Appointment Booking Automation">
+    <meta property="og:description" content="Automate bookings, scheduling, and reminders with AI-powered booking pages and calendar integrations. 24/7 automated service for businesses worldwide.">
+    <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+    <meta property="og:site_name" content="BibleForAI BOOKBOOST">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bibleforai.com/bookboost/">
+    <meta name="twitter:title" content="BibleForAI - BOOKBOOST | AI Appointment Booking Automation">
+    <meta name="twitter:description" content="Automate bookings, scheduling, and reminders with AI-powered booking pages. 24/7 automated service for service businesses worldwide.">
+    <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which calendar platforms does BOOKBOOST integrate with?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BOOKBOOST seamlessly integrates with Google Calendar, Outlook Calendar, and Apple Calendar. All bookings sync bidirectionally so availability stays conflict-free across all your schedules."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can BOOKBOOST handle automated reminders and confirmations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every BOOKBOOST plan includes automated email and SMS reminders. Clients receive confirmation, 24-hour reminder, and follow-up messages — greatly reducing no-shows."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is BOOKBOOST suitable for international service businesses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. BOOKBOOST supports multiple time zones, multi-language booking pages, and 24/7 automated scheduling — making it ideal for global consulting, coaching, beauty, and professional services."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens after I purchase a BOOKBOOST plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "After purchase, our team delivers your custom booking page and provisioning guide within 24 hours. You receive instant access to your smart calendar dashboard with all integrations pre-configured."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "BibleForAI BOOKBOOST - Smart Appointment Booking Automation",
+      "image": "https://bibleforai.com/assets/og-preview.png",
+      "description": "AI-powered smart booking pages, 24/7 automated scheduling, calendar sync (Google/Outlook/Apple), and SMS/email reminders for service businesses.",
+      "brand": {
+        "@type": "Brand",
+        "name": "BibleForAI"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "1800"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "39.00",
+        "highPrice": "299.00",
+        "offerCount": "4"
+      }
+    }
+    </script>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="app-header">
+        <div class="header-container">
+                <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+            <a href="/" class="logo-group">
+                <span class="logo-title">BibleForAI</span>
+                <span class="logo-subtitle" data-i18n="logo-subtitle">BOOKBOOST!</span>
+            </a>
+            
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#" id="nav-home" onclick="navigate('home')" class="active" data-i18n="nav-home">Home</a></li>
+                    <li><a href="#" id="nav-starter" onclick="navigate('starter')" data-i18n="nav-starter">Starter</a></li>
+                    <li><a href="#" id="nav-growth" onclick="navigate('growth')" data-i18n="nav-growth">Growth</a></li>
+                    <li><a href="#" id="nav-pro" onclick="navigate('pro')" data-i18n="nav-pro">Pro</a></li>
+                    <li><a href="#" id="nav-enterprise" onclick="navigate('enterprise')" data-i18n="nav-enterprise">Enterprise</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-orders" onclick="navigate('orders')">
+                    <i class="fa-solid fa-receipt"></i> <span class="btn-text" data-i18n="btn-orders">My Orders</span>
+                </button>
+                <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)" style="margin-left: 0.75rem; padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #ffffff; font-size: 0.82rem; font-weight: 500; cursor: pointer; outline: none; transition: var(--transition);">
+                    <option value="en">🌐 English</option>
+                    <option value="ko">🇰🇷 한국어</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer - Unified Service Menu -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <ul class="mobile-nav-links unified-service-menu">
+            <li class="mobile-menu-heading" data-i18n="cat-database">Database & Scraping</li>
+            <li><a href="/b2bdb/"><i class="fa-solid fa-building-user"></i> B2B Core Database</a></li>
+            <li><a href="/b2cdb/"><i class="fa-solid fa-database"></i> B2C Lead Database</a></li>
+            <li><a href="/databoost/"><i class="fa-solid fa-spider"></i> DATABOOST — Web Scraping</a></li>
+            <li class="mobile-menu-heading" data-i18n="cat-design">Design & Coding</li>
+            <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI Landing Page</a></li>
+            <li><a href="/opencode/"><i class="fa-solid fa-code"></i> OpenCode AI</a></li>
+            <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> SHOPBOOST — E-Commerce Entry</a></li>
+            <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> FLOWBOOST — Workflow Automation</a></li>
+            <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST — Product Photography</a></li>
+            <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST — AI Presentations</a></li>
+            <li><a href="/bookboost/"><i class="fa-solid fa-calendar-check"></i> BOOKBOOST — Booking Automation</a></li>
+            <li class="mobile-menu-heading" data-i18n="cat-marketing">Marketing & SEO</li>
+            <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> SMM Growth Booster</a></li>
+            <li><a href="/prboost/"><i class="fa-solid fa-globe"></i> PRBOOST — Global PR</a></li>
+            <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> MAILBOOST — Email Marketing</a></li>
+            <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — AI SEO</a></li>
+            <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST — Market Research</a></li>
+            <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> CONTENTBOOST — AI Publishing</a></li>
+            <li class="mobile-menu-heading" data-i18n="cat-media">Media & Audio</li>
+            <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> CLIPBOOST — Short-Form Video</a></li>
+            <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> VOICEBOOST — AI Voice</a></li>
+            <li><a href="/transboost/"><i class="fa-solid fa-language"></i> TRANSBOOST — Translation</a></li>
+            <li class="mobile-menu-heading" data-i18n="cat-strategy">Strategy & Analytics</li>
+            <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> AIBOOST — AI Consulting</a></li>
+            <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST — Data Analytics</a></li>
+            <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST — AI Chatbot</a></li>
+            <li><a href="/buyerboost/"><i class="fa-solid fa-handshake"></i> BUYERBOOST — Buyer Discovery</a></li>
+            <li><a href="/salesboost/"><i class="fa-solid fa-receipt"></i> SALESBOOST — Sales Enablement</a></li>
+            <li><a href="/researchboost/"><i class="fa-solid fa-chart-line"></i> RESEARCHBOOST — Market Research</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <main>
+        
+        <!-- Home View -->
+        <section id="home-view" class="view-section active">
+            <div class="hero">
+                <div class="badge" data-i18n="hero-badge">AI-Powered Scheduling</div>
+                <h1 class="hero-title" data-i18n="hero-title">BibleForAI — BOOKBOOST</h1>
+                <p class="hero-desc" data-i18n="hero-desc">Automate your bookings with AI smart scheduling, 24/7 automated availability, and calendar sync for service businesses worldwide.</p>
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="navigate('starter')" data-i18n="btn-explore">Explore Packages <i class="fa-solid fa-arrow-right"></i></button>
+                    <a href="#features-section" class="btn-secondary" data-i18n="btn-compliance">Why Automated Booking?</a>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-num" data-i18n="stat-bookings">Zero</span>
+                    <span class="stat-label" data-i18n="stat-bookings-label">Missed Bookings</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num" data-i18n="stat-uptime">24/7</span>
+                    <span class="stat-label" data-i18n="stat-uptime-label">Automated Availability</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num" data-i18n="stat-channels">3+</span>
+                    <span class="stat-label" data-i18n="stat-channels-label">Calendar Integrations</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num" data-i18n="stat-time">60m</span>
+                    <span class="stat-label" data-i18n="stat-time-label">Setup Time</span>
+                </div>
+            </div>
+
+            <!-- Plan Categories -->
+            <div class="section-container">
+                <h2 class="section-title" data-i18n="sec-channels-title">Smart Booking Plans for Every Stage</h2>
+                <p class="section-subtitle" data-i18n="sec-channels-subtitle">From solo consultants to enterprises — automate appointments, eliminate conflicts, and sync with every major calendar platform.</p>
+                <div class="card-grid">
+                    <div class="data-card" onclick="navigate('starter')">
+                        <div class="card-icon starter-color"><i class="fa-solid fa-calendar-day"></i></div>
+                        <h3 data-i18n="card-starter-title">Starter — Solo</h3>
+                        <p data-i18n="card-starter-desc">One booking page, accept unlimited appointments, email reminders.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">Get Started</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('growth')">
+                        <div class="card-icon growth-color"><i class="fa-solid fa-calendar-week"></i></div>
+                        <h3 data-i18n="card-growth-title">Growth — Small Team</h3>
+                        <p data-i18n="card-growth-desc">Multi-staff scheduling, SMS reminders, and Google/Outlook sync.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">Get Started</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('pro')">
+                        <div class="card-icon pro-color"><i class="fa-solid fa-calendar-plus"></i></div>
+                        <h3 data-i18n="card-pro-title">Pro — Growing Business</h3>
+                        <p data-i18n="card-pro-desc">Full automation, Zapier integration, custom workflows, and analytics.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">Get Started</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('enterprise')">
+                        <div class="card-icon enterprise-color"><i class="fa-solid fa-building"></i></div>
+                        <h3 data-i18n="card-enterprise-title">Enterprise — Organization</h3>
+                        <p data-i18n="card-enterprise-desc">White-label, API access, dedicated manager, and custom calendar logic.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">Get Started</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div id="features-section" class="section-container compliance-bg">
+                <div class="compliance-content">
+                    <div class="compliance-text">
+                        <h2 data-i18n="comp-title">Why Automate Your Booking?</h2>
+                        <p data-i18n="comp-desc">Manual scheduling wastes time and causes costly missed appointments. BOOKBOOST replaces back-and-forth emails with an always-available, intelligent calendar that syncs in real time.</p>
+                        <div class="compliance-bullets">
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet1-bold">24/7 Booking:</strong> <span data-i18n="comp-bullet1-text">Clients book anytime — no email ping-pong.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet2-bold">Calendar Sync:</strong> <span data-i18n="comp-bullet2-text">Two-way sync with Google, Outlook, and Apple calendars.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet3-bold">Auto Reminders:</strong> <span data-i18n="comp-bullet3-text">SMS + email reminders cut no-shows by up to 80%.</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="compliance-graphic">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <div class="glow-pulse"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Starter View -->
+        <section id="starter-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="card-starter-title">Starter — Solo</h2>
+                <p data-i18n="view-starter-sub">Perfect for freelancers, coaches, and solo consultants who want an elegant booking page.</p>
+            </div>
+            <div class="packages-grid" id="starter-packages"></div>
+        </section>
+
+        <!-- Growth View -->
+        <section id="growth-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="card-growth-title">Growth — Small Team</h2>
+                <p data-i18n="view-growth-sub">Multi-staff scheduling with SMS reminders and calendar integrations.</p>
+            </div>
+            <div class="packages-grid" id="growth-packages"></div>
+        </section>
+
+        <!-- Pro View -->
+        <section id="pro-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="card-pro-title">Pro — Growing Business</h2>
+                <p data-i18n="view-pro-sub">Full automation, Zapier modules, custom workflows, and booking analytics.</p>
+            </div>
+            <div class="packages-grid" id="pro-packages"></div>
+        </section>
+
+        <!-- Enterprise View -->
+        <section id="enterprise-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="card-enterprise-title">Enterprise — Organization</h2>
+                <p data-i18n="view-enterprise-sub">White-label booking experience, API access, and dedicated implementation support.</p>
+            </div>
+            <div class="packages-grid" id="enterprise-packages"></div>
+        </section>
+
+        <!-- My Orders View -->
+        <section id="orders-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="view-orders-title">My Purchase History</h2>
+                <p data-i18n="view-orders-sub">Review your successful orders. Your data is stored locally in your browser workspace.</p>
+            </div>
+            <div class="orders-container">
+                <div class="table-wrapper">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th data-i18n="th-date">Order Date</th>
+                                <th data-i18n="th-order-id">Transaction ID</th>
+                                <th data-i18n="th-product">Product</th>
+                                <th data-i18n="th-tier">Package Tier</th>
+                                <th data-i18n="th-service">Booking Type</th>
+                                <th data-i18n="th-qty">Quantity</th>
+                                <th data-i18n="th-total">Total Paid</th>
+                                <th data-i18n="th-status">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-tbody">
+                            <!-- Loaded dynamically by JS -->
+                        </tbody>
+                    </table>
+                    <div id="no-orders-msg" class="no-data-msg">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <p data-i18n="no-orders-msg">No purchase records found. Make your first order to see history here!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Purchase Modal -->
+    <div class="modal-backdrop" id="purchase-modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="modal-product-title" data-i18n="modal-title">Configure Order</h3>
+            <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">Choose your booking automation plan and complete secure PayPal payment.</p>
+            
+            <div class="order-summary-box">
+                <div class="summary-row">
+                    <span data-i18n="modal-base-pkg">Base Package:</span>
+                    <strong id="modal-package-name">-</strong>
+                </div>
+                <div class="summary-row">
+                    <span data-i18n="modal-base-price-label">Base Price:</span>
+                    <strong id="modal-base-price">$0.00</strong>
+                </div>
+            </div>
+
+            <div class="email-control-group" style="margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.4rem;">
+                <label for="order-email" style="font-weight: 600; font-size: 0.85rem; color: var(--text-main); text-align: left;" data-i18n="modal-email-label">Email Address *</label>
+                <input type="email" id="order-email" required placeholder="name@example.com" data-i18n="modal-email-placeholder" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: #ffffff; padding: 0.6rem 0.9rem; border-radius: 8px; font-family: var(--font-body); font-size: 0.88rem; outline: none; width: 100%; transition: var(--transition);">
+                <span id="email-error" style="color: #ef4444; font-size: 0.75rem; display: none; text-align: left;" data-i18n="modal-email-error"><i class="fa-solid fa-triangle-exclamation"></i> Please enter a valid email address.</span>
+            </div>
+
+            <div class="country-control-group" style="margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.4rem;">
+                <label for="order-country" style="font-weight: 600; font-size: 0.85rem; color: var(--text-main); text-align: left;" data-i18n="modal-service-label">Booking Service Type:</label>
+                <select id="order-country" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: #ffffff; padding: 0.6rem 0.9rem; border-radius: 8px; font-family: var(--font-body); font-size: 0.88rem; outline: none; width: 100%; transition: var(--transition); cursor: pointer;">
+                    <option value="General Booking" style="background:#0c0f17; color:#fff;">General Booking / Appointment</option>
+                    <option value="Consulting Booking" style="background:#0c0f17; color:#fff;">Consulting / Coaching</option>
+                    <option value="Beauty & Wellness" style="background:#0c0f17; color:#fff;">Beauty & Wellness</option>
+                    <option value="Medical Booking" style="background:#0c0f17; color:#fff;">Medical / Clinic</option>
+                    <option value="Event Booking" style="background:#0c0f17; color:#fff;">Event / Venue Reservation</option>
+                    <option value="Education Booking" style="background:#0c0f17; color:#fff;">Education / Tutoring</option>
+                    <option value="Legal Booking" style="background:#0c0f17; color:#fff;">Legal / Professional</option>
+                </select>
+            </div>
+
+            <div class="quantity-control-group" style="margin-bottom: 1rem;">
+                <label for="order-quantity" data-i18n="modal-qty">Quantity:</label>
+                <div class="qty-selector">
+                    <button class="qty-btn" onclick="adjustQty(-1)"><i class="fa-solid fa-minus"></i></button>
+                    <input type="number" id="order-quantity" value="1" min="1" oninput="updateModalPrice()">
+                    <button class="qty-btn" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <div class="total-price-box">
+                <span data-i18n="modal-total-amt">Total Amount:</span>
+                <span class="price-val" id="modal-total-price" onclick="triggerTestCheckout()" style="cursor: pointer;">$0.00</span>
+            </div>
+
+
+
+            <!-- PayPal Button Container -->
+            <div class="paypal-wrapper">
+                <div id="paypal-button-container"></div>
+            </div>
+            
+            <div class="payment-badges">
+                <span><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL Secured Checkout</span></span>
+                <span><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal Verified</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="/" class="logo-group" style="text-decoration: none; margin-bottom: 1rem;">
+                    <span class="logo-title">BibleForAI</span>
+                    <span class="logo-subtitle" data-i18n="logo-subtitle">BOOKBOOST!</span>
+                </a>
+                <p data-i18n="hero-desc">Automate your bookings with AI smart scheduling, reminders, and calendar sync for service businesses worldwide.</p>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="foot-channels">Booking Plans</h4>
+                <ul>
+                    <li><a href="#" onclick="navigate('starter')" data-i18n="nav-starter">Starter</a></li>
+                    <li><a href="#" onclick="navigate('growth')" data-i18n="nav-growth">Growth</a></li>
+                    <li><a href="#" onclick="navigate('pro')" data-i18n="nav-pro">Pro</a></li>
+                    <li><a href="#" onclick="navigate('enterprise')" data-i18n="nav-enterprise">Enterprise</a></li>
+                </ul>
+            </div>
+            <div class="footer-support">
+                <h4 data-i18n="foot-legal">Legal & Support</h4>
+                <ul>
+                    <li data-i18n="foot-security">Secure 24/7 Infrastructure</li>
+                    <li data-i18n="foot-support">Lifetime Email Support</li>
+                    <li data-i18n="foot-delivery">60-Minute Setup</li>
+                    <li data-i18n="foot-guarantee">30-Day Money-Back Guarantee</li>
+                <li><a href="/ipboost/"><i class="fa-solid fa-shield-halved"></i> IPBOOST — IP & Brand Protection</a></ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="foot-copy">&copy; 2026 BibleForAI BOOKBOOST. All rights reserved. Smart Appointment Booking Automation.</p>
+        </div>
+    </footer>
+
+    <!-- App Logic script -->
+    <script src="app.js"></script>
+</body>
+</html>
