@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="../">
+    <title>BibleForAI - MAPBOOST | 로컬 & 맵 SEO 최적화</title>
+    <meta name="description" content="로컬 랭킹과 맵 노출 최적화 서비스. Google Maps, Apple Maps, Naver Map SEO로 지역 검색 상단 노출을 지원합니다.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bibleforai.com/mapboost/">
+    <meta property="og:title" content="BibleForAI - MAPBOOST | 로컬 & 맵 SEO 최적화">
+    <meta property="og:description" content="로컬 랭킹과 맵 노출 최적화 서비스. Google Maps, Apple Maps, Naver Map SEO로 지역 검색 상단 노출을 지원합니다.">
+    <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+    <meta property="og:site_name" content="BibleForAI Map SEO">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "MAPBOOST는 어떤 플랫폼을 지원하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Google Maps, Apple Maps, Naver Map, 그리고 지역 디렉토리 맵 리스팅을 대상으로 최적화합니다. 검증된 인용과 카테고리·프로필 신호를 기반으로 운영합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "맵 랭킹 효과를 확인하기까지 얼마나 걸리나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "지역 경쟁과 키워드 난이도에 따라 보통 14~45일 사이에 노출 변화가 측정됩니다. 주간 랭크 추적과 개선을 반영합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "리뷰 관리를 함께 제공하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네. 리뷰 활동 관리, 응답 초안 작성, 감성 모니터링, 평점 헬스 점검까지 리스팅 평판 관리에 필요한 운영을 제공합니다."
+          }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "MAPBOOST — 로컬 & 맵 SEO 최적화",
+      "image": "https://bibleforai.com/assets/og-preview.png",
+      "description": "로컬 맵 SEO와 플레이스 최적화를 위한 플랫폼 지원·리뷰 운영 서비스",
+      "brand": {
+        "@type": "Brand",
+        "name": "BibleForAI"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "60.00",
+        "highPrice": "1200.00",
+        "offerCount": "8"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <!-- Local verification guidance
+         Google Business Profile verification -> Google Business Profile 콘솔 또는 postcard/SMS/phone verification
+         Apple Maps Connect -> https://mapsconnect.apple.com/ 또는 Apple Maps 앱 개설자 인증
+         Naver 지역 비지니스 플랫폼 -> https://sell.naver.com/ 또는 네이버 스마트플레이스 인증
+         Apple Maps 개업자 상세는 Perspectives in Apple Maps의 Place Management 및 Operation Programs를 참고하세요.
+         Google Maps 또는 Google Business Profile 통합 기능은 Google Business Profile v2 API 설정 가이드를 확인하세요.
+         Add each verified owner/tag snippet here when available.
+    -->
+    <!-- Header -->
+    <header id="app-header">
+        <div class="header-container">
+                <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+            <a href="/" class="logo-group">
+                <span class="logo-title">BibleForAI</span>
+                <span class="logo-subtitle" data-i18n="logo-subtitle">MAP BOOST</span>
+            </a>
+
+            <div class="header-actions">
+                <button class="btn-orders" onclick="navigate('orders')">
+                    <i class="fa-solid fa-receipt"></i> <span class="btn-text" data-i18n="btn-orders">내 주문 내역</span>
+                </button>
+                <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)" style="margin-left: 0.75rem; padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #ffffff; font-size: 0.82rem; font-weight: 500; cursor: pointer; outline: none; transition: var(--transition);">
+                    <option value="en">🌐 English</option>
+                    <option value="ko" selected>🇰🇷 한국어</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <ul class="mobile-nav-links unified-service-menu">
+            <li class="mobile-menu-heading">Database & Scraping</li>
+            <li><a href="/b2bdb/"><i class="fa-solid fa-building-user"></i> B2B Core Database</a></li>
+            <li><a href="/b2cdb/"><i class="fa-solid fa-database"></i> B2C Lead Database</a></li>
+            <li><a href="/databoost/"><i class="fa-solid fa-spider"></i> DATABOOST — Web Scraping</a></li>
+            <li class="mobile-menu-heading">Design & Coding</li>
+            <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI Landing Page</a></li>
+            <li><a href="/opencode/"><i class="fa-solid fa-code"></i> OpenCode AI</a></li>
+            <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> SHOPBOOST — E-Commerce Entry</a></li>
+            <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> FLOWBOOST — Workflow Automation</a></li>
+            <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST — Product Photography</a></li>
+            <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST — AI Presentations</a></li>
+            <li class="mobile-menu-heading">Marketing & SEO</li>
+            <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> SMM Growth Booster</a></li>
+            <li><a href="/prboost/"><i class="fa-solid fa-globe"></i> PRBOOST — Global PR</a></li>
+            <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> MAILBOOST — Email Marketing</a></li>
+            <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — AI SEO</a></li>
+            <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST — Market Research</a></li>
+            <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> CONTENTBOOST — AI Publishing</a></li>
+            <li class="mobile-menu-heading">Media & Audio</li>
+            <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> CLIPBOOST — Short-Form Video</a></li>
+            <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> VOICEBOOST — AI Voice</a></li>
+            <li><a href="/transboost/"><i class="fa-solid fa-language"></i> TRANSBOOST — Translation</a></li>
+            <li class="mobile-menu-heading">Strategy & Analytics</li>
+            <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> AIBOOST — AI Consulting</a></li>
+            <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST — Data Analytics</a></li>
+            <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST — AI Chatbot</a></li>
+            <li><a href="/buyerboost/"><i class="fa-solid fa-handshake"></i> BUYERBOOST — Buyer Discovery</a></li>
+            <li><a href="/salesboost/"><i class="fa-solid fa-receipt"></i> SALESBOOST — Sales Enablement</a></li>
+            <li><a href="/researchboost/"><i class="fa-solid fa-chart-line"></i> RESEARCHBOOST — Market Research</a></li>
+            <li><a href="/mapboost/"><i class="fa-solid fa-map-location-dot"></i> MAPBOOST — Local & Map SEO</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Home View -->
+        <section id="home-view" class="view-section active">
+            <div class="hero">
+                <div class="badge" data-i18n="hero-badge">맵 노출 & 랭킹</div>
+                <h1 class="hero-title" data-i18n="hero-title">MAPBOOST — 로컬 & 맵 SEO</h1>
+                <p class="hero-desc" data-i18n="hero-desc">Google Maps, Apple Maps, Naver Map 및 지역형 맵 상단 노출을 위한 로컬 SEO 최적화 서비스입니다.</p>
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="navigate('setup')" data-i18n="btn-explore">맥 최적화 시작 <i class="fa-solid fa-arrow-right"></i></button>
+                    <a href="#compliance-section" class="btn-secondary" data-i18n="btn-compliance">품질 보장</a>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-num">14+</span>
+                    <span class="stat-label" data-i18n="stat-platforms">플랫폼 대상</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">24h</span>
+                    <span class="stat-label" data-i18n="stat-delivery">설정 시작</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">14-45</span>
+                    <span class="stat-label" data-i18n="stat-days">랭킹 확인 시기</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">100%</span>
+                    <span class="stat-label" data-i18n="stat-ethical">윤리적 운영</span>
+                </div>
+            </div>
+
+            <!-- Channel Categories -->
+            <div class="section-container">
+                <h2 class="section-title" data-i18n="sec-channels-title">맵 리스팅 최적화 모듈</h2>
+                <p class="section-subtitle" data-i18n="sec-channels-subtitle">각 모듈은 지역별 최적 모범 사례와 검증된 인용·리뷰·로컬 시그널을 사용합니다.</p>
+                <div class="card-grid">
+                    <div class="data-card" onclick="navigate('setup')">
+                        <div class="card-icon setup-color"><i class="fa-solid fa-location-crosshairs"></i></div>
+                        <h3 data-i18n="card-setup-title">맵 리스팅 설정</h3>
+                        <p data-i18n="card-setup-desc">플레이스 프로파일, 카테고리, 서비스, 설명 신호를 최적화해 노출 가능성을 높입니다.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">가격 보기</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('platform')">
+                        <div class="card-icon platform-color"><i class="fa-solid fa-map"></i></div>
+                        <h3 data-i18n="card-platform-title">플랫폼 팩</h3>
+                        <p data-i18n="card-platform-desc">Google, Apple, Naver 및 지역 맵 대상 표준 인용 전략으로 다중 리스팅을 구성합니다.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">가격 보기</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('review')">
+                        <div class="card-icon review-color"><i class="fa-solid fa-star"></i></div>
+                        <h3 data-i18n="card-review-title">리뷰 & 랭킹</h3>
+                        <p data-i18n="card-review-desc">평점·리뷰 헬스를 모니터링하고 랭크 트래킹으로 노출 위치를 안정화합니다.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">가격 보기</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('seo')">
+                        <div class="card-icon seo-color"><i class="fa-solid fa-magnifying-glass-location"></i></div>
+                        <h3 data-i18n="card-seo-title">로컬 SEO 부가서비스</h3>
+                        <p data-i18n="card-seo-desc">스키마·랜딩 시그널·인용 갱신·Near-Me 콘텐츠 워크플로우로 가시성을 강화합니다.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">가격 보기</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compliance Section -->
+            <div id="compliance-section" class="section-container compliance-bg">
+                <div class="compliance-content">
+                    <div class="compliance-text">
+                        <h2 data-i18n="comp-title">윤리적 로컬 랭킹 기준</h2>
+                        <p data-i18n="comp-desc">MAPBOOST는 플랫폼 가이드라인을 준수하며 인용·프로파일·리뷰 품질 전략으로 운영합니다. 계정 리스크 테크닉은 사용하지 않습니다.</p>
+                        <div class="compliance-bullets">
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet1-bold">플랫폼 준수:</strong> <span data-i18n="comp-bullet1-text">Google Maps, Apple Maps, Naver Map, 지역 디렉토리를 대상으로만 최적화합니다.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet2-bold">검증된 로컬 시그널:</strong> <span data-i18n="comp-bullet2-text">실제 장소 메타데이터·카테고리·인용 참조를 사용해 안정적 랭킹을 설계합니다.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet3-bold">리뷰 안전장치:</strong> <span data-i18n="comp-bullet3-text">리스팅 평판을 보호하기 위해 리뷰 헬스 가이드를 운영합니다.</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="compliance-graphic">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <div class="glow-pulse"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Setup View -->
+        <section id="setup-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="card-setup-title">맵 리스팅 설정</h2>
+                <p data-i18n="view-setup-sub">검증된 최적화 프로파일을 시작하세요. 카테고리·서비스·운영시간·설명 정확도를 정리합니다.</p>
+            </div>
+            <div class="packages-grid" id="setup-packages"></div>
+        </section>
+
+        <!-- Platform View -->
+        <section id="platform-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="card-platform-title">플랫폼 팩</h2>
+                <p data-i18n="view-platform-sub">Google, Apple, Naver, 지역 맵 대상 표준 인용 전략 다중 리스팅을 배포합니다.</p>
+            </div>
+            <div class="packages-grid" id="platform-packages"></div>
+        </section>
+
+        <!-- Review View -->
+        <section id="review-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="card-review-title">리뷰 & 랭킹</h2>
+                <p data-i18n="view-review-sub">랭크 변동 추적, 리뷰 플레이북 운영, 평점 헬스 모니터링으로 노출을 안정화합니다.</p>
+            </div>
+            <div class="packages-grid" id="review-packages"></div>
+        </section>
+
+        <!-- SEO View -->
+        <section id="seo-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="card-seo-title">로컬 SEO 부가서비스</h2>
+                <p data-i18n="view-seo-sub">스키마·로컬 앵커 시그널·인용 갱신·Near-Me 콘텐츠 워크플로우로 노출을 강화합니다.</p>
+            </div>
+            <div class="packages-grid" id="seo-packages"></div>
+        </section>
+
+        <!-- Orders View -->
+        <section id="orders-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="view-orders-title">내 구매 히스토리</h2>
+                <p data-i18n="view-orders-sub">성공한 주문 내역을 검토하세요. 데이터는 브라우저 로컬스토리지에 안전하게 보관됩니다.</p>
+            </div>
+            <div class="orders-container">
+                <div class="table-wrapper">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th data-i18n="th-date">주문 날짜</th>
+                                <th data-i18n="th-order-id">거래 ID</th>
+                                <th data-i18n="th-product">상품명</th>
+                                <th data-i18n="th-tier">패키지 등급</th>
+                                <th data-i18n="th-keyword">대상 키워드</th>
+                                <th data-i18n="th-qty">수량</th>
+                                <th data-i18n="th-total">총 결제금액</th>
+                                <th data-i18n="th-status">상태</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-tbody"></tbody>
+                    </table>
+                    <div id="no-orders-msg" class="no-data-msg">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <p data-i18n="no-orders-msg">구매 기록이 없습니다. 첫 주문을 완료하시면 내역이 여기에 표시됩니다!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Purchase Modal -->
+    <div class="modal-backdrop" id="purchase-modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="modal-product-title" data-i18n="modal-title">주문 설정</h3>
+            <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">대상 키워드를 선택하고 안전한 PayPal 결제를 진행하세요.</p>
+
+            <div class="order-summary-box">
+                <div class="summary-row">
+                    <span data-i18n="modal-base-pkg">기본 패키지:</span>
+                    <strong id="modal-package-name">-</strong>
+                </div>
+                <div class="summary-row">
+                    <span data-i18n="modal-base-price-label">기본 가격:</span>
+                    <strong id="modal-base-price">$0.00</strong>
+                </div>
+            </div>
+
+            <div class="email-control-group" style="margin-bottom: 1.1rem; display: flex; flex-direction: column; gap: 0.35rem;">
+                <label for="order-email" style="font-weight: 600; font-size: 0.88rem; color: var(--text-main); text-align: left;" data-i18n="modal-email-label">이메일 주소 *</label>
+                <input type="email" id="order-email" required placeholder="name@example.com" data-i18n="modal-email-placeholder" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: #ffffff; padding: 0.6rem 0.85rem; border-radius: 8px; font-family: var(--font-body); font-size: 0.88rem; outline: none; width: 100%; transition: var(--transition);">
+                <span id="email-error" style="color: #ef4444; font-size: 0.75rem; display: none; text-align: left;" data-i18n="modal-email-error"><i class="fa-solid fa-triangle-exclamation"></i> Please enter a valid email address.</span>
+            </div>
+
+            <div class="country-control-group" style="margin-bottom: 1.1rem; display: flex; flex-direction: column; gap: 0.35rem;">
+                <label for="order-keyword" style="font-weight: 600; font-size: 0.88rem; color: var(--text-main); text-align: left;" data-i18n="modal-keyword-label">대상 키워드 *</label>
+                <input type="text" id="order-keyword" placeholder="coffee shop" data-i18n="modal-keyword-placeholder" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: #ffffff; padding: 0.6rem 0.85rem; border-radius: 8px; font-family: var(--font-body); font-size: 0.88rem; outline: none; width: 100%; transition: var(--transition);">
+                <span id="keyword-error" style="color: #ef4444; font-size: 0.75rem; display: none; text-align: left;" data-i18n="modal-keyword-error"><i class="fa-solid fa-triangle-exclamation"></i> Please enter a target keyword.</span>
+            </div>
+
+            <div class="quantity-control-group" style="margin-bottom: 1.1rem;">
+                <label for="order-quantity" data-i18n="modal-qty">수량:</label>
+                <div class="qty-selector">
+                    <button class="qty-btn" onclick="adjustQty(-1)"><i class="fa-solid fa-minus"></i></button>
+                    <input type="number" id="order-quantity" value="1" min="1" oninput="updateModalPrice()">
+                    <button class="qty-btn" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <div class="total-price-box">
+                <span data-i18n="modal-total-amt">총 결제금액:</span>
+                <span class="price-val" id="modal-total-price" onclick="triggerTestCheckout()" style="cursor: pointer;">$0.00</span>
+            </div>
+
+            <!-- Developer Test Button (Sandbox) -->
+            <button id="paypal-test-button" onclick="triggerTestCheckout()" class="btn-test-checkout" style="display:none;"></button>
+
+            <!-- PayPal Button Container -->
+            <div class="paypal-wrapper">
+                <div id="paypal-button-container"></div>
+            </div>
+
+            <div class="payment-badges">
+                <span><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL 보안 결제 지원</span></span>
+                <span><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal 인증됨</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="/" class="logo-group" style="text-decoration: none; margin-bottom: 1rem;">
+                    <span class="logo-title">BibleForAI</span>
+                    <span class="logo-subtitle" data-i18n="logo-subtitle">MAP BOOST</span>
+                </a>
+                <p data-i18n="hero-desc">로컬/맵 SEO 노출 최적화 서비스입니다.</p>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="foot-services">서비스</h4>
+                <ul>
+                    <li><a href="#" onclick="navigate('setup')" data-i18n="nav-setup">맵 설정</a></li>
+                    <li><a href="#" onclick="navigate('platform')" data-i18n="nav-platform">플랫폼 팩</a></li>
+                    <li><a href="#" onclick="navigate('review')" data-i18n="nav-review">리뷰 & 랭킹</a></li>
+                    <li><a href="#" onclick="navigate('seo')" data-i18n="nav-seo">로컬 SEO 부가</a></li>
+                </ul>
+            </div>
+            <div class="footer-support">
+                <h4 data-i18n="foot-support">지원</h4>
+                <ul>
+                    <li data-i18n="foot-contact">문의 지원: snsherocom@gmail.com</li>
+                    <li data-i18n="foot-gdpr">윤리적 로컬 랭킹</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="foot-copy">&copy; 2026 BibleForAI MAPBOOST. All rights reserved. 로컬 & 맵 SEO 최적화.</p>
+        </div>
+    </footer>
+
+    <!-- App Logic script -->
+    <script src="../app.js"></script>
+</body>
+</html>

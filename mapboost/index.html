@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BibleForAI - MAPBOOST | Local & Map SEO Optimization</title>
+    <meta name="description" content="Rank higher on Google Maps, Apple Maps, Naver Map, and regional map listings. AI-powered local SEO optimization, review management, and place discovery.">
+    <meta name="keywords" content="Map SEO, Local SEO, Map Listing, Google Maps Ranking, Apple Maps Optimization, Naver Map SEO, Place Discovery, Review Management, Map Rank Boost">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bibleforai.com/mapboost/">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bibleforai.com/mapboost/">
+    <meta property="og:title" content="BibleForAI - MAPBOOST | Local & Map SEO Optimization">
+    <meta property="og:description" content="Rank higher on Google Maps, Apple Maps, Naver Map, and regional map listings. AI-driven local SEO optimization with review management and place discovery.">
+    <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+    <meta property="og:site_name" content="BibleForAI Map SEO">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bibleforai.com/mapboost/">
+    <meta name="twitter:title" content="BibleForAI - MAPBOOST | Local & Map SEO Optimization">
+    <meta name="twitter:description" content="Rank higher on Google Maps, Apple Maps, Naver Map, and regional map listings. AI-driven local SEO optimization with review management and place discovery.">
+    <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+    <!-- JSON-LD Structured Data Markups (SEO/AEO/GEO Optimization) -->
+
+    <!-- Schema 1: FAQPage Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which map platforms does MAPBOOST support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We optimize across Google Maps, Apple Maps, Naver Map, and regional place listings. Setup is performed using verified local signals, consistent citations, and category-aligned profile signals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does map ranking take to show results?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most optimized listings show measurable movement in 14-45 days, depending on location competition, keyword difficulty, and account history. Our process includes weekly rank tracking and optimization adjustments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you manage reviews and ratings for map listings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. MAPBOOST includes review stimulation, response drafting, sentiment monitoring, and rating health tracking across supported platforms to protect local reputation."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema 2: Product Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "MAPBOOST — Local & Map SEO Optimization",
+      "image": "https://bibleforai.com/assets/og-preview.png",
+      "description": "AI-assisted local ranking optimization and map listing management for Google Maps, Apple Maps, Naver Map, and regional directory platforms.",
+      "brand": {
+        "@type": "Brand",
+        "name": "BibleForAI"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "60.00",
+        "highPrice": "1200.00",
+        "offerCount": "8"
+      }
+    }
+    </script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="app-header">
+        <div class="header-container">
+                <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+            <a href="/" class="logo-group">
+                <span class="logo-title">BibleForAI</span>
+                <span class="logo-subtitle" data-i18n="logo-subtitle">MAP BOOST</span>
+            </a>
+
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#" id="nav-home" onclick="navigate('home')" class="active" data-i18n="nav-home">Home</a></li>
+                    <li><a href="#" id="nav-setup" onclick="navigate('setup')" data-i18n="nav-setup">Map Setup</a></li>
+                    <li><a href="#" id="nav-platform" onclick="navigate('platform')" data-i18n="nav-platform">Platform Pack</a></li>
+                    <li><a href="#" id="nav-review" onclick="navigate('review')" data-i18n="nav-review">Review & Ranking</a></li>
+                    <li><a href="#" id="nav-seo" onclick="navigate('seo')" data-i18n="nav-seo">Local SEO Extras</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-orders" onclick="navigate('orders')">
+                    <i class="fa-solid fa-receipt"></i> <span class="btn-text" data-i18n="btn-orders">My Orders</span>
+                </button>
+                <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)" style="margin-left: 0.75rem; padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #ffffff; font-size: 0.82rem; font-weight: 500; cursor: pointer; outline: none; transition: var(--transition);">
+                    <option value="en">🌐 English</option>
+                    <option value="ko">🇰🇷 한국어</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <ul class="mobile-nav-links unified_service_menu">
+            <li class="mobile-menu-heading">Database & Scraping</li>
+            <li><a href="/b2bdb/"><i class="fa-solid fa-building-user"></i> B2B Core Database</a></li>
+            <li><a href="/b2cdb/"><i class="fa-solid fa-database"></i> B2C Lead Database</a></li>
+            <li><a href="/databoost/"><i class="fa-solid fa-spider"></i> DATABOOST — Web Scraping</a></li>
+            <li class="mobile-menu-heading">Design & Coding</li>
+            <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI Landing Page</a></li>
+            <li><a href="/opencode/"><i class="fa-solid fa-code"></i> OpenCode AI</a></li>
+            <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> SHOPBOOST — E-Commerce Entry</a></li>
+            <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> FLOWBOOST — Workflow Automation</a></li>
+            <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST — Product Photography</a></li>
+            <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST — AI Presentations</a></li>
+            <li class="mobile-menu-heading">Marketing & SEO</li>
+            <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> SMM Growth Booster</a></li>
+            <li><a href="/prboost/"><i class="fa-solid fa-globe"></i> PRBOOST — Global PR</a></li>
+            <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> MAILBOOST — Email Marketing</a></li>
+            <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — AI SEO</a></li>
+            <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST — Market Research</a></li>
+            <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> CONTENTBOOST — AI Publishing</a></li>
+            <li class="mobile_menu_heading">Media & Audio</li>
+            <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> CLIPBOOST — Short-Form Video</a></li>
+            <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> VOICEBOOST — AI Voice</a></li>
+            <li><a href="/transboost/"><i class="fa-solid fa-language"></i> TRANSBOOST — Translation</a></li>
+            <li class="mobile-menu-heading">Strategy & Analytics</li>
+            <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> AIBOOST — AI Consulting</a></li>
+            <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST — Data Analytics</a></li>
+            <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST — AI Chatbot</a></li>
+            <li><a href="/buyerboost/"><i class="fa-solid fa-handshake"></i> BUYERBOOST — Buyer Discovery</a></li>
+            <li><a href="/salesboost/"><i class="fa-solid fa-receipt"></i> SALESBOOST — Sales Enablement</a></li>
+            <li><a href="/researchboost/"><i class="fa-solid fa-chart-line"></i> RESEARCHBOOST — Market Research</a></li>
+            <li><a href="/mapboost/"><i class="fa-solid fa-map-location-dot"></i> MAPBOOST — Local & Map SEO</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Home View -->
+        <section id="home-view" class="view-section active">
+            <div class="hero">
+                <div class="badge" data-i18n="hero-badge">Map Discovery & Ranking</div>
+                <h1 class="hero-title" data-i18n="hero-title">MAPBOOST — Local & Map SEO Optimization</h1>
+                <p class="hero-desc" data-i18n="hero-desc">Rank higher on Google Maps, Apple Maps, Naver Map, and regional map listings via verified local signals.</p>
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="navigate('setup')" data-i18n="btn-explore">Start Map Setup <i class="fa-solid fa-arrow-right"></i></button>
+                    <a href="#compliance-section" class="btn-secondary" data-i18n="btn-compliance">Quality Guarantee</a>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-num">14+</span>
+                    <span class="stat-label" data-i18n="stat-platforms">Platform Types</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">24h</span>
+                    <span class="stat-label" data-i18n="stat-delivery">Setup Launch</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">14-45</span>
+                    <span class="stat-label" data-i18n="stat-days">Ranking Timeline</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">100%</span>
+                    <span class="stat-label" data-i18n="stat-ethical">Ethical Tactics</span>
+                </div>
+            </div>
+
+            <!-- Channel Categories -->
+            <div class="section-container">
+                <h2 class="section-title" data-i18n="sec-channels-title">Map Listing Optimization Modules</h2>
+                <p class="section-subtitle" data-i18n="sec-channels-subtitle">Each module uses verified map signals, citation consistency, review health, and local ranking best practices by region.</p>
+                <div class="card-grid">
+                    <div class="data-card" onclick="navigate('setup')">
+                        <div class="card-icon setup-color"><i class="fa-solid fa-location-crosshairs"></i></div>
+                        <h3 data-i18n="card-setup-title">Map Listing Setup</h3>
+                        <p data-i18n="card-setup-desc">Verify and optimize place profiles, categories, services, and description signals for map discoverability.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('platform')">
+                        <div class="card-icon platform-color"><i class="fa-solid fa-map"></i></div>
+                        <h3 data-i18n="card-platform-title">Platform Pack</h3>
+                        <p data-i18n="card-platform-desc">Multi-platform setup across Google, Apple, Naver, and regional maps with a standardized citation strategy.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('review')">
+                        <div class="card-icon review-color"><i class="fa-solid fa-star"></i></div>
+                        <h3 data-i18n="card-review-title">Review & Ranking</h3>
+                        <p data-i18n="card-review-desc">Monitor ratings, manage review playbooks, and stabilize local rank position with rank-tracking routines.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('seo')">
+                        <div class="card-icon seo-color"><i class="fa-solid fa-magnifying-glass-location"></i></div>
+                        <h3 data-i18n="card-seo-title">Local SEO Extras</h3>
+                        <p data-i18n="card-seo-desc">Enhance local search visibility with schema, landing signals, citation refresh, and near-me content workflows.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compliance Section -->
+            <div id="compliance-section" class="section-container compliance-bg">
+                <div class="compliance-content">
+                    <div class="compliance-text">
+                        <h2 data-i18n="comp-title">Ethical Local Ranking Standards</h2>
+                        <p data-i18n="comp-desc">MAPBOOST follows place-provider guidelines using legitimate citation, profile, and review-quality strategies. No account-risk tactics.</p>
+                        <div class="compliance-bullets">
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet1-bold">Platform Compliant:</strong> <span data-i18n="comp-bullet1-text">Optimization for Google Maps, Apple Maps, Naver Map, and regional directories only.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet2-bold">Verified Local Signals:</strong> <span data-i18n="comp-bullet2-text">Uses real place metadata, categories, and citation references for durable ranks.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet3-bold">Review Safeguards:</strong> <span data-i18n="comp-bullet3-text">Review health guidance protects listings against suspicious engagement patterns.</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="compliance-graphic">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <div class="glow-pulse"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Setup View -->
+        <section id="setup-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="card-setup-title">Map Listing Setup</h2>
+                <p data-i18n="view-setup-sub">Launch a verified optimized listing profile. Fix categories, services, hours, and description accuracy.</p>
+            </div>
+            <div class="packages-grid" id="setup-packages"></div>
+        </section>
+
+        <!-- Platform View -->
+        <section id="platform-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="card-platform-title">Platform Pack</h2>
+                <p data-i18n="view-platform-sub">Deploy standardized listings across Google, Apple, Naver, and regional maps with citation consistency.</p>
+            </div>
+            <div class="packages-grid" id="platform-packages"></div>
+        </section>
+
+        <!-- Review View -->
+        <section id="review-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="card-review-title">Review & Ranking</h2>
+                <p data-i18n="view-review-sub">Track rank movement, monitor review sentiment, and keep listings in healthy standing.</p>
+            </div>
+            <div class="packages-grid" id="review-packages"></div>
+        </section>
+
+        <!-- SEO View -->
+        <section id="seo-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="card-seo-title">Local SEO Extras</h2>
+                <p data-i18n="view-seo-sub">Boost near-me visibility with schema, local anchor signals, citation refresh, and mini landing content.</p>
+            </div>
+            <div class="packages-grid" id="seo-packages"></div>
+        </section>
+
+        <!-- Orders View -->
+        <section id="orders-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="view-orders-title">My Purchase History</h2>
+                <p data-i18n="view-orders-sub">Review your successful orders. Your data is stored locally in your browser workspace.</p>
+            </div>
+            <div class="orders-container">
+                <div class="table-wrapper">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th data-i18n="th-date">Order Date</th>
+                                <th data-i18n="th-order-id">Transaction ID</th>
+                                <th data-i18n="th-product">Product</th>
+                                <th data-i18n="th-tier">Package Tier</th>
+                                <th data-i18n="th-keyword">Target Keyword</th>
+                                <th data-i18n="th-qty">Quantity</th>
+                                <th data-i18n="th-total">Total Paid</th>
+                                <th data-i18n="th-status">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-tbody"></tbody>
+                    </table>
+                    <div id="no-orders-msg" class="no-data-msg">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <p data-i18n="no-orders-msg">No purchase records found. Make your first order to see history here!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Purchase Modal -->
+    <div class="modal-backdrop" id="purchase-modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="modal-product-title" data-i18n="modal-title">Configure Order</h3>
+            <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">Configure keyword strategy and complete secure PayPal payment.</p>
+
+            <div class="order-summary-box">
+                <div class="summary-row">
+                    <span data-i18n="modal-base-pkg">Base Package:</span>
+                    <strong id="modal-package-name">-</strong>
+                </div>
+                <div class="summary-row">
+                    <span data-i18n="modal-base-price-label">Base Price:</span>
+                    <strong id="modal-base-price">$0.00</strong>
+                </div>
+            </div>
+
+            <div class="email-control-group" style="margin-bottom: 1.1rem; display: flex; flex-direction: column; gap: 0.35rem;">
+                <label for="order-email" style="font-weight: 600; font-size: 0.88rem; color: var(--text-main); text-align: left;" data-i18n="modal-email-label">Email Address *</label>
+                <input type="email" id="order-email" required placeholder="name@example.com" data-i18n="modal-email-placeholder" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: #ffffff; padding: 0.6rem 0.85rem; border-radius: 8px; font-family: var(--font-body); font-size: 0.88rem; outline: none; width: 100%; transition: var(--transition);">
+                <span id="email-error" style="color: #ef4444; font-size: 0.75rem; display: none; text-align: left;" data-i18n="modal-email-error"><i class="fa-solid fa-triangle-exclamation"></i> Please enter a valid email address.</span>
+            </div>
+
+            <div class="country-control-group" style="margin-bottom: 1.1rem; display: flex; flex-direction: column; gap: 0.35rem;">
+                <label for="order-keyword" style="font-weight: 600; font-size: 0.88rem; color: var(--text-main); text-align: left;" data-i18n="modal-keyword-label">Target Keyword *</label>
+                <input type="text" id="order-keyword" placeholder="coffee shop" data-i18n="modal-keyword-placeholder" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: #ffffff; padding: 0.6rem 0.85rem; border-radius: 8px; font-family: var(--font-body); font-size: 0.88rem; outline: none; width: 100%; transition: var(--transition);">
+                <span id="keyword-error" style="color: #ef4444; font-size: 0.75rem; display: none; text-align: left;" data-i18n="modal-keyword-error"><i class="fa-solid fa-triangle-exclamation"></i> Please enter a target keyword.</span>
+            </div>
+
+            <div class="quantity-control-group" style="margin-bottom: 1.1rem;">
+                <label for="order-quantity" data-i18n="modal-qty">Quantity:</label>
+                <div class="qty-selector">
+                    <button class="qty-btn" onclick="adjustQty(-1)"><i class="fa-solid fa-minus"></i></button>
+                    <input type="number" id="order-quantity" value="1" min="1" oninput="updateModalPrice()">
+                    <button class="qty-btn" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <div class="total-price-box">
+                <span data-i18n="modal-total-amt">Total Amount:</span>
+                <span class="price-val" id="modal-total-price" onclick="triggerTestCheckout()" style="cursor: pointer;">$0.00</span>
+            </div>
+
+            <!-- Developer Test Button (Sandbox) -->
+            <button id="paypal-test-button" onclick="triggerTestCheckout()" class="btn-test-checkout" style="display:none;"></button>
+
+            <!-- PayPal Button Container -->
+            <div class="paypal-wrapper">
+                <div id="paypal-button-container"></div>
+            </div>
+
+            <div class="payment-badges">
+                <span><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL Secured Checkout</span></span>
+                <span><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal Verified</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="/" class="logo-group" style="text-decoration: none; margin-bottom: 1rem;">
+                    <span class="logo-title">BibleForAI</span>
+                    <span class="logo-subtitle" data-i18n="logo-subtitle">MAP BOOST</span>
+                </a>
+                <p data-i18n="hero-desc">Rank higher on Google Maps, Apple Maps, Naver Map, and regional map listings via verified local signals.</p>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="foot-services">Services</h4>
+                <ul>
+                    <li><a href="#setup" onclick="navigate('setup')" data-i18n="nav-setup">Map Setup</a></li>
+                    <li><a href="#platform" onclick="navigate('platform')" data-i18n="nav-platform">Platform Pack</a></li>
+                    <li><a href="#review" onclick="navigate('review')" data-i18n="nav-review">Review & Ranking</a></li>
+                    <li><a href="#seo" onclick="navigate('seo')" data-i18n="nav-seo">Local SEO Extras</a></li>
+                </ul>
+            </div>
+            <div class="footer-support">
+                <h4 data-i18n="foot-support">Support</h4>
+                <ul>
+                    <li data-i18n="foot-contact">Contact support: snsherocom@gmail.com</li>
+                    <li data-i18n="foot-gdpr">Ethical local ranking</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="foot-copy">&copy; 2026 BibleForAI MAPBOOST. All rights reserved. Local & Map SEO Optimization.</p>
+        </div>
+    </footer>
+
+    <!-- App Logic script -->
+    <script src="app.js"></script>
+</body>
+</html>
