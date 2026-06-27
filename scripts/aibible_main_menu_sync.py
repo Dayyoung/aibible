@@ -8,6 +8,7 @@ CATALOG = [
     {'id': 'b2c', 'cat': 'database', 'link': '/b2cdb/', 'icon': 'fa-solid fa-database', 'popularity': 90},
     {'id': 'b2b', 'cat': 'database', 'link': '/b2bdb/', 'icon': 'fa-solid fa-building-user', 'popularity': 92},
     {'id': 'land', 'cat': 'design-dev', 'link': '/landPage/', 'icon': 'fa-solid fa-code', 'popularity': 88},
+    {'id': 'mvp', 'cat': 'design-dev', 'link': '/mvpboost/', 'icon': 'fa-solid fa-rocket', 'popularity': 91},
     {'id': 'pr', 'cat': 'marketing', 'link': '/prboost/', 'icon': 'fa-solid fa-globe', 'popularity': 82},
     {'id': 'clip', 'cat': 'media', 'link': '/clipboost/', 'icon': 'fa-solid fa-clapperboard', 'popularity': 85},
     {'id': 'mail', 'cat': 'marketing', 'link': '/mailboost/', 'icon': 'fa-solid fa-envelope', 'popularity': 80},

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BibleForAI - MVPBOOST | SaaS MVP Development</title>
+    <meta name="description" content="Turn ideas into investor-ready SaaS MVPs with product strategy, design, integrations, and launch support.">
+    <meta name="keywords" content="SaaS MVP, MVP Development, Product Strategy, UX Prototype, API Integrations, Launch Support">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bibleforai.com/mvpboost/">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bibleforai.com/mvpboost/">
+    <meta property="og:title" content="BibleForAI - MVPBOOST | SaaS MVP Development">
+    <meta property="og:description" content="Turn ideas into investor-ready SaaS MVPs with product strategy, design, integrations, and launch support.">
+    <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+    <meta property="og:site_name" content="BibleForAI MVPBOOST">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bibleforai.com/mvpboost/">
+    <meta name="twitter:title" content="BibleForAI - MVPBOOST | SaaS MVP Development">
+    <meta name="twitter:description" content="Turn ideas into investor-ready SaaS MVPs with product strategy, design, integrations, and launch support.">
+    <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+    <!-- JSON-LD Structured Data Markups (SEO/AEO/GEO Optimization) -->
+
+    <!-- Schema 1: FAQPage Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are the lead databases provided by BibleForAI compliant with GDPR and CAN-SPAM regulations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, all lead databases are fully GDPR-compliant and CAN-SPAM ready. Our AI-driven compilation system cross-references verified opt-in consent logs and performs real-time scrubbing against Do-Not-Call (DNC) lists and inactive domains to ensure safe and legal outreach campaigns."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does BibleForAI MVPBOOST deliver for SaaS founders?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We deliver SaaS MVP discovery, UX prototyping, development, API integration, and launch support for founders, startups, and small teams."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "In what formats are the databases delivered and how long does it take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All purchases are delivered instantly. Files are provided in clean Excel (XLSX) or standard CSV format. Once payment is completed via our secure PayPal gateway, your download links and receipt are generated in real-time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the accuracy rate of the contact details?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We maintain a 98% quality match rate. Our database records are automatically scrubbed and verified against dynamic bounce registers every week to prune dead contacts, spam traps, and deactivated accounts."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema 2: MVPBOOST Service/Product Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "BibleForAI MVPBOOST — SaaS MVP Development",
+      "image": "https://bibleforai.com/assets/og-preview.png",
+      "description": "We deliver SaaS MVP discovery, UX prototyping, development, API integration, and launch support for founders, startups, and small teams.",
+      "brand": {
+        "@type": "Brand",
+        "name": "BibleForAI"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "3200"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "160.00",
+        "highPrice": "2800.00",
+        "offerCount": "20"
+      }
+    }
+    </script>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="app-header">
+        <div class="header-container">
+                <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+            <a href="/" class="logo-group">
+                <span class="logo-title">BibleForAI</span>
+                <span class="logo-subtitle" data-i18n="logo-subtitle">SAAS MVP</span>
+            </a>
+            
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#" id="nav-home" onclick="navigate('home')" class="active" data-i18n="nav-home">Home</a></li>
+                    <li><a href="#" id="nav-phone" onclick="navigate('phone')" data-i18n="nav-phone">Phone Data</a></li>
+                    <li><a href="#" id="nav-whatsapp" onclick="navigate('whatsapp')" data-i18n="nav-whatsapp">WhatsApp Data</a></li>
+                    <li><a href="#" id="nav-telegram" onclick="navigate('telegram')" data-i18n="nav-telegram">Telegram Data</a></li>
+                    <li><a href="#" id="nav-email" onclick="navigate('email')" data-i18n="nav-email">Email Data</a></li>
+                    <li><a href="#" id="nav-clevel" onclick="navigate('clevel')" data-i18n="nav-clevel">C-Level Leads</a></li>
+                            <li><a href="/repboost/"><i class="fa-solid fa-circle"></i> REPBOOST</a></li>
+</ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-orders" onclick="navigate('orders')">
+                    <i class="fa-solid fa-receipt"></i> <span class="btn-text" data-i18n="btn-orders">My Orders</span>
+                </button>
+                <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)" style="margin-left: 0.75rem; padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #ffffff; font-size: 0.82rem; font-weight: 500; cursor: pointer; outline: none; transition: var(--transition);">
+                    <option value="en">🌐 English</option>
+                    <option value="ko">🇰🇷 한국어</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <ul class="mobile-nav-links unified-service-menu">
+            <li class="mobile-menu-heading">MVP Packages</li>
+            <li><a href="/b2bdb/"><i class="fa-solid fa-building-user"></i> B2B Core Database</a></li>
+            <li><a href="/b2cdb/"><i class="fa-solid fa-database"></i> B2C Lead Database</a></li>
+            <li><a href="/databoost/"><i class="fa-solid fa-spider"></i> DATABOOST — Web Scraping</a></li>
+            <li class="mobile-menu-heading">Design & Coding</li>
+            <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI Landing Page</a></li>
+            <li><a href="/opencode/"><i class="fa-solid fa-code"></i> OpenCode AI</a></li>
+            <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> SHOPBOOST — E-Commerce Entry</a></li>
+            <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> FLOWBOOST — Workflow Automation</a></li>
+            <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST — Product Photography</a></li>
+            <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST — AI Presentations</a></li>
+            <li class="mobile-menu-heading">Marketing & SEO</li>
+            <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> SMM Growth Booster</a></li>
+            <li><a href="/prboost/"><i class="fa-solid fa-globe"></i> PRBOOST — Global PR</a></li>
+            <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> MAILBOOST — Email Marketing</a></li>
+            <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — AI SEO</a></li>
+            <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST — Market Research</a></li>
+            <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> CONTENTBOOST — AI Publishing</a></li>
+            <li class="mobile-menu-heading">Media & Audio</li>
+            <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> CLIPBOOST — Short-Form Video</a></li>
+            <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> VOICEBOOST — AI Voice</a></li>
+            <li><a href="/transboost/"><i class="fa-solid fa-language"></i> TRANSBOOST — Translation</a></li>
+            <li class="mobile-menu-heading">Strategy & Analytics</li>
+            <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> AIBOOST — AI Consulting</a></li>
+            <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST — Data Analytics</a></li>
+            <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST — AI Chatbot</a></li>
+            <li><a href="/buyerboost/"><i class="fa-solid fa-handshake"></i> BUYERBOOST — Buyer Discovery</a></li>
+            <li><a href="/salesboost/"><i class="fa-solid fa-receipt"></i> SALESBOOST — Sales Enablement</a></li>
+            <li><a href="/researchboost/"><i class="fa-solid fa-chart-line"></i> RESEARCHBOOST — Market Research</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <main>
+        
+        <!-- Home View -->
+        <section id="home-view" class="view-section active">
+            <div class="hero">
+                <div class="badge" data-i18n="hero-badge">From Idea to Launch</div>
+                <h1 class="hero-title" data-i18n="hero-title">BibleForAI - MVPBOOST!</h1>
+                <p class="hero-desc" data-i18n="hero-desc">Turn ideas into investor-ready SaaS MVPs with product strategy, design, integrations, and launch support.</p>
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="navigate('phone')" data-i18n="btn-explore">Explore Packages <i class="fa-solid fa-arrow-right"></i></button>
+                    <a href="#compliance-section" class="btn-secondary" data-i18n="btn-compliance">See Process</a>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-num">5B+</span>
+                    <span class="stat-label" data-i18n="stat-global-numbers">Global Numbers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">98%</span>
+                    <span class="stat-label" data-i18n="stat-accuracy-rate">Accuracy Rate</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">100%</span>
+                    <span class="stat-label" data-i18n="stat-opt-in">Opt-in Consent</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">24h</span>
+                    <span class="stat-label" data-i18n="stat-delivery">Instant Delivery</span>
+                </div>
+            </div>
+
+            <!-- Database Categories -->
+            <div class="section-container">
+                <h2 class="section-title" data-i18n="sec-channels-title">Discover Our Premium Data Channels</h2>
+                <p class="section-subtitle" data-i18n="sec-channels-subtitle">Target users on their preferred messaging platforms and networks with clean, verified directories.</p>
+                <div class="card-grid">
+                    <div class="data-card" onclick="navigate('phone')">
+                        <div class="card-icon phone-color"><i class="fa-solid fa-phone"></i></div>
+                        <h3 data-i18n="card-phone-title">Discovery Sprint</h3>
+                        <p data-i18n="card-phone-desc">Clarify the problem, users, and business model before the first line of code is written.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('whatsapp')">
+                        <div class="card-icon whatsapp-color"><i class="fa-brands fa-whatsapp"></i></div>
+                        <h3 data-i18n="card-whatsapp-title">UX Prototype</h3>
+                        <p data-i18n="card-whatsapp-desc">Validate the product flow with wireframes, clickable screens, and a polished design system.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('telegram')">
+                        <div class="card-icon telegram-color"><i class="fa-solid fa-paper-plane"></i></div>
+                        <h3 data-i18n="card-telegram-title">MVP Build</h3>
+                        <p data-i18n="card-telegram-desc">Ship the first production-ready SaaS version with auth, dashboard, and core workflows.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('email')">
+                        <div class="card-icon email-color"><i class="fa-solid fa-envelope"></i></div>
+                        <h3 data-i18n="card-email-title">API Integrations</h3>
+                        <p data-i18n="card-email-desc">Connect your product to payments, CRM, analytics, and automation systems with clean APIs.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                    <div class="data-card" onclick="navigate('clevel')">
+                        <div class="card-icon executive-color"><i class="fa-solid fa-user-tie"></i></div>
+                        <h3 data-i18n="card-clevel-title">Launch Support</h3>
+                        <p data-i18n="card-clevel-desc">Fix issues, refine retention, and prepare the product for real users and investors.</p>
+                        <span class="card-link"><span data-i18n="card-view-pricing">View Pricing</span> <i class="fa-solid fa-chevron-right"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compliance Section -->
+            <div id="compliance-section" class="section-container compliance-bg">
+                <div class="compliance-content">
+                    <div class="compliance-text">
+                        <h2 data-i18n="comp-title">Legal Compliance & Data Protection</h2>
+                        <p data-i18n="comp-desc">Our lead generation system uses sophisticated AI filters to cross-reference consent logs, public records, and opt-in databases ensuring 100% legal compliance with global standards.</p>
+                        <div class="compliance-bullets">
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet1-bold">GDPR Compliant:</strong> <span data-i18n="comp-bullet1-text">Fully audited opt-in records for all European Union leads.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet2-bold">CAN-SPAM Ready:</strong> <span data-i18n="comp-bullet2-text">Domain checking prevents bounces and spam traps.</span></span>
+                            </div>
+                            <div class="bullet-item">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span><strong data-i18n="comp-bullet3-bold">Real-time verification:</strong> <span data-i18n="comp-bullet3-text">All database queries are scrubbed before delivery.</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="compliance-graphic">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <div class="glow-pulse"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phone Number View -->
+        <section id="phone-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="card-phone-title">Discovery Sprint</h2>
+                <p data-i18n="view-phone-sub">Buy worldwide cell phone database lists to engage directly. High-precision filters by country and network provider.</p>
+            </div>
+            <div class="packages-grid" id="phone-packages">
+                <!-- Loaded dynamically by JS -->
+            </div>
+        </section>
+
+        <!-- WhatsApp View -->
+        <section id="whatsapp-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="card-whatsapp-title">UX Prototype</h2>
+                <p data-i18n="view-whatsapp-sub">Maximize direct outreach. Get active WhatsApp phone records verified for messenger engagement and profile pictures.</p>
+            </div>
+            <div class="packages-grid" id="whatsapp-packages">
+                <!-- Loaded dynamically by JS -->
+            </div>
+        </section>
+
+        <!-- Telegram View -->
+        <section id="telegram-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="card-telegram-title">MVP Build</h2>
+                <p data-i18n="view-telegram-sub">Target active group members, crypto communities, and specific country demographics on Telegram.</p>
+            </div>
+            <div class="packages-grid" id="telegram-packages">
+                <!-- Loaded dynamically by JS -->
+            </div>
+        </section>
+
+        <!-- Email View -->
+        <section id="email-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="card-email-title">API Integrations</h2>
+                <p data-i18n="view-email-sub">Deploy cold email campaigns with high deliverability. Direct marketing verified list segments by country.</p>
+            </div>
+            <div class="packages-grid" id="email-packages">
+                <!-- Loaded dynamically by JS -->
+            </div>
+        </section>
+
+        <!-- C-Level View -->
+        <section id="clevel-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="card-clevel-title">Launch Support</h2>
+                <p data-i18n="view-clevel-sub">B2B contacts of high-value business decision makers (CEO, CFO, CTO, owners) targeting accurate business leads.</p>
+            </div>
+            <div class="packages-grid" id="clevel-packages">
+                <!-- Loaded dynamically by JS -->
+            </div>
+        </section>
+
+        <!-- My Orders View -->
+        <section id="orders-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="view-orders-title">My Purchase History</h2>
+                <p data-i18n="view-orders-sub">Review your successful orders. Your data is stored locally in your browser workspace.</p>
+            </div>
+            <div class="orders-container">
+                <div class="table-wrapper">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th data-i18n="th-date">Order Date</th>
+                                <th data-i18n="th-order-id">Transaction ID</th>
+                                <th data-i18n="th-product">Product</th>
+                                <th data-i18n="th-tier">Package Tier</th>
+                                <th data-i18n="th-country">Project Focus</th>
+                                <th data-i18n="th-qty">Quantity</th>
+                                <th data-i18n="th-total">Total Paid</th>
+                                <th data-i18n="th-status">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-tbody">
+                            <!-- Loaded dynamically by JS -->
+                        </tbody>
+                    </table>
+                    <div id="no-orders-msg" class="no-data-msg">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <p data-i18n="no-orders-msg">No purchase records found. Make your first order to see history here!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Purchase Modal -->
+    <div class="modal-backdrop" id="purchase-modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="modal-product-title" data-i18n="modal-title">Configure Order</h3>
+            <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">Configure quantity and complete secure PayPal payment.</p>
+            
+            <div class="order-summary-box">
+                <div class="summary-row">
+                    <span data-i18n="modal-base-pkg">Base Package:</span>
+                    <strong id="modal-package-name">-</strong>
+                </div>
+                <div class="summary-row">
+                    <span data-i18n="modal-base-price-label">Base Price:</span>
+                    <strong id="modal-base-price">$0.00</strong>
+                </div>
+            </div>
+
+            <div class="email-control-group" style="margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="order-email" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-align: left;" data-i18n="modal-email-label">Email Address *</label>
+                <input type="email" id="order-email" required placeholder="name@example.com" data-i18n="modal-email-placeholder" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: #ffffff; padding: 0.65rem 1rem; border-radius: 8px; font-family: var(--font-body); font-size: 0.95rem; outline: none; width: 100%; transition: var(--transition);">
+                <span id="email-error" style="color: #ef4444; font-size: 0.78rem; display: none; text-align: left;" data-i18n="modal-email-error"><i class="fa-solid fa-triangle-exclamation"></i> Please enter a valid email address.</span>
+            </div>
+
+            <div class="country-control-group" style="margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="order-country" style="font-weight: 600; font-size: 0.95rem; color: var(--text-main); text-align: left;" data-i18n="modal-country-label">Project Focus:</label>
+                <select id="order-country" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: #ffffff; padding: 0.65rem 1rem; border-radius: 8px; font-family: var(--font-body); font-size: 0.95rem; outline: none; width: 100%; transition: var(--transition); cursor: pointer;">
+                    <option value="Market Validation Sprint" style="background:#0c0f17; color:#fff;">Market Validation Sprint</option>
+                    <option value="Clickable Prototype" style="background:#0c0f17; color:#fff;">Clickable Prototype</option>
+                    <option value="SaaS MVP Build" style="background:#0c0f17; color:#fff;">SaaS MVP Build</option>
+                    <option value="Payment & CRM Integration" style="background:#0c0f17; color:#fff;">Payment & CRM Integration</option>
+                    <option value="Launch Support" style="background:#0c0f17; color:#fff;">Launch Support</option>
+                    <option value="Scale Iteration" style="background:#0c0f17; color:#fff;">Scale Iteration</option>
+                </select>
+            </div>
+
+            <div class="quantity-control-group">
+                <label for="order-quantity" data-i18n="modal-qty">Quantity:</label>
+                <div class="qty-selector">
+                    <button class="qty-btn" onclick="adjustQty(-1)"><i class="fa-solid fa-minus"></i></button>
+                    <input type="number" id="order-quantity" value="1" min="1" oninput="updateModalPrice()">
+                    <button class="qty-btn" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <div class="total-price-box">
+                <span data-i18n="modal-total-amt">Total Amount:</span>
+                <span class="price-val" id="modal-total-price" onclick="triggerTestCheckout()" style="cursor: pointer;">$0.00</span>
+            </div>
+
+            <!-- Developer Test Button (Sandbox) -->
+            
+
+            <!-- PayPal Button Container -->
+            <div class="paypal-wrapper">
+                <div id="paypal-button-container"></div>
+            </div>
+            
+            <div class="payment-badges">
+                <span><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL Secured Checkout</span></span>
+                <span><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal Verified</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="/" class="logo-group" style="text-decoration: none; margin-bottom: 1rem;">
+                    <span class="logo-title">BibleForAI</span>
+                    <span class="logo-subtitle" data-i18n="logo-subtitle">SAAS MVP</span>
+                </a>
+                <p data-i18n="hero-desc">Turn ideas into investor-ready SaaS MVPs with product strategy, design, integrations, and launch support.</p>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="foot-channels">Data Channels</h4>
+                <ul>
+                    <li><a href="#" onclick="navigate('phone')" data-i18n="nav-phone">Phone Data</a></li>
+                    <li><a href="#" onclick="navigate('whatsapp')" data-i18n="nav-whatsapp">WhatsApp Data</a></li>
+                    <li><a href="#" onclick="navigate('telegram')" data-i18n="nav-telegram">Telegram Data</a></li>
+                    <li><a href="#" onclick="navigate('email')" data-i18n="nav-email">Email Data</a></li>
+                    <li><a href="#" onclick="navigate('clevel')" data-i18n="nav-clevel">C-Level Leads</a></li>
+                </ul>
+            </div>
+            <div class="footer-support">
+                <h4 data-i18n="foot-legal">Legal & Compliance</h4>
+                <ul>
+                    <li data-i18n="foot-gdpr">GDPR Consent Records</li>
+                    <li data-i18n="foot-canspam">CAN-SPAM Verified</li>
+                    <li data-i18n="foot-match">98% Quality Match</li>
+                    <li data-i18n="foot-contact">Contact support: snsherocom@gmail.com</li>
+                
+        <li><a href="/ipboost/"><i class="fa-solid fa-shield-halved"></i> IPBOOST — IP & Brand Protection</a></ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="foot-copy">&copy; 2026 BibleForAI MVPBOOST. All rights reserved. SaaS MVP development & launch support.</p>
+        </div>
+    </footer>
+
+    <!-- App Logic script -->
+    <script src="app.js"></script>
+</body>
+</html>
