@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BibleForAI | AI-Powered Business Solutions</title>
     <meta name="description" content="Empower your digital presence and business strategy with BibleForAI's premium web services. Explore our SMM Growth Booster, B2C Lead Database, and more.">
-    <meta name="keywords" content="BibleForAI, AI Solutions, SMM Growth Booster, B2C Lead Database, B2B Database, AI Landing Page, Marketing Automation, AI Chatbot, Customer Support Automation, WhatsApp Chatbot, Messenger Bot, AI Consulting, AI Strategy, AI Implementation, AI Voice Cloning, AI Voiceover, AI Audio Production, AI Translation, Global Localization, Translation Services, AI Workflow Automation, AI Product Photography, Market Research, Web Scraping, Email Marketing, AI SEO, Short-Form Video, Pitch Deck Design, Presentation Design, AI Presentation, Investor Deck, Business Proposal, PPT Design, Marketplace Entry, Amazon Store Setup, Shopee, Lazada, Rakuten, Global E-Commerce, Overseas Buyer Discovery, Export Sales Leads, Importer List">
+    <meta name="keywords" content="BibleForAI, AI Solutions, SMM Growth Booster, B2C Lead Database, B2B Database, AI Landing Page, Marketing Automation, AI Chatbot, Customer Support Automation, WhatsApp Chatbot, Messenger Bot, AI Consulting, AI Strategy, AI Implementation, AI Voice Cloning, AI Voiceover, AI Audio Production, AI Translation, Global Localization, Translation Services, AI Workflow Automation, AI Product Photography, Market Research, Web Scraping, Email Marketing, AI SEO, Short-Form Video, Pitch Deck Design, Presentation Design, AI Presentation, Investor Deck, Business Proposal, PPT Design, Marketplace Entry, Amazon Store Setup, Shopee, Lazada, Rakuten, Global E-Commerce, Overseas Buyer Discovery, Export Sales Leads, Importer List, AI Content System, Multilingual Publishing, AI SEO Workflow">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://bibleforai.com/">
 
@@ -257,6 +257,15 @@
                   "name": "BUYERBOOST — Global Buyer Discovery",
                   "url": "https://bibleforai.com/buyerboost/",
                   "description": "Overseas buyer discovery for exporters, including importer and distributor research, contact-route validation, segmentation, and outreach-ready notes."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "CONTENTBOOST — Multilingual AI Content System",
+                  "url": "https://bibleforai.com/contentboost/",
+                  "description": "Multilingual AI content publishing system with generation, translation, SEO metadata automation, social distribution, and operator handoff."
                 }
               }
             ]
@@ -678,6 +687,15 @@
             box-shadow: 0 15px 35px rgba(2, 132, 199, 0.12), 0 0 15px rgba(2, 132, 199, 0.1);
         }
 
+        .card-active-content {
+            border-color: rgba(124, 58, 237, 0.15);
+        }
+        .card-active-content:hover {
+            transform: translateY(-8px);
+            border-color: #7c3aed;
+            box-shadow: 0 15px 35px rgba(124, 58, 237, 0.12), 0 0 15px rgba(124, 58, 237, 0.1);
+        }
+
         .card-disabled {
             opacity: 0.6;
             cursor: not-allowed;
@@ -827,6 +845,12 @@
             color: #0284c7;
             background: rgba(2, 132, 199, 0.06);
             border-color: rgba(2, 132, 199, 0.15);
+        }
+
+        .icon-content {
+            color: #7c3aed;
+            background: rgba(124, 58, 237, 0.06);
+            border-color: rgba(124, 58, 237, 0.15);
         }
 
         .icon-disabled {
@@ -1121,6 +1145,17 @@
         .btn-buyer:hover {
             background: #0369a1;
             box-shadow: 0 8px 25px rgba(2, 132, 199, 0.35);
+        }
+
+        .btn-content {
+            background: #7c3aed;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.2);
+        }
+        .btn-content:hover {
+            background: #6d28d9;
+            box-shadow: 0 8px 25px rgba(124, 58, 237, 0.35);
         }
 
         .btn-disabled {
@@ -1507,6 +1542,7 @@
             <a href="/mailboost/" class="sidebar-link"><i class="fa-solid fa-envelope"></i> <span id="side-title-mail">Email Marketing</span></a>
             <a href="/searchboost/" class="sidebar-link"><i class="fa-solid fa-magnifying-glass"></i> <span id="side-title-search">AI SEO & Content</span></a>
             <a href="/mkboost/" class="sidebar-link"><i class="fa-solid fa-magnifying-glass-chart"></i> <span id="side-title-mk">Market Research</span></a>
+            <a href="/contentboost/" class="sidebar-link"><i class="fa-solid fa-newspaper"></i> <span id="side-title-content">AI Publishing System</span></a>
         </div>
 
         <div class="sidebar-category">
@@ -1592,6 +1628,7 @@
                 <a href="https://opencode.ai/go?ref=CFP69RVVCJ" target="_blank" id="foot-opencode-link">OpenCode AI</a>
                 <a href="/shopboost/" id="foot-shop-link">SHOPBOOST</a>
                 <a href="/buyerboost/" id="foot-buyer-link">BUYERBOOST</a>
+                <a href="/contentboost/" id="foot-content-link">CONTENTBOOST</a>
             </div>
         </div>
     </footer>
@@ -1700,7 +1737,11 @@
 
                 "buyer-title": "BUYERBOOST — Global Buyer Discovery",
                 "buyer-desc": "Find qualified overseas buyers, importers, distributors, and business partners with verified contact routes and AI-assisted outreach assets.",
-                "buyer-btn": "Launch Buyer Service"
+                "buyer-btn": "Launch Buyer Service",
+
+                "content-title": "CONTENTBOOST — AI Publishing System",
+                "content-desc": "Build a multilingual AI content engine for generation, translation, SEO metadata, and social distribution across global channels.",
+                "content-btn": "Launch Publishing Service"
             },
             ko: {
                 "hero-title": "AI 솔루션으로 비즈니스 성장을 극대화하세요",
@@ -1802,7 +1843,11 @@
 
                 "buyer-title": "BUYERBOOST — 해외 바이어 발굴",
                 "buyer-desc": "검증된 연락 경로와 AI 아웃리치 자료로 해외 바이어, 수입사, 유통사, 비즈니스 파트너를 발굴하세요.",
-                "buyer-btn": "바이어 서비스 바로가기"
+                "buyer-btn": "바이어 서비스 바로가기",
+
+                "content-title": "CONTENTBOOST — AI 발행 시스템",
+                "content-desc": "생성, 번역, SEO 메타데이터, SNS 배포를 연결하는 다국어 AI 콘텐츠 엔진을 구축하세요.",
+                "content-btn": "발행 서비스 바로가기"
             }
         };
 
@@ -1893,7 +1938,8 @@
             { id: 'insight', category: 'strategy', link: '/insightboost/', icon: 'fa-solid fa-chart-bar', cardClass: 'card-active-insight', btnClass: 'btn-insight', iconBoxClass: 'icon-insight', popularity: 75 },
             { id: 'opencode', category: 'design-dev', link: '/opencode/', icon: 'fa-solid fa-code', cardClass: 'card-active-opencode', btnClass: 'btn-opencode', iconBoxClass: 'icon-opencode', popularity: 94 },
             { id: 'shop', category: 'strategy', link: '/shopboost/', icon: 'fa-solid fa-store', cardClass: 'card-active-shop', btnClass: 'btn-shop', iconBoxClass: 'icon-shop', popularity: 77 },
-            { id: 'buyer', category: 'strategy', link: '/buyerboost/', icon: 'fa-solid fa-handshake', cardClass: 'card-active-buyer', btnClass: 'btn-buyer', iconBoxClass: 'icon-buyer', popularity: 80 }
+            { id: 'buyer', category: 'strategy', link: '/buyerboost/', icon: 'fa-solid fa-handshake', cardClass: 'card-active-buyer', btnClass: 'btn-buyer', iconBoxClass: 'icon-buyer', popularity: 80 },
+            { id: 'content', category: 'marketing', link: '/contentboost/', icon: 'fa-solid fa-newspaper', cardClass: 'card-active-content', btnClass: 'btn-content', iconBoxClass: 'icon-content', popularity: 86 }
         ];
 
         let activeCategory = 'all';
