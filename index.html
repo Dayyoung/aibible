@@ -859,12 +859,30 @@
         }
 
         .card-active-law {
-            border-color: rgba(124, 58, 237, 0.15);
+            border-color: rgba(100, 116, 139, 0.15);
         }
         .card-active-law:hover {
             transform: translateY(-8px);
-            border-color: #7c3aed;
-            box-shadow: 0 15px 35px rgba(124, 58, 237, 0.12), 0 0 15px rgba(124, 58, 237, 0.1);
+            border-color: #64748b;
+            box-shadow: 0 15px 35px rgba(100, 116, 139, 0.12), 0 0 15px rgba(100, 116, 139, 0.1);
+        }
+
+        .card-active-cert {
+            border-color: rgba(168, 85, 247, 0.15);
+        }
+        .card-active-cert:hover {
+            transform: translateY(-8px);
+            border-color: #a855f7;
+            box-shadow: 0 15px 35px rgba(168, 85, 247, 0.12), 0 0 15px rgba(168, 85, 247, 0.1);
+        }
+
+        .card-active-aiweb {
+            border-color: rgba(6, 182, 212, 0.15);
+        }
+        .card-active-aiweb:hover {
+            transform: translateY(-8px);
+            border-color: #06b6d4;
+            box-shadow: 0 15px 35px rgba(6, 182, 212, 0.12), 0 0 15px rgba(6, 182, 212, 0.1);
         }
 
         .card-disabled {
@@ -1333,6 +1351,39 @@
         .btn-content:hover {
             background: #6d28d9;
             box-shadow: 0 8px 25px rgba(124, 58, 237, 0.35);
+        }
+
+        .btn-law {
+            background: #64748b;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(100, 116, 139, 0.2);
+        }
+        .btn-law:hover {
+            background: #475569;
+            box-shadow: 0 8px 25px rgba(100, 116, 139, 0.35);
+        }
+
+        .btn-cert {
+            background: #a855f7;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2);
+        }
+        .btn-cert:hover {
+            background: #9333ea;
+            box-shadow: 0 8px 25px rgba(168, 85, 247, 0.35);
+        }
+
+        .btn-aiweb {
+            background: #06b6d4;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.2);
+        }
+        .btn-aiweb:hover {
+            background: #0891b2;
+            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.35);
         }
 
         .btn-disabled {
@@ -1930,7 +1981,19 @@
 
                 "sales-title": "SALESBOOST — Sales Enablement",
                 "sales-desc": "AI-driven sales scripts, lead qualification, proposal automation, and CRM pipeline optimization.",
-                "sales-btn": "Launch Sales Service"
+                "sales-btn": "Launch Sales Service",
+
+                "aiweb-title": "AIWEB — AI Website Creation",
+                "aiweb-desc": "Launch modern, conversion-optimized websites with AI — landing pages, business sites, AI platforms, and enterprise web.",
+                "aiweb-btn": "Launch Website Service",
+
+                "law-title": "LAWBOOST — Global Legal Advisory",
+                "law-desc": "One-stop legal advisory for global businesses — incorporation, trademark registration, governance, tax, and cross-border litigation.",
+                "law-btn": "Launch Legal Service",
+
+                "cert-title": "CERTBOOST — Global Certification",
+                "cert-desc": "Internationally usable compliance certification consulting for ISO 27001, GDPR, SOC 2 Type II, HIPAA, and cross-border certification.",
+                "cert-btn": "Launch Compliance Service"
             },
             ko: {
                 "hero-title": "AI 솔루션으로 비즈니스 성장을 극대화하세요",
@@ -2044,11 +2107,19 @@
 
                 "sales-title": "SALESBOOST — 세일즈 인에이블먼트",
                 "sales-desc": "AI 영업 스크립트, 리드 자격 검증, 제안서 자동화, CRM 파이프라인 최적화.",
-                "sales-btn": "세일즈 서비스 바로가기"
+                "sales-btn": "세일즈 서비스 바로가기",
 
                 "law-title": "LAWBOOST — 글로벌 법률 자문",
                 "law-desc": "회사 설립, 상표 등록, 기업거버넌스, 국제 세무, 국경간 소송 등 해외 법률 지원을 한번에 해결하세요.",
-                "law-btn": "법률 서비스 바로가기"
+                "law-btn": "법률 서비스 바로가기",
+
+                "aiweb-title": "AIWEB — AI 웹사이트 제작",
+                "aiweb-desc": "AI를 활용해 전환 최적화된 세련된 웹사이트를 론칭하세요 — 랜딩 페이지, 비즈니스 사이트, AI 플랫폼, 기업용 웹.",
+                "aiweb-btn": "웹사이트 서비스 바로가기",
+
+                "cert-title": "CERTBOOST — 글로벌 인증 컨설팅",
+                "cert-desc": "ISO 27001, GDPR 심사 대비, SOC 2 Type II, HIPAA 등 글로벌 비즈니스를 위한 해외 및 다국적 보안·컴플라이언스 인증 컨설팅을 지원합니다.",
+                "cert-btn": "인증 서비스 바로가기"
             }
         };
 
@@ -2143,7 +2214,9 @@
             { id: 'research', category: 'strategy', link: '/researchboost/', icon: 'fa-solid fa-chart-line', cardClass: 'card-active-research', btnClass: 'btn-research', iconBoxClass: 'icon-research', popularity: 78 },
             { id: 'content', category: 'marketing', link: '/contentboost/', icon: 'fa-solid fa-newspaper', cardClass: 'card-active-content', btnClass: 'btn-content', iconBoxClass: 'icon-content', popularity: 86 },
             { id: 'sales', category: 'strategy', link: '/salesboost/', icon: 'fa-solid fa-receipt', cardClass: 'card-active-sales', btnClass: 'btn-sales', iconBoxClass: 'icon-sales', popularity: 77 },
-            { id: 'law', category: 'strategy', link: '/lawboost/', icon: 'fa-solid fa-scale-balanced', cardClass: 'card-active-law', btnClass: 'btn-law', iconBoxClass: 'icon-law', popularity: 76 }
+            { id: 'law', category: 'strategy', link: '/lawboost/', icon: 'fa-solid fa-scale-balanced', cardClass: 'card-active-law', btnClass: 'btn-law', iconBoxClass: 'icon-law', popularity: 76 },
+            { id: 'aiweb', category: 'design-dev', link: '/aiweb/', icon: 'fa-solid fa-globe', cardClass: 'card-active-aiweb', btnClass: 'btn-aiweb', iconBoxClass: '', popularity: 83 },
+            { id: 'cert', category: 'strategy', link: '/certboost/', icon: 'fa-solid fa-certificate', cardClass: 'card-active-cert', btnClass: 'btn-cert', iconBoxClass: 'icon-cert', popularity: 75 }
         ];
 
         let activeCategory = 'all';
