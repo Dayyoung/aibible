@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from pathlib import Path
+import re
 
 ROOT = Path('/Users/dayyoung/project/aibible')
 
@@ -9,6 +10,9 @@ CATALOG = [
     {'id': 'b2b', 'cat': 'database', 'link': '/b2bdb/', 'icon': 'fa-solid fa-building-user', 'popularity': 92},
     {'id': 'land', 'cat': 'design-dev', 'link': '/landPage/', 'icon': 'fa-solid fa-code', 'popularity': 88},
     {'id': 'mvp', 'cat': 'design-dev', 'link': '/mvpboost/', 'icon': 'fa-solid fa-rocket', 'popularity': 91},
+    {'id': 'aideploy', 'cat': 'design-dev', 'link': '/aideploy/', 'icon': 'fa-solid fa-cloud-arrow-up', 'popularity': 93},
+    {'id': 'autoboost', 'cat': 'design-dev', 'link': '/autoboost/', 'icon': 'fa-solid fa-arrows-rotate', 'popularity': 89},
+    {'id': 'webcreate', 'cat': 'design-dev', 'link': '/webcreate/', 'icon': 'fa-solid fa-globe', 'popularity': 84},
     {'id': 'pr', 'cat': 'marketing', 'link': '/prboost/', 'icon': 'fa-solid fa-globe', 'popularity': 82},
     {'id': 'clip', 'cat': 'media', 'link': '/clipboost/', 'icon': 'fa-solid fa-clapperboard', 'popularity': 85},
     {'id': 'mail', 'cat': 'marketing', 'link': '/mailboost/', 'icon': 'fa-solid fa-envelope', 'popularity': 80},
@@ -70,28 +74,70 @@ def patch_index_html():
     p.write_text(text)
 
 
+def validate_translations():
+    text = (ROOT / 'index.html').read_text()
+
+    def block_after(marker_start: str, marker_end: str) -> str:
+        start_idx = text.index(marker_start)
+        end_idx = text.index(marker_end, start_idx)
+        return text[start_idx:end_idx]
+
+    en_block = block_after('            en: {', '            ko: {')
+    ko_block = block_after('            ko: {', '        };\n\n        // Initialize Language based on system or local storage')
+
+    missing = []
+    for lang, block in (('en', en_block), ('ko', ko_block)):
+        for s in CATALOG:
+            for suffix in ('title', 'desc', 'btn'):
+                key = f"{s['id']}-{suffix}"
+                if f'"{key}"' not in block:
+                    missing.append(f"{lang}:{key}")
+    if missing:
+        raise SystemExit('missing translation keys: ' + ', '.join(missing))
+
+
+def audit_catalog_dirs():
+    catalog_dirs = {item['link'].strip('/').split('/')[0] for item in CATALOG}
+    ignored = {'bible', '_salesboost_tmp_src', 'ustaxboost'}
+    service_dirs = {
+        p.parent.name for p in ROOT.glob('*/index.html')
+        if p.parent.name not in {'kr'} and p.parent.name not in ignored
+    }
+    missing = sorted(service_dirs - catalog_dirs)
+    if missing:
+        raise SystemExit('missing catalog entries for service dirs: ' + ', '.join(missing))
+
+
 def patch_all_service_pages():
     new_items = [
-        '            <li><a href=\"/repboost/\"><i class=\"fa-solid fa-circle\"></i> REPBOOST</a></li>\n',
-        '            <li><a href=\"/sysboost/\"><i class=\"fa-solid fa-circle\"></i> SYSBOOST</a></li>\n',
+        '            <li><a href="/repboost/"><i class="fa-solid fa-circle"></i> REPBOOST</a></li>\n',
+        '            <li><a href="/sysboost/"><i class="fa-solid fa-circle"></i> SYSBOOST</a></li>\n',
+        '            <li><a href="/aideploy/"><i class="fa-solid fa-circle"></i> AIDEPLOY</a></li>\n',
+        '            <li><a href="/autoboost/"><i class="fa-solid fa-circle"></i> AUTOBOOST</a></li>\n',
+        '            <li><a href="/webcreate/"><i class="fa-solid fa-circle"></i> WEBCREATE</a></li>\n',
     ]
-    marker = '            <li><a href=\"/salesboost/\"><i class=\"fa-solid fa-circle\"></i> SALESBOOST</a></li>\n'
     for path in ROOT.rglob('index.html'):
         if path == ROOT / 'index.html':
             continue
         text = path.read_text()
+        if 'unified-service-menu' not in text:
+            continue
         updated = False
         for item in new_items:
-            if item.split('"')[1].split('/')[1] in text:
+            slug = item.split('"')[1].split('/')[1]
+            if slug in text:
                 continue
-            if marker in text:
-                text = text.replace(marker, marker + item, 1)
-                updated = True
+            # Insert just before the first closing UL after the unified menu starts
+            menu_start = text.index('unified-service-menu')
+            ul_end = text.index('</ul>', menu_start)
+            text = text[:ul_end] + item + text[ul_end:]
+            updated = True
         if updated:
             path.write_text(text)
 
-
 if __name__ == '__main__':
     patch_index_html()
+    validate_translations()
+    audit_catalog_dirs()
     patch_all_service_pages()
     print('synced')
