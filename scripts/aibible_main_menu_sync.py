@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from pathlib import Path
 import re
+import subprocess
 
 ROOT = Path('/Users/dayyoung/project/aibible')
 
@@ -54,11 +55,42 @@ CATALOG = [
 ]
 
 
+def service_added_at(service_link: str) -> int:
+    rel = service_link.strip('/')
+    candidates = [
+        ROOT / rel / 'index.html',
+        ROOT / rel / 'app.js',
+        ROOT / rel / 'style.css',
+    ]
+    for candidate in candidates:
+        if not candidate.exists():
+            continue
+        result = subprocess.run(
+            ['git', 'log', '--reverse', '--format=%ct', '--', str(candidate.relative_to(ROOT))],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        ts = result.stdout.strip().splitlines()
+        if result.returncode == 0 and ts and ts[0].isdigit():
+            return int(ts[0])
+    target = ROOT / rel / 'index.html'
+    if target.exists():
+        return int(target.stat().st_mtime)
+    return 0
+
+
 def build_catalog_entries():
+    added_map = {s['id']: service_added_at(s['link']) for s in CATALOG}
+    max_added = max(added_map.values(), default=0)
     lines = []
     for s in CATALOG:
+        added_at = added_map[s['id']]
+        if s['id'] == 'globalup':
+            added_at = max(added_at, max_added + 1)
         lines.append(
-            f"            {{ id: '{s['id']}', category: '{s['cat']}', link: '{s['link']}', icon: '{s['icon']}', cardClass: 'card-active-{s['id']}', btnClass: 'btn-{s['id']}', iconBoxClass: 'icon-{s['id']}', popularity: {s['popularity']} }}"
+            f"            {{ id: '{s['id']}', category: '{s['cat']}', link: '{s['link']}', icon: '{s['icon']}', cardClass: 'card-active-{s['id']}', btnClass: 'btn-{s['id']}', iconBoxClass: 'icon-{s['id']}', popularity: {s['popularity']}, addedAt: {added_at} }}"
         )
     return ',\n'.join(lines) + '\n'
 
