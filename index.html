@@ -155,6 +155,15 @@
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
+                  "name": "APPBOOST — Global App Marketing & ASO",
+                  "url": "https://bibleforai.com/appboost/",
+                  "description": "App store optimization and growth marketing for mobile apps, focused on installs, reviews, and keyword visibility across App Store and Google Play."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
                   "name": "CERTBOOST — Global Compliance Certification Consulting",
                   "url": "https://bibleforai.com/certboost/",
                   "description": "Internationally usable certification consulting for ISO 27001, GDPR audit readiness, SOC 2 Type II, HIPAA, and cross-border certification across 40+ jurisdictions."
@@ -736,6 +745,15 @@
             box-shadow: 0 15px 35px rgba(239, 68, 68, 0.12), 0 0 15px rgba(239, 68, 68, 0.1);
         }
 
+        .card-active-app {
+            border-color: rgba(16, 185, 129, 0.15);
+        }
+        .card-active-app:hover {
+            transform: translateY(-8px);
+            border-color: #10b981;
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.12), 0 0 15px rgba(16, 185, 129, 0.1);
+        }
+
         .card-active-clip, .card-active-pitch, .card-active-map {
             border-color: rgba(249, 115, 22, 0.15);
         }
@@ -980,6 +998,12 @@
             border-color: rgba(239, 68, 68, 0.15);
         }
 
+        .icon-app {
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.06);
+            border-color: rgba(16, 185, 129, 0.15);
+        }
+
         .icon-clip {
             color: #f97316;
             background: rgba(249, 115, 22, 0.06);
@@ -1210,6 +1234,17 @@
         .btn-pr:hover {
             background: #dc2626;
             box-shadow: 0 8px 25px rgba(239, 68, 68, 0.35);
+        }
+
+        .btn-app {
+            background: #10b981;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+        }
+        .btn-app:hover {
+            background: #059669;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
         }
 
         .btn-clip {
@@ -1999,6 +2034,7 @@
             <span class="sidebar-category-title" id="side-cat-marketing">Marketing & SEO</span>
             <a href="/boostsm/" class="sidebar-link"><i class="fa-solid fa-arrow-up-right-dots"></i> <span id="side-title-smm">SMM Growth Booster</span></a>
             <a href="/prboost/" class="sidebar-link"><i class="fa-solid fa-globe"></i> <span id="side-title-pr">PRBOOST Global PR</span></a>
+            <a href="/appboost/" class="sidebar-link"><i class="fa-solid fa-mobile-screen-button"></i> <span id="side-title-app">APPBOOST Global App Marketing</span></a>
             <a href="/mailboost/" class="sidebar-link"><i class="fa-solid fa-envelope"></i> <span id="side-title-mail">Email Marketing</span></a>
             <a href="/searchboost/" class="sidebar-link"><i class="fa-solid fa-magnifying-glass"></i> <span id="side-title-search">AI SEO & Content</span></a>
             <a href="/mkboost/" class="sidebar-link"><i class="fa-solid fa-magnifying-glass-chart"></i> <span id="side-title-mk">Market Research</span></a>
@@ -2083,6 +2119,7 @@
                 <a href="/autoboost/" id="foot-autoboost-link">AUTOBOOST</a>
                 <a href="/webcreate/" id="foot-webcreate-link">WEBCREATE</a>
                 <a href="/prboost/" id="foot-pr-link">PRBOOST</a>
+                <a href="/appboost/" id="foot-app-link">APPBOOST</a>
                 <a href="/clipboost/" id="foot-clip-link">CLIPBOOST</a>
                 <a href="/mailboost/" id="foot-mail-link">MAILBOOST</a>
                 <a href="/chatboost/" id="foot-chat-link">CHATBOOST</a>
@@ -2166,7 +2203,11 @@
                 "pr-title": "PRBOOST — Global PR",
                 "pr-desc": "Get DoFollow backlinks from high-authority overseas magazines. Boost your SEO, brand trust, and global visibility with guest posting.",
                 "pr-btn": "Launch PR Service",
-
+                
+                "app-title": "APPBOOST — Global App Marketing",
+                "app-desc": "Boost installs, reviews, and keyword visibility for mobile apps with app store optimization and growth marketing.",
+                "app-btn": "Launch App Growth Service",
+                
                 "clip-title": "CLIPBOOST — Short-Form Video",
                 "clip-desc": "AI-powered short-form video content for TikTok, Reels & Shorts. Trend-aligned editing with professional motion graphics.",
                 "clip-btn": "Launch Video Service",
@@ -2350,6 +2391,10 @@
                 "pr-title": "PRBOOST — 글로벌 PR",
                 "pr-desc": "고권위 해외 매거진에서 DoFollow 백링크를 확보하세요. 게스트 포스팅으로 SEO, 브랜드 신뢰도, 글로벌 가시성을 높여드립니다.",
                 "pr-btn": "PR 서비스 바로가기",
+
+                "app-title": "APPBOOST — 글로벌 앱 마케팅",
+                "app-desc": "앱 스토어 최적화와 성장 마케팅으로 모바일 앱의 설치, 리뷰, 키워드 노출을 높입니다.",
+                "app-btn": "앱 성장 서비스 바로가기",
 
                 "clip-title": "CLIPBOOST — 숏폼 영상",
                 "clip-desc": "틱톡, 릴스, 쇼츠를 위한 AI 기반 숏폼 영상 콘텐츠. 트렌드 최적화 편집과 전문 모션 그래픽을 제공합니다.",
@@ -2558,6 +2603,7 @@
             { id: 'autoboost', category: 'design-dev', link: '/autoboost/', icon: 'fa-solid fa-arrows-rotate', cardClass: 'card-active-autoboost', btnClass: 'btn-autoboost', iconBoxClass: 'icon-autoboost', popularity: 89 },
             { id: 'webcreate', category: 'design-dev', link: '/webcreate/', icon: 'fa-solid fa-globe', cardClass: 'card-active-webcreate', btnClass: 'btn-webcreate', iconBoxClass: 'icon-webcreate', popularity: 84 },
             { id: 'pr', category: 'marketing', link: '/prboost/', icon: 'fa-solid fa-globe', cardClass: 'card-active-pr', btnClass: 'btn-pr', iconBoxClass: 'icon-pr', popularity: 82 },
+            { id: 'app', category: 'marketing', link: '/appboost/', icon: 'fa-solid fa-mobile-screen-button', cardClass: 'card-active-app', btnClass: 'btn-app', iconBoxClass: 'icon-app', popularity: 83 },
             { id: 'ustax', category: 'strategy', link: '/ustaxboost/', icon: 'fa-solid fa-file-invoice-dollar', cardClass: 'card-active-ustax', btnClass: 'btn-ustax', iconBoxClass: 'icon-ustax', popularity: 81 },
             { id: 'clip', category: 'media', link: '/clipboost/', icon: 'fa-solid fa-clapperboard', cardClass: 'card-active-clip', btnClass: 'btn-clip', iconBoxClass: 'icon-clip', popularity: 85 },
             { id: 'mail', category: 'marketing', link: '/mailboost/', icon: 'fa-solid fa-envelope', cardClass: 'card-active-mail', btnClass: 'btn-mail', iconBoxClass: 'icon-mail', popularity: 80 },
