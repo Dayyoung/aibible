@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="../">
+  <title>BibleForAI - LINKBOOST | 링크드인 프로필 성장 & B2B 참여</title>
+  <meta name="description" content="링크드인 프로필 성장, 활성화, B2B 아웃리치 서비스를 USD로 제공하며 PayPal 안전 결제를 지원합니다.">
+  <meta name="keywords" content="링크드인 성장, 프로필 최적화, B2B 아웃리치, 개인 브랜딩, 리드 참여">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bibleforai.com/linkboost/kr/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bibleforai.com/linkboost/kr/">
+  <meta property="og:title" content="BibleForAI - LINKBOOST | 링크드인 성장 & B2B 참여">
+  <meta property="og:description" content="링크드인 프로필을 최적화하고, 신뢰도와 B2B 참여를 높이는 안전한 PayPal 체크아웃 서비스입니다.">
+  <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+  <meta property="og:site_name" content="BibleForAI LINKBOOST">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://bibleforai.com/linkboost/kr/">
+  <meta name="twitter:title" content="BibleForAI - LINKBOOST | 링크드인 성장 & B2B 참여">
+  <meta name="twitter:description" content="링크드인 프로필을 최적화하고, 신뢰도와 B2B 참여를 높이는 안전한 PayPal 체크아웃 서비스입니다.">
+  <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap">
+  <style>
+    :root { --font-body: 'Noto Sans KR', 'Inter', sans-serif; --font-heading: 'Noto Sans KR', 'Inter', sans-serif; }
+    html, body, button, input, select, textarea { font-family: var(--font-body); }
+  </style>
+  <script>localStorage.setItem('bibleforai_lang', 'ko');</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"LINKBOOST는 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"창업자, 프리랜서, 채용 담당자, B2B 팀을 위한 링크드인 성장 서비스입니다."}},
+      {"@type":"Question","name":"누가 이용하면 좋나요?","acceptedAnswer":{"@type":"Answer","text":"세일즈, 채용, 개인 브랜딩 채널로 링크드인을 사용하는 누구나 적합합니다."}},
+      {"@type":"Question","name":"체크아웃을 테스트할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 주문 모달의 총액 텍스트를 클릭하면 테스트 체크아웃이 실행됩니다."}},
+      {"@type":"Question","name":"납품은 어떻게 받나요?","acceptedAnswer":{"@type":"Answer","text":"결제 후 Google Form으로 리디렉션되며, 영수증과 서비스 정보가 전송됩니다."}}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "BibleForAI LINKBOOST",
+    "image": "https://bibleforai.com/assets/og-preview.png",
+    "description": "링크드인 프로필 성장, 활성화, B2B 아웃리치 패키지와 안전한 PayPal 결제.",
+    "brand": { "@type": "Brand", "name": "BibleForAI" },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "USD",
+      "lowPrice": "7.15",
+      "highPrice": "99.00",
+      "offerCount": "5"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+</head>
+<body>
+  <header id="app-header">
+    <div class="header-container">
+      <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="메뉴 열기">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <a href="/" class="logo-group">
+        <span class="logo-title">BibleForAI</span>
+        <span class="logo-subtitle" data-i18n="logo-subtitle">링크드인 성장 스튜디오</span>
+      </a>
+      <nav class="desktop-nav">
+        <ul class="nav-links">
+          <li><a href="#home" data-view="home" class="active" onclick="navigate('home'); return false;" data-i18n="nav-home">개요</a></li>
+          <li><a href="#packages" data-view="packages" onclick="navigate('packages'); return false;" data-i18n="nav-packages">패키지</a></li>
+          <li><a href="#faq" data-view="faq" onclick="navigate('faq'); return false;" data-i18n="nav-faq">FAQ</a></li>
+          <li><a href="#orders" data-view="orders" onclick="navigate('orders'); return false;" data-i18n="nav-orders">주문내역</a></li>
+          <li><a href="/prboost/"><i class="fa-solid fa-globe"></i> PRBOOST</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="btn-orders" onclick="navigate('orders')"><i class="fa-solid fa-receipt"></i> <span data-i18n="btn-orders">내 주문</span></button>
+        <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)">
+          <option value="en">🌐 English</option>
+          <option value="ko">🇰🇷 한국어</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobile-drawer">
+    <ul class="mobile-nav-links unified-service-menu">
+      <li class="mobile-menu-heading">데이터베이스 & 스크래핑</li>
+      <li><a href="/b2bdb/"><i class="fa-solid fa-building-user"></i> B2B 핵심 DB</a></li>
+      <li><a href="/b2cdb/"><i class="fa-solid fa-database"></i> B2C 리드 DB</a></li>
+      <li><a href="/databoost/"><i class="fa-solid fa-spider"></i> DATABOOST — 웹 스크래핑</a></li>
+      <li class="mobile-menu-heading">디자인 & 코딩</li>
+      <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI 랜딩페이지</a></li>
+      <li><a href="/opencode/"><i class="fa-solid fa-code"></i> OpenCode AI</a></li>
+      <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> SHOPBOOST — 이커머스 진출</a></li>
+      <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> FLOWBOOST — 업무 자동화</a></li>
+      <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST — 상품 촬영</a></li>
+      <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST — AI 프레젠테이션</a></li>
+      <li class="mobile-menu-heading">마케팅 & SEO</li>
+      <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> SMM 성장 부스터</a></li>
+      <li><a href="/prboost/"><i class="fa-solid fa-globe"></i> PRBOOST — 글로벌 PR</a></li>
+      <li><a href="/linkboost/"><i class="fa-brands fa-linkedin"></i> LINKBOOST — 링크드인 성장</a></li>
+      <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> MAILBOOST — 이메일 마케팅</a></li>
+      <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — AI SEO</a></li>
+      <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST — 시장 조사</a></li>
+      <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> CONTENTBOOST — AI 퍼블리싱</a></li>
+      <li class="mobile-menu-heading">미디어 & 오디오</li>
+      <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> CLIPBOOST — 숏폼 비디오</a></li>
+      <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> VOICEBOOST — AI 음성</a></li>
+      <li><a href="/transboost/"><i class="fa-solid fa-language"></i> TRANSBOOST — 번역</a></li>
+      <li class="mobile-menu-heading">전략 & 분석</li>
+      <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> AIBOOST — AI 컨설팅</a></li>
+      <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST — 데이터 분석</a></li>
+      <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST — AI 챗봇</a></li>
+      <li><a href="/buyerboost/"><i class="fa-solid fa-handshake"></i> BUYERBOOST — 바이어 발굴</a></li>
+      <li><a href="/salesboost/"><i class="fa-solid fa-receipt"></i> SALESBOOST — 세일즈 지원</a></li>
+      <li><a href="/researchboost/"><i class="fa-solid fa-chart-line"></i> RESEARCHBOOST — 리서치</a></li>
+      <li><a href="/sysboost/"><i class="fa-solid fa-circle"></i> SYSBOOST</a></li>
+      <li><a href="/aideploy/"><i class="fa-solid fa-circle"></i> AIDEPLOY</a></li>
+      <li><a href="/autoboost/"><i class="fa-solid fa-circle"></i> AUTOBOOST</a></li>
+      <li><a href="/webcreate/"><i class="fa-solid fa-circle"></i> WEBCREATE</a></li>
+      <li><a href="/ustaxboost/"><i class="fa-solid fa-circle"></i> USTAXBOOST</a></li>
+      <li><a href="/apostboost/"><i class="fa-solid fa-stamp"></i> APOSTBOOST — 아포스티유 & 공증</a></li>
+      <li><a href="/alicat/"><i class="fa-solid fa-box-open"></i> ALICAT — 알리바바 & B2B 카탈로그</a></li>
+      <li><a href="/globalup/"><i class="fa-solid fa-user-tie"></i> GLOBALUP — 글로벌 채용</a></li>
+      <li><a href="/rfpboost/"><i class="fa-solid fa-file-signature"></i> RFPBOOST — 제안서 작성</a></li>
+      <li><a href="/eventboost/"><i class="fa-solid fa-microphone-lines"></i> EVENTBOOST — 글로벌 행사 MC</a></li>
+      <li><a href="/medboost/"><i class="fa-solid fa-stethoscope"></i> MEDBOOST — 의료 번역</a></li>
+      <li><a href="/amzboost/"><i class="fa-solid fa-store"></i> AMZBOOST — 아마존 FBA PPC</a></li>
+      <li><a href="/tikshop/"><i class="fa-brands fa-tiktok"></i> TIKSHOP — 틱톡샵 세팅</a></li>
+      <li><a href="/usllc/"><i class="fa-solid fa-building-circle-check"></i> USLLC — 미국 LLC 설립 & EIN</a></li>
+      <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — 글로벌 무역대행</a></li>
+                <li><a href="/repboost/"><i class="fa-solid fa-circle"></i> REPBOOST</a></li>
+</ul>
+  </div>
+
+  <main>
+    <section id="home-view" class="view-section active">
+      <div class="hero">
+        <div class="badge" data-i18n="hero-badge">링크드인 성장 & B2B 활성화</div>
+        <h1 class="hero-title" data-i18n="hero-title">보여지고, 신뢰받고, 전환되는 프로필을 만드세요.</h1>
+        <p class="hero-desc" id="service-subtitle">링크드인 프로필 활성화, 전문성 강화, B2B 참여 시스템 구축 서비스.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="navigate('packages')"><span data-i18n="hero-cta">패키지 보기</span> <i class="fa-solid fa-arrow-right"></i></button>
+          <a href="#faq-view" class="btn-secondary" onclick="navigate('faq'); return false;" data-i18n="hero-secondary">FAQ 보기</a>
+        </div>
+      </div>
+
+      <div class="stats-bar">
+        <div class="stat-item"><span class="stat-num" data-i18n="stat-1-num">5배</span><span class="stat-label" data-i18n="stat-1-label">더 명확한 프로필</span></div>
+        <div class="stat-item"><span class="stat-num" data-i18n="stat-2-num">7일</span><span class="stat-label" data-i18n="stat-2-label">실행 계획 스프린트</span></div>
+        <div class="stat-item"><span class="stat-num" data-i18n="stat-3-num">B2B</span><span class="stat-label" data-i18n="stat-3-label">아웃바운드 준비 완료</span></div>
+      </div>
+    </section>
+
+    <section id="packages-view" class="view-section">
+      <div class="section-container">
+        <h2 class="section-title" data-i18n="section-packages-title">링크드인 성장 패키지를 선택하세요</h2>
+        <p class="section-subtitle" data-i18n="section-packages-subtitle">모든 패키지는 크몽 원가 기준 2배 마크업을 반영해 USD로 표시됩니다.</p>
+        <div id="packages-grid" class="packages-grid"></div>
+      </div>
+    </section>
+
+    <section id="faq-view" class="view-section">
+      <div class="section-container">
+        <h2 class="section-title" data-i18n="section-faq-title">자주 묻는 질문</h2>
+        <p class="section-subtitle" data-i18n="section-faq-subtitle">링크드인 서비스 이용 방법을 간단히 확인하세요.</p>
+        <div id="faq-list" class="faq-list"></div>
+      </div>
+    </section>
+
+    <section id="orders-view" class="view-section">
+      <div class="section-container">
+        <h2 class="section-title" data-i18n="section-orders-title">내 주문 내역</h2>
+        <p class="section-subtitle" data-i18n="section-orders-subtitle">결제 완료 주문은 브라우저에 로컬 저장됩니다.</p>
+        <p id="no-orders-msg" class="empty-state" data-i18n="no-orders-msg">아직 구매 기록이 없습니다. 결제 후 내역이 여기에 표시됩니다.</p>
+        <div class="orders-table-wrap">
+          <table class="orders-table">
+            <thead>
+              <tr>
+                <th>날짜</th>
+                <th>거래 ID</th>
+                <th>패키지</th>
+                <th>오디언스</th>
+                <th>수량</th>
+                <th>총액</th>
+                <th>상태</th>
+              </tr>
+            </thead>
+            <tbody id="orders-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-section">
+      <div class="payment-badges">
+        <span><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL 보안 결제</span></span>
+        <span><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal 인증됨</span></span>
+      </div>
+      <footer>
+        <span data-i18n-html="footer-copy">&copy; 2026 BibleForAI LINKBOOST. All rights reserved.</span>
+      </footer>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="purchase-modal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal()" aria-label="닫기"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-top">
+        <span class="modal-chip" data-i18n="hero-badge">링크드인 성장 & B2B 활성화</span>
+        <h3 id="modal-product-title" data-i18n="modal-title">주문 설정</h3>
+        <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">수량을 선택하고 가격을 확인한 뒤 안전한 PayPal 결제를 진행하세요.</p>
+      </div>
+
+      <div class="modal-summary">
+        <div><span data-i18n="modal-base-pkg">기본 패키지</span><strong id="modal-package-name">-</strong></div>
+        <div><span data-i18n="modal-base-price-label">기본 가격</span><strong id="modal-base-price">$0.00</strong></div>
+      </div>
+
+      <div class="field-group">
+        <label for="order-email" data-i18n="modal-email-label">이메일 주소 *</label>
+        <input id="order-email" type="email" placeholder="name@example.com" data-i18n-placeholder="modal-email-placeholder" />
+        <div id="email-error" class="error-text"></div>
+      </div>
+
+      <div class="field-group">
+        <label for="order-audience" data-i18n="modal-audience-label">타겟 오디언스</label>
+        <select id="order-audience">
+          <option value="Founders & CEOs">창업자 & CEO</option>
+          <option value="B2B SaaS">B2B SaaS</option>
+          <option value="Recruiters">채용 담당자</option>
+          <option value="Agencies">에이전시</option>
+          <option value="Investors">투자자</option>
+        </select>
+      </div>
+
+      <div class="qty-row">
+        <span data-i18n="modal-qty">수량</span>
+        <div class="qty-control">
+          <button type="button" onclick="adjustQty(-1)" aria-label="수량 감소">−</button>
+          <input id="order-quantity" type="number" min="1" value="1" oninput="updateModalPrice()" />
+          <button type="button" onclick="adjustQty(1)" aria-label="수량 증가">+</button>
+        </div>
+      </div>
+
+      <div class="total-price-box">
+        <span data-i18n="modal-total-amt">총 결제금액</span>
+        <span class="price-val" id="modal-total-price" onclick="triggerTestCheckout()" title="테스트 체크아웃 실행">$0.00</span>
+      </div>
+
+      <div class="paypal-wrapper">
+        <div id="paypal-button-container"></div>
+      </div>
+
+      <div class="payment-badges compact">
+        <span><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL 보안 결제</span></span>
+        <span><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal 인증됨</span></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+</body>
+</html>

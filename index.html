@@ -790,6 +790,15 @@
             box-shadow: 0 15px 35px rgba(239, 68, 68, 0.12), 0 0 15px rgba(239, 68, 68, 0.1);
         }
 
+        .card-active-linkboost {
+            border-color: rgba(10, 102, 194, 0.15);
+        }
+        .card-active-linkboost:hover {
+            transform: translateY(-8px);
+            border-color: #0a66c2;
+            box-shadow: 0 15px 35px rgba(10, 102, 194, 0.12), 0 0 15px rgba(10, 102, 194, 0.1);
+        }
+
         .card-active-medboost {
             border-color: rgba(20, 184, 166, 0.15);
         }
@@ -1088,6 +1097,12 @@
             border-color: rgba(239, 68, 68, 0.15);
         }
 
+        .icon-linkboost {
+            color: #0a66c2;
+            background: rgba(10, 102, 194, 0.06);
+            border-color: rgba(10, 102, 194, 0.15);
+        }
+
         .icon-medboost {
             color: #14b8a6;
             background: rgba(20, 184, 166, 0.06);
@@ -1354,6 +1369,17 @@
         .btn-pr:hover {
             background: #dc2626;
             box-shadow: 0 8px 25px rgba(239, 68, 68, 0.35);
+        }
+
+        .btn-linkboost {
+            background: #0a66c2;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(10, 102, 194, 0.2);
+        }
+        .btn-linkboost:hover {
+            background: #084d93;
+            box-shadow: 0 8px 25px rgba(10, 102, 194, 0.35);
         }
 
         .btn-medboost {
@@ -2209,6 +2235,7 @@
             <span class="sidebar-category-title" id="side-cat-marketing">Marketing & SEO</span>
             <a href="/boostsm/" class="sidebar-link"><i class="fa-solid fa-arrow-up-right-dots"></i> <span id="side-title-smm">SMM Growth Booster</span></a>
             <a href="/prboost/" class="sidebar-link"><i class="fa-solid fa-globe"></i> <span id="side-title-pr">PRBOOST Global PR</span></a>
+            <a href="/linkboost/" class="sidebar-link"><i class="fa-brands fa-linkedin"></i> <span id="side-title-linkboost">LINKBOOST LinkedIn Growth</span></a>
             <a href="/tradeboost/" class="sidebar-link"><i class="fa-solid fa-ship"></i> <span id="side-title-tradeboost">TRADEBOOST Global Trade Agency</span></a>
             <a href="/tikshop/" class="sidebar-link"><i class="fa-brands fa-tiktok"></i> <span id="side-title-tikshop">TIKSHOP TikTok Shop Setup</span></a>
             <a href="/globalup/" class="sidebar-link"><i class="fa-solid fa-user-tie"></i> <span id="side-title-globalup">GLOBALUP Global Recruiting</span></a>
@@ -2396,6 +2423,9 @@
                 "pr-title": "PRBOOST — Global PR",
                 "pr-desc": "Get DoFollow backlinks from high-authority overseas magazines. Boost your SEO, brand trust, and global visibility with guest posting.",
                 "pr-btn": "Launch PR Service",
+                "linkboost-title": "LINKBOOST — LinkedIn Growth",
+                "linkboost-desc": "LinkedIn profile growth, authority building, and B2B outreach for founders, recruiters, and sales teams.",
+                "linkboost-btn": "Launch LinkedIn Service",
                 "localize-title": "LOCALIZE — Native Translation & Localization",
                 "localize-desc": "Get polished English/Korean translation, localization, and native proofreading with a smooth checkout flow.",
                 "localize-btn": "Launch Translation Service",
@@ -2632,6 +2662,9 @@
                 "pr-title": "PRBOOST — 글로벌 PR",
                 "pr-desc": "고권위 해외 매거진에서 DoFollow 백링크를 확보하세요. 게스트 포스팅으로 SEO, 브랜드 신뢰도, 글로벌 가시성을 높여드립니다.",
                 "pr-btn": "PR 서비스 바로가기",
+                "linkboost-title": "LINKBOOST — 링크드인 성장",
+                "linkboost-desc": "창업자, 채용 담당자, 세일즈 팀을 위한 링크드인 프로필 성장, 권위 구축, B2B 아웃리치 서비스입니다.",
+                "linkboost-btn": "링크드인 서비스 바로가기",
                 "localize-title": "LOCALIZE — 원어민 번역 & 로컬라이징",
                 "localize-desc": "영어/한국어 번역, 로컬라이징, 원어민 감수를 간편한 결제로 이용하세요.",
                 "localize-btn": "번역 서비스 바로가기",
@@ -2892,13 +2925,14 @@
             { id: 'autoboost', category: 'design-dev', link: '/autoboost/', icon: 'fa-solid fa-arrows-rotate', cardClass: 'card-active-autoboost', btnClass: 'btn-autoboost', iconBoxClass: 'icon-autoboost', popularity: 89, addedAt: 1782575846 },
             { id: 'webcreate', category: 'design-dev', link: '/webcreate/', icon: 'fa-solid fa-globe', cardClass: 'card-active-webcreate', btnClass: 'btn-webcreate', iconBoxClass: 'icon-webcreate', popularity: 84, addedAt: 1782537153 },
             { id: 'pr', category: 'marketing', link: '/prboost/', icon: 'fa-solid fa-globe', cardClass: 'card-active-pr', btnClass: 'btn-pr', iconBoxClass: 'icon-pr', popularity: 82, addedAt: 1782461105 },
-            { id: 'localize', category: 'strategy', link: '/localize/', icon: 'fa-solid fa-language', cardClass: 'card-active-localize', btnClass: 'btn-localize', iconBoxClass: 'icon-localize', popularity: 86, addedAt: 1782655860 },
+            { id: 'linkboost', category: 'marketing', link: '/linkboost/', icon: 'fa-brands fa-linkedin', cardClass: 'card-active-linkboost', btnClass: 'btn-linkboost', iconBoxClass: 'icon-linkboost', popularity: 83, addedAt: 1782659331 },
+            { id: 'localize', category: 'strategy', link: '/localize/', icon: 'fa-solid fa-language', cardClass: 'card-active-localize', btnClass: 'btn-localize', iconBoxClass: 'icon-localize', popularity: 86, addedAt: 1782656191 },
             { id: 'tradeboost', category: 'strategy', link: '/tradeboost/', icon: 'fa-solid fa-ship', cardClass: 'card-active-tradeboost', btnClass: 'btn-tradeboost', iconBoxClass: 'icon-tradeboost', popularity: 85, addedAt: 1782652898 },
             { id: 'amzboost', category: 'marketing', link: '/amzboost/', icon: 'fa-solid fa-store', cardClass: 'card-active-amzboost', btnClass: 'btn-amzboost', iconBoxClass: 'icon-amzboost', popularity: 88, addedAt: 1782634998 },
             { id: 'tikshop', category: 'marketing', link: '/tikshop/', icon: 'fa-brands fa-tiktok', cardClass: 'card-active-tikshop', btnClass: 'btn-tikshop', iconBoxClass: 'icon-tikshop', popularity: 89, addedAt: 1782638348 },
             { id: 'rfp', category: 'strategy', link: '/rfpboost/', icon: 'fa-solid fa-file-signature', cardClass: 'card-active-rfp', btnClass: 'btn-rfp', iconBoxClass: 'icon-rfp', popularity: 84, addedAt: 1782627449 },
-            { id: 'globalup', category: 'strategy', link: '/globalup/', icon: 'fa-solid fa-user-tie', cardClass: 'card-active-globalup', btnClass: 'btn-globalup', iconBoxClass: 'icon-globalup', popularity: 81, addedAt: 1782655861 },
-            { id: 'eventboost', category: 'strategy', link: '/eventboost/', icon: 'fa-solid fa-microphone-lines', cardClass: 'card-active-eventboost', btnClass: 'btn-eventboost', iconBoxClass: 'icon-eventboost', popularity: 82, addedAt: 1782655861 },
+            { id: 'globalup', category: 'strategy', link: '/globalup/', icon: 'fa-solid fa-user-tie', cardClass: 'card-active-globalup', btnClass: 'btn-globalup', iconBoxClass: 'icon-globalup', popularity: 81, addedAt: 1782659332 },
+            { id: 'eventboost', category: 'strategy', link: '/eventboost/', icon: 'fa-solid fa-microphone-lines', cardClass: 'card-active-eventboost', btnClass: 'btn-eventboost', iconBoxClass: 'icon-eventboost', popularity: 82, addedAt: 1782659332 },
             { id: 'alicat', category: 'marketing', link: '/alicat/', icon: 'fa-solid fa-box-open', cardClass: 'card-active-alicat', btnClass: 'btn-alicat', iconBoxClass: 'icon-alicat', popularity: 83, addedAt: 1782617466 },
             { id: 'app', category: 'marketing', link: '/appboost/', icon: 'fa-solid fa-mobile-screen-button', cardClass: 'card-active-app', btnClass: 'btn-app', iconBoxClass: 'icon-app', popularity: 83, addedAt: 1782609992 },
             { id: 'ustax', category: 'strategy', link: '/ustaxboost/', icon: 'fa-solid fa-file-invoice-dollar', cardClass: 'card-active-ustax', btnClass: 'btn-ustax', iconBoxClass: 'icon-ustax', popularity: 81, addedAt: 1782606020 },
