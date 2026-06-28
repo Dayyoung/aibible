@@ -15,6 +15,7 @@ CATALOG = [
     {'id': 'autoboost', 'cat': 'design-dev', 'link': '/autoboost/', 'icon': 'fa-solid fa-arrows-rotate', 'popularity': 89},
     {'id': 'webcreate', 'cat': 'design-dev', 'link': '/webcreate/', 'icon': 'fa-solid fa-globe', 'popularity': 84},
     {'id': 'pr', 'cat': 'marketing', 'link': '/prboost/', 'icon': 'fa-solid fa-globe', 'popularity': 82},
+    {'id': 'amzboost', 'cat': 'marketing', 'link': '/amzboost/', 'icon': 'fa-solid fa-store', 'popularity': 88},
     {'id': 'rfp', 'cat': 'strategy', 'link': '/rfpboost/', 'icon': 'fa-solid fa-file-signature', 'popularity': 84},
     {'id': 'globalup', 'cat': 'strategy', 'link': '/globalup/', 'icon': 'fa-solid fa-user-tie', 'popularity': 81},
     {'id': 'eventboost', 'cat': 'strategy', 'link': '/eventboost/', 'icon': 'fa-solid fa-microphone-lines', 'popularity': 82},
@@ -162,6 +163,7 @@ def patch_all_service_pages():
         '            <li><a href="/globalup/"><i class="fa-solid fa-user-tie"></i> GLOBALUP — Global Recruiting</a></li>\n',
         '            <li><a href="/eventboost/"><i class="fa-solid fa-microphone-lines"></i> EVENTBOOST — Global Event MC</a></li>\n',
         '            <li><a href="/medboost/"><i class="fa-solid fa-stethoscope"></i> MEDBOOST — Clinical Translation</a></li>\n',
+        '            <li><a href="/amzboost/"><i class="fa-solid fa-store"></i> AMZBOOST — Amazon FBA PPC</a></li>\n',
         '            <li><a href="/alicat/"><i class="fa-solid fa-box-open"></i> ALICAT — Alibaba & B2B Catalog</a></li>\n',
         '            <li><a href="/apostboost/"><i class="fa-solid fa-stamp"></i> APOSTBOOST — Apostille & Notarization</a></li>\n',
     ]
