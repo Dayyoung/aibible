@@ -16,6 +16,7 @@ CATALOG = [
     {'id': 'webcreate', 'cat': 'design-dev', 'link': '/webcreate/', 'icon': 'fa-solid fa-globe', 'popularity': 84},
     {'id': 'pr', 'cat': 'marketing', 'link': '/prboost/', 'icon': 'fa-solid fa-globe', 'popularity': 82},
     {'id': 'globalup', 'cat': 'strategy', 'link': '/globalup/', 'icon': 'fa-solid fa-user-tie', 'popularity': 81},
+    {'id': 'eventboost', 'cat': 'strategy', 'link': '/eventboost/', 'icon': 'fa-solid fa-microphone-lines', 'popularity': 82},
     {'id': 'alicat', 'cat': 'marketing', 'link': '/alicat/', 'icon': 'fa-solid fa-box-open', 'popularity': 83},
     {'id': 'app', 'cat': 'marketing', 'link': '/appboost/', 'icon': 'fa-solid fa-mobile-screen-button', 'popularity': 83},
     {'id': 'ustax', 'cat': 'strategy', 'link': '/ustaxboost/', 'icon': 'fa-solid fa-file-invoice-dollar', 'popularity': 81},
@@ -87,7 +88,7 @@ def build_catalog_entries():
     lines = []
     for s in CATALOG:
         added_at = added_map[s['id']]
-        if s['id'] == 'globalup':
+        if s['id'] in ('globalup', 'eventboost'):
             added_at = max(added_at, max_added + 1)
         lines.append(
             f"            {{ id: '{s['id']}', category: '{s['cat']}', link: '{s['link']}', icon: '{s['icon']}', cardClass: 'card-active-{s['id']}', btnClass: 'btn-{s['id']}', iconBoxClass: 'icon-{s['id']}', popularity: {s['popularity']}, addedAt: {added_at} }}"
@@ -156,6 +157,7 @@ def patch_all_service_pages():
         '            <li><a href="/autoboost/"><i class="fa-solid fa-circle"></i> AUTOBOOST</a></li>\n',
         '            <li><a href="/webcreate/"><i class="fa-solid fa-circle"></i> WEBCREATE</a></li>\n',
         '            <li><a href="/globalup/"><i class="fa-solid fa-user-tie"></i> GLOBALUP — Global Recruiting</a></li>\n',
+        '            <li><a href="/eventboost/"><i class="fa-solid fa-microphone-lines"></i> EVENTBOOST — Global Event MC</a></li>\n',
         '            <li><a href="/alicat/"><i class="fa-solid fa-box-open"></i> ALICAT — Alibaba & B2B Catalog</a></li>\n',
         '            <li><a href="/apostboost/"><i class="fa-solid fa-stamp"></i> APOSTBOOST — Apostille & Notarization</a></li>\n',
     ]
