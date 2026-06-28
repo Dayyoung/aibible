@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BibleForAI - TIKSHOP | TikTok Shop Seller Setup</title>
+  <meta name="description" content="TIKSHOP helps brands and corporate sellers register TikTok Shop accounts, complete approval workflows, and prepare payout setup for US and Southeast Asia markets.">
+  <meta name="keywords" content="TikTok Shop setup, TikTok Shop seller registration, cross-border seller onboarding, US domestic seller, KR-US cross-border, KR-SEA cross-border">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bibleforai.com/tikshop/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bibleforai.com/tikshop/">
+  <meta property="og:title" content="BibleForAI - TIKSHOP | TikTok Shop Seller Setup">
+  <meta property="og:description" content="Register TikTok Shop accounts, prepare approval workflow, and launch with payout guidance for US and SEA markets.">
+  <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+  <meta property="og:site_name" content="BibleForAI TIKSHOP">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ko_KR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://bibleforai.com/tikshop/">
+  <meta name="twitter:title" content="BibleForAI - TIKSHOP | TikTok Shop Seller Setup">
+  <meta name="twitter:description" content="Register TikTok Shop accounts, prepare approval workflow, and launch with payout guidance for US and SEA markets.">
+  <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What should I prepare before starting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Prepare your email, company name, brand name, and any existing marketplace references such as Amazon, Shopify, Shopee, or Lazada."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which markets are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The packages cover US domestic, KR-US cross-border, and KR-SEA cross-border launch paths with Southeast Asia guidance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is the work delivered?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You receive email updates, setup notes, and a payment completion receipt that is mirrored into Google Forms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this a one-time service?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. It is a launch and registration service, with setup guidance and handoff support included per package scope."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "BibleForAI TIKSHOP",
+    "image": "https://bibleforai.com/assets/og-preview.png",
+    "description": "TikTok Shop seller registration and approval guidance for US and Southeast Asia markets with payout setup and handoff notes.",
+    "brand": { "@type": "Brand", "name": "BibleForAI" },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "USD",
+      "lowPrice": "6286",
+      "highPrice": "14143",
+      "offerCount": "3"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+</head>
+<body>
+  <header id="app-header">
+    <div class="header-container">
+      <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+
+      <a href="/" class="logo-group">
+        <span class="logo-title">BibleForAI</span>
+        <span class="logo-subtitle" data-i18n="logo-subtitle">TikTok Shop Setup!</span>
+      </a>
+
+      <nav class="desktop-nav">
+        <ul class="nav-links">
+          <li><a href="#overview" onclick="navigate('overview'); return false;" class="active" data-i18n="nav-overview">Overview</a></li>
+          <li><a href="#packages" onclick="navigate('packages'); return false;" data-i18n="nav-packages">Packages</a></li>
+          <li><a href="#faq" onclick="navigate('faq'); return false;" data-i18n="nav-faq">FAQ</a></li>
+          <li><a href="#orders" onclick="navigate('orders'); return false;" data-i18n="nav-orders">Orders</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn-orders" onclick="navigate('orders')">
+          <i class="fa-solid fa-receipt"></i> <span class="btn-text" data-i18n="btn-orders">My Orders</span>
+        </button>
+        <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)" style="margin-left: 0.75rem; padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #ffffff; font-size: 0.82rem; font-weight: 500; cursor: pointer; outline: none; transition: var(--transition);">
+          <option value="en">🌐 English</option>
+          <option value="ko">🇰🇷 한국어</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobile-drawer">
+    <ul class="mobile-nav-links unified-service-menu">
+      <li class="mobile-menu-heading">Marketing & Commerce</li>
+      <li><a href="/tikshop/"><i class="fa-brands fa-tiktok"></i> TIKSHOP — TikTok Shop Setup</a></li>
+      <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> SMM Growth Booster</a></li>
+      <li><a href="/prboost/"><i class="fa-solid fa-globe"></i> PRBOOST — Global PR</a></li>
+      <li><a href="/amzboost/"><i class="fa-solid fa-store"></i> AMZBOOST — Amazon FBA PPC</a></li>
+      <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> MAILBOOST — Email Marketing</a></li>
+      <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — AI SEO</a></li>
+      <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST — Market Research</a></li>
+      <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> CONTENTBOOST — AI Publishing</a></li>
+      <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> SHOPBOOST — E-Commerce Entry</a></li>
+      <li><a href="/buyerboost/"><i class="fa-solid fa-handshake"></i> BUYERBOOST — Buyer Discovery</a></li>
+      <li><a href="/salesboost/"><i class="fa-solid fa-receipt"></i> SALESBOOST — Sales Enablement</a></li>
+      <li class="mobile-menu-heading">Design & Dev</li>
+      <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI Landing Page</a></li>
+      <li><a href="/opencode/"><i class="fa-solid fa-code"></i> OpenCode AI</a></li>
+      <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> FLOWBOOST — Workflow Automation</a></li>
+      <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST — Product Photography</a></li>
+      <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST — AI Presentations</a></li>
+      <li><a href="/aideploy/"><i class="fa-solid fa-cloud-arrow-up"></i> AIDEPLOY</a></li>
+      <li><a href="/autoboost/"><i class="fa-solid fa-arrows-rotate"></i> AUTOBOOST</a></li>
+      <li><a href="/webcreate/"><i class="fa-solid fa-globe"></i> WEBCREATE</a></li>
+      <li><a href="/aiweb/"><i class="fa-solid fa-globe"></i> AIWEB</a></li>
+      <li><a href="/sysboost/"><i class="fa-solid fa-network-wired"></i> SYSBOOST</a></li>
+      <li class="mobile-menu-heading">Strategy & Services</li>
+      <li><a href="/b2bdb/"><i class="fa-solid fa-building-user"></i> B2B Core Database</a></li>
+      <li><a href="/b2cdb/"><i class="fa-solid fa-database"></i> B2C Lead Database</a></li>
+      <li><a href="/databoost/"><i class="fa-solid fa-spider"></i> DATABOOST — Web Scraping</a></li>
+      <li><a href="/globalup/"><i class="fa-solid fa-user-tie"></i> GLOBALUP — Global Recruiting</a></li>
+      <li><a href="/rfpboost/"><i class="fa-solid fa-file-signature"></i> RFPBOOST — Proposal Writing</a></li>
+      <li><a href="/eventboost/"><i class="fa-solid fa-microphone-lines"></i> EVENTBOOST — Global Event MC</a></li>
+      <li><a href="/medboost/"><i class="fa-solid fa-stethoscope"></i> MEDBOOST — Clinical Translation</a></li>
+      <li><a href="/transboost/"><i class="fa-solid fa-language"></i> TRANSBOOST — Translation</a></li>
+      <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> VOICEBOOST — AI Voice</a></li>
+      <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST — AI Chatbot</a></li>
+      <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST — Data Analytics</a></li>
+      <li><a href="/researchboost/"><i class="fa-solid fa-chart-line"></i> RESEARCHBOOST — Market Research</a></li>
+      <li><a href="/alicat/"><i class="fa-solid fa-box-open"></i> ALICAT — Alibaba & B2B Catalog</a></li>
+      <li><a href="/apostboost/"><i class="fa-solid fa-stamp"></i> APOSTBOOST — Apostille & Notarization</a></li>
+      <li><a href="/ipboost/"><i class="fa-solid fa-shield-halved"></i> IPBOOST — IP Strategy</a></li>
+      <li><a href="/ustaxboost/"><i class="fa-solid fa-file-invoice-dollar"></i> USTAXBOOST</a></li>
+      <li><a href="/ustax/"><i class="fa-solid fa-file-invoice-dollar"></i> USTAX</a></li>
+      <li><a href="/repboost/"><i class="fa-solid fa-comments"></i> REPBOOST</a></li>
+      <li><a href="/loyaltyboost/"><i class="fa-solid fa-gift"></i> LOYALTYBOOST</a></li>
+      <li><a href="/bookboost/"><i class="fa-solid fa-calendar-check"></i> BOOKBOOST</a></li>
+      <li><a href="/sourcboost/"><i class="fa-solid fa-file-shield"></i> SOURCBOOST</a></li>
+      <li><a href="/mapboost/"><i class="fa-solid fa-map-location-dot"></i> MAPBOOST</a></li>
+      <li><a href="/certboost/"><i class="fa-solid fa-certificate"></i> CERTBOOST</a></li>
+      <li><a href="/hrboost/"><i class="fa-solid fa-user-tie"></i> HRBOOST</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <section id="overview" class="view-section active">
+      <div class="hero">
+        <div class="badge" data-i18n="hero-badge">Cross-Border Commerce</div>
+        <h1 class="hero-title" data-i18n="hero-title">TIKSHOP — TikTok Shop Seller Setup</h1>
+        <p class="hero-desc" data-i18n="hero-desc">Get TikTok Shop seller registration, approval workflow, payout setup, and launch guidance for US and Southeast Asia markets.</p>
+        <div class="hero-actions">
+          <a href="#packages" class="btn-primary" onclick="navigate('packages'); return false;" data-i18n="hero-cta">See Packages <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#faq" class="btn-secondary" onclick="navigate('faq'); return false;" data-i18n="hero-secondary">Read FAQ</a>
+        </div>
+      </div>
+
+      <div class="stats-bar">
+        <div class="stat-item"><span class="stat-num" data-i18n="stat-one-num">45-75d</span><span class="stat-label" data-i18n="stat-one-label">Timeline range</span></div>
+        <div class="stat-item"><span class="stat-num" data-i18n="stat-two-num">US / SEA</span><span class="stat-label" data-i18n="stat-two-label">Global markets</span></div>
+        <div class="stat-item"><span class="stat-num" data-i18n="stat-three-num">Cross-border</span><span class="stat-label" data-i18n="stat-three-label">Launch support</span></div>
+      </div>
+    </section>
+
+    <section id="packages" class="section-container">
+      <div class="section-heading">
+        <h2 class="section-title" data-i18n="section-packages-title">TikTok Shop Launch Packages</h2>
+        <p class="section-subtitle" data-i18n="section-packages-sub">Choose the level of seller onboarding you need for your brand or corporation.</p>
+      </div>
+      <div class="packages-grid" id="tiktokshop-packages"></div>
+    </section>
+
+    <section id="faq" class="section-container compliance-bg">
+      <div class="section-heading">
+        <h2 class="faq-title" data-i18n="faq-title">Frequently Asked Questions</h2>
+        <p class="faq-subtitle" data-i18n="faq-sub">Practical answers for TikTok Shop registration and launch planning.</p>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item open">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>01</span><span data-i18n="faq-q1">What should I prepare before starting?</span><i class="fa-solid fa-chevron-down"></i></button>
+          <div class="faq-a" data-i18n="faq-a1">Prepare your email, company name, brand name, and any existing marketplace references such as Amazon, Shopify, Shopee, or Lazada.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>02</span><span data-i18n="faq-q2">Which markets are supported?</span><i class="fa-solid fa-chevron-down"></i></button>
+          <div class="faq-a" data-i18n="faq-a2">The packages cover US domestic, KR-US cross-border, and KR-SEA cross-border launch paths with Southeast Asia guidance.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>03</span><span data-i18n="faq-q3">How is the work delivered?</span><i class="fa-solid fa-chevron-down"></i></button>
+          <div class="faq-a" data-i18n="faq-a3">You receive email updates, setup notes, and a payment completion receipt that is mirrored into Google Forms.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>04</span><span data-i18n="faq-q4">Is this a one-time service?</span><i class="fa-solid fa-chevron-down"></i></button>
+          <div class="faq-a" data-i18n="faq-a4">Yes. It is a launch and registration service, with setup guidance and handoff support included per package scope.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="orders" class="section-container">
+      <div class="section-heading">
+        <h2 class="orders-title" data-i18n="orders-title">My Purchase History</h2>
+        <p class="orders-subtitle" data-i18n="orders-sub">Successful orders are stored locally in your browser workspace.</p>
+      </div>
+      <div class="orders-table-wrap">
+        <table class="orders-table">
+          <thead>
+            <tr>
+              <th data-i18n="th-date">Order Date</th>
+              <th data-i18n="th-order-id">Transaction ID</th>
+              <th data-i18n="th-product">Product</th>
+              <th data-i18n="th-tier">Package Tier</th>
+              <th data-i18n="th-market">Market Type</th>
+              <th data-i18n="th-company">Company / Brand</th>
+              <th data-i18n="th-qty">Quantity</th>
+              <th data-i18n="th-total">Total Paid</th>
+              <th data-i18n="th-status">Status</th>
+            </tr>
+          </thead>
+          <tbody id="orders-tbody"></tbody>
+        </table>
+      </div>
+      <div class="no-orders" id="no-orders-msg" data-i18n="no-orders-msg">No purchase records yet. Tap a package to start your first order.</div>
+    </section>
+
+    <div class="footer">
+      <p data-i18n="foot-note">TIKSHOP helps brands move from planning to a working TikTok Shop account with less friction.</p>
+      <div class="footer-links">
+        <a href="/tikshop/">TIKSHOP</a>
+        <a href="/prboost/">PRBOOST</a>
+        <a href="/amzboost/">AMZBOOST</a>
+        <a href="/shopboost/">SHOPBOOST</a>
+      </div>
+      <p data-i18n="foot-contact">Contact support: snsherocom@gmail.com</p>
+      <p data-i18n="foot-copy">&copy; 2026 BibleForAI TIKSHOP. All rights reserved.</p>
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="purchase-modal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <h2 class="modal-title" id="modal-product-title" data-i18n="modal-title">Configure Order</h2>
+          <p class="modal-desc" data-i18n="modal-desc">Confirm your package and complete the secure PayPal checkout.</p>
+        </div>
+        <button class="modal-close" onclick="closeModal()" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="modal-grid">
+        <div class="modal-panel">
+          <div class="modal-meta">
+            <div class="meta-row"><span data-i18n="modal-base-pkg">Base Package:</span> <strong id="modal-package-name">—</strong></div>
+            <div class="meta-row"><span data-i18n="modal-base-price-label">Base Price:</span> <strong id="modal-base-price">$0 USD</strong></div>
+          </div>
+
+          <div class="form-grid" style="margin-top: 0.8rem;">
+            <div class="field">
+              <label for="order-email" data-i18n="modal-email-label">Email Address *</label>
+              <input id="order-email" type="email" data-i18n-placeholder="modal-email-placeholder" placeholder="name@example.com">
+              <small>Used for the receipt and purchase confirmation.</small>
+              <div class="email-error" id="email-error"></div>
+            </div>
+
+            <div class="field">
+              <label for="order-market" data-i18n="modal-market-label">Market Type *</label>
+              <select id="order-market">
+                <option value="">Select a market</option>
+                <option value="US Domestic">US Domestic</option>
+                <option value="KR-US Cross-Border">KR-US Cross-Border</option>
+                <option value="KR-SEA Cross-Border">KR-SEA Cross-Border</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="order-company" data-i18n="modal-company-label">Company / Brand *</label>
+              <input id="order-company" type="text" data-i18n-placeholder="modal-company-placeholder" placeholder="Your brand name">
+            </div>
+
+            <div class="field">
+              <label for="order-ref" data-i18n="modal-ref-label">Reference Channels *</label>
+              <textarea id="order-ref" data-i18n-placeholder="modal-ref-placeholder" placeholder="Amazon, Shopify, Shopee, Lazada..."></textarea>
+              <small>Share existing channels, stores, or performance references to speed up review.</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-panel">
+          <div class="field">
+            <label data-i18n="modal-qty">Quantity:</label>
+            <div class="qty-row">
+              <button class="qty-btn" onclick="adjustQty(-1)">−</button>
+              <input id="order-quantity" class="qty-input" type="number" value="1" min="1" readonly>
+              <button class="qty-btn" onclick="adjustQty(1)">+</button>
+            </div>
+          </div>
+
+          <div class="total-price-box">
+            <div class="total-price-label" data-i18n="modal-total-amt">Total Amount:</div>
+            <span id="modal-total-price" class="total-price-clickable" role="button" tabindex="0" onclick="triggerTestCheckout()">$0 USD</span>
+            <div class="total-price-note" data-i18n="modal-test-hint">Click the total price to run a sandbox test checkout</div>
+          </div>
+
+          <div class="badges-row">
+            <span class="payment-badge"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="badge-ssl">SSL Secured Checkout</span></span>
+            <span class="payment-badge"><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal Verified</span></span>
+          </div>
+
+          <div id="paypal-button-container"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
