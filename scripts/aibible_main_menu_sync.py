@@ -16,6 +16,7 @@ CATALOG = [
     {'id': 'pr', 'cat': 'marketing', 'link': '/prboost/', 'icon': 'fa-solid fa-globe', 'popularity': 82},
     {'id': 'app', 'cat': 'marketing', 'link': '/appboost/', 'icon': 'fa-solid fa-mobile-screen-button', 'popularity': 83},
     {'id': 'ustax', 'cat': 'strategy', 'link': '/ustaxboost/', 'icon': 'fa-solid fa-file-invoice-dollar', 'popularity': 81},
+    {'id': 'ustax2', 'cat': 'strategy', 'link': '/ustax/', 'icon': 'fa-solid fa-file-invoice-dollar', 'popularity': 80},
     {'id': 'clip', 'cat': 'media', 'link': '/clipboost/', 'icon': 'fa-solid fa-clapperboard', 'popularity': 85},
     {'id': 'mail', 'cat': 'marketing', 'link': '/mailboost/', 'icon': 'fa-solid fa-envelope', 'popularity': 80},
     {'id': 'chat', 'cat': 'strategy', 'link': '/chatboost/', 'icon': 'fa-solid fa-robot', 'popularity': 87},
@@ -100,7 +101,7 @@ def validate_translations():
 
 def audit_catalog_dirs():
     catalog_dirs = {item['link'].strip('/').split('/')[0] for item in CATALOG}
-    ignored = {'bible', '_salesboost_tmp_src', 'ustaxboost'}
+    ignored = {'bible', '_salesboost_tmp_src'}
     service_dirs = {
         p.parent.name for p in ROOT.glob('*/index.html')
         if p.parent.name not in {'kr'} and p.parent.name not in ignored
@@ -115,6 +116,7 @@ def patch_all_service_pages():
         '            <li><a href="/repboost/"><i class="fa-solid fa-circle"></i> REPBOOST</a></li>\n',
         '            <li><a href="/sysboost/"><i class="fa-solid fa-circle"></i> SYSBOOST</a></li>\n',
         '            <li><a href="/ustaxboost/"><i class="fa-solid fa-circle"></i> USTAXBOOST</a></li>\n',
+        '            <li><a href="/ustax/"><i class="fa-solid fa-circle"></i> USTAX</a></li>\n',
         '            <li><a href="/aideploy/"><i class="fa-solid fa-circle"></i> AIDEPLOY</a></li>\n',
         '            <li><a href="/autoboost/"><i class="fa-solid fa-circle"></i> AUTOBOOST</a></li>\n',
         '            <li><a href="/webcreate/"><i class="fa-solid fa-circle"></i> WEBCREATE</a></li>\n',
