@@ -24,6 +24,7 @@ CATALOG = [
     {'id': 'app', 'cat': 'marketing', 'link': '/appboost/', 'icon': 'fa-solid fa-mobile-screen-button', 'popularity': 83},
     {'id': 'ustax', 'cat': 'strategy', 'link': '/ustaxboost/', 'icon': 'fa-solid fa-file-invoice-dollar', 'popularity': 81},
     {'id': 'ustax2', 'cat': 'strategy', 'link': '/ustax/', 'icon': 'fa-solid fa-file-invoice-dollar', 'popularity': 80},
+    {'id': 'usllc', 'cat': 'strategy', 'link': '/usllc/', 'icon': 'fa-solid fa-building-circle-check', 'popularity': 90},
     {'id': 'clip', 'cat': 'media', 'link': '/clipboost/', 'icon': 'fa-solid fa-clapperboard', 'popularity': 85},
     {'id': 'mail', 'cat': 'marketing', 'link': '/mailboost/', 'icon': 'fa-solid fa-envelope', 'popularity': 80},
     {'id': 'chat', 'cat': 'strategy', 'link': '/chatboost/', 'icon': 'fa-solid fa-robot', 'popularity': 87},
@@ -154,6 +155,7 @@ def audit_catalog_dirs():
 def patch_all_service_pages():
     new_items = [
         '            <li><a href="/tikshop/"><i class="fa-brands fa-tiktok"></i> TIKSHOP — TikTok Shop Setup</a></li>\n',
+        '            <li><a href="/usllc/"><i class="fa-solid fa-building-circle-check"></i> USLLC — US LLC Formation & EIN</a></li>\n',
         '            <li><a href="/repboost/"><i class="fa-solid fa-circle"></i> REPBOOST</a></li>\n',
         '            <li><a href="/sysboost/"><i class="fa-solid fa-circle"></i> SYSBOOST</a></li>\n',
         '            <li><a href="/ustaxboost/"><i class="fa-solid fa-circle"></i> USTAXBOOST</a></li>\n',

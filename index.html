@@ -110,6 +110,15 @@
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
+                  "name": "USLLC — US LLC Formation & EIN",
+                  "url": "https://bibleforai.com/usllc/",
+                  "description": "US LLC formation, EIN support, and founder-friendly US market entry setup for international businesses."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
                   "name": "AI Landing Page Creator",
                   "url": "https://bibleforai.com/landPage/",
                   "description": "Instant high-converting promotional landing pages tailored by AI for business services."
@@ -925,6 +934,15 @@
             box-shadow: 0 15px 35px rgba(16, 185, 129, 0.12), 0 0 15px rgba(16, 185, 129, 0.1);
         }
 
+        .card-active-usllc {
+            border-color: rgba(20, 184, 166, 0.15);
+        }
+        .card-active-usllc:hover {
+            transform: translateY(-8px);
+            border-color: #14b8a6;
+            box-shadow: 0 15px 35px rgba(20, 184, 166, 0.12), 0 0 15px rgba(20, 184, 166, 0.1);
+        }
+
         .card-active-opencode {
             border-color: rgba(16, 185, 129, 0.15);
         }
@@ -1164,6 +1182,12 @@
             color: #10b981;
             background: rgba(16, 185, 129, 0.06);
             border-color: rgba(16, 185, 129, 0.15);
+        }
+
+        .icon-usllc {
+            color: #14b8a6;
+            background: rgba(20, 184, 166, 0.06);
+            border-color: rgba(20, 184, 166, 0.15);
         }
 
         .icon-opencode {
@@ -1510,6 +1534,17 @@
         .btn-ustax:hover {
             background: #059669;
             box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+        }
+
+        .btn-usllc {
+            background: #14b8a6;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(20, 184, 166, 0.2);
+        }
+        .btn-usllc:hover {
+            background: #0f766e;
+            box-shadow: 0 8px 25px rgba(20, 184, 166, 0.35);
         }
 
         .btn-opencode {
@@ -2181,6 +2216,7 @@
             <a href="/insightboost/" class="sidebar-link"><i class="fa-solid fa-chart-bar"></i> <span id="side-title-insight">AI Data Analytics</span></a>
             <a href="/ustaxboost/" class="sidebar-link"><i class="fa-solid fa-file-invoice-dollar"></i> <span id="side-title-ustax">US Tax Advisory</span></a>
             <a href="/ustax/" class="sidebar-link"><i class="fa-solid fa-file-invoice-dollar"></i> <span id="side-title-ustax2">USTAX US Tax Advisory</span></a>
+            <a href="/usllc/" class="sidebar-link"><i class="fa-solid fa-building-circle-check"></i> <span id="side-title-usllc">US LLC Formation & EIN</span></a>
             <a href="/chatboost/" class="sidebar-link"><i class="fa-solid fa-robot"></i> <span id="side-title-chat">AI Chatbot</span></a>
             <a href="/buyerboost/" class="sidebar-link"><i class="fa-solid fa-handshake"></i> <span id="side-title-buyer">Global Buyer Discovery</span></a>
             <a href="/lawboost/" class="sidebar-link"><i class="fa-solid fa-scale-balanced"></i> <span id="side-title-law">Global Legal Advisory</span></a>
@@ -2442,6 +2478,10 @@
                 "ustax-desc": "US entity setup guidance, tax filing support, and cross-border financial operations for global founders.",
                 "ustax-btn": "Launch Tax Advisory",
 
+                "usllc-title": "USLLC — US LLC Formation & EIN",
+                "usllc-desc": "US LLC formation, EIN support, and founder-friendly US market entry setup for international businesses.",
+                "usllc-btn": "Launch US LLC Service",
+
                 "ustax2-title": "USTAX — US Tax & Incorporation Advisory",
                 "ustax2-desc": "US entity setup guidance, tax filing support, and cross-border financial operations for global founders.",
                 "ustax2-btn": "Launch Tax Advisory",
@@ -2665,6 +2705,10 @@
                 "ustax-desc": "미국 법인설립 가이드, 세금 신고 지원, 크로스보더 재무 운영을 위한 실무 자문 서비스입니다.",
                 "ustax-btn": "세무 자문 서비스 바로가기",
 
+                "usllc-title": "USLLC — 미국 LLC 설립 & EIN 발급",
+                "usllc-desc": "미국 LLC 설립, EIN 지원, 그리고 해외 창업자를 위한 미국 시장 진입 세팅을 제공합니다.",
+                "usllc-btn": "USLLC 서비스 바로가기",
+
                 "ustax2-title": "USTAX — 미국 세무 & 법인설립 자문",
                 "ustax2-desc": "미국 법인설립 가이드, 세금 신고 지원, 크로스보더 재무 운영을 위한 실무 자문 서비스입니다.",
                 "ustax2-btn": "세무 자문 서비스 바로가기",
@@ -2809,14 +2853,15 @@
             { id: 'webcreate', category: 'design-dev', link: '/webcreate/', icon: 'fa-solid fa-globe', cardClass: 'card-active-webcreate', btnClass: 'btn-webcreate', iconBoxClass: 'icon-webcreate', popularity: 84, addedAt: 1782537153 },
             { id: 'pr', category: 'marketing', link: '/prboost/', icon: 'fa-solid fa-globe', cardClass: 'card-active-pr', btnClass: 'btn-pr', iconBoxClass: 'icon-pr', popularity: 82, addedAt: 1782461105 },
             { id: 'amzboost', category: 'marketing', link: '/amzboost/', icon: 'fa-solid fa-store', cardClass: 'card-active-amzboost', btnClass: 'btn-amzboost', iconBoxClass: 'icon-amzboost', popularity: 88, addedAt: 1782634998 },
-            { id: 'tikshop', category: 'marketing', link: '/tikshop/', icon: 'fa-brands fa-tiktok', cardClass: 'card-active-tikshop', btnClass: 'btn-tikshop', iconBoxClass: 'icon-tikshop', popularity: 89, addedAt: 1782637873 },
+            { id: 'tikshop', category: 'marketing', link: '/tikshop/', icon: 'fa-brands fa-tiktok', cardClass: 'card-active-tikshop', btnClass: 'btn-tikshop', iconBoxClass: 'icon-tikshop', popularity: 89, addedAt: 1782638348 },
             { id: 'rfp', category: 'strategy', link: '/rfpboost/', icon: 'fa-solid fa-file-signature', cardClass: 'card-active-rfp', btnClass: 'btn-rfp', iconBoxClass: 'icon-rfp', popularity: 84, addedAt: 1782627449 },
-            { id: 'globalup', category: 'strategy', link: '/globalup/', icon: 'fa-solid fa-user-tie', cardClass: 'card-active-globalup', btnClass: 'btn-globalup', iconBoxClass: 'icon-globalup', popularity: 81, addedAt: 1782637874 },
-            { id: 'eventboost', category: 'strategy', link: '/eventboost/', icon: 'fa-solid fa-microphone-lines', cardClass: 'card-active-eventboost', btnClass: 'btn-eventboost', iconBoxClass: 'icon-eventboost', popularity: 82, addedAt: 1782637874 },
+            { id: 'globalup', category: 'strategy', link: '/globalup/', icon: 'fa-solid fa-user-tie', cardClass: 'card-active-globalup', btnClass: 'btn-globalup', iconBoxClass: 'icon-globalup', popularity: 81, addedAt: 1782641496 },
+            { id: 'eventboost', category: 'strategy', link: '/eventboost/', icon: 'fa-solid fa-microphone-lines', cardClass: 'card-active-eventboost', btnClass: 'btn-eventboost', iconBoxClass: 'icon-eventboost', popularity: 82, addedAt: 1782641496 },
             { id: 'alicat', category: 'marketing', link: '/alicat/', icon: 'fa-solid fa-box-open', cardClass: 'card-active-alicat', btnClass: 'btn-alicat', iconBoxClass: 'icon-alicat', popularity: 83, addedAt: 1782617466 },
             { id: 'app', category: 'marketing', link: '/appboost/', icon: 'fa-solid fa-mobile-screen-button', cardClass: 'card-active-app', btnClass: 'btn-app', iconBoxClass: 'icon-app', popularity: 83, addedAt: 1782609992 },
             { id: 'ustax', category: 'strategy', link: '/ustaxboost/', icon: 'fa-solid fa-file-invoice-dollar', cardClass: 'card-active-ustax', btnClass: 'btn-ustax', iconBoxClass: 'icon-ustax', popularity: 81, addedAt: 1782606020 },
             { id: 'ustax2', category: 'strategy', link: '/ustax/', icon: 'fa-solid fa-file-invoice-dollar', cardClass: 'card-active-ustax2', btnClass: 'btn-ustax2', iconBoxClass: 'icon-ustax2', popularity: 80, addedAt: 1782610434 },
+            { id: 'usllc', category: 'strategy', link: '/usllc/', icon: 'fa-solid fa-building-circle-check', cardClass: 'card-active-usllc', btnClass: 'btn-usllc', iconBoxClass: 'icon-usllc', popularity: 90, addedAt: 1782641495 },
             { id: 'clip', category: 'media', link: '/clipboost/', icon: 'fa-solid fa-clapperboard', cardClass: 'card-active-clip', btnClass: 'btn-clip', iconBoxClass: 'icon-clip', popularity: 85, addedAt: 1782465454 },
             { id: 'mail', category: 'marketing', link: '/mailboost/', icon: 'fa-solid fa-envelope', cardClass: 'card-active-mail', btnClass: 'btn-mail', iconBoxClass: 'icon-mail', popularity: 80, addedAt: 1782468649 },
             { id: 'chat', category: 'strategy', link: '/chatboost/', icon: 'fa-solid fa-robot', cardClass: 'card-active-chat', btnClass: 'btn-chat', iconBoxClass: 'icon-chat', popularity: 87, addedAt: 1782472204 },
