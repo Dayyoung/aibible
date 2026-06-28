@@ -1579,7 +1579,7 @@ const translations = {
         "modal-refurl-error": "Please enter a valid URL.",
         "modal-pages-count": "Pages Count:",
         "modal-total-amt": "Total Amount:",
-        "modal-test-btn": "Run Sandbox Test Checkout",
+        "modal-test-btn": "Click price to test checkout",
         "badge-ssl": "SSL Secured Checkout",
         "badge-paypal": "PayPal Verified",
 
@@ -1672,7 +1672,7 @@ const translations = {
         "modal-refurl-error": "올바른 URL 주소 형식(http/https 포함)을 입력해 주세요.",
         "modal-pages-count": "페이지 개수:",
         "modal-total-amt": "총 결제금액:",
-        "modal-test-btn": "샌드박스 테스트 결제 진행",
+        "modal-test-btn": "가격 텍스트를 눌러 테스트 결제",
         "badge-ssl": "SSL 보안 결제 완료",
         "badge-paypal": "PayPal 공식 연동됨",
 
@@ -2095,7 +2095,7 @@ function renderPayPalButtons() {
 
 // Sandbox Test trigger
 function triggerTestCheckout() {
-    // Developer sandbox: auto-fill mock email if field is empty
+    // Auto-fill mock email if field is empty
     const emailInput = document.getElementById('order-email');
     if (emailInput && !emailInput.value.trim()) {
         emailInput.value = 'sandbox@test.dev';

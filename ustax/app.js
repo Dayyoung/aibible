@@ -76,7 +76,7 @@ const faqData = [
     question_en: 'Is the checkout secure?',
     answer_en: 'Yes. Checkout uses PayPal with SSL-secured handling and a sandbox test checkout button for QA.',
     question_ko: '결제는 안전한가요?',
-    answer_ko: '네. PayPal과 SSL 보안 결제를 사용하며 QA용 샌드박스 테스트 결제 버튼도 제공합니다.'
+    answer_ko: '네. PayPal과 SSL 보안 결제를 사용하며 QA용 가격 텍스트를 눌러 테스트 결제 버튼도 제공합니다.'
   }
 ];
 
@@ -122,7 +122,7 @@ const translations = {
     'modal-jurisdiction-label': 'Tax Jurisdiction:',
     'modal-qty': 'Quantity:',
     'modal-total-amt': 'Total Amount:',
-    'modal-test-btn': 'Sandbox Test Checkout',
+    'modal-test-btn': 'Click price to test checkout',
     'badge-ssl': 'SSL Secured Checkout',
     'badge-paypal': 'PayPal Verified',
     'featured-badge': 'Best Seller',
@@ -186,7 +186,7 @@ const translations = {
     'modal-jurisdiction-label': '세무 관할:',
     'modal-qty': '수량:',
     'modal-total-amt': '총 결제금액:',
-    'modal-test-btn': '샌드박스 테스트 결제',
+    'modal-test-btn': '가격 텍스트를 눌러 테스트 결제',
     'badge-ssl': 'SSL 보안 결제',
     'badge-paypal': 'PayPal 인증됨',
     'featured-badge': '베스트셀러',

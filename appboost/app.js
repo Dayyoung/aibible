@@ -105,7 +105,7 @@ const translations = {
         "modal-keywords-placeholder": "e.g. app marketing, ASO, install growth",
         "modal-qty": "Quantity:",
         "modal-total-amt": "Total Amount:",
-        "modal-test-btn": "Run Sandbox Test Checkout",
+        "modal-test-btn": "Click price to test checkout",
         
         "badge-ssl": "SSL Secured Checkout",
         "badge-paypal": "PayPal Verified",
@@ -209,7 +209,7 @@ const translations = {
         "modal-keywords-placeholder": "예: 앱 마케팅, ASO, 설치 증가",
         "modal-qty": "수량:",
         "modal-total-amt": "총 결제금액:",
-        "modal-test-btn": "샌드박스 테스트 결제 진행",
+        "modal-test-btn": "가격 텍스트를 눌러 테스트 결제",
         
         "badge-ssl": "SSL 보안 결제 지원",
         "badge-paypal": "PayPal 인증됨",
@@ -564,9 +564,9 @@ function validateEmailField() {
     }
 }
 
-// Sandbox Test Checkout Trigger
+// Click price to test checkout Trigger
 function triggerTestCheckout() {
-    // Developer sandbox: auto-fill mock email if field is empty
+    // Auto-fill mock email if field is empty
     const emailInput = document.getElementById('order-email');
     const appUrlInput = document.getElementById('order-app-url');
     if (emailInput && !emailInput.value.trim()) {

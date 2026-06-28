@@ -439,14 +439,11 @@
 
                             <div class="total-price-box">
                                 <span data-i18n="modal-total-amt">Total Amount:</span>
-                                <span class="modal-price-total" id="modal-total-price"></span>
+                                <span class="modal-price-total" id="modal-total-price" onclick="triggerTestCheckout()" style="cursor: pointer; user-select: none;" title="Click to test checkout"></span>
                             </div>
 
                             <div class="payment-area">
-                                <button id="paypal-test-button" class="test-button" onclick="triggerTestCheckout()">
-                                    <i class="fa-solid fa-flask"></i> <span data-i18n="modal-test-btn">Run Sandbox Test Checkout</span>
-                                </button>
-                                <div id="paypal-button-container"></div>
+<div id="paypal-button-container"></div>
                             </div>
                         </div>
                     </div>

@@ -443,14 +443,11 @@
 
                             <div class="total-price-box">
                                 <span>총 결제금액:</span>
-                                <span class="modal-price-total" id="modal-total-price"></span>
+                                <span class="modal-price-total" id="modal-total-price" onclick="triggerTestCheckout()" style="cursor: pointer; user-select: none;" title="Click to test checkout"></span>
                             </div>
 
                             <div class="payment-area">
-                                <button id="paypal-test-button" class="test-button" onclick="triggerTestCheckout()">
-                                    <i class="fa-solid fa-flask"></i> <span>샌드박스 테스트 결제 진행</span>
-                                </button>
-                                <div id="paypal-button-container"></div>
+<div id="paypal-button-container"></div>
                             </div>
                         </div>
                     </div>

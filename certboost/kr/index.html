@@ -180,6 +180,7 @@
             <li><a href="/webcreate/"><i class="fa-solid fa-circle"></i> WEBCREATE</a></li>
             <li><a href="/ustaxboost/"><i class="fa-solid fa-circle"></i> USTAXBOOST</a></li>
             <li><a href="/apostboost/"><i class="fa-solid fa-stamp"></i> APOSTBOOST — Apostille & Notarization</a></li>
+            <li><a href="/alicat/"><i class="fa-solid fa-box-open"></i> ALICAT — Alibaba & B2B Catalog</a></li>
 </ul>
     </div>
 
@@ -396,11 +397,9 @@
                 </div>
                 <div class="total-price-box">
                     <span data-i18n="modal-total-amt">총 결제금액:</span>
-                    <span class="price-highlight" id="modal-total-price"></span>
+                    <span class="price-highlight" id="modal-total-price" onclick="triggerTestCheckout()" style="cursor: pointer; user-select: none;" title="Click to test checkout"></span>
                 </div>
-
-                <button class="btn-test" id="paypal-test-button" onclick="triggerTestCheckout()" data-i18n="modal-test-btn">샌드박스 테스트 결제 진행</button>
-                <div id="paypal-button-container"></div>
+<div id="paypal-button-container"></div>
 
                 <div class="trust-row">
                     <span class="badge-ssl" data-i18n="badge-ssl">SSL 보안 결제 지원</span>
