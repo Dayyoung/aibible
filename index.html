@@ -844,6 +844,15 @@
             box-shadow: 0 15px 35px rgba(6, 182, 212, 0.12), 0 0 15px rgba(6, 182, 212, 0.1);
         }
 
+        .card-active-ustax {
+            border-color: rgba(16, 185, 129, 0.15);
+        }
+        .card-active-ustax:hover {
+            transform: translateY(-8px);
+            border-color: #10b981;
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.12), 0 0 15px rgba(16, 185, 129, 0.1);
+        }
+
         .card-active-opencode {
             border-color: rgba(16, 185, 129, 0.15);
         }
@@ -1047,6 +1056,12 @@
             color: #06b6d4;
             background: rgba(6, 182, 212, 0.06);
             border-color: rgba(6, 182, 212, 0.15);
+        }
+
+        .icon-ustax {
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.06);
+            border-color: rgba(16, 185, 129, 0.15);
         }
 
         .icon-opencode {
@@ -1338,6 +1353,17 @@
         .btn-insight:hover {
             background: #0891b2;
             box-shadow: 0 8px 25px rgba(6, 182, 212, 0.35);
+        }
+
+        .btn-ustax {
+            background: #10b981;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+        }
+        .btn-ustax:hover {
+            background: #059669;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
         }
 
         .btn-opencode {
@@ -1990,6 +2016,7 @@
             <span class="sidebar-category-title" id="side-cat-strategy">Strategy & Analytics</span>
             <a href="/aiboost/" class="sidebar-link"><i class="fa-solid fa-brain"></i> <span id="side-title-ai">AI Consulting</span></a>
             <a href="/insightboost/" class="sidebar-link"><i class="fa-solid fa-chart-bar"></i> <span id="side-title-insight">AI Data Analytics</span></a>
+            <a href="/ustaxboost/" class="sidebar-link"><i class="fa-solid fa-file-invoice-dollar"></i> <span id="side-title-ustax">US Tax Advisory</span></a>
             <a href="/chatboost/" class="sidebar-link"><i class="fa-solid fa-robot"></i> <span id="side-title-chat">AI Chatbot</span></a>
             <a href="/buyerboost/" class="sidebar-link"><i class="fa-solid fa-handshake"></i> <span id="side-title-buyer">Global Buyer Discovery</span></a>
             <a href="/lawboost/" class="sidebar-link"><i class="fa-solid fa-scale-balanced"></i> <span id="side-title-law">Global Legal Advisory</span></a>
@@ -2069,6 +2096,7 @@
                 <a href="/transboost/" id="foot-trans-link">TRANSBOOST</a>
                 <a href="/pitchboost/" id="foot-pitch-link">PITCHBOOST</a>
                 <a href="/insightboost/" id="foot-insight-link">INSIGHTBOOST</a>
+                <a href="/ustaxboost/" id="foot-ustax-link">USTAXBOOST</a>
                 <a href="https://opencode.ai/go?ref=CFP69RVVCJ" target="_blank" id="foot-opencode-link">OpenCode AI</a>
                 <a href="/shopboost/" id="foot-shop-link">SHOPBOOST</a>
                 <a href="/buyerboost/" id="foot-buyer-link">BUYERBOOST</a>
@@ -2206,6 +2234,10 @@
                 "research-title": "RESEARCHBOOST — Market Research",
                 "research-desc": "AI-powered global market research, competitive intelligence, and industry trend analysis.",
                 "research-btn": "Launch Research Service",
+
+                "ustax-title": "USTAXBOOST — US Tax & Incorporation Advisory",
+                "ustax-desc": "US entity setup guidance, tax filing support, and cross-border financial operations for global founders.",
+                "ustax-btn": "Launch Tax Advisory",
 
                 "content-title": "CONTENTBOOST — AI Publishing System",
                 "content-desc": "Build a multilingual AI content engine for generation, translation, SEO metadata, and social distribution across global channels.",
@@ -2387,6 +2419,10 @@
                 "research-desc": "AI 기반 글로벌 시장 조사, 경쟁사 분석, 산업 트렌드 리서치 서비스.",
                 "research-btn": "리서치 서비스 바로가기",
 
+                "ustax-title": "USTAXBOOST — 미국 세무 & 법인설립 자문",
+                "ustax-desc": "미국 법인설립 가이드, 세금 신고 지원, 크로스보더 재무 운영을 위한 실무 자문 서비스입니다.",
+                "ustax-btn": "세무 자문 서비스 바로가기",
+
                 "content-title": "CONTENTBOOST — AI 발행 시스템",
                 "content-desc": "생성, 번역, SEO 메타데이터, SNS 배포를 연결하는 다국어 AI 콘텐츠 엔진을 구축하세요.",
                 "content-btn": "발행 서비스 바로가기",
@@ -2522,6 +2558,7 @@
             { id: 'autoboost', category: 'design-dev', link: '/autoboost/', icon: 'fa-solid fa-arrows-rotate', cardClass: 'card-active-autoboost', btnClass: 'btn-autoboost', iconBoxClass: 'icon-autoboost', popularity: 89 },
             { id: 'webcreate', category: 'design-dev', link: '/webcreate/', icon: 'fa-solid fa-globe', cardClass: 'card-active-webcreate', btnClass: 'btn-webcreate', iconBoxClass: 'icon-webcreate', popularity: 84 },
             { id: 'pr', category: 'marketing', link: '/prboost/', icon: 'fa-solid fa-globe', cardClass: 'card-active-pr', btnClass: 'btn-pr', iconBoxClass: 'icon-pr', popularity: 82 },
+            { id: 'ustax', category: 'strategy', link: '/ustaxboost/', icon: 'fa-solid fa-file-invoice-dollar', cardClass: 'card-active-ustax', btnClass: 'btn-ustax', iconBoxClass: 'icon-ustax', popularity: 81 },
             { id: 'clip', category: 'media', link: '/clipboost/', icon: 'fa-solid fa-clapperboard', cardClass: 'card-active-clip', btnClass: 'btn-clip', iconBoxClass: 'icon-clip', popularity: 85 },
             { id: 'mail', category: 'marketing', link: '/mailboost/', icon: 'fa-solid fa-envelope', cardClass: 'card-active-mail', btnClass: 'btn-mail', iconBoxClass: 'icon-mail', popularity: 80 },
             { id: 'chat', category: 'strategy', link: '/chatboost/', icon: 'fa-solid fa-robot', cardClass: 'card-active-chat', btnClass: 'btn-chat', iconBoxClass: 'icon-chat', popularity: 87 },

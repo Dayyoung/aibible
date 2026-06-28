@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BibleForAI - USTAXBOOST | US Tax & Incorporation Advisory</title>
+  <meta name="description" content="Practical advisory for US entity setup, tax filing, and cross-border financial operations.">
+  <meta name="keywords" content="US tax advisory, incorporation, USCPA, LLC setup, cross-border tax, business formation, tax filing">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bibleforai.com/ustaxboost/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bibleforai.com/ustaxboost/">
+  <meta property="og:title" content="BibleForAI - USTAXBOOST | US Tax & Incorporation Advisory">
+  <meta property="og:description" content="US tax and incorporation advisory for global founders.">
+  <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+  <meta property="og:site_name" content="BibleForAI USTAXBOOST">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ko_KR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://bibleforai.com/ustaxboost/">
+  <meta name="twitter:title" content="BibleForAI - USTAXBOOST | US Tax & Incorporation Advisory">
+  <meta name="twitter:description" content="US tax and incorporation advisory for global founders.">
+  <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Who is this service for?","acceptedAnswer":{"@type":"Answer","text":"Founders, agency owners, Amazon sellers, SaaS teams, and overseas businesses that need US tax and incorporation guidance."}},
+      {"@type":"Question","name":"What do I receive after payment?","acceptedAnswer":{"@type":"Answer","text":"You will receive a confirmation receipt, order log, and next-step guidance through our Google Form workflow."}},
+      {"@type":"Question","name":"Can you handle cross-border cases?","acceptedAnswer":{"@type":"Answer","text":"Yes. The service is designed for international operators, remote founders, and cross-border business setups."}},
+      {"@type":"Question","name":"Is the checkout secure?","acceptedAnswer":{"@type":"Answer","text":"Yes. Checkout uses PayPal with SSL-secured handling and a sandbox test checkout button for QA."}}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "BibleForAI USTAXBOOST",
+    "image": "https://bibleforai.com/assets/og-preview.png",
+    "description": "US tax and incorporation advisory for global founders and cross-border operators.",
+    "brand": {"@type": "Brand", "name": "BibleForAI"},
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "USD",
+      "lowPrice": "71.00",
+      "highPrice": "284.00",
+      "offerCount": "3"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+</head>
+<body>
+  <header id="app-header">
+    <div class="header-container">
+      <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+
+      <a href="/" class="logo-group">
+        <span class="logo-title">BibleForAI</span>
+        <span class="logo-subtitle" data-i18n="logo-subtitle">US TAX BOOST!</span>
+      </a>
+
+      <nav class="desktop-nav">
+        <ul class="nav-links">
+          <li><a href="#" id="nav-home" onclick="navigate('home')" class="active" data-i18n="nav-home">Home</a></li>
+          <li><a href="#" id="nav-orders" onclick="navigate('orders')" data-i18n="nav-orders">Orders</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn-orders" onclick="navigate('orders')"><i class="fa-solid fa-receipt"></i> <span data-i18n="btn-orders">My Orders</span></button>
+        <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)">
+          <option value="en">🌐 English</option>
+          <option value="ko">🇰🇷 한국어</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobile-drawer">
+    <ul class="mobile-nav-links unified-service-menu">
+      <li class="mobile-menu-heading">Database & Scraping</li>
+      <li><a href="/b2bdb/"><i class="fa-solid fa-building-user"></i> B2B Core Database</a></li>
+      <li><a href="/b2cdb/"><i class="fa-solid fa-database"></i> B2C Lead Database</a></li>
+      <li><a href="/databoost/"><i class="fa-solid fa-spider"></i> DATABOOST — Web Scraping</a></li>
+      <li class="mobile-menu-heading">Design & Coding</li>
+      <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI Landing Page</a></li>
+      <li><a href="/mvpboost/"><i class="fa-solid fa-rocket"></i> MVPBOOST</a></li>
+      <li><a href="/opencode/"><i class="fa-solid fa-code"></i> OpenCode AI</a></li>
+      <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> SHOPBOOST — E-Commerce Entry</a></li>
+      <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> FLOWBOOST — Workflow Automation</a></li>
+      <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST — Product Photography</a></li>
+      <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST — AI Presentations</a></li>
+      <li class="mobile-menu-heading">Marketing & SEO</li>
+      <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> SMM Growth Booster</a></li>
+      <li><a href="/prboost/"><i class="fa-solid fa-globe"></i> PRBOOST — Global PR</a></li>
+      <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> MAILBOOST — Email Marketing</a></li>
+      <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — AI SEO</a></li>
+      <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST — Market Research</a></li>
+      <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> CONTENTBOOST — AI Publishing</a></li>
+      <li class="mobile-menu-heading">Media & Audio</li>
+      <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> CLIPBOOST — Short-Form Video</a></li>
+      <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> VOICEBOOST — AI Voice</a></li>
+      <li><a href="/transboost/"><i class="fa-solid fa-language"></i> TRANSBOOST — Translation</a></li>
+      <li class="mobile-menu-heading">Strategy & Analytics</li>
+      <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> AIBOOST — AI Consulting</a></li>
+      <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST — Data Analytics</a></li>
+      <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST — AI Chatbot</a></li>
+      <li><a href="/buyerboost/"><i class="fa-solid fa-handshake"></i> BUYERBOOST — Buyer Discovery</a></li>
+      <li><a href="/salesboost/"><i class="fa-solid fa-receipt"></i> SALESBOOST — Sales Enablement</a></li>
+      <li><a href="/researchboost/"><i class="fa-solid fa-chart-line"></i> RESEARCHBOOST — Market Research</a></li>
+      <li><a href="/repboost/"><i class="fa-solid fa-comments"></i> REPBOOST — Client Relations</a></li>
+      <li><a href="/ustaxboost/"><i class="fa-solid fa-file-invoice-dollar"></i> USTAXBOOST — US Tax Advisory</a></li>
+                <li><a href="/sysboost/"><i class="fa-solid fa-circle"></i> SYSBOOST</a></li>
+            <li><a href="/aideploy/"><i class="fa-solid fa-circle"></i> AIDEPLOY</a></li>
+            <li><a href="/autoboost/"><i class="fa-solid fa-circle"></i> AUTOBOOST</a></li>
+            <li><a href="/webcreate/"><i class="fa-solid fa-circle"></i> WEBCREATE</a></li>
+</ul>
+  </div>
+
+  <main>
+    <section id="home-view" class="view-section active">
+      <div class="hero">
+        <div class="badge" data-i18n="hero-badge">Cross-Border Tax Support</div>
+        <h1 class="hero-title" data-i18n="hero-title">USTAXBOOST — US Tax & Incorporation Advisory</h1>
+        <p class="hero-desc" data-i18n="hero-desc">Get practical guidance for US entity setup, tax filing, and cross-border financial operations.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="document.getElementById('tax-packages').scrollIntoView({behavior:'smooth'})" data-i18n="btn-explore">Explore Packages</button>
+          <button class="btn-secondary" onclick="navigate('orders')" data-i18n="btn-orders">My Orders</button>
+        </div>
+      </div>
+
+      <div class="section-container">
+        <h2 class="section-title" data-i18n="overview-title">What this service covers</h2>
+        <p class="section-subtitle" data-i18n="overview-desc">Built for global founders who need clear next steps for US business formation and tax compliance.</p>
+        <div class="card-grid">
+          <div class="data-card">
+            <div class="card-icon starter-color"><i class="fa-solid fa-seedling"></i></div>
+            <h3 data-i18n="highlight-1-title">Entity Setup</h3>
+            <p data-i18n="highlight-1-desc">Choose the right structure before you register.</p>
+          </div>
+          <div class="data-card">
+            <div class="card-icon filing-color"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+            <h3 data-i18n="highlight-2-title">Tax Filing</h3>
+            <p data-i18n="highlight-2-desc">Keep filings organized and on schedule.</p>
+          </div>
+          <div class="data-card">
+            <div class="card-icon advisory-color"><i class="fa-solid fa-building-columns"></i></div>
+            <h3 data-i18n="highlight-3-title">Advisory</h3>
+            <p data-i18n="highlight-3-desc">Stay ready for scaling, bookkeeping, and expansion.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-container">
+        <h2 class="section-title" data-i18n="packages-title">Service Packages</h2>
+        <p class="section-subtitle" data-i18n="packages-subtitle">Select the package that matches your current stage.</p>
+        <div class="package-grid" id="tax-packages"></div>
+      </div>
+
+      <div class="section-container">
+        <h2 class="section-title" data-i18n="faq-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle" data-i18n="faq-subtitle">Quick answers before checkout.</p>
+        <div class="faq-grid" id="faq-grid"></div>
+      </div>
+    </section>
+
+    <section id="orders-view" class="view-section">
+      <div class="section-container">
+        <h2 class="section-title" data-i18n="orders-title">My Orders</h2>
+        <p class="section-subtitle" data-i18n="orders-subtitle">Your completed orders are stored locally in this browser.</p>
+        <div class="orders-table-wrap">
+          <table class="orders-table">
+            <thead>
+              <tr>
+                <th data-i18n="th-date">Order Date</th>
+                <th data-i18n="th-order-id">Transaction ID</th>
+                <th data-i18n="th-product">Package</th>
+                <th data-i18n="th-jurisdiction">Jurisdiction</th>
+                <th data-i18n="th-qty">Qty</th>
+                <th data-i18n="th-total">Total Paid</th>
+                <th data-i18n="th-status">Status</th>
+              </tr>
+            </thead>
+            <tbody id="orders-tbody"></tbody>
+          </table>
+          <div id="no-orders-msg" class="no-orders-msg" data-i18n="no-orders-msg">No purchase records yet. Complete your first checkout to see it here.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="purchase-modal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+      <h3 id="modal-product-title" data-i18n="modal-title">Configure Order</h3>
+      <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">Review the package, choose quantity, and complete secure PayPal checkout.</p>
+
+      <div class="order-summary-box">
+        <div class="summary-row"><span data-i18n="modal-base-pkg">Base Package:</span> <strong id="modal-package-name">-</strong></div>
+        <div class="summary-row"><span data-i18n="modal-base-price-label">Base Price:</span> <strong id="modal-base-price">$0.00</strong></div>
+      </div>
+
+      <div class="email-control-group compact-control-group">
+        <label for="order-email" data-i18n="modal-email-label">Email Address *</label>
+        <input type="email" id="order-email" required placeholder="name@example.com" data-i18n="modal-email-placeholder">
+        <span id="email-error" class="inline-error" data-i18n="modal-email-error" style="display:none;"><i class="fa-solid fa-triangle-exclamation"></i> Please enter a valid email address.</span>
+      </div>
+
+      <div class="jurisdiction-control-group compact-control-group">
+        <label for="order-jurisdiction" data-i18n="modal-jurisdiction-label">Tax Jurisdiction:</label>
+        <select id="order-jurisdiction">
+          <option value="Global">Global</option>
+          <option value="United States">United States</option>
+          <option value="Delaware LLC">Delaware LLC</option>
+          <option value="Wyoming LLC">Wyoming LLC</option>
+          <option value="California">California</option>
+          <option value="Florida">Florida</option>
+          <option value="Singapore">Singapore</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="UAE">UAE</option>
+        </select>
+      </div>
+
+      <div class="quantity-control-group compact-control-group">
+        <label for="order-quantity" data-i18n="modal-qty">Quantity:</label>
+        <div class="qty-selector">
+          <button class="qty-btn" onclick="adjustQty(-1)"><i class="fa-solid fa-minus"></i></button>
+          <input type="number" id="order-quantity" value="1" min="1" oninput="updateModalPrice()">
+          <button class="qty-btn" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
+        </div>
+      </div>
+
+      <div class="total-price-box compact-total-box">
+        <span data-i18n="modal-total-amt">Total Amount:</span>
+        <span class="price-val" id="modal-total-price">$0.00</span>
+      </div>
+
+      <button id="paypal-test-button" class="paypal-test-button" onclick="triggerTestCheckout()" data-i18n="modal-test-btn"><i class="fa-solid fa-flask"></i> Sandbox Test Checkout</button>
+
+      <div class="paypal-wrapper">
+        <div id="paypal-button-container"></div>
+      </div>
+
+      <div class="payment-badges">
+        <span><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL Secured Checkout</span></span>
+        <span><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal Verified</span></span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="/" class="logo-group" style="text-decoration:none;margin-bottom:1rem;">
+          <span class="logo-title">BibleForAI</span>
+          <span class="logo-subtitle" data-i18n="logo-subtitle">US TAX BOOST!</span>
+        </a>
+        <p data-i18n="hero-desc">Get practical guidance for US entity setup, tax filing, and cross-border financial operations.</p>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="foot-services">Services</h4>
+        <ul>
+          <li><a href="/ustaxboost/">USTAXBOOST</a></li>
+          <li><a href="/prboost/">PRBOOST</a></li>
+          <li><a href="/b2bdb/">B2B Database</a></li>
+        </ul>
+      </div>
+      <div class="footer-support">
+        <h4 data-i18n="foot-support">Support</h4>
+        <ul>
+          <li data-i18n="foot-contact">Contact support: snsherocom@gmail.com</li>
+          <li>PayPal + Google Form workflow</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="foot-copy">&copy; 2026 BibleForAI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

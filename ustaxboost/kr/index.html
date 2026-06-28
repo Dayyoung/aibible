@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="../">
+  <title>BibleForAI - USTAXBOOST | 미국 세무 & 법인설립 자문</title>
+  <meta name="description" content="미국 법인설립, 세금 신고, 크로스보더 재무 운영을 위한 실무 자문 서비스.">
+  <meta name="keywords" content="미국 세무 자문, 법인설립, USCPA, LLC 설립, 크로스보더 세무, 사업자 등록, 세금 신고">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bibleforai.com/ustaxboost/kr/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bibleforai.com/ustaxboost/kr/">
+  <meta property="og:title" content="BibleForAI - USTAXBOOST | 미국 세무 & 법인설립 자문">
+  <meta property="og:description" content="글로벌 창업자를 위한 미국 세무 & 법인설립 자문 서비스.">
+  <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+  <meta property="og:site_name" content="BibleForAI USTAXBOOST">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://bibleforai.com/ustaxboost/kr/">
+  <meta name="twitter:title" content="BibleForAI - USTAXBOOST | 미국 세무 & 법인설립 자문">
+  <meta name="twitter:description" content="글로벌 창업자를 위한 미국 세무 & 법인설립 자문 서비스.">
+  <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+  <style>
+    html, body { font-family: 'Noto Sans KR', 'Inter', sans-serif; }
+  </style>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>localStorage.setItem('bibleforai_lang', 'ko');</script>
+  <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+</head>
+<body>
+  <header id="app-header">
+    <div class="header-container">
+      <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="메뉴 열기">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+
+      <a href="/" class="logo-group">
+        <span class="logo-title">BibleForAI</span>
+        <span class="logo-subtitle" data-i18n="logo-subtitle">US TAX BOOST!</span>
+      </a>
+
+      <nav class="desktop-nav">
+        <ul class="nav-links">
+          <li><a href="#" id="nav-home" onclick="navigate('home')" class="active" data-i18n="nav-home">홈</a></li>
+          <li><a href="#" id="nav-orders" onclick="navigate('orders')" data-i18n="nav-orders">주문 내역</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn-orders" onclick="navigate('orders')"><i class="fa-solid fa-receipt"></i> <span data-i18n="btn-orders">내 주문</span></button>
+        <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)">
+          <option value="en">🌐 English</option>
+          <option value="ko">🇰🇷 한국어</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobile-drawer">
+    <ul class="mobile-nav-links unified-service-menu">
+      <li class="mobile-menu-heading">데이터베이스 & 스크래핑</li>
+      <li><a href="/b2bdb/"><i class="fa-solid fa-building-user"></i> B2B 코어 데이터베이스</a></li>
+      <li><a href="/b2cdb/"><i class="fa-solid fa-database"></i> B2C 리드 데이터베이스</a></li>
+      <li><a href="/databoost/"><i class="fa-solid fa-spider"></i> DATABOOST — 웹 스크래핑</a></li>
+      <li class="mobile-menu-heading">디자인 & 코딩</li>
+      <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI 랜딩페이지</a></li>
+      <li><a href="/mvpboost/"><i class="fa-solid fa-rocket"></i> MVPBOOST</a></li>
+      <li><a href="/opencode/"><i class="fa-solid fa-code"></i> OpenCode AI</a></li>
+      <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> SHOPBOOST — 이커머스 진입</a></li>
+      <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> FLOWBOOST — 업무 자동화</a></li>
+      <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST — 상품 사진</a></li>
+      <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST — AI 발표자료</a></li>
+      <li class="mobile-menu-heading">마케팅 & SEO</li>
+      <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> SMM 성장 부스터</a></li>
+      <li><a href="/prboost/"><i class="fa-solid fa-globe"></i> PRBOOST — 글로벌 PR</a></li>
+      <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> MAILBOOST — 이메일 마케팅</a></li>
+      <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — AI SEO</a></li>
+      <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST — 시장조사</a></li>
+      <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> CONTENTBOOST — AI 발행 시스템</a></li>
+      <li class="mobile-menu-heading">미디어 & 오디오</li>
+      <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> CLIPBOOST — 숏폼 영상</a></li>
+      <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> VOICEBOOST — AI 보이스</a></li>
+      <li><a href="/transboost/"><i class="fa-solid fa-language"></i> TRANSBOOST — 번역</a></li>
+      <li class="mobile-menu-heading">전략 & 분석</li>
+      <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> AIBOOST — AI 컨설팅</a></li>
+      <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST — 데이터 분석</a></li>
+      <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST — AI 챗봇</a></li>
+      <li><a href="/buyerboost/"><i class="fa-solid fa-handshake"></i> BUYERBOOST — 바이어 발굴</a></li>
+      <li><a href="/salesboost/"><i class="fa-solid fa-receipt"></i> SALESBOOST — 세일즈 지원</a></li>
+      <li><a href="/researchboost/"><i class="fa-solid fa-chart-line"></i> RESEARCHBOOST — 시장 조사</a></li>
+      <li><a href="/repboost/"><i class="fa-solid fa-comments"></i> REPBOOST — 고객 관계</a></li>
+      <li><a href="/ustaxboost/"><i class="fa-solid fa-file-invoice-dollar"></i> USTAXBOOST — 미국 세무 자문</a></li>
+                <li><a href="/sysboost/"><i class="fa-solid fa-circle"></i> SYSBOOST</a></li>
+            <li><a href="/aideploy/"><i class="fa-solid fa-circle"></i> AIDEPLOY</a></li>
+            <li><a href="/autoboost/"><i class="fa-solid fa-circle"></i> AUTOBOOST</a></li>
+            <li><a href="/webcreate/"><i class="fa-solid fa-circle"></i> WEBCREATE</a></li>
+</ul>
+  </div>
+
+  <main>
+    <section id="home-view" class="view-section active">
+      <div class="hero">
+        <div class="badge" data-i18n="hero-badge">크로스보더 세무 지원</div>
+        <h1 class="hero-title" data-i18n="hero-title">USTAXBOOST — 미국 세무 & 법인설립 자문</h1>
+        <p class="hero-desc" data-i18n="hero-desc">미국 법인설립, 세금 신고, 크로스보더 재무 운영에 필요한 실무 가이드를 제공합니다.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="document.getElementById('tax-packages').scrollIntoView({behavior:'smooth'})" data-i18n="btn-explore">패키지 보기</button>
+          <button class="btn-secondary" onclick="navigate('orders')" data-i18n="btn-orders">내 주문</button>
+        </div>
+      </div>
+
+      <div class="section-container">
+        <h2 class="section-title" data-i18n="overview-title">서비스 범위</h2>
+        <p class="section-subtitle" data-i18n="overview-desc">미국 사업 설립과 세무 규정 준수가 필요한 글로벌 창업자를 위해 설계되었습니다.</p>
+        <div class="card-grid">
+          <div class="data-card">
+            <div class="card-icon starter-color"><i class="fa-solid fa-seedling"></i></div>
+            <h3 data-i18n="highlight-1-title">법인설립</h3>
+            <p data-i18n="highlight-1-desc">등록 전 가장 적합한 구조를 선택하세요.</p>
+          </div>
+          <div class="data-card">
+            <div class="card-icon filing-color"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+            <h3 data-i18n="highlight-2-title">세금 신고</h3>
+            <p data-i18n="highlight-2-desc">신고 일정과 자료를 체계적으로 관리합니다.</p>
+          </div>
+          <div class="data-card">
+            <div class="card-icon advisory-color"><i class="fa-solid fa-building-columns"></i></div>
+            <h3 data-i18n="highlight-3-title">자문</h3>
+            <p data-i18n="highlight-3-desc">확장, 장부 관리, 사업 운영을 위한 준비를 돕습니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-container">
+        <h2 class="section-title" data-i18n="packages-title">서비스 패키지</h2>
+        <p class="section-subtitle" data-i18n="packages-subtitle">현재 단계에 맞는 패키지를 선택하세요.</p>
+        <div class="package-grid" id="tax-packages"></div>
+      </div>
+
+      <div class="section-container">
+        <h2 class="section-title" data-i18n="faq-title">자주 묻는 질문</h2>
+        <p class="section-subtitle" data-i18n="faq-subtitle">결제 전 빠르게 확인하세요.</p>
+        <div class="faq-grid" id="faq-grid"></div>
+      </div>
+    </section>
+
+    <section id="orders-view" class="view-section">
+      <div class="section-container">
+        <h2 class="section-title" data-i18n="orders-title">내 주문 내역</h2>
+        <p class="section-subtitle" data-i18n="orders-subtitle">완료된 주문은 이 브라우저에 로컬 저장됩니다.</p>
+        <div class="orders-table-wrap">
+          <table class="orders-table">
+            <thead>
+              <tr>
+                <th data-i18n="th-date">주문 날짜</th>
+                <th data-i18n="th-order-id">거래 ID</th>
+                <th data-i18n="th-product">패키지</th>
+                <th data-i18n="th-jurisdiction">관할</th>
+                <th data-i18n="th-qty">수량</th>
+                <th data-i18n="th-total">총 결제금액</th>
+                <th data-i18n="th-status">상태</th>
+              </tr>
+            </thead>
+            <tbody id="orders-tbody"></tbody>
+          </table>
+          <div id="no-orders-msg" class="no-orders-msg" data-i18n="no-orders-msg">구매 기록이 없습니다. 첫 결제를 완료하면 여기에 표시됩니다.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="purchase-modal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+      <h3 id="modal-product-title" data-i18n="modal-title">주문 설정</h3>
+      <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">패키지를 확인하고 수량을 선택한 뒤 안전한 PayPal 결제를 진행하세요.</p>
+
+      <div class="order-summary-box">
+        <div class="summary-row"><span data-i18n="modal-base-pkg">기본 패키지:</span> <strong id="modal-package-name">-</strong></div>
+        <div class="summary-row"><span data-i18n="modal-base-price-label">기본 가격:</span> <strong id="modal-base-price">$0.00</strong></div>
+      </div>
+
+      <div class="email-control-group compact-control-group">
+        <label for="order-email" data-i18n="modal-email-label">이메일 주소 *</label>
+        <input type="email" id="order-email" required placeholder="name@example.com" data-i18n="modal-email-placeholder">
+        <span id="email-error" class="inline-error" data-i18n="modal-email-error" style="display:none;"><i class="fa-solid fa-triangle-exclamation"></i> 올바른 이메일 주소를 입력해주세요.</span>
+      </div>
+
+      <div class="jurisdiction-control-group compact-control-group">
+        <label for="order-jurisdiction" data-i18n="modal-jurisdiction-label">세무 관할:</label>
+        <select id="order-jurisdiction">
+          <option value="Global">Global</option>
+          <option value="United States">United States</option>
+          <option value="Delaware LLC">Delaware LLC</option>
+          <option value="Wyoming LLC">Wyoming LLC</option>
+          <option value="California">California</option>
+          <option value="Florida">Florida</option>
+          <option value="Singapore">Singapore</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="UAE">UAE</option>
+        </select>
+      </div>
+
+      <div class="quantity-control-group compact-control-group">
+        <label for="order-quantity" data-i18n="modal-qty">수량:</label>
+        <div class="qty-selector">
+          <button class="qty-btn" onclick="adjustQty(-1)"><i class="fa-solid fa-minus"></i></button>
+          <input type="number" id="order-quantity" value="1" min="1" oninput="updateModalPrice()">
+          <button class="qty-btn" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
+        </div>
+      </div>
+
+      <div class="total-price-box compact-total-box">
+        <span data-i18n="modal-total-amt">총 결제금액:</span>
+        <span class="price-val" id="modal-total-price">$0.00</span>
+      </div>
+
+      <button id="paypal-test-button" class="paypal-test-button" onclick="triggerTestCheckout()" data-i18n="modal-test-btn"><i class="fa-solid fa-flask"></i> 샌드박스 테스트 결제</button>
+
+      <div class="paypal-wrapper">
+        <div id="paypal-button-container"></div>
+      </div>
+
+      <div class="payment-badges">
+        <span><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL 보안 결제</span></span>
+        <span><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal 인증됨</span></span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="/" class="logo-group" style="text-decoration:none;margin-bottom:1rem;">
+          <span class="logo-title">BibleForAI</span>
+          <span class="logo-subtitle" data-i18n="logo-subtitle">US TAX BOOST!</span>
+        </a>
+        <p data-i18n="hero-desc">미국 법인설립, 세금 신고, 크로스보더 재무 운영에 필요한 실무 가이드를 제공합니다.</p>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="foot-services">서비스</h4>
+        <ul>
+          <li><a href="/ustaxboost/">USTAXBOOST</a></li>
+          <li><a href="/prboost/">PRBOOST</a></li>
+          <li><a href="/b2bdb/">B2B 데이터베이스</a></li>
+        </ul>
+      </div>
+      <div class="footer-support">
+        <h4 data-i18n="foot-support">지원</h4>
+        <ul>
+          <li data-i18n="foot-contact">문의 지원: snsherocom@gmail.com</li>
+          <li>PayPal + Google Form 워크플로우</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="foot-copy">&copy; 2026 BibleForAI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>
