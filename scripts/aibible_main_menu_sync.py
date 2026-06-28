@@ -21,10 +21,14 @@ CATALOG = [
     {'id': 'localize', 'cat': 'strategy', 'link': '/localize/', 'icon': 'fa-solid fa-language', 'popularity': 86},
     {'id': 'tradeboost', 'cat': 'strategy', 'link': '/tradeboost/', 'icon': 'fa-solid fa-ship', 'popularity': 85},
     {'id': 'amzboost', 'cat': 'marketing', 'link': '/amzboost/', 'icon': 'fa-solid fa-store', 'popularity': 88},
+    {'id': 'amzbrand', 'cat': 'marketing', 'link': '/amzbrand/', 'icon': 'fa-brands fa-amazon', 'popularity': 87},
     {'id': 'tikshop', 'cat': 'marketing', 'link': '/tikshop/', 'icon': 'fa-brands fa-tiktok', 'popularity': 89},
     {'id': 'rfp', 'cat': 'strategy', 'link': '/rfpboost/', 'icon': 'fa-solid fa-file-signature', 'popularity': 84},
+    {'id': 'complianceboost', 'cat': 'strategy', 'link': '/complianceboost/', 'icon': 'fa-solid fa-shield-halved', 'popularity': 82},
     {'id': 'globalup', 'cat': 'strategy', 'link': '/globalup/', 'icon': 'fa-solid fa-user-tie', 'popularity': 81},
     {'id': 'eventboost', 'cat': 'strategy', 'link': '/eventboost/', 'icon': 'fa-solid fa-microphone-lines', 'popularity': 82},
+    {'id': 'micemc', 'cat': 'strategy', 'link': '/micemc/', 'icon': 'fa-solid fa-microphone-lines', 'popularity': 83},
+    {'id': 'indiaboost', 'cat': 'strategy', 'link': '/indiaboost/', 'icon': 'fa-solid fa-earth-asia', 'popularity': 81},
     {'id': 'alicat', 'cat': 'marketing', 'link': '/alicat/', 'icon': 'fa-solid fa-box-open', 'popularity': 83},
     {'id': 'app', 'cat': 'marketing', 'link': '/appboost/', 'icon': 'fa-solid fa-mobile-screen-button', 'popularity': 83},
     {'id': 'ustax', 'cat': 'strategy', 'link': '/ustaxboost/', 'icon': 'fa-solid fa-file-invoice-dollar', 'popularity': 81},
@@ -67,6 +71,7 @@ CATALOG = [
     {'id': 'chinaboost', 'cat': 'strategy', 'link': '/chinaboost/', 'icon': 'fa-solid fa-earth-asia', 'popularity': 87},
     {'id': 'surveyboost', 'cat': 'strategy', 'link': '/surveyboost/', 'icon': 'fa-solid fa-square-poll-vertical', 'popularity': 84},
     {'id': 'shopglobal', 'cat': 'strategy', 'link': '/shopglobal/', 'icon': 'fa-brands fa-shopify', 'popularity': 86},
+    {'id': 'indiaboost', 'cat': 'strategy', 'link': '/indiaboost/', 'icon': 'fa-solid fa-earth-asia', 'popularity': 88},
     {'id': 'map', 'cat': 'marketing', 'link': '/mapboost/', 'icon': 'fa-solid fa-map-location-dot', 'popularity': 80},
 ]
 
@@ -180,16 +185,24 @@ def patch_all_service_pages():
         '            <li><a href="/rfpboost/"><i class="fa-solid fa-file-signature"></i> RFPBOOST — Proposal Writing</a></li>\n',
         '            <li><a href="/globalup/"><i class="fa-solid fa-user-tie"></i> GLOBALUP — Global Recruiting</a></li>\n',
         '            <li><a href="/eventboost/"><i class="fa-solid fa-microphone-lines"></i> EVENTBOOST — Global Event MC</a></li>\n',
+        '            <li><a href="/micemc/"><i class="fa-solid fa-microphone-lines"></i> MICEMC — International MC & Interpretation</a></li>\n',
+        '            <li><a href="/indiaboost/"><i class="fa-solid fa-earth-asia"></i> INDIABOOST — India Market Entry Advisory</a></li>\n',
         '            <li><a href="/medboost/"><i class="fa-solid fa-stethoscope"></i> MEDBOOST — Clinical Translation</a></li>\n',
         '            <li><a href="/amzboost/"><i class="fa-solid fa-store"></i> AMZBOOST — Amazon FBA PPC</a></li>\n',
+        '            <li><a href="/amzbrand/"><i class="fa-brands fa-amazon"></i> AMZBRAND — Amazon Brand Registry & Storefront</a></li>\n',
         '            <li><a href="/alicat/"><i class="fa-solid fa-box-open"></i> ALICAT — Alibaba & B2B Catalog</a></li>\n',
         '            <li><a href="/apostboost/"><i class="fa-solid fa-stamp"></i> APOSTBOOST — Apostille & Notarization</a></li>\n',
         '            <li><a href="/chinaboost/"><i class="fa-solid fa-earth-asia"></i> CHINABOOST — China Market Entry</a></li>\n',
         '            <li><a href="/surveyboost/"><i class="fa-solid fa-square-poll-vertical"></i> SURVEYBOOST — Market Validation Surveys</a></li>\n',
         '            <li><a href="/shopglobal/"><i class="fa-brands fa-shopify"></i> SHOPGLOBAL — Shopify Global Expansion</a></li>\n',
+        '            <li><a href="/complianceboost/"><i class="fa-solid fa-shield-halved"></i> COMPLIANCEBOOST — Compliance Docs & Audit Prep</a></li>\n',
     ]
     tradeboost_item_en = '            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — Global Trade Agency</a></li>\n'
     tradeboost_item_ko = '            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — 글로벌 무역대행</a></li>\n'
+    micemc_item_en = '            <li><a href="/micemc/"><i class="fa-solid fa-microphone-lines"></i> MICEMC — International MC & Interpretation</a></li>\n'
+    micemc_item_ko = '            <li><a href="/micemc/"><i class="fa-solid fa-microphone-lines"></i> MICEMC — 국제행사 영어 MC & 통역</a></li>\n'
+    indiaboost_item_en = '            <li><a href="/indiaboost/"><i class="fa-solid fa-earth-asia"></i> INDIABOOST — India Market Entry Advisory</a></li>\n'
+    indiaboost_item_ko = '            <li><a href="/indiaboost/"><i class="fa-solid fa-earth-asia"></i> INDIABOOST — 인도 시장진출 자문</a></li>\n'
     affboost_item_en = '            <li><a href="/affboost/"><i class="fa-solid fa-rocket"></i> AFFBOOST — AI Affiliate Website Builder</a></li>\n'
     affboost_item_ko = '            <li><a href="/affboost/"><i class="fa-solid fa-rocket"></i> AFFBOOST — AI 제휴 웹사이트 빌더</a></li>\n'
     for path in ROOT.rglob('index.html'):
@@ -203,6 +216,8 @@ def patch_all_service_pages():
         updated = False
         extra_items = [
             tradeboost_item_ko if '/kr/' in str(path) else tradeboost_item_en,
+            micemc_item_ko if '/kr/' in str(path) else micemc_item_en,
+            indiaboost_item_ko if '/kr/' in str(path) else indiaboost_item_en,
             affboost_item_ko if '/kr/' in str(path) else affboost_item_en,
         ]
         for item in (new_items + extra_items):

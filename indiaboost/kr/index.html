@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <base href="../">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BibleForAI - INDIABOOST | 인도 시장진출 자문</title>
+    <meta name="description" content="인도 시장 진출, 법인 설립, 리스크 검토, 현지화 전략을 지원하는 글로벌 비즈니스 자문 서비스입니다.">
+    <meta name="keywords" content="인도 시장진출, 인도 비즈니스 컨설팅, 법인 설립, 현지화, 크로스보더 자문">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bibleforai.com/indiaboost/kr/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bibleforai.com/indiaboost/kr/">
+    <meta property="og:title" content="BibleForAI - INDIABOOST | 인도 시장진출 자문">
+    <meta property="og:description" content="인도 시장 진출, 법인 설립, 리스크 검토, 현지화 전략을 지원하는 글로벌 비즈니스 자문 서비스입니다.">
+    <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+    <meta property="og:site_name" content="BibleForAI INDIABOOST">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bibleforai.com/indiaboost/kr/">
+    <meta name="twitter:title" content="BibleForAI - INDIABOOST | 인도 시장진출 자문">
+    <meta name="twitter:description" content="인도 시장 진출, 법인 설립, 리스크 검토, 현지화 전략을 지원하는 글로벌 비즈니스 자문 서비스입니다.">
+    <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        localStorage.setItem('bibleforai_lang', 'ko');
+        document.documentElement.lang = 'ko';
+    </script>
+    <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+</head>
+<body>
+    <header id="app-header">
+        <div class="header-container">
+            <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="메뉴 열기"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+            <a href="/" class="logo-group">
+                <span class="logo-title">BibleForAI</span>
+                <span class="logo-subtitle" data-i18n="logo-subtitle">인도 시장진출</span>
+            </a>
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#" id="nav-home" onclick="navigate('home')" class="active" data-i18n="nav-home">홈</a></li>
+                    <li><a href="#" id="nav-packages" onclick="navigate('packages')" data-i18n="nav-packages">패키지</a></li>
+                    <li><a href="#" id="nav-faq" onclick="navigate('faq')" data-i18n="nav-faq">FAQ</a></li>
+                    <li><a href="#" id="nav-orders" onclick="navigate('orders')" data-i18n="nav-orders">주문내역</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn-orders" onclick="navigate('orders')"><i class="fa-solid fa-receipt"></i> <span class="btn-text" data-i18n="btn-orders">내 주문</span></button>
+                <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)">
+                    <option value="en">🌐 English</option>
+                    <option value="ko">🇰🇷 한국어</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-drawer" id="mobile-drawer">
+        <ul class="mobile-nav-links unified-service-menu">
+            <li class="mobile-menu-heading">Database & Scraping</li>
+            <li><a href="/b2bdb/"><i class="fa-solid fa-building-user"></i> B2B Core Database</a></li>
+            <li><a href="/b2cdb/"><i class="fa-solid fa-database"></i> B2C Lead Database</a></li>
+            <li><a href="/databoost/"><i class="fa-solid fa-spider"></i> DATABOOST — Web Scraping</a></li>
+            <li class="mobile-menu-heading">Design & Coding</li>
+            <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI Landing Page</a></li>
+            <li><a href="/opencode/"><i class="fa-solid fa-code"></i> OpenCode AI</a></li>
+            <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> SHOPBOOST — E-Commerce Entry</a></li>
+            <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> FLOWBOOST — Workflow Automation</a></li>
+            <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST — Product Photography</a></li>
+            <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST — AI Presentations</a></li>
+            <li class="mobile-menu-heading">Marketing & SEO</li>
+            <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> SMM Growth Booster</a></li>
+            <li><a href="/prboost/"><i class="fa-solid fa-globe"></i> PRBOOST — Global PR</a></li>
+            <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> MAILBOOST — Email Marketing</a></li>
+            <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — AI SEO</a></li>
+            <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST — Market Research</a></li>
+            <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> CONTENTBOOST — AI Publishing</a></li>
+            <li class="mobile-menu-heading">Strategy & Analytics</li>
+            <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> AIBOOST — AI Consulting</a></li>
+            <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST — Data Analytics</a></li>
+            <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST — AI Chatbot</a></li>
+            <li><a href="/buyerboost/"><i class="fa-solid fa-handshake"></i> BUYERBOOST — Buyer Discovery</a></li>
+            <li><a href="/salesboost/"><i class="fa-solid fa-receipt"></i> SALESBOOST — Sales Enablement</a></li>
+            <li><a href="/researchboost/"><i class="fa-solid fa-chart-line"></i> RESEARCHBOOST — Market Research</a></li>
+                    <li><a href="/tikshop/"><i class="fa-brands fa-tiktok"></i> TIKSHOP — TikTok Shop Setup</a></li>
+            <li><a href="/usllc/"><i class="fa-solid fa-building-circle-check"></i> USLLC — US LLC Formation & EIN</a></li>
+            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — Global Trade Agency</a></li>
+            <li><a href="/linkboost/"><i class="fa-brands fa-linkedin"></i> LINKBOOST — LinkedIn Growth</a></li>
+            <li><a href="/careerlink/"><i class="fa-brands fa-linkedin"></i> CAREERLINK — LinkedIn Optimization</a></li>
+            <li><a href="/repboost/"><i class="fa-solid fa-circle"></i> REPBOOST</a></li>
+            <li><a href="/sysboost/"><i class="fa-solid fa-circle"></i> SYSBOOST</a></li>
+            <li><a href="/ustaxboost/"><i class="fa-solid fa-circle"></i> USTAXBOOST</a></li>
+            <li><a href="/aideploy/"><i class="fa-solid fa-circle"></i> AIDEPLOY</a></li>
+            <li><a href="/autoboost/"><i class="fa-solid fa-circle"></i> AUTOBOOST</a></li>
+            <li><a href="/webcreate/"><i class="fa-solid fa-circle"></i> WEBCREATE</a></li>
+            <li><a href="/adsboost/"><i class="fa-solid fa-bullhorn"></i> ADSBOOST — Google Ads Optimization</a></li>
+            <li><a href="/rfpboost/"><i class="fa-solid fa-file-signature"></i> RFPBOOST — Proposal Writing</a></li>
+            <li><a href="/globalup/"><i class="fa-solid fa-user-tie"></i> GLOBALUP — Global Recruiting</a></li>
+            <li><a href="/eventboost/"><i class="fa-solid fa-microphone-lines"></i> EVENTBOOST — Global Event MC</a></li>
+            <li><a href="/micemc/"><i class="fa-solid fa-microphone-lines"></i> MICEMC — International MC & Interpretation</a></li>
+            <li><a href="/medboost/"><i class="fa-solid fa-stethoscope"></i> MEDBOOST — Clinical Translation</a></li>
+            <li><a href="/amzboost/"><i class="fa-solid fa-store"></i> AMZBOOST — Amazon FBA PPC</a></li>
+            <li><a href="/amzbrand/"><i class="fa-brands fa-amazon"></i> AMZBRAND — Amazon Brand Registry & Storefront</a></li>
+            <li><a href="/alicat/"><i class="fa-solid fa-box-open"></i> ALICAT — Alibaba & B2B Catalog</a></li>
+            <li><a href="/apostboost/"><i class="fa-solid fa-stamp"></i> APOSTBOOST — Apostille & Notarization</a></li>
+            <li><a href="/chinaboost/"><i class="fa-solid fa-earth-asia"></i> CHINABOOST — China Market Entry</a></li>
+            <li><a href="/surveyboost/"><i class="fa-solid fa-square-poll-vertical"></i> SURVEYBOOST — Market Validation Surveys</a></li>
+            <li><a href="/shopglobal/"><i class="fa-brands fa-shopify"></i> SHOPGLOBAL — Shopify Global Expansion</a></li>
+            <li><a href="/complianceboost/"><i class="fa-solid fa-shield-halved"></i> COMPLIANCEBOOST — Compliance Docs & Audit Prep</a></li>
+            <li><a href="/affboost/"><i class="fa-solid fa-rocket"></i> AFFBOOST — AI 제휴 웹사이트 빌더</a></li>
+</ul>
+    </div>
+
+    <main>
+        <section id="home-view" class="view-section active">
+            <div class="hero">
+                <div class="badge" data-i18n="hero-badge">글로벌 확장 자문</div>
+                <h1 class="hero-title" data-i18n="hero-title">INDIABOOST — 인도 시장진출 자문</h1>
+                <p class="hero-desc" data-i18n="hero-desc">창업자, 운영 담당자, 크로스보더 팀을 위한 실전형 인도 진출 가이드.</p>
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="navigate('packages')" data-i18n="btn-explore">패키지 보기 <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-value">3</div><div class="stat-label" data-i18n="stat-one-title">진출 전략</div><p data-i18n="stat-one-desc">인도 시장 진출 단계별 계획</p></div>
+                <div class="stat-card"><div class="stat-value">리스크</div><div class="stat-label" data-i18n="stat-two-title">리스크 검토</div><p data-i18n="stat-two-desc">운영 및 규정 점검</p></div>
+                <div class="stat-card"><div class="stat-value">빠름</div><div class="stat-label" data-i18n="stat-three-title">빠른 진행</div><p data-i18n="stat-three-desc">안전 결제 후 즉시 예약</p></div>
+            </div>
+        </section>
+
+        <section id="packages-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="section-packages-title">컨설팅 패키지</h2>
+                <p data-i18n="section-packages-desc">인도 확장 단계에 맞는 지원 수준을 선택하세요.</p>
+            </div>
+            <div class="packages-grid" id="india-packages"></div>
+        </section>
+
+        <section id="faq-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="section-faq-title">자주 묻는 질문</h2>
+                <p data-i18n="section-faq-desc">자문 패키지 진행 방식에 대한 간단한 안내입니다.</p>
+            </div>
+            <div class="faq-grid">
+                <article class="faq-card"><h3 data-i18n="faq-q1">이 자문은 누구를 위한 서비스인가요?</h3><p data-i18n="faq-a1">인도 시장에 진입하려는 창업자, 운영 담당자, 수출 기업, 크로스보더 팀을 위한 서비스입니다.</p></article>
+                <article class="faq-card"><h3 data-i18n="faq-q2">구매 후 무엇을 받나요?</h3><p data-i18n="faq-a2">예약된 자문 세션과 함께, 상황에 맞는 실행 계획과 후속 요약을 받게 됩니다.</p></article>
+                <article class="faq-card"><h3 data-i18n="faq-q3">법인 설립과 리스크 검토도 도와주나요?</h3><p data-i18n="faq-a3">네. 패키지에는 설립 계획, 운영 리스크, 인도 확장 실행 가이드가 포함됩니다.</p></article>
+                <article class="faq-card"><h3 data-i18n="faq-q4">테스트 결제는 어떻게 동작하나요?</h3><p data-i18n="faq-a4">모달의 총 결제금액 텍스트를 클릭하면 검증용 샌드박스 테스트 결제가 실행됩니다.</p></article>
+            </div>
+        </section>
+
+        <section id="orders-view" class="view-section">
+            <div class="page-header">
+                <h2 data-i18n="section-orders-title">구매 내역</h2>
+                <p data-i18n="section-orders-desc">브라우저에 저장된 완료 주문을 확인하세요.</p>
+            </div>
+            <div class="orders-table-wrap">
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th data-i18n="receipt-date">주문 날짜</th>
+                            <th data-i18n="receipt-txid">거래 ID</th>
+                            <th data-i18n="receipt-type">서비스 종류</th>
+                            <th data-i18n="receipt-size">패키지 크기</th>
+                            <th data-i18n="receipt-focus">비즈니스 목적</th>
+                            <th data-i18n="receipt-qty">수량</th>
+                            <th data-i18n="receipt-total">총 결제금액</th>
+                            <th data-i18n="receipt-status">상태</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-tbody"></tbody>
+                </table>
+                <div class="no-orders" id="no-orders-msg" data-i18n="no-orders-msg">구매 기록이 없습니다. 첫 주문을 완료하시면 내역이 여기에 표시됩니다!</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="/" class="logo-group" style="text-decoration:none;margin-bottom:1rem;">
+                    <span class="logo-title">BibleForAI</span>
+                    <span class="logo-subtitle" data-i18n="logo-subtitle">인도 시장진출</span>
+                </a>
+                <p data-i18n="hero-desc">창업자, 운영 담당자, 크로스보더 팀을 위한 실전형 인도 진출 가이드.</p>
+            </div>
+            <div class="footer-support">
+                <h4>Payment Security</h4>
+                <div class="payment-badges">
+                    <span class="payment-badge"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="badge-ssl">SSL 보안 결제</span></span>
+                    <span class="payment-badge"><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal 인증됨</span></span>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>snsherocom@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom" data-i18n="foot-copy">&copy; 2026 BibleForAI. 인도 시장진출을 위한 크로스보더 비즈니스 지원.</div>
+    </footer>
+
+    <div class="modal-backdrop" id="purchase-modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="modal-product-title" data-i18n="modal-title">주문 설정</h3>
+            <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">패키지를 선택하고 안전한 PayPal 결제를 진행하세요.</p>
+            <div class="summary-box">
+                <div class="summary-row"><span data-i18n="modal-base-pkg">패키지:</span><strong id="modal-package-name">-</strong></div>
+                <div class="summary-row"><span data-i18n="modal-base-price-label">기본 가격:</span><strong id="modal-base-price">$0.00</strong></div>
+            </div>
+            <div class="email-control-group">
+                <label for="order-email" data-i18n="modal-email-label">이메일 주소 *</label>
+                <input type="email" id="order-email" required placeholder="name@example.com" data-i18n="modal-email-placeholder">
+                <span id="email-error" class="field-error" data-i18n="modal-email-error"><i class="fa-solid fa-triangle-exclamation"></i> 올바른 이메일 주소를 입력해주세요.</span>
+            </div>
+            <div class="focus-control-group">
+                <label for="order-focus" data-i18n="modal-focus-label">비즈니스 목적:</label>
+                <select id="order-focus">
+                    <option value="General India market entry">일반 인도 시장진출</option>
+                    <option value="Company setup planning">법인 설립 계획</option>
+                    <option value="Operating risk review">운영 리스크 검토</option>
+                    <option value="Property and sourcing support">부동산 및 소싱 지원</option>
+                </select>
+            </div>
+            <div class="quantity-control-group">
+                <label for="order-quantity" data-i18n="modal-qty">수량:</label>
+                <div class="qty-selector">
+                    <button type="button" onclick="adjustQty(-1)">-</button>
+                    <input type="number" id="order-quantity" value="1" min="1" onchange="updateModalPrice()">
+                    <button type="button" onclick="adjustQty(1)">+</button>
+                </div>
+            </div>
+            <div class="total-price-box">
+                <span data-i18n="modal-total-amt">총 결제금액:</span>
+                <span class="price-val" id="modal-total-price" onclick="triggerTestCheckout()" title="샌드박스 테스트 결제 실행">$0.00</span>
+            </div>
+            <div class="modal-price-hint" data-i18n="modal-price-hint">총 결제금액 텍스트를 눌러 샌드박스 테스트 결제를 실행하세요</div>
+            <div class="payment-badges modal-badges">
+                <span class="payment-badge"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="badge-ssl">SSL 보안 결제</span></span>
+                <span class="payment-badge"><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal 인증됨</span></span>
+            </div>
+            <div id="paypal-button-container" class="paypal-wrap"></div>
+        </div>
+    </div>
+
+    <script src="../app.js"></script>
+</body>
+</html>

@@ -182,6 +182,15 @@
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
+                  "name": "MICEMC — International Event MC & Interpretation",
+                  "url": "https://bibleforai.com/micemc/",
+                  "description": "International event MC, English PT support, and sequential interpretation for conferences, summits, and official ceremonies."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
                   "name": "ADSBOOST — Google Ads Optimization",
                   "url": "https://bibleforai.com/adsboost/",
                   "description": "Google Ads audit, campaign setup, and monthly management for global growth and better conversions."
@@ -1069,6 +1078,15 @@
             box-shadow: 0 15px 35px rgba(139, 92, 246, 0.12), 0 0 15px rgba(139, 92, 246, 0.1);
         }
 
+        .card-active-indiaboost {
+            border-color: rgba(249, 115, 22, 0.16);
+        }
+        .card-active-indiaboost:hover {
+            transform: translateY(-8px);
+            border-color: #f97316;
+            box-shadow: 0 15px 35px rgba(249, 115, 22, 0.12), 0 0 15px rgba(249, 115, 22, 0.1);
+        }
+
         .card-active-law, .card-active-hr {
             border-color: rgba(100, 116, 139, 0.15);
         }
@@ -1320,6 +1338,12 @@
             color: #8b5cf6;
             background: rgba(139, 92, 246, 0.06);
             border-color: rgba(139, 92, 246, 0.15);
+        }
+
+        .icon-indiaboost {
+            color: #f97316;
+            background: rgba(249, 115, 22, 0.06);
+            border-color: rgba(249, 115, 22, 0.15);
         }
 
         .icon-law {
@@ -1730,6 +1754,17 @@
         .btn-affboost:hover {
             background: #6d28d9;
             box-shadow: 0 8px 25px rgba(139, 92, 246, 0.35);
+        }
+
+        .btn-indiaboost {
+            background: #f97316;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.2);
+        }
+        .btn-indiaboost:hover {
+            background: #ea580c;
+            box-shadow: 0 8px 25px rgba(249, 115, 22, 0.35);
         }
 
         .btn-law {
@@ -2324,6 +2359,7 @@
             <a href="/opencode/" class="sidebar-link"><i class="fa-solid fa-code"></i> <span id="side-title-opencode">OpenCode AI</span></a>
             <a href="/shopboost/" class="sidebar-link"><i class="fa-solid fa-store"></i> <span id="side-title-shop">E-Commerce Entry</span></a>
             <a href="/shopglobal/" class="sidebar-link"><i class="fa-brands fa-shopify"></i> <span id="side-title-shopglobal">SHOPGLOBAL — Shopify Global Expansion</span></a>
+            <a href="/amzbrand/" class="sidebar-link"><i class="fa-brands fa-amazon"></i> <span id="side-title-amzbrand">AMZBRAND — Amazon Brand Registry &amp; Storefront</span></a>
             <a href="/flowboost/" class="sidebar-link"><i class="fa-solid fa-diagram-project"></i> <span id="side-title-flow">Flow Automation</span></a>
             <a href="/imgboost/" class="sidebar-link"><i class="fa-solid fa-camera-retro"></i> <span id="side-title-img">Product Photography</span></a>
             <a href="/pitchboost/" class="sidebar-link"><i class="fa-solid fa-chart-line"></i> <span id="side-title-pitch">AI Presentations</span></a>
@@ -2341,6 +2377,7 @@
             <a href="/tikshop/" class="sidebar-link"><i class="fa-brands fa-tiktok"></i> <span id="side-title-tikshop">TIKSHOP TikTok Shop Setup</span></a>
             <a href="/globalup/" class="sidebar-link"><i class="fa-solid fa-user-tie"></i> <span id="side-title-globalup">GLOBALUP Global Recruiting</span></a>
             <a href="/eventboost/" class="sidebar-link"><i class="fa-solid fa-microphone-lines"></i> <span id="side-title-eventboost">EVENTBOOST Global Event MC</span></a>
+            <a href="/micemc/" class="sidebar-link"><i class="fa-solid fa-microphone-lines"></i> <span id="side-title-micemc">MICEMC International MC</span></a>
             <a href="/alicat/" class="sidebar-link"><i class="fa-solid fa-box-open"></i> <span id="side-title-alicat">ALICAT Alibaba &amp; B2B Catalog</span></a>
             <a href="/appboost/" class="sidebar-link"><i class="fa-solid fa-mobile-screen-button"></i> <span id="side-title-app">APPBOOST Global App Marketing</span></a>
             <a href="/mailboost/" class="sidebar-link"><i class="fa-solid fa-envelope"></i> <span id="side-title-mail">Email Marketing</span></a>
@@ -2362,6 +2399,7 @@
             <span class="sidebar-category-title" id="side-cat-strategy">Strategy & Analytics</span>
             <a href="/aiboost/" class="sidebar-link"><i class="fa-solid fa-brain"></i> <span id="side-title-ai">AI Consulting</span></a>
             <a href="/localize/" class="sidebar-link"><i class="fa-solid fa-language"></i> <span id="side-title-localize">LOCALIZE — Native Translation & Localization</span></a>
+            <a href="/indiaboost/" class="sidebar-link"><i class="fa-solid fa-earth-asia"></i> <span id="side-title-indiaboost">INDIABOOST — India Market Entry Advisory</span></a>
             <a href="/insightboost/" class="sidebar-link"><i class="fa-solid fa-chart-bar"></i> <span id="side-title-insight">AI Data Analytics</span></a>
             <a href="/ustaxboost/" class="sidebar-link"><i class="fa-solid fa-file-invoice-dollar"></i> <span id="side-title-ustax">US Tax Advisory</span></a>
             <a href="/ustax/" class="sidebar-link"><i class="fa-solid fa-file-invoice-dollar"></i> <span id="side-title-ustax2">USTAX US Tax Advisory</span></a>
@@ -2369,6 +2407,7 @@
             <a href="/chatboost/" class="sidebar-link"><i class="fa-solid fa-robot"></i> <span id="side-title-chat">AI Chatbot</span></a>
             <a href="/buyerboost/" class="sidebar-link"><i class="fa-solid fa-handshake"></i> <span id="side-title-buyer">Global Buyer Discovery</span></a>
             <a href="/lawboost/" class="sidebar-link"><i class="fa-solid fa-scale-balanced"></i> <span id="side-title-law">Global Legal Advisory</span></a>
+            <a href="/complianceboost/" class="sidebar-link"><i class="fa-solid fa-shield-halved"></i> <span id="side-title-complianceboost">COMPLIANCEBOOST Compliance Docs &amp; Audit Prep</span></a>
             <a href="/certboost/" class="sidebar-link"><i class="fa-solid fa-certificate"></i> <span id="side-title-cert">Certification Consulting</span></a>
             <a href="/apostboost/" class="sidebar-link"><i class="fa-solid fa-stamp"></i> <span id="side-title-apost">APOSTBOOST Global Document Authentication</span></a>
             <a href="/ipboost/" class="sidebar-link"><i class="fa-solid fa-shield-halved"></i> <span id="side-title-ip">IP Protection</span></a>
@@ -2440,6 +2479,7 @@
                 <a href="/tikshop/" id="foot-tikshop-link">TIKSHOP</a>
                 <a href="/globalup/" id="foot-globalup-link">GLOBALUP</a>
                 <a href="/eventboost/" id="foot-eventboost-link">EVENTBOOST</a>
+                <a href="/micemc/" id="foot-micemc-link">MICEMC</a>
                 <a href="/appboost/" id="foot-app-link">APPBOOST</a>
                 <a href="/clipboost/" id="foot-clip-link">CLIPBOOST</a>
                 <a href="/mailboost/" id="foot-mail-link">MAILBOOST</a>
@@ -2460,6 +2500,7 @@
                 <a href="https://opencode.ai/go?ref=CFP69RVVCJ" target="_blank" id="foot-opencode-link">OpenCode AI</a>
                 <a href="/shopboost/" id="foot-shop-link">SHOPBOOST</a>
                 <a href="/shopglobal/" id="foot-shopglobal-link">SHOPGLOBAL</a>
+                <a href="/indiaboost/" id="foot-indiaboost-link">INDIABOOST</a>
                 <a href="/buyerboost/" id="foot-buyer-link">BUYERBOOST</a>
                 <a href="/contentboost/" id="foot-content-link">CONTENTBOOST</a>
                 <a href="/affboost/" id="foot-affboost-link">AFFBOOST</a>
@@ -2550,9 +2591,18 @@
                 "shopglobal-title": "SHOPGLOBAL — Shopify Global Expansion",
                 "shopglobal-desc": "Shopify store strategy, setup, localization, app-stack planning, and growth support for brands entering global markets.",
                 "shopglobal-btn": "Launch SHOPGLOBAL Service",
+                "indiaboost-title": "INDIABOOST — India Market Entry Advisory",
+                "indiaboost-desc": "India expansion advisory, company setup planning, operating risk review, and localization guidance for global teams.",
+                "indiaboost-btn": "Launch India Advisory",
                 "amzboost-title": "AMZBOOST — Amazon FBA PPC & Account Ops",
                 "amzboost-desc": "Optimize Amazon keywords, reduce ACOS, and manage global marketplaces with daily reporting and weekly PDF briefs.",
-                "amzboost-btn": "Launch AMZBOOST",
+                "amzboost-btn": "Launch AMZBOOST Service",
+                "amzbrand-title": "AMZBRAND — Amazon Brand Registry & Storefront",
+                "amzbrand-desc": "Protect your brand, optimize storefronts, and scale Amazon listings with brand-first reporting.",
+                "amzbrand-btn": "Launch AMZBRAND Service",
+                "complianceboost-title": "COMPLIANCEBOOST — Compliance Docs & Audit Prep",
+                "complianceboost-desc": "Prepare policies, disclosures, and audit-ready documentation with a clean PayPal workflow.",
+                "complianceboost-btn": "Launch Compliance Service",
                 "tikshop-title": "TIKSHOP — TikTok Shop Seller Setup",
                 "tikshop-desc": "Register TikTok Shop accounts, prepare approval workflows, and launch with payout guidance for US and Southeast Asia markets.",
                 "tikshop-btn": "Launch TIKSHOP",
@@ -2573,6 +2623,9 @@
                 "eventboost-title": "EVENTBOOST — Global Event MC & Interpretation",
                 "eventboost-desc": "Bilingual event hosting, interpretation, scripting, and stage-flow support for launches, conferences, and summits.",
                 "eventboost-btn": "Launch Event Service",
+                "micemc-title": "MICEMC — International Event MC & Interpretation",
+                "micemc-desc": "International event MC, English PT support, and sequential interpretation for conferences, summits, and official ceremonies.",
+                "micemc-btn": "Launch MICEMC Service",
 
                 "alicat-title": "ALICAT — Alibaba & B2B Catalog Listing",
                 "alicat-desc": "Optimize Alibaba and Global Sources listings with keyword research, localized copy, and image tuning for global wholesale buyers.",
@@ -2808,9 +2861,18 @@
                 "shopglobal-title": "SHOPGLOBAL — 쇼피파이 글로벌 확장",
                 "shopglobal-desc": "해외 시장 진출 브랜드를 위한 쇼피파이 스토어 전략, 세팅, 현지화, 앱 스택 기획, 성장 지원 서비스입니다.",
                 "shopglobal-btn": "SHOPGLOBAL 시작",
+                "indiaboost-title": "INDIABOOST — 인도 시장진출 자문",
+                "indiaboost-desc": "인도 시장 확장 자문, 법인 설립 기획, 운영 리스크 검토, 현지화 가이드를 제공합니다.",
+                "indiaboost-btn": "인도 진출 자문 열기",
                 "amzboost-title": "AMZBOOST — 아마존 FBA PPC & 계정 운영",
                 "amzboost-desc": "아마존 키워드를 최적화하고 ACOS를 낮추며, 일일 리포트와 주간 PDF 브리핑으로 글로벌 마켓플레이스를 관리합니다.",
                 "amzboost-btn": "AMZBOOST 바로가기",
+                "amzbrand-title": "AMZBRAND — 아마존 브랜드 등록 & 스토어프론트",
+                "amzbrand-desc": "브랜드를 보호하고 스토어프론트를 최적화하며, 브랜드 중심 리포팅으로 아마존 리스팅을 확장하세요.",
+                "amzbrand-btn": "AMZBRAND 시작",
+                "complianceboost-title": "COMPLIANCEBOOST — 컴플라이언스 문서 & 감사 준비",
+                "complianceboost-desc": "정책, 고지사항, 감사 대응 문서를 깔끔한 PayPal 워크플로우로 준비하세요.",
+                "complianceboost-btn": "컴플라이언스 시작",
                 "tikshop-title": "TIKSHOP — 틱톡샵 셀러 등록/승인",
                 "tikshop-desc": "TikTok Shop 계정을 등록하고 승인 워크플로우를 준비하며, 미국 및 동남아 시장 런칭을 위한 정산 가이드를 제공합니다.",
                 "tikshop-btn": "TIKSHOP 시작",
@@ -2831,6 +2893,9 @@
                 "eventboost-title": "EVENTBOOST — 글로벌 행사 MC·통역",
                 "eventboost-desc": "국제행사 진행, 한영 통역, 대본 작성, 무대 운영을 지원합니다.",
                 "eventboost-btn": "이벤트 서비스 바로가기",
+                "micemc-title": "MICEMC — 국제행사 영어 MC & 통역",
+                "micemc-desc": "컨퍼런스, 서밋, 공식 행사를 위한 국제행사 영어 MC, 영어 PT 지원, 한영순차통역 서비스.",
+                "micemc-btn": "MICEMC 서비스 열기",
 
                 "alicat-title": "ALICAT — 알리바바 & B2B 카탈로그 리스팅",
                 "alicat-desc": "키워드 리서치, 현지화된 카피, 이미지 튜닝으로 Alibaba와 Global Sources 리스팅을 최적화합니다.",
@@ -3069,16 +3134,20 @@
             { id: 'autoboost', category: 'design-dev', link: '/autoboost/', icon: 'fa-solid fa-arrows-rotate', cardClass: 'card-active-autoboost', btnClass: 'btn-autoboost', iconBoxClass: 'icon-autoboost', popularity: 89, addedAt: 1782575846 },
             { id: 'webcreate', category: 'design-dev', link: '/webcreate/', icon: 'fa-solid fa-globe', cardClass: 'card-active-webcreate', btnClass: 'btn-webcreate', iconBoxClass: 'icon-webcreate', popularity: 84, addedAt: 1782537153 },
             { id: 'pr', category: 'marketing', link: '/prboost/', icon: 'fa-solid fa-globe', cardClass: 'card-active-pr', btnClass: 'btn-pr', iconBoxClass: 'icon-pr', popularity: 82, addedAt: 1782461105 },
-            { id: 'adsboost', category: 'marketing', link: '/adsboost/', icon: 'fa-solid fa-bullhorn', cardClass: 'card-active-adsboost', btnClass: 'btn-adsboost', iconBoxClass: 'icon-adsboost', popularity: 83, addedAt: 1782681194 },
+            { id: 'adsboost', category: 'marketing', link: '/adsboost/', icon: 'fa-solid fa-bullhorn', cardClass: 'card-active-adsboost', btnClass: 'btn-adsboost', iconBoxClass: 'icon-adsboost', popularity: 83, addedAt: 1782681547 },
             { id: 'linkboost', category: 'marketing', link: '/linkboost/', icon: 'fa-brands fa-linkedin', cardClass: 'card-active-linkboost', btnClass: 'btn-linkboost', iconBoxClass: 'icon-linkboost', popularity: 83, addedAt: 1782660139 },
-            { id: 'careerlink', category: 'marketing', link: '/careerlink/', icon: 'fa-brands fa-linkedin', cardClass: 'card-active-careerlink', btnClass: 'btn-careerlink', iconBoxClass: 'icon-careerlink', popularity: 84, addedAt: 0 },
+            { id: 'careerlink', category: 'marketing', link: '/careerlink/', icon: 'fa-brands fa-linkedin', cardClass: 'card-active-careerlink', btnClass: 'btn-careerlink', iconBoxClass: 'icon-careerlink', popularity: 84, addedAt: 1782682128 },
             { id: 'localize', category: 'strategy', link: '/localize/', icon: 'fa-solid fa-language', cardClass: 'card-active-localize', btnClass: 'btn-localize', iconBoxClass: 'icon-localize', popularity: 86, addedAt: 1782656191 },
             { id: 'tradeboost', category: 'strategy', link: '/tradeboost/', icon: 'fa-solid fa-ship', cardClass: 'card-active-tradeboost', btnClass: 'btn-tradeboost', iconBoxClass: 'icon-tradeboost', popularity: 85, addedAt: 1782652898 },
             { id: 'amzboost', category: 'marketing', link: '/amzboost/', icon: 'fa-solid fa-store', cardClass: 'card-active-amzboost', btnClass: 'btn-amzboost', iconBoxClass: 'icon-amzboost', popularity: 88, addedAt: 1782634998 },
+            { id: 'amzbrand', category: 'marketing', link: '/amzbrand/', icon: 'fa-brands fa-amazon', cardClass: 'card-active-amzbrand', btnClass: 'btn-amzbrand', iconBoxClass: 'icon-amzbrand', popularity: 87, addedAt: 1782689045 },
             { id: 'tikshop', category: 'marketing', link: '/tikshop/', icon: 'fa-brands fa-tiktok', cardClass: 'card-active-tikshop', btnClass: 'btn-tikshop', iconBoxClass: 'icon-tikshop', popularity: 89, addedAt: 1782638348 },
             { id: 'rfp', category: 'strategy', link: '/rfpboost/', icon: 'fa-solid fa-file-signature', cardClass: 'card-active-rfp', btnClass: 'btn-rfp', iconBoxClass: 'icon-rfp', popularity: 84, addedAt: 1782627449 },
-            { id: 'globalup', category: 'strategy', link: '/globalup/', icon: 'fa-solid fa-user-tie', cardClass: 'card-active-globalup', btnClass: 'btn-globalup', iconBoxClass: 'icon-globalup', popularity: 81, addedAt: 1782681195 },
-            { id: 'eventboost', category: 'strategy', link: '/eventboost/', icon: 'fa-solid fa-microphone-lines', cardClass: 'card-active-eventboost', btnClass: 'btn-eventboost', iconBoxClass: 'icon-eventboost', popularity: 82, addedAt: 1782681195 },
+            { id: 'complianceboost', category: 'strategy', link: '/complianceboost/', icon: 'fa-solid fa-shield-halved', cardClass: 'card-active-complianceboost', btnClass: 'btn-complianceboost', iconBoxClass: 'icon-complianceboost', popularity: 82, addedAt: 1782689045 },
+            { id: 'globalup', category: 'strategy', link: '/globalup/', icon: 'fa-solid fa-user-tie', cardClass: 'card-active-globalup', btnClass: 'btn-globalup', iconBoxClass: 'icon-globalup', popularity: 81, addedAt: 1782689046 },
+            { id: 'eventboost', category: 'strategy', link: '/eventboost/', icon: 'fa-solid fa-microphone-lines', cardClass: 'card-active-eventboost', btnClass: 'btn-eventboost', iconBoxClass: 'icon-eventboost', popularity: 82, addedAt: 1782689046 },
+            { id: 'micemc', category: 'strategy', link: '/micemc/', icon: 'fa-solid fa-microphone-lines', cardClass: 'card-active-micemc', btnClass: 'btn-micemc', iconBoxClass: 'icon-micemc', popularity: 83, addedAt: 1782689045 },
+            { id: 'indiaboost', category: 'strategy', link: '/indiaboost/', icon: 'fa-solid fa-earth-asia', cardClass: 'card-active-indiaboost', btnClass: 'btn-indiaboost', iconBoxClass: 'icon-indiaboost', popularity: 81, addedAt: 1782689045 },
             { id: 'alicat', category: 'marketing', link: '/alicat/', icon: 'fa-solid fa-box-open', cardClass: 'card-active-alicat', btnClass: 'btn-alicat', iconBoxClass: 'icon-alicat', popularity: 83, addedAt: 1782617466 },
             { id: 'app', category: 'marketing', link: '/appboost/', icon: 'fa-solid fa-mobile-screen-button', cardClass: 'card-active-app', btnClass: 'btn-app', iconBoxClass: 'icon-app', popularity: 83, addedAt: 1782609992 },
             { id: 'ustax', category: 'strategy', link: '/ustaxboost/', icon: 'fa-solid fa-file-invoice-dollar', cardClass: 'card-active-ustax', btnClass: 'btn-ustax', iconBoxClass: 'icon-ustax', popularity: 81, addedAt: 1782606020 },
@@ -3121,6 +3190,7 @@
             { id: 'chinaboost', category: 'strategy', link: '/chinaboost/', icon: 'fa-solid fa-earth-asia', cardClass: 'card-active-chinaboost', btnClass: 'btn-chinaboost', iconBoxClass: 'icon-chinaboost', popularity: 87, addedAt: 1782670293 },
             { id: 'surveyboost', category: 'strategy', link: '/surveyboost/', icon: 'fa-solid fa-square-poll-vertical', cardClass: 'card-active-surveyboost', btnClass: 'btn-surveyboost', iconBoxClass: 'icon-surveyboost', popularity: 84, addedAt: 1782674064 },
             { id: 'shopglobal', category: 'strategy', link: '/shopglobal/', icon: 'fa-brands fa-shopify', cardClass: 'card-active-shopglobal', btnClass: 'btn-shopglobal', iconBoxClass: 'icon-shopglobal', popularity: 86, addedAt: 1782677930 },
+            { id: 'indiaboost', category: 'strategy', link: '/indiaboost/', icon: 'fa-solid fa-earth-asia', cardClass: 'card-active-indiaboost', btnClass: 'btn-indiaboost', iconBoxClass: 'icon-indiaboost', popularity: 88, addedAt: 1782689045 },
             { id: 'map', category: 'marketing', link: '/mapboost/', icon: 'fa-solid fa-map-location-dot', cardClass: 'card-active-map', btnClass: 'btn-map', iconBoxClass: 'icon-map', popularity: 80, addedAt: 1782580445 }
         ];
         let activeCategory = 'all';
