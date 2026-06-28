@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFFBOOST — AI Affiliate Website Builder | BibleForAI</title>
+    <meta name="description" content="Build revenue-ready affiliate websites with automatic content, responsive design, source code delivery, and a sandbox PayPal checkout flow.">
+    <meta name="keywords" content="affiliate website builder, AI affiliate site, automated niche website, affiliate marketing automation, BibleForAI">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bibleforai.com/affboost/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bibleforai.com/affboost/">
+    <meta property="og:title" content="AFFBOOST — AI Affiliate Website Builder | BibleForAI">
+    <meta property="og:description" content="Automatic affiliate website production with content upload, responsive layout, and source code delivery.">
+    <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+    <meta property="og:site_name" content="BibleForAI AFFBOOST">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bibleforai.com/affboost/">
+    <meta name="twitter:title" content="AFFBOOST — AI Affiliate Website Builder | BibleForAI">
+    <meta name="twitter:description" content="Automatic affiliate website production with content upload, responsive layout, and source code delivery.">
+    <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does AFFBOOST create?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AFFBOOST builds automated affiliate-style niche websites with responsive design, 15 pages per site, automatic content upload, source code delivery, and a clean conversion-focused layout."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is this service for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is designed for affiliate marketers, content publishers, niche site operators, solopreneurs, and anyone who wants a global-ready website that can be monetized with offers and SEO content."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I test checkout before paying?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The visible total price text is clickable and triggers the sandbox test checkout flow so you can verify the purchase flow without a separate test button."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is the receipt delivered?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "After PayPal approval, the receipt details are encoded and redirected to a Google Form for recordkeeping and follow-up."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "AFFBOOST — AI Affiliate Website Builder",
+      "image": "https://bibleforai.com/assets/og-preview.png",
+      "description": "Automated affiliate website production with responsive design, source code delivery, and content upload support.",
+      "brand": {
+        "@type": "Brand",
+        "name": "BibleForAI"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "2143",
+        "highPrice": "7857",
+        "offerCount": "3"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+</head>
+<body>
+    <header id="app-header">
+        <div class="header-container">
+            <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <a href="/" class="logo-group" aria-label="BibleForAI Home">
+                <span class="logo-title">BibleForAI</span>
+                <span class="logo-subtitle" data-i18n="logo-subtitle">AFFBOOST</span>
+            </a>
+            <div class="header-actions">
+                <a href="/" class="home-link"><i class="fa-solid fa-house"></i> <span data-i18n="home-link">Home</span></a>
+                <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)">
+                    <option value="en" selected>🌐 English</option>
+                    <option value="ko">🇰🇷 한국어</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-drawer" id="mobile-drawer">
+        <ul class="mobile-nav-links unified-service-menu">
+            <li class="mobile-menu-heading">Database & Scraping</li>
+            <li><a href="/b2bdb/"><i class="fa-solid fa-building-user"></i> B2B Core Database</a></li>
+            <li><a href="/b2cdb/"><i class="fa-solid fa-database"></i> B2C Lead Database</a></li>
+            <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI Landing Page</a></li>
+            <li class="mobile-menu-heading">Design & Coding</li>
+            <li><a href="/opencode/"><i class="fa-solid fa-code"></i> OpenCode AI</a></li>
+            <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> SHOPBOOST — E-Commerce Entry</a></li>
+            <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> FLOWBOOST — Workflow Automation</a></li>
+            <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST — Product Photography</a></li>
+            <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST — AI Presentations</a></li>
+            <li class="mobile-menu-heading">Marketing & SEO</li>
+            <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> SMM Growth Booster</a></li>
+            <li><a href="/prboost/"><i class="fa-solid fa-globe"></i> PRBOOST — Global PR</a></li>
+            <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> MAILBOOST — Email Marketing</a></li>
+            <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — AI SEO</a></li>
+            <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> CONTENTBOOST — AI Publishing System</a></li>
+            <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST — Market Research</a></li>
+            <li class="mobile-menu-heading">Media & Audio</li>
+            <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> CLIPBOOST — Short-Form Video</a></li>
+            <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> VOICEBOOST — AI Voice</a></li>
+            <li><a href="/transboost/"><i class="fa-solid fa-language"></i> TRANSBOOST — Translation</a></li>
+            <li class="mobile-menu-heading">Strategy & Analytics</li>
+            <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> AIBOOST — AI Consulting</a></li>
+            <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST — AI Chatbot</a></li>
+            <li><a href="/salesboost/"><i class="fa-solid fa-receipt"></i> SALESBOOST — Sales Enablement</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <section class="hero">
+            <div class="badge-tag"><i class="fa-solid fa-rocket"></i> <span data-i18n="hero-badge">Affiliate Growth Automation</span></div>
+            <h1 data-i18n="hero-title">AFFBOOST — AI Affiliate Website Builder</h1>
+            <p data-i18n="hero-desc">Turn keywords into revenue-ready affiliate sites with automatic content upload, responsive layouts, source code delivery, and sandbox checkout testing.</p>
+            <div class="hero-actions">
+                <button class="cta-btn-main" onclick="document.getElementById('packages').scrollIntoView({behavior:'smooth', block:'start'})" data-i18n="btn-view-packages">See Packages <i class="fa-solid fa-arrow-right"></i></button>
+                <button class="cta-btn-secondary" onclick="openPurchaseModal('affiliate','standard')" data-i18n="btn-start">Start Order</button>
+            </div>
+        </section>
+
+        <section class="trust-strip">
+            <div><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL Secured Checkout</span></div>
+            <div><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal Verified</span></div>
+            <div><i class="fa-solid fa-code"></i> <span data-i18n="badge-code">Source Code Included</span></div>
+        </section>
+
+        <section class="packages-section" id="packages">
+            <div class="section-heading">
+                <h2 data-i18n="packages-title">Affiliate Website Packages</h2>
+                <p data-i18n="packages-subtitle">Built from the kmong service model: automatic affiliate websites, 15 pages per site, auto content upload, responsive web, and source code delivery.</p>
+            </div>
+            <div class="packages-grid" id="affiliate-packages"></div>
+        </section>
+
+        <section class="details-grid">
+            <div class="info-card">
+                <h3 data-i18n="features-title">What You Get</h3>
+                <ul>
+                    <li data-i18n="feature-1">Automatic affiliate website creation</li>
+                    <li data-i18n="feature-2">15 pages per site</li>
+                    <li data-i18n="feature-3">Automatic content upload</li>
+                    <li data-i18n="feature-4">Responsive web design</li>
+                    <li data-i18n="feature-5">Source code delivery</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3 data-i18n="audience-title">Target Audience</h3>
+                <p data-i18n="audience-desc">Affiliate marketers, niche site builders, content publishers, and founders who want an internationally usable traffic asset.</p>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="section-heading">
+                <h2 data-i18n="faq-title">Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-list">
+                <details open>
+                    <summary data-i18n="faq-q1">Can I test the checkout before paying?</summary>
+                    <p data-i18n="faq-a1">Yes. Click the visible total price text to launch the sandbox test checkout flow.</p>
+                </details>
+                <details>
+                    <summary data-i18n="faq-q2">What happens after payment?</summary>
+                    <p data-i18n="faq-a2">Your receipt is encoded and redirected to a Google Form for order tracking and follow-up.</p>
+                </details>
+                <details>
+                    <summary data-i18n="faq-q3">Do you support Korean and English?</summary>
+                    <p data-i18n="faq-a3">Yes. Use the language selector to switch between English and Korean pages.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal-backdrop" id="purchase-modal" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true">
+            <button class="modal-close" onclick="closeModal()" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="modal-product-title" data-i18n="modal-title">Configure Order</h3>
+            <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">Choose a package, confirm quantity, and complete secure PayPal payment.</p>
+
+            <div class="order-summary-box">
+                <div class="summary-row"><span data-i18n="modal-base-pkg">Base Package</span><strong id="modal-package-name">-</strong></div>
+                <div class="summary-row"><span data-i18n="modal-base-price-label">Base Price</span><strong id="modal-base-price">$0</strong></div>
+            </div>
+
+            <div class="form-group">
+                <label for="order-email" data-i18n="modal-email-label">Email Address *</label>
+                <input type="email" id="order-email" placeholder="name@example.com" data-i18n="modal-email-placeholder">
+                <span id="email-error" class="error-text" data-i18n="modal-email-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="order-quantity" data-i18n="modal-qty">Quantity</label>
+                <div class="qty-selector">
+                    <button class="qty-btn" onclick="adjustQty(-1)"><i class="fa-solid fa-minus"></i></button>
+                    <input type="number" id="order-quantity" value="1" min="1" oninput="updateModalPrice()">
+                    <button class="qty-btn" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <div class="total-price-box">
+                <span data-i18n="modal-total-amt">Total Amount</span>
+                <span class="price-val" id="modal-total-price" onclick="triggerTestCheckout()" title="Click to test checkout">$0</span>
+            </div>
+            <div class="price-note" data-i18n="modal-price-note">Click the price to run the sandbox test checkout.</div>
+
+            <div class="paypal-wrapper">
+                <div id="paypal-button-container"></div>
+            </div>
+
+            <div class="payment-badges">
+                <span><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL Secured Checkout</span></span>
+                <span><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal Verified</span></span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div>
+                <a href="/" class="footer-brand">BibleForAI</a>
+                <p data-i18n="footer-desc">Affiliate website automation built for global reach.</p>
+            </div>
+            <div class="footer-links">
+                <a href="/affboost/">AFFBOOST</a>
+                <a href="mailto:snsherocom@gmail.com">snsherocom@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -16,6 +16,7 @@ CATALOG = [
     {'id': 'webcreate', 'cat': 'design-dev', 'link': '/webcreate/', 'icon': 'fa-solid fa-globe', 'popularity': 84},
     {'id': 'pr', 'cat': 'marketing', 'link': '/prboost/', 'icon': 'fa-solid fa-globe', 'popularity': 82},
     {'id': 'linkboost', 'cat': 'marketing', 'link': '/linkboost/', 'icon': 'fa-brands fa-linkedin', 'popularity': 83},
+    {'id': 'careerlink', 'cat': 'marketing', 'link': '/careerlink/', 'icon': 'fa-brands fa-linkedin', 'popularity': 84},
     {'id': 'localize', 'cat': 'strategy', 'link': '/localize/', 'icon': 'fa-solid fa-language', 'popularity': 86},
     {'id': 'tradeboost', 'cat': 'strategy', 'link': '/tradeboost/', 'icon': 'fa-solid fa-ship', 'popularity': 85},
     {'id': 'amzboost', 'cat': 'marketing', 'link': '/amzboost/', 'icon': 'fa-solid fa-store', 'popularity': 88},
@@ -49,6 +50,7 @@ CATALOG = [
     {'id': 'research', 'cat': 'strategy', 'link': '/researchboost/', 'icon': 'fa-solid fa-chart-line', 'popularity': 78},
     {'id': 'rep', 'cat': 'strategy', 'link': '/repboost/', 'icon': 'fa-solid fa-comments', 'popularity': 80},
     {'id': 'content', 'cat': 'marketing', 'link': '/contentboost/', 'icon': 'fa-solid fa-newspaper', 'popularity': 86},
+    {'id': 'affboost', 'cat': 'marketing', 'link': '/affboost/', 'icon': 'fa-solid fa-rocket', 'popularity': 92},
     {'id': 'sales', 'cat': 'strategy', 'link': '/salesboost/', 'icon': 'fa-solid fa-receipt', 'popularity': 77},
     {'id': 'law', 'cat': 'strategy', 'link': '/lawboost/', 'icon': 'fa-solid fa-scale-balanced', 'popularity': 76},
     {'id': 'aiweb', 'cat': 'design-dev', 'link': '/aiweb/', 'icon': 'fa-solid fa-globe', 'popularity': 83},
@@ -162,6 +164,7 @@ def patch_all_service_pages():
         '            <li><a href="/usllc/"><i class="fa-solid fa-building-circle-check"></i> USLLC — US LLC Formation & EIN</a></li>\n',
         '            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — Global Trade Agency</a></li>\n',
         '            <li><a href="/linkboost/"><i class="fa-brands fa-linkedin"></i> LINKBOOST — LinkedIn Growth</a></li>\n',
+        '            <li><a href="/careerlink/"><i class="fa-brands fa-linkedin"></i> CAREERLINK — LinkedIn Optimization</a></li>\n',
         '            <li><a href="/repboost/"><i class="fa-solid fa-circle"></i> REPBOOST</a></li>\n',
         '            <li><a href="/sysboost/"><i class="fa-solid fa-circle"></i> SYSBOOST</a></li>\n',
         '            <li><a href="/ustaxboost/"><i class="fa-solid fa-circle"></i> USTAXBOOST</a></li>\n',
@@ -179,14 +182,21 @@ def patch_all_service_pages():
     ]
     tradeboost_item_en = '            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — Global Trade Agency</a></li>\n'
     tradeboost_item_ko = '            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — 글로벌 무역대행</a></li>\n'
+    affboost_item_en = '            <li><a href="/affboost/"><i class="fa-solid fa-rocket"></i> AFFBOOST — AI Affiliate Website Builder</a></li>\n'
+    affboost_item_ko = '            <li><a href="/affboost/"><i class="fa-solid fa-rocket"></i> AFFBOOST — AI 제휴 웹사이트 빌더</a></li>\n'
     for path in ROOT.rglob('index.html'):
         if path == ROOT / 'index.html':
+            continue
+        if '/affboost/' in str(path):
             continue
         text = path.read_text()
         if 'unified-service-menu' not in text:
             continue
         updated = False
-        extra_items = [tradeboost_item_ko if '/kr/' in str(path) else tradeboost_item_en]
+        extra_items = [
+            tradeboost_item_ko if '/kr/' in str(path) else tradeboost_item_en,
+            affboost_item_ko if '/kr/' in str(path) else affboost_item_en,
+        ]
         for item in (new_items + extra_items):
             slug = item.split('"')[1].split('/')[1]
             if slug in text:
