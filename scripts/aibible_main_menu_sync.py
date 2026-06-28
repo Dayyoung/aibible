@@ -15,6 +15,7 @@ CATALOG = [
     {'id': 'autoboost', 'cat': 'design-dev', 'link': '/autoboost/', 'icon': 'fa-solid fa-arrows-rotate', 'popularity': 89},
     {'id': 'webcreate', 'cat': 'design-dev', 'link': '/webcreate/', 'icon': 'fa-solid fa-globe', 'popularity': 84},
     {'id': 'pr', 'cat': 'marketing', 'link': '/prboost/', 'icon': 'fa-solid fa-globe', 'popularity': 82},
+    {'id': 'tradeboost', 'cat': 'strategy', 'link': '/tradeboost/', 'icon': 'fa-solid fa-ship', 'popularity': 85},
     {'id': 'amzboost', 'cat': 'marketing', 'link': '/amzboost/', 'icon': 'fa-solid fa-store', 'popularity': 88},
     {'id': 'tikshop', 'cat': 'marketing', 'link': '/tikshop/', 'icon': 'fa-brands fa-tiktok', 'popularity': 89},
     {'id': 'rfp', 'cat': 'strategy', 'link': '/rfpboost/', 'icon': 'fa-solid fa-file-signature', 'popularity': 84},
@@ -25,6 +26,7 @@ CATALOG = [
     {'id': 'ustax', 'cat': 'strategy', 'link': '/ustaxboost/', 'icon': 'fa-solid fa-file-invoice-dollar', 'popularity': 81},
     {'id': 'ustax2', 'cat': 'strategy', 'link': '/ustax/', 'icon': 'fa-solid fa-file-invoice-dollar', 'popularity': 80},
     {'id': 'usllc', 'cat': 'strategy', 'link': '/usllc/', 'icon': 'fa-solid fa-building-circle-check', 'popularity': 90},
+    {'id': 'etsyboost', 'cat': 'strategy', 'link': '/etsyboost/', 'icon': 'fa-brands fa-etsy', 'popularity': 91},
     {'id': 'clip', 'cat': 'media', 'link': '/clipboost/', 'icon': 'fa-solid fa-clapperboard', 'popularity': 85},
     {'id': 'mail', 'cat': 'marketing', 'link': '/mailboost/', 'icon': 'fa-solid fa-envelope', 'popularity': 80},
     {'id': 'chat', 'cat': 'strategy', 'link': '/chatboost/', 'icon': 'fa-solid fa-robot', 'popularity': 87},
@@ -156,6 +158,7 @@ def patch_all_service_pages():
     new_items = [
         '            <li><a href="/tikshop/"><i class="fa-brands fa-tiktok"></i> TIKSHOP — TikTok Shop Setup</a></li>\n',
         '            <li><a href="/usllc/"><i class="fa-solid fa-building-circle-check"></i> USLLC — US LLC Formation & EIN</a></li>\n',
+        '            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — Global Trade Agency</a></li>\n',
         '            <li><a href="/repboost/"><i class="fa-solid fa-circle"></i> REPBOOST</a></li>\n',
         '            <li><a href="/sysboost/"><i class="fa-solid fa-circle"></i> SYSBOOST</a></li>\n',
         '            <li><a href="/ustaxboost/"><i class="fa-solid fa-circle"></i> USTAXBOOST</a></li>\n',
@@ -171,6 +174,8 @@ def patch_all_service_pages():
         '            <li><a href="/alicat/"><i class="fa-solid fa-box-open"></i> ALICAT — Alibaba & B2B Catalog</a></li>\n',
         '            <li><a href="/apostboost/"><i class="fa-solid fa-stamp"></i> APOSTBOOST — Apostille & Notarization</a></li>\n',
     ]
+    tradeboost_item_en = '            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — Global Trade Agency</a></li>\n'
+    tradeboost_item_ko = '            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — 글로벌 무역대행</a></li>\n'
     for path in ROOT.rglob('index.html'):
         if path == ROOT / 'index.html':
             continue
@@ -178,7 +183,8 @@ def patch_all_service_pages():
         if 'unified-service-menu' not in text:
             continue
         updated = False
-        for item in new_items:
+        extra_items = [tradeboost_item_ko if '/kr/' in str(path) else tradeboost_item_en]
+        for item in (new_items + extra_items):
             slug = item.split('"')[1].split('/')[1]
             if slug in text:
                 continue
