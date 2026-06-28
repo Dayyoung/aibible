@@ -63,6 +63,9 @@ CATALOG = [
     {'id': 'book', 'cat': 'design-dev', 'link': '/bookboost/', 'icon': 'fa-solid fa-calendar-check', 'popularity': 80},
     {'id': 'eduooost', 'cat': 'strategy', 'link': '/eduooost/', 'icon': 'fa-solid fa-graduation-cap', 'popularity': 80},
     {'id': 'sourcboost', 'cat': 'strategy', 'link': '/sourcboost/', 'icon': 'fa-solid fa-file-shield', 'popularity': 80},
+    {'id': 'chinaboost', 'cat': 'strategy', 'link': '/chinaboost/', 'icon': 'fa-solid fa-earth-asia', 'popularity': 87},
+    {'id': 'surveyboost', 'cat': 'strategy', 'link': '/surveyboost/', 'icon': 'fa-solid fa-square-poll-vertical', 'popularity': 84},
+    {'id': 'shopglobal', 'cat': 'strategy', 'link': '/shopglobal/', 'icon': 'fa-brands fa-shopify', 'popularity': 86},
     {'id': 'map', 'cat': 'marketing', 'link': '/mapboost/', 'icon': 'fa-solid fa-map-location-dot', 'popularity': 80},
 ]
 
@@ -179,6 +182,9 @@ def patch_all_service_pages():
         '            <li><a href="/amzboost/"><i class="fa-solid fa-store"></i> AMZBOOST — Amazon FBA PPC</a></li>\n',
         '            <li><a href="/alicat/"><i class="fa-solid fa-box-open"></i> ALICAT — Alibaba & B2B Catalog</a></li>\n',
         '            <li><a href="/apostboost/"><i class="fa-solid fa-stamp"></i> APOSTBOOST — Apostille & Notarization</a></li>\n',
+        '            <li><a href="/chinaboost/"><i class="fa-solid fa-earth-asia"></i> CHINABOOST — China Market Entry</a></li>\n',
+        '            <li><a href="/surveyboost/"><i class="fa-solid fa-square-poll-vertical"></i> SURVEYBOOST — Market Validation Surveys</a></li>\n',
+        '            <li><a href="/shopglobal/"><i class="fa-brands fa-shopify"></i> SHOPGLOBAL — Shopify Global Expansion</a></li>\n',
     ]
     tradeboost_item_en = '            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — Global Trade Agency</a></li>\n'
     tradeboost_item_ko = '            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — 글로벌 무역대행</a></li>\n'
