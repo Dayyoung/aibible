@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APOSTBOOST — 아포스티유·공증 대행 | 글로벌 문서 인증</title>
+    <meta name="description" content="해외 제출용 문서의 아포스티유, 공증, 번역 검토를 지원하는 서비스입니다. 크몽 기준 ₩10,000부터 시작한 실전형 문서 인증 워크플로우입니다.">
+    <meta name="keywords" content="아포스티유, 공증, 번역공증, 문서 인증, 비자 서류, 해외 제출 서류">
+    <meta name="robots" content="index, follow">
+    <base href="../">
+    <link rel="canonical" href="https://bibleforai.com/apostboost/kr/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bibleforai.com/apostboost/kr/">
+    <meta property="og:title" content="APOSTBOOST — 아포스티유·공증 대행">
+    <meta property="og:description" content="해외 제출용 문서를 위한 아포스티유 안내, 공증 연계, 번역 검토 지원 서비스입니다.">
+    <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+    <meta property="og:site_name" content="BibleForAI APOSTBOOST">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bibleforai.com/apostboost/kr/">
+    <meta name="twitter:title" content="APOSTBOOST — 아포스티유·공증 대행">
+    <meta name="twitter:description" content="학생, 이민, 비자, 사업용 해외 제출 문서를 위한 인증 워크플로우입니다.">
+    <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --font-body: 'Noto Sans KR', 'Inter', sans-serif;
+            --font-heading: 'Noto Sans KR', 'Inter', sans-serif;
+        }
+    </style>
+    <script>
+        localStorage.setItem('bibleforai_lang', 'ko');
+    </script>
+    <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+</head>
+<body>
+    <header id="app-header">
+        <div class="header-container">
+            <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="메뉴 열기">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <a href="/" class="logo-group">
+                <span class="logo-title">BibleForAI</span>
+                <span class="logo-subtitle" data-i18n="logo-subtitle">APOSTBOOST</span>
+            </a>
+
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="#" id="nav-home" onclick="navigate('home')" class="active" data-i18n="nav-home">홈</a></li>
+                    <li><a href="#" id="nav-packages" onclick="navigate('packages')" data-i18n="nav-packages">패키지</a></li>
+                    <li><a href="#" id="nav-faq" onclick="navigate('faq')" data-i18n="nav-faq">FAQ</a></li>
+                    <li><a href="#" id="nav-orders" onclick="navigate('orders')" data-i18n="nav-orders">주문 내역</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)">
+                    <option value="en">🌐 English</option>
+                    <option value="ko" selected>🇰🇷 한국어</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-drawer" id="mobile-drawer">
+        <ul class="mobile-nav-links unified-service-menu">
+            <li class="mobile-menu-heading">데이터 & 스크래핑</li>
+            <li><a href="/b2bdb/"><i class="fa-solid fa-building-user"></i> B2B 코어 데이터베이스</a></li>
+            <li><a href="/b2cdb/"><i class="fa-solid fa-database"></i> B2C 리드 데이터베이스</a></li>
+            <li><a href="/databoost/"><i class="fa-solid fa-spider"></i> DATABOOST — 웹 스크래핑</a></li>
+            <li class="mobile-menu-heading">디자인 & 코딩</li>
+            <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI 랜딩페이지</a></li>
+            <li><a href="/mvpboost/"><i class="fa-solid fa-rocket"></i> MVPBOOST</a></li>
+            <li><a href="/aideploy/"><i class="fa-solid fa-cloud-arrow-up"></i> AIDEPLOY</a></li>
+            <li><a href="/autoboost/"><i class="fa-solid fa-arrows-rotate"></i> AUTOBOOST</a></li>
+            <li><a href="/webcreate/"><i class="fa-solid fa-globe"></i> WEBCREATE</a></li>
+            <li><a href="/opencode/"><i class="fa-solid fa-code"></i> OpenCode AI</a></li>
+            <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> SHOPBOOST — 이커머스 진입</a></li>
+            <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> FLOWBOOST — 워크플로 자동화</a></li>
+            <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST — 상품 촬영</a></li>
+            <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST — AI 프레젠테이션</a></li>
+            <li class="mobile-menu-heading">마케팅 & SEO</li>
+            <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> SMM Growth Booster</a></li>
+            <li><a href="/prboost/"><i class="fa-solid fa-globe"></i> PRBOOST — 글로벌 PR</a></li>
+            <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> MAILBOOST — 이메일 마케팅</a></li>
+            <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — AI SEO</a></li>
+            <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST — 시장조사</a></li>
+            <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> CONTENTBOOST — AI 퍼블리싱</a></li>
+            <li class="mobile-menu-heading">미디어 & 오디오</li>
+            <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> CLIPBOOST — 숏폼 영상</a></li>
+            <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> VOICEBOOST — AI 보이스</a></li>
+            <li><a href="/transboost/"><i class="fa-solid fa-language"></i> TRANSBOOST — 번역</a></li>
+            <li class="mobile-menu-heading">전략 & 분석</li>
+            <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> AIBOOST — AI 컨설팅</a></li>
+            <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST — 데이터 분석</a></li>
+            <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST — AI 챗봇</a></li>
+            <li><a href="/buyerboost/"><i class="fa-solid fa-handshake"></i> BUYERBOOST — 바이어 발굴</a></li>
+            <li><a href="/salesboost/"><i class="fa-solid fa-receipt"></i> SALESBOOST — 세일즈 지원</a></li>
+            <li><a href="/researchboost/"><i class="fa-solid fa-chart-line"></i> RESEARCHBOOST — 시장조사</a></li>
+            <li><a href="/sysboost/"><i class="fa-solid fa-circle"></i> SYSBOOST</a></li>
+            <li><a href="/lawboost/"><i class="fa-solid fa-scale-balanced"></i> LAWBOOST — 법률 자문</a></li>
+            <li><a href="/certboost/"><i class="fa-solid fa-certificate"></i> CERTBOOST — 인증 컨설팅</a></li>
+            <li><a href="/ipboost/"><i class="fa-solid fa-shield-halved"></i> IPBOOST — IP 보호</a></li>
+            <li><a href="/hrboost/"><i class="fa-solid fa-user-tie"></i> HRBOOST — 채용 운영</a></li>
+            <li><a href="/ustaxboost/"><i class="fa-solid fa-file-invoice-dollar"></i> USTAXBOOST</a></li>
+            <li><a href="/ustax/"><i class="fa-solid fa-file-invoice-dollar"></i> USTAX</a></li>
+            <li><a href="/repboost/"><i class="fa-solid fa-comments"></i> REPBOOST — 평판 관리</a></li>
+            <li><a href="/sourcboost/"><i class="fa-solid fa-file-shield"></i> SOURCBOOST</a></li>
+            <li><a href="/loyaltyboost/"><i class="fa-solid fa-gift"></i> LOYALTYBOOST</a></li>
+            <li><a href="/bookboost/"><i class="fa-solid fa-calendar-check"></i> BOOKBOOST</a></li>
+            <li><a href="/eduooost/"><i class="fa-solid fa-graduation-cap"></i> EDUOOOST</a></li>
+            <li><a href="/mapboost/"><i class="fa-solid fa-map-location-dot"></i> MAPBOOST</a></li>
+            <li><a href="/apostboost/"><i class="fa-solid fa-stamp"></i> APOSTBOOST — 아포스티유·공증 대행</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <section id="home-view" class="view-section active">
+            <div class="hero">
+                <div class="badge" data-i18n="hero-badge">문서 인증 워크플로</div>
+                <h1 class="hero-title" data-i18n="hero-title">APOSTBOOST — 아포스티유·공증 대행</h1>
+                <p class="hero-desc" data-i18n="hero-desc">크몽 기준 ₩10,000부터 시작한 서비스 구조를 바탕으로, 학생·해외거주자·기업의 해외 제출 문서를 도와드립니다.</p>
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="navigate('packages')" data-i18n="btn-explore">패키지 보기 <i class="fa-solid fa-arrow-right"></i></button>
+                    <a href="#faq-view" class="btn-secondary" data-i18n="btn-process">진행 방식 보기</a>
+                </div>
+            </div>
+
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-num">₩10K</span>
+                    <span class="stat-label" data-i18n="stat-origin">크몽 시작가</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">2x</span>
+                    <span class="stat-label" data-i18n="stat-markup">사업자 마진</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">24h</span>
+                    <span class="stat-label" data-i18n="stat-fast">긴급 검토</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">100+</span>
+                    <span class="stat-label" data-i18n="stat-global">지원 국가</span>
+                </div>
+            </div>
+
+            <div class="section-container">
+                <h2 class="section-title" data-i18n="sec-highlights-title">이 서비스가 다루는 범위</h2>
+                <p class="section-subtitle" data-i18n="sec-highlights-subtitle">스캔 검토부터 아포스티유 안내와 공증 연계까지, 해외 제출용 문서를 위한 실무형 프로세스입니다.</p>
+                <div class="card-grid">
+                    <div class="data-card">
+                        <div class="card-icon basic"><i class="fa-solid fa-file-signature"></i></div>
+                        <h3 data-i18n="highlight-1-title">학업·비자 서류</h3>
+                        <p data-i18n="highlight-1-desc">성적증명서, 졸업증명서, 자격증, 가족관계 서류, 여행 및 이민 서류에 적합합니다.</p>
+                    </div>
+                    <div class="data-card">
+                        <div class="card-icon standard"><i class="fa-solid fa-stamp"></i></div>
+                        <h3 data-i18n="highlight-2-title">번역 + 공증</h3>
+                        <p data-i18n="highlight-2-desc">번역 검토, 공증 연계, 아포스티유 체크리스트까지 함께 정리해 해외 제출을 돕습니다.</p>
+                    </div>
+                    <div class="data-card">
+                        <div class="card-icon premium"><i class="fa-solid fa-globe"></i></div>
+                        <h3 data-i18n="highlight-3-title">비즈니스 문서</h3>
+                        <p data-i18n="highlight-3-desc">법인 서류, 계약서, 설립 관련 서류, 국제 규정 준수 문서에 유용합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="packages-view" class="view-section">
+            <div class="section-container">
+                <h2 class="section-title" data-i18n="sec-packages-title">패키지 구성</h2>
+                <p class="section-subtitle" data-i18n="sec-packages-subtitle">문서 수량과 처리 속도에 맞는 패키지를 선택하세요.</p>
+                <div class="packages-grid" id="packages-grid"></div>
+            </div>
+        </section>
+
+        <section id="faq-view" class="view-section">
+            <div class="section-container">
+                <h2 class="section-title" data-i18n="faq-title">FAQ</h2>
+                <p class="section-subtitle" data-i18n="faq-subtitle">주문 전에 많이 묻는 질문입니다.</p>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary data-i18n="faq-q1">이 서비스는 어떤 점에서 해외 제출에 적합한가요?</summary>
+                        <p data-i18n="faq-a1">해외 학교, 대사관, 기관, 사업 파트너가 자주 요구하는 문서를 중심으로 아포스티유 안내와 공증 연계를 지원합니다.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary data-i18n="faq-q2">어떤 문서가 가장 많이 사용되나요?</summary>
+                        <p data-i18n="faq-a2">성적증명서, 졸업증명서, 가족관계 서류, 여권, 재직증명서, 법인 등기 및 계약서가 대표적입니다.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary data-i18n="faq-q3">스캔본만으로도 시작할 수 있나요?</summary>
+                        <p data-i18n="faq-a3">대부분의 경우 가능합니다. 선명한 스캔본으로 검토를 시작하고, 원본이 필요한 단계는 별도로 안내드립니다.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary data-i18n="faq-q4">결제 후 절차는 어떻게 진행되나요?</summary>
+                        <p data-i18n="faq-a4">패키지 선택 후 연락처와 문서 정보를 입력하고, PayPal로 안전하게 결제하면 영수증과 다음 단계 안내가 전달됩니다.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section id="orders-view" class="view-section">
+            <div class="section-container">
+                <h2 class="section-title" data-i18n="view-orders-title">주문 내역</h2>
+                <p class="section-subtitle" data-i18n="view-orders-sub">주문 기록은 이 브라우저에 로컬 저장됩니다.</p>
+                <div class="table-wrap">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th data-i18n="th-date">주문 날짜</th>
+                                <th data-i18n="th-order-id">거래 ID</th>
+                                <th data-i18n="th-document">문서 유형</th>
+                                <th data-i18n="th-destination">제출 국가</th>
+                                <th data-i18n="th-tier">패키지 등급</th>
+                                <th data-i18n="th-qty">수량</th>
+                                <th data-i18n="th-total">총 결제금액</th>
+                                <th data-i18n="th-status">상태</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-tbody"></tbody>
+                    </table>
+                    <div id="no-orders-msg" class="no-data-msg" data-i18n="no-orders-msg">아직 구매 내역이 없습니다.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal-backdrop" id="purchase-modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="modal-product-title" data-i18n="modal-title">주문 설정</h3>
+            <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">문서 정보를 입력하고 안전한 PayPal 결제를 진행하세요.</p>
+
+            <div class="order-summary-box">
+                <div class="summary-row">
+                    <span data-i18n="modal-base-pkg">기본 패키지:</span>
+                    <strong id="modal-package-name">-</strong>
+                </div>
+                <div class="summary-row">
+                    <span data-i18n="modal-base-price-label">기본 가격:</span>
+                    <strong id="modal-base-price">$0.00</strong>
+                </div>
+            </div>
+
+            <div class="email-control-group form-block">
+                <label for="order-email" data-i18n="modal-email-label">이메일 주소 *</label>
+                <input type="email" id="order-email" required placeholder="name@example.com" data-i18n="modal-email-placeholder">
+                <span id="email-error" class="field-error" data-i18n="modal-email-error"><i class="fa-solid fa-triangle-exclamation"></i> 올바른 이메일 주소를 입력해주세요.</span>
+            </div>
+
+            <div class="form-block">
+                <label for="order-document-type" data-i18n="modal-document-label">문서 유형 *</label>
+                <input type="text" id="order-document-type" required placeholder="성적증명서, 여권, 계약서..." data-i18n="modal-document-placeholder">
+            </div>
+
+            <div class="form-block">
+                <label for="order-destination-country" data-i18n="modal-destination-label">제출 국가 *</label>
+                <input type="text" id="order-destination-country" required placeholder="미국, 캐나다, UAE..." data-i18n="modal-destination-placeholder">
+            </div>
+
+            <div class="quantity-control-group">
+                <label for="order-quantity" data-i18n="modal-qty">수량:</label>
+                <div class="qty-selector">
+                    <button class="qty-btn" onclick="adjustQty(-1)"><i class="fa-solid fa-minus"></i></button>
+                    <input type="number" id="order-quantity" value="1" min="1" oninput="updateModalPrice()">
+                    <button class="qty-btn" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <div class="total-price-box">
+                <span data-i18n="modal-total-amt">총 결제금액:</span>
+                <span class="price-val" id="modal-total-price" onclick="triggerTestCheckout()">$0.00</span>
+            </div>
+
+            <button id="paypal-test-button" class="btn-secondary test-checkout-btn" onclick="triggerTestCheckout()" type="button" data-i18n="modal-test-btn">샌드박스 테스트 결제 진행</button>
+
+            <div class="paypal-wrapper">
+                <div id="paypal-button-container"></div>
+            </div>
+
+            <div class="payment-badges">
+                <span><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL 보안 결제</span></span>
+                <span><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal 인증됨</span></span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="/" class="logo-group" style="text-decoration:none;margin-bottom:1rem;">
+                    <span class="logo-title">BibleForAI</span>
+                    <span class="logo-subtitle" data-i18n="logo-subtitle">APOSTBOOST</span>
+                </a>
+                <p data-i18n="hero-desc">해외 제출용 문서 인증 워크플로를 지원합니다. 크몽 기준 ₩10,000부터 시작한 실제 서비스 구조를 반영했습니다.</p>
+            </div>
+            <div class="footer-links">
+                <h4 data-i18n="foot-support">지원</h4>
+                <ul>
+                    <li><a href="#" onclick="navigate('home')" data-i18n="nav-home">홈</a></li>
+                    <li><a href="#" onclick="navigate('packages')" data-i18n="nav-packages">패키지</a></li>
+                    <li><a href="#" onclick="navigate('faq')" data-i18n="nav-faq">FAQ</a></li>
+                    <li><a href="/apostboost/">APOSTBOOST</a></li>
+                </ul>
+            </div>
+            <div class="footer-support">
+                <h4 data-i18n="foot-trust">신뢰 요소</h4>
+                <ul>
+                    <li data-i18n="foot-trust-1">SSL 보안 결제</li>
+                    <li data-i18n="foot-trust-2">PayPal 인증 결제</li>
+                    <li data-i18n="foot-trust-3">Google Form 영수증 전달</li>
+                    <li data-i18n="foot-contact">문의: snsherocom@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="foot-copy">&copy; 2026 BibleForAI APOSTBOOST. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

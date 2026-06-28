@@ -182,6 +182,15 @@
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
+                  "name": "APOSTBOOST — Apostille & Notarization",
+                  "url": "https://bibleforai.com/apostboost/",
+                  "description": "Apostille guidance, notarization coordination, and internationally usable document authentication for schools, embassies, and businesses."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
                   "name": "LAWBOOST — Global Legal Advisory & Compliance Solutions",
                   "url": "https://bibleforai.com/lawboost/",
                   "description": "Cross-border legal services including company formation, trademark filing, corporate governance, international tax advisory, and litigation support across 60+ jurisdictions."
@@ -763,12 +772,12 @@
             box-shadow: 0 15px 35px rgba(16, 185, 129, 0.12), 0 0 15px rgba(16, 185, 129, 0.1);
         }
 
-        .card-active-clip, .card-active-pitch, .card-active-map {
+        .card-active-clip, .card-active-pitch, .card-active-map, .card-active-apost {
             border-color: rgba(249, 115, 22, 0.15);
         }
-        .card-active-clip:hover, .card-active-pitch:hover, .card-active-map:hover {
+        .card-active-clip:hover, .card-active-pitch:hover, .card-active-map:hover, .card-active-apost:hover {
             transform: translateY(-8px);
-            border-color: #f97316;
+            border-color: var(--primary-orange);
             box-shadow: 0 15px 35px rgba(249, 115, 22, 0.12), 0 0 15px rgba(249, 115, 22, 0.1);
         }
 
@@ -1017,6 +1026,12 @@
             color: #f97316;
             background: rgba(249, 115, 22, 0.06);
             border-color: rgba(249, 115, 22, 0.15);
+        }
+
+        .icon-apost {
+            color: #fb923c;
+            background: rgba(251, 146, 60, 0.06);
+            border-color: rgba(251, 146, 60, 0.18);
         }
 
         .icon-mail {
@@ -1630,6 +1645,17 @@
             box-shadow: 0 8px 25px rgba(249, 115, 22, 0.35);
         }
 
+        .btn-apost {
+            background: #fb923c;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(251, 146, 60, 0.2);
+        }
+        .btn-apost:hover {
+            background: #f97316;
+            box-shadow: 0 8px 25px rgba(251, 146, 60, 0.35);
+        }
+
         .btn-disabled {
             background: rgba(255, 255, 255, 0.03);
             color: rgba(255, 255, 255, 0.2);
@@ -2067,6 +2093,7 @@
             <a href="/buyerboost/" class="sidebar-link"><i class="fa-solid fa-handshake"></i> <span id="side-title-buyer">Global Buyer Discovery</span></a>
             <a href="/lawboost/" class="sidebar-link"><i class="fa-solid fa-scale-balanced"></i> <span id="side-title-law">Global Legal Advisory</span></a>
             <a href="/certboost/" class="sidebar-link"><i class="fa-solid fa-certificate"></i> <span id="side-title-cert">Certification Consulting</span></a>
+            <a href="/apostboost/" class="sidebar-link"><i class="fa-solid fa-stamp"></i> <span id="side-title-apost">APOSTBOOST Global Document Authentication</span></a>
             <a href="/ipboost/" class="sidebar-link"><i class="fa-solid fa-shield-halved"></i> <span id="side-title-ip">IP Protection</span></a>
         </div>
     </div>
@@ -2151,6 +2178,7 @@
                 <a href="/contentboost/" id="foot-content-link">CONTENTBOOST</a>
                 <a href="/lawboost/" id="foot-law-link">LAWBOOST</a>
                 <a href="/certboost/" id="foot-cert-link">CERTBOOST</a>
+                <a href="/apostboost/" id="foot-apost-link">APOSTBOOST</a>
             </div>
         </div>
     </footer>
@@ -2314,6 +2342,10 @@
                 "cert-title": "CERTBOOST — Global Certification",
                 "cert-desc": "Internationally usable compliance certification consulting for ISO 27001, GDPR, SOC 2 Type II, HIPAA, and cross-border certification.",
                 "cert-btn": "Launch Compliance Service",
+
+                "apost-title": "APOSTBOOST — Apostille & Notarization",
+                "apost-desc": "Apostille guidance, notarization coordination, and internationally usable document authentication for schools, embassies, and businesses.",
+                "apost-btn": "Launch Document Authentication Service",
 
                 "ip-title": "IPBOOST — Brand Protection",
                 "ip-desc": "File trademarks, patents, and copyrights with AI-guided workflows and local counsel networks across 100+ jurisdictions.",
@@ -2507,6 +2539,10 @@
                 "cert-desc": "ISO 27001, GDPR 심사 대비, SOC 2 Type II, HIPAA 등 글로벌 비즈니스를 위한 해외 및 다국적 보안·컴플라이언스 인증 컨설팅을 지원합니다.",
                 "cert-btn": "인증 서비스 바로가기",
 
+                "apost-title": "APOSTBOOST — 아포스티유·공증 대행",
+                "apost-desc": "학교, 대사관, 기업 제출용 문서에 대해 아포스티유 안내, 공증 연계, 해외 제출용 인증 정리를 지원합니다.",
+                "apost-btn": "문서 인증 서비스 바로가기",
+
                 "ip-title": "IPBOOST — 브랜드 지식재산권 보호",
                 "ip-desc": "AI 기반 워크플로우와 글로벌 특허 대리인 네트워크를 통해 전 세계 100+ 국가에서 상표, 특허, 저작권을 안전하게 출원하고 보호하세요.",
                 "ip-btn": "지식재산권 서비스 바로가기",
@@ -2648,6 +2684,7 @@
             { id: 'law', category: 'strategy', link: '/lawboost/', icon: 'fa-solid fa-scale-balanced', cardClass: 'card-active-law', btnClass: 'btn-law', iconBoxClass: 'icon-law', popularity: 76 },
             { id: 'aiweb', category: 'design-dev', link: '/aiweb/', icon: 'fa-solid fa-globe', cardClass: 'card-active-aiweb', btnClass: 'btn-aiweb', iconBoxClass: 'icon-aiweb', popularity: 83 },
             { id: 'cert', category: 'strategy', link: '/certboost/', icon: 'fa-solid fa-certificate', cardClass: 'card-active-cert', btnClass: 'btn-cert', iconBoxClass: 'icon-cert', popularity: 75 },
+            { id: 'apost', category: 'strategy', link: '/apostboost/', icon: 'fa-solid fa-stamp', cardClass: 'card-active-apost', btnClass: 'btn-apost', iconBoxClass: 'icon-apost', popularity: 79 },
             { id: 'ip', category: 'strategy', link: '/ipboost/', icon: 'fa-solid fa-shield-halved', cardClass: 'card-active-ip', btnClass: 'btn-ip', iconBoxClass: 'icon-ip', popularity: 82 },
             { id: 'hr', category: 'strategy', link: '/hrboost/', icon: 'fa-solid fa-user-tie', cardClass: 'card-active-hr', btnClass: 'btn-hr', iconBoxClass: 'icon-hr', popularity: 80 },
             { id: 'sys', category: 'design-dev', link: '/sysboost/', icon: 'fa-solid fa-network-wired', cardClass: 'card-active-sys', btnClass: 'btn-sys', iconBoxClass: 'icon-sys', popularity: 80 },

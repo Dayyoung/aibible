@@ -40,6 +40,7 @@ CATALOG = [
     {'id': 'law', 'cat': 'strategy', 'link': '/lawboost/', 'icon': 'fa-solid fa-scale-balanced', 'popularity': 76},
     {'id': 'aiweb', 'cat': 'design-dev', 'link': '/aiweb/', 'icon': 'fa-solid fa-globe', 'popularity': 83},
     {'id': 'cert', 'cat': 'strategy', 'link': '/certboost/', 'icon': 'fa-solid fa-certificate', 'popularity': 75},
+    {'id': 'apost', 'cat': 'strategy', 'link': '/apostboost/', 'icon': 'fa-solid fa-stamp', 'popularity': 79},
     {'id': 'ip', 'cat': 'strategy', 'link': '/ipboost/', 'icon': 'fa-solid fa-shield-halved', 'popularity': 82},
     {'id': 'hr', 'cat': 'strategy', 'link': '/hrboost/', 'icon': 'fa-solid fa-user-tie', 'popularity': 80},
     {'id': 'sys', 'cat': 'design-dev', 'link': '/sysboost/', 'icon': 'fa-solid fa-network-wired', 'popularity': 80},
@@ -120,6 +121,7 @@ def patch_all_service_pages():
         '            <li><a href="/aideploy/"><i class="fa-solid fa-circle"></i> AIDEPLOY</a></li>\n',
         '            <li><a href="/autoboost/"><i class="fa-solid fa-circle"></i> AUTOBOOST</a></li>\n',
         '            <li><a href="/webcreate/"><i class="fa-solid fa-circle"></i> WEBCREATE</a></li>\n',
+        '            <li><a href="/apostboost/"><i class="fa-solid fa-stamp"></i> APOSTBOOST — Apostille & Notarization</a></li>\n',
     ]
     for path in ROOT.rglob('index.html'):
         if path == ROOT / 'index.html':
