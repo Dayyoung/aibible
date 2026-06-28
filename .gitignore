@@ -9,3 +9,4 @@ __pycache__/
 token.json
 *.json
 !boostsm/*.json
+_session/
