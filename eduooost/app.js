@@ -313,9 +313,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function navigate(viewId) {
     currentView = viewId;
-    document.querySelectorAll('.view-section').forEach(sec => sec.classList.remove('active'));
     const target = document.getElementById(`${viewId}-view`);
-    if (target) target.classList.add('active');
+
+    if (target) {
+        document.querySelectorAll('.view-section').forEach(sec => sec.classList.remove('active'));
+        target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+    }
+
+    const homeView = document.getElementById('home-view');
+    const ordersView = document.getElementById('orders-view');
+    if (viewId === 'orders') {
+        if (homeView) homeView.classList.remove('active');
+        if (ordersView) ordersView.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+    }
+
+    if (homeView) homeView.classList.add('active');
+    if (ordersView) ordersView.classList.remove('active');
+
+    const anchorMap = {
+        platform: 'packages-section',
+        content: 'how-it-works',
+        enrollment: 'faq-title'
+    };
+    const anchor = anchorMap[viewId];
+    if (anchor) {
+        const el = document.getElementById(anchor);
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            return;
+        }
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
