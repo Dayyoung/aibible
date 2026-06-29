@@ -412,6 +412,21 @@ function openPurchaseModal(categoryKey, packageId) {
     if (emailInput) { emailInput.value = ''; emailInput.style.borderColor = 'var(--border)'; }
     document.getElementById('email-error').style.display = 'none';
     updateModalPrice();
+
+    const totalEl = document.getElementById('modal-total-price');
+    if (totalEl && !totalEl.dataset.checkoutBound) {
+        totalEl.style.cursor = 'pointer';
+        totalEl.setAttribute('role', 'button');
+        totalEl.setAttribute('tabindex', '0');
+        totalEl.addEventListener('click', triggerTestCheckout);
+        totalEl.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                triggerTestCheckout();
+            }
+        });
+        totalEl.dataset.checkoutBound = '1';
+    }
     document.getElementById('purchase-modal').classList.add('active');
     setTimeout(() => { const modalCard = document.querySelector('.modal-card'); const totalBox = document.querySelector('.total-price-box'); if (modalCard && totalBox) modalCard.scrollTop = totalBox.offsetTop - 10; }, 800);
     initPayPalButtons();

@@ -167,6 +167,21 @@ function openPurchaseModal(packageId) {
     if (qtyEl) qtyEl.value = 1;
     
     updateModalPrice();
+
+    const totalEl = document.getElementById('modal-total-price');
+    if (totalEl && !totalEl.dataset.checkoutBound) {
+        totalEl.style.cursor = 'pointer';
+        totalEl.setAttribute('role', 'button');
+        totalEl.setAttribute('tabindex', '0');
+        totalEl.addEventListener('click', triggerTestCheckout);
+        totalEl.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                triggerTestCheckout();
+            }
+        });
+        totalEl.dataset.checkoutBound = '1';
+    }
     
     // Show Modal
     const modal = document.getElementById('purchase-modal');
