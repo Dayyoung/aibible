@@ -301,6 +301,8 @@ function renderAllPackages() {
             const featuredClass = pkg.featured ? 'featured' : '';
             const badgeIcon = getCategoryIcon(categoryKey);
             const name = isKo ? pkg.name_ko : pkg.name_en;
+            const desc = isKo ? pkg.desc_ko : pkg.desc_en;
+            const features = isKo ? pkg.features_ko : pkg.features_en;
             const btnText = translations[currentLang]['order-button'];
 
             return `
