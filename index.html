@@ -3201,11 +3201,20 @@
             document.getElementById('cat-tab-strategy').innerText = dict['cat-strategy'];
             
             // Translate Sidebar category titles
-            document.getElementById('side-cat-database').innerText = dict['cat-database'];
-            document.getElementById('side-cat-designdev').innerText = dict['cat-designdev'];
-            document.getElementById('side-cat-marketing').innerText = dict['cat-marketing'];
-            document.getElementById('side-cat-media').innerText = dict['cat-media'];
-            document.getElementById('side-cat-strategy').innerText = dict['cat-strategy'];
+            const sideCatDb = document.getElementById('side-cat-database');
+            if (sideCatDb) sideCatDb.innerText = dict['cat-database'];
+            
+            const sideCatDd = document.getElementById('side-cat-designdev');
+            if (sideCatDd) sideCatDd.innerText = dict['cat-designdev'];
+            
+            const sideCatMkt = document.getElementById('side-cat-marketing');
+            if (sideCatMkt) sideCatMkt.innerText = dict['cat-marketing'];
+            
+            const sideCatMed = document.getElementById('side-cat-media');
+            if (sideCatMed) sideCatMed.innerText = dict['cat-media'];
+            
+            const sideCatStr = document.getElementById('side-cat-strategy');
+            if (sideCatStr) sideCatStr.innerText = dict['cat-strategy'];
             
             // Translate Sidebar links
             servicesCatalog.forEach(pkg => {
