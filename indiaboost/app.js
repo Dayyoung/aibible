@@ -15,7 +15,7 @@ const packageCatalog = {
                 name_ko: 'STANDARD',
                 desc_en: '60-minute advisory for first-step India launch planning, documentation checklists, and localization priorities.',
                 desc_ko: '인도 진출의 첫 단계인 런칭 계획, 서류 체크리스트, 현지화 우선순위를 정리하는 60분 자문.',
-                price: 143,
+                price: 286,
                 featured: false,
                 features_en: ['1× 60-min online advisory', 'Market entry checklist', 'Compliance & setup overview', 'Email follow-up summary'],
                 features_ko: ['60분 온라인 자문 1회', '시장 진출 체크리스트', '법인 설립 및 규정 개요', '이메일 요약 정리 제공']
@@ -26,7 +26,7 @@ const packageCatalog = {
                 name_ko: 'DELUXE',
                 desc_en: '3-session support for company setup, operating risk review, and India market implementation details.',
                 desc_ko: '법인 설립, 운영 리스크 검토, 인도 시장 실행 세부사항을 포함한 3회 지원 패키지.',
-                price: 2143,
+                price: 4286,
                 featured: true,
                 features_en: ['3× 60-min sessions', 'Setup support roadmap', 'Risk review & mitigation', 'Document/action templates'],
                 features_ko: ['60분 자문 3회', '설립 지원 로드맵', '리스크 검토 및 대응', '실행 템플릿 제공']
@@ -37,7 +37,7 @@ const packageCatalog = {
                 name_ko: 'PREMIUM',
                 desc_en: '5-session premium consulting with long-term support for expansion, sourcing, and operating structure design.',
                 desc_ko: '확장, 소싱, 운영 구조 설계까지 포함하는 장기 지원용 5회 프리미엄 컨설팅.',
-                price: 4286,
+                price: 8572,
                 featured: false,
                 features_en: ['5× 60-min sessions', 'Expansion strategy pack', 'Long-term support window', 'Priority response channel'],
                 features_ko: ['60분 자문 5회', '확장 전략 자료', '장기 지원 기간 포함', '우선 응답 채널 제공']
@@ -187,11 +187,6 @@ let currentLang = localStorage.getItem('bibleforai_lang') || (() => {
 })();
 
 function formatPrice(usdPrice, includeUnit = true) {
-    const isKo = currentLang === 'ko';
-    if (isKo) {
-        const krw = Math.round(usdPrice * 1400);
-        return includeUnit ? `₩${krw.toLocaleString()} KRW` : `₩${krw.toLocaleString()}`;
-    }
     const formatted = Number.isInteger(usdPrice) ? usdPrice.toLocaleString() : usdPrice.toFixed(2);
     return includeUnit ? `$${formatted} USD` : `$${formatted}`;
 }
@@ -306,19 +301,17 @@ function renderAllPackages() {
             const featuredClass = pkg.featured ? 'featured' : '';
             const badgeIcon = getCategoryIcon(categoryKey);
             const name = isKo ? pkg.name_ko : pkg.name_en;
-            const desc = isKo ? pkg.desc_ko : pkg.desc_en;
-            const features = isKo ? pkg.features_ko : pkg.features_en;
-            const btnText = translations[currentLang].order-button;
+            const btnText = translations[currentLang]['order-button'];
 
             return `
                 <div class="package-card ${featuredClass}">
-                    ${pkg.featured ? `<div class="featured-badge"><i class="fa-solid fa-star"></i> ${translations[currentLang].featured-badge}</div>` : ''}
+                    ${pkg.featured ? `<div class="featured-badge"><i class="fa-solid fa-star"></i> ${translations[currentLang]['featured-badge']}</div>` : ''}
                     <div class="card-icon"><i class="${badgeIcon}"></i></div>
                     <h3>${name}</h3>
                     <p class="package-desc">${desc}</p>
                     <div class="package-price-box">
                         <span class="price">${formatPrice(pkg.price, false)}</span>
-                        <span class="currency">${currentLang === 'ko' ? 'KRW' : 'USD'}</span>
+                        <span class="currency">USD</span>
                     </div>
                     <ul class="package-features">
                         ${features.map(feat => `<li><i class="fa-solid fa-circle-check"></i> ${feat}</li>`).join('')}
