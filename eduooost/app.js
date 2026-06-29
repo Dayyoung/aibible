@@ -562,3 +562,7 @@ function toggleFaq(el) {
     const open = answer.classList.toggle('open');
     el.querySelector('i').style.transform = open ? 'rotate(180deg)' : 'rotate(0deg)';
 }
+
+// Expose variables globally to prevent ReferenceErrors in inline HTML scripts/handlers
+if (typeof navigate !== 'undefined') { window.navigate = navigate; }
+if (typeof currentLang !== 'undefined') { window.currentLang = currentLang; }

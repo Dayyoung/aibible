@@ -521,3 +521,7 @@ window.openPurchaseModal = openPurchaseModal;
 window.closeModal = closeModal;
 window.adjustQty = adjustQty;
 window.triggerTestCheckout = triggerTestCheckout;
+
+// Expose variables globally to prevent ReferenceErrors in inline HTML scripts/handlers
+if (typeof navigate !== 'undefined') { window.navigate = navigate; }
+if (typeof currentLang !== 'undefined') { window.currentLang = currentLang; }

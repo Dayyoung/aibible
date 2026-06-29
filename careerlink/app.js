@@ -427,3 +427,7 @@ window.adjustQty = adjustQty;
 window.triggerTestCheckout = triggerTestCheckout;
 window.updateModalPrice = updateModalPrice;
 window.renderOrders = renderOrders;
+
+// Expose variables globally to prevent ReferenceErrors in inline HTML scripts/handlers
+if (typeof navigate !== 'undefined') { window.navigate = navigate; }
+if (typeof currentLang !== 'undefined') { window.currentLang = currentLang; }

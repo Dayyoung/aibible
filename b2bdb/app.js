@@ -899,3 +899,7 @@ function orderCurrentSegment() {
     // Open modal with Growth/Pro Package as default base for custom builder exports
     openPurchaseModal('b2b-pro');
 }
+
+// Expose variables globally to prevent ReferenceErrors in inline HTML scripts/handlers
+if (typeof navigate !== 'undefined') { window.navigate = navigate; }
+if (typeof currentLang !== 'undefined') { window.currentLang = currentLang; }

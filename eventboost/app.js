@@ -256,7 +256,7 @@ const translations = {
     }
 };
 
-let currentLang = (document.documentElement.lang || 'en').toLowerCase().startsWith('ko') ? 'ko' : 'en';
+window.currentLang = (document.documentElement.lang || 'en').toLowerCase().startsWith('ko') ? 'ko' : 'en';
 
 function getViewFromPath() {
     const p = window.location.pathname;
@@ -347,6 +347,7 @@ function navigate(view) {
     const drawer = document.getElementById('mobile-drawer');
     if (drawer) drawer.classList.remove('active');
 }
+window.navigate = navigate;
 
 function renderCurrentView() {
     navigate(currentView);
@@ -600,3 +601,7 @@ function init() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
+// Expose variables globally to prevent ReferenceErrors in inline HTML scripts/handlers
+if (typeof navigate !== 'undefined') { window.navigate = navigate; }
+if (typeof currentLang !== 'undefined') { window.currentLang = currentLang; }

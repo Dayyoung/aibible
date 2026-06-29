@@ -604,3 +604,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderOrders();
     setupHeaderScroll();
 });
+
+// Expose variables globally to prevent ReferenceErrors in inline HTML scripts/handlers
+if (typeof navigate !== 'undefined') { window.navigate = navigate; }
+if (typeof currentLang !== 'undefined') { window.currentLang = currentLang; }

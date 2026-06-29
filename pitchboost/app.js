@@ -525,3 +525,7 @@ ${dict["receipt-method"].padEnd(15)} : ${dict["receipt-method-val"]}
     const url = `https://docs.google.com/forms/d/e/1FAIpQLScMPqbEWWttS5mb1m_krsO_kco24ImpgvYVSbc7zO0nEVmYFw/viewform?entry.1059822061=${encodedReceipt}`;
     setTimeout(() => { window.open(url, '_blank'); }, 500);
 }
+
+// Expose variables globally to prevent ReferenceErrors in inline HTML scripts/handlers
+if (typeof navigate !== 'undefined') { window.navigate = navigate; }
+if (typeof currentLang !== 'undefined') { window.currentLang = currentLang; }

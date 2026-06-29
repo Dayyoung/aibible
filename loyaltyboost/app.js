@@ -435,3 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const qtyInput = document.getElementById('order-qty');
   if (qtyInput) qtyInput.addEventListener('input', updateTotalPrice);
 });
+
+// Expose variables globally to prevent ReferenceErrors in inline HTML scripts/handlers
+if (typeof navigate !== 'undefined') { window.navigate = navigate; }
+if (typeof currentLang !== 'undefined') { window.currentLang = currentLang; }
