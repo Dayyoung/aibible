@@ -130,7 +130,7 @@ const translations = {
         'modal-languagepair-placeholder': 'e.g. EN → KO website copy, KO → EN contract',
         'modal-qty': 'Quantity:',
         'modal-total-amt': 'Total Amount:',
-        'modal-test-hint': 'Click the total price for sandbox test checkout',
+        
         'badge-ssl': 'SSL Secured Checkout',
         'badge-paypal': 'PayPal Verified',
         'foot-packages': 'Packages',
@@ -226,7 +226,7 @@ const translations = {
         'modal-languagepair-placeholder': '예: EN → KO 웹사이트 카피, KO → EN 계약서',
         'modal-qty': '수량:',
         'modal-total-amt': '총 결제금액:',
-        'modal-test-hint': '가격 텍스트를 눌러 테스트 결제를 진행하세요',
+        
         'badge-ssl': 'SSL 보안 결제 지원',
         'badge-paypal': 'PayPal 인증됨',
         'foot-packages': '패키지',

@@ -93,12 +93,7 @@ const faqData = {
     {
       q: 'How do I receive the deliverables?',
       a: 'After payment, you receive a structured receipt and the service plan via Google Form redirection.'
-    },
-    {
-      q: 'Can I test checkout before real payment?',
-      a: 'Yes. Clicking the visible total price triggers the sandbox-style test checkout flow.'
-    }
-  ],
+    }],
   ko: [
     {
       q: 'LINKBOOST는 무엇인가요?',
@@ -111,12 +106,7 @@ const faqData = {
     {
       q: '납품은 어떻게 받나요?',
       a: '결제 후 Google Form으로 리디렉션되어 영수증과 서비스 정보가 전달됩니다.'
-    },
-    {
-      q: '실제 결제 전에 테스트할 수 있나요?',
-      a: '네. 화면에 보이는 총액 텍스트를 클릭하면 테스트 체크아웃이 실행됩니다.'
-    }
-  ]
+    }]
 };
 
 const translations = {

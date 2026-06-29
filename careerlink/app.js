@@ -85,16 +85,12 @@ const faqData = {
     { q: 'What is CAREERLINK?', a: 'CAREERLINK is a LinkedIn profile optimization and career coaching service for job seekers, founders, freelancers, and sales professionals looking to maximize their LinkedIn presence.' },
     { q: 'Who should use CAREERLINK?', a: 'Anyone who uses LinkedIn professionally — whether for job searching, personal branding, B2B sales, or thought leadership — will benefit from our optimization services.' },
     { q: 'How do I receive the deliverables?', a: 'After payment confirmation, you receive a structured receipt and are redirected to a Google Form to share your current profile and goals. Deliverables are sent within 3–5 business days.' },
-    { q: 'Is the profile rewrite done by AI or humans?', a: 'We use a hybrid approach: AI-assisted drafting with professional human review to ensure quality, tone, and ATS-compatibility.' },
-    { q: 'Can I test the checkout flow?', a: 'Yes. Clicking the total price amount in the order modal triggers a sandbox-style test checkout without a real payment.' }
-  ],
+    { q: 'Is the profile rewrite done by AI or humans?', a: 'We use a hybrid approach: AI-assisted drafting with professional human review to ensure quality, tone, and ATS-compatibility.' }],
   ko: [
     { q: 'CAREERLINK는 무엇인가요?', a: 'CAREERLINK는 취업 준비자, 창업자, 프리랜서, 세일즈 전문가의 링크드인 존재감을 극대화하기 위한 프로필 최적화 및 커리어 코칭 서비스입니다.' },
     { q: '누가 이용하면 좋나요?', a: '취업 준비, 개인 브랜딩, B2B 영업, 소트 리더십 등 링크드인을 전문적으로 활용하는 모든 분들에게 적합합니다.' },
     { q: '납품은 어떻게 받나요?', a: '결제 확인 후 Google Form으로 이동하여 현재 프로필과 목표를 공유하면, 영업일 기준 3~5일 이내에 결과물을 전달합니다.' },
-    { q: '프로필 리라이트는 AI가 하나요, 사람이 하나요?', a: 'AI 보조 초안 작성과 전문가의 인간 검토를 결합하여 품질, 톤, ATS 호환성을 보장합니다.' },
-    { q: '실제 결제 전에 테스트할 수 있나요?', a: '네. 주문 팝업에서 총액 텍스트를 클릭하면 실제 결제 없이 테스트 체크아웃이 실행됩니다.' }
-  ]
+    { q: '프로필 리라이트는 AI가 하나요, 사람이 하나요?', a: 'AI 보조 초안 작성과 전문가의 인간 검토를 결합하여 품질, 톤, ATS 호환성을 보장합니다.' }]
 };
 
 const translations = {

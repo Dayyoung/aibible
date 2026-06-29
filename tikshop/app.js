@@ -145,7 +145,7 @@ const translations = {
     'modal-ref-placeholder': 'Amazon, Shopify, Shopee, Lazada...',
     'modal-qty': 'Quantity:',
     'modal-total-amt': 'Total Amount:',
-    'modal-test-hint': 'Click the total price to run a sandbox test checkout',
+    
     'badge-ssl': 'SSL Secured Checkout',
     'badge-paypal': 'PayPal Verified',
     'pay-now': 'Pay with PayPal',
@@ -234,7 +234,7 @@ const translations = {
     'modal-ref-placeholder': 'Amazon, Shopify, Shopee, Lazada...',
     'modal-qty': '수량:',
     'modal-total-amt': '총 결제액:',
-    'modal-test-hint': '총액을 클릭하면 샌드박스 테스트 결제가 실행됩니다',
+    
     'badge-ssl': 'SSL 보안 결제',
     'badge-paypal': 'PayPal 인증',
     'pay-now': 'PayPal로 결제',

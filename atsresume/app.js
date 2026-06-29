@@ -57,16 +57,12 @@ const faqData = {
     { q: 'What is ATSRESUME?', a: 'ATSRESUME is a resume and cover letter optimization service for global job seekers who want stronger applications and better ATS performance.' },
     { q: 'Who should use ATSRESUME?', a: 'Anyone applying for jobs, changing careers, or preparing a stronger resume for global opportunities will benefit from our service.' },
     { q: 'How do I receive the deliverables?', a: 'After payment confirmation, you receive a structured receipt and are redirected to a Google Form to share your current resume, target role, and goals. Deliverables are sent within 2 business days.' },
-    { q: 'Is the resume rewrite done by AI or humans?', a: 'We use AI-assisted drafting with professional human review to ensure quality, tone, and ATS compatibility.' },
-    { q: 'Can I test the checkout flow?', a: 'Yes. Clicking the total price amount in the order modal triggers a sandbox-style test checkout without a real payment.' }
-  ],
+    { q: 'Is the resume rewrite done by AI or humans?', a: 'We use AI-assisted drafting with professional human review to ensure quality, tone, and ATS compatibility.' }],
   ko: [
     { q: 'ATSRESUME는 무엇인가요?', a: 'ATSRESUME는 글로벌 구직자를 위해 더 강한 지원서와 더 나은 ATS 성능을 목표로 하는 이력서 및 커버레터 최적화 서비스입니다.' },
     { q: '누가 이용하면 좋나요?', a: '구직, 이직, 글로벌 기회를 위한 더 강한 이력서를 준비하는 모든 분들에게 적합합니다.' },
     { q: '결과물은 어떻게 받나요?', a: '결제 확인 후 영수증이 제공되며 Google Form으로 이동해 현재 이력서, 희망 직무, 목표를 입력합니다. 결과물은 영업일 기준 2일 내 전달됩니다.' },
-    { q: '이력서 리라이트는 AI가 하나요, 사람이 하나요?', a: 'AI 초안 작성과 전문가의 인간 검수를 결합해 품질, 톤, ATS 호환성을 보장합니다.' },
-    { q: '실제 결제 전에 테스트할 수 있나요?', a: '네. 주문 모달의 총액 텍스트를 클릭하면 실제 결제 없이 테스트 체크아웃이 실행됩니다.' }
-  ]
+    { q: '이력서 리라이트는 AI가 하나요, 사람이 하나요?', a: 'AI 초안 작성과 전문가의 인간 검수를 결합해 품질, 톤, ATS 호환성을 보장합니다.' }]
 };
 
 const translations = {

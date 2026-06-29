@@ -85,7 +85,7 @@ const translations = {
         'modal-email-error': 'Please enter a valid email address.',
         'modal-qty': 'Quantity',
         'modal-total-amt': 'Total Amount',
-        'modal-price-note': 'Click the price to run the sandbox test checkout.',
+        
         'footer-desc': 'Affiliate website automation built for global reach.',
         'order-button': 'Order Now',
         'featured-badge': 'Recommended'
@@ -127,7 +127,7 @@ const translations = {
         'modal-email-error': '올바른 이메일 주소를 입력해주세요.',
         'modal-qty': '수량',
         'modal-total-amt': '총 결제금액',
-        'modal-price-note': '가격 텍스트를 클릭하면 샌드박스 테스트 결제가 실행됩니다.',
+        
         'footer-desc': '글로벌 확장을 위한 제휴 웹사이트 자동화 서비스입니다.',
         'order-button': '주문하기',
         'featured-badge': '추천'

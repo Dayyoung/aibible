@@ -124,7 +124,7 @@ const translations = {
     'modal-goal-placeholder': 'Launch my Etsy shop, optimize listings, or improve conversion...',
     'modal-qty': 'Quantity:',
     'modal-total-amt': 'Total Amount:',
-    'modal-test-hint': 'Click the total price to run a sandbox test checkout',
+    
     'badge-ssl': 'SSL Secured Checkout',
     'badge-paypal': 'PayPal Verified',
     'featured-badge': 'Best Value',
@@ -212,7 +212,7 @@ const translations = {
     'modal-goal-placeholder': 'Etsy 스토어 런칭, 리스팅 최적화, 전환 개선...',
     'modal-qty': '수량:',
     'modal-total-amt': '총 결제액:',
-    'modal-test-hint': '총액을 클릭하면 샌드박스 테스트 결제가 실행됩니다',
+    
     'badge-ssl': 'SSL 보안 결제',
     'badge-paypal': 'PayPal 인증',
     'featured-badge': '가성비 최고',
@@ -568,8 +568,7 @@ function finalizeOrder(details, isTest = false) {
     quantity: orderQuantity,
     basePrice: formatPrice(currentPackage.basePrice),
     total: formatPrice(total),
-    status: isTest ? 'Sandbox Test' : 'Paid',
-  };
+    status: isTest ? 'Sandbox Test' : 'Paid'};
   closeModal();
   redirectToGoogleForm(buildReceiptText(order));
 }

@@ -62,13 +62,7 @@
         "@type": "Question",
         "name": "Who should use GLOBALWEB?",
         "acceptedAnswer": { "@type": "Answer", "text": "Brands, founders, agencies, and ecommerce teams expanding into overseas markets will benefit from this service." }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I test the checkout flow?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Clicking the total price amount in the order modal triggers a sandbox-style test checkout without a real payment." }
-      }
-    ]
+      }]
   }
   </script>
 
@@ -297,9 +291,9 @@
 
       <div class="total-price-box">
         <span data-i18n="modal-total-amt">Total amount</span>
-        <strong class="price-val" id="modal-total-price" onclick="triggerTestCheckout()" title="Click to run sandbox test checkout">$121.00</strong>
+        <strong class="price-val" id="modal-total-price"  >$121.00</strong>
       </div>
-      <p class="modal-hint">Tap the total amount to run the sandbox test checkout.</p>
+      
       <p class="modal-error" id="modal-error"></p>
 
       <div id="paypal-section">

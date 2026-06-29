@@ -60,16 +60,12 @@ const faqData = {
     { q: 'What is GLOBALWEB?', a: 'GLOBALWEB builds multilingual websites with localization, global SEO, and international market readiness.' },
     { q: 'Who is this service for?', a: 'It is for brands, founders, agencies, and ecommerce teams expanding into overseas markets.' },
     { q: 'What do I get after payment?', a: 'You receive an order receipt, then a Google Form collects your target markets, languages, and website assets for onboarding.' },
-    { q: 'Can you support ecommerce and payments?', a: 'Yes. Premium delivery includes guidance for ecommerce checkout and global payment readiness.' },
-    { q: 'Can I test the checkout flow?', a: 'Yes. Clicking the total price text in the order modal triggers a sandbox-style test checkout.' }
-  ],
+    { q: 'Can you support ecommerce and payments?', a: 'Yes. Premium delivery includes guidance for ecommerce checkout and global payment readiness.' }],
   ko: [
     { q: 'GLOBALWEB은 무엇인가요?', a: 'GLOBALWEB은 로컬라이제이션, 글로벌 SEO, 해외 시장 대응을 포함한 다국어 웹사이트 구축 서비스입니다.' },
     { q: '누가 이용하면 좋나요?', a: '해외 시장으로 확장하려는 브랜드, 창업자, 에이전시, 이커머스 팀에 적합합니다.' },
     { q: '결제 후에는 무엇을 받나요?', a: '주문 영수증을 받은 뒤 Google Form에서 타겟 국가, 언어, 웹사이트 자료를 입력해 온보딩을 진행합니다.' },
-    { q: '전자상거래와 결제도 지원하나요?', a: '네. 프리미엄 패키지에는 이커머스 체크아웃과 글로벌 결제 준비 가이드가 포함됩니다.' },
-    { q: '테스트 결제도 가능한가요?', a: '네. 주문 모달의 총액 텍스트를 누르면 샌드박스 스타일 테스트 결제가 실행됩니다.' }
-  ]
+    { q: '전자상거래와 결제도 지원하나요?', a: '네. 프리미엄 패키지에는 이커머스 체크아웃과 글로벌 결제 준비 가이드가 포함됩니다.' }]
 };
 
 const translations = {

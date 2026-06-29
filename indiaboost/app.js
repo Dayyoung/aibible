@@ -87,7 +87,7 @@ const translations = {
         'modal-focus-label': 'Business Focus:',
         'modal-qty': 'Quantity:',
         'modal-total-amt': 'Total Amount:',
-        'modal-price-hint': 'Click the total price to run the sandbox test checkout',
+        
         'badge-ssl': 'SSL Secured Checkout',
         'badge-paypal': 'PayPal Verified',
         'foot-copy': '&copy; 2026 BibleForAI. India market entry support for cross-border businesses.',
@@ -153,7 +153,7 @@ const translations = {
         'modal-focus-label': '비즈니스 목적:',
         'modal-qty': '수량:',
         'modal-total-amt': '총 결제금액:',
-        'modal-price-hint': '총 결제금액 텍스트를 눌러 샌드박스 테스트 결제를 실행하세요',
+        
         'badge-ssl': 'SSL 보안 결제',
         'badge-paypal': 'PayPal 인증됨',
         'foot-copy': '&copy; 2026 BibleForAI. 인도 시장진출을 위한 크로스보더 비즈니스 지원.',

@@ -56,14 +56,7 @@
             "text": "It is designed for affiliate marketers, content publishers, niche site operators, solopreneurs, and anyone who wants a global-ready website that can be monetized with offers and SEO content."
           }
         },
-        {
-          "@type": "Question",
-          "name": "Can I test checkout before paying?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. The visible total price text is clickable and triggers the sandbox test checkout flow so you can verify the purchase flow without a separate test button."
-          }
-        },
+        
         {
           "@type": "Question",
           "name": "How is the receipt delivered?",
@@ -200,10 +193,7 @@
                 <h2 data-i18n="faq-title">Frequently Asked Questions</h2>
             </div>
             <div class="faq-list">
-                <details open>
-                    <summary data-i18n="faq-q1">Can I test the checkout before paying?</summary>
-                    <p data-i18n="faq-a1">Yes. Click the visible total price text to launch the sandbox test checkout flow.</p>
-                </details>
+                
                 <details>
                     <summary data-i18n="faq-q2">What happens after payment?</summary>
                     <p data-i18n="faq-a2">Your receipt is encoded and redirected to a Google Form for order tracking and follow-up.</p>
@@ -244,9 +234,9 @@
 
             <div class="total-price-box">
                 <span data-i18n="modal-total-amt">Total Amount</span>
-                <span class="price-val" id="modal-total-price" onclick="triggerTestCheckout()" title="Click to test checkout">$0</span>
+                <span class="price-val" id="modal-total-price"  title="Click to test checkout">$0</span>
             </div>
-            <div class="price-note" data-i18n="modal-price-note">Click the price to run the sandbox test checkout.</div>
+            
 
             <div class="paypal-wrapper">
                 <div id="paypal-button-container"></div>

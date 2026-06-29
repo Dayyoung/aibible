@@ -60,14 +60,14 @@ const faqData = {
     { q: 'What is INFLUBOOST?', a: 'INFLUBOOST matches brands with global influencers and resident creators to generate authentic social proof.' },
     { q: 'Which platforms can you support?', a: 'Instagram, TikTok, YouTube Shorts, Threads, Xiaohongshu, and X can all be included in the campaign plan.' },
     { q: 'What do I need to start?', a: 'A short brand brief, target markets, product sample details, and your preferred campaign tone are enough to begin.' },
-    { q: 'Can I test the checkout flow?', a: 'Yes. Clicking the total price text in the order modal triggers the sandbox test checkout flow.' },
+    
     { q: 'What happens after payment?', a: 'A Google Form collects receipt and campaign brief details, then onboarding begins right away.' }
   ],
   ko: [
     { q: 'INFLUBOOST는 무엇인가요?', a: 'INFLUBOOST는 글로벌 인플루언서와 현지 거주 크리에이터를 매칭해 진정성 있는 소셜 신뢰를 만드는 서비스입니다.' },
     { q: '어떤 플랫폼을 지원하나요?', a: '인스타그램, 틱톡, 유튜브 쇼츠, Threads, 샤오홍슈, X까지 캠페인에 포함할 수 있습니다.' },
     { q: '시작하려면 무엇이 필요한가요?', a: '간단한 브랜드 소개, 타겟 시장, 제품 샘플 정보, 원하는 캠페인 톤이면 충분합니다.' },
-    { q: '테스트 결제도 가능한가요?', a: '네. 주문 모달의 총액 텍스트를 누르면 샌드박스 테스트 결제 흐름이 실행됩니다.' },
+    
     { q: '결제 후에는 어떻게 되나요?', a: 'Google Form에서 영수증과 캠페인 브리프를 수집한 뒤 바로 온보딩이 시작됩니다.' }
   ]
 };

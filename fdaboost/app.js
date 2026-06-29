@@ -135,7 +135,7 @@ const translations = {
         'modal-market-label': 'Target Market',
         'modal-qty': 'Quantity',
         'modal-total-amt': 'Total Amount',
-        'modal-total-hint': 'Click the total price to run the sandbox test checkout',
+        
         'badge-ssl': 'SSL Secured Checkout',
         'badge-paypal': 'PayPal Verified',
         'footer-note': 'FDA labeling, certification, and launch support for food brands.',
@@ -204,7 +204,7 @@ const translations = {
         'modal-market-label': '타깃 시장',
         'modal-qty': '수량',
         'modal-total-amt': '총 결제액',
-        'modal-total-hint': '총액을 클릭하면 샌드박스 테스트 결제가 실행됩니다',
+        
         'badge-ssl': 'SSL 보안 결제',
         'badge-paypal': 'PayPal 인증',
         'footer-note': '식품 브랜드를 위한 FDA 라벨링, 인증, 런치 지원 서비스.',
@@ -433,8 +433,7 @@ function buildReceipt(details) {
         `TOTAL: ${formatPrice(Number(total))}`,
         `STATUS: ${status}`,
         `PAYMENT METHOD: PayPal Secure Checkout`,
-        '===================================',
-    ].join('\n');
+        '==================================='].join('\n');
 }
 
 function saveLocalOrder(details) {

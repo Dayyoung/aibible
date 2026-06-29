@@ -51,11 +51,7 @@
           "name": "크몽 원본 가격은 얼마였나요?",
           "acceptedAnswer": {"@type": "Answer", "text": "참조한 크몽 FDA 라벨링 서비스는 ₩190,000부터 시작하며, 본 페이지는 AIBible 기준 2배 마크업을 적용했습니다."}
         },
-        {
-          "@type": "Question",
-          "name": "테스트 결제는 어떻게 하나요?",
-          "acceptedAnswer": {"@type": "Answer", "text": "결제 모달의 보이는 총액을 클릭하면 샌드박스 방식의 테스트 체크아웃과 영수증 생성이 실행됩니다."}
-        },
+        
         {
           "@type": "Question",
           "name": "어떤 정보를 준비하면 좋나요?",
@@ -212,18 +208,8 @@
                 <p data-i18n="faq-subtitle">서비스, 가격, 결제 흐름에 대한 빠른 답변입니다.</p>
             </div>
             <div class="faq-list">
-                <details>
-                    <summary data-i18n="faq-q1">이 서비스는 누구를 위한 건가요?</summary>
-                    <p data-i18n="faq-a1">미국 시장용 FDA 패키징과 등록 준비가 필요한 식품 브랜드, 창업자, 제조사, 에이전시를 위한 서비스입니다.</p>
-                </details>
-                <details>
-                    <summary data-i18n="faq-q2">크몽 원본 가격은 얼마였나요?</summary>
-                    <p data-i18n="faq-a2">참조한 크몽 FDA 라벨링 서비스는 ₩190,000부터 시작하며, 본 페이지는 AIBible 기준 2배 마크업을 적용했습니다.</p>
-                </details>
-                <details>
-                    <summary data-i18n="faq-q3">테스트 결제는 어떻게 하나요?</summary>
-                    <p data-i18n="faq-a3">결제 모달의 보이는 총액을 클릭하면 샌드박스 방식의 테스트 체크아웃과 영수증 생성이 실행됩니다.</p>
-                </details>
+                
+                
                 <details>
                     <summary data-i18n="faq-q4">어떤 정보를 준비하면 좋나요?</summary>
                     <p data-i18n="faq-a4">타깃 시장, 스토어 URL, 제품 정보, 현재 매출 또는 트래픽 노트를 준비하시면 좋습니다.</p>
@@ -305,9 +291,9 @@
 
             <div class="total-price-box" title="테스트 결제 실행">
                 <span data-i18n="modal-total-amt">총 결제액</span>
-                <span class="price-val" id="modal-total-price" onclick="triggerTestCheckout()">$0.00</span>
+                <span class="price-val" id="modal-total-price" >$0.00</span>
             </div>
-            <p class="modal-total-hint" data-i18n="modal-total-hint">총액을 클릭하면 샌드박스 테스트 결제가 실행됩니다</p>
+            
 
             <div class="paypal-wrapper">
                 <div id="paypal-button-container"></div>
