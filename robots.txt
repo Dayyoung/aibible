@@ -4,6 +4,7 @@ Allow: /category/
 Allow: /products.json
 Disallow: /dashboard
 Disallow: /cart
+Disallow: /beta/
 
 # AI Crawlers specific configurations
 User-agent: GPTBot

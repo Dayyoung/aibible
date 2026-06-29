@@ -26,14 +26,7 @@ const server = http.createServer((req, res) => {
     let filePath = req.url.split('?')[0];
 
 
-    // Redirect /boostsm (without trailing slash) to /boostsm/
-    if (filePath === '/boostsm') {
-        const urlParts = req.url.split('?');
-        const search = urlParts[1] ? '?' + urlParts[1] : '';
-        res.writeHead(302, { 'Location': '/boostsm/' + search });
-        res.end();
-        return;
-    }
+
 
     if (filePath === '/' || filePath.endsWith('/')) {
         filePath += 'index.html';
