@@ -682,6 +682,14 @@
             border-color: #14b8a6;
             box-shadow: 0 15px 35px rgba(20, 184, 166, 0.14), 0 0 15px rgba(20, 184, 166, 0.12);
         }
+        .card-active-influboost {
+            border-color: rgba(225, 29, 72, 0.18);
+        }
+        .card-active-influboost:hover {
+            transform: translateY(-8px);
+            border-color: #e11d48;
+            box-shadow: 0 15px 35px rgba(225, 29, 72, 0.14), 0 0 15px rgba(225, 29, 72, 0.12);
+        }
 
         .card-active-medboost {
             border-color: rgba(20, 184, 166, 0.15);
@@ -1018,6 +1026,10 @@
             color: #14b8a6;
             background: rgba(20, 184, 166, 0.08);
         }
+        .icon-influboost {
+            color: #e11d48;
+            background: rgba(225, 29, 72, 0.08);
+        }
 
 
         .icon-medboost {
@@ -1340,6 +1352,16 @@
         .btn-globalweb:hover {
             background: #0d9488;
             box-shadow: 0 8px 25px rgba(20, 184, 166, 0.38);
+        }
+        .btn-influboost {
+            background: #e11d48;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(225, 29, 72, 0.25);
+        }
+        .btn-influboost:hover {
+            background: #be123c;
+            box-shadow: 0 8px 25px rgba(225, 29, 72, 0.38);
         }
 
         .btn-medboost {
@@ -2459,6 +2481,7 @@
             <a href="/careerlink/" class="sidebar-link"><i class="fa-brands fa-linkedin"></i> <span id="side-title-careerlink">CAREERLINK LinkedIn Optimization</span></a>
             <a href="/atsresume/" class="sidebar-link"><i class="fa-solid fa-file-lines"></i> <span id="side-title-atsresume">ATSRESUME Resume &amp; Cover Letter Optimization</span></a>
             <a href="/globalweb/" class="sidebar-link"><i class="fa-solid fa-globe"></i> <span id="side-title-globalweb">GLOBALWEB Multilingual Website &amp; Global SEO</span></a>
+            <a href="/influboost/" class="sidebar-link"><i class="fa-solid fa-bullhorn"></i> <span id="side-title-influboost">INFLUBOOST Global Influencer Seeding</span></a>
             <a href="/tradeboost/" class="sidebar-link"><i class="fa-solid fa-ship"></i> <span id="side-title-tradeboost">TRADEBOOST Global Trade Agency</span></a>
             <a href="/surveyboost/" class="sidebar-link"><i class="fa-solid fa-chart-line"></i> <span id="side-title-surveyboost">SURVEYBOOST Market Validation</span></a>
             <a href="/tikshop/" class="sidebar-link"><i class="fa-brands fa-tiktok"></i> <span id="side-title-tikshop">TIKSHOP TikTok Shop Setup</span></a>
@@ -2663,7 +2686,12 @@
                 "globalweb-title": "GLOBALWEB — Multilingual Website & Global SEO",
                 "globalweb-desc": "Build multilingual websites with localization, global SEO, and international hosting for global expansion.",
                 "globalweb-btn": "Launch GLOBALWEB Service",
+                "influboost-title": "INFLUBOOST — Global Influencer Seeding",
+                "influboost-desc": "Run global influencer seeding campaigns across Instagram, TikTok, YouTube Shorts, Threads, Xiaohongshu, and X.",
+                "influboost-btn": "Launch INFLUBOOST Service",
                 "localize-title": "LOCALIZE — Native Translation & Localization",
+                "side-title-globalweb": "GLOBALWEB Multilingual Website & Global SEO",
+                "side-title-influboost": "INFLUBOOST Global Influencer Seeding",
                 "localize-desc": "Get polished English/Korean translation, localization, and native proofreading with a smooth checkout flow.",
                 "localize-btn": "Launch Translation Service",
                 "tradeboost-title": "TRADEBOOST — Global Trade Agency",
@@ -2947,7 +2975,12 @@
                 "globalweb-title": "GLOBALWEB — 다국어 웹사이트 및 글로벌 SEO",
                 "globalweb-desc": "해외 시장 확장을 위한 다국어 웹사이트, 로컬라이제이션, 글로벌 SEO를 제공합니다.",
                 "globalweb-btn": "GLOBALWEB 서비스 바로가기",
+                "influboost-title": "INFLUBOOST — 글로벌 인플루언서 시딩",
+                "influboost-desc": "인스타그램, 틱톡, 유튜브 쇼츠, Threads, 샤오홍슈, X에서 글로벌 인플루언서 시딩 캠페인을 진행합니다.",
+                "influboost-btn": "INFLUBOOST 서비스 바로가기",
                 "localize-title": "LOCALIZE — 원어민 번역 & 로컬라이제이션",
+                "side-title-globalweb": "GLOBALWEB 다국어 웹사이트 & 글로벌 SEO",
+                "side-title-influboost": "INFLUBOOST 글로벌 인플루언서 시딩",
                 "localize-desc": "영어/한국어 번역, 로컬라이징, 원어민 감수를 간편한 결제로 이용하세요.",
                 "localize-btn": "번역 서비스 바로가기",
                 "tradeboost-title": "TRADEBOOST — 글로벌 무역대행",
@@ -3240,6 +3273,9 @@
         // Micro-interaction: Track mouse coordinates on card overlay for lighting effect
         
         const servicesCatalog = [
+            { id: 'smm', category: 'marketing', link: '/boostsm/', icon: 'fa-solid fa-arrow-up-right-dots', cardClass: 'card-active-smm', btnClass: 'btn-smm', iconBoxClass: 'icon-smm', popularity: 95, addedAt: 0 },
+            { id: 'b2c', category: 'database', link: '/b2cdb/', icon: 'fa-solid fa-database', cardClass: 'card-active-b2c', btnClass: 'btn-b2c', iconBoxClass: 'icon-b2c', popularity: 90, addedAt: 0 },
+            { id: 'b2b', category: 'database', link: '/b2bdb/', icon: 'fa-solid fa-building-user', cardClass: 'card-active-b2b', btnClass: 'btn-b2b', iconBoxClass: 'icon-b2b', popularity: 92, addedAt: 0 },
             { id: 'land', category: 'design-dev', link: '/landPage/', icon: 'fa-solid fa-code', cardClass: 'card-active-land', btnClass: 'btn-land', iconBoxClass: 'icon-land', popularity: 88, addedAt: 1782455609 },
             { id: 'mvp', category: 'design-dev', link: '/mvpboost/', icon: 'fa-solid fa-rocket', cardClass: 'card-active-mvp', btnClass: 'btn-mvp', iconBoxClass: 'icon-mvp', popularity: 91, addedAt: 1782602632 },
             { id: 'aideploy', category: 'design-dev', link: '/aideploy/', icon: 'fa-solid fa-cloud-arrow-up', cardClass: 'card-active-aideploy', btnClass: 'btn-aideploy', iconBoxClass: 'icon-aideploy', popularity: 93, addedAt: 1782547509 },
@@ -3247,11 +3283,13 @@
             { id: 'fdaboost', category: 'strategy', link: '/fdaboost/', icon: 'fa-solid fa-vial-circle-check', cardClass: 'card-active-fdaboost', btnClass: 'btn-fdaboost', iconBoxClass: 'icon-fdaboost', popularity: 78, addedAt: 1782700087 },
             { id: 'globalbank', category: 'strategy', link: '/globalbank/', icon: 'fa-solid fa-building-columns', cardClass: 'card-active-globalbank', btnClass: 'btn-globalbank', iconBoxClass: 'icon-globalbank', popularity: 79, addedAt: 1782705236 },
             { id: 'webcreate', category: 'design-dev', link: '/webcreate/', icon: 'fa-solid fa-globe', cardClass: 'card-active-webcreate', btnClass: 'btn-webcreate', iconBoxClass: 'icon-webcreate', popularity: 84, addedAt: 1782537153 },
+            { id: 'pr', category: 'marketing', link: '/prboost/', icon: 'fa-solid fa-globe', cardClass: 'card-active-pr', btnClass: 'btn-pr', iconBoxClass: 'icon-pr', popularity: 82, addedAt: 0 },
             { id: 'adsboost', category: 'marketing', link: '/adsboost/', icon: 'fa-solid fa-bullhorn', cardClass: 'card-active-adsboost', btnClass: 'btn-adsboost', iconBoxClass: 'icon-adsboost', popularity: 83, addedAt: 1782681547 },
             { id: 'linkboost', category: 'marketing', link: '/linkboost/', icon: 'fa-brands fa-linkedin', cardClass: 'card-active-linkboost', btnClass: 'btn-linkboost', iconBoxClass: 'icon-linkboost', popularity: 83, addedAt: 1782660139 },
             { id: 'careerlink', category: 'marketing', link: '/careerlink/', icon: 'fa-brands fa-linkedin', cardClass: 'card-active-careerlink', btnClass: 'btn-careerlink', iconBoxClass: 'icon-careerlink', popularity: 84, addedAt: 1782689143 },
             { id: 'atsresume', category: 'marketing', link: '/atsresume/', icon: 'fa-solid fa-file-lines', cardClass: 'card-active-atsresume', btnClass: 'btn-atsresume', iconBoxClass: 'icon-atsresume', popularity: 85, addedAt: 1782705236 },
             { id: 'globalweb', category: 'design-dev', link: '/globalweb/', icon: 'fa-solid fa-globe', cardClass: 'card-active-globalweb', btnClass: 'btn-globalweb', iconBoxClass: 'icon-globalweb', popularity: 87, addedAt: 1782698277 },
+            { id: 'influboost', category: 'marketing', link: '/influboost/', icon: 'fa-solid fa-bullhorn', cardClass: 'card-active-influboost', btnClass: 'btn-influboost', iconBoxClass: 'icon-influboost', popularity: 88, addedAt: 1782717755 },
             { id: 'localize', category: 'strategy', link: '/localize/', icon: 'fa-solid fa-language', cardClass: 'card-active-localize', btnClass: 'btn-localize', iconBoxClass: 'icon-localize', popularity: 86, addedAt: 1782656191 },
             { id: 'tradeboost', category: 'strategy', link: '/tradeboost/', icon: 'fa-solid fa-ship', cardClass: 'card-active-tradeboost', btnClass: 'btn-tradeboost', iconBoxClass: 'icon-tradeboost', popularity: 85, addedAt: 1782652898 },
             { id: 'amzboost', category: 'marketing', link: '/amzboost/', icon: 'fa-solid fa-store', cardClass: 'card-active-amzboost', btnClass: 'btn-amzboost', iconBoxClass: 'icon-amzboost', popularity: 88, addedAt: 1782634998 },
@@ -3259,17 +3297,22 @@
             { id: 'tikshop', category: 'marketing', link: '/tikshop/', icon: 'fa-brands fa-tiktok', cardClass: 'card-active-tikshop', btnClass: 'btn-tikshop', iconBoxClass: 'icon-tikshop', popularity: 89, addedAt: 1782638348 },
             { id: 'rfp', category: 'strategy', link: '/rfpboost/', icon: 'fa-solid fa-file-signature', cardClass: 'card-active-rfp', btnClass: 'btn-rfp', iconBoxClass: 'icon-rfp', popularity: 84, addedAt: 1782627449 },
             { id: 'complianceboost', category: 'strategy', link: '/complianceboost/', icon: 'fa-solid fa-shield-halved', cardClass: 'card-active-complianceboost', btnClass: 'btn-complianceboost', iconBoxClass: 'icon-complianceboost', popularity: 82, addedAt: 1782689143 },
-            { id: 'globalup', category: 'strategy', link: '/globalup/', icon: 'fa-solid fa-user-tie', cardClass: 'card-active-globalup', btnClass: 'btn-globalup', iconBoxClass: 'icon-globalup', popularity: 81, addedAt: 1782705237 },
-            { id: 'eventboost', category: 'strategy', link: '/eventboost/', icon: 'fa-solid fa-microphone-lines', cardClass: 'card-active-eventboost', btnClass: 'btn-eventboost', iconBoxClass: 'icon-eventboost', popularity: 82, addedAt: 1782705237 },
+            { id: 'globalup', category: 'strategy', link: '/globalup/', icon: 'fa-solid fa-user-tie', cardClass: 'card-active-globalup', btnClass: 'btn-globalup', iconBoxClass: 'icon-globalup', popularity: 81, addedAt: 1782717756 },
+            { id: 'eventboost', category: 'strategy', link: '/eventboost/', icon: 'fa-solid fa-microphone-lines', cardClass: 'card-active-eventboost', btnClass: 'btn-eventboost', iconBoxClass: 'icon-eventboost', popularity: 82, addedAt: 1782717756 },
             { id: 'micemc', category: 'strategy', link: '/micemc/', icon: 'fa-solid fa-microphone-lines', cardClass: 'card-active-micemc', btnClass: 'btn-micemc', iconBoxClass: 'icon-micemc', popularity: 83, addedAt: 1782689143 },
             { id: 'indiaboost', category: 'strategy', link: '/indiaboost/', icon: 'fa-solid fa-earth-asia', cardClass: 'card-active-indiaboost', btnClass: 'btn-indiaboost', iconBoxClass: 'icon-indiaboost', popularity: 81, addedAt: 1782689143 },
             { id: 'alicat', category: 'marketing', link: '/alicat/', icon: 'fa-solid fa-box-open', cardClass: 'card-active-alicat', btnClass: 'btn-alicat', iconBoxClass: 'icon-alicat', popularity: 83, addedAt: 1782617466 },
+            { id: 'app', category: 'marketing', link: '/appboost/', icon: 'fa-solid fa-mobile-screen-button', cardClass: 'card-active-app', btnClass: 'btn-app', iconBoxClass: 'icon-app', popularity: 83, addedAt: 0 },
+            { id: 'ustax', category: 'strategy', link: '/ustaxboost/', icon: 'fa-solid fa-file-invoice-dollar', cardClass: 'card-active-ustax', btnClass: 'btn-ustax', iconBoxClass: 'icon-ustax', popularity: 81, addedAt: 0 },
+            { id: 'ustax2', category: 'strategy', link: '/ustax/', icon: 'fa-solid fa-file-invoice-dollar', cardClass: 'card-active-ustax2', btnClass: 'btn-ustax2', iconBoxClass: 'icon-ustax2', popularity: 80, addedAt: 0 },
+            { id: 'usllc', category: 'strategy', link: '/usllc/', icon: 'fa-solid fa-building-circle-check', cardClass: 'card-active-usllc', btnClass: 'btn-usllc', iconBoxClass: 'icon-usllc', popularity: 90, addedAt: 0 },
             { id: 'etsyboost', category: 'strategy', link: '/etsyboost/', icon: 'fa-brands fa-etsy', cardClass: 'card-active-etsyboost', btnClass: 'btn-etsyboost', iconBoxClass: 'icon-etsyboost', popularity: 91, addedAt: 1782645513 },
             { id: 'clip', category: 'media', link: '/clipboost/', icon: 'fa-solid fa-clapperboard', cardClass: 'card-active-clip', btnClass: 'btn-clip', iconBoxClass: 'icon-clip', popularity: 85, addedAt: 1782465454 },
             { id: 'mail', category: 'marketing', link: '/mailboost/', icon: 'fa-solid fa-envelope', cardClass: 'card-active-mail', btnClass: 'btn-mail', iconBoxClass: 'icon-mail', popularity: 80, addedAt: 1782468649 },
             { id: 'chat', category: 'strategy', link: '/chatboost/', icon: 'fa-solid fa-robot', cardClass: 'card-active-chat', btnClass: 'btn-chat', iconBoxClass: 'icon-chat', popularity: 87, addedAt: 1782472204 },
             { id: 'search', category: 'marketing', link: '/searchboost/', icon: 'fa-solid fa-magnifying-glass', cardClass: 'card-active-search', btnClass: 'btn-search', iconBoxClass: 'icon-search', popularity: 84, addedAt: 1782475741 },
             { id: 'mk', category: 'marketing', link: '/mkboost/', icon: 'fa-solid fa-magnifying-glass-chart', cardClass: 'card-active-mk', btnClass: 'btn-mk', iconBoxClass: 'icon-mk', popularity: 78, addedAt: 1782479830 },
+            { id: 'data', category: 'database', link: '/databoost/', icon: 'fa-solid fa-spider', cardClass: 'card-active-data', btnClass: 'btn-data', iconBoxClass: 'icon-data', popularity: 86, addedAt: 0 },
             { id: 'img', category: 'design-dev', link: '/imgboost/', icon: 'fa-solid fa-camera-retro', cardClass: 'card-active-img', btnClass: 'btn-img', iconBoxClass: 'icon-img', popularity: 83, addedAt: 1782486651 },
             { id: 'flow', category: 'design-dev', link: '/flowboost/', icon: 'fa-solid fa-diagram-project', cardClass: 'card-active-flow', btnClass: 'btn-flow', iconBoxClass: 'icon-flow', popularity: 81, addedAt: 1782490382 },
             { id: 'ai', category: 'strategy', link: '/aiboost/', icon: 'fa-solid fa-brain', cardClass: 'card-active-ai', btnClass: 'btn-ai', iconBoxClass: 'icon-ai', popularity: 89, addedAt: 1782494152 },
@@ -3278,21 +3321,25 @@
             { id: 'medboost', category: 'media', link: '/medboost/', icon: 'fa-solid fa-stethoscope', cardClass: 'card-active-medboost', btnClass: 'btn-medboost', iconBoxClass: 'icon-medboost', popularity: 77, addedAt: 1782631935 },
             { id: 'pitch', category: 'media', link: '/pitchboost/', icon: 'fa-solid fa-chart-line', cardClass: 'card-active-pitch', btnClass: 'btn-pitch', iconBoxClass: 'icon-pitch', popularity: 79, addedAt: 1782504778 },
             { id: 'insight', category: 'strategy', link: '/insightboost/', icon: 'fa-solid fa-chart-bar', cardClass: 'card-active-insight', btnClass: 'btn-insight', iconBoxClass: 'icon-insight', popularity: 75, addedAt: 1782508154 },
+            { id: 'opencode', category: 'design-dev', link: '/opencode/', icon: 'fa-solid fa-code', cardClass: 'card-active-opencode', btnClass: 'btn-opencode', iconBoxClass: 'icon-opencode', popularity: 94, addedAt: 0 },
             { id: 'shop', category: 'strategy', link: '/shopboost/', icon: 'fa-solid fa-store', cardClass: 'card-active-shop', btnClass: 'btn-shop', iconBoxClass: 'icon-shop', popularity: 77, addedAt: 1782512020 },
             { id: 'buyer', category: 'strategy', link: '/buyerboost/', icon: 'fa-solid fa-handshake', cardClass: 'card-active-buyer', btnClass: 'btn-buyer', iconBoxClass: 'icon-buyer', popularity: 80, addedAt: 1782515719 },
             { id: 'research', category: 'strategy', link: '/researchboost/', icon: 'fa-solid fa-chart-line', cardClass: 'card-active-research', btnClass: 'btn-research', iconBoxClass: 'icon-research', popularity: 78, addedAt: 1782531420 },
+            { id: 'rep', category: 'strategy', link: '/repboost/', icon: 'fa-solid fa-comments', cardClass: 'card-active-rep', btnClass: 'btn-rep', iconBoxClass: 'icon-rep', popularity: 80, addedAt: 0 },
             { id: 'content', category: 'marketing', link: '/contentboost/', icon: 'fa-solid fa-newspaper', cardClass: 'card-active-content', btnClass: 'btn-content', iconBoxClass: 'icon-content', popularity: 86, addedAt: 1782518987 },
             { id: 'affboost', category: 'marketing', link: '/affboost/', icon: 'fa-solid fa-rocket', cardClass: 'card-active-affboost', btnClass: 'btn-affboost', iconBoxClass: 'icon-affboost', popularity: 92, addedAt: 1782667255 },
             { id: 'sales', category: 'strategy', link: '/salesboost/', icon: 'fa-solid fa-receipt', cardClass: 'card-active-sales', btnClass: 'btn-sales', iconBoxClass: 'icon-sales', popularity: 77, addedAt: 1782537153 },
             { id: 'law', category: 'strategy', link: '/lawboost/', icon: 'fa-solid fa-scale-balanced', cardClass: 'card-active-law', btnClass: 'btn-law', iconBoxClass: 'icon-law', popularity: 76, addedAt: 1782524924 },
             { id: 'aiweb', category: 'design-dev', link: '/aiweb/', icon: 'fa-solid fa-globe', cardClass: 'card-active-aiweb', btnClass: 'btn-aiweb', iconBoxClass: 'icon-aiweb', popularity: 83, addedAt: 1782547509 },
             { id: 'cert', category: 'strategy', link: '/certboost/', icon: 'fa-solid fa-certificate', cardClass: 'card-active-cert', btnClass: 'btn-cert', iconBoxClass: 'icon-cert', popularity: 75, addedAt: 1782526024 },
+            { id: 'apost', category: 'strategy', link: '/apostboost/', icon: 'fa-solid fa-stamp', cardClass: 'card-active-apost', btnClass: 'btn-apost', iconBoxClass: 'icon-apost', popularity: 79, addedAt: 0 },
             { id: 'ip', category: 'strategy', link: '/ipboost/', icon: 'fa-solid fa-shield-halved', cardClass: 'card-active-ip', btnClass: 'btn-ip', iconBoxClass: 'icon-ip', popularity: 82, addedAt: 1782524924 },
             { id: 'hr', category: 'strategy', link: '/hrboost/', icon: 'fa-solid fa-user-tie', cardClass: 'card-active-hr', btnClass: 'btn-hr', iconBoxClass: 'icon-hr', popularity: 80, addedAt: 1782558823 },
             { id: 'sys', category: 'design-dev', link: '/sysboost/', icon: 'fa-solid fa-network-wired', cardClass: 'card-active-sys', btnClass: 'btn-sys', iconBoxClass: 'icon-sys', popularity: 80, addedAt: 1782562170 },
             { id: 'loyalty', category: 'strategy', link: '/loyaltyboost/', icon: 'fa-solid fa-gift', cardClass: 'card-active-loyalty', btnClass: 'btn-loyalty', iconBoxClass: 'icon-loyalty', popularity: 80, addedAt: 1782576294 },
             { id: 'book', category: 'design-dev', link: '/bookboost/', icon: 'fa-solid fa-calendar-check', cardClass: 'card-active-book', btnClass: 'btn-book', iconBoxClass: 'icon-book', popularity: 80, addedAt: 1782600698 },
             { id: 'eduooost', category: 'strategy', link: '/eduooost/', icon: 'fa-solid fa-graduation-cap', cardClass: 'card-active-eduooost', btnClass: 'btn-eduooost', iconBoxClass: 'icon-eduooost', popularity: 80, addedAt: 1782600698 },
+            { id: 'sourcboost', category: 'strategy', link: '/sourcboost/', icon: 'fa-solid fa-file-shield', cardClass: 'card-active-sourcboost', btnClass: 'btn-sourcboost', iconBoxClass: 'icon-sourcboost', popularity: 80, addedAt: 0 },
             { id: 'chinaboost', category: 'strategy', link: '/chinaboost/', icon: 'fa-solid fa-earth-asia', cardClass: 'card-active-chinaboost', btnClass: 'btn-chinaboost', iconBoxClass: 'icon-chinaboost', popularity: 87, addedAt: 1782670293 },
             { id: 'surveyboost', category: 'strategy', link: '/surveyboost/', icon: 'fa-solid fa-square-poll-vertical', cardClass: 'card-active-surveyboost', btnClass: 'btn-surveyboost', iconBoxClass: 'icon-surveyboost', popularity: 84, addedAt: 1782674064 },
             { id: 'shopglobal', category: 'strategy', link: '/shopglobal/', icon: 'fa-brands fa-shopify', cardClass: 'card-active-shopglobal', btnClass: 'btn-shopglobal', iconBoxClass: 'icon-shopglobal', popularity: 86, addedAt: 1782677930 },
