@@ -434,8 +434,21 @@ function openModal(group, packageId) {
 
     const backdrop = document.getElementById('purchase-modal');
     if (backdrop) backdrop.classList.add('active');
-    initPayPalButtons();
     updateModalPrice();
+
+    const totalEl = document.getElementById('modal-total-price');
+    if (totalEl && !totalEl.dataset.checkoutBound) {
+        totalEl.addEventListener('click', triggerTestCheckout);
+        totalEl.dataset.checkoutBound = '1';
+    }
+
+    setTimeout(() => {
+        const modalCard = document.querySelector('.modal-card');
+        const totalBox = document.querySelector('.total-price-box');
+        if (modalCard && totalBox) modalCard.scrollTop = totalBox.offsetTop - 10;
+    }, 800);
+
+    initPayPalButtons();
 }
 
 function closeModal() {

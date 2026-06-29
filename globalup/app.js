@@ -490,7 +490,12 @@ function openPurchaseModal(categoryKey, packageId) {
     }
     
     updateModalPrice();
-    
+    const totalEl = document.getElementById('modal-total-price');
+    if (totalEl && !totalEl.dataset.checkoutBound) {
+        totalEl.addEventListener('click', triggerTestCheckout);
+        totalEl.dataset.checkoutBound = '1';
+    }
+
     // Open Modal
     document.getElementById('purchase-modal').classList.add('active');
     
