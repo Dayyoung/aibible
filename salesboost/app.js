@@ -6,8 +6,26 @@ let orderQuantity = 1;
 const STORAGE_KEY = 'salesboost_orders';
 const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScMPqbEWWttS5mb1m_krsO_kco24ImpgvYVSbc7zO0nEVmYFw/viewform?entry.1059822061=';
 
-// Determine language
-const isKrPage = window.location.pathname.includes('/kr/') || localStorage.getItem('bibleforai_lang') === 'ko';
+// Determine language preference and path
+const isKrPage = window.location.pathname.includes('/kr/');
+let preferredLang = localStorage.getItem('bibleforai_lang');
+
+if (!preferredLang) {
+    preferredLang = isKrPage ? 'ko' : 'en';
+    localStorage.setItem('bibleforai_lang', preferredLang);
+}
+
+// Redirect if path language doesn't match localstorage preference
+if (preferredLang === 'ko' && !isKrPage) {
+    if (window.location.pathname.endsWith('/')) {
+        window.location.href = window.location.pathname + 'kr/';
+    } else {
+        window.location.href = window.location.pathname + '/kr/';
+    }
+} else if (preferredLang === 'en' && isKrPage) {
+    window.location.href = window.location.pathname.replace('/kr/', '/');
+}
+
 const currentLang = isKrPage ? 'ko' : 'en';
 
 // Package Catalog

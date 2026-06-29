@@ -1,6 +1,6 @@
 const STORAGE_KEY = 'surveyboost_orders';
 const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScMPqbEWWttS5mb1m_krsO_kco24ImpgvYVSbc7zO0nEVmYFw/viewform?entry.1059822061=';
-const currentLang = ((window.DEFAULT_LANG || localStorage.getItem('surveyboost_lang') || navigator.language || 'en').toLowerCase().startsWith('ko')) ? 'ko' : 'en';
+const currentLang = ((window.DEFAULT_LANG || localStorage.getItem('bibleforai_lang') || navigator.language || 'en').toLowerCase().startsWith('ko')) ? 'ko' : 'en';
 
 let activeLang = currentLang;
 let currentPackage = null;
@@ -203,7 +203,7 @@ function getDict() {
 
 function applyTranslations(lang) {
   activeLang = lang === 'ko' ? 'ko' : 'en';
-  localStorage.setItem('surveyboost_lang', activeLang);
+  localStorage.setItem('bibleforai_lang', activeLang);
   document.documentElement.lang = activeLang;
   const dict = getDict();
   document.querySelectorAll('[data-i18n]').forEach(el => {

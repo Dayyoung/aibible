@@ -356,7 +356,7 @@ const translations = {
 let currentLang = (() => {
   const pathLang = window.location.pathname.includes('/kr/') ? 'ko' : null;
   if (pathLang) return pathLang;
-  const storedLang = localStorage.getItem('rfpboost_lang');
+  const storedLang = localStorage.getItem('bibleforai_lang');
   if (storedLang) return storedLang;
   return 'en';
 })();
@@ -632,7 +632,7 @@ function renderOrders() {
 
 function changeLanguage(lang) {
   currentLang = lang;
-  localStorage.setItem('rfpboost_lang', lang);
+  localStorage.setItem('bibleforai_lang', lang);
   applyTranslations();
 }
 
