@@ -344,7 +344,7 @@ main {
 /* Stats Bar */
 .stats-bar {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 16px;
