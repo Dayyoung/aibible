@@ -1160,3 +1160,21 @@ footer {
     text-align: center;
 }
 
+/* Modal Form Controls Styling */
+.email-control-group input, .keyword-control-group input, .modal-card input, .modal-card select {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    color: #ffffff;
+    padding: 0.65rem 1rem;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    outline: none;
+    width: 100%;
+    transition: var(--transition);
+}
+.email-control-group input:focus, .keyword-control-group input:focus, .modal-card input:focus, .modal-card select:focus {
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.06);
+}
+

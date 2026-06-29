@@ -13,6 +13,8 @@ CATALOG = [
     {'id': 'mvp', 'cat': 'design-dev', 'link': '/mvpboost/', 'icon': 'fa-solid fa-rocket', 'popularity': 91},
     {'id': 'aideploy', 'cat': 'design-dev', 'link': '/aideploy/', 'icon': 'fa-solid fa-cloud-arrow-up', 'popularity': 93},
     {'id': 'autoboost', 'cat': 'design-dev', 'link': '/autoboost/', 'icon': 'fa-solid fa-arrows-rotate', 'popularity': 89},
+    {'id': 'fdaboost', 'cat': 'strategy', 'link': '/fdaboost/', 'icon': 'fa-solid fa-vial-circle-check', 'popularity': 78},
+    {'id': 'globalbank', 'cat': 'strategy', 'link': '/globalbank/', 'icon': 'fa-solid fa-building-columns', 'popularity': 79},
     {'id': 'webcreate', 'cat': 'design-dev', 'link': '/webcreate/', 'icon': 'fa-solid fa-globe', 'popularity': 84},
     {'id': 'pr', 'cat': 'marketing', 'link': '/prboost/', 'icon': 'fa-solid fa-globe', 'popularity': 82},
     {'id': 'adsboost', 'cat': 'marketing', 'link': '/adsboost/', 'icon': 'fa-solid fa-bullhorn', 'popularity': 83},
@@ -178,6 +180,8 @@ def patch_all_service_pages():
         '            <li><a href="/careerlink/"><i class="fa-brands fa-linkedin"></i> CAREERLINK — LinkedIn Optimization</a></li>\n',
         '            <li><a href="/atsresume/"><i class="fa-solid fa-file-lines"></i> ATSRESUME — Resume & Cover Letter Optimization</a></li>\n',
         '            <li><a href="/globalweb/"><i class="fa-solid fa-globe"></i> GLOBALWEB — Multilingual Website & Global SEO</a></li>\n',
+        '            <li><a href="/fdaboost/"><i class="fa-solid fa-vial-circle-check"></i> FDABOOST — FDA Labeling & Certification</a></li>\n',
+        '            <li><a href="/globalbank/"><i class="fa-solid fa-building-columns"></i> GLOBALBANK — Overseas Business Bank Account Setup</a></li>\n',
         '            <li><a href="/repboost/"><i class="fa-solid fa-circle"></i> REPBOOST</a></li>\n',
         '            <li><a href="/sysboost/"><i class="fa-solid fa-circle"></i> SYSBOOST</a></li>\n',
         '            <li><a href="/ustaxboost/"><i class="fa-solid fa-circle"></i> USTAXBOOST</a></li>\n',
@@ -204,6 +208,10 @@ def patch_all_service_pages():
     tradeboost_item_en = '            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — Global Trade Agency</a></li>\n'
     globalweb_item_en = '            <li><a href="/globalweb/"><i class="fa-solid fa-globe"></i> GLOBALWEB — Multilingual Website & Global SEO</a></li>\n'
     globalweb_item_ko = '            <li><a href="/globalweb/"><i class="fa-solid fa-globe"></i> GLOBALWEB — 다국어 웹사이트 &amp; 글로벌 SEO</a></li>\n'
+    fdaboost_item_en = '            <li><a href="/fdaboost/"><i class="fa-solid fa-vial-circle-check"></i> FDABOOST — FDA Labeling & Certification</a></li>\n'
+    fdaboost_item_ko = '            <li><a href="/fdaboost/"><i class="fa-solid fa-vial-circle-check"></i> FDABOOST — FDA 라벨링 &amp; 인증</a></li>\n'
+    globalbank_item_en = '            <li><a href="/globalbank/"><i class="fa-solid fa-building-columns"></i> GLOBALBANK — Overseas Business Bank Account Setup</a></li>\n'
+    globalbank_item_ko = '            <li><a href="/globalbank/"><i class="fa-solid fa-building-columns"></i> GLOBALBANK — 해외 비즈니스 은행 계좌 개설</a></li>\n'
     tradeboost_item_ko = '            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — 글로벌 무역대행</a></li>\n'
     micemc_item_en = '            <li><a href="/micemc/"><i class="fa-solid fa-microphone-lines"></i> MICEMC — International MC & Interpretation</a></li>\n'
     micemc_item_ko = '            <li><a href="/micemc/"><i class="fa-solid fa-microphone-lines"></i> MICEMC — 국제행사 영어 MC & 통역</a></li>\n'
@@ -223,6 +231,8 @@ def patch_all_service_pages():
         extra_items = [
             tradeboost_item_ko if '/kr/' in str(path) else tradeboost_item_en,
             globalweb_item_ko if '/kr/' in str(path) else globalweb_item_en,
+            fdaboost_item_ko if '/kr/' in str(path) else fdaboost_item_en,
+            globalbank_item_ko if '/kr/' in str(path) else globalbank_item_en,
             micemc_item_ko if '/kr/' in str(path) else micemc_item_en,
             indiaboost_item_ko if '/kr/' in str(path) else indiaboost_item_en,
             affboost_item_ko if '/kr/' in str(path) else affboost_item_en,

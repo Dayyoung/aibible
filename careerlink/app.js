@@ -174,8 +174,15 @@ const translations = {
   }
 };
 
-function formatPrice(value) {
-  return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }).format(value);
+function formatPrice(usdPrice, includeUnit = true) {
+    const isKo = currentLang === 'ko';
+    if (isKo) {
+        const krw = Math.round(usdPrice * 1300);
+        return includeUnit ? `₩${krw.toLocaleString()} KRW` : `₩${krw.toLocaleString()}`;
+    } else {
+        const formatted = (usdPrice % 1 === 0) ? usdPrice.toLocaleString() : usdPrice.toFixed(2);
+        return includeUnit ? `$${formatted} USD` : `$${formatted}`;
+    }
 }
 
 function toggleMobileMenu() {
@@ -198,6 +205,32 @@ function changeLanguage(lang) {
 }
 
 function applyTranslations() {
+    // Force trailing slash for consistent relative path resolution
+    if (!window.location.pathname.endsWith('/') && !window.location.pathname.split('/').pop().includes('.')) {
+        window.location.replace(window.location.pathname + '/' + window.location.search + window.location.hash);
+        return;
+    }
+
+    // Auto-redirect based on global language preference
+    const isKrPage = window.location.pathname.includes('/kr/');
+    let preferredLang = localStorage.getItem('bibleforai_lang');
+    if (!preferredLang) {
+        preferredLang = isKrPage ? 'ko' : 'en';
+        localStorage.setItem('bibleforai_lang', preferredLang);
+    }
+    if (preferredLang === 'ko' && !isKrPage) {
+        const base = window.location.pathname.endsWith('/') ? window.location.pathname : window.location.pathname + '/';
+        window.location.href = base + 'kr/';
+        return;
+    } else if (preferredLang === 'en' && isKrPage) {
+        window.location.href = window.location.pathname.replace('/kr/', '/');
+        return;
+    }
+ else if (preferredLang === 'en' && isKrPage) {
+        window.location.href = window.location.pathname.replace('/kr/', '/');
+        return;
+    }
+
   const dict = translations[currentLang] || translations.en;
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');

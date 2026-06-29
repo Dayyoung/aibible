@@ -259,12 +259,44 @@ let currentLang = localStorage.getItem('bibleforai_lang') || (() => {
     return browserLang.toLowerCase().startsWith('ko') ? 'ko' : 'en';
 })();
 
-function formatPrice(amount, includeCurrency = true) {
-    const value = Number(amount || 0).toFixed(2);
-    return includeCurrency ? `$${value}` : value;
+function formatPrice(usdPrice, includeUnit = true) {
+    const isKo = currentLang === 'ko';
+    if (isKo) {
+        const krw = Math.round(usdPrice * 1300);
+        return includeUnit ? `₩${krw.toLocaleString()} KRW` : `₩${krw.toLocaleString()}`;
+    } else {
+        const formatted = (usdPrice % 1 === 0) ? usdPrice.toLocaleString() : usdPrice.toFixed(2);
+        return includeUnit ? `$${formatted} USD` : `$${formatted}`;
+    }
 }
 
 function applyTranslations() {
+    // Force trailing slash for consistent relative path resolution
+    if (!window.location.pathname.endsWith('/') && !window.location.pathname.split('/').pop().includes('.')) {
+        window.location.replace(window.location.pathname + '/' + window.location.search + window.location.hash);
+        return;
+    }
+
+    // Auto-redirect based on global language preference
+    const isKrPage = window.location.pathname.includes('/kr/');
+    let preferredLang = localStorage.getItem('bibleforai_lang');
+    if (!preferredLang) {
+        preferredLang = isKrPage ? 'ko' : 'en';
+        localStorage.setItem('bibleforai_lang', preferredLang);
+    }
+    if (preferredLang === 'ko' && !isKrPage) {
+        const base = window.location.pathname.endsWith('/') ? window.location.pathname : window.location.pathname + '/';
+        window.location.href = base + 'kr/';
+        return;
+    } else if (preferredLang === 'en' && isKrPage) {
+        window.location.href = window.location.pathname.replace('/kr/', '/');
+        return;
+    }
+ else if (preferredLang === 'en' && isKrPage) {
+        window.location.href = window.location.pathname.replace('/kr/', '/');
+        return;
+    }
+
     const lang = currentLang;
     const isKo = lang === 'ko';
 
@@ -607,3 +639,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // Expose variables globally to prevent ReferenceErrors in inline HTML scripts/handlers
 if (typeof navigate !== 'undefined') { window.navigate = navigate; }
 if (typeof currentLang !== 'undefined') { window.currentLang = currentLang; }
+
+window.openPurchaseModal = openPurchaseModal;
+window.closeModal = closeModal;
+window.adjustQty = adjustQty;
+window.changeLanguage = changeLanguage;

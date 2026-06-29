@@ -240,6 +240,32 @@ function formatPrice(usdPrice, includeUnit = true) {
 }
 
 function applyTranslations() {
+    // Force trailing slash for consistent relative path resolution
+    if (!window.location.pathname.endsWith('/') && !window.location.pathname.split('/').pop().includes('.')) {
+        window.location.replace(window.location.pathname + '/' + window.location.search + window.location.hash);
+        return;
+    }
+
+    // Auto-redirect based on global language preference
+    const isKrPage = window.location.pathname.includes('/kr/');
+    let preferredLang = localStorage.getItem('bibleforai_lang');
+    if (!preferredLang) {
+        preferredLang = isKrPage ? 'ko' : 'en';
+        localStorage.setItem('bibleforai_lang', preferredLang);
+    }
+    if (preferredLang === 'ko' && !isKrPage) {
+        const base = window.location.pathname.endsWith('/') ? window.location.pathname : window.location.pathname + '/';
+        window.location.href = base + 'kr/';
+        return;
+    } else if (preferredLang === 'en' && isKrPage) {
+        window.location.href = window.location.pathname.replace('/kr/', '/');
+        return;
+    }
+ else if (preferredLang === 'en' && isKrPage) {
+        window.location.href = window.location.pathname.replace('/kr/', '/');
+        return;
+    }
+
     const lang = currentLang;
     const isKo = lang === 'ko';
     
@@ -672,3 +698,8 @@ function renderOrders() {
 // Expose variables globally to prevent ReferenceErrors in inline HTML scripts/handlers
 if (typeof navigate !== 'undefined') { window.navigate = navigate; }
 if (typeof currentLang !== 'undefined') { window.currentLang = currentLang; }
+
+window.openPurchaseModal = openPurchaseModal;
+window.closeModal = closeModal;
+window.adjustQty = adjustQty;
+window.changeLanguage = changeLanguage;

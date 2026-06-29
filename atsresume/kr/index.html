@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <base href="../">
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BibleForAI - ATSRESUME | 글로벌 이력서 &amp; 커버레터 최적화</title>
@@ -62,7 +62,7 @@
   }
   </script>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script>
     localStorage.setItem('bibleforai_lang', 'ko');
@@ -160,6 +160,8 @@
             <li><a href="/shopglobal/"><i class="fa-brands fa-shopify"></i> SHOPGLOBAL — Shopify Global Expansion</a></li>
             <li><a href="/complianceboost/"><i class="fa-solid fa-shield-halved"></i> COMPLIANCEBOOST — Compliance Docs & Audit Prep</a></li>
             <li><a href="/globalweb/"><i class="fa-solid fa-globe"></i> GLOBALWEB — Multilingual Website & Global SEO</a></li>
+            <li><a href="/fdaboost/"><i class="fa-solid fa-vial-circle-check"></i> FDABOOST — FDA Labeling & Certification</a></li>
+            <li><a href="/globalbank/"><i class="fa-solid fa-building-columns"></i> GLOBALBANK — Overseas Business Bank Account Setup</a></li>
 </ul>
   </div>
   <div class="mobile-overlay" id="mobile-overlay" onclick="toggleMobileMenu()"></div>
@@ -167,39 +169,39 @@
   <main>
     <section class="hero" id="home">
       <div class="hero-badge" data-i18n="hero-badge">ATS 이력서 &amp; 커버레터 최적화</div>
-      <h1 id="service-title" data-i18n="hero-title">합격률을 높이는 이력서와 커버레터를 만드세요.</h1>
-      <p id="service-subtitle" data-i18n="hero-desc">ATS에 맞춘 이력서, 커버레터, 직무 타겟팅 전략을 제공합니다.</p>
+      <h1 class="hero-title" id="service-title" data-i18n="hero-title">합격률을 높이는 이력서와 커버레터를 만드세요.</h1>
+      <p class="hero-desc" id="service-subtitle" data-i18n="hero-desc">ATS에 맞춘 이력서, 커버레터, 직무 타겟팅 전략을 제공합니다.</p>
       <div class="hero-actions">
         <a href="#packages" class="btn-primary" data-i18n="hero-cta" onclick="navigate('packages'); return false;">패키지 보기</a>
         <a href="#faq" class="btn-secondary" data-i18n="hero-secondary" onclick="navigate('faq'); return false;">FAQ 보기</a>
       </div>
       <div class="stats-bar">
-        <div class="stat"><strong data-i18n="stat-1-num">ATS</strong><span data-i18n="stat-1-label">ATS 최적화</span></div>
-        <div class="stat"><strong data-i18n="stat-2-num">2일</strong><span data-i18n="stat-2-label">빠른 납기</span></div>
-        <div class="stat"><strong data-i18n="stat-3-num">5★</strong><span data-i18n="stat-3-label">고객 만족도</span></div>
+        <div class="stat-item"><strong class="stat-num" data-i18n="stat-1-num">ATS</strong><span class="stat-label" data-i18n="stat-1-label">ATS 최적화</span></div>
+        <div class="stat-item"><strong class="stat-num" data-i18n="stat-2-num">2일</strong><span class="stat-label" data-i18n="stat-2-label">빠른 납기</span></div>
+        <div class="stat-item"><strong class="stat-num" data-i18n="stat-3-num">5★</strong><span class="stat-label" data-i18n="stat-3-label">고객 만족도</span></div>
       </div>
     </section>
 
-    <section class="content-section" id="packages">
+    <section class="section-container" id="packages">
       <div class="section-heading">
-        <h2 data-i18n="section-packages-title">이력서 패키지를 선택하세요</h2>
-        <p data-i18n="section-packages-subtitle">커버레터 다듬기부터 이력서 전체 재작성까지 — 모든 구직 단계에 맞는 플랜이 있습니다.</p>
+        <h2 class="section-title" data-i18n="section-packages-title">이력서 패키지를 선택하세요</h2>
+        <p class="section-subtitle" data-i18n="section-packages-subtitle">커버레터 다듬기부터 이력서 전체 재작성까지 — 모든 구직 단계에 맞는 플랜이 있습니다.</p>
       </div>
       <div class="packages-grid" id="packages-grid"></div>
     </section>
 
-    <section class="content-section" id="faq">
+    <section class="section-container" id="faq">
       <div class="section-heading">
-        <h2 data-i18n="section-faq-title">자주 묻는 질문</h2>
-        <p data-i18n="section-faq-subtitle">ATSRESUME 서비스에 대해 알아야 할 모든 것.</p>
+        <h2 class="section-title" data-i18n="section-faq-title">자주 묻는 질문</h2>
+        <p class="section-subtitle" data-i18n="section-faq-subtitle">ATSRESUME 서비스에 대해 알아야 할 모든 것.</p>
       </div>
       <div class="faq-list" id="faq-list"></div>
     </section>
 
-    <section class="content-section" id="orders">
+    <section class="section-container" id="orders">
       <div class="section-heading">
-        <h2 data-i18n="section-orders-title">내 주문 내역</h2>
-        <p data-i18n="section-orders-subtitle">완료된 주문은 브라우저에 저장됩니다.</p>
+        <h2 class="section-title" data-i18n="section-orders-title">내 주문 내역</h2>
+        <p class="section-subtitle" data-i18n="section-orders-subtitle">완료된 주문은 브라우저에 저장됩니다.</p>
       </div>
       <p class="empty-state" id="no-orders-msg" data-i18n="no-orders-msg">아직 구매 기록이 없습니다. 결제 후 내역이 여기에 표시됩니다.</p>
       <div class="orders-table-wrap">
@@ -239,7 +241,7 @@
     </div>
   </footer>
 
-  <div class="purchase-modal" id="purchase-modal">
+  <div class="modal-backdrop" id="purchase-modal">
     <div class="modal-card">
       <button class="modal-close" onclick="closeModal()" aria-label="닫기">×</button>
       <div class="modal-top">

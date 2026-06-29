@@ -156,6 +156,8 @@
             <li><a href="/shopglobal/"><i class="fa-brands fa-shopify"></i> SHOPGLOBAL — Shopify Global Expansion</a></li>
             <li><a href="/complianceboost/"><i class="fa-solid fa-shield-halved"></i> COMPLIANCEBOOST — Compliance Docs & Audit Prep</a></li>
             <li><a href="/globalweb/"><i class="fa-solid fa-globe"></i> GLOBALWEB — Multilingual Website & Global SEO</a></li>
+            <li><a href="/fdaboost/"><i class="fa-solid fa-vial-circle-check"></i> FDABOOST — FDA Labeling & Certification</a></li>
+            <li><a href="/globalbank/"><i class="fa-solid fa-building-columns"></i> GLOBALBANK — Overseas Business Bank Account Setup</a></li>
 </ul>
   </div>
   <div class="mobile-overlay" id="mobile-overlay" onclick="toggleMobileMenu()"></div>
@@ -163,39 +165,39 @@
   <main>
     <section class="hero" id="home">
       <div class="hero-badge" data-i18n="hero-badge">ATS Resume &amp; Cover Letter Optimization</div>
-      <h1 id="service-title" data-i18n="hero-title">Build the resume that opens doors.</h1>
-      <p id="service-subtitle" data-i18n="hero-desc">ATS-ready resumes, cover letters, and job-targeting strategy for global professionals.</p>
+      <h1 class="hero-title" id="service-title" data-i18n="hero-title">Build the resume that opens doors.</h1>
+      <p class="hero-desc" id="service-subtitle" data-i18n="hero-desc">ATS-ready resumes, cover letters, and job-targeting strategy for global professionals.</p>
       <div class="hero-actions">
         <a href="#packages" class="btn-primary" data-i18n="hero-cta" onclick="navigate('packages'); return false;">View Packages</a>
         <a href="#faq" class="btn-secondary" data-i18n="hero-secondary" onclick="navigate('faq'); return false;">Read FAQ</a>
       </div>
       <div class="stats-bar">
-        <div class="stat"><strong data-i18n="stat-1-num">ATS</strong><span data-i18n="stat-1-label">ATS optimized</span></div>
-        <div class="stat"><strong data-i18n="stat-2-num">2D</strong><span data-i18n="stat-2-label">Fast delivery</span></div>
-        <div class="stat"><strong data-i18n="stat-3-num">5★</strong><span data-i18n="stat-3-label">Client satisfaction</span></div>
+        <div class="stat-item"><strong class="stat-num" data-i18n="stat-1-num">ATS</strong><span class="stat-label" data-i18n="stat-1-label">ATS optimized</span></div>
+        <div class="stat-item"><strong class="stat-num" data-i18n="stat-2-num">2D</strong><span class="stat-label" data-i18n="stat-2-label">Fast delivery</span></div>
+        <div class="stat-item"><strong class="stat-num" data-i18n="stat-3-num">5★</strong><span class="stat-label" data-i18n="stat-3-label">Client satisfaction</span></div>
       </div>
     </section>
 
-    <section class="content-section" id="packages">
+    <section class="section-container" id="packages">
       <div class="section-heading">
-        <h2 data-i18n="section-packages-title">Choose your resume package</h2>
-        <p data-i18n="section-packages-subtitle">From quick cover-letter polishing to full resume rewrites — we have a plan for every job search stage.</p>
+        <h2 class="section-title" data-i18n="section-packages-title">Choose your resume package</h2>
+        <p class="section-subtitle" data-i18n="section-packages-subtitle">From quick cover-letter polishing to full resume rewrites — we have a plan for every job search stage.</p>
       </div>
       <div class="packages-grid" id="packages-grid"></div>
     </section>
 
-    <section class="content-section" id="faq">
+    <section class="section-container" id="faq">
       <div class="section-heading">
-        <h2 data-i18n="section-faq-title">Frequently asked questions</h2>
-        <p data-i18n="section-faq-subtitle">Everything you need to know about the ATSRESUME service.</p>
+        <h2 class="section-title" data-i18n="section-faq-title">Frequently asked questions</h2>
+        <p class="section-subtitle" data-i18n="section-faq-subtitle">Everything you need to know about the ATSRESUME service.</p>
       </div>
       <div class="faq-list" id="faq-list"></div>
     </section>
 
-    <section class="content-section" id="orders">
+    <section class="section-container" id="orders">
       <div class="section-heading">
-        <h2 data-i18n="section-orders-title">My Orders</h2>
-        <p data-i18n="section-orders-subtitle">Your completed orders are stored in your browser.</p>
+        <h2 class="section-title" data-i18n="section-orders-title">My Orders</h2>
+        <p class="section-subtitle" data-i18n="section-orders-subtitle">Your completed orders are stored in your browser.</p>
       </div>
       <p class="empty-state" id="no-orders-msg" data-i18n="no-orders-msg">No purchase records yet. Your history will appear here after checkout.</p>
       <div class="orders-table-wrap">
@@ -235,7 +237,7 @@
     </div>
   </footer>
 
-  <div class="purchase-modal" id="purchase-modal">
+  <div class="modal-backdrop" id="purchase-modal">
     <div class="modal-card">
       <button class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
       <div class="modal-top">
