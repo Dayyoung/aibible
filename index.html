@@ -119,6 +119,15 @@
                 "@type": "Offer",
                 "itemOffered": {
                   "@type": "Service",
+                  "name": "GLOBALBANK — Overseas Business Bank Account Setup",
+                  "url": "https://bibleforai.com/globalbank/",
+                  "description": "Overseas bank account preparation, document guidance, and jurisdiction matching for international founders."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
                   "name": "CHINABOOST — China Business Registration & Market Entry",
                   "url": "https://bibleforai.com/chinaboost/",
                   "description": "China business registration guidance, bilingual intake, market entry planning, and founder-friendly launch support for international teams."
@@ -2404,6 +2413,7 @@
             <a href="/opencode/" class="sidebar-link"><i class="fa-solid fa-code"></i> <span id="side-title-opencode">OpenCode AI</span></a>
             <a href="/shopboost/" class="sidebar-link"><i class="fa-solid fa-store"></i> <span id="side-title-shop">E-Commerce Entry</span></a>
             <a href="/shopglobal/" class="sidebar-link"><i class="fa-brands fa-shopify"></i> <span id="side-title-shopglobal">SHOPGLOBAL — Shopify Global Expansion</span></a>
+            <a href="/globalbank/" class="sidebar-link"><i class="fa-solid fa-building-columns"></i> <span id="side-title-globalbank">GLOBALBANK — Overseas Business Bank Account Setup</span></a>
             <a href="/fdaboost/" class="sidebar-link"><i class="fa-solid fa-vial-circle-check"></i> <span id="side-title-fdaboost">FDABOOST — FDA Labeling &amp; Certification</span></a>
             <a href="/amzbrand/" class="sidebar-link"><i class="fa-brands fa-amazon"></i> <span id="side-title-amzbrand">AMZBRAND — Amazon Brand Registry &amp; Storefront</span></a>
             <a href="/flowboost/" class="sidebar-link"><i class="fa-solid fa-diagram-project"></i> <span id="side-title-flow">Flow Automation</span></a>
@@ -2550,6 +2560,7 @@
                 <a href="https://opencode.ai/go?ref=CFP69RVVCJ" target="_blank" id="foot-opencode-link">OpenCode AI</a>
                 <a href="/shopboost/" id="foot-shop-link">SHOPBOOST</a>
                 <a href="/shopglobal/" id="foot-shopglobal-link">SHOPGLOBAL</a>
+                <a href="/globalbank/" id="foot-globalbank-link">GLOBALBANK</a>
                 <a href="/fdaboost/" id="foot-fdaboost-link">FDABOOST</a>
                 <a href="/indiaboost/" id="foot-indiaboost-link">INDIABOOST</a>
                 <a href="/buyerboost/" id="foot-buyer-link">BUYERBOOST</a>
@@ -2648,6 +2659,9 @@
                 "shopglobal-title": "SHOPGLOBAL — Shopify Global Expansion",
                 "shopglobal-desc": "Shopify store strategy, setup, localization, app-stack planning, and growth support for brands entering global markets.",
                 "shopglobal-btn": "Launch SHOPGLOBAL Service",
+                "globalbank-title": "GLOBALBANK — Overseas Business Bank Account Setup",
+                "globalbank-desc": "Overseas bank account preparation, document guidance, and jurisdiction matching for international founders.",
+                "globalbank-btn": "Launch GLOBALBANK Service",
                 "fdaboost-title": "FDABOOST — FDA Labeling & Certification",
                 "fdaboost-desc": "FDA labeling, registration prep, packaging review, and launch support for US food brands.",
                 "fdaboost-btn": "Launch FDABOOST Service",
@@ -2929,6 +2943,9 @@
                 "shopglobal-title": "SHOPGLOBAL — 쇼피파이 글로벌 확장",
                 "shopglobal-desc": "해외 시장 진출 브랜드를 위한 쇼피파이 스토어 전략, 세팅, 현지화, 앱 스택 기획, 성장 지원 서비스입니다.",
                 "shopglobal-btn": "SHOPGLOBAL 시작",
+                "globalbank-title": "GLOBALBANK — 해외 비즈니스 계좌 개설",
+                "globalbank-desc": "해외 은행 계좌 준비, 서류 안내, 관할권 매칭을 국제 창업자를 위해 지원합니다.",
+                "globalbank-btn": "GLOBALBANK 시작",
                 "fdaboost-title": "FDABOOST — FDA 라벨링 & 인증",
                 "fdaboost-desc": "미국 식품 브랜드를 위한 FDA 라벨링, 등록 준비, 패키징 검토, 출시 지원 서비스입니다.",
                 "fdaboost-btn": "FDABOOST 시작",
@@ -3178,7 +3195,8 @@
             servicesCatalog.forEach(pkg => {
                 const el = document.getElementById(`side-title-${pkg.id}`);
                 if (el) {
-                    el.innerText = dict[`${pkg.id}-title`].split('—')[0].split(' - ')[0].trim();
+                    const title = dict[`${pkg.id}-title`] || pkg.id.toUpperCase();
+                    el.innerText = title.split('—')[0].split(' - ')[0].trim();
                 }
             });
             
@@ -3228,6 +3246,7 @@
             { id: 'ustax', category: 'strategy', link: '/ustaxboost/', icon: 'fa-solid fa-file-invoice-dollar', cardClass: 'card-active-ustax', btnClass: 'btn-ustax', iconBoxClass: 'icon-ustax', popularity: 81, addedAt: 1782606020 },
             { id: 'ustax2', category: 'strategy', link: '/ustax/', icon: 'fa-solid fa-file-invoice-dollar', cardClass: 'card-active-ustax2', btnClass: 'btn-ustax2', iconBoxClass: 'icon-ustax2', popularity: 80, addedAt: 1782610434 },
             { id: 'usllc', category: 'strategy', link: '/usllc/', icon: 'fa-solid fa-building-circle-check', cardClass: 'card-active-usllc', btnClass: 'btn-usllc', iconBoxClass: 'icon-usllc', popularity: 90, addedAt: 1782642308 },
+            { id: 'globalbank', category: 'strategy', link: '/globalbank/', icon: 'fa-solid fa-building-columns', cardClass: 'card-active-globalbank', btnClass: 'btn-globalbank', iconBoxClass: 'icon-globalbank', popularity: 89, addedAt: 1782710000 },
             { id: 'etsyboost', category: 'strategy', link: '/etsyboost/', icon: 'fa-brands fa-etsy', cardClass: 'card-active-etsyboost', btnClass: 'btn-etsyboost', iconBoxClass: 'icon-etsyboost', popularity: 91, addedAt: 1782645513 },
             { id: 'clip', category: 'media', link: '/clipboost/', icon: 'fa-solid fa-clapperboard', cardClass: 'card-active-clip', btnClass: 'btn-clip', iconBoxClass: 'icon-clip', popularity: 85, addedAt: 1782465454 },
             { id: 'mail', category: 'marketing', link: '/mailboost/', icon: 'fa-solid fa-envelope', cardClass: 'card-active-mail', btnClass: 'btn-mail', iconBoxClass: 'icon-mail', popularity: 80, addedAt: 1782468649 },
