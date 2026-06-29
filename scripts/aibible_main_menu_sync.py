@@ -18,6 +18,8 @@ CATALOG = [
     {'id': 'adsboost', 'cat': 'marketing', 'link': '/adsboost/', 'icon': 'fa-solid fa-bullhorn', 'popularity': 83},
     {'id': 'linkboost', 'cat': 'marketing', 'link': '/linkboost/', 'icon': 'fa-brands fa-linkedin', 'popularity': 83},
     {'id': 'careerlink', 'cat': 'marketing', 'link': '/careerlink/', 'icon': 'fa-brands fa-linkedin', 'popularity': 84},
+    {'id': 'atsresume', 'cat': 'marketing', 'link': '/atsresume/', 'icon': 'fa-solid fa-file-lines', 'popularity': 85},
+    {'id': 'globalweb', 'cat': 'design-dev', 'link': '/globalweb/', 'icon': 'fa-solid fa-globe', 'popularity': 87},
     {'id': 'localize', 'cat': 'strategy', 'link': '/localize/', 'icon': 'fa-solid fa-language', 'popularity': 86},
     {'id': 'tradeboost', 'cat': 'strategy', 'link': '/tradeboost/', 'icon': 'fa-solid fa-ship', 'popularity': 85},
     {'id': 'amzboost', 'cat': 'marketing', 'link': '/amzboost/', 'icon': 'fa-solid fa-store', 'popularity': 88},
@@ -174,6 +176,8 @@ def patch_all_service_pages():
         '            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — Global Trade Agency</a></li>\n',
         '            <li><a href="/linkboost/"><i class="fa-brands fa-linkedin"></i> LINKBOOST — LinkedIn Growth</a></li>\n',
         '            <li><a href="/careerlink/"><i class="fa-brands fa-linkedin"></i> CAREERLINK — LinkedIn Optimization</a></li>\n',
+        '            <li><a href="/atsresume/"><i class="fa-solid fa-file-lines"></i> ATSRESUME — Resume & Cover Letter Optimization</a></li>\n',
+        '            <li><a href="/globalweb/"><i class="fa-solid fa-globe"></i> GLOBALWEB — Multilingual Website & Global SEO</a></li>\n',
         '            <li><a href="/repboost/"><i class="fa-solid fa-circle"></i> REPBOOST</a></li>\n',
         '            <li><a href="/sysboost/"><i class="fa-solid fa-circle"></i> SYSBOOST</a></li>\n',
         '            <li><a href="/ustaxboost/"><i class="fa-solid fa-circle"></i> USTAXBOOST</a></li>\n',
@@ -198,6 +202,8 @@ def patch_all_service_pages():
         '            <li><a href="/complianceboost/"><i class="fa-solid fa-shield-halved"></i> COMPLIANCEBOOST — Compliance Docs & Audit Prep</a></li>\n',
     ]
     tradeboost_item_en = '            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — Global Trade Agency</a></li>\n'
+    globalweb_item_en = '            <li><a href="/globalweb/"><i class="fa-solid fa-globe"></i> GLOBALWEB — Multilingual Website & Global SEO</a></li>\n'
+    globalweb_item_ko = '            <li><a href="/globalweb/"><i class="fa-solid fa-globe"></i> GLOBALWEB — 다국어 웹사이트 &amp; 글로벌 SEO</a></li>\n'
     tradeboost_item_ko = '            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — 글로벌 무역대행</a></li>\n'
     micemc_item_en = '            <li><a href="/micemc/"><i class="fa-solid fa-microphone-lines"></i> MICEMC — International MC & Interpretation</a></li>\n'
     micemc_item_ko = '            <li><a href="/micemc/"><i class="fa-solid fa-microphone-lines"></i> MICEMC — 국제행사 영어 MC & 통역</a></li>\n'
@@ -216,6 +222,7 @@ def patch_all_service_pages():
         updated = False
         extra_items = [
             tradeboost_item_ko if '/kr/' in str(path) else tradeboost_item_en,
+            globalweb_item_ko if '/kr/' in str(path) else globalweb_item_en,
             micemc_item_ko if '/kr/' in str(path) else micemc_item_en,
             indiaboost_item_ko if '/kr/' in str(path) else indiaboost_item_en,
             affboost_item_ko if '/kr/' in str(path) else affboost_item_en,
@@ -229,6 +236,8 @@ def patch_all_service_pages():
             ul_end = text.index('</ul>', menu_start)
             text = text[:ul_end] + item + text[ul_end:]
             updated = True
+        if '/kr/' in str(path):
+            text = text.replace('ATSRESUME — Resume & Cover Letter Optimization', 'ATSRESUME — 이력서 &amp; 커버레터 최적화')
         if updated:
             path.write_text(text)
 
