@@ -314,6 +314,7 @@ function toggleMobileMenu() {
 
 function changeLanguage(value) {
     const targetLang = value === 'ko' ? 'ko' : 'en';
+    localStorage.setItem('bibleforai_lang', targetLang);
     const target = targetLang === 'ko' ? '/eventboost/kr/' : '/eventboost/';
     if (window.location.pathname !== target) {
         window.location.href = target;
@@ -570,7 +571,28 @@ function renderOrders() {
 }
 
 function init() {
-    currentLang = getViewFromPath();
+    const isKrPage = window.location.pathname.includes('/kr/');
+    let preferredLang = localStorage.getItem('bibleforai_lang');
+
+    if (!preferredLang) {
+        preferredLang = isKrPage ? 'ko' : 'en';
+        localStorage.setItem('bibleforai_lang', preferredLang);
+    }
+
+    // Redirect if path language doesn't match localstorage preference
+    if (preferredLang === 'ko' && !isKrPage) {
+        if (window.location.pathname.endsWith('/')) {
+            window.location.href = window.location.pathname + 'kr/';
+        } else {
+            window.location.href = window.location.pathname + '/kr/';
+        }
+        return;
+    } else if (preferredLang === 'en' && isKrPage) {
+        window.location.href = window.location.pathname.replace('/kr/', '/');
+        return;
+    }
+
+    currentLang = isKrPage ? 'ko' : 'en';
     applyTranslations();
     renderCurrentView();
     const selector = document.getElementById('language-selector');
