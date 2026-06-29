@@ -106,8 +106,70 @@
             <p>Reserved for package catalog.</p>
         </div>
     </section>
-    <section id="orders-view" class="view-section"><h2>Orders</h2><p>Order review coming soon.</p></section>
+    <section id="orders-view" class="view-section">
+        <div class="section-container">
+            <h2>My Purchase History</h2>
+            <p>Review your successful inside sales orders. Data is stored locally in your browser workspace.</p>
+            <div style="overflow-x:auto; margin-top:1.5rem;">
+                <table class="orders-table" style="width:100%; border-collapse:collapse; text-align:left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border); color:#fff;">
+                            <th style="padding:10px;">Order Date</th>
+                            <th style="padding:10px;">Transaction ID</th>
+                            <th style="padding:10px;">Product</th>
+                            <th style="padding:10px;">Package Tier</th>
+                            <th style="padding:10px;">Quantity</th>
+                            <th style="padding:10px;">Total Paid</th>
+                            <th style="padding:10px;">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-tbody">
+                        <tr id="no-orders-row">
+                            <td colspan="7" style="padding:20px; text-align:center; color:var(--text-muted);">No orders found yet. Select a package to start!</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 </main>
+
+<!-- Purchase Modal -->
+<div class="modal-overlay" id="purchase-modal">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3 id="modal-product-title">Configure Order</h3>
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+    </div>
+    <p class="modal-desc">Configure your project details and complete secure sandbox checkout.</p>
+    <div class="modal-body">
+      <label class="form-label">Email Address *</label>
+      <input id="modal-email" class="form-input" placeholder="name@company.com" type="email" />
+      
+      <div class="form-row">
+        <div>
+          <label class="form-label">Quantity</label>
+          <input id="modal-qty" class="form-input" type="number" min="1" value="1" />
+        </div>
+        <div>
+          <label class="form-label">Timeline</label>
+          <select id="modal-timeline" class="form-input">
+            <option value="Standard">Standard</option>
+            <option value="Rush">Rush (+50%)</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="modal-price-line">
+        <span>Total Amount:</span>
+        <span class="price-value" id="modal-total-price" style="cursor:pointer;" onclick="triggerTestCheckout()">$0.00</span>
+      </div>
+      
+      <button class="btn-order" id="btn-order" onclick="triggerTestCheckout()">Order Now</button>
+    </div>
+  </div>
+</div>
+
 <footer class="footer"><div class="footer-container"><p>BibleForAI SALESBOOST</p></div></footer>
 <script src="app.js"></script>
 <script>document.addEventListener('DOMContentLoaded', () => applyTranslations());</script>

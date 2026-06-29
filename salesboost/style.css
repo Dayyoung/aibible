@@ -50,3 +50,104 @@ main{max-width:1200px;margin:0 auto;padding:90px 2rem 4rem 2rem;min-height:calc(
 .btn-buy{background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.25);color:#fff;font-weight:600;padding:.6rem .9rem;border-radius:8px;cursor:pointer;transition:var(--transition);display:inline-flex;align-items:center;gap:.4rem}.btn-buy:hover{background:var(--primary);border-color:var(--primary)}
 .footer{width:100%;border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;color:var(--text-muted);font-size:.88rem;margin-top:3rem}
 @media (max-width: 720px){.nav-links{display:none}.menu-toggle{display:flex}.header-container{padding:1rem}}
+
+/* Modal Overlay & Card Styles */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+  backdrop-filter: blur(8px);
+}
+.modal-overlay.active {
+  display: flex;
+}
+.modal-card {
+  background: #0d121f;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  width: min(500px, 100%);
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.modal-header h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+}
+.modal-close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.modal-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #fff;
+}
+.form-input {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  width: 100%;
+}
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+.form-row > div {
+  flex: 1;
+}
+.modal-price-line {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+.price-value {
+  color: var(--primary);
+  font-size: 1.3rem;
+}
+.btn-order {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.85rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  width: 100%;
+}
+.btn-order:hover {
+  background: var(--primary-hover);
+}
+
