@@ -612,6 +612,7 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         body {
@@ -2364,6 +2365,249 @@
                 font-size: 0.8rem;
             }
         }
+
+        /* Dynamic Button & Card Active Fallback Groupings */
+        .btn-mvp, .btn-aideploy, .btn-shopglobal {
+            background: var(--primary-purple);
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+        }
+        .btn-mvp:hover, .btn-aideploy:hover, .btn-shopglobal:hover {
+            background: #7c3aed;
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.35);
+        }
+
+        .btn-webcreate {
+            background: var(--primary-cyan);
+            color: #07050f;
+            border: none;
+            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.2);
+        }
+        .btn-webcreate:hover {
+            background: #0891b2;
+            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.35);
+        }
+
+        .btn-autoboost {
+            background: #0ea5e9;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.2);
+        }
+        .btn-autoboost:hover {
+            background: #0284c7;
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.35);
+        }
+
+        .btn-adsboost, .btn-chinaboost {
+            background: #ef4444;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.2);
+        }
+        .btn-adsboost:hover, .btn-chinaboost:hover {
+            background: #dc2626;
+            box-shadow: 0 8px 25px rgba(239, 68, 68, 0.35);
+        }
+
+        .btn-tradeboost, .btn-surveyboost {
+            background: #0284c7;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(2, 132, 199, 0.2);
+        }
+        .btn-tradeboost:hover, .btn-surveyboost:hover {
+            background: #0369a1;
+            box-shadow: 0 8px 25px rgba(2, 132, 199, 0.35);
+        }
+
+        .btn-localize, .btn-fdaboost {
+            background: #0D9488;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(13, 148, 136, 0.2);
+        }
+        .btn-localize:hover, .btn-fdaboost:hover {
+            background: #0f766e;
+            box-shadow: 0 8px 25px rgba(13, 148, 136, 0.35);
+        }
+
+        .btn-amzboost, .btn-etsyboost {
+            background: #FF6B35;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.2);
+        }
+        .btn-amzboost:hover, .btn-etsyboost:hover {
+            background: #e55a25;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.35);
+        }
+
+        .btn-amzbrand {
+            background: #eab308;
+            color: #0c0a09;
+            border: none;
+            box-shadow: 0 4px 15px rgba(234, 179, 8, 0.2);
+        }
+        .btn-amzbrand:hover {
+            background: #ca8a04;
+            box-shadow: 0 8px 25px rgba(234, 179, 8, 0.35);
+        }
+
+        .btn-tikshop {
+            background: #ec4899;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.2);
+        }
+        .btn-tikshop:hover {
+            background: #db2777;
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.35);
+        }
+
+        .btn-rfp, .btn-complianceboost, .btn-globalup, .btn-eventboost, .btn-micemc {
+            background: #64748b;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(100, 116, 139, 0.2);
+        }
+        .btn-rfp:hover, .btn-complianceboost:hover, .btn-globalup:hover, .btn-eventboost:hover, .btn-micemc:hover {
+            background: #475569;
+            box-shadow: 0 8px 25px rgba(100, 116, 139, 0.35);
+        }
+
+        .btn-ustax2 {
+            background: #10b981;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+        }
+        .btn-ustax2:hover {
+            background: #059669;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+        }
+
+        .btn-globalbank {
+            background: #6366f1;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+        }
+        .btn-globalbank:hover {
+            background: #4f46e5;
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.35);
+        }
+
+        /* Card active hover groupings */
+        .card-active-mvp, .card-active-aideploy, .card-active-shopglobal {
+            border-color: rgba(139, 92, 246, 0.15);
+        }
+        .card-active-mvp:hover, .card-active-aideploy:hover, .card-active-shopglobal:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-purple);
+            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.12), 0 0 15px rgba(139, 92, 246, 0.1);
+        }
+
+        .card-active-webcreate {
+            border-color: rgba(6, 182, 212, 0.15);
+        }
+        .card-active-webcreate:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-cyan);
+            box-shadow: 0 15px 35px rgba(6, 182, 212, 0.12), 0 0 15px rgba(6, 182, 212, 0.1);
+        }
+
+        .card-active-autoboost {
+            border-color: rgba(14, 165, 233, 0.15);
+        }
+        .card-active-autoboost:hover {
+            transform: translateY(-8px);
+            border-color: #0ea5e9;
+            box-shadow: 0 15px 35px rgba(14, 165, 233, 0.12), 0 0 15px rgba(14, 165, 233, 0.1);
+        }
+
+        .card-active-adsboost, .card-active-chinaboost {
+            border-color: rgba(239, 68, 68, 0.15);
+        }
+        .card-active-adsboost:hover, .card-active-chinaboost:hover {
+            transform: translateY(-8px);
+            border-color: #ef4444;
+            box-shadow: 0 15px 35px rgba(239, 68, 68, 0.12), 0 0 15px rgba(239, 68, 68, 0.1);
+        }
+
+        .card-active-tradeboost, .card-active-surveyboost {
+            border-color: rgba(2, 132, 199, 0.15);
+        }
+        .card-active-tradeboost:hover, .card-active-surveyboost:hover {
+            transform: translateY(-8px);
+            border-color: #0284c7;
+            box-shadow: 0 15px 35px rgba(2, 132, 199, 0.12), 0 0 15px rgba(2, 132, 199, 0.1);
+        }
+
+        .card-active-localize, .card-active-fdaboost, .card-active-rep {
+            border-color: rgba(13, 148, 136, 0.15);
+        }
+        .card-active-localize:hover, .card-active-fdaboost:hover, .card-active-rep:hover {
+            transform: translateY(-8px);
+            border-color: #0D9488;
+            box-shadow: 0 15px 35px rgba(13, 148, 136, 0.12), 0 0 15px rgba(13, 148, 136, 0.1);
+        }
+
+        .card-active-amzboost, .card-active-etsyboost {
+            border-color: rgba(255, 107, 53, 0.15);
+        }
+        .card-active-amzboost:hover, .card-active-etsyboost:hover {
+            transform: translateY(-8px);
+            border-color: #FF6B35;
+            box-shadow: 0 15px 35px rgba(255, 107, 53, 0.12), 0 0 15px rgba(255, 107, 53, 0.1);
+        }
+
+        .card-active-amzbrand {
+            border-color: rgba(234, 179, 8, 0.15);
+        }
+        .card-active-amzbrand:hover {
+            transform: translateY(-8px);
+            border-color: #eab308;
+            box-shadow: 0 15px 35px rgba(234, 179, 8, 0.12), 0 0 15px rgba(234, 179, 8, 0.1);
+        }
+
+        .card-active-tikshop {
+            border-color: rgba(236, 72, 153, 0.15);
+        }
+        .card-active-tikshop:hover {
+            transform: translateY(-8px);
+            border-color: #ec4899;
+            box-shadow: 0 15px 35px rgba(236, 72, 153, 0.12), 0 0 15px rgba(236, 72, 153, 0.1);
+        }
+
+        .card-active-rfp, .card-active-complianceboost, .card-active-eventboost, .card-active-micemc, .card-active-research, .card-active-sales {
+            border-color: rgba(100, 116, 139, 0.15);
+        }
+        .card-active-rfp:hover, .card-active-complianceboost:hover, .card-active-eventboost:hover, .card-active-micemc:hover, .card-active-research:hover, .card-active-sales:hover {
+            transform: translateY(-8px);
+            border-color: #64748b;
+            box-shadow: 0 15px 35px rgba(100, 116, 139, 0.12), 0 0 15px rgba(100, 116, 139, 0.1);
+        }
+
+        .card-active-ustax2 {
+            border-color: rgba(16, 185, 129, 0.15);
+        }
+        .card-active-ustax2:hover {
+            transform: translateY(-8px);
+            border-color: #10b981;
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.12), 0 0 15px rgba(16, 185, 129, 0.1);
+        }
+
+        .card-active-globalbank {
+            border-color: rgba(99, 102, 241, 0.15);
+        }
+        .card-active-globalbank:hover {
+            transform: translateY(-8px);
+            border-color: #6366f1;
+            box-shadow: 0 15px 35px rgba(99, 102, 241, 0.12), 0 0 15px rgba(99, 102, 241, 0.1);
+        }
+    }
 </style>
 </head>
 <body>
