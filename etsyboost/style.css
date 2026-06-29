@@ -11,6 +11,9 @@
   --primary-glow: rgba(20, 184, 166, 0.35);
   --accent: #60a5fa;
   --accent-glow: rgba(96, 165, 250, 0.22);
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --border: rgba(255, 255, 255, 0.06);
   --border-hover: rgba(20, 184, 166, 0.42);
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
