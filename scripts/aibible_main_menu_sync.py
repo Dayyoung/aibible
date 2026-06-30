@@ -7,6 +7,7 @@ ROOT = Path('/Users/dayyoung/project/aibible')
 
 CATALOG = [
     {'id': 'land', 'cat': 'design-dev', 'link': '/landPage/', 'icon': 'fa-solid fa-code', 'popularity': 88},
+    {'id': 'pdp', 'cat': 'design-dev', 'link': '/pdpboost/', 'icon': 'fa-solid fa-box-open', 'popularity': 86},
     {'id': 'mvp', 'cat': 'design-dev', 'link': '/mvpboost/', 'icon': 'fa-solid fa-rocket', 'popularity': 91},
     {'id': 'aideploy', 'cat': 'design-dev', 'link': '/aideploy/', 'icon': 'fa-solid fa-cloud-arrow-up', 'popularity': 93},
     {'id': 'autoboost', 'cat': 'design-dev', 'link': '/autoboost/', 'icon': 'fa-solid fa-arrows-rotate', 'popularity': 89},
@@ -239,6 +240,8 @@ def patch_all_service_pages():
     affboost_item_ko = '            <li><a href="/affboost/"><i class="fa-solid fa-rocket"></i> AFFBOOST — AI 제휴 웹사이트 빌더</a></li>\n'
     sbvi_item_en = '            <li><a href="/sbvi/"><i class="fa-solid fa-building-columns"></i> SBVI — Singapore, Hong Kong & BVI Incorporation</a></li>\n'
     sbvi_item_ko = '            <li><a href="/sbvi/"><i class="fa-solid fa-building-columns"></i> SBVI — 싱가포르, 홍콩 &amp; BVI 법인설립</a></li>\n'
+    pdp_item_en = '            <li><a href="/pdpboost/"><i class="fa-solid fa-box-open"></i> PDPBOOST — Product Detail Page Design</a></li>\n'
+    pdp_item_ko = '            <li><a href="/pdpboost/"><i class="fa-solid fa-box-open"></i> PDPBOOST — 상세페이지 디자인</a></li>\n'
     usllc_item_en = '            <li><a href="/usllc/"><i class="fa-solid fa-building-columns"></i> USLLC — US LLC & EIN Setup</a></li>\n'
     usllc_item_ko = '            <li><a href="/usllc/"><i class="fa-solid fa-building-columns"></i> USLLC — 미국 LLC &amp; EIN 설립</a></li>\n'
     prboost_item_en = '            <li><a href="/prboost/"><i class="fa-solid fa-newspaper"></i> PRBOOST — Global Press Release Distribution</a></li>\n'
@@ -268,6 +271,7 @@ def patch_all_service_pages():
             indiaboost_item_ko if '/kr/' in str(path) else indiaboost_item_en,
             affboost_item_ko if '/kr/' in str(path) else affboost_item_en,
             sbvi_item_ko if '/kr/' in str(path) else sbvi_item_en,
+            pdp_item_ko if '/kr/' in str(path) else pdp_item_en,
             usllc_item_ko if '/kr/' in str(path) else usllc_item_en,
             prboost_item_ko if '/kr/' in str(path) else prboost_item_en,
             foreigncare_item_ko if '/kr/' in str(path) else foreigncare_item_en,

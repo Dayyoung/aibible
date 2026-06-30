@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDPBOOST — Product Detail Page Design</title>
+  <meta name="description" content="Conversion-focused product detail pages for brands, marketplace sellers, and Shopify stores.">
+  <meta name="keywords" content="product detail page design, ecommerce design, Shopify product page, marketplace listing, conversion copy">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bibleforai.com/pdpboost/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bibleforai.com/pdpboost/">
+  <meta property="og:title" content="PDPBOOST — Product Detail Page Design">
+  <meta property="og:description" content="Conversion-focused product detail pages for brands, marketplace sellers, and Shopify stores.">
+  <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+  <meta property="og:site_name" content="BibleForAI">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ko_KR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://bibleforai.com/pdpboost/">
+  <meta name="twitter:title" content="PDPBOOST — Product Detail Page Design">
+  <meta name="twitter:description" content="Conversion-focused product detail pages for brands, marketplace sellers, and Shopify stores.">
+  <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"What do I receive?","acceptedAnswer":{"@type":"Answer","text":"A conversion-focused product detail page concept with copy direction, layout structure, and a clear CTA flow."}},
+      {"@type":"Question","name":"Is this service international?","acceptedAnswer":{"@type":"Answer","text":"Yes. It works for Amazon, Shopify, DTC brands, marketplace listings, and cross-border product launches."}},
+      {"@type":"Question","name":"How do I test checkout?","acceptedAnswer":{"@type":"Answer","text":"Open the modal and click the total price. That visible price text triggers the test checkout flow."}},
+      {"@type":"Question","name":"What happens after payment?","acceptedAnswer":{"@type":"Answer","text":"A receipt is saved locally and the flow redirects to the Google Form with encoded receipt data."}}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Product",
+    "name":"PDPBOOST — Product Detail Page Design",
+    "description":"Conversion-focused product detail pages for brands, marketplace sellers, and Shopify stores.",
+    "brand":{"@type":"Brand","name":"BibleForAI"},
+    "offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"7.15","highPrice":"71.50","offerCount":"4"}
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+</head>
+<body>
+  <header id="app-header">
+    <div class="header-container">
+      <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu"><span class="bar"></span></button>
+      <a href="/" class="logo-group">
+        <span class="logo-title">BibleForAI</span>
+        <span class="logo-subtitle" data-i18n="logo-subtitle">PRODUCT DETAIL PAGE</span>
+      </a>
+      <nav class="desktop-nav">
+        <ul class="nav-links">
+          <li><a href="#" id="nav-home" class="active" onclick="navigate('home')" data-i18n="nav-home">Home</a></li>
+          <li><a href="#" id="nav-packages" onclick="navigate('packages')" data-i18n="nav-packages">Packages</a></li>
+          <li><a href="#" id="nav-faq" onclick="navigate('faq')" data-i18n="nav-faq">FAQ</a></li>
+          <li><a href="#" id="nav-orders" onclick="navigate('orders')" data-i18n="nav-orders">Orders</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="btn-orders" type="button" onclick="navigate('orders')"><i class="fa-solid fa-receipt"></i><span class="btn-text" data-i18n="btn-orders">My Orders</span></button>
+        <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)">
+          <option value="en">🌐 English</option>
+          <option value="ko">🇰🇷 한국어</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobile-drawer">
+    <ul class="mobile-nav-links unified-service-menu">
+      <li class="mobile-menu-heading">Design & Dev</li>
+      <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI Landing Page</a></li>
+      <li><a href="/mvpboost/"><i class="fa-solid fa-rocket"></i> MVPBOOST — Validation</a></li>
+      <li><a href="/aideploy/"><i class="fa-solid fa-cloud-arrow-up"></i> AIDEPLOY — Deployment</a></li>
+      <li><a href="/autoboost/"><i class="fa-solid fa-arrows-rotate"></i> AUTOBOOST — Automation</a></li>
+      <li><a href="/webcreate/"><i class="fa-solid fa-globe"></i> WEBCREATE — Website Build</a></li>
+      <li class="mobile-menu-heading">Marketing</li>
+      <li><a href="/logoboost/"><i class="fa-solid fa-pen-nib"></i> LOGOBOOST — Logo Design</a></li>
+      <li><a href="/adsboost/"><i class="fa-solid fa-bullhorn"></i> ADSBOOST — Google Ads</a></li>
+      <li><a href="/prboost/"><i class="fa-solid fa-newspaper"></i> PRBOOST — Global PR</a></li>
+      <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — SEO</a></li>
+      <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> CONTENTBOOST — Publishing</a></li>
+      <li class="mobile-menu-heading">Media</li>
+      <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST — Product Photography</a></li>
+      <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> CLIPBOOST — Short-Form Video</a></li>
+      <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> VOICEBOOST — AI Voice</a></li>
+      <li><a href="/transboost/"><i class="fa-solid fa-language"></i> TRANSBOOST — Translation</a></li>
+      <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST — Presentations</a></li>
+      <li class="mobile-menu-heading">Strategy</li>
+      <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> AIBOOST — AI Consulting</a></li>
+      <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST — Analytics</a></li>
+      <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST — AI Chatbot</a></li>
+      <li><a href="/buyerboost/"><i class="fa-solid fa-handshake"></i> BUYERBOOST — Buyer Discovery</a></li>
+      <li><a href="/salesboost/"><i class="fa-solid fa-receipt"></i> SALESBOOST — Sales Enablement</a></li>
+                <li><a href="/tikshop/"><i class="fa-brands fa-tiktok"></i> TIKSHOP — TikTok Shop Setup</a></li>
+            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — Global Trade Agency</a></li>
+            <li><a href="/linkboost/"><i class="fa-brands fa-linkedin"></i> LINKBOOST — LinkedIn Growth</a></li>
+            <li><a href="/careerlink/"><i class="fa-brands fa-linkedin"></i> CAREERLINK — LinkedIn Optimization</a></li>
+            <li><a href="/atsresume/"><i class="fa-solid fa-file-lines"></i> ATSRESUME — Resume & Cover Letter Optimization</a></li>
+            <li><a href="/influboost/"><i class="fa-solid fa-bullhorn"></i> INFLUBOOST — Global Influencer Seeding</a></li>
+            <li><a href="/fdaboost/"><i class="fa-solid fa-vial-circle-check"></i> FDABOOST — FDA Labeling & Certification</a></li>
+            <li><a href="/globalbank/"><i class="fa-solid fa-building-columns"></i> GLOBALBANK — Overseas Business Bank Account Setup</a></li>
+            <li><a href="/sysboost/"><i class="fa-solid fa-circle"></i> SYSBOOST</a></li>
+            <li><a href="/rfpboost/"><i class="fa-solid fa-file-signature"></i> RFPBOOST — Proposal Writing</a></li>
+            <li><a href="/globalup/"><i class="fa-solid fa-user-tie"></i> GLOBALUP — Global Recruiting</a></li>
+            <li><a href="/eventboost/"><i class="fa-solid fa-microphone-lines"></i> EVENTBOOST — Global Event MC</a></li>
+            <li><a href="/micemc/"><i class="fa-solid fa-microphone-lines"></i> MICEMC — International MC & Interpretation</a></li>
+            <li><a href="/indiaboost/"><i class="fa-solid fa-earth-asia"></i> INDIABOOST — India Market Entry Advisory</a></li>
+            <li><a href="/medboost/"><i class="fa-solid fa-stethoscope"></i> MEDBOOST — Clinical Translation</a></li>
+            <li><a href="/amzboost/"><i class="fa-solid fa-store"></i> AMZBOOST — Amazon FBA PPC</a></li>
+            <li><a href="/amzbrand/"><i class="fa-brands fa-amazon"></i> AMZBRAND — Amazon Brand Registry & Storefront</a></li>
+            <li><a href="/amzfba/"><i class="fa-solid fa-truck-fast"></i> AMZFBA — Amazon FBA & 3PL Logistics Optimization</a></li>
+            <li><a href="/alicat/"><i class="fa-solid fa-box-open"></i> ALICAT — Alibaba & B2B Catalog</a></li>
+            <li><a href="/chinaboost/"><i class="fa-solid fa-earth-asia"></i> CHINABOOST — China Market Entry</a></li>
+            <li><a href="/surveyboost/"><i class="fa-solid fa-square-poll-vertical"></i> SURVEYBOOST — Market Validation Surveys</a></li>
+            <li><a href="/shopglobal/"><i class="fa-brands fa-shopify"></i> SHOPGLOBAL — Shopify Global Expansion</a></li>
+            <li><a href="/complianceboost/"><i class="fa-solid fa-shield-halved"></i> COMPLIANCEBOOST — Compliance Docs & Audit Prep</a></li>
+            <li><a href="/aicash/"><i class="fa-solid fa-wand-magic-sparkles"></i> AICASH — Global AI Content Monetization</a></li>
+            <li><a href="/globalweb/"><i class="fa-solid fa-globe"></i> GLOBALWEB — Multilingual Website & Global SEO</a></li>
+            <li><a href="/affboost/"><i class="fa-solid fa-rocket"></i> AFFBOOST — AI Affiliate Website Builder</a></li>
+            <li><a href="/sbvi/"><i class="fa-solid fa-building-columns"></i> SBVI — Singapore, Hong Kong & BVI Incorporation</a></li>
+            <li><a href="/usllc/"><i class="fa-solid fa-building-columns"></i> USLLC — US LLC & EIN Setup</a></li>
+            <li><a href="/foreigncare/"><i class="fa-solid fa-user-doctor"></i> FOREIGNCARE — Foreign Customer & Patient Acquisition</a></li>
+            <li><a href="/dbmigrate/"><i class="fa-solid fa-database"></i> DBMIGRATE — Database Migration & Transfer</a></li>
+            <li><a href="/webseo/"><i class="fa-solid fa-globe"></i> WEBSEO — Global Website Development & SEO</a></li>
+</ul>
+  </div>
+
+  <main>
+    <section id="home-view" class="view-section active">
+      <div class="hero">
+        <div class="hero-card">
+          <div class="badge" data-i18n="hero-badge">E-commerce conversion design</div>
+          <h1 data-i18n="hero-title">PDPBOOST — Product Detail Page Design</h1>
+          <p data-i18n="hero-desc">Conversion-focused product detail pages for brands, marketplace sellers, and Shopify stores.</p>
+          <div class="hero-actions">
+            <button class="btn-primary" type="button" onclick="navigate('packages')"><i class="fa-solid fa-box-open"></i> <span data-i18n="hero-cta">Open starter pricing</span></button>
+            <button class="btn-secondary" type="button" onclick="navigate('faq')"><i class="fa-solid fa-circle-question"></i> FAQ</button>
+          </div>
+          <button class="price-chip" type="button" onclick="openPurchaseModal('pdp','pdp-starter')" aria-label="Open starter checkout">
+            <span class="price">$7.15</span>
+            <span class="currency">USD</span>
+          </button>
+          <p style="margin-top:0.55rem;color:var(--text-muted);font-size:0.9rem;" data-i18n="hero-note">Click the price to open the first checkout modal.</p>
+        </div>
+        <div class="hero-side hero-card">
+          <div class="hero-stat"><strong>Amazon / Shopify</strong><span>Works across international e-commerce channels.</span></div>
+          <div class="hero-stat"><strong>PayPal + Google Form</strong><span>Secure checkout with receipt handoff.</span></div>
+          <div class="hero-stat"><strong>Fast delivery</strong><span>Quick turnaround with clear page structure.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="packages-view" class="view-section">
+      <div class="section-wrap">
+        <div class="page-header">
+          <h2 data-i18n="section-packages-title">Choose your PDP package</h2>
+          <p data-i18n="section-packages-subtitle">All packages are built for global sellers, with clear structure, better storytelling, and stronger CTA placement.</p>
+        </div>
+        <div id="pdp-packages" class="packages-grid"></div>
+      </div>
+    </section>
+
+    <section id="faq-view" class="view-section">
+      <div class="section-wrap">
+        <div class="page-header">
+          <h2 data-i18n="section-faq-title">Frequently asked questions</h2>
+          <p data-i18n="section-faq-subtitle">Short answers about process, delivery, and checkout.</p>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-card">
+            <button class="faq-question" type="button"><strong data-i18n="faq-q1">What do I receive?</strong><i class="fa-solid fa-chevron-down"></i></button>
+            <div class="faq-answer"><p data-i18n="faq-a1">A conversion-focused product detail page concept with copy direction, layout structure, and a clear CTA flow.</p></div>
+          </article>
+          <article class="faq-card">
+            <button class="faq-question" type="button"><strong data-i18n="faq-q2">Is this service international?</strong><i class="fa-solid fa-chevron-down"></i></button>
+            <div class="faq-answer"><p data-i18n="faq-a2">Yes. It works for Amazon, Shopify, DTC brands, marketplace listings, and cross-border product launches.</p></div>
+          </article>
+          <article class="faq-card">
+            <button class="faq-question" type="button"><strong data-i18n="faq-q3">How do I test checkout?</strong><i class="fa-solid fa-chevron-down"></i></button>
+            <div class="faq-answer"><p data-i18n="faq-a3">Open the modal and click the total price. That visible price text triggers the test checkout flow.</p></div>
+          </article>
+          <article class="faq-card">
+            <button class="faq-question" type="button"><strong data-i18n="faq-q4">What happens after payment?</strong><i class="fa-solid fa-chevron-down"></i></button>
+            <div class="faq-answer"><p data-i18n="faq-a4">A receipt is saved locally and the flow redirects to the Google Form with encoded receipt data.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="orders-view" class="view-section">
+      <div class="section-wrap">
+        <div class="page-header">
+          <h2 data-i18n="section-orders-title">Purchase history</h2>
+          <p data-i18n="section-orders-subtitle">Your successful orders are stored locally in this browser.</p>
+        </div>
+        <div class="orders-table-wrap">
+          <table class="orders-table">
+            <thead>
+              <tr>
+                <th data-i18n="th-date">Order Date</th>
+                <th data-i18n="th-order-id">Transaction ID</th>
+                <th data-i18n="th-product">Product</th>
+                <th data-i18n="th-tier">Package Tier</th>
+                <th data-i18n="th-target">Target Category</th>
+                <th data-i18n="th-qty">Quantity</th>
+                <th data-i18n="th-total">Total Paid</th>
+                <th data-i18n="th-status">Status</th>
+              </tr>
+            </thead>
+            <tbody id="orders-tbody"></tbody>
+          </table>
+        </div>
+        <p class="no-orders" id="no-orders-msg" data-i18n="no-orders-msg">No purchase records yet. Click a price to test checkout and create your first receipt.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div><strong>PDPBOOST</strong> — Product Detail Page Design</div>
+      <div><a href="/pdpboost/">Service page</a> · <span data-i18n="foot-contact">Contact support: snsherocom@gmail.com</span></div>
+      <div data-i18n="foot-copy">&copy; 2026 BibleForAI. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="purchase-modal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" type="button" onclick="closeModal()" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <h3 id="modal-product-title" data-i18n="modal-title">Configure Order</h3>
+      <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">Choose quantity, confirm details, and use PayPal secure checkout.</p>
+      <div class="order-summary-box">
+        <div class="summary-row"><span data-i18n="modal-base-pkg">Base Package:</span><strong id="modal-package-name">-</strong></div>
+        <div class="summary-row"><span data-i18n="modal-base-price-label">Base Price:</span><strong id="modal-base-price">$0.00</strong></div>
+      </div>
+
+      <div class="compact-field">
+        <label for="order-email" data-i18n="modal-email-label">Email Address *</label>
+        <input type="email" id="order-email" placeholder="name@example.com" data-i18n="modal-email-placeholder">
+        <span id="email-error" style="color:#f87171;font-size:0.78rem;display:none;" data-i18n="modal-email-error"><i class="fa-solid fa-triangle-exclamation"></i> Please enter a valid email address.</span>
+      </div>
+
+      <div class="compact-field">
+        <label for="order-product" data-i18n="modal-product-label">Target Product Category</label>
+        <select id="order-product">
+          <option value="Amazon Listing">Amazon Listing</option>
+          <option value="Shopify Store" selected>Shopify Store</option>
+          <option value="Beauty / Cosmetics">Beauty / Cosmetics</option>
+          <option value="Health / Supplements">Health / Supplements</option>
+          <option value="Fashion / Apparel">Fashion / Apparel</option>
+          <option value="Electronics / Gadget">Electronics / Gadget</option>
+          <option value="Home / Lifestyle">Home / Lifestyle</option>
+        </select>
+      </div>
+
+      <div class="quantity-control-group">
+        <label for="order-quantity" data-i18n="modal-qty">Quantity:</label>
+        <div class="qty-selector">
+          <button class="qty-btn" type="button" onclick="adjustQty(-1)"><i class="fa-solid fa-minus"></i></button>
+          <input type="number" id="order-quantity" min="1" value="1" oninput="updateModalPrice()">
+          <button class="qty-btn" type="button" onclick="adjustQty(1)"><i class="fa-solid fa-plus"></i></button>
+        </div>
+      </div>
+
+      <div class="total-price-box">
+        <span data-i18n="modal-total-amt">Total Amount:</span>
+        <span class="price-val" id="modal-total-price" role="button" tabindex="0" style="cursor:pointer;">$0.00</span>
+      </div>
+
+      <div class="paypal-wrapper"><div id="paypal-button-container"></div></div>
+
+      <div class="payment-badges">
+        <span><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL Secured Checkout</span></span>
+        <span><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal Verified</span></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
