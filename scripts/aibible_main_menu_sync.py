@@ -70,6 +70,7 @@ CATALOG = [
     {'id': 'growthconsult', 'cat': 'marketing', 'link': '/growthconsult/', 'icon': 'fa-solid fa-newspaper', 'popularity': 90},
     {'id': 'usllc', 'cat': 'strategy', 'link': '/usllc/', 'icon': 'fa-solid fa-building-columns', 'popularity': 91},
     {'id': 'prboost', 'cat': 'marketing', 'link': '/prboost/', 'icon': 'fa-solid fa-newspaper', 'popularity': 89},
+    {'id': 'foreigncare', 'cat': 'marketing', 'link': '/foreigncare/', 'icon': 'fa-solid fa-user-doctor', 'popularity': 90},
 ]
 
 
@@ -111,6 +112,8 @@ def build_catalog_entries():
             added_at = max(added_at, max_added + 3)
         if s['id'] == 'prboost':
             added_at = max(added_at, max_added + 2)
+        if s['id'] == 'foreigncare':
+            added_at = max(added_at, max_added + 4)
         lines.append(
             f"            {{ id: '{s['id']}', category: '{s['cat']}', link: '{s['link']}', icon: '{s['icon']}', cardClass: 'card-active-{s['id']}', btnClass: 'btn-{s['id']}', iconBoxClass: 'icon-{s['id']}', popularity: {s['popularity']}, addedAt: {added_at} }}"
         )
@@ -219,6 +222,8 @@ def patch_all_service_pages():
     usllc_item_ko = '            <li><a href="/usllc/"><i class="fa-solid fa-building-columns"></i> USLLC — 미국 LLC &amp; EIN 설립</a></li>\n'
     prboost_item_en = '            <li><a href="/prboost/"><i class="fa-solid fa-newspaper"></i> PRBOOST — Global Press Release Distribution</a></li>\n'
     prboost_item_ko = '            <li><a href="/prboost/"><i class="fa-solid fa-newspaper"></i> PRBOOST — 글로벌 보도자료 배포</a></li>\n'
+    foreigncare_item_en = '            <li><a href="/foreigncare/"><i class="fa-solid fa-user-doctor"></i> FOREIGNCARE — Foreign Customer & Patient Acquisition</a></li>\n'
+    foreigncare_item_ko = '            <li><a href="/foreigncare/"><i class="fa-solid fa-user-doctor"></i> FOREIGNCARE — 외국인 고객·환자 유치</a></li>\n'
     for path in ROOT.rglob('index.html'):
         if path == ROOT / 'index.html':
             continue
@@ -239,6 +244,7 @@ def patch_all_service_pages():
             affboost_item_ko if '/kr/' in str(path) else affboost_item_en,
             usllc_item_ko if '/kr/' in str(path) else usllc_item_en,
             prboost_item_ko if '/kr/' in str(path) else prboost_item_en,
+            foreigncare_item_ko if '/kr/' in str(path) else foreigncare_item_en,
             webseo_item_ko if '/kr/' in str(path) else webseo_item_en,
         ]
         for item in (new_items + extra_items):
