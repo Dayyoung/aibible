@@ -408,18 +408,25 @@
         html {
             scroll-behavior: smooth;
             overflow-x: hidden;
+            overflow-y: scroll; /* single scroll authority on html */
         }
 
         body {
             font-family: var(--font-heading);
             background-color: var(--bg-dark);
             color: var(--text-main);
-            min-height: 100vh;
+            min-height: 100%;
             width: 100%;
             overflow-x: hidden;
+            overflow-y: visible; /* body defers scrolling to html */
             display: flex;
             flex-direction: column;
             position: relative;
+        }
+
+        /* Lock background scroll when sidebar drawer is open */
+        body.sidebar-lock {
+            overflow: hidden;
         }
 
         /* Ambient Glow Background Circles */
@@ -3338,8 +3345,13 @@
         applyTranslations(currentLang);
 
         function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('active');
-            document.getElementById('sidebar-overlay').classList.toggle('active');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const isOpening = !sidebar.classList.contains('active');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            // Lock body scroll when sidebar is open to prevent background scroll
+            document.body.classList.toggle('sidebar-lock', isOpening);
         }
 
         function setCategory(cat) {
