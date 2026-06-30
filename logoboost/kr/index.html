@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="../" />
+  <title>LOGOBOOST — 글로벌 로고 디자인 | 브랜드 아이덴티티 패키지</title>
+  <meta name="description" content="글로벌 브랜드를 위한 로고 디자인 서비스. PayPal 결제, 샘플 체크아웃, Google Form 영수증, 한영 이중언어 지원." />
+  <meta property="og:title" content="LOGOBOOST — 글로벌 로고 디자인 | 브랜드 아이덴티티 패키지" />
+  <meta property="og:description" content="글로벌 브랜드를 위한 로고 디자인 서비스. PayPal 결제, 샘플 체크아웃, Google Form 영수증, 한영 이중언어 지원." />
+  <meta property="og:type" content="website" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="LOGOBOOST — 글로벌 로고 디자인 | 브랜드 아이덴티티 패키지" />
+  <meta property="twitter:description" content="글로벌 브랜드를 위한 로고 디자인 서비스. PayPal 결제, 샘플 체크아웃, Google Form 영수증, 한영 이중언어 지원." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body, button, input, select, textarea { font-family: 'Noto Sans KR', 'Inter', sans-serif; }
+    .logo-title, .hero-title, .section-title, .data-card h3, .info-card h3, .faq-card summary, .modal-card h3 { letter-spacing: -0.04em; }
+  </style>
+  <script>localStorage.setItem('bibleforai_lang', 'ko');</script>
+  <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+  <script src="https://kit.fontawesome.com/2c9a45f7b1.js" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "무엇을 받게 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "로고 시안, 수정 지원, 웹/인쇄용 최종 파일을 받습니다."}},
+      {"@type": "Question", "name": "테스트 결제가 가능한가요?", "acceptedAnswer": {"@type": "Answer", "text": "네. 모달의 총 결제금액을 누르면 샌드박스 테스트 결제가 실행됩니다."}},
+      {"@type": "Question", "name": "한국어도 지원하나요?", "acceptedAnswer": {"@type": "Answer", "text": "네. 언어 선택기를 한국어로 바꾸거나 /kr/ 페이지를 이용하세요."}},
+      {"@type": "Question", "name": "영수증은 어떻게 전달되나요?", "acceptedAnswer": {"@type": "Answer", "text": "결제 또는 테스트 결제 후 Google Form으로 영수증 데이터가 전달됩니다."}}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "LOGOBOOST — 글로벌 로고 디자인",
+    "description": "국내외 브랜드를 위한 로고 디자인 패키지.",
+    "brand": {"@type": "Brand", "name": "BibleForAI"},
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "USD",
+      "lowPrice": "47",
+      "highPrice": "267",
+      "offerCount": "3"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header id="app-header">
+    <div class="header-container">
+      <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="메뉴 열기">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <a href="./" class="logo-group">
+        <span class="logo-title">LOGOBOOST</span>
+        <span class="logo-subtitle" data-i18n="logo-subtitle">글로벌 로고 디자인</span>
+      </a>
+      <nav class="desktop-nav" aria-label="빠른 링크">
+        <ul class="nav-links">
+          <li><a href="#hero" class="active" data-i18n="nav-home">홈</a></li>
+          <li><a href="#packages-section" data-i18n="nav-packages">패키지</a></li>
+          <li><a href="#process-section" data-i18n="nav-process">진행 방식</a></li>
+          <li><a href="#faq-section" data-i18n="nav-faq">FAQ</a></li>
+          <li><a href="#orders-section" data-i18n="nav-orders">주문내역</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <select id="language-selector" class="lang-selector" onchange="changeLanguage(this.value)">
+          <option value="en">English</option>
+          <option value="ko">한국어</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <aside class="mobile-drawer" id="mobile-drawer">
+    <ul class="mobile-nav-links unified-service-menu">
+      <li class="mobile-menu-heading">디자인 & 개발</li>
+      <li><a href="/landPage/"><i class="fa-solid fa-code"></i> LANDPAGE — AI 랜딩 페이지</a></li>
+      <li><a href="/mvpboost/"><i class="fa-solid fa-rocket"></i> MVPBOOST — AI 런칭 스타터</a></li>
+      <li><a href="/aideploy/"><i class="fa-solid fa-cloud-arrow-up"></i> AIDEPLOY — AI 배포</a></li>
+      <li><a href="/webcreate/"><i class="fa-solid fa-globe"></i> WEBCREATE — 웹 디자인</a></li>
+      <li><a href="/logoboost/"><i class="fa-solid fa-pen-nib"></i> LOGOBOOST — 글로벌 로고 디자인</a></li>
+      <li class="mobile-menu-heading">마케팅 & SEO</li>
+      <li><a href="/adsboost/"><i class="fa-solid fa-bullhorn"></i> ADSBOOST — 구글 광고</a></li>
+      <li><a href="/prboost/"><i class="fa-solid fa-newspaper"></i> PRBOOST — 글로벌 PR</a></li>
+      <li><a href="/amzbrand/"><i class="fa-brands fa-amazon"></i> AMZBRAND — 아마존 스토어프론트</a></li>
+      <li><a href="/amzfba/"><i class="fa-solid fa-truck-fast"></i> AMZFBA — 아마존 FBA</a></li>
+      <li><a href="/globalweb/"><i class="fa-solid fa-globe"></i> GLOBALWEB — 다국어 SEO</a></li>
+      <li class="mobile-menu-heading">전략 & 분석</li>
+      <li><a href="/globalbank/"><i class="fa-solid fa-building-columns"></i> GLOBALBANK — 계좌 개설</a></li>
+      <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — 무역 대행</a></li>
+      <li><a href="/usllc/"><i class="fa-solid fa-building-columns"></i> USLLC — LLC & EIN</a></li>
+      <li><a href="/complianceboost/"><i class="fa-solid fa-shield-halved"></i> COMPLIANCEBOOST — 규정 대응</a></li>
+      <li><a href="/dbmigrate/"><i class="fa-solid fa-database"></i> DBMIGRATE — 데이터 이전</a></li>
+                <li><a href="/tikshop/"><i class="fa-brands fa-tiktok"></i> TIKSHOP — TikTok Shop Setup</a></li>
+            <li><a href="/linkboost/"><i class="fa-brands fa-linkedin"></i> LINKBOOST — LinkedIn Growth</a></li>
+            <li><a href="/careerlink/"><i class="fa-brands fa-linkedin"></i> CAREERLINK — LinkedIn Optimization</a></li>
+            <li><a href="/atsresume/"><i class="fa-solid fa-file-lines"></i> ATSRESUME — 이력서 &amp; 커버레터 최적화</a></li>
+            <li><a href="/influboost/"><i class="fa-solid fa-bullhorn"></i> INFLUBOOST — Global Influencer Seeding</a></li>
+            <li><a href="/fdaboost/"><i class="fa-solid fa-vial-circle-check"></i> FDABOOST — FDA Labeling & Certification</a></li>
+            <li><a href="/sysboost/"><i class="fa-solid fa-circle"></i> SYSBOOST</a></li>
+            <li><a href="/autoboost/"><i class="fa-solid fa-circle"></i> AUTOBOOST</a></li>
+            <li><a href="/rfpboost/"><i class="fa-solid fa-file-signature"></i> RFPBOOST — Proposal Writing</a></li>
+            <li><a href="/globalup/"><i class="fa-solid fa-user-tie"></i> GLOBALUP — Global Recruiting</a></li>
+            <li><a href="/eventboost/"><i class="fa-solid fa-microphone-lines"></i> EVENTBOOST — Global Event MC</a></li>
+            <li><a href="/micemc/"><i class="fa-solid fa-microphone-lines"></i> MICEMC — International MC & Interpretation</a></li>
+            <li><a href="/indiaboost/"><i class="fa-solid fa-earth-asia"></i> INDIABOOST — India Market Entry Advisory</a></li>
+            <li><a href="/medboost/"><i class="fa-solid fa-stethoscope"></i> MEDBOOST — Clinical Translation</a></li>
+            <li><a href="/amzboost/"><i class="fa-solid fa-store"></i> AMZBOOST — Amazon FBA PPC</a></li>
+            <li><a href="/alicat/"><i class="fa-solid fa-box-open"></i> ALICAT — Alibaba & B2B Catalog</a></li>
+            <li><a href="/chinaboost/"><i class="fa-solid fa-earth-asia"></i> CHINABOOST — China Market Entry</a></li>
+            <li><a href="/surveyboost/"><i class="fa-solid fa-square-poll-vertical"></i> SURVEYBOOST — Market Validation Surveys</a></li>
+            <li><a href="/shopglobal/"><i class="fa-brands fa-shopify"></i> SHOPGLOBAL — Shopify Global Expansion</a></li>
+            <li><a href="/aicash/"><i class="fa-solid fa-wand-magic-sparkles"></i> AICASH — Global AI Content Monetization</a></li>
+            <li><a href="/affboost/"><i class="fa-solid fa-rocket"></i> AFFBOOST — AI 제휴 웹사이트 빌더</a></li>
+            <li><a href="/sbvi/"><i class="fa-solid fa-building-columns"></i> SBVI — 싱가포르, 홍콩 &amp; BVI 법인설립</a></li>
+            <li><a href="/foreigncare/"><i class="fa-solid fa-user-doctor"></i> FOREIGNCARE — 외국인 고객·환자 유치</a></li>
+            <li><a href="/webseo/"><i class="fa-solid fa-globe"></i> WEBSEO — 글로벌 웹사이트 개발 &amp; SEO</a></li>
+</ul>
+  </aside>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="badge" data-i18n="hero-badge">글로벌 시장용 브랜드 아이덴티티</div>
+      <h1 class="hero-title" data-i18n="hero-title">LOGOBOOST — 글로벌 로고 디자인</h1>
+      <p class="hero-desc" data-i18n="hero-desc">Shopify, Amazon, 스타트업, 크리에이터, 서비스 브랜드를 위한 기억에 남는 아이덴티티를 만듭니다.</p>
+      <div class="hero-actions">
+        <a href="#packages-section" class="btn-primary" data-i18n="btn-explore"><i class="fa-solid fa-bag-shopping"></i> 패키지 보기</a>
+        <a href="#faq-section" class="btn-secondary" data-i18n="btn-secondary"><i class="fa-regular fa-circle-question"></i> FAQ 보기</a>
+      </div>
+      <div class="stats-bar">
+        <div class="stat-item"><span class="stat-num" data-i18n="stat-1-num">2–4</span><span class="stat-label" data-i18n="stat-1-label">시안 수</span></div>
+        <div class="stat-item"><span class="stat-num" data-i18n="stat-2-num">24h</span><span class="stat-label" data-i18n="stat-2-label">빠른 응답</span></div>
+        <div class="stat-item"><span class="stat-num" data-i18n="stat-3-num">100%</span><span class="stat-label" data-i18n="stat-3-label">상업적 이용</span></div>
+        <div class="stat-item"><span class="stat-num" data-i18n="stat-4-num">Global</span><span class="stat-label" data-i18n="stat-4-label">전세계 대응</span></div>
+      </div>
+    </section>
+
+    <section class="section-shell" id="packages-section">
+      <h2 class="section-title" data-i18n="sec-packages-title">패키지를 선택하세요</h2>
+      <p class="section-subtitle" data-i18n="sec-packages-subtitle">크몽 원가 ×2 후, ₩1,400 = $1 기준으로 USD로 변환했습니다.</p>
+      <div class="card-grid" id="logo-packages"></div>
+    </section>
+
+    <section class="section-shell" id="process-section">
+      <h2 class="section-title" data-i18n="sec-process-title">간단한 진행 방식</h2>
+      <p class="section-subtitle" data-i18n="sec-process-subtitle">브리프 → 시안 → 수정 → 최종 파일 → 영수증.</p>
+      <div class="info-grid">
+        <article class="info-card">
+          <h3 data-i18n="feat-branding">브랜드 중심 방향성</h3>
+          <p data-i18n="feat-branding-desc">시장과 어울리는 포지셔닝, 형태 언어, 컬러 무드를 맞춥니다.</p>
+        </article>
+        <article class="info-card">
+          <h3 data-i18n="feat-delivery">빠른 납품</h3>
+          <p data-i18n="feat-delivery-desc">런칭 일정이나 급한 리브랜딩에도 대응합니다.</p>
+        </article>
+        <article class="info-card">
+          <h3 data-i18n="feat-files">바로 쓰는 파일</h3>
+          <p data-i18n="feat-files-desc">웹·인쇄·SNS용 원본/고해상도 파일을 제공합니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell" id="faq-section">
+      <h2 class="section-title" data-i18n="sec-faq-title">자주 묻는 질문</h2>
+      <p class="section-subtitle" data-i18n="sec-faq-subtitle">결제 전에 꼭 확인하세요.</p>
+      <div class="faq-grid faq-card">
+        <details open>
+          <summary data-i18n="faq-q1">무엇을 받게 되나요?</summary>
+          <p data-i18n="faq-a1">로고 시안, 수정 지원, 웹/인쇄용 최종 파일을 받습니다.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq-q2">테스트 결제가 가능한가요?</summary>
+          <p data-i18n="faq-a2">네. 모달의 총 결제금액을 누르면 샌드박스 테스트 결제가 실행됩니다.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq-q3">한국어도 지원하나요?</summary>
+          <p data-i18n="faq-a3">네. 언어 선택기를 한국어로 바꾸거나 /kr/ 페이지를 이용하세요.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq-q4">영수증은 어떻게 전달되나요?</summary>
+          <p data-i18n="faq-a4">결제 또는 테스트 결제 후 Google Form으로 영수증 데이터가 전달됩니다.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section-shell" id="orders-section">
+      <h2 class="section-title" data-i18n="sec-orders-title">주문 내역</h2>
+      <p class="section-subtitle" data-i18n="sec-orders-subtitle">결제 후 브라우저에 로컬 저장됩니다.</p>
+      <div id="no-orders-msg" data-i18n="no-orders">주문 내역이 없습니다. 첫 결제를 완료하면 여기에 표시됩니다.</div>
+      <div class="order-table-wrap">
+        <table class="order-table">
+          <thead>
+            <tr>
+              <th data-i18n="table-date">날짜</th>
+              <th data-i18n="table-txid">거래 ID</th>
+              <th data-i18n="table-package">패키지</th>
+              <th data-i18n="table-keywords">브랜드 키워드</th>
+              <th data-i18n="table-qty">수량</th>
+              <th data-i18n="table-total">총 결제금액</th>
+              <th data-i18n="table-status">상태</th>
+            </tr>
+          </thead>
+          <tbody id="orders-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-shell">
+      <div>
+        <p data-i18n="footer-copy">&copy; 2026 LOGOBOOST. All rights reserved.</p>
+        <p data-i18n="footer-note">현대 브랜드를 위한 글로벌 로고 디자인.</p>
+      </div>
+      <div class="footer-links">
+        <a href="/landPage/">LANDPAGE</a>
+        <a href="/prboost/">PRBOOST</a>
+        <a href="/amzfba/">AMZFBA</a>
+        <a href="/globalweb/">GLOBALWEB</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="purchase-modal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal()" aria-label="닫기"><i class="fa-solid fa-xmark"></i></button>
+      <h3 id="modal-product-title" data-i18n="modal-title">주문을 완료하세요</h3>
+      <p class="modal-desc" id="modal-product-desc" data-i18n="modal-desc">이메일과 브랜드 키워드를 입력한 뒤 PayPal로 안전하게 결제하세요.</p>
+
+      <div class="order-summary-box">
+        <div class="summary-row"><span data-i18n="modal-base-package">패키지</span><strong id="modal-package-name">STANDARD</strong></div>
+        <div class="summary-row"><span data-i18n="modal-base-price">기본 가격</span><strong id="modal-base-price">$47 USD</strong></div>
+      </div>
+
+      <div class="control-group">
+        <label for="order-email" data-i18n="modal-email-label">이메일 주소 *</label>
+        <input id="order-email" type="email" placeholder="name@company.com" data-i18n="modal-email-placeholder" />
+        <div id="email-error" data-i18n="modal-email-error">올바른 이메일 주소를 입력해주세요.</div>
+      </div>
+
+      <div class="control-group">
+        <label for="order-keywords" data-i18n="modal-keywords-label">브랜드 키워드 / 스타일 메모</label>
+        <input id="order-keywords" type="text" placeholder="minimal, premium, blue, bold" data-i18n="modal-keywords-placeholder" />
+      </div>
+
+      <div class="quantity-control-group">
+        <label data-i18n="modal-qty">수량</label>
+        <div class="qty-selector">
+          <button type="button" class="qty-btn" onclick="adjustQty(-1)">−</button>
+          <input id="order-quantity" type="number" min="1" value="1" oninput="updateModalPrice()" />
+          <button type="button" class="qty-btn" onclick="adjustQty(1)">+</button>
+        </div>
+      </div>
+
+      <div class="total-price-box">
+        <span data-i18n="modal-total">총 결제금액</span>
+        <span class="price-chip" id="modal-total-price">$47 USD</span>
+      </div>
+
+      <div class="paypal-wrapper">
+        <div id="paypal-button-container"></div>
+      </div>
+
+      <div class="payment-badges">
+        <span><i class="fa-solid fa-shield-halved"></i> <span data-i18n="badge-ssl">SSL 보안 결제</span></span>
+        <span><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal 인증됨</span></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -13,6 +13,7 @@ CATALOG = [
     {'id': 'fdaboost', 'cat': 'strategy', 'link': '/fdaboost/', 'icon': 'fa-solid fa-vial-circle-check', 'popularity': 78},
     {'id': 'globalbank', 'cat': 'strategy', 'link': '/globalbank/', 'icon': 'fa-solid fa-building-columns', 'popularity': 79},
     {'id': 'webcreate', 'cat': 'design-dev', 'link': '/webcreate/', 'icon': 'fa-solid fa-globe', 'popularity': 84},
+    {'id': 'logoboost', 'cat': 'design-dev', 'link': '/logoboost/', 'icon': 'fa-solid fa-pen-nib', 'popularity': 90},
     {'id': 'adsboost', 'cat': 'marketing', 'link': '/adsboost/', 'icon': 'fa-solid fa-bullhorn', 'popularity': 83},
     {'id': 'linkboost', 'cat': 'marketing', 'link': '/linkboost/', 'icon': 'fa-brands fa-linkedin', 'popularity': 83},
     {'id': 'careerlink', 'cat': 'marketing', 'link': '/careerlink/', 'icon': 'fa-brands fa-linkedin', 'popularity': 84},
@@ -72,6 +73,7 @@ CATALOG = [
     {'id': 'map', 'cat': 'marketing', 'link': '/mapboost/', 'icon': 'fa-solid fa-map-location-dot', 'popularity': 80},
     {'id': 'growthconsult', 'cat': 'marketing', 'link': '/growthconsult/', 'icon': 'fa-solid fa-newspaper', 'popularity': 90},
     {'id': 'usllc', 'cat': 'strategy', 'link': '/usllc/', 'icon': 'fa-solid fa-building-columns', 'popularity': 91},
+    {'id': 'sbvi', 'cat': 'strategy', 'link': '/sbvi/', 'icon': 'fa-solid fa-building-columns', 'popularity': 92},
     {'id': 'prboost', 'cat': 'marketing', 'link': '/prboost/', 'icon': 'fa-solid fa-newspaper', 'popularity': 89},
     {'id': 'foreigncare', 'cat': 'marketing', 'link': '/foreigncare/', 'icon': 'fa-solid fa-user-doctor', 'popularity': 90},
     {'id': 'aicash', 'cat': 'marketing', 'link': '/aicash/', 'icon': 'fa-solid fa-wand-magic-sparkles', 'popularity': 92},
@@ -123,6 +125,10 @@ def build_catalog_entries():
             added_at = max(added_at, max_added + 5)
         if s['id'] == 'dbmigrate':
             added_at = max(added_at, max_added + 6)
+        if s['id'] == 'usllc':
+            added_at = max(added_at, max_added + 7)
+        if s['id'] == 'sbvi':
+            added_at = max(added_at, max_added + 8)
         lines.append(
             f"            {{ id: '{s['id']}', category: '{s['cat']}', link: '{s['link']}', icon: '{s['icon']}', cardClass: 'card-active-{s['id']}', btnClass: 'btn-{s['id']}', iconBoxClass: 'icon-{s['id']}', popularity: {s['popularity']}, addedAt: {added_at} }}"
         )
@@ -216,6 +222,8 @@ def patch_all_service_pages():
     globalweb_item_ko = '            <li><a href="/globalweb/"><i class="fa-solid fa-globe"></i> GLOBALWEB — 다국어 웹사이트 &amp; 글로벌 SEO</a></li>\n'
     webseo_item_en = '            <li><a href="/webseo/"><i class="fa-solid fa-globe"></i> WEBSEO — Global Website Development & SEO</a></li>\n'
     webseo_item_ko = '            <li><a href="/webseo/"><i class="fa-solid fa-globe"></i> WEBSEO — 글로벌 웹사이트 개발 &amp; SEO</a></li>\n'
+    logoboost_item_en = '            <li><a href="/logoboost/"><i class="fa-solid fa-pen-nib"></i> LOGOBOOST — Global Logo Design</a></li>\n'
+    logoboost_item_ko = '            <li><a href="/logoboost/"><i class="fa-solid fa-pen-nib"></i> LOGOBOOST — 글로벌 로고 디자인</a></li>\n'
     influboost_item_en = '            <li><a href="/influboost/"><i class="fa-solid fa-bullhorn"></i> INFLUBOOST — Global Influencer Seeding</a></li>\n'
     influboost_item_ko = '            <li><a href="/influboost/"><i class="fa-solid fa-bullhorn"></i> INFLUBOOST — 글로벌 인플루언서 시딩</a></li>\n'
     fdaboost_item_en = '            <li><a href="/fdaboost/"><i class="fa-solid fa-vial-circle-check"></i> FDABOOST — FDA Labeling & Certification</a></li>\n'
@@ -229,6 +237,8 @@ def patch_all_service_pages():
     indiaboost_item_ko = '            <li><a href="/indiaboost/"><i class="fa-solid fa-earth-asia"></i> INDIABOOST — 인도 시장진출 자문</a></li>\n'
     affboost_item_en = '            <li><a href="/affboost/"><i class="fa-solid fa-rocket"></i> AFFBOOST — AI Affiliate Website Builder</a></li>\n'
     affboost_item_ko = '            <li><a href="/affboost/"><i class="fa-solid fa-rocket"></i> AFFBOOST — AI 제휴 웹사이트 빌더</a></li>\n'
+    sbvi_item_en = '            <li><a href="/sbvi/"><i class="fa-solid fa-building-columns"></i> SBVI — Singapore, Hong Kong & BVI Incorporation</a></li>\n'
+    sbvi_item_ko = '            <li><a href="/sbvi/"><i class="fa-solid fa-building-columns"></i> SBVI — 싱가포르, 홍콩 &amp; BVI 법인설립</a></li>\n'
     usllc_item_en = '            <li><a href="/usllc/"><i class="fa-solid fa-building-columns"></i> USLLC — US LLC & EIN Setup</a></li>\n'
     usllc_item_ko = '            <li><a href="/usllc/"><i class="fa-solid fa-building-columns"></i> USLLC — 미국 LLC &amp; EIN 설립</a></li>\n'
     prboost_item_en = '            <li><a href="/prboost/"><i class="fa-solid fa-newspaper"></i> PRBOOST — Global Press Release Distribution</a></li>\n'
@@ -257,12 +267,14 @@ def patch_all_service_pages():
             micemc_item_ko if '/kr/' in str(path) else micemc_item_en,
             indiaboost_item_ko if '/kr/' in str(path) else indiaboost_item_en,
             affboost_item_ko if '/kr/' in str(path) else affboost_item_en,
+            sbvi_item_ko if '/kr/' in str(path) else sbvi_item_en,
             usllc_item_ko if '/kr/' in str(path) else usllc_item_en,
             prboost_item_ko if '/kr/' in str(path) else prboost_item_en,
             foreigncare_item_ko if '/kr/' in str(path) else foreigncare_item_en,
             aicash_item_ko if '/kr/' in str(path) else aicash_item_en,
             dbmigrate_item_ko if '/kr/' in str(path) else dbmigrate_item_en,
             webseo_item_ko if '/kr/' in str(path) else webseo_item_en,
+            logoboost_item_ko if '/kr/' in str(path) else logoboost_item_en,
         ]
         for item in (new_items + extra_items):
             slug = item.split('"')[1].split('/')[1]
