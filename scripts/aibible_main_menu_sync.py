@@ -71,6 +71,7 @@ CATALOG = [
     {'id': 'usllc', 'cat': 'strategy', 'link': '/usllc/', 'icon': 'fa-solid fa-building-columns', 'popularity': 91},
     {'id': 'prboost', 'cat': 'marketing', 'link': '/prboost/', 'icon': 'fa-solid fa-newspaper', 'popularity': 89},
     {'id': 'foreigncare', 'cat': 'marketing', 'link': '/foreigncare/', 'icon': 'fa-solid fa-user-doctor', 'popularity': 90},
+    {'id': 'aicash', 'cat': 'marketing', 'link': '/aicash/', 'icon': 'fa-solid fa-wand-magic-sparkles', 'popularity': 92},
 ]
 
 
@@ -114,6 +115,8 @@ def build_catalog_entries():
             added_at = max(added_at, max_added + 2)
         if s['id'] == 'foreigncare':
             added_at = max(added_at, max_added + 4)
+        if s['id'] == 'aicash':
+            added_at = max(added_at, max_added + 5)
         lines.append(
             f"            {{ id: '{s['id']}', category: '{s['cat']}', link: '{s['link']}', icon: '{s['icon']}', cardClass: 'card-active-{s['id']}', btnClass: 'btn-{s['id']}', iconBoxClass: 'icon-{s['id']}', popularity: {s['popularity']}, addedAt: {added_at} }}"
         )
@@ -199,6 +202,7 @@ def patch_all_service_pages():
         '            <li><a href="/surveyboost/"><i class="fa-solid fa-square-poll-vertical"></i> SURVEYBOOST — Market Validation Surveys</a></li>\n',
         '            <li><a href="/shopglobal/"><i class="fa-brands fa-shopify"></i> SHOPGLOBAL — Shopify Global Expansion</a></li>\n',
         '            <li><a href="/complianceboost/"><i class="fa-solid fa-shield-halved"></i> COMPLIANCEBOOST — Compliance Docs & Audit Prep</a></li>\n',
+        '            <li><a href="/aicash/"><i class="fa-solid fa-wand-magic-sparkles"></i> AICASH — Global AI Content Monetization</a></li>\n',
     ]
     tradeboost_item_en = '            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — Global Trade Agency</a></li>\n'
     globalweb_item_en = '            <li><a href="/globalweb/"><i class="fa-solid fa-globe"></i> GLOBALWEB — Multilingual Website & Global SEO</a></li>\n'
@@ -223,6 +227,8 @@ def patch_all_service_pages():
     prboost_item_en = '            <li><a href="/prboost/"><i class="fa-solid fa-newspaper"></i> PRBOOST — Global Press Release Distribution</a></li>\n'
     prboost_item_ko = '            <li><a href="/prboost/"><i class="fa-solid fa-newspaper"></i> PRBOOST — 글로벌 보도자료 배포</a></li>\n'
     foreigncare_item_en = '            <li><a href="/foreigncare/"><i class="fa-solid fa-user-doctor"></i> FOREIGNCARE — Foreign Customer & Patient Acquisition</a></li>\n'
+    aicash_item_en = '            <li><a href="/aicash/"><i class="fa-solid fa-wand-magic-sparkles"></i> AICASH — Global AI Content Monetization</a></li>\n'
+    aicash_item_ko = '            <li><a href="/aicash/"><i class="fa-solid fa-wand-magic-sparkles"></i> AICASH — 글로벌 AI 콘텐츠 수익화</a></li>\n'
     foreigncare_item_ko = '            <li><a href="/foreigncare/"><i class="fa-solid fa-user-doctor"></i> FOREIGNCARE — 외국인 고객·환자 유치</a></li>\n'
     for path in ROOT.rglob('index.html'):
         if path == ROOT / 'index.html':
@@ -245,6 +251,7 @@ def patch_all_service_pages():
             usllc_item_ko if '/kr/' in str(path) else usllc_item_en,
             prboost_item_ko if '/kr/' in str(path) else prboost_item_en,
             foreigncare_item_ko if '/kr/' in str(path) else foreigncare_item_en,
+            aicash_item_ko if '/kr/' in str(path) else aicash_item_en,
             webseo_item_ko if '/kr/' in str(path) else webseo_item_en,
         ]
         for item in (new_items + extra_items):
