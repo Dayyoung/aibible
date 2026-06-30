@@ -18,6 +18,9 @@ CATALOG = [
     {'id': 'careerlink', 'cat': 'marketing', 'link': '/careerlink/', 'icon': 'fa-brands fa-linkedin', 'popularity': 84},
     {'id': 'atsresume', 'cat': 'marketing', 'link': '/atsresume/', 'icon': 'fa-solid fa-file-lines', 'popularity': 85},
     {'id': 'globalweb', 'cat': 'design-dev', 'link': '/globalweb/', 'icon': 'fa-solid fa-globe', 'popularity': 87},
+    {'id': 'cloudinfra', 'cat': 'design-dev', 'link': '/cloudinfra/', 'icon': 'fa-solid fa-cloud', 'popularity': 84},
+    {'id': 'japanbiz', 'cat': 'strategy', 'link': '/japanbiz/', 'icon': 'fa-solid fa-earth-asia', 'popularity': 83},
+    {'id': 'webseo', 'cat': 'design-dev', 'link': '/webseo/', 'icon': 'fa-solid fa-globe', 'popularity': 88},
     {'id': 'influboost', 'cat': 'marketing', 'link': '/influboost/', 'icon': 'fa-solid fa-bullhorn', 'popularity': 88},
     {'id': 'localize', 'cat': 'strategy', 'link': '/localize/', 'icon': 'fa-solid fa-language', 'popularity': 86},
     {'id': 'tradeboost', 'cat': 'strategy', 'link': '/tradeboost/', 'icon': 'fa-solid fa-ship', 'popularity': 85},
@@ -197,6 +200,8 @@ def patch_all_service_pages():
     tradeboost_item_en = '            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — Global Trade Agency</a></li>\n'
     globalweb_item_en = '            <li><a href="/globalweb/"><i class="fa-solid fa-globe"></i> GLOBALWEB — Multilingual Website & Global SEO</a></li>\n'
     globalweb_item_ko = '            <li><a href="/globalweb/"><i class="fa-solid fa-globe"></i> GLOBALWEB — 다국어 웹사이트 &amp; 글로벌 SEO</a></li>\n'
+    webseo_item_en = '            <li><a href="/webseo/"><i class="fa-solid fa-globe"></i> WEBSEO — Global Website Development & SEO</a></li>\n'
+    webseo_item_ko = '            <li><a href="/webseo/"><i class="fa-solid fa-globe"></i> WEBSEO — 글로벌 웹사이트 개발 &amp; SEO</a></li>\n'
     influboost_item_en = '            <li><a href="/influboost/"><i class="fa-solid fa-bullhorn"></i> INFLUBOOST — Global Influencer Seeding</a></li>\n'
     influboost_item_ko = '            <li><a href="/influboost/"><i class="fa-solid fa-bullhorn"></i> INFLUBOOST — 글로벌 인플루언서 시딩</a></li>\n'
     fdaboost_item_en = '            <li><a href="/fdaboost/"><i class="fa-solid fa-vial-circle-check"></i> FDABOOST — FDA Labeling & Certification</a></li>\n'
@@ -234,6 +239,7 @@ def patch_all_service_pages():
             affboost_item_ko if '/kr/' in str(path) else affboost_item_en,
             usllc_item_ko if '/kr/' in str(path) else usllc_item_en,
             prboost_item_ko if '/kr/' in str(path) else prboost_item_en,
+            webseo_item_ko if '/kr/' in str(path) else webseo_item_en,
         ]
         for item in (new_items + extra_items):
             slug = item.split('"')[1].split('/')[1]
