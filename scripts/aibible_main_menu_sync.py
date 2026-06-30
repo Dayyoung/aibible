@@ -65,6 +65,7 @@ CATALOG = [
     {'id': 'ip', 'cat': 'strategy', 'link': '/ipboost/', 'icon': 'fa-solid fa-shield-halved', 'popularity': 82},
     {'id': 'map', 'cat': 'marketing', 'link': '/mapboost/', 'icon': 'fa-solid fa-map-location-dot', 'popularity': 80},
     {'id': 'growthconsult', 'cat': 'marketing', 'link': '/growthconsult/', 'icon': 'fa-solid fa-newspaper', 'popularity': 90},
+    {'id': 'usllc', 'cat': 'strategy', 'link': '/usllc/', 'icon': 'fa-solid fa-building-columns', 'popularity': 91},
     {'id': 'prboost', 'cat': 'marketing', 'link': '/prboost/', 'icon': 'fa-solid fa-newspaper', 'popularity': 89},
 ]
 
@@ -209,6 +210,8 @@ def patch_all_service_pages():
     indiaboost_item_ko = '            <li><a href="/indiaboost/"><i class="fa-solid fa-earth-asia"></i> INDIABOOST — 인도 시장진출 자문</a></li>\n'
     affboost_item_en = '            <li><a href="/affboost/"><i class="fa-solid fa-rocket"></i> AFFBOOST — AI Affiliate Website Builder</a></li>\n'
     affboost_item_ko = '            <li><a href="/affboost/"><i class="fa-solid fa-rocket"></i> AFFBOOST — AI 제휴 웹사이트 빌더</a></li>\n'
+    usllc_item_en = '            <li><a href="/usllc/"><i class="fa-solid fa-building-columns"></i> USLLC — US LLC & EIN Setup</a></li>\n'
+    usllc_item_ko = '            <li><a href="/usllc/"><i class="fa-solid fa-building-columns"></i> USLLC — 미국 LLC &amp; EIN 설립</a></li>\n'
     prboost_item_en = '            <li><a href="/prboost/"><i class="fa-solid fa-newspaper"></i> PRBOOST — Global Press Release Distribution</a></li>\n'
     prboost_item_ko = '            <li><a href="/prboost/"><i class="fa-solid fa-newspaper"></i> PRBOOST — 글로벌 보도자료 배포</a></li>\n'
     for path in ROOT.rglob('index.html'):
@@ -229,6 +232,7 @@ def patch_all_service_pages():
             micemc_item_ko if '/kr/' in str(path) else micemc_item_en,
             indiaboost_item_ko if '/kr/' in str(path) else indiaboost_item_en,
             affboost_item_ko if '/kr/' in str(path) else affboost_item_en,
+            usllc_item_ko if '/kr/' in str(path) else usllc_item_en,
             prboost_item_ko if '/kr/' in str(path) else prboost_item_en,
         ]
         for item in (new_items + extra_items):
