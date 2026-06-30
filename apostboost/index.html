@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Check saved language and redirect to Korean version if applicable
+        const savedLang = localStorage.getItem('bibleforai_lang');
+        if (savedLang === 'ko') {
+            window.location.replace('/apostboost/kr/');
+        }
+    </script>
     <title>APOSTBOOST — Apostille & Notarization | Global Document Authentication</title>
     <meta name="description" content="Apostille, notarization, and certified document authentication for students, expats, and global businesses. Based on a Kmong service starting from ₩10,000.">
     <meta name="keywords" content="apostille, notarization, document translation, certified documents, visa documents, overseas submissions">

@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Check saved language and redirect to Korean version if applicable
+        const savedLang = localStorage.getItem('bibleforai_lang');
+        if (savedLang === 'ko') {
+            window.location.replace('/databoost/kr/');
+        }
+    </script>
     <title>BibleForAI - DATABOOST | Web Scraping & Data Extraction</title>
     <meta name="description" content="Custom web scraping and automated data extraction services. Scrape e-commerce products, business directories, news articles, and more into clean Excel/CSV format.">
     <meta name="keywords" content="web scraping, data extraction, crawl data, scrape website, ecommerce scraping, business data, content scraping, data mining, Excel CSV, Python scraping">

@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Check saved language and redirect to Korean version if applicable
+        const savedLang = localStorage.getItem('bibleforai_lang');
+        if (savedLang === 'ko') {
+            window.location.replace('/sourcboost/kr/');
+        }
+    </script>
     <title>BibleForAI - SOURCEBOOST | Global Uncopyable Provenance Provenance Verification</title>
     <meta name="description" content="Internationally usable compliance certification consulting for Document Verification 27001, GDPR audit readiness, SOC 2 Type II, HIPAA, and cross-border certification programs across 40+ jurisdictions.">
     <meta name="keywords" content="Document Verification 27001, GDPR Verification, SOC 2, HIPAA Compliance, Provenance Verification, Compliance Program, Data Protection, Global Certification, International Compliance">

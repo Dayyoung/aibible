@@ -2580,6 +2580,79 @@
             box-shadow: 0 15px 35px rgba(99, 102, 241, 0.12), 0 0 15px rgba(99, 102, 241, 0.1);
         }
     }
+
+    /* New Services Styles (Global scope, outside media query) */
+    .card-active-opencode {
+        border-color: rgba(139, 92, 246, 0.15);
+    }
+    .card-active-opencode:hover {
+        transform: translateY(-8px);
+        border-color: #8b5cf6;
+        box-shadow: 0 15px 35px rgba(139, 92, 246, 0.12), 0 0 15px rgba(139, 92, 246, 0.1);
+    }
+    .btn-opencode {
+        background: #8b5cf6;
+        color: #ffffff;
+        border: none;
+        box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+    }
+    .btn-opencode:hover {
+        background: #7c3aed;
+        box-shadow: 0 8px 25px rgba(139, 92, 246, 0.35);
+    }
+    .icon-opencode {
+        color: #8b5cf6;
+        background: rgba(139, 92, 246, 0.08);
+        border-color: rgba(139, 92, 246, 0.15);
+    }
+
+    .card-active-repboost {
+        border-color: rgba(244, 63, 94, 0.15);
+    }
+    .card-active-repboost:hover {
+        transform: translateY(-8px);
+        border-color: #f43f5e;
+        box-shadow: 0 15px 35px rgba(244, 63, 94, 0.12), 0 0 15px rgba(244, 63, 94, 0.1);
+    }
+    .btn-repboost {
+        background: #f43f5e;
+        color: #ffffff;
+        border: none;
+        box-shadow: 0 4px 15px rgba(244, 63, 94, 0.2);
+    }
+    .btn-repboost:hover {
+        background: #e11d48;
+        box-shadow: 0 8px 25px rgba(244, 63, 94, 0.35);
+    }
+    .icon-repboost {
+        color: #f43f5e;
+        background: rgba(244, 63, 94, 0.08);
+        border-color: rgba(244, 63, 94, 0.15);
+    }
+
+    .card-active-webseo {
+        border-color: rgba(20, 184, 166, 0.15);
+    }
+    .card-active-webseo:hover {
+        transform: translateY(-8px);
+        border-color: #14b8a6;
+        box-shadow: 0 15px 35px rgba(20, 184, 166, 0.12), 0 0 15px rgba(20, 184, 166, 0.1);
+    }
+    .btn-webseo {
+        background: #14b8a6;
+        color: #ffffff;
+        border: none;
+        box-shadow: 0 4px 15px rgba(20, 184, 166, 0.25);
+    }
+    .btn-webseo:hover {
+        background: #0d9488;
+        box-shadow: 0 8px 25px rgba(20, 184, 166, 0.38);
+    }
+    .icon-webseo {
+        color: #14b8a6;
+        background: rgba(20, 184, 166, 0.08);
+        border-color: rgba(20, 184, 166, 0.15);
+    }
 </style>
 </head>
 <body>
@@ -2630,6 +2703,8 @@
             <a href="/flowboost/" class="sidebar-link"><i class="fa-solid fa-diagram-project"></i> <span id="side-title-flow">Flow Automation</span></a>
             <a href="/imgboost/" class="sidebar-link"><i class="fa-solid fa-camera-retro"></i> <span id="side-title-img">Product Photography</span></a>
             <a href="/pitchboost/" class="sidebar-link"><i class="fa-solid fa-chart-line"></i> <span id="side-title-pitch">AI Presentations</span></a>
+            <a href="/opencode/" class="sidebar-link"><i class="fa-solid fa-code"></i> <span id="side-title-opencode">OpenCode AI</span></a>
+            <a href="/databoost/" class="sidebar-link"><i class="fa-solid fa-database"></i> <span id="side-title-databoost">DATABOOST</span></a>
         </div>
 
         <div class="sidebar-category">
@@ -2644,7 +2719,7 @@
             <a href="/foreigncare/" class="sidebar-link"><i class="fa-solid fa-user-doctor"></i> <span id="side-title-foreigncare">FOREIGNCARE — Foreign Customer & Patient Acquisition</span></a>
             <a href="/aicash/" class="sidebar-link"><i class="fa-solid fa-wand-magic-sparkles"></i> <span id="side-title-aicash">AICASH — Global AI Content Monetization</span></a>
             <a href="/dbmigrate/" class="sidebar-link"><i class="fa-solid fa-database"></i> <span id="side-title-dbmigrate">DBMIGRATE — Database Migration & Transfer</span></a>
-            <a href="/usllc/" class="sidebar-link"><i class="fa-solid fa-newspaper"></i> <span id="side-title-prboost">USLLC — US LLC & EIN Setup</span></a>
+            <a href="/prboost/" class="sidebar-link"><i class="fa-solid fa-newspaper"></i> <span id="side-title-prboost">PRBOOST — Global PR & Guest Posting</span></a>
             <a href="/tradeboost/" class="sidebar-link"><i class="fa-solid fa-ship"></i> <span id="side-title-tradeboost">TRADEBOOST Global Trade Agency</span></a>
 
             <a href="/tikshop/" class="sidebar-link"><i class="fa-brands fa-tiktok"></i> <span id="side-title-tikshop">TIKSHOP TikTok Shop Setup</span></a>
@@ -2657,6 +2732,9 @@
             <a href="/mkboost/" class="sidebar-link"><i class="fa-solid fa-magnifying-glass-chart"></i> <span id="side-title-mk">Market Research</span></a>
             <a href="/contentboost/" class="sidebar-link"><i class="fa-solid fa-newspaper"></i> <span id="side-title-content">AI Publishing System</span></a>
             <a href="/affboost/" class="sidebar-link"><i class="fa-solid fa-rocket"></i> <span id="side-title-affboost">AFFBOOST AI Affiliate Builder</span></a>
+            <a href="/appboost/" class="sidebar-link"><i class="fa-solid fa-mobile-screen-button"></i> <span id="side-title-appboost">APPBOOST</span></a>
+            <a href="/boostsm/" class="sidebar-link"><i class="fa-solid fa-share-nodes"></i> <span id="side-title-boostsm">BOOSTSM</span></a>
+            <a href="/repboost/" class="sidebar-link"><i class="fa-solid fa-comments"></i> <span id="side-title-repboost">REPBOOST</span></a>
         </div>
 
         <div class="sidebar-category">
@@ -2682,6 +2760,12 @@
             <a href="/complianceboost/" class="sidebar-link"><i class="fa-solid fa-shield-halved"></i> <span id="side-title-complianceboost">COMPLIANCEBOOST Compliance Docs &amp; Audit Prep</span></a>
             <a href="/certboost/" class="sidebar-link"><i class="fa-solid fa-certificate"></i> <span id="side-title-cert">Certification Consulting</span></a>
             <a href="/ipboost/" class="sidebar-link"><i class="fa-solid fa-shield-halved"></i> <span id="side-title-ip">IP Protection</span></a>
+            <a href="/apostboost/" class="sidebar-link"><i class="fa-solid fa-stamp"></i> <span id="side-title-apostboost">APOSTBOOST</span></a>
+            <a href="/b2bdb/" class="sidebar-link"><i class="fa-solid fa-envelope-open-text"></i> <span id="side-title-b2bdb">B2B DATABASE</span></a>
+            <a href="/b2cdb/" class="sidebar-link"><i class="fa-solid fa-users"></i> <span id="side-title-b2cdb">B2C DATABASE</span></a>
+            <a href="/sourcboost/" class="sidebar-link"><i class="fa-solid fa-shield-halved"></i> <span id="side-title-sourcboost">SOURCEBOOST</span></a>
+            <a href="/ustax/" class="sidebar-link"><i class="fa-solid fa-receipt"></i> <span id="side-title-ustax">USTAX</span></a>
+            <a href="/ustaxboost/" class="sidebar-link"><i class="fa-solid fa-coins"></i> <span id="side-title-ustaxboost">USTAXBOOST</span></a>
         </div>
     </div>
     <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
@@ -2775,6 +2859,19 @@
                 <a href="/affboost/" id="foot-affboost-link">AFFBOOST</a>
                 <a href="/lawboost/" id="foot-law-link">LAWBOOST</a>
                 <a href="/certboost/" id="foot-cert-link">CERTBOOST</a>
+                <a href="/prboost/" id="foot-prboost-link">PRBOOST</a>
+                <a href="/usllc/" id="foot-usllc-link">USLLC</a>
+                <a href="/apostboost/" id="foot-apostboost-link">APOSTBOOST</a>
+                <a href="/appboost/" id="foot-appboost-link">APPBOOST</a>
+                <a href="/b2bdb/" id="foot-b2bdb-link">B2B DATABASE</a>
+                <a href="/b2cdb/" id="foot-b2cdb-link">B2C DATABASE</a>
+                <a href="/boostsm/" id="foot-boostsm-link">BOOSTSM</a>
+                <a href="/databoost/" id="foot-databoost-link">DATABOOST</a>
+                <a href="/opencode/" id="foot-opencode-link">OpenCode AI</a>
+                <a href="/repboost/" id="foot-repboost-link">REPBOOST</a>
+                <a href="/sourcboost/" id="foot-sourcboost-link">SOURCEBOOST</a>
+                <a href="/ustax/" id="foot-ustax-link">USTAX</a>
+                <a href="/ustaxboost/" id="foot-ustaxboost-link">USTAXBOOST</a>
             </div>
         </div>
     </footer>
@@ -2869,9 +2966,42 @@
                 "dbmigrate-title": "DBMIGRATE — Database Migration & Transfer",
                 "dbmigrate-desc": "Database migration, transfer planning, rollback strategy, and verification for global teams.",
                 "dbmigrate-btn": "Launch DBMIGRATE Service",
-                "prboost-title": "USLLC — US LLC & EIN Setup",
+                "apostboost-title": "APOSTBOOST — Apostille & Notarization",
+                "apostboost-desc": "Global document authentication, apostille assistance, and certified translation verification.",
+                "apostboost-btn": "Launch APOSTBOOST Service",
+                "appboost-title": "APPBOOST — Global App Marketing & ASO",
+                "appboost-desc": "Grow installs, reviews, and keyword visibility on App Store and Google Play.",
+                "appboost-btn": "Launch APPBOOST Service",
+                "b2bdb-title": "B2B DATABASE — Target Corporate Email Lists",
+                "b2bdb-desc": "Build and download highly accurate B2B email lists filtered by industry, seniority, and geography.",
+                "b2bdb-btn": "Launch B2B Database",
+                "b2cdb-title": "B2C DATABASE — Compliant B2B & B2C Data",
+                "b2cdb-desc": "Acquire GDPR-compliant customer directories, mobile leads, WhatsApp, and Telegram lists.",
+                "b2cdb-btn": "Launch B2C Database",
+                "boostsm-title": "BOOSTSM — Social Media Growth",
+                "boostsm-desc": "Boost your channels organically with AI-powered growth for Instagram, YouTube, TikTok, and X.",
+                "boostsm-btn": "Launch BOOSTSM Service",
+                "databoost-title": "DATABOOST — Web Scraping & Extraction",
+                "databoost-desc": "Custom web scraping and automated data extraction converting any site into structured Excel/CSV.",
+                "databoost-btn": "Launch DATABOOST Service",
+                "opencode-title": "OpenCode AI — Unified AI for Developers",
+                "opencode-desc": "Access premium AI models like GPT-4o, Claude 3.5 Sonnet, and Gemini Pro for $5/month.",
+                "opencode-btn": "Launch OpenCode AI",
+                "repboost-title": "REPBOOST — Reputation & Review Analytics",
+                "repboost-desc": "Monitor brand reputation, analyze customer sentiment, and improve global search visibility.",
+                "repboost-btn": "Launch REPBOOST Service",
+                "sourcboost-title": "SOURCEBOOST — Provenance Verification",
+                "sourcboost-desc": "Global provenance verification, document authenticity certification, and source tracking.",
+                "sourcboost-btn": "Launch SOURCEBOOST Service",
+                "ustax-title": "USTAX — US Tax & Advisory",
+                "ustax-desc": "US entity setup, tax filing compliance, and cross-border financial advisory for global founders.",
+                "ustax-btn": "Launch USTAX Service",
+                "ustaxboost-title": "USTAXBOOST — Premium US Tax Advisory",
+                "ustaxboost-desc": "Advanced US tax compliance, structural advisory, and cross-border financial operations.",
+                "ustaxboost-btn": "Launch USTAXBOOST Service",
+                "prboost-title": "PRBOOST — Global PR & Guest Posting",
                 "prboost-desc": "English press release writing and overseas distribution for brands entering global markets.",
-                "prboost-btn": "Launch USLLC Service",
+                "prboost-btn": "Launch PRBOOST Service",
                 "linkboost-title": "LINKBOOST — LinkedIn Growth",
                 "linkboost-desc": "LinkedIn profile growth, authority building, and B2B outreach for founders, recruiters, and sales teams.",
                 "linkboost-btn": "Launch LinkedIn Service",
@@ -2902,7 +3032,7 @@
                 "side-title-growthconsult": "GROWTHCONSULT Integrated Marketing Consulting",
                 "side-title-aicash": "AICASH — Global AI Content Monetization",
                 "side-title-dbmigrate": "DBMIGRATE — Database Migration & Transfer",
-                "side-title-prboost": "USLLC US LLC & EIN Setup",
+                "side-title-prboost": "PRBOOST Global PR & Guest Posting",
                 "localize-desc": "Get polished English/Korean translation, localization, and native proofreading with a smooth checkout flow.",
                 "localize-btn": "Launch Translation Service",
                 "engtranslate-title": "ENGTRANSLATE — Premium English Translation & Localization",
@@ -3211,9 +3341,42 @@
                 "dbmigrate-title": "DBMIGRATE — 데이터베이스 이전 & 전환",
                 "dbmigrate-desc": "글로벌 팀을 위한 DB 이전, 전환 계획, 롤백 전략, 검증 서비스를 제공합니다.",
                 "dbmigrate-btn": "DBMIGRATE 서비스 시작",
-                "prboost-title": "USLLC — 글로벌 보도자료 배포",
+                "apostboost-title": "APOSTBOOST — 아포스티유·공증 대행",
+                "apostboost-desc": "해외 제출용 문서의 아포스티유 안내, 공증 연계, 번역 검토를 지원하는 실전형 문서 인증 서비스입니다.",
+                "apostboost-btn": "APOSTBOOST 서비스 시작",
+                "appboost-title": "APPBOOST — 글로벌 앱 마케팅 & ASO",
+                "appboost-desc": "앱스토어와 구글플레이에서 설치 수, 리뷰 수, 키워드 검색 노출 성과를 지원하는 ASO 마케팅 서비스입니다.",
+                "appboost-btn": "APPBOOST 서비스 시작",
+                "b2bdb-title": "B2B DATABASE — B2B 타겟 기업 이메일 리스트",
+                "b2bdb-desc": "산업군, 직책, 지역별로 검증된 C-level 및 타겟 의사결정자 연락처 리스트를 구축하고 수출합니다.",
+                "b2bdb-btn": "B2B 데이터베이스 시작",
+                "b2cdb-title": "B2C DATABASE — 글로벌 B2C 고객 데이터베이스",
+                "b2cdb-desc": "전화번호, WhatsApp, Telegram, 국가별 이메일 목록 등 규정을 준수하고 정확도 높은 고객 리드를 확보합니다.",
+                "b2cdb-btn": "B2C 데이터베이스 시작",
+                "boostsm-title": "BOOSTSM — 소셜 미디어 유기적 성장",
+                "boostsm-desc": "인스타그램, 유튜브, 틱톡, X 채널의 안전하고 비밀번호가 필요 없는 AI 기반 SMM 성장 부스터 서비스입니다.",
+                "boostsm-btn": "BOOSTSM 서비스 시작",
+                "databoost-title": "DATABOOST — 웹 스크래핑 및 데이터 추출",
+                "databoost-desc": "이커머스 상품, 비즈니스 디렉토리 등 모든 웹 데이터를 구조화된 Excel, CSV, JSON으로 추출합니다.",
+                "databoost-btn": "DATABOOST 서비스 시작",
+                "opencode-title": "OpenCode AI — 개발자를 위한 최신 AI 모델 허브",
+                "opencode-desc": "GPT-4o, Claude 3.5, Gemini Pro 등 최신 프리미엄 AI 코딩 어시스턴트를 합리적인 구독형으로 제공합니다.",
+                "opencode-btn": "OpenCode AI 시작",
+                "repboost-title": "REPBOOST — 글로벌 평판 관리 및 리뷰 분석",
+                "repboost-desc": "글로벌 브랜드 평판 모니터링, 감성 분석, 리뷰 생성 및 관리를 통해 검색 신뢰도를 극대화합니다.",
+                "repboost-btn": "REPBOOST 서비스 시작",
+                "sourcboost-title": "SOURCEBOOST — 글로벌 원본 & 출처 검증",
+                "sourcboost-desc": "글로벌 원본 검증, 문서 위변조 방지 인증 및 복제 불가능한 출처 추적을 통한 규정 준수를 지원합니다.",
+                "sourcboost-btn": "SOURCEBOOST 서비스 시작",
+                "ustax-title": "USTAX — 미국 세무 & 법인설립 자문",
+                "ustax-desc": "글로벌 창업자를 위한 미국 법인 설립, 세금 신고, 크로스보더 재무 운영 실무 자문 서비스입니다.",
+                "ustax-btn": "USTAX 서비스 시작",
+                "ustaxboost-title": "USTAXBOOST — 프리미엄 미국 세무 자문",
+                "ustaxboost-desc": "미국 법인 설립, 세금 신고 준수 및 크로스보더 금융 거래에 대한 한 단계 높은 프리미엄 자문을 지원합니다.",
+                "ustaxboost-btn": "USTAXBOOST 서비스 시작",
+                "prboost-title": "PRBOOST — 글로벌 보도자료 배포",
                 "prboost-desc": "해외 시장 진출 브랜드를 위한 영문 보도자료 작성과 해외 배포 서비스입니다.",
-                "prboost-btn": "USLLC 서비스 시작",
+                "prboost-btn": "PRBOOST 서비스 시작",
                 "linkboost-title": "LINKBOOST — LinkedIn Growth",
                 "linkboost-desc": "링크드인 프로필 성장, 권위 구축, B2B 아웃리치로 창업자, 채용 담당자, 세일즈 팀을 지원합니다.",
                 "linkboost-btn": "링크드인 서비스 바로가기",
@@ -3244,7 +3407,7 @@
                 "side-title-growthconsult": "GROWTHCONSULT 통합 마케팅 컨설팅",
                 "side-title-aicash": "AICASH — 글로벌 AI 콘텐츠 수익화",
                 "side-title-dbmigrate": "DBMIGRATE — 데이터베이스 이전 & 전환",
-                "side-title-prboost": "USLLC 글로벌 보도자료 배포",
+                "side-title-prboost": "PRBOOST 글로벌 보도자료 배포",
                 "localize-desc": "부드러운 결제 흐름과 함께 영어/한국어 번역, 로컬라이제이션, 네이티브 감수를 제공합니다.",
                 "localize-btn": "번역 서비스 바로가기",
                 "engtranslate-title": "ENGTRANSLATE — 프리미엄 영어 번역 & 로컬라이제이션",
@@ -3616,7 +3779,18 @@
             { id: 'prboost', category: 'marketing', link: '/prboost/', icon: 'fa-solid fa-newspaper', cardClass: 'card-active-prboost', btnClass: 'btn-prboost', iconBoxClass: 'icon-prboost', popularity: 89, addedAt: 1782857458 },
             { id: 'foreigncare', category: 'marketing', link: '/foreigncare/', icon: 'fa-solid fa-user-doctor', cardClass: 'card-active-foreigncare', btnClass: 'btn-foreigncare', iconBoxClass: 'icon-foreigncare', popularity: 90, addedAt: 1782857460 },
             { id: 'aicash', category: 'marketing', link: '/aicash/', icon: 'fa-solid fa-wand-magic-sparkles', cardClass: 'card-active-aicash', btnClass: 'btn-aicash', iconBoxClass: 'icon-aicash', popularity: 92, addedAt: 1782857461 },
-            { id: 'dbmigrate', category: 'strategy', link: '/dbmigrate/', icon: 'fa-solid fa-database', cardClass: 'card-active-dbmigrate', btnClass: 'btn-dbmigrate', iconBoxClass: 'icon-dbmigrate', popularity: 93, addedAt: 1782857462 }
+            { id: 'dbmigrate', category: 'strategy', link: '/dbmigrate/', icon: 'fa-solid fa-database', cardClass: 'card-active-dbmigrate', btnClass: 'btn-dbmigrate', iconBoxClass: 'icon-dbmigrate', popularity: 93, addedAt: 1782857462 },
+            { id: 'apostboost', category: 'strategy', link: '/apostboost/', icon: 'fa-solid fa-stamp', cardClass: 'card-active-apost', btnClass: 'btn-apost', iconBoxClass: 'icon-apost', popularity: 85, addedAt: 1782900001 },
+            { id: 'appboost', category: 'marketing', link: '/appboost/', icon: 'fa-solid fa-mobile-screen-button', cardClass: 'card-active-app', btnClass: 'btn-app', iconBoxClass: 'icon-app', popularity: 88, addedAt: 1782900002 },
+            { id: 'b2bdb', category: 'strategy', link: '/b2bdb/', icon: 'fa-solid fa-envelope-open-text', cardClass: 'card-active-b2b', btnClass: 'btn-b2b', iconBoxClass: 'icon-b2b', popularity: 90, addedAt: 1782900003 },
+            { id: 'b2cdb', category: 'strategy', link: '/b2cdb/', icon: 'fa-solid fa-users', cardClass: 'card-active-b2c', btnClass: 'btn-b2c', iconBoxClass: 'icon-b2c', popularity: 89, addedAt: 1782900004 },
+            { id: 'boostsm', category: 'marketing', link: '/boostsm/', icon: 'fa-solid fa-share-nodes', cardClass: 'card-active-smm', btnClass: 'btn-smm', iconBoxClass: 'icon-smm', popularity: 92, addedAt: 1782900005 },
+            { id: 'databoost', category: 'design-dev', link: '/databoost/', icon: 'fa-solid fa-database', cardClass: 'card-active-data', btnClass: 'btn-data', iconBoxClass: 'icon-data', popularity: 87, addedAt: 1782900006 },
+            { id: 'opencode', category: 'design-dev', link: '/opencode/', icon: 'fa-solid fa-code', cardClass: 'card-active-opencode', btnClass: 'btn-opencode', iconBoxClass: 'icon-opencode', popularity: 94, addedAt: 1782900007 },
+            { id: 'repboost', category: 'marketing', link: '/repboost/', icon: 'fa-solid fa-comments', cardClass: 'card-active-repboost', btnClass: 'btn-repboost', iconBoxClass: 'icon-repboost', popularity: 86, addedAt: 1782900008 },
+            { id: 'sourcboost', category: 'strategy', link: '/sourcboost/', icon: 'fa-solid fa-shield-halved', cardClass: 'card-active-cert', btnClass: 'btn-cert', iconBoxClass: 'icon-cert', popularity: 85, addedAt: 1782900009 },
+            { id: 'ustax', category: 'strategy', link: '/ustax/', icon: 'fa-solid fa-receipt', cardClass: 'card-active-ustax2', btnClass: 'btn-ustax2', iconBoxClass: 'icon-ustax2', popularity: 88, addedAt: 1782900010 },
+            { id: 'ustaxboost', category: 'strategy', link: '/ustaxboost/', icon: 'fa-solid fa-coins', cardClass: 'card-active-ustax', btnClass: 'btn-ustax', iconBoxClass: 'icon-ustax', popularity: 91, addedAt: 1782900011 }
         ];
         let activeCategory = 'all';
 

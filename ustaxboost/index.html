@@ -3,6 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+      // Check saved language and redirect to Korean version if applicable
+      const savedLang = localStorage.getItem('bibleforai_lang');
+      if (savedLang === 'ko') {
+          window.location.replace('/ustaxboost/kr/');
+      }
+  </script>
   <title>BibleForAI - USTAXBOOST | US Tax & Incorporation Advisory</title>
   <meta name="description" content="Practical advisory for US entity setup, tax filing, and cross-border financial operations.">
   <meta name="keywords" content="US tax advisory, incorporation, USCPA, LLC setup, cross-border tax, business formation, tax filing">
