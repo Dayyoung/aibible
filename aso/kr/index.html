@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <base href="../">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="BibleForAI">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="글로벌 앱을 위한 ASO 서비스: 키워드 관리, 스토어 최적화, 리뷰 전략을 제공합니다.">
+  <meta name="keywords" content="ASO, app store optimization, keyword management, listing optimization, Google Play, App Store, BibleForAI">
+  <link rel="canonical" href="https://bibleforai.com/aso/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bibleforai.com/aso/">
+  <meta property="og:title" content="BibleForAI - ASO | 앱스토어·구글플레이 키워드 관리">
+  <meta property="og:description" content="App Store Optimization for global apps: keyword management, listing optimization, and review strategy.">
+  <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+  <meta property="og:site_name" content="BibleForAI ASO">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ko_KR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://bibleforai.com/aso/">
+  <meta name="twitter:title" content="BibleForAI - ASO | 앱스토어·구글플레이 키워드 관리">
+  <meta name="twitter:description" content="App Store Optimization for global apps: keyword management, listing optimization, and review strategy.">
+  <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+  <title>BibleForAI - ASO | 앱스토어·구글플레이 키워드 관리</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"앱스토어와 구글플레이 키워드를 모두 관리해 주나요?","acceptedAnswer":{"@type":"Answer","text":"네. 앱스토어와 구글플레이를 대상으로 월간 키워드 관리를 진행합니다."}},
+      {"@type":"Question","name":"What does the price-click test checkout do?","acceptedAnswer":{"@type":"Answer","text":"Clicking the total price saves a sandbox order locally and redirects to the Google Form receipt flow."}},
+      {"@type":"Question","name":"스토어 목록 최적화와 리뷰 전략도 포함되나요?","acceptedAnswer":{"@type":"Answer","text":"네. 성장 및 엘리트 티어에는 스토어 목록 최적화, 키워드 추적, 리뷰 전략 지원이 포함됩니다."}},
+      {"@type":"Question","name":"이 서비스는 누구에게 적합한가요?","acceptedAnswer":{"@type":"Answer","text":"글로벌 시장에 진입하려는 앱 창업자, 스타트업, 에이전시, 인하우스 성장팀에 적합합니다."}}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Product",
+    "name":"BibleForAI ASO — 앱스토어·구글플레이 키워드 관리",
+    "description":"크몽에서 찾은 글로벌 앱 최적화 서비스로, 국제 시장의 앱 검색 노출과 성장을 돕습니다.",
+    "brand":{"@type":"Brand","name":"BibleForAI"},
+    "offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"7.15","highPrice":"21.40","offerCount":"3"}
+  }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --font-heading: 'Noto Sans KR', sans-serif; --font-body: 'Noto Sans KR', sans-serif; }
+  </style>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+</head>
+<body>
+<header id="app-header">
+  <div class="header-container">
+    <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+    <a href="/" class="logo-group"><span class="logo-title">BibleForAI</span><span class="logo-subtitle" data-i18n="logo-subtitle">ASO</span></a>
+    <nav class="desktop-nav">
+      <ul class="nav-links">
+        <li><a href="#" id="nav-home" onclick="navigate('home')" class="active" data-i18n="nav-home">Home</a></li>
+        <li><a href="#" id="nav-basic" onclick="navigate('basic')" data-i18n="nav-basic">Starter</a></li>
+        <li><a href="#" id="nav-pro" onclick="navigate('pro')" data-i18n="nav-pro">Growth</a></li>
+        <li><a href="#" id="nav-enterprise" onclick="navigate('enterprise')" data-i18n="nav-enterprise">Elite</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="btn-orders" onclick="navigate('orders')"><i class="fa-solid fa-receipt"></i> <span data-i18n="btn-orders">My Orders</span></button>
+      <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)"><option value="en" selected>🌐 English</option><option value="ko">🇰🇷 한국어</option></select>
+    </div>
+  </div>
+</header>
+<div class="mobile-drawer" id="mobile-drawer">
+  <ul class="mobile-nav-links unified-service-menu">
+    <li class="mobile-menu-heading">데이터베이스 · 스크래핑</li>
+    <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI 랜딩 페이지</a></li>
+    <li><a href="/mvpboost/"><i class="fa-solid fa-rocket"></i> MVPBOOST</a></li>
+    <li><a href="/aideploy/"><i class="fa-solid fa-cloud-arrow-up"></i> AIDEPLOY</a></li>
+    <li><a href="/autoboost/"><i class="fa-solid fa-arrows-rotate"></i> AUTOBOOST</a></li>
+    <li class="mobile-menu-heading">디자인 · 코딩</li>
+    <li><a href="/webcreate/"><i class="fa-solid fa-globe"></i> WEBCREATE — 웹사이트 제작</a></li>
+    <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> SHOPBOOST — 쇼핑몰 구축</a></li>
+    <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> FLOWBOOST — 플로우 자동화</a></li>
+    <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST — 이미지 제작</a></li>
+    <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST — 피치덱 제작</a></li>
+    <li class="mobile-menu-heading">마케팅 · SEO</li>
+    <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> BOOSTSM — SNS 성장 자동화</a></li>
+    <li><a href="/aso/"><i class="fa-solid fa-newspaper"></i> ASO — 앱스토어·구글플레이 키워드 관리</a></li>
+    <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> MAILBOOST — 이메일 마케팅</a></li>
+    <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST — 검색 광고 최적화</a></li>
+    <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST — 마케팅 리서치</a></li>
+    <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> CONTENTBOOST — 콘텐츠 마케팅</a></li>
+    <li class="mobile-menu-heading">미디어 · 오디오</li>
+    <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> CLIPBOOST — 숏폼 영상 제작</a></li>
+    <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> VOICEBOOST — 보이스 오버 제작</a></li>
+    <li><a href="/transboost/"><i class="fa-solid fa-language"></i> TRANSBOOST — 번역 서비스</a></li>
+    <li class="mobile-menu-heading">전략 · 분석</li>
+    <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> AIBOOST — AI 전략</a></li>
+    <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST — 데이터 인사이트</a></li>
+    <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST — 챗봇 구축</a></li>
+              <li><a href="/tikshop/"><i class="fa-brands fa-tiktok"></i> TIKSHOP — 틱톡샵 세팅</a></li>
+            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — 글로벌 무역 에이전시</a></li>
+            <li><a href="/linkboost/"><i class="fa-brands fa-linkedin"></i> LINKBOOST — 링크드인 성장</a></li>
+            <li><a href="/careerlink/"><i class="fa-brands fa-linkedin"></i> CAREERLINK — 링크드인 최적화</a></li>
+            <li><a href="/atsresume/"><i class="fa-solid fa-file-lines"></i> ATSRESUME — 이력서·자소서 최적화</a></li>
+            <li><a href="/influboost/"><i class="fa-solid fa-bullhorn"></i> INFLUBOOST — 글로벌 인플루언서 시딩</a></li>
+            <li><a href="/fdaboost/"><i class="fa-solid fa-vial-circle-check"></i> FDABOOST — FDA 라벨링·인증</a></li>
+            <li><a href="/globalbank/"><i class="fa-solid fa-building-columns"></i> GLOBALBANK — 해외 법인 계좌 개설</a></li>
+            <li><a href="/sysboost/"><i class="fa-solid fa-circle"></i> SYSBOOST</a></li>
+            <li><a href="/adsboost/"><i class="fa-solid fa-bullhorn"></i> ADSBOOST — 구글 광고 최적화</a></li>
+            <li><a href="/rfpboost/"><i class="fa-solid fa-file-signature"></i> RFPBOOST — 제안서 작성</a></li>
+            <li><a href="/globalup/"><i class="fa-solid fa-user-tie"></i> GLOBALUP — 글로벌 채용</a></li>
+            <li><a href="/eventboost/"><i class="fa-solid fa-microphone-lines"></i> EVENTBOOST — 글로벌 행사 MC</a></li>
+            <li><a href="/micemc/"><i class="fa-solid fa-microphone-lines"></i> MICEMC — 국제 MC·통역</a></li>
+            <li><a href="/indiaboost/"><i class="fa-solid fa-earth-asia"></i> INDIABOOST — 인도 시장 진출 자문</a></li>
+            <li><a href="/medboost/"><i class="fa-solid fa-stethoscope"></i> MEDBOOST — 의료 번역</a></li>
+            <li><a href="/amzboost/"><i class="fa-solid fa-store"></i> AMZBOOST — 아마존 PPC</a></li>
+            <li><a href="/amzbrand/"><i class="fa-brands fa-amazon"></i> AMZBRAND — 아마존 브랜드 등록</a></li>
+            <li><a href="/alicat/"><i class="fa-solid fa-box-open"></i> ALICAT — 알리바바·B2B 카탈로그</a></li>
+            <li><a href="/chinaboost/"><i class="fa-solid fa-earth-asia"></i> CHINABOOST — 중국 시장 진출</a></li>
+            <li><a href="/surveyboost/"><i class="fa-solid fa-square-poll-vertical"></i> SURVEYBOOST — 시장 검증 설문</a></li>
+            <li><a href="/shopglobal/"><i class="fa-brands fa-shopify"></i> SHOPGLOBAL — 쇼피파이 글로벌 확장</a></li>
+            <li><a href="/complianceboost/"><i class="fa-solid fa-shield-halved"></i> COMPLIANCEBOOST — 컴플라이언스 문서·감사 준비</a></li>
+            <li><a href="/globalweb/"><i class="fa-solid fa-globe"></i> GLOBALWEB — 다국어 웹사이트·글로벌 SEO</a></li>
+            <li><a href="/affboost/"><i class="fa-solid fa-rocket"></i> AFFBOOST — AI 제휴 웹사이트 빌더</a></li>
+            <li><a href="/usllc/"><i class="fa-solid fa-building-columns"></i> USLLC — 미국 LLC·EIN 설립</a></li>
+            <li><a href="/webseo/"><i class="fa-solid fa-globe"></i> WEBSEO — 글로벌 웹사이트 개발·SEO</a></li>
+            <li><a href="/foreigncare/"><i class="fa-solid fa-user-doctor"></i> FOREIGNCARE — 외국인 고객·환자 유치</a></li>
+            <li><a href="/aicash/"><i class="fa-solid fa-wand-magic-sparkles"></i> AICASH — 글로벌 AI 콘텐츠 수익화</a></li>
+            <li><a href="/dbmigrate/"><i class="fa-solid fa-database"></i> DBMIGRATE — 데이터베이스 이전·전환</a></li>
+            <li><a href="/prboost/"><i class="fa-solid fa-newspaper"></i> PRBOOST — 글로벌 보도자료 배포</a></li>
+</ul>
+</div>
+<main>
+  <section id="home-view" class="view-section active">
+    <div class="hero">
+      <div class="badge" data-i18n="hero-badge">App Store Optimization</div>
+      <h1 class="hero-title" data-i18n="hero-title">ASO — App Store & Google Play Keyword Management</h1>
+      <p class="hero-desc" data-i18n="hero-desc">Turn your app into a discoverable global product with monthly keyword ranking management, listing optimization, and review strategy.</p>
+      <div class="hero-actions"><button class="btn-primary" onclick="navigate('basic')" data-i18n="btn-explore">View Packages</button><a class="btn-secondary" href="#how-it-works" data-i18n="btn-how">How It Works</a></div>
+    </div>
+    <div class="stats-bar">
+      <div class="stat-item"><span class="stat-num">4</span><span class="stat-label" data-i18n="stat-1">Packages</span></div>
+      <div class="stat-item"><span class="stat-num">300+</span><span class="stat-label" data-i18n="stat-2">Media Reach</span></div>
+      <div class="stat-item"><span class="stat-num">SEO</span><span class="stat-label" data-i18n="stat-3">SEO Friendly</span></div>
+      <div class="stat-item"><span class="stat-num">3d</span><span class="stat-label" data-i18n="stat-4">Fast Delivery</span></div>
+    </div>
+  </section>
+  <section id="basic-view" class="view-section section-container">
+    <h2 class="section-title" data-i18n="sec-packages-title">Choose Your PR Package</h2>
+    <p class="section-subtitle" data-i18n="sec-packages-subtitle">Pick a package, click the price to launch the sandbox checkout, and review the Google Form receipt flow.</p>
+    <div class="card-grid" id="basic-packages"></div>
+  </section>
+  <section id="pro-view" class="view-section section-container">
+    <h2 class="section-title" data-i18n="pro-section-title">Growth Package</h2>
+    <div class="card-grid" id="pro-packages"></div>
+  </section>
+  <section id="enterprise-view" class="view-section section-container">
+    <h2 class="section-title" data-i18n="enterprise-section-title">Elite Package</h2>
+    <div class="card-grid" id="enterprise-packages"></div>
+  </section>
+  <section id="how-it-works" class="section-container">
+    <h2 class="section-title" data-i18n="how-title">How ASO Works</h2>
+    <p class="section-subtitle" data-i18n="how-desc">We keep the flow simple: choose a package, review the draft, pay securely, and complete the receipt form.</p>
+    <div class="card-grid">
+      <div class="tier-card"><div class="tier-icon icon-starter"><i class="fa-solid fa-1"></i></div><h3 data-i18n="how-step1-bold">1. Brief:</h3><p data-i18n="how-step1-text">Share your target market, launch notes, and website.</p></div>
+      <div class="tier-card"><div class="tier-icon icon-starter"><i class="fa-solid fa-2"></i></div><h3 data-i18n="how-step2-bold">2. Draft:</h3><p data-i18n="how-step2-text">We create or rewrite the press release for global use.</p></div>
+      <div class="tier-card"><div class="tier-icon icon-starter"><i class="fa-solid fa-3"></i></div><h3 data-i18n="how-step3-bold">3. Checkout:</h3><p data-i18n="how-step3-text">Click the total price in the modal to trigger the sandbox test checkout flow.</p></div>
+      <div class="tier-card"><div class="tier-icon icon-starter"><i class="fa-solid fa-4"></i></div><h3 data-i18n="how-step4-bold">4. Receipt:</h3><p data-i18n="how-step4-text">You are redirected to Google Form with encoded receipt details.</p></div>
+    </div>
+  </section>
+  <section class="section-container">
+    <h2 class="section-title" data-i18n="faq-title">Frequently Asked Questions</h2>
+    <p class="section-subtitle" data-i18n="faq-subtitle">A few quick answers about pricing, delivery, and checkout.</p>
+    <div class="card-grid">
+      <div class="tier-card"><h3 data-i18n="faq-q1">앱스토어와 구글플레이 키워드를 모두 관리해 주나요?</h3><p data-i18n="faq-a1">네. 앱스토어와 구글플레이를 대상으로 월간 키워드 관리를 진행합니다.</p></div>
+      <div class="tier-card"><h3 data-i18n="faq-q2">What does the price-click test checkout do?</h3><p data-i18n="faq-a2">Clicking the total price saves a sandbox order locally and redirects to the Google Form receipt flow.</p></div>
+      <div class="tier-card"><h3 data-i18n="faq-q3">스토어 목록 최적화와 리뷰 전략도 포함되나요?</h3><p data-i18n="faq-a3">네. 성장 및 엘리트 티어에는 스토어 목록 최적화, 키워드 추적, 리뷰 전략 지원이 포함됩니다.</p></div>
+      <div class="tier-card"><h3 data-i18n="faq-q4">이 서비스는 누구에게 적합한가요?</h3><p data-i18n="faq-a4">글로벌 시장에 진입하려는 앱 창업자, 스타트업, 에이전시, 인하우스 성장팀에 적합합니다.</p></div>
+    </div>
+  </section>
+  <section id="orders-view" class="view-section section-container">
+    <h2 class="section-title" data-i18n="orders-title">My Orders</h2>
+    <p class="section-subtitle" data-i18n="orders-subtitle">Sandbox orders are stored locally in your browser.</p>
+    <div class="orders-table-wrap">
+      <table class="orders-table">
+        <thead><tr><th data-i18n="th-date">Date</th><th data-i18n="th-order-id">Transaction ID</th><th data-i18n="th-product">Product</th><th data-i18n="th-tier">Tier</th><th data-i18n="th-email">Email</th><th data-i18n="th-qty">Qty</th><th data-i18n="th-total">Total</th><th data-i18n="th-status">Status</th></tr></thead>
+        <tbody id="orders-tbody"><tr><td colspan="8" data-i18n="no-orders-msg">No purchase records found yet.</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+  <footer class="footer"><a href="/aso/" id="footer-aso-link" class="footer-link">ASO Home</a></footer>
+  <div class="modal-backdrop" id="purchase-modal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+      <h3 id="modal-product-title" data-i18n="modal-title">Configure Your ASO Order</h3>
+      <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">Fill in the details, then click the total price for the sandbox checkout test.</p>
+      <form id="purchase-form" onsubmit="handlePurchaseSubmit(event)">
+        <div class="order-summary-box">
+          <div class="summary-row"><span data-i18n="modal-base-pkg">Package</span><strong id="modal-package-name">-</strong></div>
+          <div class="summary-row"><span data-i18n="modal-base-price-label">Base Price</span><strong id="modal-base-price">$0.00</strong></div>
+        </div>
+        <div class="form-group"><label for="order-email" data-i18n="modal-email-label">Email Address *</label><input type="email" id="order-email" placeholder="name@example.com" data-i18n="modal-email-placeholder"><span id="email-error" class="form-error" data-i18n="modal-email-error">Please enter a valid email address.</span></div>
+        <div class="form-group"><label for="order-market" data-i18n="modal-keywords-label">Target Keywords / App Angle</label><input type="text" id="order-market" placeholder="e.g. meditation app, B2B SaaS, fitness launch" data-i18n="modal-keywords-placeholder"></div>
+        <div class="form-group"><label for="order-website" data-i18n="modal-site-label">App Store / Google Play URL</label><input type="url" id="order-website" placeholder="https://apps.apple.com/... or https://play.google.com/..." data-i18n="modal-site-placeholder"></div>
+        <div class="form-row"><div class="form-group"><label for="order-quantity" data-i18n="modal-qty">Quantity</label><input type="number" id="order-quantity" value="1" min="1" max="10" oninput="updateModalPrice()"></div><div class="form-group"><label data-i18n="modal-total-amt">Total Amount</label><div class="total-price-box"><span>USD</span><span class="price-val" id="modal-total-price" style="cursor:pointer;">$0.00</span></div></div></div>
+        <div id="paypal-button-container" class="paypal-wrapper"></div>
+        <div class="payment-badges"><span class="badge-pill"><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL Secured</span></span><span class="badge-pill"><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal Verified</span></span></div>
+      </form>
+    </div>
+  </div>
+</main>
+<script src="app.js"></script>
+<script>localStorage.setItem('bibleforai_lang', 'ko');</script>
+</body>
+</html>

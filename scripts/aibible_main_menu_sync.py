@@ -39,6 +39,7 @@ CATALOG = [
     {'id': 'mail', 'cat': 'marketing', 'link': '/mailboost/', 'icon': 'fa-solid fa-envelope', 'popularity': 80},
     {'id': 'chat', 'cat': 'strategy', 'link': '/chatboost/', 'icon': 'fa-solid fa-robot', 'popularity': 87},
     {'id': 'search', 'cat': 'marketing', 'link': '/searchboost/', 'icon': 'fa-solid fa-magnifying-glass', 'popularity': 84},
+    {'id': 'aso', 'cat': 'marketing', 'link': '/aso/', 'icon': 'fa-solid fa-chart-line', 'popularity': 86},
     {'id': 'mk', 'cat': 'marketing', 'link': '/mkboost/', 'icon': 'fa-solid fa-magnifying-glass-chart', 'popularity': 78},
     {'id': 'img', 'cat': 'design-dev', 'link': '/imgboost/', 'icon': 'fa-solid fa-camera-retro', 'popularity': 83},
     {'id': 'flow', 'cat': 'design-dev', 'link': '/flowboost/', 'icon': 'fa-solid fa-diagram-project', 'popularity': 81},
