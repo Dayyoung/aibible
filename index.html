@@ -1067,6 +1067,11 @@
             color: #14b8a6;
             background: rgba(20, 184, 166, 0.08);
         }
+        .icon-localize, .icon-engtranslate {
+            color: #0D9488;
+            background: rgba(13, 148, 136, 0.08);
+            border-color: rgba(13, 148, 136, 0.15);
+        }
         .icon-aicash {
             color: #8b5cf6;
             background: rgba(139, 92, 246, 0.08);
@@ -2300,13 +2305,13 @@
             box-shadow: 0 8px 25px rgba(20, 184, 166, 0.35);
         }
 
-        .btn-localize, .btn-fdaboost {
+        .btn-localize, .btn-fdaboost, .btn-engtranslate {
             background: #0D9488;
             color: #ffffff;
             border: none;
             box-shadow: 0 4px 15px rgba(13, 148, 136, 0.2);
         }
-        .btn-localize:hover, .btn-fdaboost:hover {
+        .btn-localize:hover, .btn-fdaboost:hover, .btn-engtranslate:hover {
             background: #0f766e;
             box-shadow: 0 8px 25px rgba(13, 148, 136, 0.35);
         }
@@ -2431,10 +2436,10 @@
             box-shadow: 0 15px 35px rgba(20, 184, 166, 0.12), 0 0 15px rgba(20, 184, 166, 0.1);
         }
 
-        .card-active-localize, .card-active-fdaboost, .card-active-rep {
+        .card-active-localize, .card-active-fdaboost, .card-active-rep, .card-active-engtranslate {
             border-color: rgba(13, 148, 136, 0.15);
         }
-        .card-active-localize:hover, .card-active-fdaboost:hover, .card-active-rep:hover {
+        .card-active-localize:hover, .card-active-fdaboost:hover, .card-active-rep:hover, .card-active-engtranslate:hover {
             transform: translateY(-8px);
             border-color: #0D9488;
             box-shadow: 0 15px 35px rgba(13, 148, 136, 0.12), 0 0 15px rgba(13, 148, 136, 0.1);
@@ -2582,6 +2587,7 @@
             <span class="sidebar-category-title" id="side-cat-strategy">Strategy & Analytics</span>
             <a href="/aiboost/" class="sidebar-link"><i class="fa-solid fa-brain"></i> <span id="side-title-ai">AI Consulting</span></a>
             <a href="/localize/" class="sidebar-link"><i class="fa-solid fa-language"></i> <span id="side-title-localize">LOCALIZE — Native Translation & Localization</span></a>
+            <a href="/engtranslate/" class="sidebar-link"><i class="fa-solid fa-language"></i> <span id="side-title-engtranslate">ENGTRANSLATE — English Translation & Localization</span></a>
             <a href="/indiaboost/" class="sidebar-link"><i class="fa-solid fa-earth-asia"></i> <span id="side-title-indiaboost">INDIABOOST — India Market Entry Advisory</span></a>
             <a href="/insightboost/" class="sidebar-link"><i class="fa-solid fa-chart-bar"></i> <span id="side-title-insight">AI Data Analytics</span></a>
             <a href="/usllc/" class="sidebar-link"><i class="fa-solid fa-building-columns"></i> <span id="side-title-usllc">USLLC — US LLC & EIN Setup</span></a>
@@ -2796,6 +2802,9 @@
                 "side-title-prboost": "USLLC US LLC & EIN Setup",
                 "localize-desc": "Get polished English/Korean translation, localization, and native proofreading with a smooth checkout flow.",
                 "localize-btn": "Launch Translation Service",
+                "engtranslate-title": "ENGTRANSLATE — Premium English Translation & Localization",
+                "engtranslate-desc": "Fast business translation for reports, contracts, presentations, marketing copy, subtitles, and legal documents.",
+                "engtranslate-btn": "Launch ENGTRANSLATE Service",
                 "tradeboost-title": "TRADEBOOST — Global Trade Agency",
                 "tradeboost-desc": "Buyer sourcing, supplier discovery, market entry audits, contract review, logistics coordination, and after-sales support for cross-border trade.",
                 "tradeboost-btn": "Launch Trade Agency",
@@ -3113,6 +3122,9 @@
                 "side-title-prboost": "USLLC 글로벌 보도자료 배포",
                 "localize-desc": "부드러운 결제 흐름과 함께 영어/한국어 번역, 로컬라이제이션, 네이티브 감수를 제공합니다.",
                 "localize-btn": "번역 서비스 바로가기",
+                "engtranslate-title": "ENGTRANSLATE — 프리미엄 영어 번역 & 로컬라이제이션",
+                "engtranslate-desc": "보고서, 계약서, 프레젠테이션, 마케팅 카피, 자막, 법률 문서를 위한 빠른 영어 번역 서비스입니다.",
+                "engtranslate-btn": "ENGTRANSLATE 서비스 시작",
 
                 "tradeboost-title": "TRADEBOOST — 글로벌 무역대행",
                 "tradeboost-desc": "바이어 소싱, 공급처 발굴, 시장 진입 진단, 계약 검토, 물류 조율, 사후 지원까지 크로스보더 무역을 도와드립니다.",
@@ -3421,14 +3433,15 @@
             { id: 'webseo', category: 'design-dev', link: '/webseo/', icon: 'fa-solid fa-globe', cardClass: 'card-active-webseo', btnClass: 'btn-webseo', iconBoxClass: 'icon-webseo', popularity: 88, addedAt: 1782816107 },
             { id: 'influboost', category: 'marketing', link: '/influboost/', icon: 'fa-solid fa-bullhorn', cardClass: 'card-active-influboost', btnClass: 'btn-influboost', iconBoxClass: 'icon-influboost', popularity: 88, addedAt: 1782718377 },
             { id: 'localize', category: 'strategy', link: '/localize/', icon: 'fa-solid fa-language', cardClass: 'card-active-localize', btnClass: 'btn-localize', iconBoxClass: 'icon-localize', popularity: 86, addedAt: 1782656191 },
+            { id: 'engtranslate', category: 'strategy', link: '/engtranslate/', icon: 'fa-solid fa-language', cardClass: 'card-active-engtranslate', btnClass: 'btn-engtranslate', iconBoxClass: 'icon-engtranslate', popularity: 88, addedAt: 1782828595 },
             { id: 'tradeboost', category: 'strategy', link: '/tradeboost/', icon: 'fa-solid fa-ship', cardClass: 'card-active-tradeboost', btnClass: 'btn-tradeboost', iconBoxClass: 'icon-tradeboost', popularity: 85, addedAt: 1782652898 },
             { id: 'amzboost', category: 'marketing', link: '/amzboost/', icon: 'fa-solid fa-store', cardClass: 'card-active-amzboost', btnClass: 'btn-amzboost', iconBoxClass: 'icon-amzboost', popularity: 88, addedAt: 1782634998 },
             { id: 'amzbrand', category: 'marketing', link: '/amzbrand/', icon: 'fa-brands fa-amazon', cardClass: 'card-active-amzbrand', btnClass: 'btn-amzbrand', iconBoxClass: 'icon-amzbrand', popularity: 87, addedAt: 1782689143 },
             { id: 'tikshop', category: 'marketing', link: '/tikshop/', icon: 'fa-brands fa-tiktok', cardClass: 'card-active-tikshop', btnClass: 'btn-tikshop', iconBoxClass: 'icon-tikshop', popularity: 89, addedAt: 1782638348 },
             { id: 'rfp', category: 'strategy', link: '/rfpboost/', icon: 'fa-solid fa-file-signature', cardClass: 'card-active-rfp', btnClass: 'btn-rfp', iconBoxClass: 'icon-rfp', popularity: 84, addedAt: 1782627449 },
             { id: 'complianceboost', category: 'strategy', link: '/complianceboost/', icon: 'fa-solid fa-shield-halved', cardClass: 'card-active-complianceboost', btnClass: 'btn-complianceboost', iconBoxClass: 'icon-complianceboost', popularity: 82, addedAt: 1782689143 },
-            { id: 'globalup', category: 'strategy', link: '/globalup/', icon: 'fa-solid fa-user-tie', cardClass: 'card-active-globalup', btnClass: 'btn-globalup', iconBoxClass: 'icon-globalup', popularity: 81, addedAt: 1782825467 },
-            { id: 'eventboost', category: 'strategy', link: '/eventboost/', icon: 'fa-solid fa-microphone-lines', cardClass: 'card-active-eventboost', btnClass: 'btn-eventboost', iconBoxClass: 'icon-eventboost', popularity: 82, addedAt: 1782825467 },
+            { id: 'globalup', category: 'strategy', link: '/globalup/', icon: 'fa-solid fa-user-tie', cardClass: 'card-active-globalup', btnClass: 'btn-globalup', iconBoxClass: 'icon-globalup', popularity: 81, addedAt: 1782828596 },
+            { id: 'eventboost', category: 'strategy', link: '/eventboost/', icon: 'fa-solid fa-microphone-lines', cardClass: 'card-active-eventboost', btnClass: 'btn-eventboost', iconBoxClass: 'icon-eventboost', popularity: 82, addedAt: 1782828596 },
             { id: 'micemc', category: 'strategy', link: '/micemc/', icon: 'fa-solid fa-microphone-lines', cardClass: 'card-active-micemc', btnClass: 'btn-micemc', iconBoxClass: 'icon-micemc', popularity: 83, addedAt: 1782689143 },
             { id: 'alicat', category: 'marketing', link: '/alicat/', icon: 'fa-solid fa-box-open', cardClass: 'card-active-alicat', btnClass: 'btn-alicat', iconBoxClass: 'icon-alicat', popularity: 83, addedAt: 1782617466 },
             { id: 'etsyboost', category: 'strategy', link: '/etsyboost/', icon: 'fa-brands fa-etsy', cardClass: 'card-active-etsyboost', btnClass: 'btn-etsyboost', iconBoxClass: 'icon-etsyboost', popularity: 91, addedAt: 1782645513 },
@@ -3465,12 +3478,12 @@
             { id: 'indiaboost', category: 'strategy', link: '/indiaboost/', icon: 'fa-solid fa-earth-asia', cardClass: 'card-active-indiaboost', btnClass: 'btn-indiaboost', iconBoxClass: 'icon-indiaboost', popularity: 88, addedAt: 1782689143 },
             { id: 'ip', category: 'strategy', link: '/ipboost/', icon: 'fa-solid fa-shield-halved', cardClass: 'card-active-ip', btnClass: 'btn-ip', iconBoxClass: 'icon-ip', popularity: 82, addedAt: 1782524924 },
             { id: 'map', category: 'marketing', link: '/mapboost/', icon: 'fa-solid fa-map-location-dot', cardClass: 'card-active-map', btnClass: 'btn-map', iconBoxClass: 'icon-map', popularity: 80, addedAt: 1782580445 },
-            { id: 'growthconsult', category: 'marketing', link: '/growthconsult/', icon: 'fa-solid fa-newspaper', cardClass: 'card-active-growthconsult', btnClass: 'btn-growthconsult', iconBoxClass: 'icon-growthconsult', popularity: 90, addedAt: 1782825469 },
+            { id: 'growthconsult', category: 'marketing', link: '/growthconsult/', icon: 'fa-solid fa-newspaper', cardClass: 'card-active-growthconsult', btnClass: 'btn-growthconsult', iconBoxClass: 'icon-growthconsult', popularity: 90, addedAt: 1782828598 },
             { id: 'usllc', category: 'strategy', link: '/usllc/', icon: 'fa-solid fa-building-columns', cardClass: 'card-active-usllc', btnClass: 'btn-usllc', iconBoxClass: 'icon-usllc', popularity: 91, addedAt: 1782642308 },
-            { id: 'prboost', category: 'marketing', link: '/prboost/', icon: 'fa-solid fa-newspaper', cardClass: 'card-active-prboost', btnClass: 'btn-prboost', iconBoxClass: 'icon-prboost', popularity: 89, addedAt: 1782825468 },
-            { id: 'foreigncare', category: 'marketing', link: '/foreigncare/', icon: 'fa-solid fa-user-doctor', cardClass: 'card-active-foreigncare', btnClass: 'btn-foreigncare', iconBoxClass: 'icon-foreigncare', popularity: 90, addedAt: 1782825470 },
-            { id: 'aicash', category: 'marketing', link: '/aicash/', icon: 'fa-solid fa-wand-magic-sparkles', cardClass: 'card-active-aicash', btnClass: 'btn-aicash', iconBoxClass: 'icon-aicash', popularity: 92, addedAt: 1782825471 },
-            { id: 'dbmigrate', category: 'strategy', link: '/dbmigrate/', icon: 'fa-solid fa-database', cardClass: 'card-active-dbmigrate', btnClass: 'btn-dbmigrate', iconBoxClass: 'icon-dbmigrate', popularity: 93, addedAt: 1782825472 }
+            { id: 'prboost', category: 'marketing', link: '/prboost/', icon: 'fa-solid fa-newspaper', cardClass: 'card-active-prboost', btnClass: 'btn-prboost', iconBoxClass: 'icon-prboost', popularity: 89, addedAt: 1782828597 },
+            { id: 'foreigncare', category: 'marketing', link: '/foreigncare/', icon: 'fa-solid fa-user-doctor', cardClass: 'card-active-foreigncare', btnClass: 'btn-foreigncare', iconBoxClass: 'icon-foreigncare', popularity: 90, addedAt: 1782828599 },
+            { id: 'aicash', category: 'marketing', link: '/aicash/', icon: 'fa-solid fa-wand-magic-sparkles', cardClass: 'card-active-aicash', btnClass: 'btn-aicash', iconBoxClass: 'icon-aicash', popularity: 92, addedAt: 1782828600 },
+            { id: 'dbmigrate', category: 'strategy', link: '/dbmigrate/', icon: 'fa-solid fa-database', cardClass: 'card-active-dbmigrate', btnClass: 'btn-dbmigrate', iconBoxClass: 'icon-dbmigrate', popularity: 93, addedAt: 1782828601 }
         ];
         let activeCategory = 'all';
 

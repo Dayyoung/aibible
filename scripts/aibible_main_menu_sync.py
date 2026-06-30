@@ -23,6 +23,7 @@ CATALOG = [
     {'id': 'webseo', 'cat': 'design-dev', 'link': '/webseo/', 'icon': 'fa-solid fa-globe', 'popularity': 88},
     {'id': 'influboost', 'cat': 'marketing', 'link': '/influboost/', 'icon': 'fa-solid fa-bullhorn', 'popularity': 88},
     {'id': 'localize', 'cat': 'strategy', 'link': '/localize/', 'icon': 'fa-solid fa-language', 'popularity': 86},
+    {'id': 'engtranslate', 'cat': 'strategy', 'link': '/engtranslate/', 'icon': 'fa-solid fa-language', 'popularity': 88},
     {'id': 'tradeboost', 'cat': 'strategy', 'link': '/tradeboost/', 'icon': 'fa-solid fa-ship', 'popularity': 85},
     {'id': 'amzboost', 'cat': 'marketing', 'link': '/amzboost/', 'icon': 'fa-solid fa-store', 'popularity': 88},
     {'id': 'amzbrand', 'cat': 'marketing', 'link': '/amzbrand/', 'icon': 'fa-brands fa-amazon', 'popularity': 87},
