@@ -229,6 +229,7 @@ def patch_all_service_pages():
         '            <li><a href="/shopglobal/"><i class="fa-brands fa-shopify"></i> SHOPGLOBAL — Shopify Global Expansion</a></li>\n',
         '            <li><a href="/complianceboost/"><i class="fa-solid fa-shield-halved"></i> COMPLIANCEBOOST — Compliance Docs & Audit Prep</a></li>\n',
         '            <li><a href="/aicash/"><i class="fa-solid fa-wand-magic-sparkles"></i> AICASH — Global AI Content Monetization</a></li>\n',
+        '            <li><a href="/igboost/"><i class="fa-brands fa-instagram"></i> IGBOOST — Global Instagram Management</a></li>\n',
     ]
     tradeboost_item_en = '            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — Global Trade Agency</a></li>\n'
     globalweb_item_en = '            <li><a href="/globalweb/"><i class="fa-solid fa-globe"></i> GLOBALWEB — Multilingual Website & Global SEO</a></li>\n'
@@ -261,6 +262,8 @@ def patch_all_service_pages():
     foreigncare_item_en = '            <li><a href="/foreigncare/"><i class="fa-solid fa-user-doctor"></i> FOREIGNCARE — Foreign Customer & Patient Acquisition</a></li>\n'
     aicash_item_en = '            <li><a href="/aicash/"><i class="fa-solid fa-wand-magic-sparkles"></i> AICASH — Global AI Content Monetization</a></li>\n'
     aicash_item_ko = '            <li><a href="/aicash/"><i class="fa-solid fa-wand-magic-sparkles"></i> AICASH — 글로벌 AI 콘텐츠 수익화</a></li>\n'
+    igboost_item_en = '            <li><a href="/igboost/"><i class="fa-brands fa-instagram"></i> IGBOOST — Global Instagram Management</a></li>\n'
+    igboost_item_ko = '            <li><a href="/igboost/"><i class="fa-brands fa-instagram"></i> IGBOOST — 글로벌 인스타그램 운영</a></li>\n'
     dbmigrate_item_en = '            <li><a href="/dbmigrate/"><i class="fa-solid fa-database"></i> DBMIGRATE — Database Migration & Transfer</a></li>\n'
     dbmigrate_item_ko = '            <li><a href="/dbmigrate/"><i class="fa-solid fa-database"></i> DBMIGRATE — 데이터베이스 이전 & 전환</a></li>\n'
     foreigncare_item_ko = '            <li><a href="/foreigncare/"><i class="fa-solid fa-user-doctor"></i> FOREIGNCARE — 외국인 고객·환자 유치</a></li>\n'
@@ -288,6 +291,7 @@ def patch_all_service_pages():
             prboost_item_ko if '/kr/' in str(path) else prboost_item_en,
             foreigncare_item_ko if '/kr/' in str(path) else foreigncare_item_en,
             aicash_item_ko if '/kr/' in str(path) else aicash_item_en,
+            igboost_item_ko if '/kr/' in str(path) else igboost_item_en,
             dbmigrate_item_ko if '/kr/' in str(path) else dbmigrate_item_en,
             webseo_item_ko if '/kr/' in str(path) else webseo_item_en,
             logoboost_item_ko if '/kr/' in str(path) else logoboost_item_en,
