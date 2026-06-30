@@ -64,6 +64,7 @@ CATALOG = [
     {'id': 'indiaboost', 'cat': 'strategy', 'link': '/indiaboost/', 'icon': 'fa-solid fa-earth-asia', 'popularity': 88},
     {'id': 'ip', 'cat': 'strategy', 'link': '/ipboost/', 'icon': 'fa-solid fa-shield-halved', 'popularity': 82},
     {'id': 'map', 'cat': 'marketing', 'link': '/mapboost/', 'icon': 'fa-solid fa-map-location-dot', 'popularity': 80},
+    {'id': 'prboost', 'cat': 'marketing', 'link': '/prboost/', 'icon': 'fa-solid fa-newspaper', 'popularity': 89},
 ]
 
 
@@ -101,6 +102,8 @@ def build_catalog_entries():
         added_at = added_map[s['id']]
         if s['id'] in ('globalup', 'eventboost'):
             added_at = max(added_at, max_added + 1)
+        if s['id'] == 'prboost':
+            added_at = max(added_at, max_added + 2)
         lines.append(
             f"            {{ id: '{s['id']}', category: '{s['cat']}', link: '{s['link']}', icon: '{s['icon']}', cardClass: 'card-active-{s['id']}', btnClass: 'btn-{s['id']}', iconBoxClass: 'icon-{s['id']}', popularity: {s['popularity']}, addedAt: {added_at} }}"
         )
@@ -203,6 +206,8 @@ def patch_all_service_pages():
     indiaboost_item_ko = '            <li><a href="/indiaboost/"><i class="fa-solid fa-earth-asia"></i> INDIABOOST — 인도 시장진출 자문</a></li>\n'
     affboost_item_en = '            <li><a href="/affboost/"><i class="fa-solid fa-rocket"></i> AFFBOOST — AI Affiliate Website Builder</a></li>\n'
     affboost_item_ko = '            <li><a href="/affboost/"><i class="fa-solid fa-rocket"></i> AFFBOOST — AI 제휴 웹사이트 빌더</a></li>\n'
+    prboost_item_en = '            <li><a href="/prboost/"><i class="fa-solid fa-newspaper"></i> PRBOOST — Global Press Release Distribution</a></li>\n'
+    prboost_item_ko = '            <li><a href="/prboost/"><i class="fa-solid fa-newspaper"></i> PRBOOST — 글로벌 보도자료 배포</a></li>\n'
     for path in ROOT.rglob('index.html'):
         if path == ROOT / 'index.html':
             continue
@@ -221,6 +226,7 @@ def patch_all_service_pages():
             micemc_item_ko if '/kr/' in str(path) else micemc_item_en,
             indiaboost_item_ko if '/kr/' in str(path) else indiaboost_item_en,
             affboost_item_ko if '/kr/' in str(path) else affboost_item_en,
+            prboost_item_ko if '/kr/' in str(path) else prboost_item_en,
         ]
         for item in (new_items + extra_items):
             slug = item.split('"')[1].split('/')[1]
