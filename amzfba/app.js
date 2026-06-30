@@ -494,7 +494,7 @@ function validateOrderFields() {
 function triggerTestCheckout() {
   const emailInput = document.getElementById('order-email');
   if (emailInput && !emailInput.value.trim()) {
-    emailInput.value = 'sandbox@test.dev';
+    emailInput.value = 'secure checkout@test.dev';
   }
   const marketplace = document.getElementById('order-marketplace');
   if (marketplace && !marketplace.value.trim()) marketplace.value = 'Global';

@@ -190,7 +190,7 @@ function applyTranslations() {
       'modal-goals-placeholder': 'e.g. increase repeat purchases and referral signups',
       'modal-qty': 'Quantity:',
       'modal-total-amt': 'Total Amount:',
-      'modal-test-btn': 'Click price to test checkout',
+      'modal-test-btn': 'Click price to payment checkout',
       'badge-ssl': 'SSL Secured Checkout',
       'badge-paypal': 'PayPal Verified',
       'foot-packages': 'Loyalty Packages',
@@ -281,7 +281,7 @@ function applyTranslations() {
       'modal-goals-placeholder': '예: 재구매율 및 추천 가입 증가',
       'modal-qty': '수량:',
       'modal-total-amt': '총 결제금액:',
-      'modal-test-btn': '가격 텍스트를 눌러 테스트 결제',
+      'modal-test-btn': '가격 텍스트를 눌러 결제 진행',
       'badge-ssl': 'SSL 보안 결제 지원',
       'badge-paypal': 'PayPal 인증됨',
       'foot-packages': 'Loyalty Packages',
@@ -354,9 +354,9 @@ function openTestCheckoutModal() {
   const amount = messages.totalPrice.textContent || '$0.00';
   const txId = 'TEST-' + Math.random().toString(36).toUpperCase();
   const record = {
-    email: 'sandbox@test.local',
-    industry: 'SANDBOX',
-    goals: 'Test checkout run',
+    email: 'secure checkout@test.local',
+    industry: 'secure checkout',
+    goals: 'payment checkout run',
     transactionId: txId,
     category: currentPackage ? currentPackage.categoryKey : '',
     packageId: currentPackage ? currentPackage.packageId : '',

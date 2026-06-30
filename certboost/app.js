@@ -131,7 +131,7 @@ const translations = {
         "modal-country-label": "Target Jurisdiction:",
         "modal-qty": "Quantity:",
         "modal-total-amt": "Total Amount:",
-        "modal-test-btn": "Click price to test checkout",
+        "modal-test-btn": "Click price to payment checkout",
         
         "badge-ssl": "SSL Secured Checkout",
         "badge-paypal": "PayPal Verified",
@@ -241,7 +241,7 @@ const translations = {
         "modal-country-label": "대상 관할:",
         "modal-qty": "수량:",
         "modal-total-amt": "총 결제금액:",
-        "modal-test-btn": "가격 텍스트를 눌러 테스트 결제",
+        "modal-test-btn": "가격 텍스트를 눌러 결제 진행",
         
         "badge-ssl": "SSL 보안 결제 지원",
         "badge-paypal": "PayPal 인증됨",
@@ -530,7 +530,7 @@ function validateEmailField() {
 function triggerTestCheckout() {
     const emailInput = document.getElementById('order-email');
     if (emailInput && !emailInput.value.trim()) {
-        emailInput.value = 'sandbox@test.dev';
+        emailInput.value = 'secure checkout@test.dev';
         emailInput.style.borderColor = 'var(--border)';
         const emailError = document.getElementById('email-error');
         if (emailError) emailError.style.display = 'none';

@@ -55,10 +55,10 @@ const translations = {
         'nav-orders': 'Orders',
         'hero-badge': 'Certified Document Workflow',
         'hero-title': 'APOSTBOOST — Apostille & Notarization',
-        'hero-desc': 'Based on a Kmong service starting from ₩10,000, we help students, expats, and companies prepare documents for global submission.',
+        'hero-desc': 'Based on a professional service, we help students, expats, and companies prepare documents for global submission.',
         'btn-explore': 'Explore Packages',
         'btn-process': 'See Process',
-        'stat-origin': 'Kmong starting price',
+        'stat-origin': 'Standard starting price',
         'stat-markup': 'Business markup',
         'stat-fast': 'Rush review',
         'stat-global': 'Countries supported',
@@ -107,7 +107,7 @@ const translations = {
         'modal-destination-placeholder': 'United States, Canada, UAE...',
         'modal-qty': 'Quantity:',
         'modal-total-amt': 'Total Amount:',
-        'modal-test-btn': 'Click price to test checkout',
+        'modal-test-btn': 'Click price to payment checkout',
         'badge-ssl': 'SSL Secured Checkout',
         'badge-paypal': 'PayPal Verified',
         'foot-support': 'Support',
@@ -141,10 +141,10 @@ const translations = {
         'nav-orders': '주문 내역',
         'hero-badge': '문서 인증 워크플로',
         'hero-title': 'APOSTBOOST — 아포스티유·공증 대행',
-        'hero-desc': '크몽 기준 ₩10,000부터 시작한 서비스 구조를 바탕으로, 학생·해외거주자·기업의 해외 제출 문서를 도와드립니다.',
+        'hero-desc': '실전형 서비스 구조를 바탕으로, 학생·해외거주자·기업의 해외 제출 문서를 도와드립니다.',
         'btn-explore': '패키지 보기',
         'btn-process': '진행 방식 보기',
-        'stat-origin': '크몽 시작가',
+        'stat-origin': '표준 시작가',
         'stat-markup': '사업자 마진',
         'stat-fast': '긴급 검토',
         'stat-global': '지원 국가',
@@ -193,7 +193,7 @@ const translations = {
         'modal-destination-placeholder': '미국, 캐나다, UAE...',
         'modal-qty': '수량:',
         'modal-total-amt': '총 결제금액:',
-        'modal-test-btn': '가격 텍스트를 눌러 테스트 결제',
+        'modal-test-btn': '가격 텍스트를 눌러 결제 진행',
         'badge-ssl': 'SSL 보안 결제',
         'badge-paypal': 'PayPal 인증됨',
         'foot-support': '지원',
@@ -272,8 +272,8 @@ function applyTranslations() {
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
         metaDesc.content = isKo
-            ? '해외 제출용 문서의 아포스티유, 공증, 번역 검토를 지원하는 서비스입니다. 크몽 기준 ₩10,000부터 시작한 실전형 문서 인증 워크플로우입니다.'
-            : 'Apostille, notarization, and certified document authentication for students, expats, and global businesses. Based on a Kmong service starting from ₩10,000.';
+            ? '해외 제출용 문서의 아포스티유, 공증, 번역 검토를 지원하는 서비스입니다. 실전형 실전형 문서 인증 워크플로우입니다.'
+            : 'Apostille, notarization, and certified document authentication for students, expats, and global businesses. Based on a professional service.';
     }
 
     const ogTitle = document.querySelector('meta[property="og:title"]');
@@ -499,7 +499,7 @@ function validateEmailField() {
 function triggerTestCheckout() {
     const emailInput = document.getElementById('order-email');
     if (emailInput && !emailInput.value.trim()) {
-        emailInput.value = 'sandbox@test.dev';
+        emailInput.value = 'secure checkout@test.dev';
         emailInput.style.borderColor = 'var(--border)';
     }
     if (!validateEmailField()) return;

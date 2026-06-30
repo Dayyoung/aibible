@@ -497,7 +497,7 @@ function validateEmailField() {
 function triggerTestCheckout() {
     const emailInput = document.getElementById('order-email');
     if (emailInput && !emailInput.value.trim()) {
-        emailInput.value = 'sandbox@test.dev';
+        emailInput.value = 'secure checkout@test.dev';
     }
     if (!validateEmailField()) return;
     saveLocalOrder({ id: `TEST-${Date.now()}`, isTest: true });

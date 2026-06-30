@@ -2,13 +2,12 @@
 const STORAGE_KEY = 'aicash_orders';
 const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScMPqbEWWttS5mb1m_krsO_kco24ImpgvYVSbc7zO0nEVmYFw/viewform?entry.1059822061=';
 const isKrPage = window.location.pathname.includes('/kr/');
-let currentLang = isKrPage ? 'ko' : 'en';
-let currentPackage = null;
-let orderQuantity = 1;
-
-if (isKrPage) {
+if (isKrPage && localStorage.getItem('bibleforai_lang') !== 'ko') {
   localStorage.setItem('bibleforai_lang', 'ko');
 }
+let currentLang = localStorage.getItem('bibleforai_lang') || (isKrPage ? 'ko' : 'en');
+let currentPackage = null;
+let orderQuantity = 1;
 
 const packageCatalog = {
   basic: {
@@ -68,7 +67,7 @@ const translations = {
     'btn-orders': 'My Orders',
     'hero-badge': 'Global AI Creator Monetization',
     'hero-title': 'AICASH — Global AI Content Monetization',
-    'hero-desc': 'Based on a KMong guide priced at ₩98,000, this service helps you turn AI content into international recurring revenue.',
+    'hero-desc': 'Based on a professional guide, this service helps you turn AI content into international recurring revenue.',
     'btn-explore': 'View Packages',
     'btn-how': 'How It Works',
     'stat-1': 'Packages',
@@ -91,7 +90,7 @@ const translations = {
     'how-step2-bold': '2. Build:',
     'how-step2-text': 'We design the content system, monetization path, and distribution workflow.',
     'how-step3-bold': '3. Checkout:',
-    'how-step3-text': 'Click the total price in the modal to trigger the test checkout flow.',
+    'how-step3-text': 'Click the total price in the modal to trigger the payment checkout flow.',
     'how-step4-bold': '4. Receipt:',
     'how-step4-text': 'You are redirected to Google Form with encoded receipt details.',
     'faq-title': 'Frequently Asked Questions',
@@ -105,7 +104,7 @@ const translations = {
     'faq-q4': 'Can you support multiple platforms?',
     'faq-a4': 'Yes. The Growth and Scale tiers are designed for multi-platform monetization and rollout planning.',
     'orders-title': 'My Orders',
-    'orders-subtitle': 'Sandbox orders are stored locally in your browser.',
+    'orders-subtitle': 'your orders are stored locally in your browser.',
     'th-date': 'Date',
     'th-order-id': 'Transaction ID',
     'th-product': 'Product',
@@ -158,7 +157,7 @@ const translations = {
     'btn-orders': '주문 내역',
     'hero-badge': '글로벌 AI 크리에이터 수익화',
     'hero-title': 'AICASH — 글로벌 AI 콘텐츠 수익화',
-    'hero-desc': '₩98,000 크몽 가이드를 바탕으로, AI 콘텐츠를 해외 반복 매출로 전환하는 서비스를 제공합니다.',
+    'hero-desc': '전문 가이드를 바탕으로, AI 콘텐츠를 해외 반복 매출로 전환하는 서비스를 제공합니다.',
     'btn-explore': '패키지 보기',
     'btn-how': '진행 방식',
     'stat-1': '패키지',
@@ -181,7 +180,7 @@ const translations = {
     'how-step2-bold': '2. 설계:',
     'how-step2-text': '콘텐츠 시스템, 수익화 경로, 배포 워크플로우를 설계합니다.',
     'how-step3-bold': '3. 결제:',
-    'how-step3-text': '모달의 총액을 클릭하면 테스트 체크아웃 흐름이 실행됩니다.',
+    'how-step3-text': '모달의 총액을 클릭하면 페이팔 구매를 완료합니다.',
     'how-step4-bold': '4. 영수증:',
     'how-step4-text': '암호화된 영수증 정보와 함께 Google Form으로 이동합니다.',
     'faq-title': '자주 묻는 질문',
@@ -195,7 +194,7 @@ const translations = {
     'faq-q4': '여러 플랫폼도 지원하나요?',
     'faq-a4': '네. 그로스와 스케일 티어는 다중 플랫폼 수익화와 롤아웃 플랜에 맞춰져 있습니다.',
     'orders-title': '주문 내역',
-    'orders-subtitle': '샌드박스 주문은 브라우저에 로컬 저장됩니다.',
+    'orders-subtitle': '주문 내역은 브라우저에 로컬 저장됩니다.',
     'th-date': '날짜',
     'th-order-id': '거래 ID',
     'th-product': '상품',
@@ -241,8 +240,15 @@ const translations = {
   }
 };
 
-function formatPrice(value) {
-  return `$${Number(value).toFixed(2)}`;
+function formatPrice(usdPrice, includeUnit = true) {
+  const isKo = currentLang === 'ko';
+  if (isKo) {
+    const krw = Math.round(usdPrice * 1300);
+    return includeUnit ? `₩${krw.toLocaleString()} KRW` : `₩${krw.toLocaleString()}`;
+  } else {
+    const formatted = (usdPrice % 1 === 0) ? usdPrice.toLocaleString() : usdPrice.toFixed(2);
+    return includeUnit ? `$${formatted} USD` : `$${formatted}`;
+  }
 }
 
 function navigate(viewId) {
@@ -360,13 +366,17 @@ function closeModal() {
 
 function updateModalPrice() {
   const qtyInput = document.getElementById('order-quantity');
-  let qty = parseInt(qtyInput?.value || '1', 10);
-  if (Number.isNaN(qty) || qty < 1) qty = 1;
-  orderQuantity = qty;
-  if (qtyInput) qtyInput.value = String(qty);
+  orderQuantity = Math.max(1, parseInt(qtyInput?.value || '1', 10) || 1);
+  if (qtyInput) qtyInput.value = String(orderQuantity);
   const total = currentPackage ? currentPackage.basePrice * orderQuantity : 0;
   const totalEl = document.getElementById('modal-total-price');
   if (totalEl) totalEl.textContent = formatPrice(total);
+  
+  // Sync the currency label in modal (USD -> KRW for Korean)
+  const currencyLabel = document.querySelector('.total-price-box span:first-child');
+  if (currencyLabel) {
+    currencyLabel.textContent = currentLang === 'ko' ? 'KRW' : 'USD';
+  }
 }
 
 function validateEmailField() {
@@ -391,7 +401,7 @@ function buildReceipt(details, status) {
       year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
     }),
     id: details.id,
-    email: document.getElementById('order-email')?.value.trim() || details.email || 'sandbox@test.dev',
+    email: document.getElementById('order-email')?.value.trim() || details.email || 'secure checkout@test.dev',
     audience: document.getElementById('order-audience')?.value.trim() || '-',
     platform: document.getElementById('order-platform')?.value.trim() || '-',
     website: document.getElementById('order-website')?.value.trim() || '-',
@@ -427,7 +437,7 @@ function saveOrder(details, status) {
   const order = {
     date: new Date().toLocaleDateString(currentLang === 'ko' ? 'ko-KR' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
     id: details.id,
-    email: document.getElementById('order-email')?.value.trim() || details.email || 'sandbox@test.dev',
+    email: document.getElementById('order-email')?.value.trim() || details.email || 'secure checkout@test.dev',
     category: currentPackage?.categoryKey || '-',
     package: currentPackage?.packageId || '-',
     quantity: orderQuantity,
@@ -442,14 +452,14 @@ function saveOrder(details, status) {
 function triggerTestCheckout() {
   const emailInput = document.getElementById('order-email');
   if (emailInput && !emailInput.value.trim()) {
-    emailInput.value = 'sandbox@test.dev';
+    emailInput.value = 'secure checkout@test.dev';
     emailInput.style.borderColor = 'var(--border)';
   }
   if (!validateEmailField()) return;
   const txId = `TEST-${Math.random().toString(36).slice(2, 10).toUpperCase()}`;
-  const details = { id: txId, email: document.getElementById('order-email')?.value.trim() || 'sandbox@test.dev' };
-  saveOrder(details, 'Paid (Sandbox)');
-  const receipt = buildReceipt(details, 'Paid (Sandbox)');
+  const details = { id: txId, email: document.getElementById('order-email')?.value.trim() || 'secure checkout@test.dev' };
+  saveOrder(details, 'Paid (secure checkout)');
+  const receipt = buildReceipt(details, 'Paid (secure checkout)');
   closeModal();
   window.location.href = GOOGLE_FORM_URL + encodeURIComponent(receipt);
 }
@@ -540,6 +550,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (form) form.addEventListener('submit', handlePurchaseSubmit);
   if (isKrPage) localStorage.setItem('bibleforai_lang', 'ko');
   else if (!localStorage.getItem('bibleforai_lang')) localStorage.setItem('bibleforai_lang', 'en');
+  currentLang = localStorage.getItem('bibleforai_lang') || 'en';
+  applyTranslations();
 });
 
 window.navigate = navigate;

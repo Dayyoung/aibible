@@ -462,6 +462,7 @@
             min-height: 100vh;
             width: 100%;
             overflow-x: hidden;
+            overflow-y: hidden;
             display: flex;
             flex-direction: column;
             position: relative;
@@ -2653,6 +2654,43 @@
         background: rgba(20, 184, 166, 0.08);
         border-color: rgba(20, 184, 166, 0.15);
     }
+
+    /* Additional Services Styles */
+    .card-active-japanbiz { border-color: rgba(225, 29, 72, 0.15); }
+    .card-active-japanbiz:hover { transform: translateY(-8px); border-color: #e11d48; box-shadow: 0 15px 35px rgba(225, 29, 72, 0.12), 0 0 15px rgba(225, 29, 72, 0.1); }
+    .btn-japanbiz { background: #e11d48; color: #ffffff; border: none; box-shadow: 0 4px 15px rgba(225, 29, 72, 0.2); }
+    .btn-japanbiz:hover { background: #be123c; box-shadow: 0 8px 25px rgba(225, 29, 72, 0.35); }
+    .icon-japanbiz { color: #e11d48; background: rgba(225, 29, 72, 0.08); border-color: rgba(225, 29, 72, 0.15); }
+
+    .card-active-cloudinfra { border-color: rgba(2, 132, 199, 0.15); }
+    .card-active-cloudinfra:hover { transform: translateY(-8px); border-color: #0284c7; box-shadow: 0 15px 35px rgba(2, 132, 199, 0.12), 0 0 15px rgba(2, 132, 199, 0.1); }
+    .btn-cloudinfra { background: #0284c7; color: #ffffff; border: none; box-shadow: 0 4px 15px rgba(2, 132, 199, 0.2); }
+    .btn-cloudinfra:hover { background: #0369a1; box-shadow: 0 8px 25px rgba(2, 132, 199, 0.35); }
+    .icon-cloudinfra { color: #0284c7; background: rgba(2, 132, 199, 0.08); border-color: rgba(2, 132, 199, 0.15); }
+
+    .card-active-amzfba { border-color: rgba(249, 115, 22, 0.15); }
+    .card-active-amzfba:hover { transform: translateY(-8px); border-color: #f97316; box-shadow: 0 15px 35px rgba(249, 115, 22, 0.12), 0 0 15px rgba(249, 115, 22, 0.1); }
+    .btn-amzfba { background: #f97316; color: #ffffff; border: none; box-shadow: 0 4px 15px rgba(249, 115, 22, 0.2); }
+    .btn-amzfba:hover { background: #ea580c; box-shadow: 0 8px 25px rgba(249, 115, 22, 0.35); }
+    .icon-amzfba { color: #f97316; background: rgba(249, 115, 22, 0.08); border-color: rgba(249, 115, 22, 0.15); }
+
+    .card-active-aso { border-color: rgba(217, 70, 239, 0.15); }
+    .card-active-aso:hover { transform: translateY(-8px); border-color: #d946ef; box-shadow: 0 15px 35px rgba(217, 70, 239, 0.12), 0 0 15px rgba(217, 70, 239, 0.1); }
+    .btn-aso { background: #d946ef; color: #ffffff; border: none; box-shadow: 0 4px 15px rgba(217, 70, 239, 0.2); }
+    .btn-aso:hover { background: #c026d3; box-shadow: 0 8px 25px rgba(217, 70, 239, 0.35); }
+    .icon-aso { color: #d946ef; background: rgba(217, 70, 239, 0.08); border-color: rgba(217, 70, 239, 0.15); }
+
+    .card-active-prboost { border-color: rgba(220, 38, 38, 0.15); }
+    .card-active-prboost:hover { transform: translateY(-8px); border-color: #dc2626; box-shadow: 0 15px 35px rgba(220, 38, 38, 0.12), 0 0 15px rgba(220, 38, 38, 0.1); }
+    .btn-prboost { background: #dc2626; color: #ffffff; border: none; box-shadow: 0 4px 15px rgba(220, 38, 38, 0.2); }
+    .btn-prboost:hover { background: #b91c1c; box-shadow: 0 8px 25px rgba(220, 38, 38, 0.35); }
+    .icon-prboost { color: #dc2626; background: rgba(220, 38, 38, 0.08); border-color: rgba(220, 38, 38, 0.15); }
+
+    .card-active-foreigncare { border-color: rgba(5, 150, 105, 0.15); }
+    .card-active-foreigncare:hover { transform: translateY(-8px); border-color: #059669; box-shadow: 0 15px 35px rgba(5, 150, 105, 0.12), 0 0 15px rgba(5, 150, 105, 0.1); }
+    .btn-foreigncare { background: #059669; color: #ffffff; border: none; box-shadow: 0 4px 15px rgba(5, 150, 105, 0.2); }
+    .btn-foreigncare:hover { background: #047857; box-shadow: 0 8px 25px rgba(5, 150, 105, 0.35); }
+    .icon-foreigncare { color: #059669; background: rgba(5, 150, 105, 0.08); border-color: rgba(5, 150, 105, 0.15); }
 </style>
 </head>
 <body>
@@ -3708,7 +3746,7 @@
         
         const servicesCatalog = [
             { id: 'land', category: 'design-dev', link: '/landPage/', icon: 'fa-solid fa-code', cardClass: 'card-active-land', btnClass: 'btn-land', iconBoxClass: 'icon-land', popularity: 88, addedAt: 1782455609 },
-            { id: 'pdp', category: 'design-dev', link: '/pdpboost/', icon: 'fa-solid fa-box-open', cardClass: 'card-active-pdp', btnClass: 'btn-pdp', iconBoxClass: 'icon-pdp', popularity: 86, addedAt: 1782857456 },
+            { id: 'pdp', category: 'design-dev', link: '/pdpboost/', icon: 'fa-solid fa-box-open', cardClass: 'card-active-pdp', btnClass: 'btn-pdp', iconBoxClass: 'icon-pdp', popularity: 86, addedAt: 1782858122 },
             { id: 'mvp', category: 'design-dev', link: '/mvpboost/', icon: 'fa-solid fa-rocket', cardClass: 'card-active-mvp', btnClass: 'btn-mvp', iconBoxClass: 'icon-mvp', popularity: 91, addedAt: 1782602632 },
             { id: 'aideploy', category: 'design-dev', link: '/aideploy/', icon: 'fa-solid fa-cloud-arrow-up', cardClass: 'card-active-aideploy', btnClass: 'btn-aideploy', iconBoxClass: 'icon-aideploy', popularity: 93, addedAt: 1782547509 },
             { id: 'autoboost', category: 'design-dev', link: '/autoboost/', icon: 'fa-solid fa-arrows-rotate', cardClass: 'card-active-autoboost', btnClass: 'btn-autoboost', iconBoxClass: 'icon-autoboost', popularity: 89, addedAt: 1782575846 },
@@ -3734,8 +3772,8 @@
             { id: 'tikshop', category: 'marketing', link: '/tikshop/', icon: 'fa-brands fa-tiktok', cardClass: 'card-active-tikshop', btnClass: 'btn-tikshop', iconBoxClass: 'icon-tikshop', popularity: 89, addedAt: 1782638348 },
             { id: 'rfp', category: 'strategy', link: '/rfpboost/', icon: 'fa-solid fa-file-signature', cardClass: 'card-active-rfp', btnClass: 'btn-rfp', iconBoxClass: 'icon-rfp', popularity: 84, addedAt: 1782627449 },
             { id: 'complianceboost', category: 'strategy', link: '/complianceboost/', icon: 'fa-solid fa-shield-halved', cardClass: 'card-active-complianceboost', btnClass: 'btn-complianceboost', iconBoxClass: 'icon-complianceboost', popularity: 82, addedAt: 1782689143 },
-            { id: 'globalup', category: 'strategy', link: '/globalup/', icon: 'fa-solid fa-user-tie', cardClass: 'card-active-globalup', btnClass: 'btn-globalup', iconBoxClass: 'icon-globalup', popularity: 81, addedAt: 1782857457 },
-            { id: 'eventboost', category: 'strategy', link: '/eventboost/', icon: 'fa-solid fa-microphone-lines', cardClass: 'card-active-eventboost', btnClass: 'btn-eventboost', iconBoxClass: 'icon-eventboost', popularity: 82, addedAt: 1782857457 },
+            { id: 'globalup', category: 'strategy', link: '/globalup/', icon: 'fa-solid fa-user-tie', cardClass: 'card-active-globalup', btnClass: 'btn-globalup', iconBoxClass: 'icon-globalup', popularity: 81, addedAt: 1782858123 },
+            { id: 'eventboost', category: 'strategy', link: '/eventboost/', icon: 'fa-solid fa-microphone-lines', cardClass: 'card-active-eventboost', btnClass: 'btn-eventboost', iconBoxClass: 'icon-eventboost', popularity: 82, addedAt: 1782858123 },
             { id: 'micemc', category: 'strategy', link: '/micemc/', icon: 'fa-solid fa-microphone-lines', cardClass: 'card-active-micemc', btnClass: 'btn-micemc', iconBoxClass: 'icon-micemc', popularity: 83, addedAt: 1782689143 },
             { id: 'alicat', category: 'marketing', link: '/alicat/', icon: 'fa-solid fa-box-open', cardClass: 'card-active-alicat', btnClass: 'btn-alicat', iconBoxClass: 'icon-alicat', popularity: 83, addedAt: 1782617466 },
             { id: 'etsyboost', category: 'strategy', link: '/etsyboost/', icon: 'fa-brands fa-etsy', cardClass: 'card-active-etsyboost', btnClass: 'btn-etsyboost', iconBoxClass: 'icon-etsyboost', popularity: 91, addedAt: 1782645513 },
@@ -3773,24 +3811,13 @@
             { id: 'indiaboost', category: 'strategy', link: '/indiaboost/', icon: 'fa-solid fa-earth-asia', cardClass: 'card-active-indiaboost', btnClass: 'btn-indiaboost', iconBoxClass: 'icon-indiaboost', popularity: 88, addedAt: 1782689143 },
             { id: 'ip', category: 'strategy', link: '/ipboost/', icon: 'fa-solid fa-shield-halved', cardClass: 'card-active-ip', btnClass: 'btn-ip', iconBoxClass: 'icon-ip', popularity: 82, addedAt: 1782524924 },
             { id: 'map', category: 'marketing', link: '/mapboost/', icon: 'fa-solid fa-map-location-dot', cardClass: 'card-active-map', btnClass: 'btn-map', iconBoxClass: 'icon-map', popularity: 80, addedAt: 1782580445 },
-            { id: 'growthconsult', category: 'marketing', link: '/growthconsult/', icon: 'fa-solid fa-newspaper', cardClass: 'card-active-growthconsult', btnClass: 'btn-growthconsult', iconBoxClass: 'icon-growthconsult', popularity: 90, addedAt: 1782857459 },
-            { id: 'usllc', category: 'strategy', link: '/usllc/', icon: 'fa-solid fa-building-columns', cardClass: 'card-active-usllc', btnClass: 'btn-usllc', iconBoxClass: 'icon-usllc', popularity: 91, addedAt: 1782857463 },
-            { id: 'sbvi', category: 'strategy', link: '/sbvi/', icon: 'fa-solid fa-building-columns', cardClass: 'card-active-sbvi', btnClass: 'btn-sbvi', iconBoxClass: 'icon-sbvi', popularity: 92, addedAt: 1782857464 },
-            { id: 'prboost', category: 'marketing', link: '/prboost/', icon: 'fa-solid fa-newspaper', cardClass: 'card-active-prboost', btnClass: 'btn-prboost', iconBoxClass: 'icon-prboost', popularity: 89, addedAt: 1782857458 },
-            { id: 'foreigncare', category: 'marketing', link: '/foreigncare/', icon: 'fa-solid fa-user-doctor', cardClass: 'card-active-foreigncare', btnClass: 'btn-foreigncare', iconBoxClass: 'icon-foreigncare', popularity: 90, addedAt: 1782857460 },
-            { id: 'aicash', category: 'marketing', link: '/aicash/', icon: 'fa-solid fa-wand-magic-sparkles', cardClass: 'card-active-aicash', btnClass: 'btn-aicash', iconBoxClass: 'icon-aicash', popularity: 92, addedAt: 1782857461 },
-            { id: 'dbmigrate', category: 'strategy', link: '/dbmigrate/', icon: 'fa-solid fa-database', cardClass: 'card-active-dbmigrate', btnClass: 'btn-dbmigrate', iconBoxClass: 'icon-dbmigrate', popularity: 93, addedAt: 1782857462 },
-            { id: 'apostboost', category: 'strategy', link: '/apostboost/', icon: 'fa-solid fa-stamp', cardClass: 'card-active-apost', btnClass: 'btn-apost', iconBoxClass: 'icon-apost', popularity: 85, addedAt: 1782900001 },
-            { id: 'appboost', category: 'marketing', link: '/appboost/', icon: 'fa-solid fa-mobile-screen-button', cardClass: 'card-active-app', btnClass: 'btn-app', iconBoxClass: 'icon-app', popularity: 88, addedAt: 1782900002 },
-            { id: 'b2bdb', category: 'strategy', link: '/b2bdb/', icon: 'fa-solid fa-envelope-open-text', cardClass: 'card-active-b2b', btnClass: 'btn-b2b', iconBoxClass: 'icon-b2b', popularity: 90, addedAt: 1782900003 },
-            { id: 'b2cdb', category: 'strategy', link: '/b2cdb/', icon: 'fa-solid fa-users', cardClass: 'card-active-b2c', btnClass: 'btn-b2c', iconBoxClass: 'icon-b2c', popularity: 89, addedAt: 1782900004 },
-            { id: 'boostsm', category: 'marketing', link: '/boostsm/', icon: 'fa-solid fa-share-nodes', cardClass: 'card-active-smm', btnClass: 'btn-smm', iconBoxClass: 'icon-smm', popularity: 92, addedAt: 1782900005 },
-            { id: 'databoost', category: 'design-dev', link: '/databoost/', icon: 'fa-solid fa-database', cardClass: 'card-active-data', btnClass: 'btn-data', iconBoxClass: 'icon-data', popularity: 87, addedAt: 1782900006 },
-            { id: 'opencode', category: 'design-dev', link: '/opencode/', icon: 'fa-solid fa-code', cardClass: 'card-active-opencode', btnClass: 'btn-opencode', iconBoxClass: 'icon-opencode', popularity: 94, addedAt: 1782900007 },
-            { id: 'repboost', category: 'marketing', link: '/repboost/', icon: 'fa-solid fa-comments', cardClass: 'card-active-repboost', btnClass: 'btn-repboost', iconBoxClass: 'icon-repboost', popularity: 86, addedAt: 1782900008 },
-            { id: 'sourcboost', category: 'strategy', link: '/sourcboost/', icon: 'fa-solid fa-shield-halved', cardClass: 'card-active-cert', btnClass: 'btn-cert', iconBoxClass: 'icon-cert', popularity: 85, addedAt: 1782900009 },
-            { id: 'ustax', category: 'strategy', link: '/ustax/', icon: 'fa-solid fa-receipt', cardClass: 'card-active-ustax2', btnClass: 'btn-ustax2', iconBoxClass: 'icon-ustax2', popularity: 88, addedAt: 1782900010 },
-            { id: 'ustaxboost', category: 'strategy', link: '/ustaxboost/', icon: 'fa-solid fa-coins', cardClass: 'card-active-ustax', btnClass: 'btn-ustax', iconBoxClass: 'icon-ustax', popularity: 91, addedAt: 1782900011 }
+            { id: 'growthconsult', category: 'marketing', link: '/growthconsult/', icon: 'fa-solid fa-newspaper', cardClass: 'card-active-growthconsult', btnClass: 'btn-growthconsult', iconBoxClass: 'icon-growthconsult', popularity: 90, addedAt: 1782858125 },
+            { id: 'usllc', category: 'strategy', link: '/usllc/', icon: 'fa-solid fa-building-columns', cardClass: 'card-active-usllc', btnClass: 'btn-usllc', iconBoxClass: 'icon-usllc', popularity: 91, addedAt: 1782858129 },
+            { id: 'sbvi', category: 'strategy', link: '/sbvi/', icon: 'fa-solid fa-building-columns', cardClass: 'card-active-sbvi', btnClass: 'btn-sbvi', iconBoxClass: 'icon-sbvi', popularity: 92, addedAt: 1782858130 },
+            { id: 'prboost', category: 'marketing', link: '/prboost/', icon: 'fa-solid fa-newspaper', cardClass: 'card-active-prboost', btnClass: 'btn-prboost', iconBoxClass: 'icon-prboost', popularity: 89, addedAt: 1782858124 },
+            { id: 'foreigncare', category: 'marketing', link: '/foreigncare/', icon: 'fa-solid fa-user-doctor', cardClass: 'card-active-foreigncare', btnClass: 'btn-foreigncare', iconBoxClass: 'icon-foreigncare', popularity: 90, addedAt: 1782858126 },
+            { id: 'aicash', category: 'marketing', link: '/aicash/', icon: 'fa-solid fa-wand-magic-sparkles', cardClass: 'card-active-aicash', btnClass: 'btn-aicash', iconBoxClass: 'icon-aicash', popularity: 92, addedAt: 1782858127 },
+            { id: 'dbmigrate', category: 'strategy', link: '/dbmigrate/', icon: 'fa-solid fa-database', cardClass: 'card-active-dbmigrate', btnClass: 'btn-dbmigrate', iconBoxClass: 'icon-dbmigrate', popularity: 93, addedAt: 1782858128 }
         ];
         let activeCategory = 'all';
 

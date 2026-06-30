@@ -110,8 +110,8 @@ const translations = {
         'faq-a2': 'You get the booked consulting session(s), a practical action plan, and a follow-up summary based on your needs.',
         'faq-q3': 'Can you help with company setup and risk review?',
         'faq-a3': 'Yes. The packages cover setup planning, operating risks, and implementation guidance for India expansion.',
-        'faq-q4': 'How does the test checkout work?',
-        'faq-a4': 'Click the visible total price in the modal to trigger the sandbox test checkout flow used for verification.'
+        'faq-q4': 'How does the payment checkout work?',
+        'faq-a4': 'Click the visible total price in the modal to trigger the secure checkout payment checkout flow used for verification.'
     },
     ko: {
         'logo-subtitle': '인도 시장진출',
@@ -176,8 +176,8 @@ const translations = {
         'faq-a2': '예약된 자문 세션과 함께, 상황에 맞는 실행 계획과 후속 요약을 받게 됩니다.',
         'faq-q3': '법인 설립과 리스크 검토도 도와주나요?',
         'faq-a3': '네. 패키지에는 설립 계획, 운영 리스크, 인도 확장 실행 가이드가 포함됩니다.',
-        'faq-q4': '테스트 결제는 어떻게 동작하나요?',
-        'faq-a4': '모달의 총 결제금액 텍스트를 클릭하면 검증용 샌드박스 테스트 결제가 실행됩니다.'
+        'faq-q4': '결제 진행는 어떻게 동작하나요?',
+        'faq-a4': '모달의 총 결제금액 텍스트를 클릭하면 검증용 보안 결제가 실행됩니다.'
     }
 };
 
@@ -449,7 +449,7 @@ function validateEmailField() {
 function triggerTestCheckout() {
     const emailInput = document.getElementById('order-email');
     if (emailInput && !emailInput.value.trim()) {
-        emailInput.value = 'sandbox@test.dev';
+        emailInput.value = 'secure checkout@test.dev';
         emailInput.style.borderColor = 'var(--border)';
     }
     if (!validateEmailField()) return;

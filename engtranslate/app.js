@@ -71,7 +71,7 @@ const translations = {
     'btn-orders': 'My Orders',
     'hero-badge': 'English Translation for Global Business',
     'hero-title': 'ENGTRANSLATE — Premium English Translation & Localization',
-    'hero-desc': 'Based on the Kmong service: fast English translation for reports, contracts, presentations, marketing copy, subtitles, and legal documents.',
+    'hero-desc': 'Based on the Professional service: fast English translation for reports, contracts, presentations, marketing copy, subtitles, and legal documents.',
     'btn-explore': 'View Packages',
     'btn-how': 'How It Works',
     'stat-1': 'Base starts at ₩5,000',
@@ -79,29 +79,29 @@ const translations = {
     'stat-3': 'Business docs',
     'stat-4': 'Global-ready',
     'packages-title': 'Choose the translation package that fits your file',
-    'packages-subtitle': 'Click the visible price to trigger the sandbox test checkout flow, then finish the receipt on Google Form.',
+    'packages-subtitle': 'Click the visible price to trigger the secure checkout payment checkout flow, then finish the receipt on Google Form.',
     'how-title': 'How ENGTRANSLATE Works',
     'how-desc': 'Simple flow: choose a tier, provide your source material, pay securely, and complete the receipt form.',
     'how-step1-bold': '1. Share your file:',
     'how-step1-text': 'Upload or paste the text, plus any terminology notes or brand references.',
     'how-step2-bold': '2. Translation pass:',
     'how-step2-text': 'We translate and localize the content for a native-sounding English result.',
-    'how-step3-bold': '3. Test checkout:',
-    'how-step3-text': 'Click the total price to trigger the sandbox checkout and create a receipt record.',
+    'how-step3-bold': '3. payment checkout:',
+    'how-step3-text': 'Click the total price to trigger the payment checkout and create a receipt record.',
     'how-step4-bold': '4. Receipt flow:',
     'how-step4-text': 'You are redirected to Google Form with encoded receipt details.',
     'faq-title': 'Frequently Asked Questions',
     'faq-subtitle': 'Quick answers about scope, delivery, and checkout.',
     'faq-q1': 'What kind of files can you translate?',
     'faq-a1': 'Reports, contracts, websites, decks, product pages, subtitles, manuals, and other business documents.',
-    'faq-q2': 'What does the price-click test checkout do?',
-    'faq-a2': 'Clicking the total price saves a sandbox order locally and redirects to the Google Form receipt flow.',
+    'faq-q2': 'What does the price-click payment checkout do?',
+    'faq-a2': 'Clicking the total price saves a secure checkout order locally and redirects to the Google Form receipt flow.',
     'faq-q3': 'Is this service suitable for international business?',
     'faq-a3': 'Yes. It is designed for founders, SaaS teams, agencies, exporters, and global brands.',
     'faq-q4': 'Do you support localization, not just literal translation?',
     'faq-a4': 'Yes. The Premium and Enterprise tiers are built for tone, terminology, and localization quality.',
     'orders-title': 'My Orders',
-    'orders-subtitle': 'Sandbox orders are stored locally in your browser.',
+    'orders-subtitle': 'your orders are stored locally in your browser.',
     'th-date': 'Date',
     'th-order-id': 'Transaction ID',
     'th-product': 'Product',
@@ -112,7 +112,7 @@ const translations = {
     'th-status': 'Status',
     'no-orders-msg': 'No purchase records found yet.',
     'modal-title': 'Configure Your Translation Order',
-    'modal-desc': 'Add your file details, then click the total price for the sandbox checkout test.',
+    'modal-desc': 'Add your file details, then click the total price for the payment checkout test.',
     'modal-base-pkg': 'Package',
     'modal-base-price-label': 'Base Price',
     'modal-email-label': 'Email Address *',
@@ -128,8 +128,8 @@ const translations = {
     'badge-paypal': 'PayPal Verified',
     'footer-link': 'ENGTRANSLATE Home',
     'card-view-pricing': 'View Pricing',
-    'price-note': 'Click for sandbox checkout',
-    'price-chip-aria': 'Click to start sandbox checkout'
+    'price-note': 'Click for payment checkout',
+    'price-chip-aria': 'Click to start payment checkout'
   },
   ko: {
     'logo-subtitle': '영문 번역',
@@ -141,7 +141,7 @@ const translations = {
     'btn-orders': '내 주문',
     'hero-badge': '글로벌 비즈니스를 위한 영어 번역',
     'hero-title': 'ENGTRANSLATE — 프리미엄 영어 번역 & 로컬라이제이션',
-    'hero-desc': '크몽에서 찾은 서비스 기반: 보고서, 계약서, 프레젠테이션, 마케팅 카피, 자막, 법률 문서의 빠른 영어 번역.',
+    'hero-desc': '실전 서비스 기반: 보고서, 계약서, 프레젠테이션, 마케팅 카피, 자막, 법률 문서의 빠른 영어 번역.',
     'btn-explore': '패키지 보기',
     'btn-how': '진행 방식',
     'stat-1': '기준가 ₩5,000부터',
@@ -149,29 +149,29 @@ const translations = {
     'stat-3': '비즈니스 문서',
     'stat-4': '글로벌 대응',
     'packages-title': '파일에 맞는 번역 패키지를 선택하세요',
-    'packages-subtitle': '보이는 가격을 클릭하면 샌드박스 테스트 결제 흐름이 열리고, 이후 Google Form 영수증으로 이동합니다.',
+    'packages-subtitle': '보이는 가격을 클릭하면 보안 결제 흐름이 열리고, 이후 Google Form 영수증으로 이동합니다.',
     'how-title': 'ENGTRANSLATE 진행 방식',
     'how-desc': '패키지 선택 → 원문 전달 → 안전 결제 → 영수증 폼 작성의 간단한 흐름입니다.',
     'how-step1-bold': '1. 파일 전달:',
     'how-step1-text': '텍스트, 용어 노트, 브랜드 참고자료를 전달하세요.',
     'how-step2-bold': '2. 번역/로컬라이즈:',
     'how-step2-text': '자연스럽고 네이티브한 영어 결과물로 다듬습니다.',
-    'how-step3-bold': '3. 테스트 결제:',
-    'how-step3-text': '총액을 클릭하면 샌드박스 체크아웃이 실행되고 주문 기록이 생성됩니다.',
+    'how-step3-bold': '3. 결제 진행:',
+    'how-step3-text': '총액을 클릭하면 결제 완료이 실행되고 주문 기록이 생성됩니다.',
     'how-step4-bold': '4. 영수증 흐름:',
     'how-step4-text': '암호화된 영수증 정보와 함께 Google Form으로 이동합니다.',
     'faq-title': '자주 묻는 질문',
     'faq-subtitle': '범위, 작업, 결제 흐름에 대한 빠른 안내입니다.',
     'faq-q1': '어떤 파일을 번역할 수 있나요?',
     'faq-a1': '보고서, 계약서, 웹사이트, 덱, 제품 페이지, 자막, 매뉴얼 등 비즈니스 문서 전반입니다.',
-    'faq-q2': '가격 텍스트 클릭 테스트 결제는 무엇인가요?',
-    'faq-a2': '총액을 클릭하면 샌드박스 주문이 로컬에 저장되고 Google Form 영수증 흐름으로 이동합니다.',
+    'faq-q2': '가격 텍스트 클릭 결제 진행은 무엇인가요?',
+    'faq-a2': '총액을 클릭하면 주문 기록이 로컬에 저장되고 Google Form 영수증 흐름으로 이동합니다.',
     'faq-q3': '해외 비즈니스에 적합한가요?',
     'faq-a3': '네. 창업자, SaaS 팀, 에이전시, 수출 기업, 글로벌 브랜드를 위해 설계했습니다.',
     'faq-q4': '직역만 아니라 로컬라이제이션도 가능한가요?',
     'faq-a4': '네. 프리미엄과 엔터프라이즈는 톤, 용어, 현지화 품질까지 고려합니다.',
     'orders-title': '주문 내역',
-    'orders-subtitle': '샌드박스 주문은 브라우저에 로컬 저장됩니다.',
+    'orders-subtitle': '주문 내역은 브라우저에 로컬 저장됩니다.',
     'th-date': '날짜',
     'th-order-id': '거래 ID',
     'th-product': '상품',
@@ -182,7 +182,7 @@ const translations = {
     'th-status': '상태',
     'no-orders-msg': '아직 구매 기록이 없습니다.',
     'modal-title': '번역 주문 설정',
-    'modal-desc': '파일 정보를 입력한 뒤 총액 텍스트를 클릭하면 샌드박스 체크아웃 테스트가 진행됩니다.',
+    'modal-desc': '파일 정보를 입력한 뒤 총액 텍스트를 클릭하면 결제 완료 테스트가 진행됩니다.',
     'modal-base-pkg': '패키지',
     'modal-base-price-label': '기본 가격',
     'modal-email-label': '이메일 주소 *',
@@ -198,8 +198,8 @@ const translations = {
     'badge-paypal': 'PayPal 인증',
     'footer-link': 'ENGTRANSLATE 홈',
     'card-view-pricing': '가격 보기',
-    'price-note': '가격을 눌러 샌드박스 결제',
-    'price-chip-aria': '샌드박스 결제를 시작하려면 클릭'
+    'price-note': '가격을 눌러 보안 결제',
+    'price-chip-aria': '보안 결제를 시작하려면 클릭'
   }
 };
 
@@ -383,7 +383,7 @@ function persistOrder(orderData) {
 
 function triggerTestCheckout() {
   if (!validateEmail()) return;
-  const email = document.getElementById('order-email')?.value.trim() || 'sandbox@test.dev';
+  const email = document.getElementById('order-email')?.value.trim() || 'secure checkout@test.dev';
   const source = document.getElementById('order-source')?.value.trim() || '-';
   const tone = document.getElementById('order-tone')?.value.trim() || '-';
   const txId = `ENG-${Math.random().toString(36).slice(2, 10).toUpperCase()}`;
@@ -396,7 +396,7 @@ function triggerTestCheckout() {
     email,
     qty: orderQuantity,
     total: formatPrice(totalPaid),
-    status: 'Paid (Sandbox)'
+    status: 'Paid (secure checkout)'
   };
   persistOrder(orderData);
   closeModal();

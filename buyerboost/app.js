@@ -10,7 +10,7 @@ const packageCatalog = {
         title_en: 'Global Buyer Discovery',
         title_ko: '해외 바이어 발굴',
         packages: [
-            { id: 'buyer-starter', name_en: 'Starter Buyer List', name_ko: '스타터 바이어 리스트', desc_en: 'Validated buyer discovery for one target country or product category. Based on Kmong overseas buyer research services originally listed from ₩89,000; marked up 2× and converted at ₩1,400 ≈ $1.', desc_ko: '단일 국가 또는 제품군에 대한 검증 바이어 발굴. 크몽 해외 바이어 발굴 서비스 89,000원 기준 ×2 마크업 후 환율 1,400원 기준으로 산정.', price: 129, featured: false, features_en: ['30-50 Prospective Buyers', 'Company, Website & Contact Path', 'Import/Distribution Fit Check', 'Excel/CSV Delivery', '3 Business Day Turnaround'], features_ko: ['잠재 바이어 30-50개', '회사/웹사이트/연락 경로', '수입·유통 적합성 검토', 'Excel/CSV 제공', '영업일 3일 납품'] },
+            { id: 'buyer-starter', name_en: 'Starter Buyer List', name_ko: '스타터 바이어 리스트', desc_en: 'Validated buyer discovery for one target country or product category. Based on Professional overseas buyer research services originally listed from ₩89,000; marked up 2× and converted at ₩1,400 ≈ $1.', desc_ko: '단일 국가 또는 제품군에 대한 검증 바이어 발굴. 표준 요율 기준 ×2 마크업 후 환율 1,400원 기준으로 산정.', price: 129, featured: false, features_en: ['30-50 Prospective Buyers', 'Company, Website & Contact Path', 'Import/Distribution Fit Check', 'Excel/CSV Delivery', '3 Business Day Turnaround'], features_ko: ['잠재 바이어 30-50개', '회사/웹사이트/연락 경로', '수입·유통 적합성 검토', 'Excel/CSV 제공', '영업일 3일 납품'] },
             { id: 'buyer-growth', name_en: 'Growth Outreach Pack', name_ko: '그로스 아웃리치 팩', desc_en: 'Larger buyer list plus segmentation and an AI-personalized first outreach script for export sales teams.', desc_ko: '수출 영업팀을 위한 확장 바이어 리스트, 세그먼트 분류, AI 맞춤형 1차 아웃리치 스크립트 제공.', price: 299, featured: true, features_en: ['100-150 Buyers Across 2 Markets', 'Buyer Priority Scoring', 'Decision-Maker Research', 'Cold Email / LinkedIn Script', '7-Day Revision Window', 'Export Channel Notes'], features_ko: ['2개 시장 바이어 100-150개', '바이어 우선순위 점수', '의사결정권자 리서치', '콜드메일/링크드인 스크립트', '7일 수정 기간', '수출 채널 메모'] },
             { id: 'buyer-enterprise', name_en: 'Enterprise Export Pipeline', name_ko: '엔터프라이즈 수출 파이프라인', desc_en: 'Multi-country buyer discovery with competitor/import data signals, outreach materials, and weekly pipeline review.', desc_ko: '다국가 바이어 발굴, 경쟁사/수입 데이터 시그널, 아웃리치 자료, 주간 파이프라인 리뷰까지 포함한 종합 패키지.', price: 699, featured: false, features_en: ['300+ Buyers in 3-5 Countries', 'Import Signal & Competitor Mapping', 'Verified Contact Routes', 'Personalized Outreach Kit', 'CRM-Ready Spreadsheet', '30-Day Pipeline Review'], features_ko: ['3-5개국 바이어 300개 이상', '수입 시그널 및 경쟁사 맵핑', '검증 연락 경로', '맞춤형 아웃리치 키트', 'CRM 연동용 스프레드시트', '30일 파이프라인 리뷰'] }
         ]
@@ -47,7 +47,7 @@ const translations = {
         "card-global-desc": "Get concise cold email and LinkedIn scripts tailored to each market and buyer segment.",
         "card-view-pricing": "View Pricing",
         "comp-title": "From Raw Market Leads to Export Pipeline",
-        "comp-desc": "BUYERBOOST combines Kmong-style overseas buyer research with AI-assisted validation, segmentation, and outreach assets for globally usable B2B expansion.",
+        "comp-desc": "BUYERBOOST combines professional overseas buyer research with AI-assisted validation, segmentation, and outreach assets for globally usable B2B expansion.",
         "comp-bullet1-bold": "Buyer Research:",
         "comp-bullet1-text": "Company lists are filtered by product fit, market relevance, import/distribution role, and public contact availability.",
         "comp-bullet2-bold": "Pipeline Enrichment:",
@@ -76,7 +76,7 @@ const translations = {
         "modal-market-label": "Target Market:",
         "modal-qty": "Quantity:",
         "modal-total-amt": "Total Amount:",
-        "modal-test-btn": "Click price to test checkout",
+        "modal-test-btn": "Click price to payment checkout",
         "badge-ssl": "SSL Secured Checkout",
         "badge-paypal": "PayPal Verified",
         "foot-channels": "Buyer Research",
@@ -130,7 +130,7 @@ const translations = {
         "card-global-desc": "시장과 바이어 세그먼트별로 맞춤화된 콜드메일 및 링크드인 메시지 스크립트를 제공합니다.",
         "card-view-pricing": "가격 확인하기",
         "comp-title": "시장 리드에서 수출 파이프라인까지",
-        "comp-desc": "BUYERBOOST는 크몽형 해외 바이어 발굴 서비스에 AI 검증, 세그먼트 분류, 아웃리치 자료를 결합한 글로벌 B2B 확장 솔루션입니다.",
+        "comp-desc": "BUYERBOOST는 해외 바이어 발굴 서비스에 AI 검증, 세그먼트 분류, 아웃리치 자료를 결합한 글로벌 B2B 확장 솔루션입니다.",
         "comp-bullet1-bold": "바이어 리서치:",
         "comp-bullet1-text": "제품 적합도, 시장 관련성, 수입·유통 역할, 공개 연락 가능성을 기준으로 기업 리스트를 필터링합니다.",
         "comp-bullet2-bold": "파이프라인 보강:",
@@ -159,7 +159,7 @@ const translations = {
         "modal-market-label": "대상 시장:",
         "modal-qty": "수량:",
         "modal-total-amt": "총 결제금액:",
-        "modal-test-btn": "가격 텍스트를 눌러 테스트 결제",
+        "modal-test-btn": "가격 텍스트를 눌러 결제 진행",
         "badge-ssl": "SSL 보안 결제 지원",
         "badge-paypal": "PayPal 인증됨",
         "foot-channels": "바이어 리서치",
@@ -509,7 +509,7 @@ function validateEmailField() {
 function triggerTestCheckout() {
     const emailInput = document.getElementById('order-email');
     if (emailInput && !emailInput.value.trim()) {
-        emailInput.value = 'sandbox@test.dev';
+        emailInput.value = 'secure checkout@test.dev';
         emailInput.style.borderColor = 'var(--border)';
         const emailError = document.getElementById('email-error');
         if (emailError) emailError.style.display = 'none';

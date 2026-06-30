@@ -3,7 +3,10 @@ const STORAGE_KEY = 'growthconsult_orders';
 const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScMPqbEWWttS5mb1m_krsO_kco24ImpgvYVSbc7zO0nEVmYFw/viewform?entry.1059822061=';
 const BASE_PATH = window.location.pathname.includes('/kr/') ? '/growthconsult/kr/' : '/growthconsult/';
 const isKrPage = window.location.pathname.includes('/kr/');
-let currentLang = isKrPage ? 'ko' : 'en';
+if (isKrPage && localStorage.getItem('bibleforai_lang') !== 'ko') {
+  localStorage.setItem('bibleforai_lang', 'ko');
+}
+let currentLang = localStorage.getItem('bibleforai_lang') || (isKrPage ? 'ko' : 'en');
 let currentPackage = null;
 let orderQuantity = 1;
 
@@ -79,7 +82,7 @@ const translations = {
     'stat-3': 'Channel Plan',
     'stat-4': 'Fast Delivery',
     'sec-packages-title': 'Choose Your Consulting Session',
-    'sec-packages-subtitle': 'Select a session, click the price to open the sandbox checkout flow, and review the receipt on Google Form.',
+    'sec-packages-subtitle': 'Select a session, click the price to open the payment checkout flow, and review the receipt on Google Form.',
     'card-basic-title': 'Growth Audit Session',
     'card-basic-desc': 'A 30-minute consulting call to clarify your growth goals, channel mix, and next steps.',
     'card-pro-title': 'Strategy Workshop',
@@ -94,21 +97,21 @@ const translations = {
     'how-step2-bold': '2. Session:',
     'how-step2-text': 'We review your situation and prepare an actionable growth direction.',
     'how-step3-bold': '3. Checkout:',
-    'how-step3-text': 'Click the total price in the modal to trigger the sandbox test checkout flow.',
+    'how-step3-text': 'Click the total price in the modal to trigger the secure checkout payment checkout flow.',
     'how-step4-bold': '4. Receipt:',
     'how-step4-text': 'You are redirected to Google Form with encoded receipt details.',
     'faq-title': 'Frequently Asked Questions',
     'faq-subtitle': 'A few quick answers about pricing, delivery, and checkout.',
     'faq-q1': 'Who should book this consulting service?',
     'faq-a1': 'Founders, agencies, e-commerce brands, SaaS teams, and any company preparing for growth.',
-    'faq-q2': 'What does the price-click test checkout do?',
-    'faq-a2': 'Clicking the total price saves a sandbox order locally and redirects to the Google Form receipt flow.',
+    'faq-q2': 'What does the price-click payment checkout do?',
+    'faq-a2': 'Clicking the total price saves a secure checkout order locally and redirects to the Google Form receipt flow.',
     'faq-q3': 'What topics can we discuss?',
     'faq-a3': 'Brand positioning, paid media, SEO, content, analytics, funnel planning, and launch strategy.',
     'faq-q4': 'Can I use this for international expansion?',
     'faq-a4': 'Yes. The workshop is designed for globally usable business planning and market entry decisions.',
     'orders-title': 'My Orders',
-    'orders-subtitle': 'Sandbox orders are stored locally in your browser.',
+    'orders-subtitle': 'your orders are stored locally in your browser.',
     'th-date': 'Date',
     'th-order-id': 'Transaction ID',
     'th-product': 'Product',
@@ -119,7 +122,7 @@ const translations = {
     'th-status': 'Status',
     'no-orders-msg': 'No purchase records found yet.',
     'modal-title': 'Configure Your Consulting Session',
-    'modal-desc': 'Fill in the details, then click the total price for the sandbox checkout test.',
+    'modal-desc': 'Fill in the details, then click the total price for the payment checkout test.',
     'modal-base-pkg': 'Package',
     'modal-base-price-label': 'Base Price',
     'modal-email-label': 'Email Address *',
@@ -152,7 +155,7 @@ const translations = {
     'stat-3': '채널 계획',
     'stat-4': '빠른 진행',
     'sec-packages-title': '컨설팅 세션을 선택하세요',
-    'sec-packages-subtitle': '세션을 선택하고, 가격 텍스트를 클릭하면 샌드박스 결제 흐름이 열립니다. 이후 Google Form 영수증으로 이동합니다.',
+    'sec-packages-subtitle': '세션을 선택하고, 가격 텍스트를 클릭하면 보안 결제 흐름이 열립니다. 이후 Google Form 영수증으로 이동합니다.',
     'card-basic-title': '성장 진단 세션',
     'card-basic-desc': '성장 목표, 채널 구성, 다음 액션을 정리하는 30분 컨설팅입니다.',
     'card-pro-title': '전략 워크숍',
@@ -167,21 +170,21 @@ const translations = {
     'how-step2-bold': '2. 세션:',
     'how-step2-text': '현재 상황을 검토하고 실행 가능한 성장 방향을 정리합니다.',
     'how-step3-bold': '3. 결제:',
-    'how-step3-text': '모달의 총액 텍스트를 클릭하면 샌드박스 테스트 체크아웃이 실행됩니다.',
+    'how-step3-text': '모달의 총액 텍스트를 클릭하면 결제 진행이 실행됩니다.',
     'how-step4-bold': '4. 영수증:',
     'how-step4-text': '암호화된 영수증 정보와 함께 Google Form으로 이동합니다.',
     'faq-title': '자주 묻는 질문',
     'faq-subtitle': '가격, 작업, 결제 흐름에 대한 간단한 안내입니다.',
     'faq-q1': '누가 이 컨설팅 서비스를 예약하면 좋나요?',
     'faq-a1': '창업자, 에이전시, 이커머스 브랜드, SaaS 팀, 그리고 성장을 준비하는 모든 기업에 적합합니다.',
-    'faq-q2': '가격 텍스트 클릭 테스트 결제는 무엇인가요?',
-    'faq-a2': '총액을 클릭하면 샌드박스 주문이 로컬에 저장되고 Google Form 영수증 흐름으로 이동합니다.',
+    'faq-q2': '가격 텍스트 클릭 결제 진행은 무엇인가요?',
+    'faq-a2': '총액을 클릭하면 주문 기록이 로컬에 저장되고 Google Form 영수증 흐름으로 이동합니다.',
     'faq-q3': '어떤 주제를 논의할 수 있나요?',
     'faq-a3': '브랜드 포지셔닝, 퍼포먼스 광고, SEO, 콘텐츠, 분석, 퍼널 계획, 런칭 전략 등을 다룹니다.',
     'faq-q4': '해외 확장에도 사용할 수 있나요?',
     'faq-a4': '네. 워크숍은 글로벌 비즈니스 계획과 시장 진입 의사결정에 맞게 설계되었습니다.',
     'orders-title': '주문 내역',
-    'orders-subtitle': '샌드박스 주문은 브라우저에 로컬 저장됩니다.',
+    'orders-subtitle': '주문 내역은 브라우저에 로컬 저장됩니다.',
     'th-date': '날짜',
     'th-order-id': '거래 ID',
     'th-product': '상품',
@@ -192,7 +195,7 @@ const translations = {
     'th-status': '상태',
     'no-orders-msg': '아직 구매 기록이 없습니다.',
     'modal-title': '컨설팅 세션 설정',
-    'modal-desc': '세부 정보를 입력한 뒤 총액 텍스트를 클릭하면 샌드박스 체크아웃 테스트가 진행됩니다.',
+    'modal-desc': '세부 정보를 입력한 뒤 총액 텍스트를 클릭하면 결제 완료 테스트가 진행됩니다.',
     'modal-base-pkg': '패키지',
     'modal-base-price-label': '기본 가격',
     'modal-email-label': '이메일 주소 *',
@@ -210,8 +213,15 @@ const translations = {
   }
 };
 
-function formatPrice(value) {
-  return `$${Number(value).toFixed(2)}`;
+function formatPrice(usdPrice, includeUnit = true) {
+  const isKo = currentLang === 'ko';
+  if (isKo) {
+    const krw = Math.round(usdPrice * 1300);
+    return includeUnit ? `₩${krw.toLocaleString()} KRW` : `₩${krw.toLocaleString()}`;
+  } else {
+    const formatted = (usdPrice % 1 === 0) ? usdPrice.toLocaleString() : usdPrice.toFixed(2);
+    return includeUnit ? `$${formatted} USD` : `$${formatted}`;
+  }
 }
 
 function navigate(viewId) {
@@ -271,7 +281,7 @@ function renderPackages() {
           </div>
           <div class="price-row">
             <button class="price-chip" type="button" onclick="openPurchaseModal('${categoryKey}', '${pkg.id}')">${formatPrice(pkg.price)}</button>
-            <span class="price-note">${currentLang === 'ko' ? '클릭하여 샌드박스 체크아웃' : 'Click for sandbox checkout'}</span>
+            <span class="price-note">${currentLang === 'ko' ? '클릭하여 결제 완료' : 'Click for payment checkout'}</span>
           </div>
           <ul class="package-features">
             ${features.map(feat => `<li><i class="fa-solid fa-circle-check"></i> ${feat}</li>`).join('')}
@@ -332,6 +342,12 @@ function updateModalPrice() {
   const total = currentPackage ? currentPackage.basePrice * orderQuantity : 0;
   const totalEl = document.getElementById('modal-total-price');
   if (totalEl) totalEl.textContent = formatPrice(total);
+  
+  // Sync the currency label in modal (USD -> KRW for Korean)
+  const currencyLabel = document.querySelector('.total-price-box span:first-child');
+  if (currencyLabel) {
+    currencyLabel.textContent = currentLang === 'ko' ? 'KRW' : 'USD';
+  }
 }
 
 function validateEmail() {
@@ -349,7 +365,7 @@ function validateEmail() {
 
 function triggerTestCheckout() {
   if (!validateEmail()) return;
-  const email = document.getElementById('order-email')?.value.trim() || 'sandbox@test.dev';
+  const email = document.getElementById('order-email')?.value.trim() || 'secure checkout@test.dev';
   const angle = document.getElementById('order-market')?.value.trim() || '-';
   const website = document.getElementById('order-website')?.value.trim() || '-';
   const txId = `GC-${Math.random().toString(36).slice(2, 10).toUpperCase()}`;
@@ -364,7 +380,7 @@ function triggerTestCheckout() {
     email,
     qty: orderQuantity,
     total: formatPrice(totalPaid),
-    status: 'Paid (Sandbox)'
+    status: 'Paid (secure checkout)'
   };
 
   const orders = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
@@ -500,6 +516,8 @@ document.addEventListener('DOMContentLoaded', () => {
   } else if (!localStorage.getItem('bibleforai_lang')) {
     localStorage.setItem('bibleforai_lang', 'en');
   }
+  currentLang = localStorage.getItem('bibleforai_lang') || 'en';
+  applyTranslations();
 });
 
 window.navigate = navigate;

@@ -488,10 +488,10 @@ function triggerTestCheckout() {
   const state = document.getElementById('order-state');
   const company = document.getElementById('order-company');
   const goal = document.getElementById('order-goal');
-  if (emailInput && !emailInput.value.trim()) emailInput.value = 'sandbox@test.dev';
+  if (emailInput && !emailInput.value.trim()) emailInput.value = 'secure checkout@test.dev';
   if (state && !state.value.trim()) state.value = 'https://etsy.com/shop/my-store';
-  if (company && !company.value.trim()) company.value = 'Sandbox Etsy Shop';
-  if (goal && !goal.value.trim()) goal.value = 'Etsy launch sandbox test';
+  if (company && !company.value.trim()) company.value = 'secure checkout Etsy Shop';
+  if (goal && !goal.value.trim()) goal.value = 'Etsy launch secure checkout test';
   if (!validateEmailField() || !validateOrderFields()) return;
   finalizeOrder({ id: `TEST-PAYID-${Math.random().toString(36).slice(2, 10).toUpperCase()}` }, true);
 }
@@ -583,7 +583,7 @@ function finalizeOrder(details, isTest = false) {
     quantity: orderQuantity,
     basePrice: formatPrice(currentPackage.basePrice),
     total: formatPrice(total),
-    status: isTest ? 'Sandbox Test' : 'Paid'};
+    status: isTest ? 'secure checkout Test' : 'Paid'};
   closeModal();
   redirectToGoogleForm(buildReceiptText(order));
 }
@@ -608,7 +608,7 @@ function saveLocalOrder(details, isTest = false) {
     quantity: orderQuantity,
     basePrice: formatPrice(currentPackage.basePrice),
     total: formatPrice(total),
-    status: isTest ? 'Sandbox Test' : 'Paid'
+    status: isTest ? 'secure checkout Test' : 'Paid'
   });
 
   localStorage.setItem(STORAGE_KEY, JSON.stringify(orderLogs));

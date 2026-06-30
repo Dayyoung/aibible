@@ -67,7 +67,7 @@ const translations = {
     'stat-markets': 'Target Markets',
     'stat-delivery': 'Fast Delivery',
     'sec-packages-title': 'Choose Your Launch Package',
-    'sec-packages-subtitle': 'All pricing reflects a 2× markup over the original KMong base price and is displayed in USD by default.',
+    'sec-packages-subtitle': 'All pricing reflects a 2× markup over the original Professional base price and is displayed in USD by default.',
     'sec-process-title': 'Built for Global Selling',
     'sec-process-subtitle': 'English-first by default, Korean available at /kr/, with payment and intake flows ready for international clients.',
     'process-1-title': 'Storefront Setup',
@@ -86,7 +86,7 @@ const translations = {
     'th-qty': 'Quantity',
     'th-total': 'Total Paid',
     'th-status': 'Status',
-    'no-orders-msg': 'No orders yet. Open a package and complete the test checkout or PayPal payment.',
+    'no-orders-msg': 'No orders yet. Open a package and complete the payment checkout or PayPal payment.',
     'modal-title': 'Configure Order',
     'modal-desc': 'Choose quantity and complete payment with PayPal or the test button.',
     'modal-base-pkg': 'Base Package:',
@@ -97,7 +97,7 @@ const translations = {
     'modal-country-label': 'Target Market:',
     'modal-qty': 'Quantity:',
     'modal-total-amt': 'Total Amount:',
-    'modal-test-btn': 'Test Checkout',
+    'modal-test-btn': 'payment checkout',
     'badge-ssl': 'SSL Secured Checkout',
     'badge-paypal': 'PayPal Verified',
     'foot-main': 'Global Shopify store setup, localization, and launch support.',
@@ -134,7 +134,7 @@ const translations = {
     'stat-markets': '타겟 시장',
     'stat-delivery': '빠른 납기',
     'sec-packages-title': '런칭 패키지를 선택하세요',
-    'sec-packages-subtitle': '표시 가격은 KMong 원가의 2배 마크업을 반영한 USD 기준이며, 한국어 버전은 /kr/에서 제공합니다.',
+    'sec-packages-subtitle': '표시 가격은 Professional 원가의 2배 마크업을 반영한 USD 기준이며, 한국어 버전은 /kr/에서 제공합니다.',
     'sec-process-title': '글로벌 판매에 맞춘 구조',
     'sec-process-subtitle': '영문이 기본이며, 한국어 버전은 /kr/에 제공되고 국제 고객용 결제 및 접수 흐름이 준비되어 있습니다.',
     'process-1-title': '스토어 구성',
@@ -153,7 +153,7 @@ const translations = {
     'th-qty': '수량',
     'th-total': '총 결제금액',
     'th-status': '상태',
-    'no-orders-msg': '주문 내역이 없습니다. 패키지를 열고 테스트 결제 또는 PayPal 결제를 진행하세요.',
+    'no-orders-msg': '주문 내역이 없습니다. 패키지를 열고 결제 진행 또는 PayPal 결제를 진행하세요.',
     'modal-title': '주문 설정',
     'modal-desc': '수량을 선택하고 PayPal 또는 테스트 버튼으로 결제하세요.',
     'modal-base-pkg': '기본 패키지:',
@@ -164,7 +164,7 @@ const translations = {
     'modal-country-label': '타겟 시장:',
     'modal-qty': '수량:',
     'modal-total-amt': '총 결제금액:',
-    'modal-test-btn': '테스트 결제',
+    'modal-test-btn': '결제 진행',
     'badge-ssl': 'SSL 보안 결제',
     'badge-paypal': 'PayPal 인증됨',
     'foot-main': '글로벌 Shopify 스토어 구축, 로컬라이제이션, 런칭 지원.',
@@ -409,7 +409,7 @@ function validateEmailField() {
 
 function triggerTestCheckout() {
   const emailInput = document.getElementById('order-email');
-  if (emailInput && !emailInput.value.trim()) emailInput.value = 'sandbox@test.dev';
+  if (emailInput && !emailInput.value.trim()) emailInput.value = 'secure checkout@test.dev';
   if (!validateEmailField()) return;
   saveLocalOrder({ id: `TEST-${Math.random().toString(36).slice(2, 10).toUpperCase()}`, isTest: true });
   closeModal();

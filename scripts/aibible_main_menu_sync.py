@@ -79,6 +79,18 @@ CATALOG = [
     {'id': 'foreigncare', 'cat': 'marketing', 'link': '/foreigncare/', 'icon': 'fa-solid fa-user-doctor', 'popularity': 90},
     {'id': 'aicash', 'cat': 'marketing', 'link': '/aicash/', 'icon': 'fa-solid fa-wand-magic-sparkles', 'popularity': 92},
     {'id': 'dbmigrate', 'cat': 'strategy', 'link': '/dbmigrate/', 'icon': 'fa-solid fa-database', 'popularity': 93},
+    {'id': 'apostboost', 'cat': 'strategy', 'link': '/apostboost/', 'icon': 'fa-solid fa-stamp', 'popularity': 82},
+    {'id': 'appboost', 'cat': 'marketing', 'link': '/appboost/', 'icon': 'fa-solid fa-mobile-screen-button', 'popularity': 87},
+    {'id': 'b2bdb', 'cat': 'database', 'link': '/b2bdb/', 'icon': 'fa-solid fa-database', 'popularity': 90},
+    {'id': 'b2cdb', 'cat': 'database', 'link': '/b2cdb/', 'icon': 'fa-solid fa-database', 'popularity': 89},
+    {'id': 'boostsm', 'cat': 'marketing', 'link': '/boostsm/', 'icon': 'fa-solid fa-hashtag', 'popularity': 93},
+    {'id': 'databoost', 'cat': 'database', 'link': '/databoost/', 'icon': 'fa-solid fa-database', 'popularity': 86},
+    {'id': 'igboost', 'cat': 'marketing', 'link': '/igboost/', 'icon': 'fa-brands fa-instagram', 'popularity': 91},
+    {'id': 'opencode', 'cat': 'design-dev', 'link': '/opencode/', 'icon': 'fa-solid fa-code', 'popularity': 94},
+    {'id': 'repboost', 'cat': 'marketing', 'link': '/repboost/', 'icon': 'fa-solid fa-star', 'popularity': 85},
+    {'id': 'sourcboost', 'cat': 'strategy', 'link': '/sourcboost/', 'icon': 'fa-solid fa-fingerprint', 'popularity': 84},
+    {'id': 'ustax', 'cat': 'strategy', 'link': '/ustax/', 'icon': 'fa-solid fa-scale-balanced', 'popularity': 88},
+    {'id': 'ustaxboost', 'cat': 'strategy', 'link': '/ustaxboost/', 'icon': 'fa-solid fa-scale-balanced', 'popularity': 89},
 ]
 
 

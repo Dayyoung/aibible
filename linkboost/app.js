@@ -129,7 +129,7 @@ const translations = {
     'stat-3-num': 'B2B',
     'stat-3-label': 'Outbound ready',
     'section-packages-title': 'Select a LinkedIn growth package',
-    'section-packages-subtitle': 'All packages use the original kmong pricing baseline with a 2x markup and are displayed in USD.',
+    'section-packages-subtitle': 'All packages use the standard pricing baseline with a 2x markup and are displayed in USD.',
     'section-faq-title': 'Frequently asked questions',
     'section-faq-subtitle': 'A quick overview of how this LinkedIn service works.',
     'section-orders-title': 'My Orders',
@@ -183,7 +183,7 @@ const translations = {
     'stat-3-num': 'B2B',
     'stat-3-label': '아웃바운드 준비 완료',
     'section-packages-title': '링크드인 성장 패키지를 선택하세요',
-    'section-packages-subtitle': '모든 패키지는 크몽 원가 기준 2배 마크업을 반영해 USD로 표시됩니다.',
+    'section-packages-subtitle': '모든 패키지는 표준 요율을 반영해 USD로 표시됩니다.',
     'section-faq-title': '자주 묻는 질문',
     'section-faq-subtitle': '링크드인 서비스 이용 방법을 간단히 확인하세요.',
     'section-orders-title': '내 주문 내역',
@@ -446,7 +446,7 @@ function adjustQty(delta) {
 function triggerTestCheckout() {
   const emailInput = document.getElementById('order-email');
   if (emailInput && !emailInput.value.trim()) {
-    emailInput.value = 'sandbox@test.dev';
+    emailInput.value = 'secure checkout@test.dev';
   }
   if (!validateEmailField()) return;
   saveLocalOrder({ id: `TEST-${Math.random().toString(36).slice(2, 10).toUpperCase()}`, isTest: true });

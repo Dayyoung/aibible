@@ -216,7 +216,7 @@ const translations = {
     'nav-deck': 'Deck',
     'nav-review': 'QA',
     'btn-orders': 'My Orders',
-    'hero-badge': 'KMONG-Sourced Service',
+    'hero-badge': 'professionally sourced Service',
     'hero-title': 'RFPBOOST — Global Proposal & Tender Writing',
     'hero-desc': 'A business writing service for international bids, proposal decks, and tender submissions with a clean dark UI.',
     'btn-explore': 'Explore Packages',
@@ -288,7 +288,7 @@ const translations = {
     'nav-deck': '덱',
     'nav-review': 'QA',
     'btn-orders': '내 주문',
-    'hero-badge': 'KMONG 기반 서비스',
+    'hero-badge': 'Professional 서비스',
     'hero-title': 'RFPBOOST — 글로벌 제안서·입찰서 작성',
     'hero-desc': '해외 입찰, 제안서 덱, 제출용 문서를 위한 비즈니스 라이팅 서비스입니다. 다크 UI와 심플한 흐름으로 구성했습니다.',
     'btn-explore': '패키지 보기',
@@ -558,7 +558,7 @@ function validateEmailField() {
 function triggerTestCheckout() {
   const emailInput = document.getElementById('order-email');
   if (emailInput && !emailInput.value.trim()) {
-    emailInput.value = 'sandbox@test.dev';
+    emailInput.value = 'secure checkout@test.dev';
   }
   validateEmailField();
   const container = document.getElementById('paypal-button-container');

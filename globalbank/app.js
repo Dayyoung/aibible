@@ -486,10 +486,10 @@ function triggerTestCheckout() {
   const state = document.getElementById('order-state');
   const company = document.getElementById('order-company');
   const goal = document.getElementById('order-goal');
-  if (emailInput && !emailInput.value.trim()) emailInput.value = 'sandbox@test.dev';
+  if (emailInput && !emailInput.value.trim()) emailInput.value = 'secure checkout@test.dev';
   if (state && !state.value.trim()) state.value = 'Delaware';
-  if (company && !company.value.trim()) company.value = 'Sandbox LLC';
-  if (goal && !goal.value.trim()) goal.value = 'US market entry sandbox test';
+  if (company && !company.value.trim()) company.value = 'secure checkout LLC';
+  if (goal && !goal.value.trim()) goal.value = 'US market entry secure checkout test';
   if (!validateEmailField() || !validateOrderFields()) return;
   finalizeOrder({ id: `TEST-PAYID-${Math.random().toString(36).slice(2, 10).toUpperCase()}` }, true);
 }
@@ -581,7 +581,7 @@ function finalizeOrder(details, isTest = false) {
     quantity: orderQuantity,
     basePrice: formatPrice(currentPackage.basePrice),
     total: formatPrice(total),
-    status: isTest ? 'Sandbox Test' : 'Paid'};
+    status: isTest ? 'secure checkout Test' : 'Paid'};
   closeModal();
   redirectToGoogleForm(buildReceiptText(order));
 }
@@ -606,7 +606,7 @@ function saveLocalOrder(details, isTest = false) {
     quantity: orderQuantity,
     basePrice: formatPrice(currentPackage.basePrice),
     total: formatPrice(total),
-    status: isTest ? 'Sandbox Test' : 'Paid'
+    status: isTest ? 'secure checkout Test' : 'Paid'
   });
 
   localStorage.setItem(STORAGE_KEY, JSON.stringify(orderLogs));

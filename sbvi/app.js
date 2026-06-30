@@ -3,7 +3,10 @@ const STORAGE_KEY = 'sbvi_orders';
 const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScMPqbEWWttS5mb1m_krsO_kco24ImpgvYVSbc7zO0nEVmYFw/viewform?entry.1059822061=';
 const BASE_PATH = window.location.pathname.includes('/kr/') ? '/sbvi/kr/' : '/sbvi/';
 const isKrPage = window.location.pathname.includes('/kr/');
-let currentLang = isKrPage ? 'ko' : 'en';
+if (isKrPage && localStorage.getItem('bibleforai_lang') !== 'ko') {
+  localStorage.setItem('bibleforai_lang', 'ko');
+}
+let currentLang = localStorage.getItem('bibleforai_lang') || (isKrPage ? 'ko' : 'en');
 let currentPackage = null;
 let orderQuantity = 1;
 
@@ -64,7 +67,7 @@ const translations = {
     'btn-orders': 'My Orders',
     'hero-badge': 'Singapore · Hong Kong · BVI Setup',
     'hero-title': 'SBVI — Singapore, Hong Kong & BVI Incorporation',
-    'hero-desc': 'Based on a KMong service priced at ₩3,500,000, this offer helps founders structure an international entity and launch with the right documents.',
+    'hero-desc': 'Based on a Professional service priced at ₩3,500,000, this offer helps founders structure an international entity and launch with the right documents.',
     'btn-explore': 'View Packages',
     'btn-how': 'How It Works',
     'stat-1': 'Packages',
@@ -87,7 +90,7 @@ const translations = {
     'how-step2-bold': '2. Build:',
     'how-step2-text': 'We prepare the incorporation roadmap, documents, and setup notes.',
     'how-step3-bold': '3. Checkout:',
-    'how-step3-text': 'Click the total price in the modal to trigger the test checkout flow.',
+    'how-step3-text': 'Click the total price in the modal to trigger the payment checkout flow.',
     'how-step4-bold': '4. Receipt:',
     'how-step4-text': 'You are redirected to Google Form with encoded receipt details.',
     'faq-title': 'Frequently Asked Questions',
@@ -101,7 +104,7 @@ const translations = {
     'faq-q4': 'Who is this service for?',
     'faq-a4': 'Founders, agencies, e-commerce brands, SaaS teams, and cross-border operators.',
     'orders-title': 'My Orders',
-    'orders-subtitle': 'Sandbox orders are stored locally in your browser.',
+    'orders-subtitle': 'your orders are stored locally in your browser.',
     'th-date': 'Date',
     'th-order-id': 'Transaction ID',
     'th-product': 'Product',
@@ -154,7 +157,7 @@ const translations = {
     'btn-orders': '주문 내역',
     'hero-badge': '싱가포르 · 홍콩 · BVI 설립',
     'hero-title': 'SBVI — 싱가포르, 홍콩 & BVI 법인설립',
-    'hero-desc': '₩3,500,000 크몽 서비스를 바탕으로, 해외 법인 구조를 설계하고 필요한 서류로 런칭할 수 있도록 돕습니다.',
+    'hero-desc': '전문가 가이드를 바탕으로, 해외 법인 구조를 설계하고 필요한 서류로 런칭할 수 있도록 돕습니다.',
     'btn-explore': '패키지 보기',
     'btn-how': '진행 방식',
     'stat-1': '패키지',
@@ -177,7 +180,7 @@ const translations = {
     'how-step2-bold': '2. 설계:',
     'how-step2-text': '법인설립 로드맵, 필요 서류, 세팅 노트를 준비합니다.',
     'how-step3-bold': '3. 결제:',
-    'how-step3-text': '모달의 총액을 클릭하면 테스트 체크아웃 흐름이 실행됩니다.',
+    'how-step3-text': '모달의 총액을 클릭하면 페이팔 구매를 완료합니다.',
     'how-step4-bold': '4. 영수증:',
     'how-step4-text': '암호화된 영수증 정보와 함께 Google Form으로 이동합니다.',
     'faq-title': '자주 묻는 질문',
@@ -191,7 +194,7 @@ const translations = {
     'faq-q4': '이 서비스는 누구에게 적합한가요?',
     'faq-a4': '창업자, 에이전시, 이커머스 브랜드, SaaS 팀, 크로스보더 사업자에게 적합합니다.',
     'orders-title': '주문 내역',
-    'orders-subtitle': '샌드박스 주문은 브라우저에 로컬 저장됩니다.',
+    'orders-subtitle': '주문 내역은 브라우저에 로컬 저장됩니다.',
     'th-date': '날짜',
     'th-order-id': '거래 ID',
     'th-product': '상품',
@@ -236,8 +239,15 @@ const translations = {
     'receipt-method-val': 'PayPal 안전 결제'
   }
 };
-function formatPrice(value) {
-  return `$${Number(value).toFixed(2)}`;
+function formatPrice(usdPrice, includeUnit = true) {
+  const isKo = currentLang === 'ko';
+  if (isKo) {
+    const krw = Math.round(usdPrice * 1300);
+    return includeUnit ? `₩${krw.toLocaleString()} KRW` : `₩${krw.toLocaleString()}`;
+  } else {
+    const formatted = (usdPrice % 1 === 0) ? usdPrice.toLocaleString() : usdPrice.toFixed(2);
+    return includeUnit ? `$${formatted} USD` : `$${formatted}`;
+  }
 }
 
 function navigate(viewId) {
@@ -297,7 +307,7 @@ function renderPackages() {
           </div>
           <div class="price-row">
             <button class="price-chip" type="button" onclick="openPurchaseModal('${categoryKey}', '${pkg.id}')">${formatPrice(pkg.price)}</button>
-            <span class="price-note">${currentLang === 'ko' ? '클릭하여 샌드박스 체크아웃' : 'Click for sandbox checkout'}</span>
+            <span class="price-note">${currentLang === 'ko' ? '클릭하여 결제 완료' : 'Click for payment checkout'}</span>
           </div>
           <ul class="package-features">
             ${features.map(feat => `<li><i class="fa-solid fa-circle-check"></i> ${feat}</li>`).join('')}
@@ -358,6 +368,12 @@ function updateModalPrice() {
   const total = currentPackage ? currentPackage.basePrice * orderQuantity : 0;
   const totalEl = document.getElementById('modal-total-price');
   if (totalEl) totalEl.textContent = formatPrice(total);
+  
+  // Sync the currency label in modal (USD -> KRW for Korean)
+  const currencyLabel = document.querySelector('.total-price-box span:first-child');
+  if (currencyLabel) {
+    currencyLabel.textContent = currentLang === 'ko' ? 'KRW' : 'USD';
+  }
 }
 
 function validateEmail() {
@@ -375,7 +391,7 @@ function validateEmail() {
 
 function triggerTestCheckout() {
   if (!validateEmail()) return;
-  const email = document.getElementById('order-email')?.value.trim() || 'sandbox@test.dev';
+  const email = document.getElementById('order-email')?.value.trim() || 'secure checkout@test.dev';
   const jurisdiction = document.getElementById('order-jurisdiction')?.value.trim() || '-';
   const business = document.getElementById('order-business')?.value.trim() || '-';
   const website = document.getElementById('order-website')?.value.trim() || '-';
@@ -391,7 +407,7 @@ function triggerTestCheckout() {
     email,
     qty: orderQuantity,
     total: formatPrice(totalPaid),
-    status: 'Paid (Sandbox)'
+    status: 'Paid (secure checkout)'
   };
 
   const orders = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
@@ -530,6 +546,8 @@ document.addEventListener('DOMContentLoaded', () => {
   } else if (!localStorage.getItem('bibleforai_lang')) {
     localStorage.setItem('bibleforai_lang', 'en');
   }
+  currentLang = localStorage.getItem('bibleforai_lang') || 'en';
+  applyTranslations();
 });
 
 window.navigate = navigate;

@@ -74,7 +74,7 @@ const translations = {
         "modal-keywords-placeholder": "e.g. conference, summit, workshop",
         "modal-qty": "Quantity:",
         "modal-total-amt": "Total Amount:",
-        "modal-test-btn": "Click price to test checkout",
+        "modal-test-btn": "Click price to payment checkout",
 
         "badge-ssl": "SSL Secured Checkout",
         "badge-paypal": "PayPal Verified",
@@ -134,7 +134,7 @@ const translations = {
         "modal-keywords-placeholder": "예: 컨퍼런스, 서밋, 워크숍",
         "modal-qty": "수량:",
         "modal-total-amt": "총 결제금액:",
-        "modal-test-btn": "가격을 클릭하면 테스트 결제",
+        "modal-test-btn": "가격을 클릭하면 결제 진행",
 
         "badge-ssl": "SSL 보안 결제",
         "badge-paypal": "PayPal 인증",
@@ -493,12 +493,12 @@ function validateEmailField() {
     }
 }
 
-// Click price to test checkout Trigger
+// Click price to payment checkout Trigger
 function triggerTestCheckout() {
     // Auto-fill mock email if field is empty
     const emailInput = document.getElementById('order-email');
     if (emailInput && !emailInput.value.trim()) {
-        emailInput.value = 'sandbox@test.dev';
+        emailInput.value = 'secure checkout@test.dev';
         emailInput.style.borderColor = 'var(--border)';
         const emailError = document.getElementById('email-error');
         if (emailError) emailError.style.display = 'none';

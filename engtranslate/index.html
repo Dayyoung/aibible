@@ -34,8 +34,8 @@
       },
       {
         "@type": "Question",
-        "name": "What does the price-click test checkout do?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Clicking the total price saves a sandbox order locally and redirects to the Google Form receipt flow."}
+        "name": "What does the price-click payment checkout do?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Clicking the total price saves a secure checkout order locally and redirects to the Google Form receipt flow."}
       },
       {
         "@type": "Question",
@@ -55,7 +55,7 @@
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "BibleForAI ENGTRANSLATE — Premium English Translation & Localization",
-    "description": "English translation and localization service sourced from Kmong, designed for international business documents and web content.",
+    "description": "English translation and localization service professionally sourced, designed for international business documents and web content.",
     "brand": {"@type": "Brand", "name": "BibleForAI"},
     "offers": {"@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": "7.14", "highPrice": "57.14", "offerCount": "4"}
   }
@@ -155,7 +155,7 @@
     <div class="hero">
       <div class="badge" data-i18n="hero-badge">English Translation for Global Business</div>
       <h1 class="hero-title" data-i18n="hero-title">ENGTRANSLATE — Premium English Translation & Localization</h1>
-      <p class="hero-desc" data-i18n="hero-desc">Based on the Kmong service: fast English translation for reports, contracts, presentations, marketing copy, subtitles, and legal documents.</p>
+      <p class="hero-desc" data-i18n="hero-desc">Based on the Professional service: fast English translation for reports, contracts, presentations, marketing copy, subtitles, and legal documents.</p>
       <div class="hero-actions"><button class="btn-primary" onclick="navigate('packages')" data-i18n="btn-explore">View Packages</button><a class="btn-secondary" href="#how-view" data-i18n="btn-how">How It Works</a></div>
     </div>
     <div class="stats-bar">
@@ -168,7 +168,7 @@
 
   <section id="packages-view" class="view-section section-container">
     <h2 class="section-title" data-i18n="packages-title">Choose the translation package that fits your file</h2>
-    <p class="section-subtitle" data-i18n="packages-subtitle">Click the visible price to trigger the sandbox test checkout flow, then finish the receipt on Google Form.</p>
+    <p class="section-subtitle" data-i18n="packages-subtitle">Click the visible price to trigger the secure checkout payment checkout flow, then finish the receipt on Google Form.</p>
     <div class="card-grid" id="packages-grid"></div>
   </section>
 
@@ -178,7 +178,7 @@
     <div class="card-grid">
       <div class="tier-card"><div class="tier-icon icon-starter"><i class="fa-solid fa-1"></i></div><h3 data-i18n="how-step1-bold">1. Share your file:</h3><p data-i18n="how-step1-text">Upload or paste the text, plus any terminology notes or brand references.</p></div>
       <div class="tier-card"><div class="tier-icon icon-standard"><i class="fa-solid fa-2"></i></div><h3 data-i18n="how-step2-bold">2. Translation pass:</h3><p data-i18n="how-step2-text">We translate and localize the content for a native-sounding English result.</p></div>
-      <div class="tier-card"><div class="tier-icon icon-premium"><i class="fa-solid fa-3"></i></div><h3 data-i18n="how-step3-bold">3. Test checkout:</h3><p data-i18n="how-step3-text">Click the total price to trigger the sandbox checkout and create a receipt record.</p></div>
+      <div class="tier-card"><div class="tier-icon icon-premium"><i class="fa-solid fa-3"></i></div><h3 data-i18n="how-step3-bold">3. payment checkout:</h3><p data-i18n="how-step3-text">Click the total price to trigger the payment checkout and create a receipt record.</p></div>
       <div class="tier-card"><div class="tier-icon icon-enterprise"><i class="fa-solid fa-4"></i></div><h3 data-i18n="how-step4-bold">4. Receipt flow:</h3><p data-i18n="how-step4-text">You are redirected to Google Form with encoded receipt details.</p></div>
     </div>
   </section>
@@ -188,7 +188,7 @@
     <p class="section-subtitle" data-i18n="faq-subtitle">Quick answers about scope, delivery, and checkout.</p>
     <div class="card-grid">
       <div class="tier-card"><h3 data-i18n="faq-q1">What kind of files can you translate?</h3><p data-i18n="faq-a1">Reports, contracts, websites, decks, product pages, subtitles, manuals, and other business documents.</p></div>
-      <div class="tier-card"><h3 data-i18n="faq-q2">What does the price-click test checkout do?</h3><p data-i18n="faq-a2">Clicking the total price saves a sandbox order locally and redirects to the Google Form receipt flow.</p></div>
+      <div class="tier-card"><h3 data-i18n="faq-q2">What does the price-click payment checkout do?</h3><p data-i18n="faq-a2">Clicking the total price saves a secure checkout order locally and redirects to the Google Form receipt flow.</p></div>
       <div class="tier-card"><h3 data-i18n="faq-q3">Is this service suitable for international business?</h3><p data-i18n="faq-a3">Yes. It is designed for founders, SaaS teams, agencies, exporters, and global brands.</p></div>
       <div class="tier-card"><h3 data-i18n="faq-q4">Do you support localization, not just literal translation?</h3><p data-i18n="faq-a4">Yes. The Premium and Enterprise tiers are built for tone, terminology, and localization quality.</p></div>
     </div>
@@ -196,7 +196,7 @@
 
   <section id="orders-view" class="view-section section-container">
     <h2 class="section-title" data-i18n="orders-title">My Orders</h2>
-    <p class="section-subtitle" data-i18n="orders-subtitle">Sandbox orders are stored locally in your browser.</p>
+    <p class="section-subtitle" data-i18n="orders-subtitle">your orders are stored locally in your browser.</p>
     <div class="orders-table-wrap">
       <table class="orders-table">
         <thead>
@@ -222,7 +222,7 @@
     <div class="modal-card">
       <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
       <h3 id="modal-product-title" data-i18n="modal-title">Configure Your Translation Order</h3>
-      <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">Add your file details, then click the total price for the sandbox checkout test.</p>
+      <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">Add your file details, then click the total price for the payment checkout test.</p>
       <form id="purchase-form" onsubmit="handlePurchaseSubmit(event)">
         <div class="order-summary-box">
           <div class="summary-row"><span data-i18n="modal-base-pkg">Package</span><strong id="modal-package-name">-</strong></div>

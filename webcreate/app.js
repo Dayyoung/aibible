@@ -230,12 +230,12 @@ function updateModalPrice() {
     }
 }
 
-// Trigger Test Checkout (Sandbox Checkout via Price Click)
+// Trigger payment checkout (payment checkout via Price Click)
 function triggerTestCheckout() {
     // Fill default values if empty
     const emailInput = document.getElementById('modal-email');
     if (emailInput && !emailInput.value.trim()) {
-        emailInput.value = 'sandbox@test.dev';
+        emailInput.value = 'secure checkout@test.dev';
     }
     
     const timelineInput = document.getElementById('modal-timeline');
@@ -251,10 +251,10 @@ function triggerTestCheckout() {
         product: `WEBCREATE - ${pkgName.toUpperCase()}`,
         tier: currentPackage ? currentPackage.id.toUpperCase() : '-',
         timeline: timelineVal,
-        email: emailInput ? emailInput.value.trim() : 'sandbox@test.dev',
+        email: emailInput ? emailInput.value.trim() : 'secure checkout@test.dev',
         qty: orderQuantity,
         total: `$${totalPaid.toFixed(2)}`,
-        status: 'Paid (Sandbox)'
+        status: 'Paid (secure checkout)'
     };
     
     // Save order
@@ -333,7 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
         qtyInput.addEventListener('change', updateModalPrice);
     }
     
-    // Bind price total click to test checkout
+    // Bind price total click to payment checkout
     const totalVal = document.getElementById('modal-total');
     if (totalVal) {
         totalVal.style.cursor = 'pointer';

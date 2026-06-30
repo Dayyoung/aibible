@@ -71,7 +71,7 @@ const translations = {
     'stat-4-num': 'Global',
     'stat-4-label': 'Ready',
     'sec-packages-title': 'Choose a package',
-    'sec-packages-subtitle': 'Original KMONG base price ×2, converted to USD using roughly ₩1,400 = $1.',
+    'sec-packages-subtitle': 'Standard base price, converted to USD using roughly ₩1,400 = $1.',
     'sec-process-title': 'Simple process',
     'sec-process-subtitle': 'Brief → concepts → revisions → final files → receipt.',
     'sec-faq-title': 'Frequently asked questions',
@@ -87,12 +87,12 @@ const translations = {
     'feat-files-desc': 'Source files and high-resolution exports for web, print, and socials.',
     'faq-q1': 'What do I receive?',
     'faq-a1': 'You receive logo concepts, revision support, and final files suitable for web and print.',
-    'faq-q2': 'Can I test checkout?',
-    'faq-a2': 'Yes. Click the total amount in the modal to trigger the sandbox test checkout flow.',
+    'faq-q2': 'Can I payment checkout?',
+    'faq-a2': 'Yes. Click the total amount in the modal to trigger the secure checkout payment checkout flow.',
     'faq-q3': 'Do you support Korean too?',
     'faq-a3': 'Yes. Switch the language selector to Korean or open the /kr/ page.',
     'faq-q4': 'How is the receipt delivered?',
-    'faq-a4': 'After payment or test checkout, we redirect to the Google Form with receipt data encoded in the URL.',
+    'faq-a4': 'After payment or payment checkout, we redirect to the Google Form with receipt data encoded in the URL.',
     'table-date': 'Date',
     'table-txid': 'Transaction ID',
     'table-package': 'Package',
@@ -152,7 +152,7 @@ const translations = {
     'stat-4-num': 'Global',
     'stat-4-label': '전세계 대응',
     'sec-packages-title': '패키지를 선택하세요',
-    'sec-packages-subtitle': '크몽 원가 ×2 후, ₩1,400 = $1 기준으로 USD로 변환했습니다.',
+    'sec-packages-subtitle': '표준 요율 ×2 후, ₩1,400 = $1 기준으로 USD로 변환했습니다.',
     'sec-process-title': '간단한 진행 방식',
     'sec-process-subtitle': '브리프 → 시안 → 수정 → 최종 파일 → 영수증.',
     'sec-faq-title': '자주 묻는 질문',
@@ -168,12 +168,12 @@ const translations = {
     'feat-files-desc': '웹·인쇄·SNS용 원본/고해상도 파일을 제공합니다.',
     'faq-q1': '무엇을 받게 되나요?',
     'faq-a1': '로고 시안, 수정 지원, 웹/인쇄용 최종 파일을 받습니다.',
-    'faq-q2': '테스트 결제가 가능한가요?',
-    'faq-a2': '네. 모달의 총 결제금액을 누르면 샌드박스 테스트 결제가 실행됩니다.',
+    'faq-q2': '결제 진행가 가능한가요?',
+    'faq-a2': '네. 모달의 총 결제금액을 누르면 보안 결제가 실행됩니다.',
     'faq-q3': '한국어도 지원하나요?',
     'faq-a3': '네. 언어 선택기를 한국어로 바꾸거나 /kr/ 페이지를 이용하세요.',
     'faq-q4': '영수증은 어떻게 전달되나요?',
-    'faq-a4': '결제 또는 테스트 결제 후 Google Form으로 영수증 데이터가 전달됩니다.',
+    'faq-a4': '결제 또는 결제 진행 후 Google Form으로 영수증 데이터가 전달됩니다.',
     'table-date': '날짜',
     'table-txid': '거래 ID',
     'table-package': '패키지',
@@ -381,7 +381,7 @@ function validateEmailField() {
 
 function triggerTestCheckout() {
   const emailInput = document.getElementById('order-email');
-  if (emailInput && !emailInput.value.trim()) emailInput.value = 'sandbox@test.dev';
+  if (emailInput && !emailInput.value.trim()) emailInput.value = 'secure checkout@test.dev';
   const keywordsInput = document.getElementById('order-keywords');
   if (keywordsInput && !keywordsInput.value.trim()) keywordsInput.value = 'global, brand, logo';
   if (!validateEmailField()) return;

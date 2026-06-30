@@ -69,13 +69,13 @@ const translations = {
     'section-packages-title': 'China Entry Packages',
     'section-packages-sub': 'Prices are shown in USD with a 2x markup over the benchmark market rate.',
     'section-process-title': 'Workflow',
-    'section-process-sub': 'PayPal checkout, sandbox test button, and a Google Form handoff are included.',
+    'section-process-sub': 'PayPal checkout, secure checkout test button, and a Google Form handoff are included.',
     'section-faq-title': 'Frequently Asked Questions',
     'section-faq-sub': 'Short answers for founders, sellers, agencies, and operators expanding into China.',
     'process-1-title': '1. Choose a package',
     'process-1-desc': 'Pick the scope that matches your launch stage and project size.',
     'process-2-title': '2. Pay securely',
-    'process-2-desc': 'Use the PayPal checkout or the built-in test button for sandbox verification.',
+    'process-2-desc': 'Use the PayPal checkout or the built-in test button for secure checkout verification.',
     'process-3-title': '3. Submit the handoff',
     'process-3-desc': 'We redirect your receipt and notes into Google Form-ready data for follow-up.',
     'faq-q1': 'What information do I need before checkout?',
@@ -83,7 +83,7 @@ const translations = {
     'faq-q2': 'Is this for non-Chinese founders?',
     'faq-a2': 'Yes. The workflow is designed for international founders, exporters, agencies, and e-commerce teams.',
     'faq-q3': 'How does the Google Form integration work?',
-    'faq-a3': 'After payment or test checkout, a plain-text receipt is encoded and passed into the Google Form URL.',
+    'faq-a3': 'After payment or payment checkout, a plain-text receipt is encoded and passed into the Google Form URL.',
     'faq-q4': 'Is Korean supported?',
     'faq-a4': 'Yes. Switch the language selector or open /kr/ for the Korean version.',
     'orders-title': 'My Orders',
@@ -114,7 +114,7 @@ const translations = {
     'modal-goal-placeholder': 'Register a local entity and prepare market entry',
     'modal-qty': 'Quantity',
     'modal-total': 'Total Amount',
-    'modal-test': 'Click price to test checkout',
+    'modal-test': 'Click price to payment checkout',
     'badge-paypal': 'PayPal Verified',
     'badge-ssl': 'SSL Secured',
     'footer-note': 'ChinaBoost provides practical business-entry planning with bilingual handoff, PayPal checkout, and Google Form receipt routing.'
@@ -147,7 +147,7 @@ const translations = {
     'process-1-title': '1. 패키지 선택',
     'process-1-desc': '런칭 단계와 프로젝트 규모에 맞는 패키지를 선택하세요.',
     'process-2-title': '2. 안전 결제',
-    'process-2-desc': 'PayPal 결제 또는 샌드박스 테스트 버튼으로 결제 흐름을 검증합니다.',
+    'process-2-desc': 'PayPal 결제 또는 보안 테스트 버튼으로 결제 흐름을 검증합니다.',
     'process-3-title': '3. 인수인계 제출',
     'process-3-desc': '영수증과 안내 메모가 Google Form 입력용 데이터로 전달됩니다.',
     'faq-q1': '결제 전에 무엇을 준비해야 하나요?',
@@ -186,7 +186,7 @@ const translations = {
     'modal-goal-placeholder': '현지 법인 등록 및 시장 진출 준비',
     'modal-qty': '수량',
     'modal-total': '총 결제금액',
-    'modal-test': '가격 텍스트를 눌러 테스트 결제',
+    'modal-test': '가격 텍스트를 눌러 결제 진행',
     'badge-paypal': 'PayPal 인증',
     'badge-ssl': 'SSL 보안',
     'footer-note': 'ChinaBoost는 한중 이중 언어 인수인계, PayPal 결제, Google Form 영수증 라우팅을 포함한 실무형 진출 지원을 제공합니다.'
@@ -370,10 +370,10 @@ function triggerTestCheckout() {
   const companyInput = document.getElementById('order-company');
   const marketInput = document.getElementById('order-market');
   const goalInput = document.getElementById('order-goal');
-  if (!emailInput.value.trim()) emailInput.value = 'sandbox@test.dev';
-  if (!companyInput.value.trim()) companyInput.value = 'Sandbox Global Ltd.';
+  if (!emailInput.value.trim()) emailInput.value = 'secure checkout@test.dev';
+  if (!companyInput.value.trim()) companyInput.value = 'secure checkout Global Ltd.';
   if (!marketInput.value.trim()) marketInput.value = 'Shanghai';
-  if (!goalInput.value.trim()) goalInput.value = 'China market entry sandbox test';
+  if (!goalInput.value.trim()) goalInput.value = 'China market entry secure checkout test';
   if (!validateEmailField() || !validateOrderFields()) return;
   finalizeOrder({ id: `TEST-PAYID-${Math.random().toString(36).slice(2, 10).toUpperCase()}` }, true);
 }
@@ -453,7 +453,7 @@ function saveLocalOrder(details, isTest = false) {
     package: activeLang === 'ko' ? currentPackage.name_ko : currentPackage.name_en,
     quantity: orderQuantity,
     total: formatPrice(currentPackage.price * orderQuantity),
-    status: isTest ? 'Sandbox Test' : 'Paid'
+    status: isTest ? 'secure checkout Test' : 'Paid'
   };
   orderLogs.unshift(order);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(orderLogs));

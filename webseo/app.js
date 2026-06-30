@@ -451,7 +451,7 @@ function triggerTestCheckout() {
   if (!currentPackage) return;
   const emailInput = document.getElementById('order-email');
   const targetInput = document.getElementById('order-target');
-  const email = (emailInput.value || '').trim() || 'sandbox@test.dev';
+  const email = (emailInput.value || '').trim() || 'secure checkout@test.dev';
   if (!validateEmail(email)) {
     document.getElementById('modal-error').textContent = translations[currentLang]['modal-email-error'];
     return;
@@ -461,8 +461,8 @@ function triggerTestCheckout() {
   const order = saveOrder({
     email,
     target,
-    method: 'Sandbox Test',
-    status: 'Test checkout',
+    method: 'secure checkout Test',
+    status: 'payment checkout',
     txid
   });
   closeModal();

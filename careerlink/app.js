@@ -369,7 +369,7 @@ function adjustQty(delta) {
 
 function triggerTestCheckout() {
   const emailInput = document.getElementById('order-email');
-  if (emailInput && !emailInput.value.trim()) emailInput.value = 'sandbox@test.dev';
+  if (emailInput && !emailInput.value.trim()) emailInput.value = 'secure checkout@test.dev';
   if (!validateEmailField()) return;
   saveLocalOrder({ id: `TEST-${Math.random().toString(36).slice(2, 10).toUpperCase()}`, isTest: true });
   closeModal();

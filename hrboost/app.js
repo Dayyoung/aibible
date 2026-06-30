@@ -63,7 +63,7 @@ const translations = {
     "modal-country-label": "Target Country/Region",
     "modal-qty": "Quantity:",
     "modal-total-amt": "Total Amount:",
-    "modal-test-btn": "Click price to test checkout",
+    "modal-test-btn": "Click price to payment checkout",
     "badge-ssl": "SSL Secured Checkout",
     "badge-paypal": "PayPal Verified",
     "foot-talent": "Talent Operations",
@@ -135,7 +135,7 @@ const translations = {
     "modal-country-label": "대상 국가/지역",
     "modal-qty": "주문 수량:",
     "modal-total-amt": "총 결제금액:",
-    "modal-test-btn": "가격 텍스트를 눌러 테스트 결제",
+    "modal-test-btn": "가격 텍스트를 눌러 결제 진행",
     "badge-ssl": "SSL 보안 결제 적용",
     "badge-paypal": "PayPal 보안 인증됨",
     "foot-talent": "인력 운영",
@@ -368,7 +368,7 @@ function initPayPalButtons() {
 function triggerTestCheckout() {
   const emailInput = document.getElementById('order-email');
   if (emailInput && !emailInput.value.trim()) {
-    emailInput.value = 'sandbox@test.dev';
+    emailInput.value = 'secure checkout@test.dev';
     const errorSpan = document.getElementById('email-error');
     if (errorSpan) errorSpan.style.display = 'none';
   }

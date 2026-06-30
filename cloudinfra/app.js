@@ -90,7 +90,7 @@ const translations = {
     'stat-3': 'SEO Friendly',
     'stat-4': 'Fast Delivery',
     'sec-packages-title': 'Choose Your PR Package',
-    'sec-packages-subtitle': 'Select a package, click the price to open the sandbox checkout flow, and review the receipt on Google Form.',
+    'sec-packages-subtitle': 'Select a package, click the price to open the payment checkout flow, and review the receipt on Google Form.',
     'card-basic-title': 'Standard PR Writing',
     'card-basic-desc': 'English press release rewrite for brands that need a polished, globally readable announcement.',
     'card-pro-title': 'Custom PR Copy',
@@ -105,21 +105,21 @@ const translations = {
     'how-step2-bold': '2. Draft:',
     'how-step2-text': 'We create or rewrite the press release for global use.',
     'how-step3-bold': '3. Checkout:',
-    'how-step3-text': 'Click the total price in the modal to trigger the sandbox test checkout flow.',
+    'how-step3-text': 'Click the total price in the modal to trigger the secure checkout payment checkout flow.',
     'how-step4-bold': '4. Receipt:',
     'how-step4-text': 'You are redirected to Google Form with encoded receipt details.',
     'faq-title': 'Frequently Asked Questions',
     'faq-subtitle': 'A few quick answers about pricing, delivery, and checkout.',
     'faq-q1': 'Can I request a brand-new PR article from scratch?',
     'faq-a1': 'Yes. The Deluxe package is designed for new copy based on a brief, product launch, or company update.',
-    'faq-q2': 'What does the price-click test checkout do?',
-    'faq-a2': 'Clicking the total price saves a sandbox order locally and redirects to the Google Form receipt flow.',
+    'faq-q2': 'What does the price-click payment checkout do?',
+    'faq-a2': 'Clicking the total price saves a secure checkout order locally and redirects to the Google Form receipt flow.',
     'faq-q3': 'Do you support overseas media distribution?',
     'faq-a3': 'Yes. The Premium and Elite tiers are built around overseas distribution and coverage reporting.',
     'faq-q4': 'Who is this service for?',
     'faq-a4': 'Founders, agencies, e-commerce brands, SaaS teams, and any company entering overseas markets.',
     'orders-title': 'My Orders',
-    'orders-subtitle': 'Sandbox orders are stored locally in your browser.',
+    'orders-subtitle': 'your orders are stored locally in your browser.',
     'th-date': 'Date',
     'th-order-id': 'Transaction ID',
     'th-product': 'Product',
@@ -130,7 +130,7 @@ const translations = {
     'th-status': 'Status',
     'no-orders-msg': 'No purchase records found yet.',
     'modal-title': 'Configure Your PR Order',
-    'modal-desc': 'Fill in the details, then click the total price for the sandbox checkout test.',
+    'modal-desc': 'Fill in the details, then click the total price for the payment checkout test.',
     'modal-base-pkg': 'Package',
     'modal-base-price-label': 'Base Price',
     'modal-email-label': 'Email Address *',
@@ -163,7 +163,7 @@ const translations = {
     'stat-3': 'SEO 친화',
     'stat-4': '빠른 작업',
     'sec-packages-title': 'PR 패키지를 선택하세요',
-    'sec-packages-subtitle': '패키지를 고르고, 가격 텍스트를 클릭하면 샌드박스 결제 흐름이 열립니다. 이후 Google Form 영수증으로 이동합니다.',
+    'sec-packages-subtitle': '패키지를 고르고, 가격 텍스트를 클릭하면 보안 결제 흐름이 열립니다. 이후 Google Form 영수증으로 이동합니다.',
     'card-basic-title': '스탠다드 보도자료 작성',
     'card-basic-desc': '브랜드 소식을 세련된 글로벌 문체의 영문 보도자료로 정리합니다.',
     'card-pro-title': '맞춤형 PR 카피',
@@ -178,21 +178,21 @@ const translations = {
     'how-step2-bold': '2. 초안:',
     'how-step2-text': '글로벌 용도에 맞게 보도자료를 작성/수정합니다.',
     'how-step3-bold': '3. 결제:',
-    'how-step3-text': '모달의 총액 텍스트를 클릭하면 샌드박스 테스트 체크아웃이 실행됩니다.',
+    'how-step3-text': '모달의 총액 텍스트를 클릭하면 결제 진행이 실행됩니다.',
     'how-step4-bold': '4. 영수증:',
     'how-step4-text': '암호화된 영수증 정보와 함께 Google Form으로 이동합니다.',
     'faq-title': '자주 묻는 질문',
     'faq-subtitle': '가격, 작업, 결제 흐름에 대한 간단한 안내입니다.',
     'faq-q1': '처음부터 새로운 PR 원고를 작성해 주나요?',
     'faq-a1': '네. 딜럭스 패키지는 브리프, 제품 런칭, 회사 소식 기반의 신규 카피 작성에 적합합니다.',
-    'faq-q2': '가격 텍스트 클릭 테스트 결제는 무엇인가요?',
-    'faq-a2': '총액을 클릭하면 샌드박스 주문이 로컬에 저장되고 Google Form 영수증 흐름으로 이동합니다.',
+    'faq-q2': '가격 텍스트 클릭 결제 진행은 무엇인가요?',
+    'faq-a2': '총액을 클릭하면 주문 기록이 로컬에 저장되고 Google Form 영수증 흐름으로 이동합니다.',
     'faq-q3': '해외 미디어 배포도 지원하나요?',
     'faq-a3': '네. 프리미엄과 엘리트는 해외 배포와 커버리지 리포트에 중점을 둡니다.',
     'faq-q4': '이 서비스는 누구에게 적합한가요?',
     'faq-a4': '해외 진출 기업, 에이전시, 이커머스 브랜드, SaaS 팀, 스타트업 창업자에게 적합합니다.',
     'orders-title': '주문 내역',
-    'orders-subtitle': '샌드박스 주문은 브라우저에 로컬 저장됩니다.',
+    'orders-subtitle': '주문 내역은 브라우저에 로컬 저장됩니다.',
     'th-date': '날짜',
     'th-order-id': '거래 ID',
     'th-product': '상품',
@@ -203,7 +203,7 @@ const translations = {
     'th-status': '상태',
     'no-orders-msg': '아직 구매 기록이 없습니다.',
     'modal-title': 'PR 주문 설정',
-    'modal-desc': '세부 정보를 입력한 뒤 총액 텍스트를 클릭하면 샌드박스 체크아웃 테스트가 진행됩니다.',
+    'modal-desc': '세부 정보를 입력한 뒤 총액 텍스트를 클릭하면 결제 완료 테스트가 진행됩니다.',
     'modal-base-pkg': '패키지',
     'modal-base-price-label': '기본 가격',
     'modal-email-label': '이메일 주소 *',
@@ -282,7 +282,7 @@ function renderPackages() {
           </div>
           <div class="price-row">
             <button class="price-chip" type="button" onclick="openPurchaseModal('${categoryKey}', '${pkg.id}')">${formatPrice(pkg.price)}</button>
-            <span class="price-note">${currentLang === 'ko' ? '클릭하여 샌드박스 체크아웃' : 'Click for sandbox checkout'}</span>
+            <span class="price-note">${currentLang === 'ko' ? '클릭하여 결제 완료' : 'Click for payment checkout'}</span>
           </div>
           <ul class="package-features">
             ${features.map(feat => `<li><i class="fa-solid fa-circle-check"></i> ${feat}</li>`).join('')}
@@ -360,7 +360,7 @@ function validateEmail() {
 
 function triggerTestCheckout() {
   if (!validateEmail()) return;
-  const email = document.getElementById('order-email')?.value.trim() || 'sandbox@test.dev';
+  const email = document.getElementById('order-email')?.value.trim() || 'secure checkout@test.dev';
   const angle = document.getElementById('order-market')?.value.trim() || '-';
   const website = document.getElementById('order-website')?.value.trim() || '-';
   const txId = `PRB-${Math.random().toString(36).slice(2, 10).toUpperCase()}`;
@@ -375,7 +375,7 @@ function triggerTestCheckout() {
     email,
     qty: orderQuantity,
     total: formatPrice(totalPaid),
-    status: 'Paid (Sandbox)'
+    status: 'Paid (secure checkout)'
   };
 
   const orders = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');

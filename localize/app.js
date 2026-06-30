@@ -529,7 +529,7 @@ function validateEmailField() {
 
 function triggerTestCheckout() {
     const emailInput = document.getElementById('order-email');
-    if (emailInput && !emailInput.value.trim()) emailInput.value = 'sandbox@test.dev';
+    if (emailInput && !emailInput.value.trim()) emailInput.value = 'secure checkout@test.dev';
     const langPairInput = document.getElementById('order-language-pair');
     if (langPairInput && !langPairInput.value.trim()) langPairInput.value = 'EN → KO';
     if (!validateEmailField()) return;

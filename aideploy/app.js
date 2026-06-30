@@ -134,12 +134,12 @@ function updateModalPrice() {
     }
 }
 
-// Trigger Test Checkout (Sandbox Checkout via Price Click)
+// Trigger payment checkout (payment checkout via Price Click)
 function triggerTestCheckout() {
     // Fill default values if empty
     const emailInput = document.getElementById('form-email');
     if (emailInput && !emailInput.value.trim()) {
-        emailInput.value = 'sandbox@test.dev';
+        emailInput.value = 'secure checkout@test.dev';
     }
     
     const targetInput = document.getElementById('form-deployment-target');
@@ -153,10 +153,10 @@ function triggerTestCheckout() {
         id: txId,
         product: `AIDEPLOY - ${currentPackage ? currentPackage.name.toUpperCase() : 'AI DEPLOYMENT'}`,
         tier: currentPackage ? currentPackage.name.toUpperCase() : '-',
-        email: emailInput ? emailInput.value.trim() : 'sandbox@test.dev',
+        email: emailInput ? emailInput.value.trim() : 'secure checkout@test.dev',
         qty: orderQuantity,
         total: `$${totalPaid.toFixed(2)}`,
-        status: 'Paid (Sandbox)'
+        status: 'Paid (secure checkout)'
     };
     
     // Save order
@@ -264,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', handlePurchaseSubmit);
     }
 
-    // Add pointer styles to form total for sandbox checkout trigger
+    // Add pointer styles to form total for payment checkout trigger
     const formTotal = document.getElementById('form-total');
     if (formTotal) {
         formTotal.style.cursor = 'pointer';

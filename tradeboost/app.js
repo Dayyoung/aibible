@@ -534,7 +534,7 @@ function validateEmailField() {
 
 function triggerTestCheckout() {
     const emailInput = document.getElementById('order-email');
-    if (emailInput && !emailInput.value.trim()) emailInput.value = 'sandbox@test.dev';
+    if (emailInput && !emailInput.value.trim()) emailInput.value = 'secure checkout@test.dev';
     if (!validateEmailField()) return;
     saveLocalOrder({ id: 'TEST-PAYID-' + Math.random().toString(36).slice(2, 11).toUpperCase(), isTest: true });
     closeModal();

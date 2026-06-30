@@ -10,7 +10,7 @@ const packageCatalog = {
         title_en: 'Multilingual AI Content System',
         title_ko: '다국어 AI 콘텐츠 시스템',
         packages: [
-            { id: 'content-standard', name_en: 'Standard AI Publishing Setup', name_ko: '스탠다드 AI 발행 셋업', desc_en: 'AI content generation, translation, SEO metadata, and publishing workflow setup. Based on Kmong 4-language AI integrated system originally listed from ₩990,000; marked up 2× and converted at ₩1,400 ≈ $1.', desc_ko: 'AI 콘텐츠 생성, 번역, SEO 메타데이터, 발행 워크플로우 셋업. 크몽 4개국어 AI 통합 시스템 990,000원 기준 ×2 마크업 후 환율 1,400원 기준 산정.', price: 1415, featured: false, features_en: ['1 Content Workflow Component', 'AI Draft Generation', 'SEO Meta / Schema Setup', 'Publishing Checklist', '7 Business Day Delivery'], features_ko: ['콘텐츠 워크플로우 1개 컴포넌트', 'AI 초안 생성', 'SEO 메타/스키마 셋업', '발행 체크리스트', '영업일 7일 납품'] },
+            { id: 'content-standard', name_en: 'Standard AI Publishing Setup', name_ko: '스탠다드 AI 발행 셋업', desc_en: 'AI content generation, translation, SEO metadata, and publishing workflow setup. Based on Professional 4-language AI integrated system originally listed from ₩990,000; marked up 2× and converted at ₩1,400 ≈ $1.', desc_ko: 'AI 콘텐츠 생성, 번역, SEO 메타데이터, 발행 워크플로우 셋업. 다국어 AI 통합 시스템 990,000원 기준 ×2 마크업 후 환율 1,400원 기준 산정.', price: 1415, featured: false, features_en: ['1 Content Workflow Component', 'AI Draft Generation', 'SEO Meta / Schema Setup', 'Publishing Checklist', '7 Business Day Delivery'], features_ko: ['콘텐츠 워크플로우 1개 컴포넌트', 'AI 초안 생성', 'SEO 메타/스키마 셋업', '발행 체크리스트', '영업일 7일 납품'] },
             { id: 'content-deluxe', name_en: 'Deluxe 4-Language SEO Pipeline', name_ko: '디럭스 4개국어 SEO 파이프라인', desc_en: 'A multilingual publishing pipeline for Korean, English, Japanese, and Chinese with hreflang, canonical, SEO metadata, and automated social copy.', desc_ko: '한국어·영어·일본어·중국어 다국어 발행 파이프라인. hreflang, canonical, SEO 메타데이터, SNS 카피 자동화를 포함합니다.', price: 3558, featured: true, features_en: ['Korean + EN/JP/CN Translation', 'hreflang / Canonical Setup', 'SEO 100 Workflow Checklist', 'SNS Copy Generator', 'CMS Publishing Guide', '14-Day Optimization Window'], features_ko: ['한국어 + 영/일/중 번역', 'hreflang/canonical 셋업', 'SEO 100 워크플로우 체크리스트', 'SNS 카피 생성기', 'CMS 발행 가이드', '14일 최적화 기간'] },
             { id: 'content-premium', name_en: 'Premium AI Media Engine', name_ko: '프리미엄 AI 미디어 엔진', desc_en: 'Full AI publishing system with multi-language content, SEO automation, social scheduling, analytics notes, and founder/operator handoff.', desc_ko: '다국어 콘텐츠, SEO 자동화, SNS 예약 발행, 분석 노트, 운영자 인수인계까지 포함한 풀 AI 발행 시스템입니다.', price: 8558, featured: false, features_en: ['Full 4-Component System', 'Content + Translation + SEO + SNS', 'Analytics and Tracking Notes', 'Prompt / Workflow Documentation', 'Operator Handoff Session', '30-Day Support Window'], features_ko: ['4개 컴포넌트 풀 시스템', '콘텐츠+번역+SEO+SNS', '분석 및 트래킹 노트', '프롬프트/워크플로우 문서', '운영자 인수인계 세션', '30일 지원 기간'] }
         ]
@@ -47,7 +47,7 @@ const translations = {
         "card-global-desc": "Receive clear workflow documentation, prompt libraries, and handoff guidance so your team can keep publishing.",
         "card-view-pricing": "View Pricing",
         "comp-title": "From Manual Content Work to AI Publishing System",
-        "comp-desc": "CONTENTBOOST adapts a Kmong 4-language AI integrated publishing system into an internationally usable workflow for media teams, exporters, SaaS brands, founders, and content-led businesses.",
+        "comp-desc": "CONTENTBOOST adapts a Professional 4-language AI integrated publishing system into an internationally usable workflow for media teams, exporters, SaaS brands, founders, and content-led businesses.",
         "comp-bullet1-bold": "Generation:",
         "comp-bullet1-text": "AI-assisted article, blog, newsletter, and social draft creation from repeatable source inputs.",
         "comp-bullet2-bold": "Global SEO:",
@@ -76,7 +76,7 @@ const translations = {
         "modal-market-label": "Content Goal:",
         "modal-qty": "Quantity:",
         "modal-total-amt": "Total Amount:",
-        "modal-test-btn": "Click price to test checkout",
+        "modal-test-btn": "Click price to payment checkout",
         "badge-ssl": "SSL Secured Checkout",
         "badge-paypal": "PayPal Verified",
         "foot-channels": "AI Publishing",
@@ -130,7 +130,7 @@ const translations = {
         "card-global-desc": "팀이 계속 발행할 수 있도록 워크플로우 문서, 프롬프트 라이브러리, 인수인계 가이드를 제공합니다.",
         "card-view-pricing": "가격 확인하기",
         "comp-title": "수작업 콘텐츠 운영에서 AI 발행 시스템으로",
-        "comp-desc": "CONTENTBOOST는 크몽 4개국어 AI 통합 발행 시스템을 미디어팀, 수출기업, SaaS 브랜드, 창업자에게 맞는 글로벌 워크플로우로 재구성합니다.",
+        "comp-desc": "CONTENTBOOST는 다국어 AI 통합 발행 시스템을 미디어팀, 수출기업, SaaS 브랜드, 창업자에게 맞는 글로벌 워크플로우로 재구성합니다.",
         "comp-bullet1-bold": "생성:",
         "comp-bullet1-text": "반복 가능한 입력을 기반으로 기사, 블로그, 뉴스레터, SNS 초안을 AI로 생성합니다.",
         "comp-bullet2-bold": "글로벌 SEO:",
@@ -159,7 +159,7 @@ const translations = {
         "modal-market-label": "콘텐츠 목표:",
         "modal-qty": "수량:",
         "modal-total-amt": "총 결제금액:",
-        "modal-test-btn": "가격 텍스트를 눌러 테스트 결제",
+        "modal-test-btn": "가격 텍스트를 눌러 결제 진행",
         "badge-ssl": "SSL 보안 결제 지원",
         "badge-paypal": "PayPal 인증됨",
         "foot-channels": "AI 발행",
@@ -509,7 +509,7 @@ function validateEmailField() {
 function triggerTestCheckout() {
     const emailInput = document.getElementById('order-email');
     if (emailInput && !emailInput.value.trim()) {
-        emailInput.value = 'sandbox@test.dev';
+        emailInput.value = 'secure checkout@test.dev';
         emailInput.style.borderColor = 'var(--border)';
         const emailError = document.getElementById('email-error');
         if (emailError) emailError.style.display = 'none';

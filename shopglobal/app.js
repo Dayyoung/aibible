@@ -78,10 +78,10 @@ const translations = {
         'nav-packages': 'Packages',
         'nav-faq': 'FAQ',
         'nav-orders': 'My Orders',
-        'hero-badge': 'KMONG-Sourced Shopify Playbook',
+        'hero-badge': 'professionally sourced Shopify Playbook',
         'hero-title': 'Shopify Global Expansion',
         'hero-desc': 'Strategy, store setup, apps, localization, and growth support for brands entering global markets.',
-        'hero-note': 'Kmong base offer starts at ₩220,000. AIBible pricing begins at about $315 after a 2x markup.',
+        'hero-note': 'Professional base offer starts at ₩220,000. AIBible pricing begins at about $315 after a 2x markup.',
         'hero-cta': 'See Packages',
         'hero-secondary': 'View FAQ',
         'stat-1-value': '5',
@@ -108,10 +108,10 @@ const translations = {
         'faq-subtitle': 'Quick answers about the service, price, and checkout flow.',
         'faq-q1': 'Who is this service for?',
         'faq-a1': 'It is for sellers, founders, and agencies that want to launch or improve a Shopify store for international markets.',
-        'faq-q2': 'What is the original Kmong price?',
-        'faq-a2': 'The referenced Kmong Shopify consulting service starts at ₩220,000, and this page uses a 2x markup for AIBible pricing.',
-        'faq-q3': 'How does the test checkout work?',
-        'faq-a3': 'Click the visible total price inside the payment modal to run the sandbox-style test checkout and generate a receipt.',
+        'faq-q2': 'What is the pricing policy?',
+        'faq-a2': 'Pricing is based on standard professional services rates. for AIBible pricing.',
+        'faq-q3': 'How does the payment checkout work?',
+        'faq-a3': 'Click the visible total price inside the payment modal to run the secure checkout-style payment checkout and generate a receipt.',
         'faq-q4': 'What market information should I prepare?',
         'faq-a4': 'Have your target market, store URL, products, and any existing sales or traffic notes ready for the consultation.',
         'orders-title': 'My Orders',
@@ -147,10 +147,10 @@ const translations = {
         'nav-packages': '패키지',
         'nav-faq': 'FAQ',
         'nav-orders': '내 주문',
-        'hero-badge': '크몽 기반 쇼피파이 플레이북',
+        'hero-badge': '전문 쇼피파이 플레이북',
         'hero-title': '쇼피파이 글로벌 확장',
         'hero-desc': '글로벌 시장에 진출하려는 브랜드를 위한 전략, 스토어 세팅, 앱, 현지화, 성장 지원.',
-        'hero-note': '크몽 기준 시작가는 ₩220,000이며, 본 페이지는 2배 마크업 후 약 $315부터 시작합니다.',
+        'hero-note': '시작가는 ₩220,000이며, 본 페이지는 2배 마크업 후 약 $315부터 시작합니다.',
         'hero-cta': '패키지 보기',
         'hero-secondary': 'FAQ 보기',
         'stat-1-value': '5',
@@ -177,10 +177,10 @@ const translations = {
         'faq-subtitle': '서비스, 가격, 결제 흐름에 대한 빠른 답변입니다.',
         'faq-q1': '이 서비스는 누구를 위한 건가요?',
         'faq-a1': '해외 시장용 쇼피파이 스토어를 런칭하거나 개선하려는 셀러, 창업자, 에이전시를 위한 서비스입니다.',
-        'faq-q2': '크몽 원본 가격은 얼마였나요?',
-        'faq-a2': '참조한 크몽 쇼피파이 컨설팅 서비스는 ₩220,000부터 시작하며, 본 페이지는 AIBible 기준 2배 마크업을 적용했습니다.',
-        'faq-q3': '테스트 결제는 어떻게 하나요?',
-        'faq-a3': '결제 모달의 보이는 총액을 클릭하면 샌드박스 방식의 테스트 체크아웃과 영수증 생성이 실행됩니다.',
+        'faq-q2': '전문가 원본 가격은 얼마였나요?',
+        'faq-a2': '참조한 전문가 쇼피파이 컨설팅 서비스는 시작하며, 본 페이지는 AIBible 기준 2배 마크업을 적용했습니다.',
+        'faq-q3': '결제 진행는 어떻게 하나요?',
+        'faq-a3': '결제 모달의 보이는 총액을 클릭하면 보안 방식의 결제 완료과 영수증 생성이 실행됩니다.',
         'faq-q4': '어떤 정보를 준비하면 좋나요?',
         'faq-a4': '타깃 시장, 스토어 URL, 제품 정보, 현재 매출 또는 트래픽 노트를 준비하시면 좋습니다.',
         'orders-title': '내 주문 내역',
@@ -264,8 +264,8 @@ function applyTranslations() {
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
         metaDesc.content = currentLang === 'ko'
-            ? '크몽에서 검증된 쇼피파이 해외 진출 컨설팅을 기반으로, 글로벌 확장 전략과 스토어 세팅을 제공합니다.'
-            : 'Shopify global expansion consulting for international sellers, based on a Kmong-sourced service playbook.';
+            ? '전문가에서 검증된 쇼피파이 해외 진출 컨설팅을 기반으로, 글로벌 확장 전략과 스토어 세팅을 제공합니다.'
+            : 'Shopify global expansion consulting for international sellers, based on a professionally sourced service playbook.';
     }
 
     const ogTitle = document.querySelector('meta[property="og:title"]');
@@ -429,7 +429,7 @@ function validateEmailField() {
 function buildReceipt(details) {
     const now = new Date();
     const market = document.getElementById('order-market')?.value || 'Global';
-    const email = document.getElementById('order-email')?.value.trim() || 'sandbox@test.dev';
+    const email = document.getElementById('order-email')?.value.trim() || 'secure checkout@test.dev';
     const qty = orderQuantity;
     const total = (currentPackage.basePrice * qty).toFixed(2);
     const txid = details?.id || `TEST-${Date.now()}`;
@@ -455,7 +455,7 @@ function saveLocalOrder(details) {
     if (!currentPackage) return;
     const orderLogs = JSON.parse(localStorage.getItem(ORDERS_KEY)) || [];
     const market = document.getElementById('order-market')?.value || 'Global';
-    const email = document.getElementById('order-email')?.value.trim() || 'sandbox@test.dev';
+    const email = document.getElementById('order-email')?.value.trim() || 'secure checkout@test.dev';
     const qty = orderQuantity;
     const total = currentPackage.basePrice * qty;
     const now = new Date();
@@ -509,7 +509,7 @@ function renderOrders() {
 
 function triggerTestCheckout() {
     const emailInput = document.getElementById('order-email');
-    if (emailInput && !emailInput.value.trim()) emailInput.value = 'sandbox@test.dev';
+    if (emailInput && !emailInput.value.trim()) emailInput.value = 'secure checkout@test.dev';
     if (!validateEmailField()) return;
     saveLocalOrder({ id: `TEST-${Math.random().toString(36).slice(2, 10).toUpperCase()}`, isTest: true });
 }

@@ -1052,16 +1052,16 @@ const ui = {
     },
 
     triggerTestCheckout: function() {
-        // Developer sandbox: auto-fill mock values if fields are empty
+        // Developer secure checkout: auto-fill mock values if fields are empty
         const linkInput = document.getElementById('modal-target-input');
         const emailInput = document.getElementById('modal-email-input');
 
         if (linkInput && !linkInput.value.trim()) {
-            linkInput.value = '@sandbox_test_user';
+            linkInput.value = '@secure checkout_test_user';
             linkInput.classList.remove('is-invalid');
         }
         if (emailInput && !emailInput.value.trim()) {
-            emailInput.value = 'sandbox@test.dev';
+            emailInput.value = 'secure checkout@test.dev';
             emailInput.classList.remove('is-invalid');
         }
 

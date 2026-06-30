@@ -54,7 +54,7 @@ const translations = {
         "nav-email": "Localization",
         "nav-clevel": "QA & DTP",
         "btn-orders": "My Orders",
-        "hero-badge": "KMONG-Sourced Medical Service",
+        "hero-badge": "professionally sourced Medical Service",
         "hero-title": "MEDBOOST — Clinical Translation & Localization",
         "hero-desc": "Translate medical content with terminology-aware QA for global teams, startups, and regulated brands.",
         "btn-explore": "Explore Services",
@@ -110,7 +110,7 @@ const translations = {
         "modal-country-label": "Target Language Pair:",
         "modal-qty": "Quantity:",
         "modal-total-amt": "Total Amount:",
-        "modal-test-btn": "Click price to test checkout",
+        "modal-test-btn": "Click price to payment checkout",
         "badge-ssl": "SSL Secured Checkout",
         "badge-paypal": "PayPal Verified",
         "foot-channels": "Services",
@@ -145,7 +145,7 @@ const translations = {
         "nav-email": "현지화",
         "nav-clevel": "QA & DTP",
         "btn-orders": "내 주문 내역",
-        "hero-badge": "KMONG 기반 의료 서비스",
+        "hero-badge": "Professional 의료 서비스",
         "hero-title": "MEDBOOST — 의료 번역·현지화",
         "hero-desc": "의료 콘텐츠를 용어 검수와 함께 글로벌 팀, 스타트업, 규제 산업에 맞게 번역·현지화합니다.",
         "btn-explore": "서비스 둘러보기",
@@ -201,7 +201,7 @@ const translations = {
         "modal-country-label": "대상 언어쌍:",
         "modal-qty": "수량:",
         "modal-total-amt": "총 결제금액:",
-        "modal-test-btn": "가격 텍스트를 눌러 테스트 결제",
+        "modal-test-btn": "가격 텍스트를 눌러 결제 진행",
         "badge-ssl": "SSL 보안 결제",
         "badge-paypal": "PayPal 인증됨",
         "foot-channels": "서비스",
@@ -572,12 +572,12 @@ function validateEmailField() {
     }
 }
 
-// Click price to test checkout Trigger
+// Click price to payment checkout Trigger
 function triggerTestCheckout() {
     // Auto-fill mock email if field is empty
     const emailInput = document.getElementById('order-email');
     if (emailInput && !emailInput.value.trim()) {
-        emailInput.value = 'sandbox@test.dev';
+        emailInput.value = 'secure checkout@test.dev';
         emailInput.style.borderColor = 'var(--border)';
         const emailError = document.getElementById('email-error');
         if (emailError) emailError.style.display = 'none';

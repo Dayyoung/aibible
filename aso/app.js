@@ -79,7 +79,7 @@ const translations = {
     'stat-3': 'Keyword Rank',
     'stat-4': '30d Support',
     'sec-packages-title': 'Choose Your ASO Package',
-    'sec-packages-subtitle': 'Pick a package, click the price to launch the sandbox checkout, and review the Google Form receipt flow.',
+    'sec-packages-subtitle': 'Pick a package, click the price to launch the payment checkout, and review the Google Form receipt flow.',
     'card-basic-title': 'App Store Keyword Management',
     'card-basic-desc': 'Monthly keyword ranking management for new or growing apps.',
     'card-pro-title': 'ASO Growth Plan',
@@ -96,21 +96,21 @@ const translations = {
     'how-step2-bold': '2. Draft:',
     'how-step2-text': 'We optimize the store listing and keyword strategy for global use.',
     'how-step3-bold': '3. Checkout:',
-    'how-step3-text': 'Click the total price in the modal to trigger the sandbox test checkout flow.',
+    'how-step3-text': 'Click the total price in the modal to trigger the secure checkout payment checkout flow.',
     'how-step4-bold': '4. Receipt:',
     'how-step4-text': 'You are redirected to Google Form with encoded receipt details.',
     'faq-title': 'Frequently Asked Questions',
     'faq-subtitle': 'A few quick answers about pricing, stores, and checkout.',
     'faq-q1': 'Do you work for both App Store and Google Play?',
     'faq-a1': 'Yes. The service is built for both App Store and Google Play keyword management.',
-    'faq-q2': 'What does the price-click test checkout do?',
-    'faq-a2': 'Clicking the total price saves a sandbox order locally and redirects to the Google Form receipt flow.',
+    'faq-q2': 'What does the price-click payment checkout do?',
+    'faq-a2': 'Clicking the total price saves a secure checkout order locally and redirects to the Google Form receipt flow.',
     'faq-q3': 'Can you help with keyword research and listing optimization?',
     'faq-a3': 'Yes. The Growth and Elite tiers focus on keyword research, store listing optimization, and reporting.',
     'faq-q4': 'Who is this service for?',
     'faq-a4': 'App founders, startups, agencies, and in-house growth teams.',
     'orders-title': 'My Orders',
-    'orders-subtitle': 'Sandbox orders are stored locally in your browser.',
+    'orders-subtitle': 'your orders are stored locally in your browser.',
     'th-date': 'Date',
     'th-order-id': 'Transaction ID',
     'th-product': 'Product',
@@ -121,7 +121,7 @@ const translations = {
     'th-status': 'Status',
     'no-orders-msg': 'No purchase records found yet.',
     'modal-title': 'Configure Your ASO Order',
-    'modal-desc': 'Fill in the details, then click the total price for the sandbox checkout test.',
+    'modal-desc': 'Fill in the details, then click the total price for the payment checkout test.',
     'modal-base-pkg': 'Package',
     'modal-base-price-label': 'Base Price',
     'modal-email-label': 'Email Address *',
@@ -154,7 +154,7 @@ const translations = {
     'stat-3': '키워드 순위',
     'stat-4': '30일 지원',
     'sec-packages-title': 'ASO 패키지를 선택하세요',
-    'sec-packages-subtitle': '패키지를 고르고, 가격을 클릭하면 샌드박스 결제가 열립니다. 이후 Google Form 영수증으로 이동합니다.',
+    'sec-packages-subtitle': '패키지를 고르고, 가격을 클릭하면 보안 결제가 열립니다. 이후 Google Form 영수증으로 이동합니다.',
     'card-basic-title': '앱스토어 키워드 관리',
     'card-basic-desc': '신규 및 성장 중인 앱을 위한 30일 키워드 순위 관리입니다.',
     'card-pro-title': 'ASO 성장 플랜',
@@ -171,21 +171,21 @@ const translations = {
     'how-step2-bold': '2. 초안:',
     'how-step2-text': '글로벌 용도에 맞게 스토어 목록과 키워드 전략을 최적화합니다.',
     'how-step3-bold': '3. 결제:',
-    'how-step3-text': '모달의 총액 텍스트를 클릭하면 샌드박스 테스트 체크아웃이 실행됩니다.',
+    'how-step3-text': '모달의 총액 텍스트를 클릭하면 결제 진행이 실행됩니다.',
     'how-step4-bold': '4. 영수증:',
     'how-step4-text': '암호화된 영수증 정보와 함께 Google Form으로 이동합니다.',
     'faq-title': '자주 묻는 질문',
     'faq-subtitle': '가격, 스토어, 결제 흐름에 대한 간단한 안내입니다.',
     'faq-q1': '앱스토어와 구글플레이 모두 지원하나요?',
     'faq-a1': '네. 이 서비스는 앱스토어와 구글플레이 키워드 관리에 맞춰 설계되었습니다.',
-    'faq-q2': '가격 텍스트 클릭 테스트 결제는 무엇인가요?',
-    'faq-a2': '총액을 클릭하면 샌드박스 주문이 로컬에 저장되고 Google Form 영수증 흐름으로 이동합니다.',
+    'faq-q2': '가격 텍스트 클릭 결제 진행은 무엇인가요?',
+    'faq-a2': '총액을 클릭하면 주문 기록이 로컬에 저장되고 Google Form 영수증 흐름으로 이동합니다.',
     'faq-q3': '키워드 리서치와 스토어 최적화도 도와주나요?',
     'faq-a3': '네. 성장과 엘리트 티어는 키워드 리서치, 스토어 최적화, 리포팅에 집중합니다.',
     'faq-q4': '이 서비스는 누구에게 적합한가요?',
     'faq-a4': '앱 창업자, 스타트업, 에이전시, 인하우스 성장팀에게 적합합니다.',
     'orders-title': '주문 내역',
-    'orders-subtitle': '샌드박스 주문은 브라우저에 로컬 저장됩니다.',
+    'orders-subtitle': '주문 내역은 브라우저에 로컬 저장됩니다.',
     'th-date': '날짜',
     'th-order-id': '거래 ID',
     'th-product': '상품',
@@ -196,7 +196,7 @@ const translations = {
     'th-status': '상태',
     'no-orders-msg': '아직 구매 기록이 없습니다.',
     'modal-title': 'ASO 주문 설정',
-    'modal-desc': '세부 정보를 입력한 뒤 총액 텍스트를 클릭하면 샌드박스 체크아웃 테스트가 진행됩니다.',
+    'modal-desc': '세부 정보를 입력한 뒤 총액 텍스트를 클릭하면 결제 완료 테스트가 진행됩니다.',
     'modal-base-pkg': '패키지',
     'modal-base-price-label': '기본 가격',
     'modal-email-label': '이메일 주소 *',
@@ -275,7 +275,7 @@ function renderPackages() {
           </div>
           <div class="price-row">
             <button class="price-chip" type="button" onclick="openPurchaseModal('${categoryKey}', '${pkg.id}')">${formatPrice(pkg.price)}</button>
-            <span class="price-note">${currentLang === 'ko' ? '클릭하여 샌드박스 체크아웃' : 'Click for sandbox checkout'}</span>
+            <span class="price-note">${currentLang === 'ko' ? '클릭하여 결제 완료' : 'Click for payment checkout'}</span>
           </div>
           <ul class="package-features">
             ${features.map(feat => `<li><i class="fa-solid fa-circle-check"></i> ${feat}</li>`).join('')}
@@ -353,7 +353,7 @@ function validateEmail() {
 
 function triggerTestCheckout() {
   if (!validateEmail()) return;
-  const email = document.getElementById('order-email')?.value.trim() || 'sandbox@test.dev';
+  const email = document.getElementById('order-email')?.value.trim() || 'secure checkout@test.dev';
   const angle = document.getElementById('order-market')?.value.trim() || '-';
   const website = document.getElementById('order-website')?.value.trim() || '-';
   const txId = `ASO-${Math.random().toString(36).slice(2, 10).toUpperCase()}`;
@@ -368,7 +368,7 @@ function triggerTestCheckout() {
     email,
     qty: orderQuantity,
     total: formatPrice(totalPaid),
-    status: 'Paid (Sandbox)'
+    status: 'Paid (secure checkout)'
   };
 
   const orders = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');

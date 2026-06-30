@@ -2,13 +2,12 @@
 const STORAGE_KEY = 'dbmigrate_orders';
 const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScMPqbEWWttS5mb1m_krsO_kco24ImpgvYVSbc7zO0nEVmYFw/viewform?entry.1059822061=';
 const isKrPage = window.location.pathname.includes('/kr/');
-let currentLang = isKrPage ? 'ko' : 'en';
-let currentPackage = null;
-let orderQuantity = 1;
-
-if (isKrPage) {
+if (isKrPage && localStorage.getItem('bibleforai_lang') !== 'ko') {
   localStorage.setItem('bibleforai_lang', 'ko');
 }
+let currentLang = localStorage.getItem('bibleforai_lang') || (isKrPage ? 'ko' : 'en');
+let currentPackage = null;
+let orderQuantity = 1;
 
 const packageCatalog = {
   basic: {
@@ -68,7 +67,7 @@ const translations = {
     'btn-orders': 'My Orders',
     'hero-badge': 'Global Database Migration',
     'hero-title': 'DBMIGRATE — Database Migration & Transfer',
-    'hero-desc': 'Based on a KMong listing priced at ₩110,000, this service helps teams move databases safely with rollback planning and verification.',
+    'hero-desc': 'Based on a Professional listing priced at ₩110,000, this service helps teams move databases safely with rollback planning and verification.',
     'btn-explore': 'View Packages',
     'btn-how': 'How It Works',
     'stat-1': 'Database Types',
@@ -91,7 +90,7 @@ const translations = {
     'how-step2-bold': '2. Prepare:',
     'how-step2-text': 'We map fields, identify risks, and prepare a rollback plan.',
     'how-step3-bold': '3. Checkout:',
-    'how-step3-text': 'Click the total price in the modal to trigger the test checkout flow.',
+    'how-step3-text': 'Click the total price in the modal to trigger the payment checkout flow.',
     'how-step4-bold': '4. Receipt:',
     'how-step4-text': 'You are redirected to Google Form with encoded receipt details.',
     'faq-title': 'Frequently Asked Questions',
@@ -105,7 +104,7 @@ const translations = {
     'faq-q4': 'Can you handle high-availability cutovers?',
     'faq-a4': 'Yes. The Enterprise tier is built for coordinated, low-risk production cutovers.',
     'orders-title': 'My Orders',
-    'orders-subtitle': 'Sandbox orders are stored locally in your browser.',
+    'orders-subtitle': 'your orders are stored locally in your browser.',
     'th-date': 'Date',
     'th-order-id': 'Transaction ID',
     'th-product': 'Product',
@@ -158,7 +157,7 @@ const translations = {
     'btn-orders': '주문 내역',
     'hero-badge': '글로벌 DB 마이그레이션',
     'hero-title': 'DBMIGRATE — 데이터베이스 이전 & 전환',
-    'hero-desc': '₩110,000 크몽 리스트를 바탕으로, 롤백 계획과 검증을 포함한 안전한 DB 이전을 지원합니다.',
+    'hero-desc': '체계적인 가이드를 바탕으로, 롤백 계획과 검증을 포함한 안전한 DB 이전을 지원합니다.',
     'btn-explore': '패키지 보기',
     'btn-how': '진행 방식',
     'stat-1': 'DB 유형',
@@ -181,7 +180,7 @@ const translations = {
     'how-step2-bold': '2. 준비:',
     'how-step2-text': '필드를 매핑하고 위험 요소와 롤백 계획을 준비합니다.',
     'how-step3-bold': '3. 결제:',
-    'how-step3-text': '모달의 총액을 클릭하면 테스트 체크아웃 흐름이 실행됩니다.',
+    'how-step3-text': '모달의 총액을 클릭하면 페이팔 구매를 완료합니다.',
     'how-step4-bold': '4. 영수증:',
     'how-step4-text': '암호화된 영수증 정보와 함께 Google Form으로 이동합니다.',
     'faq-title': '자주 묻는 질문',
@@ -195,7 +194,7 @@ const translations = {
     'faq-q4': '고가용성 전환도 가능한가요?',
     'faq-a4': '네. 엔터프라이즈 티어는 운영 중단을 최소화하는 전환을 위해 설계되었습니다.',
     'orders-title': '내 주문 내역',
-    'orders-subtitle': '샌드박스 주문은 브라우저에 로컬 저장됩니다.',
+    'orders-subtitle': '주문 내역은 브라우저에 로컬 저장됩니다.',
     'th-date': '날짜',
     'th-order-id': '트랜잭션 ID',
     'th-product': '상품',
@@ -241,8 +240,15 @@ const translations = {
   }
 };
 
-function formatPrice(value) {
-  return `$${Number(value).toFixed(2)}`;
+function formatPrice(usdPrice, includeUnit = true) {
+  const isKo = currentLang === 'ko';
+  if (isKo) {
+    const krw = Math.round(usdPrice * 1300);
+    return includeUnit ? `₩${krw.toLocaleString()} KRW` : `₩${krw.toLocaleString()}`;
+  } else {
+    const formatted = (usdPrice % 1 === 0) ? usdPrice.toLocaleString() : usdPrice.toFixed(2);
+    return includeUnit ? `$${formatted} USD` : `$${formatted}`;
+  }
 }
 
 function navigate(viewId) {
@@ -360,13 +366,17 @@ function closeModal() {
 
 function updateModalPrice() {
   const qtyInput = document.getElementById('order-quantity');
-  let qty = parseInt(qtyInput?.value || '1', 10);
-  if (Number.isNaN(qty) || qty < 1) qty = 1;
-  orderQuantity = qty;
-  if (qtyInput) qtyInput.value = String(qty);
+  orderQuantity = Math.max(1, parseInt(qtyInput?.value || '1', 10) || 1);
+  if (qtyInput) qtyInput.value = String(orderQuantity);
   const total = currentPackage ? currentPackage.basePrice * orderQuantity : 0;
   const totalEl = document.getElementById('modal-total-price');
   if (totalEl) totalEl.textContent = formatPrice(total);
+  
+  // Sync the currency label in modal (USD -> KRW for Korean)
+  const currencyLabel = document.querySelector('.total-price-box span:first-child');
+  if (currencyLabel) {
+    currencyLabel.textContent = currentLang === 'ko' ? 'KRW' : 'USD';
+  }
 }
 
 function validateEmailField() {
@@ -391,7 +401,7 @@ function buildReceipt(details, status) {
       year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
     }),
     id: details.id,
-    email: document.getElementById('order-email')?.value.trim() || details.email || 'sandbox@test.dev',
+    email: document.getElementById('order-email')?.value.trim() || details.email || 'secure checkout@test.dev',
     source: document.getElementById('order-source')?.value.trim() || '-',
     target: document.getElementById('order-target')?.value.trim() || '-',
     size: document.getElementById('order-size')?.value.trim() || '-',
@@ -427,7 +437,7 @@ function saveOrder(details, status) {
   const order = {
     date: new Date().toLocaleDateString(currentLang === 'ko' ? 'ko-KR' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
     id: details.id,
-    email: document.getElementById('order-email')?.value.trim() || details.email || 'sandbox@test.dev',
+    email: document.getElementById('order-email')?.value.trim() || details.email || 'secure checkout@test.dev',
     category: currentPackage?.categoryKey || '-',
     package: currentPackage?.packageId || '-',
     quantity: orderQuantity,
@@ -442,14 +452,14 @@ function saveOrder(details, status) {
 function triggerTestCheckout() {
   const emailInput = document.getElementById('order-email');
   if (emailInput && !emailInput.value.trim()) {
-    emailInput.value = 'sandbox@test.dev';
+    emailInput.value = 'secure checkout@test.dev';
     emailInput.style.borderColor = 'var(--border)';
   }
   if (!validateEmailField()) return;
   const txId = `TEST-${Math.random().toString(36).slice(2, 10).toUpperCase()}`;
-  const details = { id: txId, email: document.getElementById('order-email')?.value.trim() || 'sandbox@test.dev' };
-  saveOrder(details, 'Paid (Sandbox)');
-  const receipt = buildReceipt(details, 'Paid (Sandbox)');
+  const details = { id: txId, email: document.getElementById('order-email')?.value.trim() || 'secure checkout@test.dev' };
+  saveOrder(details, 'Paid (secure checkout)');
+  const receipt = buildReceipt(details, 'Paid (secure checkout)');
   closeModal();
   window.location.href = GOOGLE_FORM_URL + encodeURIComponent(receipt);
 }
@@ -540,6 +550,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (form) form.addEventListener('submit', handlePurchaseSubmit);
   if (isKrPage) localStorage.setItem('bibleforai_lang', 'ko');
   else if (!localStorage.getItem('bibleforai_lang')) localStorage.setItem('bibleforai_lang', 'en');
+  currentLang = localStorage.getItem('bibleforai_lang') || 'en';
+  applyTranslations();
 });
 
 window.navigate = navigate;

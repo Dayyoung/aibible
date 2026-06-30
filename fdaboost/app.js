@@ -78,10 +78,10 @@ const translations = {
         'nav-packages': 'Packages',
         'nav-faq': 'FAQ',
         'nav-orders': 'My Orders',
-        'hero-badge': 'KMONG-Sourced FDA Playbook',
+        'hero-badge': 'professionally sourced FDA Playbook',
         'hero-title': 'FDA Labeling & Certification',
         'hero-desc': 'Labeling, registration prep, launch readiness, and certification support for US food brands.',
-        'hero-note': 'Kmong base offer starts at ₩190,000. AIBible pricing begins at about $247 after a 2x markup.',
+        'hero-note': 'AIBible pricing begins at about $247. AIBible pricing begins at about $247 after a 2x markup.',
         'hero-cta': 'See Packages',
         'hero-secondary': 'View FAQ',
         'stat-1-value': '5',
@@ -108,10 +108,10 @@ const translations = {
         'faq-subtitle': 'Quick answers about the service, price, and checkout flow.',
         'faq-q1': 'Who is this service for?',
         'faq-a1': 'It is for food brands, founders, manufacturers, and agencies entering the US market with FDA-related packaging needs.',
-        'faq-q2': 'What is the original Kmong price?',
-        'faq-a2': 'The referenced Kmong FDA labeling service starts at ₩190,000, and this page uses a 2x markup for AIBible pricing.',
-        'faq-q3': 'How does the test checkout work?',
-        'faq-a3': 'Click the visible total price inside the payment modal to run the sandbox-style test checkout and generate a receipt.',
+        'faq-q2': 'What is the pricing policy?',
+        'faq-a2': 'Pricing is based on standard professional services rates. for AIBible pricing.',
+        'faq-q3': 'How does the payment checkout work?',
+        'faq-a3': 'Click the visible total price inside the payment modal to run the secure checkout-style payment checkout and generate a receipt.',
         'faq-q4': 'What information should I prepare?',
         'faq-a4': 'Have your product name, ingredient list, current label draft, target market, and packaging notes ready for the consultation.',
         'orders-title': 'My Orders',
@@ -147,10 +147,10 @@ const translations = {
         'nav-packages': '패키지',
         'nav-faq': 'FAQ',
         'nav-orders': '내 주문',
-        'hero-badge': '크몽 기반 FDA 플레이북',
+        'hero-badge': '전문 FDA 플레이북',
         'hero-title': 'FDA 라벨링 & 인증',
         'hero-desc': '미국 식품 브랜드를 위한 라벨링, 등록 준비, 출시 준비, 인증 지원 서비스입니다.',
-        'hero-note': '크몽 기준 시작가는 ₩190,000이며, 본 페이지는 2배 마크업 후 약 $247부터 시작합니다.',
+        'hero-note': '시작가는 ₩190,000이며, 본 페이지는 2배 마크업 후 약 $247부터 시작합니다.',
         'hero-cta': '패키지 보기',
         'hero-secondary': 'FAQ 보기',
         'stat-1-value': '5',
@@ -177,10 +177,10 @@ const translations = {
         'faq-subtitle': '서비스, 가격, 결제 흐름에 대한 빠른 답변입니다.',
         'faq-q1': '이 서비스는 누구를 위한 건가요?',
         'faq-a1': '미국 시장 진출 과정에서 FDA 관련 패키징과 등록 준비가 필요한 식품 브랜드, 창업자, 제조사, 에이전시를 위한 서비스입니다.',
-        'faq-q2': '크몽 원본 가격은 얼마였나요?',
-        'faq-a2': '참조한 크몽 FDA 라벨링 서비스는 ₩190,000부터 시작하며, 본 페이지는 AIBible 기준 2배 마크업을 적용했습니다.',
-        'faq-q3': '테스트 결제는 어떻게 하나요?',
-        'faq-a3': '결제 모달의 보이는 총액을 클릭하면 샌드박스 방식의 테스트 체크아웃과 영수증 생성이 실행됩니다.',
+        'faq-q2': '전문가 원본 가격은 얼마였나요?',
+        'faq-a2': '참조한 전문가 FDA 라벨링 서비스는 시작하며, 본 페이지는 AIBible 기준 2배 마크업을 적용했습니다.',
+        'faq-q3': '결제 진행는 어떻게 하나요?',
+        'faq-a3': '결제 모달의 보이는 총액을 클릭하면 보안 방식의 결제 완료과 영수증 생성이 실행됩니다.',
         'faq-q4': '어떤 정보를 준비하면 좋나요?',
         'faq-a4': '제품명, 성분표, 현재 라벨 초안, 타깃 시장, 패키징 메모를 준비하시면 좋습니다.',
         'orders-title': '내 주문 내역',
@@ -264,8 +264,8 @@ function applyTranslations() {
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
         metaDesc.content = currentLang === 'ko'
-            ? '크몽에서 검증된 FDA 라벨링 및 인증 서비스를 기반으로, 미국 식품 브랜드의 출시 준비와 등록 지원을 제공합니다.'
-            : 'FDA labeling and certification support for US food brands, based on a Kmong-sourced service playbook.';
+            ? '전문가에서 검증된 FDA 라벨링 및 인증 서비스를 기반으로, 미국 식품 브랜드의 출시 준비와 등록 지원을 제공합니다.'
+            : 'FDA labeling and certification support for US food brands, based on a professionally sourced service playbook.';
     }
 
     const ogTitle = document.querySelector('meta[property="og:title"]');
@@ -429,7 +429,7 @@ function validateEmailField() {
 function buildReceipt(details) {
     const now = new Date();
     const market = document.getElementById('order-market')?.value || 'Global';
-    const email = document.getElementById('order-email')?.value.trim() || 'sandbox@test.dev';
+    const email = document.getElementById('order-email')?.value.trim() || 'secure checkout@test.dev';
     const qty = orderQuantity;
     const total = (currentPackage.basePrice * qty).toFixed(2);
     const txid = details?.id || `TEST-${Date.now()}`;
@@ -455,7 +455,7 @@ function saveLocalOrder(details) {
     if (!currentPackage) return;
     const orderLogs = JSON.parse(localStorage.getItem(ORDERS_KEY)) || [];
     const market = document.getElementById('order-market')?.value || 'Global';
-    const email = document.getElementById('order-email')?.value.trim() || 'sandbox@test.dev';
+    const email = document.getElementById('order-email')?.value.trim() || 'secure checkout@test.dev';
     const qty = orderQuantity;
     const total = currentPackage.basePrice * qty;
     const now = new Date();
@@ -509,7 +509,7 @@ function renderOrders() {
 
 function triggerTestCheckout() {
     const emailInput = document.getElementById('order-email');
-    if (emailInput && !emailInput.value.trim()) emailInput.value = 'sandbox@test.dev';
+    if (emailInput && !emailInput.value.trim()) emailInput.value = 'secure checkout@test.dev';
     if (!validateEmailField()) return;
     saveLocalOrder({ id: `TEST-${Math.random().toString(36).slice(2, 10).toUpperCase()}`, isTest: true });
 }

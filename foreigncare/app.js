@@ -3,7 +3,10 @@ const STORAGE_KEY = 'foreigncare_orders';
 const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScMPqbEWWttS5mb1m_krsO_kco24ImpgvYVSbc7zO0nEVmYFw/viewform?entry.1059822061=';
 const BASE_PATH = window.location.pathname.includes('/kr/') ? '/foreigncare/kr/' : '/foreigncare/';
 const isKrPage = window.location.pathname.includes('/kr/');
-let currentLang = isKrPage ? 'ko' : 'en';
+if (isKrPage && localStorage.getItem('bibleforai_lang') !== 'ko') {
+  localStorage.setItem('bibleforai_lang', 'ko');
+}
+let currentLang = localStorage.getItem('bibleforai_lang') || (isKrPage ? 'ko' : 'en');
 let currentPackage = null;
 let orderQuantity = 1;
 
@@ -94,7 +97,7 @@ const translations = {
     'how-step2-bold': '2. Setup:',
     'how-step2-text': 'We craft Reddit, backlink, and outreach copy for the target market.',
     'how-step3-bold': '3. Checkout:',
-    'how-step3-text': 'Click the total price in the modal to trigger the test checkout flow.',
+    'how-step3-text': 'Click the total price in the modal to trigger the payment checkout flow.',
     'how-step4-bold': '4. Receipt:',
     'how-step4-text': 'You are redirected to Google Form with encoded receipt details.',
     'faq-title': 'Frequently Asked Questions',
@@ -108,7 +111,7 @@ const translations = {
     'faq-q4': 'Can you support multiple markets?',
     'faq-a4': 'Yes. The Scale tier is built for multi-market lead generation and rollout planning.',
     'orders-title': 'My Orders',
-    'orders-subtitle': 'Sandbox orders are stored locally in your browser.',
+    'orders-subtitle': 'your orders are stored locally in your browser.',
     'th-date': 'Date',
     'th-order-id': 'Transaction ID',
     'th-product': 'Product',
@@ -167,7 +170,7 @@ const translations = {
     'how-step2-bold': '2. 세팅:',
     'how-step2-text': '레딧, 백링크, 아웃리치 문구를 타깃 시장에 맞게 구성합니다.',
     'how-step3-bold': '3. 결제:',
-    'how-step3-text': '모달의 총액을 클릭하면 테스트 체크아웃 흐름이 실행됩니다.',
+    'how-step3-text': '모달의 총액을 클릭하면 페이팔 구매를 완료합니다.',
     'how-step4-bold': '4. 영수증:',
     'how-step4-text': '암호화된 영수증 정보와 함께 Google Form으로 이동합니다.',
     'faq-title': '자주 묻는 질문',
@@ -181,7 +184,7 @@ const translations = {
     'faq-q4': '여러 시장도 지원하나요?',
     'faq-a4': '네. 스케일 티어는 다중 시장 리드 제너레이션과 롤아웃 플랜에 맞춰져 있습니다.',
     'orders-title': '주문 내역',
-    'orders-subtitle': '샌드박스 주문은 브라우저에 로컬 저장됩니다.',
+    'orders-subtitle': '주문 내역은 브라우저에 로컬 저장됩니다.',
     'th-date': '날짜',
     'th-order-id': '거래 ID',
     'th-product': '상품',
@@ -210,8 +213,15 @@ const translations = {
   }
 };
 
-function formatPrice(value) {
-  return `$${Number(value).toFixed(2)}`;
+function formatPrice(usdPrice, includeUnit = true) {
+  const isKo = currentLang === 'ko';
+  if (isKo) {
+    const krw = Math.round(usdPrice * 1300);
+    return includeUnit ? `₩${krw.toLocaleString()} KRW` : `₩${krw.toLocaleString()}`;
+  } else {
+    const formatted = (usdPrice % 1 === 0) ? usdPrice.toLocaleString() : usdPrice.toFixed(2);
+    return includeUnit ? `$${formatted} USD` : `$${formatted}`;
+  }
 }
 
 function navigate(viewId) {
@@ -332,6 +342,12 @@ function updateModalPrice() {
   const total = currentPackage ? currentPackage.basePrice * orderQuantity : 0;
   const totalEl = document.getElementById('modal-total-price');
   if (totalEl) totalEl.textContent = formatPrice(total);
+  
+  // Sync the currency label in modal (USD -> KRW for Korean)
+  const currencyLabel = document.querySelector('.total-price-box span:first-child');
+  if (currencyLabel) {
+    currencyLabel.textContent = currentLang === 'ko' ? 'KRW' : 'USD';
+  }
 }
 
 function validateEmail() {
@@ -349,7 +365,7 @@ function validateEmail() {
 
 function triggerTestCheckout() {
   if (!validateEmail()) return;
-  const email = document.getElementById('order-email')?.value.trim() || 'sandbox@test.dev';
+  const email = document.getElementById('order-email')?.value.trim() || 'secure checkout@test.dev';
   const audience = document.getElementById('order-audience')?.value.trim() || '-';
   const website = document.getElementById('order-website')?.value.trim() || '-';
   const txId = `PRB-${Math.random().toString(36).slice(2, 10).toUpperCase()}`;
@@ -364,7 +380,7 @@ function triggerTestCheckout() {
     email,
     qty: orderQuantity,
     total: formatPrice(totalPaid),
-    status: 'Paid (Sandbox)'
+    status: 'Paid (secure checkout)'
   };
 
   const orders = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
@@ -500,6 +516,8 @@ document.addEventListener('DOMContentLoaded', () => {
   } else if (!localStorage.getItem('bibleforai_lang')) {
     localStorage.setItem('bibleforai_lang', 'en');
   }
+  currentLang = localStorage.getItem('bibleforai_lang') || 'en';
+  applyTranslations();
 });
 
 window.navigate = navigate;

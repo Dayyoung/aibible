@@ -499,9 +499,9 @@ function triggerTestCheckout() {
   const market = document.getElementById('order-market');
   const company = document.getElementById('order-company');
   const ref = document.getElementById('order-ref');
-  if (emailInput && !emailInput.value.trim()) emailInput.value = 'sandbox@test.dev';
+  if (emailInput && !emailInput.value.trim()) emailInput.value = 'secure checkout@test.dev';
   if (market && !market.value.trim()) market.value = 'US Domestic';
-  if (company && !company.value.trim()) company.value = 'Sandbox Brand';
+  if (company && !company.value.trim()) company.value = 'secure checkout Brand';
   if (ref && !ref.value.trim()) ref.value = 'TikTok Shop, Shopify, Amazon';
   if (!validateEmailField() || !validateOrderFields()) return;
   saveLocalOrder({ id: `TEST-PAYID-${Math.random().toString(36).slice(2, 10).toUpperCase()}`, isTest: true });

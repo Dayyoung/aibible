@@ -131,7 +131,7 @@ const translations = {
         "modal-email-error": "Please enter a valid email address.",
         "modal-qty": "Quantity:",
         "modal-total-amt": "Total Amount:",
-        "modal-test-btn": "Click price to test checkout",
+        "modal-test-btn": "Click price to payment checkout",
         "badge-ssl": "SSL Secured Checkout",
         "badge-paypal": "PayPal Verified",
         
@@ -270,7 +270,7 @@ const translations = {
         "modal-email-error": "올바른 이메일 주소를 입력해 주십시오.",
         "modal-qty": "주문 수량:",
         "modal-total-amt": "총 결제금액:",
-        "modal-test-btn": "가격 텍스트를 눌러 테스트 결제",
+        "modal-test-btn": "가격 텍스트를 눌러 결제 진행",
         "badge-ssl": "SSL 보안 결제 적용",
         "badge-paypal": "PayPal 보안 인증됨",
         
@@ -688,12 +688,12 @@ function renderPayPalButtons() {
     paypalButtonInstance.render('#paypal-button-container');
 }
 
-// Trigger developer sandbox test checkout
+// Trigger developer secure checkout payment checkout
 function triggerTestCheckout() {
     // Auto-fill mock email if field is empty
     const emailInput = document.getElementById('order-email');
     if (emailInput && !emailInput.value.trim()) {
-        emailInput.value = 'sandbox@test.dev';
+        emailInput.value = 'secure checkout@test.dev';
         emailInput.style.borderColor = 'rgba(255,255,255,0.06)';
         const emailError = document.getElementById('email-error');
         if (emailError) emailError.style.display = 'none';
@@ -701,7 +701,7 @@ function triggerTestCheckout() {
     const emailValid = validateEmailField();
     if (!emailValid) return;
 
-    const mockTxId = 'SANDBOX-B2B-' + Math.random().toString(36).substring(2, 11).toUpperCase();
+    const mockTxId = 'secure checkout-B2B-' + Math.random().toString(36).substring(2, 11).toUpperCase();
     processOrderCompleted(mockTxId);
 }
 

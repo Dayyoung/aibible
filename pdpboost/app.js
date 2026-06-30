@@ -71,7 +71,7 @@ const translations = {
     'section-faq-subtitle': 'Short answers about process, delivery, and checkout.',
     'section-orders-title': 'Purchase history',
     'section-orders-subtitle': 'Your successful orders are stored locally in this browser.',
-    'no-orders-msg': 'No purchase records yet. Click a price to test checkout and create your first receipt.',
+    'no-orders-msg': 'No purchase records yet. Click a price to payment checkout and create your first receipt.',
     'th-date': 'Order Date',
     'th-order-id': 'Transaction ID',
     'th-product': 'Product',
@@ -84,8 +84,8 @@ const translations = {
     'faq-a1': 'A conversion-focused product detail page concept with copy direction, layout structure, and a clear CTA flow.',
     'faq-q2': 'Is this service international?',
     'faq-a2': 'Yes. It works for Amazon, Shopify, DTC brands, marketplace listings, and cross-border product launches.',
-    'faq-q3': 'How do I test checkout?',
-    'faq-a3': 'Open the modal and click the total price. That visible price text triggers the test checkout flow.',
+    'faq-q3': 'How do I payment checkout?',
+    'faq-a3': 'Open the modal and click the total price. That visible price text triggers the payment checkout flow.',
     'faq-q4': 'What happens after payment?',
     'faq-a4': 'A receipt is saved locally and the flow redirects to the Google Form with encoded receipt data.',
     'modal-title': 'Configure Order',
@@ -123,7 +123,7 @@ const translations = {
     'section-faq-subtitle': '진행 방식, 납품, 결제에 대한 간단한 답변입니다.',
     'section-orders-title': '구매 내역',
     'section-orders-subtitle': '성공한 주문은 이 브라우저에 로컬 저장됩니다.',
-    'no-orders-msg': '아직 구매 내역이 없습니다. 가격을 클릭해 테스트 결제를 진행해 첫 영수증을 만들어보세요.',
+    'no-orders-msg': '아직 구매 내역이 없습니다. 가격을 클릭해 결제 진행를 진행해 첫 영수증을 만들어보세요.',
     'th-date': '주문 날짜',
     'th-order-id': '거래 ID',
     'th-product': '상품명',
@@ -136,8 +136,8 @@ const translations = {
     'faq-a1': '전환 중심 상세페이지 콘셉트, 카피 방향, 레이아웃 구조, 명확한 CTA 흐름을 받게 됩니다.',
     'faq-q2': '해외 판매에도 적합한가요?',
     'faq-a2': '네. Amazon, Shopify, DTC 브랜드, 마켓플레이스, 크로스보더 런칭에 모두 활용할 수 있습니다.',
-    'faq-q3': '테스트 결제는 어떻게 하나요?',
-    'faq-a3': '모달을 연 뒤 총 금액을 클릭하세요. 보이는 가격 텍스트가 테스트 결제 흐름을 실행합니다.',
+    'faq-q3': '결제 진행는 어떻게 하나요?',
+    'faq-a3': '모달을 연 뒤 총 금액을 클릭하세요. 보이는 가격 텍스트가 결제 진행 흐름을 실행합니다.',
     'faq-q4': '결제 후에는 어떻게 되나요?',
     'faq-a4': '영수증이 로컬에 저장되고, Google Form으로 인코딩된 영수증 데이터가 전달됩니다.',
     'modal-title': '주문 설정',
@@ -159,14 +159,18 @@ const translations = {
   }
 };
 
-let currentLang = localStorage.getItem('bibleforai_lang') || ((navigator.language || '').toLowerCase().startsWith('ko') ? 'ko' : 'en');
+const isKrPage = window.location.pathname.includes('/kr/');
+if (isKrPage && localStorage.getItem('bibleforai_lang') !== 'ko') {
+  localStorage.setItem('bibleforai_lang', 'ko');
+}
+let currentLang = localStorage.getItem('bibleforai_lang') || (isKrPage ? 'ko' : 'en');
 let currentPackage = null;
 let orderQuantity = 1;
 let paypalButtonInstance = null;
 
 function formatPrice(usdPrice, includeUnit = true) {
   if (currentLang === 'ko') {
-    const krw = Math.round(usdPrice * 1400);
+    const krw = Math.round(usdPrice * 1300);
     return includeUnit ? `₩${krw.toLocaleString()} KRW` : `₩${krw.toLocaleString()}`;
   }
   const formatted = Number.isInteger(usdPrice) ? usdPrice.toLocaleString() : usdPrice.toFixed(2);
@@ -331,6 +335,12 @@ function updateModalPrice() {
   const total = currentPackage ? currentPackage.basePrice * orderQuantity : 0;
   const totalEl = document.getElementById('modal-total-price');
   if (totalEl) totalEl.innerText = formatPrice(total);
+  
+  // Sync the currency label in modal (USD -> KRW for Korean)
+  const currencyLabel = document.querySelector('.total-price-box span:first-child');
+  if (currencyLabel) {
+    currencyLabel.textContent = currentLang === 'ko' ? 'KRW' : 'USD';
+  }
 }
 
 function validateEmailField() {
@@ -354,7 +364,7 @@ function validateEmailField() {
 
 function triggerTestCheckout() {
   const emailInput = document.getElementById('order-email');
-  if (emailInput && !emailInput.value.trim()) emailInput.value = 'sandbox@test.dev';
+  if (emailInput && !emailInput.value.trim()) emailInput.value = 'secure checkout@test.dev';
   if (!validateEmailField()) return;
   saveLocalOrder({ id: `TEST-PAYID-${Math.random().toString(36).slice(2, 10).toUpperCase()}`, isTest: true });
   closeModal();
@@ -472,8 +482,11 @@ document.addEventListener('DOMContentLoaded', () => {
     totalEl.setAttribute('role', 'button');
     totalEl.setAttribute('tabindex', '0');
   }
-  const initial = localStorage.getItem('bibleforai_lang') || 'en';
-  currentLang = initial;
+  const initial = localStorage.getItem('bibleforai_lang') || (isKrPage ? 'ko' : 'en');
+  if (isKrPage && localStorage.getItem('bibleforai_lang') !== 'ko') {
+    localStorage.setItem('bibleforai_lang', 'ko');
+  }
+  currentLang = localStorage.getItem('bibleforai_lang') || 'en';
   applyTranslations();
 });
 
