@@ -64,6 +64,7 @@ CATALOG = [
     {'id': 'indiaboost', 'cat': 'strategy', 'link': '/indiaboost/', 'icon': 'fa-solid fa-earth-asia', 'popularity': 88},
     {'id': 'ip', 'cat': 'strategy', 'link': '/ipboost/', 'icon': 'fa-solid fa-shield-halved', 'popularity': 82},
     {'id': 'map', 'cat': 'marketing', 'link': '/mapboost/', 'icon': 'fa-solid fa-map-location-dot', 'popularity': 80},
+    {'id': 'growthconsult', 'cat': 'marketing', 'link': '/growthconsult/', 'icon': 'fa-solid fa-newspaper', 'popularity': 90},
     {'id': 'prboost', 'cat': 'marketing', 'link': '/prboost/', 'icon': 'fa-solid fa-newspaper', 'popularity': 89},
 ]
 
@@ -102,6 +103,8 @@ def build_catalog_entries():
         added_at = added_map[s['id']]
         if s['id'] in ('globalup', 'eventboost'):
             added_at = max(added_at, max_added + 1)
+        if s['id'] == 'growthconsult':
+            added_at = max(added_at, max_added + 3)
         if s['id'] == 'prboost':
             added_at = max(added_at, max_added + 2)
         lines.append(
