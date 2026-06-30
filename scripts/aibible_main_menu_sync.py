@@ -72,6 +72,7 @@ CATALOG = [
     {'id': 'prboost', 'cat': 'marketing', 'link': '/prboost/', 'icon': 'fa-solid fa-newspaper', 'popularity': 89},
     {'id': 'foreigncare', 'cat': 'marketing', 'link': '/foreigncare/', 'icon': 'fa-solid fa-user-doctor', 'popularity': 90},
     {'id': 'aicash', 'cat': 'marketing', 'link': '/aicash/', 'icon': 'fa-solid fa-wand-magic-sparkles', 'popularity': 92},
+    {'id': 'dbmigrate', 'cat': 'strategy', 'link': '/dbmigrate/', 'icon': 'fa-solid fa-database', 'popularity': 93},
 ]
 
 
@@ -117,6 +118,8 @@ def build_catalog_entries():
             added_at = max(added_at, max_added + 4)
         if s['id'] == 'aicash':
             added_at = max(added_at, max_added + 5)
+        if s['id'] == 'dbmigrate':
+            added_at = max(added_at, max_added + 6)
         lines.append(
             f"            {{ id: '{s['id']}', category: '{s['cat']}', link: '{s['link']}', icon: '{s['icon']}', cardClass: 'card-active-{s['id']}', btnClass: 'btn-{s['id']}', iconBoxClass: 'icon-{s['id']}', popularity: {s['popularity']}, addedAt: {added_at} }}"
         )
@@ -229,6 +232,8 @@ def patch_all_service_pages():
     foreigncare_item_en = '            <li><a href="/foreigncare/"><i class="fa-solid fa-user-doctor"></i> FOREIGNCARE — Foreign Customer & Patient Acquisition</a></li>\n'
     aicash_item_en = '            <li><a href="/aicash/"><i class="fa-solid fa-wand-magic-sparkles"></i> AICASH — Global AI Content Monetization</a></li>\n'
     aicash_item_ko = '            <li><a href="/aicash/"><i class="fa-solid fa-wand-magic-sparkles"></i> AICASH — 글로벌 AI 콘텐츠 수익화</a></li>\n'
+    dbmigrate_item_en = '            <li><a href="/dbmigrate/"><i class="fa-solid fa-database"></i> DBMIGRATE — Database Migration & Transfer</a></li>\n'
+    dbmigrate_item_ko = '            <li><a href="/dbmigrate/"><i class="fa-solid fa-database"></i> DBMIGRATE — 데이터베이스 이전 & 전환</a></li>\n'
     foreigncare_item_ko = '            <li><a href="/foreigncare/"><i class="fa-solid fa-user-doctor"></i> FOREIGNCARE — 외국인 고객·환자 유치</a></li>\n'
     for path in ROOT.rglob('index.html'):
         if path == ROOT / 'index.html':
@@ -252,6 +257,7 @@ def patch_all_service_pages():
             prboost_item_ko if '/kr/' in str(path) else prboost_item_en,
             foreigncare_item_ko if '/kr/' in str(path) else foreigncare_item_en,
             aicash_item_ko if '/kr/' in str(path) else aicash_item_en,
+            dbmigrate_item_ko if '/kr/' in str(path) else dbmigrate_item_en,
             webseo_item_ko if '/kr/' in str(path) else webseo_item_en,
         ]
         for item in (new_items + extra_items):

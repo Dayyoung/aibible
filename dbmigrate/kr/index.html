@@ -1,27 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
+  <base href="../">
+  <style>
+    html body { font-family: 'Noto Sans KR', 'Inter', sans-serif; }
+  </style>
+  <script>localStorage.setItem('bibleforai_lang', 'ko');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="BibleForAI">
   <meta name="robots" content="index, follow">
-  <meta name="description" content="AICASH helps creators and founders turn AI content into recurring international revenue with platform strategy, monetization design, and rollout planning.">
-  <meta name="keywords" content="AICASH, AI content monetization, global creator economy, Substack, Medium, Ghost, LinkedIn, BibleForAI">
-  <link rel="canonical" href="https://bibleforai.com/aicash/">
+  <meta name="description" content="DBMIGRATE는 팀이 소스/타깃 DB를 안전하게 이전할 수 있도록 롤백 계획과 검증을 포함한 DB 이전 서비스를 제공합니다.">
+  <meta name="keywords" content="DBMIGRATE, AI 콘텐츠 수익화, 글로벌 크리에이터 이코노미, Substack, Medium, Ghost, LinkedIn, BibleForAI">
+  <link rel="canonical" href="https://bibleforai.com/dbmigrate/">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://bibleforai.com/aicash/">
-  <meta property="og:title" content="BibleForAI - AICASH | Global AI Content Monetization">
+  <meta property="og:url" content="https://bibleforai.com/dbmigrate/">
+  <meta property="og:title" content="BibleForAI - DBMIGRATE | 데이터베이스 이전 & 전환">
   <meta property="og:description" content="AI content monetization, international platform strategy, and revenue rollout planning for creators and founders.">
   <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
-  <meta property="og:site_name" content="BibleForAI AICASH">
+  <meta property="og:site_name" content="BibleForAI DBMIGRATE">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="ko_KR">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://bibleforai.com/aicash/">
-  <meta name="twitter:title" content="BibleForAI - AICASH | Global AI Content Monetization">
+  <meta name="twitter:url" content="https://bibleforai.com/dbmigrate/">
+  <meta name="twitter:title" content="BibleForAI - DBMIGRATE | 데이터베이스 이전 & 전환">
   <meta name="twitter:description" content="AI content monetization, international platform strategy, and revenue rollout planning for creators and founders.">
   <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
-  <title>BibleForAI - AICASH | Global AI Content Monetization</title>
+  <title>BibleForAI - DBMIGRATE | 데이터베이스 이전 & 전환</title>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -29,7 +34,7 @@
     "mainEntity": [
       {"@type":"Question","name":"Is this only for clinics?","acceptedAnswer":{"@type":"Answer","text":"No. It also works for agencies, medical tourism teams, and brands targeting overseas buyers."}},
       {"@type":"Question","name":"What happens when I click the total price?","acceptedAnswer":{"@type":"Answer","text":"Clicking the total price saves a local order, then opens the Google Form receipt flow."}},
-      {"@type":"Question","name":"What inputs do you need?","acceptedAnswer":{"@type":"Answer","text":"Your target audience, region, website, and the offer you want to promote."}},
+      {"@type":"Question","name":"어떤 입력이 필요한가요?","acceptedAnswer":{"@type":"Answer","text":"Your target audience, region, website, and the offer you want to promote."}},
       {"@type":"Question","name":"Can you support multiple markets?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Scale tier is built for multi-market lead generation and rollout planning."}}
     ]
   }
@@ -38,7 +43,7 @@
   {
     "@context":"https://schema.org",
     "@type":"Product",
-    "name":"BibleForAI AICASH — Global AI Content Monetization",
+    "name":"BibleForAI DBMIGRATE — 데이터베이스 이전 & 전환",
     "description":"AI content monetization, international platform strategy, and revenue rollout planning for creators and founders.",
     "brand":{"@type":"Brand","name":"BibleForAI"},
     "offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"140.00","highPrice":"390.00","offerCount":"3"}
@@ -52,47 +57,47 @@
 <header id="app-header">
   <div class="header-container">
     <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
-    <a href="/" class="logo-group"><span class="logo-title">BibleForAI</span><span class="logo-subtitle" data-i18n="logo-subtitle">AICASH</span></a>
+    <a href="/" class="logo-group"><span class="logo-title">BibleForAI</span><span class="logo-subtitle" data-i18n="logo-subtitle">DBMIGRATE</span></a>
     <nav class="desktop-nav">
       <ul class="nav-links">
-        <li><a href="#" id="nav-home" onclick="navigate('home')" class="active" data-i18n="nav-home">Home</a></li>
+        <li><a href="#" id="nav-home" onclick="navigate('home')" class="active" data-i18n="nav-home">홈</a></li>
         <li><a href="#" id="nav-basic" onclick="navigate('basic')" data-i18n="nav-basic">Standard</a></li>
         <li><a href="#" id="nav-pro" onclick="navigate('pro')" data-i18n="nav-pro">Custom Copy</a></li>
         <li><a href="#" id="nav-enterprise" onclick="navigate('enterprise')" data-i18n="nav-enterprise">Distribution</a></li>
       </ul>
     </nav>
     <div class="header-actions">
-      <button class="btn-orders" onclick="navigate('orders')"><i class="fa-solid fa-receipt"></i> <span data-i18n="btn-orders">My Orders</span></button>
+      <button class="btn-orders" onclick="navigate('orders')"><i class="fa-solid fa-receipt"></i> <span data-i18n="btn-orders">주문 내역</span></button>
       <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)"><option value="en" selected>🌐 English</option><option value="ko">🇰🇷 한국어</option></select>
     </div>
   </div>
 </header>
 <div class="mobile-drawer" id="mobile-drawer">
   <ul class="mobile-nav-links unified-service-menu">
-    <li class="mobile-menu-heading">Database & Scraping</li>
+    <li class="mobile-menu-heading">데이터베이스 & 스크래핑</li>
     <li><a href="/landPage/"><i class="fa-solid fa-code"></i> AI Landing Page</a></li>
     <li><a href="/mvpboost/"><i class="fa-solid fa-rocket"></i> MVPBOOST</a></li>
     <li><a href="/aideploy/"><i class="fa-solid fa-cloud-arrow-up"></i> AIDEPLOY</a></li>
     <li><a href="/autoboost/"><i class="fa-solid fa-arrows-rotate"></i> AUTOBOOST</a></li>
-    <li class="mobile-menu-heading">Design & Coding</li>
+    <li class="mobile-menu-heading">디자인 & 코딩</li>
     <li><a href="/webcreate/"><i class="fa-solid fa-globe"></i> WEBCREATE</a></li>
     <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> SHOPBOOST</a></li>
     <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> FLOWBOOST</a></li>
     <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> IMGBOOST</a></li>
     <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> PITCHBOOST</a></li>
-    <li class="mobile-menu-heading">Marketing & SEO</li>
+    <li class="mobile-menu-heading">마케팅 & SEO</li>
     <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> BOOSTSM</a></li>
     <li><a href="/foreigncare/"><i class="fa-solid fa-newspaper"></i> FOREIGNCARE</a></li>
-    <li><a href="/aicash/"><i class="fa-solid fa-wand-magic-sparkles"></i> AICASH — Global AI Content Monetization</a></li>
+    <li><a href="/dbmigrate/"><i class="fa-solid fa-wand-magic-sparkles"></i> DBMIGRATE — 데이터베이스 이전 & 전환</a></li>
     <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> MAILBOOST</a></li>
     <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> SEARCHBOOST</a></li>
     <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> MKBOOST</a></li>
     <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> CONTENTBOOST</a></li>
-    <li class="mobile-menu-heading">Media & Audio</li>
+    <li class="mobile-menu-heading">미디어 & 오디오</li>
     <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> CLIPBOOST</a></li>
     <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> VOICEBOOST</a></li>
     <li><a href="/transboost/"><i class="fa-solid fa-language"></i> TRANSBOOST</a></li>
-    <li class="mobile-menu-heading">Strategy & Analytics</li>
+    <li class="mobile-menu-heading">전략 & 분석</li>
     <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> AIBOOST</a></li>
     <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> INSIGHTBOOST</a></li>
     <li><a href="/chatboost/"><i class="fa-solid fa-robot"></i> CHATBOOST</a></li>
@@ -100,7 +105,7 @@
             <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — Global Trade Agency</a></li>
             <li><a href="/linkboost/"><i class="fa-brands fa-linkedin"></i> LINKBOOST — LinkedIn Growth</a></li>
             <li><a href="/careerlink/"><i class="fa-brands fa-linkedin"></i> CAREERLINK — LinkedIn Optimization</a></li>
-            <li><a href="/atsresume/"><i class="fa-solid fa-file-lines"></i> ATSRESUME — Resume & Cover Letter Optimization</a></li>
+            <li><a href="/atsresume/"><i class="fa-solid fa-file-lines"></i> ATSRESUME — 이력서 &amp; 커버레터 최적화</a></li>
             <li><a href="/influboost/"><i class="fa-solid fa-bullhorn"></i> INFLUBOOST — Global Influencer Seeding</a></li>
             <li><a href="/fdaboost/"><i class="fa-solid fa-vial-circle-check"></i> FDABOOST — FDA Labeling & Certification</a></li>
             <li><a href="/globalbank/"><i class="fa-solid fa-building-columns"></i> GLOBALBANK — Overseas Business Bank Account Setup</a></li>
@@ -124,26 +129,26 @@
             <li><a href="/usllc/"><i class="fa-solid fa-building-columns"></i> USLLC — US LLC & EIN Setup</a></li>
             <li><a href="/webseo/"><i class="fa-solid fa-globe"></i> WEBSEO — Global Website Development & SEO</a></li>
             <li><a href="/prboost/"><i class="fa-solid fa-newspaper"></i> PRBOOST — Global Press Release Distribution</a></li>
-            <li><a href="/dbmigrate/"><i class="fa-solid fa-database"></i> DBMIGRATE — Database Migration & Transfer</a></li>
+            <li><a href="/aicash/"><i class="fa-solid fa-wand-magic-sparkles"></i> AICASH — Global AI Content Monetization</a></li>
 </ul>
 </div>
 <main>
   <section id="home-view" class="view-section active">
     <div class="hero">
       <div class="badge" data-i18n="hero-badge">Global Lead Gen & Patient Outreach</div>
-      <h1 class="hero-title" data-i18n="hero-title">AICASH — Global AI Content Monetization</h1>
-      <p class="hero-desc" data-i18n="hero-desc">Based on a KMong guide priced at ₩98,000, this service helps you turn AI content into international recurring revenue.</p>
-      <div class="hero-actions"><button class="btn-primary" onclick="navigate('basic')" data-i18n="btn-explore">View Packages</button><a class="btn-secondary" href="#how-it-works" data-i18n="btn-how">How It Works</a></div>
+      <h1 class="hero-title" data-i18n="hero-title">DBMIGRATE — 데이터베이스 이전 & 전환</h1>
+      <p class="hero-desc" data-i18n="hero-desc">₩98,000 크몽 가이드를 바탕으로, AI 콘텐츠를 해외 반복 매출로 전환하는 서비스를 제공합니다.</p>
+      <div class="hero-actions"><button class="btn-primary" onclick="navigate('basic')" data-i18n="btn-explore">패키지 보기</button><a class="btn-secondary" href="#how-it-works" data-i18n="btn-how">진행 방식</a></div>
     </div>
     <div class="stats-bar">
-      <div class="stat-item"><span class="stat-num">3</span><span class="stat-label" data-i18n="stat-1">Packages</span></div>
-      <div class="stat-item"><span class="stat-num">4</span><span class="stat-label" data-i18n="stat-2">Platforms</span></div>
-      <div class="stat-item"><span class="stat-num">7</span><span class="stat-label" data-i18n="stat-3">Monetization Paths</span></div>
-      <div class="stat-item"><span class="stat-num">24h</span><span class="stat-label" data-i18n="stat-4">Fast Delivery</span></div>
+      <div class="stat-item"><span class="stat-num">3</span><span class="stat-label" data-i18n="stat-1">패키지</span></div>
+      <div class="stat-item"><span class="stat-num">4</span><span class="stat-label" data-i18n="stat-2">플랫폼</span></div>
+      <div class="stat-item"><span class="stat-num">7</span><span class="stat-label" data-i18n="stat-3">수익화 경로</span></div>
+      <div class="stat-item"><span class="stat-num">24h</span><span class="stat-label" data-i18n="stat-4">빠른 작업</span></div>
     </div>
   </section>
   <section id="basic-view" class="view-section section-container">
-    <h2 class="section-title" data-i18n="sec-packages-title">Choose Your Monetization Package</h2>
+    <h2 class="section-title" data-i18n="sec-packages-title">수익화 패키지를 선택하세요</h2>
     <p class="section-subtitle" data-i18n="sec-packages-subtitle">Select a package, click the price to open the checkout flow, and review the receipt on Google Form.</p>
     <div class="card-grid" id="basic-packages"></div>
   </section>
@@ -156,28 +161,28 @@
     <div class="card-grid" id="enterprise-packages"></div>
   </section>
   <section id="how-it-works" class="section-container">
-    <h2 class="section-title" data-i18n="how-title">How AICASH Works</h2>
+    <h2 class="section-title" data-i18n="how-title">DBMIGRATE 진행 방식</h2>
     <p class="section-subtitle" data-i18n="how-desc">We keep the flow simple: choose a package, review the brief, pay securely, and complete the receipt form.</p>
     <div class="card-grid">
-      <div class="tier-card"><div class="tier-icon icon-starter"><i class="fa-solid fa-1"></i></div><h3 data-i18n="how-step1-bold">1. Brief:</h3><p data-i18n="how-step1-text">Tell us your niche, audience, and target platform.</p></div>
-      <div class="tier-card"><div class="tier-icon icon-starter"><i class="fa-solid fa-2"></i></div><h3 data-i18n="how-step2-bold">2. Setup:</h3><p data-i18n="how-step2-text">We design the content system, monetization path, and distribution workflow.</p></div>
-      <div class="tier-card"><div class="tier-icon icon-starter"><i class="fa-solid fa-3"></i></div><h3 data-i18n="how-step3-bold">3. Checkout:</h3><p data-i18n="how-step3-text">Click the total price in the modal to trigger the test checkout flow.</p></div>
-      <div class="tier-card"><div class="tier-icon icon-starter"><i class="fa-solid fa-4"></i></div><h3 data-i18n="how-step4-bold">4. Receipt:</h3><p data-i18n="how-step4-text">You are redirected to Google Form with encoded receipt details.</p></div>
+      <div class="tier-card"><div class="tier-icon icon-starter"><i class="fa-solid fa-1"></i></div><h3 data-i18n="how-step1-bold">1. 브리프:</h3><p data-i18n="how-step1-text">니치, 타깃 고객, 목표 플랫폼을 알려주세요.</p></div>
+      <div class="tier-card"><div class="tier-icon icon-starter"><i class="fa-solid fa-2"></i></div><h3 data-i18n="how-step2-bold">2. 설계:</h3><p data-i18n="how-step2-text">콘텐츠 시스템, 수익화 경로, 배포 워크플로우를 설계합니다.</p></div>
+      <div class="tier-card"><div class="tier-icon icon-starter"><i class="fa-solid fa-3"></i></div><h3 data-i18n="how-step3-bold">3. 결제:</h3><p data-i18n="how-step3-text">모달의 총액을 클릭하면 테스트 체크아웃 흐름이 실행됩니다.</p></div>
+      <div class="tier-card"><div class="tier-icon icon-starter"><i class="fa-solid fa-4"></i></div><h3 data-i18n="how-step4-bold">4. 영수증:</h3><p data-i18n="how-step4-text">암호화된 영수증 정보와 함께 Google Form으로 이동합니다.</p></div>
     </div>
   </section>
   <section class="section-container">
-    <h2 class="section-title" data-i18n="faq-title">Frequently Asked Questions</h2>
+    <h2 class="section-title" data-i18n="faq-title">자주 묻는 질문</h2>
     <p class="section-subtitle" data-i18n="faq-subtitle">A few quick answers about pricing, delivery, and checkout.</p>
     <div class="card-grid">
-      <div class="tier-card"><h3 data-i18n="faq-q1">Is this only for creators?</h3><p data-i18n="faq-a1">No. It also works for founders, agencies, coaches, and teams that want to sell AI content internationally.</p></div>
+      <div class="tier-card"><h3 data-i18n="faq-q1">이 서비스는 크리에이터만 대상인가요?</h3><p data-i18n="faq-a1">아니요. 해외에서 AI 콘텐츠를 판매하고 싶은 창업자, 에이전시, 코치, 팀에도 적합합니다.</p></div>
       <div class="tier-card"><h3 data-i18n="faq-q2">What happens when I click the total price?</h3><p data-i18n="faq-a2">Clicking the total price saves a local order, then opens the Google Form receipt flow.</p></div>
-      <div class="tier-card"><h3 data-i18n="faq-q3">What inputs do you need?</h3><p data-i18n="faq-a3">Your niche, target audience, platform, and any website or channel URL.</p></div>
-      <div class="tier-card"><h3 data-i18n="faq-q4">Can you support multiple platforms?</h3><p data-i18n="faq-a4">Yes. The Growth and Scale tiers are designed for multi-platform monetization and rollout planning.</p></div>
+      <div class="tier-card"><h3 data-i18n="faq-q3">어떤 입력이 필요한가요?</h3><p data-i18n="faq-a3">니치, 타깃 고객, 플랫폼, 그리고 웹사이트 또는 채널 URL이 필요합니다.</p></div>
+      <div class="tier-card"><h3 data-i18n="faq-q4">여러 플랫폼도 지원하나요?</h3><p data-i18n="faq-a4">네. 그로스와 스케일 티어는 다중 플랫폼 수익화와 롤아웃 플랜에 맞춰져 있습니다.</p></div>
     </div>
   </section>
   <section id="orders-view" class="view-section section-container">
-    <h2 class="section-title" data-i18n="orders-title">My Orders</h2>
-    <p class="section-subtitle" data-i18n="orders-subtitle">Sandbox orders are stored locally in your browser.</p>
+    <h2 class="section-title" data-i18n="orders-title">주문 내역</h2>
+    <p class="section-subtitle" data-i18n="orders-subtitle">샌드박스 주문은 브라우저에 로컬 저장됩니다.</p>
     <div class="orders-table-wrap">
       <table class="orders-table">
         <thead><tr><th data-i18n="th-date">Date</th><th data-i18n="th-order-id">Transaction ID</th><th data-i18n="th-product">Product</th><th data-i18n="th-tier">Tier</th><th data-i18n="th-email">Email</th><th data-i18n="th-qty">Qty</th><th data-i18n="th-total">Total</th><th data-i18n="th-status">Status</th></tr></thead>
@@ -185,24 +190,24 @@
       </table>
     </div>
   </section>
-  <footer class="footer"><a href="/aicash/" id="footer-aicash-link" class="footer-link">AICASH Home</a></footer>
+  <footer class="footer"><a href="/dbmigrate/" id="footer-dbmigrate-link" class="footer-link">DBMIGRATE 홈</a></footer>
   <div class="modal-backdrop" id="purchase-modal">
     <div class="modal-card">
       <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
-      <h3 id="modal-product-title" data-i18n="modal-title">Configure Your Content System</h3>
-      <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">Fill in the details, then click the total price for checkout.</p>
+      <h3 id="modal-product-title" data-i18n="modal-title">콘텐츠 시스템 설정</h3>
+      <p id="modal-product-desc" class="modal-desc" data-i18n="modal-desc">세부 정보를 입력한 뒤 총액을 클릭해 결제를 진행하세요.</p>
       <form id="purchase-form" onsubmit="handlePurchaseSubmit(event)">
         <div class="order-summary-box">
           <div class="summary-row"><span data-i18n="modal-base-pkg">Package</span><strong id="modal-package-name">-</strong></div>
           <div class="summary-row"><span data-i18n="modal-base-price-label">Base Price</span><strong id="modal-base-price">$0.00</strong></div>
         </div>
-        <div class="form-group"><label for="order-email" data-i18n="modal-email-label">Email Address *</label><input type="email" id="order-email" placeholder="name@example.com" data-i18n="modal-email-placeholder"><span id="email-error" class="form-error" data-i18n="modal-email-error">Please enter a valid email address.</span></div>
-        <div class="form-group"><label for="order-audience" data-i18n="modal-audience-label">Target Niche / Audience</label><input type="text" id="order-audience" placeholder="e.g. AI education, solo founders, SaaS marketers" data-i18n="modal-audience-placeholder"></div>
-        <div class="form-group"><label for="order-platform" data-i18n="modal-platform-label">Primary Platform</label><input type="text" id="order-platform" placeholder="e.g. Medium, Substack, LinkedIn" data-i18n="modal-platform-placeholder"></div>
-        <div class="form-group"><label for="order-website" data-i18n="modal-site-label">Website / Channel URL</label><input type="url" id="order-website" placeholder="https://example.com" data-i18n="modal-site-placeholder"></div>
-        <div class="form-row"><div class="form-group"><label for="order-quantity" data-i18n="modal-qty">Quantity</label><input type="number" id="order-quantity" value="1" min="1" max="10" oninput="updateModalPrice()"></div><div class="form-group"><label data-i18n="modal-total-amt">Total Amount</label><div class="total-price-box"><span>USD</span><span class="price-val" id="modal-total-price" style="cursor:pointer;">$0.00</span></div></div></div>
+        <div class="form-group"><label for="order-email" data-i18n="modal-email-label">이메일 주소 *</label><input type="email" id="order-email" placeholder="name@example.com" data-i18n="modal-email-placeholder"><span id="email-error" class="form-error" data-i18n="modal-email-error">유효한 이메일 주소를 입력해주세요.</span></div>
+        <div class="form-group"><label for="order-source" data-i18n="modal-source-label">소스 DB / 시스템</label><input type="text" id="order-source" placeholder="예: AWS RDS의 PostgreSQL 12" data-i18n="modal-source-placeholder"></div>
+        <div class="form-group"><label for="order-target" data-i18n="modal-target-label">타깃 DB / 시스템</label><input type="text" id="order-target" placeholder="예: Cloud SQL의 MySQL 8" data-i18n="modal-target-placeholder"></div>
+        <div class="form-group"><label for="order-size" data-i18n="modal-size-label">데이터 규모 / 다운타임 창</label><input type="text" id="order-size" placeholder="예: 240만 행 / 18GB / 4시간" data-i18n="modal-size-placeholder"></div>
+        <div class="form-row"><div class="form-group"><label for="order-quantity" data-i18n="modal-qty">수량</label><input type="number" id="order-quantity" value="1" min="1" max="10" oninput="updateModalPrice()"></div><div class="form-group"><label data-i18n="modal-total-amt">총액</label><div class="total-price-box"><span>USD</span><span class="price-val" id="modal-total-price" style="cursor:pointer;">$0.00</span></div></div></div>
         <div id="paypal-button-container" class="paypal-wrapper"></div>
-        <div class="payment-badges"><span class="badge-pill"><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL Secured Checkout</span></span><span class="badge-pill"><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal Verified</span></span></div>
+        <div class="payment-badges"><span class="badge-pill"><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL 보안 결제 지원</span></span><span class="badge-pill"><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal 인증됨</span></span></div>
       </form>
     </div>
   </div>
