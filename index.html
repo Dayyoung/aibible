@@ -4269,7 +4269,7 @@
                 const cta = currentLang === 'ko' ? '패키지 솔루션 보기' : 'View Bundle Solutions';
                 
                 return `
-                    <div class="bundle-card" onclick="selectBundle('${b.id}')">
+                    <div class="bundle-card" onclick="selectBundle('${b.id}')" id="bundle-card-${b.id}">
                         <div>
                             <div class="bundle-card-header">
                                 <div class="bundle-card-icon"><i class="${b.icon}"></i></div>
@@ -4302,6 +4302,19 @@
                 matchingCard.style.background = 'rgba(139, 92, 246, 0.03)';
             }
 
+            // Sync with bottom bundles cards highlighting
+            document.querySelectorAll('.bundle-card').forEach(card => {
+                card.classList.remove('active');
+                card.style.borderColor = 'rgba(255, 255, 255, 0.05)';
+                card.style.background = 'rgba(255, 255, 255, 0.02)';
+            });
+            const matchingBundleCard = document.getElementById(`bundle-card-${bundleId}`);
+            if (matchingBundleCard) {
+                matchingBundleCard.classList.add('active');
+                matchingBundleCard.style.borderColor = 'var(--primary-purple)';
+                matchingBundleCard.style.background = 'rgba(139, 92, 246, 0.03)';
+            }
+
             // Find Bundle Meta
             const bundleMeta = bundlesCatalog.find(b => b.id === bundleId);
             if (!bundleMeta) return;
@@ -4310,8 +4323,8 @@
             document.getElementById('middle-title').innerText = bundleMeta.title[currentLang];
             document.getElementById('middle-desc').innerText = bundleMeta.desc[currentLang];
 
-            // Toggle Visibility
-            document.getElementById('bundles-view').style.display = 'none';
+            // Keep bundles-view visible so it doesn't disappear
+            document.getElementById('bundles-view').style.display = 'block';
             
             const catalogView = document.getElementById('catalog-view');
             catalogView.style.display = 'block';
@@ -4340,6 +4353,13 @@
                 card.style.background = 'rgba(255, 255, 255, 0.02)';
             });
 
+            // Reset bottom bundles cards highlighting
+            document.querySelectorAll('.bundle-card').forEach(card => {
+                card.classList.remove('active');
+                card.style.borderColor = 'rgba(255, 255, 255, 0.05)';
+                card.style.background = 'rgba(255, 255, 255, 0.02)';
+            });
+
             // Update Middle-stage Header back to default catalog context
             document.getElementById('middle-title').innerText = currentLang === 'ko' ? '전체 서비스 카탈로그' : 'Full Service Catalog';
             document.getElementById('middle-desc').innerText = currentLang === 'ko' ? '원하는 비즈니스 분야별 전체 솔루션을 찾아보세요.' : 'Explore every digital ecosystem service tailored to your target needs.';
@@ -4347,7 +4367,9 @@
             // Show controls & grids
             document.getElementById('catalog-controls').style.display = 'flex';
             document.getElementById('category-tabs').style.display = 'flex';
-            document.getElementById('bundles-view').style.display = 'none';
+            
+            // Keep bundles-view visible
+            document.getElementById('bundles-view').style.display = 'block';
             
             const catalogView = document.getElementById('catalog-view');
             catalogView.style.display = 'block';
