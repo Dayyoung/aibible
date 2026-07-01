@@ -471,7 +471,6 @@
             min-height: 100vh;
             width: 100%;
             overflow-x: hidden;
-            overflow-y: hidden;
             display: flex;
             flex-direction: column;
             position: relative;
@@ -2879,6 +2878,156 @@
         border-color: rgba(255, 255, 255, 0.2);
         color: #ffffff;
     }
+
+    /* P1 Quick Goals Grid & Interactive Cards style */
+    .quick-filters-container {
+        max-width: 1200px;
+        margin: 3rem auto;
+        padding: 0 1.5rem;
+    }
+    
+    .quick-filters-title {
+        font-size: 1.8rem;
+        font-weight: 800;
+        margin-bottom: 2rem;
+        color: #ffffff;
+        text-align: center;
+        position: relative;
+    }
+    
+    .quick-filters-title::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-purple), var(--primary-cyan));
+        margin: 0.75rem auto 0 auto;
+        border-radius: 2px;
+    }
+
+    .quick-goals-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    
+    @media (max-width: 768px) {
+        .quick-goals-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .quick-goal-card {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1.25rem;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .quick-goal-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(139, 92, 246, 0.3);
+        box-shadow: 0 15px 35px rgba(139, 92, 246, 0.08), 0 0 20px rgba(6, 182, 212, 0.04);
+        background: rgba(255, 255, 255, 0.04);
+    }
+    
+    .quick-goal-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(6, 182, 212, 0.05));
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        z-index: 0;
+        pointer-events: none;
+    }
+    
+    .quick-goal-card:hover::before {
+        opacity: 1;
+    }
+    
+    .quick-goal-card-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .quick-goal-card-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        background: rgba(139, 92, 246, 0.15);
+        color: #c084fc;
+        transition: transform 0.4s ease;
+    }
+    
+    .quick-goal-card:hover .quick-goal-card-icon {
+        transform: scale(1.1) rotate(5deg);
+    }
+    
+    .quick-goal-card-title {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0;
+    }
+    
+    .quick-goal-card-desc {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        line-height: 1.5;
+        margin: 0;
+        position: relative;
+        z-index: 1;
+        flex-grow: 1;
+    }
+    
+    .quick-goal-card-cta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--primary-cyan);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 1rem;
+        margin-top: 0.5rem;
+        position: relative;
+        z-index: 1;
+        transition: color 0.2s ease;
+    }
+    
+    .quick-goal-card:hover .quick-goal-card-cta {
+        color: #22d3ee;
+    }
+    
+    .quick-goal-card-cta i {
+        transition: transform 0.3s ease;
+    }
+    
+    .quick-goal-card:hover .quick-goal-card-cta i {
+        transform: translateX(5px);
+    }
 </style>
 </head>
 <body>
@@ -2929,13 +3078,68 @@
 
         <!-- P1: Quick Goal Finder & Bundles View -->
         <section class="quick-filters-container" id="quick-filters-container">
-            <div class="quick-filters-title" id="filter-title-label">Quick Goal Finder</div>
-            <div class="quick-filters-row">
-                <button class="quick-filter-btn" onclick="selectQuickFilter('global-expansion', this)" id="qf-expansion">처음 해외 진출해요</button>
-                <button class="quick-filter-btn" onclick="selectQuickFilter('global-marketing', this)" id="qf-marketing">마케팅을 늘리고 싶어요</button>
-                <button class="quick-filter-btn" onclick="selectQuickFilter('ai-mvp', this)" id="qf-mvp">제품을 빨리 만들고 싶어요</button>
-                <button class="quick-filter-btn" onclick="selectQuickFilter('content-translation', this)" id="qf-content">콘텐츠를 다국어로 만들고 싶어요</button>
-                <button class="quick-filter-btn" onclick="selectQuickFilter('data-research', this)" id="qf-data">잠재고객을 찾고 싶어요</button>
+            <div class="quick-filters-title" id="filter-title-label">목표별 빠른 솔루션 찾기</div>
+            
+            <div class="quick-goals-grid">
+                <!-- Global Expansion -->
+                <div class="quick-goal-card" onclick="selectQuickFilter('global-expansion', this)" id="qf-card-expansion">
+                    <div class="quick-goal-card-header">
+                        <div class="quick-goal-card-icon" style="background: rgba(139,92,246,0.12); color: #a78bfa;"><i class="fa-solid fa-earth-asia"></i></div>
+                        <h3 class="quick-goal-card-title" id="qf-title-expansion">처음 해외 진출해요</h3>
+                    </div>
+                    <p class="quick-goal-card-desc" id="qf-desc-expansion">해외 법인 설립, FDA 인증, 글로벌 은행 계좌 및 에이전시 매칭까지 원스톱으로 지원합니다.</p>
+                    <div class="quick-goal-card-cta">
+                        <span id="qf-cta-expansion">솔루션 보기</span> <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Global Marketing -->
+                <div class="quick-goal-card" onclick="selectQuickFilter('global-marketing', this)" id="qf-card-marketing">
+                    <div class="quick-goal-card-header">
+                        <div class="quick-goal-card-icon" style="background: rgba(6,182,212,0.12); color: #22d3ee;"><i class="fa-solid fa-bullhorn"></i></div>
+                        <h3 class="quick-goal-card-title" id="qf-title-marketing">마케팅을 늘리고 싶어요</h3>
+                    </div>
+                    <p class="quick-goal-card-desc" id="qf-desc-marketing">구글 광고 대행, 인플루언서 마케팅, 글로벌 SEO 및 SNS 통합 성장을 통해 트래픽을 늘립니다.</p>
+                    <div class="quick-goal-card-cta">
+                        <span id="qf-cta-marketing">솔루션 보기</span> <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- AI MVP -->
+                <div class="quick-goal-card" onclick="selectQuickFilter('ai-mvp', this)" id="qf-card-mvp">
+                    <div class="quick-goal-card-header">
+                        <div class="quick-goal-card-icon" style="background: rgba(236,72,153,0.12); color: #f472b6;"><i class="fa-solid fa-rocket"></i></div>
+                        <h3 class="quick-goal-card-title" id="qf-title-mvp">제품을 빨리 만들고 싶어요</h3>
+                    </div>
+                    <p class="quick-goal-card-desc" id="qf-desc-mvp">AI 챗봇 빌더, 스마트 워크플로우 자동화, 최단기 작동 PoC/MVP 론칭 개발 파트너십을 매칭합니다.</p>
+                    <div class="quick-goal-card-cta">
+                        <span id="qf-cta-mvp">솔루션 보기</span> <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Content Translation -->
+                <div class="quick-goal-card" onclick="selectQuickFilter('content-translation', this)" id="qf-card-content">
+                    <div class="quick-goal-card-header">
+                        <div class="quick-goal-card-icon" style="background: rgba(16,185,129,0.12); color: #34d399;"><i class="fa-solid fa-language"></i></div>
+                        <h3 class="quick-goal-card-title" id="qf-title-content">콘텐츠를 다국어로 만들고 싶어요</h3>
+                    </div>
+                    <p class="quick-goal-card-desc" id="qf-desc-content">전문 기술/의학 학술 서류부터 다국어 웹사이트 제작, 해외 보도자료 배포까지 완벽하게 현지화합니다.</p>
+                    <div class="quick-goal-card-cta">
+                        <span id="qf-cta-content">솔루션 보기</span> <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Data Research -->
+                <div class="quick-goal-card" onclick="selectQuickFilter('data-research', this)" id="qf-card-data">
+                    <div class="quick-goal-card-header">
+                        <div class="quick-goal-card-icon" style="background: rgba(245,158,11,0.12); color: #fbbf24;"><i class="fa-solid fa-database"></i></div>
+                        <h3 class="quick-goal-card-title" id="qf-title-data">잠재고객을 찾고 싶어요</h3>
+                    </div>
+                    <p class="quick-goal-card-desc" id="qf-desc-data">수출 및 글로벌 영업을 위한 해외 바이어 이메일 확보, 규정 준수 고객 DB 및 맞춤형 웹 데이터 크롤링을 지원합니다.</p>
+                    <div class="quick-goal-card-cta">
+                        <span id="qf-cta-data">솔루션 보기</span> <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -3877,7 +4081,13 @@
             if (sideCatMkt) sideCatMkt.innerText = dict['cat-marketing'];
             
             const sideCatMed = document.getElementById('side-cat-media');
-const servicesCatalog = [
+            if (sideCatMed) sideCatMed.innerText = dict['cat-media'];
+            
+            const sideCatStg = document.getElementById('side-cat-strategy');
+            if (sideCatStg) sideCatStg.innerText = dict['cat-strategy'];
+        }
+
+        const servicesCatalog = [
             { id: 'land', category: 'design-dev', link: '/landPage/', icon: 'fa-solid fa-code', cardClass: 'card-active-land', btnClass: 'btn-land', iconBoxClass: 'icon-land', popularity: 88, addedAt: 1782455609 },
             { id: 'pdp', category: 'design-dev', link: '/pdpboost/', icon: 'fa-solid fa-box-open', cardClass: 'card-active-pdp', btnClass: 'btn-pdp', iconBoxClass: 'icon-pdp', popularity: 86, addedAt: 1782858122 },
             { id: 'mvp', category: 'design-dev', link: '/mvpboost/', icon: 'fa-solid fa-rocket', cardClass: 'card-active-mvp', btnClass: 'btn-mvp', iconBoxClass: 'icon-mvp', popularity: 91, addedAt: 1782602632 },
@@ -4066,11 +4276,18 @@ const servicesCatalog = [
             activeBundleId = bundleId;
             
             // Sync with Quick Filters highlighting
-            document.querySelectorAll('.quick-filter-btn').forEach(btn => {
-                btn.classList.remove('active');
+            document.querySelectorAll('.quick-goal-card').forEach(card => {
+                card.classList.remove('active');
+                card.style.borderColor = 'rgba(255, 255, 255, 0.05)';
+                card.style.background = 'rgba(255, 255, 255, 0.02)';
             });
-            const matchingQf = document.querySelector(`[onclick*="'${bundleId}'"]`);
-            if (matchingQf) matchingQf.classList.add('active');
+            const suffix = bundleId === 'global-expansion' ? 'expansion' : bundleId === 'global-marketing' ? 'marketing' : bundleId === 'ai-mvp' ? 'mvp' : bundleId === 'content-translation' ? 'content' : 'data';
+            const matchingCard = document.getElementById(`qf-card-${suffix}`);
+            if (matchingCard) {
+                matchingCard.classList.add('active');
+                matchingCard.style.borderColor = 'var(--primary-purple)';
+                matchingCard.style.background = 'rgba(139, 92, 246, 0.03)';
+            }
 
             // Find Bundle Meta
             const bundleMeta = bundlesCatalog.find(b => b.id === bundleId);
@@ -4104,8 +4321,10 @@ const servicesCatalog = [
             activeBundleId = null;
 
             // Reset Quick Filters highlighting
-            document.querySelectorAll('.quick-filter-btn').forEach(btn => {
-                btn.classList.remove('active');
+            document.querySelectorAll('.quick-goal-card').forEach(card => {
+                card.classList.remove('active');
+                card.style.borderColor = 'rgba(255, 255, 255, 0.05)';
+                card.style.background = 'rgba(255, 255, 255, 0.02)';
             });
 
             // Update Middle-stage Header back to default catalog context
@@ -4167,20 +4386,40 @@ const servicesCatalog = [
                 filterTitle.innerText = lang === 'ko' ? '목표별 빠른 솔루션 찾기' : 'Quick Goal Finder';
             }
 
-            const qfExpansion = document.getElementById('qf-expansion');
+            const qfExpansion = document.getElementById('qf-title-expansion');
             if (qfExpansion) qfExpansion.innerText = lang === 'ko' ? '처음 해외 진출해요' : 'Launch Overseas';
+            const qfDescExpansion = document.getElementById('qf-desc-expansion');
+            if (qfDescExpansion) qfDescExpansion.innerText = lang === 'ko' ? '해외 법인 설립, FDA 인증, 글로벌 은행 계좌 및 에이전시 매칭까지 원스톱으로 지원합니다.' : 'Establish corporate entities, FDA registration, global banking setup, and trade agency services.';
+            const qfCtaExpansion = document.getElementById('qf-cta-expansion');
+            if (qfCtaExpansion) qfCtaExpansion.innerText = lang === 'ko' ? '솔루션 보기' : 'View Solutions';
 
-            const qfMarketing = document.getElementById('qf-marketing');
+            const qfMarketing = document.getElementById('qf-title-marketing');
             if (qfMarketing) qfMarketing.innerText = lang === 'ko' ? '마케팅을 늘리고 싶어요' : 'Boost Marketing';
+            const qfDescMarketing = document.getElementById('qf-desc-marketing');
+            if (qfDescMarketing) qfDescMarketing.innerText = lang === 'ko' ? '구글 광고 대행, 인플루언서 마케팅, 글로벌 SEO 및 SNS 통합 성장을 통해 트래픽을 늘립니다.' : 'Drive targeted traffic with Google Ads management, viral influencer seeding, SEO, and social scaling.';
+            const qfCtaMarketing = document.getElementById('qf-cta-marketing');
+            if (qfCtaMarketing) qfCtaMarketing.innerText = lang === 'ko' ? '솔루션 보기' : 'View Solutions';
 
-            const qfMvp = document.getElementById('qf-mvp');
+            const qfMvp = document.getElementById('qf-title-mvp');
             if (qfMvp) qfMvp.innerText = lang === 'ko' ? '제품을 빨리 만들고 싶어요' : 'Build MVP Quickly';
+            const qfDescMvp = document.getElementById('qf-desc-mvp');
+            if (qfDescMvp) qfDescMvp.innerText = lang === 'ko' ? 'AI 챗봇 빌더, 스마트 워크플로우 자동화, 최단기 작동 PoC/MVP 론칭 개발 파트너십을 매칭합니다.' : 'Deploy smart AI chatbots, automated business workflows, and launch custom MVP prototypes rapidly.';
+            const qfCtaMvp = document.getElementById('qf-cta-mvp');
+            if (qfCtaMvp) qfCtaMvp.innerText = lang === 'ko' ? '솔루션 보기' : 'View Solutions';
 
-            const qfContent = document.getElementById('qf-content');
+            const qfContent = document.getElementById('qf-title-content');
             if (qfContent) qfContent.innerText = lang === 'ko' ? '콘텐츠를 다국어로 만들고 싶어요' : 'Translate Content';
+            const qfDescContent = document.getElementById('qf-desc-content');
+            if (qfDescContent) qfDescContent.innerText = lang === 'ko' ? '전문 기술/의학 학술 서류부터 다국어 웹사이트 제작, 해외 보도자료 배포까지 완벽하게 현지화합니다.' : 'Localize technical manuals, medical clinical trials, multilingual websites, and publish global PR.';
+            const qfCtaContent = document.getElementById('qf-cta-content');
+            if (qfCtaContent) qfCtaContent.innerText = lang === 'ko' ? '솔루션 보기' : 'View Solutions';
 
-            const qfData = document.getElementById('qf-data');
+            const qfData = document.getElementById('qf-title-data');
             if (qfData) qfData.innerText = lang === 'ko' ? '잠재고객을 찾고 싶어요' : 'Find Target Leads';
+            const qfDescData = document.getElementById('qf-desc-data');
+            if (qfDescData) qfDescData.innerText = lang === 'ko' ? '타겟 국가별 비즈니스 의사결정권자 리드 DB, 웹 크롤링 및 맞춤형 바이어 디비를 확보합니다.' : 'Download verified B2B/B2C leads database, target decision makers, and scrape directories.';
+            const qfCtaData = document.getElementById('qf-cta-data');
+            if (qfCtaData) qfCtaData.innerText = lang === 'ko' ? '솔루션 보기' : 'View Solutions';
 
             const labelShowAll = document.getElementById('label-show-all');
             if (labelShowAll) {
