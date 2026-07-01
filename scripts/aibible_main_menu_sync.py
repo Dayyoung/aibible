@@ -69,6 +69,7 @@ CATALOG = [
     {'id': 'chinaboost', 'cat': 'strategy', 'link': '/chinaboost/', 'icon': 'fa-solid fa-earth-asia', 'popularity': 87},
     {'id': 'surveyboost', 'cat': 'strategy', 'link': '/surveyboost/', 'icon': 'fa-solid fa-square-poll-vertical', 'popularity': 84},
     {'id': 'shopglobal', 'cat': 'strategy', 'link': '/shopglobal/', 'icon': 'fa-brands fa-shopify', 'popularity': 86},
+    {'id': 'shopdata', 'cat': 'marketing', 'link': '/shopdata/', 'icon': 'fa-brands fa-shopify', 'popularity': 87},
     {'id': 'indiaboost', 'cat': 'strategy', 'link': '/indiaboost/', 'icon': 'fa-solid fa-earth-asia', 'popularity': 88},
     {'id': 'ip', 'cat': 'strategy', 'link': '/ipboost/', 'icon': 'fa-solid fa-shield-halved', 'popularity': 82},
     {'id': 'map', 'cat': 'marketing', 'link': '/mapboost/', 'icon': 'fa-solid fa-map-location-dot', 'popularity': 80},
@@ -142,6 +143,8 @@ def build_catalog_entries():
             added_at = max(added_at, max_added + 7)
         if s['id'] == 'sbvi':
             added_at = max(added_at, max_added + 8)
+        if s['id'] == 'shopdata':
+            added_at = max(added_at, max_added + 9)
         lines.append(
             f"            {{ id: '{s['id']}', category: '{s['cat']}', link: '{s['link']}', icon: '{s['icon']}', cardClass: 'card-active-{s['id']}', btnClass: 'btn-{s['id']}', iconBoxClass: 'icon-{s['id']}', popularity: {s['popularity']}, addedAt: {added_at} }}"
         )
@@ -227,6 +230,7 @@ def patch_all_service_pages():
         '            <li><a href="/chinaboost/"><i class="fa-solid fa-earth-asia"></i> CHINABOOST — China Market Entry</a></li>\n',
         '            <li><a href="/surveyboost/"><i class="fa-solid fa-square-poll-vertical"></i> SURVEYBOOST — Market Validation Surveys</a></li>\n',
         '            <li><a href="/shopglobal/"><i class="fa-brands fa-shopify"></i> SHOPGLOBAL — Shopify Global Expansion</a></li>\n',
+        '            <li><a href="/shopdata/"><i class="fa-brands fa-shopify"></i> SHOPDATA — Shopify Analytics & CAPI Setup</a></li>\n',
         '            <li><a href="/complianceboost/"><i class="fa-solid fa-shield-halved"></i> COMPLIANCEBOOST — Compliance Docs & Audit Prep</a></li>\n',
         '            <li><a href="/aicash/"><i class="fa-solid fa-wand-magic-sparkles"></i> AICASH — Global AI Content Monetization</a></li>\n',
         '            <li><a href="/igboost/"><i class="fa-brands fa-instagram"></i> IGBOOST — Global Instagram Management</a></li>\n',

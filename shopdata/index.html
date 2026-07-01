@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BibleForAI - SHOPDATA | Shopify Analytics & CAPI Setup</title>
+  <meta name="description" content="Shopify analytics, GA4 ecommerce tracking, Meta CAPI, and Klaviyo setup for brands entering global markets.">
+  <meta name="keywords" content="Shopify analytics, GA4 ecommerce, Meta CAPI, Klaviyo, Shopify setup, ecommerce tracking">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bibleforai.com/shopdata/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bibleforai.com/shopdata/">
+  <meta property="og:title" content="BibleForAI - SHOPDATA | Shopify Analytics & CAPI Setup">
+  <meta property="og:description" content="Accurate Shopify data setup with GA4 ecommerce tracking, Meta CAPI, and Klaviyo flows for global brands.">
+  <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+  <meta property="og:site_name" content="BibleForAI SHOPDATA">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ko_KR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://bibleforai.com/shopdata/">
+  <meta name="twitter:title" content="BibleForAI - SHOPDATA | Shopify Analytics & CAPI Setup">
+  <meta name="twitter:description" content="Accurate Shopify data setup with GA4 ecommerce tracking, Meta CAPI, and Klaviyo flows for global brands.">
+  <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does SHOPDATA set up for Shopify stores?",
+        "acceptedAnswer": { "@type": "Answer", "text": "SHOPDATA configures GA4 ecommerce events, Meta Pixel and CAPI, event deduplication, and Klaviyo flows so Shopify brands can measure revenue accurately across channels." }
+      },
+      {
+        "@type": "Question",
+        "name": "Who should buy this service?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It is ideal for Shopify store owners, D2C brands, agencies, and cross-border e-commerce teams that need reliable tracking before scaling paid traffic." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is delivered after purchase?",
+        "acceptedAnswer": { "@type": "Answer", "text": "You receive the setup work, QA validation, and a receipt captured through our Google Form flow after secure PayPal checkout." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I click the price to test checkout?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The total price text in the purchase modal is clickable and opens the test checkout flow used for verification." }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "SHOPDATA - Shopify Analytics & CAPI Setup",
+    "image": "https://bibleforai.com/assets/og-preview.png",
+    "description": "Shopify analytics, GA4 ecommerce tracking, Meta CAPI, and Klaviyo setup for global Shopify brands.",
+    "brand": { "@type": "Brand", "name": "BibleForAI" },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "USD",
+      "lowPrice": "271.00",
+      "highPrice": "1271.00",
+      "offerCount": "3"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+</head>
+<body>
+  <header id="app-header">
+    <div class="header-container">
+      <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="Open menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <a href="/" class="logo-group">
+        <span class="logo-title">BibleForAI</span>
+        <span class="logo-subtitle" data-i18n="logo-subtitle">SHOPDATA</span>
+      </a>
+      <div class="header-actions">
+        <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)">
+          <option value="en">🌐 English</option>
+          <option value="ko">🇰🇷 한국어</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobile-drawer">
+    <ul class="mobile-nav-links unified-service-menu">
+      <li class="mobile-menu-heading" data-i18n="menu-heading-database">Database & Scraping</li>
+      <li><a href="/b2bdb/"><i class="fa-solid fa-database"></i> <span data-i18n="menu-b2bdb">B2B Core Database</span></a></li>
+      <li><a href="/b2cdb/"><i class="fa-solid fa-database"></i> <span data-i18n="menu-b2cdb">B2C Lead Database</span></a></li>
+      <li><a href="/databoost/"><i class="fa-solid fa-spider"></i> <span data-i18n="menu-databoost">DATABOOST — Web Scraping</span></a></li>
+      <li class="mobile-menu-heading" data-i18n="menu-heading-design">Design & Coding</li>
+      <li><a href="/landPage/"><i class="fa-solid fa-code"></i> <span data-i18n="menu-land">AI Landing Page</span></a></li>
+      <li><a href="/opencode/"><i class="fa-solid fa-code"></i> <span data-i18n="menu-opencode">OpenCode AI</span></a></li>
+      <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> <span data-i18n="menu-shopboost">SHOPBOOST — E-Commerce Entry</span></a></li>
+      <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> <span data-i18n="menu-flowboost">FLOWBOOST — Workflow Automation</span></a></li>
+      <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> <span data-i18n="menu-imgboost">IMGBOOST — Product Photography</span></a></li>
+      <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> <span data-i18n="menu-pitchboost">PITCHBOOST — AI Presentations</span></a></li>
+      <li class="mobile-menu-heading" data-i18n="menu-heading-marketing">Marketing & SEO</li>
+      <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> <span data-i18n="menu-boostsm">SMM Growth Booster</span></a></li>
+      <li><a href="/prboost/"><i class="fa-solid fa-newspaper"></i> <span data-i18n="menu-prboost">PRBOOST — Global Press Release Distribution</span></a></li>
+      <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> <span data-i18n="menu-mailboost">MAILBOOST — Email Marketing</span></a></li>
+      <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> <span data-i18n="menu-searchboost">SEARCHBOOST — AI SEO</span></a></li>
+      <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> <span data-i18n="menu-mkboost">MKBOOST — Market Research</span></a></li>
+      <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> <span data-i18n="menu-contentboost">CONTENTBOOST — AI Publishing</span></a></li>
+      <li class="mobile-menu-heading" data-i18n="menu-heading-media">Media & Audio</li>
+      <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> <span data-i18n="menu-clipboost">CLIPBOOST — Short-Form Video</span></a></li>
+      <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> <span data-i18n="menu-voiceboost">VOICEBOOST — AI Voice</span></a></li>
+      <li><a href="/transboost/"><i class="fa-solid fa-language"></i> <span data-i18n="menu-transboost">TRANSBOOST — Translation</span></a></li>
+      <li class="mobile-menu-heading" data-i18n="menu-heading-strategy">Strategy & Analytics</li>
+      <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> <span data-i18n="menu-aiboost">AIBOOST — AI Consulting</span></a></li>
+      <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> <span data-i18n="menu-insightboost">INSIGHTBOOST — Data Analytics</span></a></li>
+                <li><a href="/tikshop/"><i class="fa-brands fa-tiktok"></i> TIKSHOP — TikTok Shop Setup</a></li>
+            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — Global Trade Agency</a></li>
+            <li><a href="/linkboost/"><i class="fa-brands fa-linkedin"></i> LINKBOOST — LinkedIn Growth</a></li>
+            <li><a href="/careerlink/"><i class="fa-brands fa-linkedin"></i> CAREERLINK — LinkedIn Optimization</a></li>
+            <li><a href="/atsresume/"><i class="fa-solid fa-file-lines"></i> ATSRESUME — Resume & Cover Letter Optimization</a></li>
+            <li><a href="/influboost/"><i class="fa-solid fa-bullhorn"></i> INFLUBOOST — Global Influencer Seeding</a></li>
+            <li><a href="/fdaboost/"><i class="fa-solid fa-vial-circle-check"></i> FDABOOST — FDA Labeling & Certification</a></li>
+            <li><a href="/globalbank/"><i class="fa-solid fa-building-columns"></i> GLOBALBANK — Overseas Business Bank Account Setup</a></li>
+            <li><a href="/sysboost/"><i class="fa-solid fa-circle"></i> SYSBOOST</a></li>
+            <li><a href="/aideploy/"><i class="fa-solid fa-circle"></i> AIDEPLOY</a></li>
+            <li><a href="/autoboost/"><i class="fa-solid fa-circle"></i> AUTOBOOST</a></li>
+            <li><a href="/webcreate/"><i class="fa-solid fa-circle"></i> WEBCREATE</a></li>
+            <li><a href="/adsboost/"><i class="fa-solid fa-bullhorn"></i> ADSBOOST — Google Ads Optimization</a></li>
+            <li><a href="/rfpboost/"><i class="fa-solid fa-file-signature"></i> RFPBOOST — Proposal Writing</a></li>
+            <li><a href="/globalup/"><i class="fa-solid fa-user-tie"></i> GLOBALUP — Global Recruiting</a></li>
+            <li><a href="/eventboost/"><i class="fa-solid fa-microphone-lines"></i> EVENTBOOST — Global Event MC</a></li>
+            <li><a href="/micemc/"><i class="fa-solid fa-microphone-lines"></i> MICEMC — International MC & Interpretation</a></li>
+            <li><a href="/indiaboost/"><i class="fa-solid fa-earth-asia"></i> INDIABOOST — India Market Entry Advisory</a></li>
+            <li><a href="/medboost/"><i class="fa-solid fa-stethoscope"></i> MEDBOOST — Clinical Translation</a></li>
+            <li><a href="/amzboost/"><i class="fa-solid fa-store"></i> AMZBOOST — Amazon FBA PPC</a></li>
+            <li><a href="/amzbrand/"><i class="fa-brands fa-amazon"></i> AMZBRAND — Amazon Brand Registry & Storefront</a></li>
+            <li><a href="/amzfba/"><i class="fa-solid fa-truck-fast"></i> AMZFBA — Amazon FBA & 3PL Logistics Optimization</a></li>
+            <li><a href="/alicat/"><i class="fa-solid fa-box-open"></i> ALICAT — Alibaba & B2B Catalog</a></li>
+            <li><a href="/chinaboost/"><i class="fa-solid fa-earth-asia"></i> CHINABOOST — China Market Entry</a></li>
+            <li><a href="/surveyboost/"><i class="fa-solid fa-square-poll-vertical"></i> SURVEYBOOST — Market Validation Surveys</a></li>
+            <li><a href="/complianceboost/"><i class="fa-solid fa-shield-halved"></i> COMPLIANCEBOOST — Compliance Docs & Audit Prep</a></li>
+            <li><a href="/aicash/"><i class="fa-solid fa-wand-magic-sparkles"></i> AICASH — Global AI Content Monetization</a></li>
+            <li><a href="/igboost/"><i class="fa-brands fa-instagram"></i> IGBOOST — Global Instagram Management</a></li>
+            <li><a href="/globalweb/"><i class="fa-solid fa-globe"></i> GLOBALWEB — Multilingual Website & Global SEO</a></li>
+            <li><a href="/affboost/"><i class="fa-solid fa-rocket"></i> AFFBOOST — AI Affiliate Website Builder</a></li>
+            <li><a href="/sbvi/"><i class="fa-solid fa-building-columns"></i> SBVI — Singapore, Hong Kong & BVI Incorporation</a></li>
+            <li><a href="/pdpboost/"><i class="fa-solid fa-box-open"></i> PDPBOOST — Product Detail Page Design</a></li>
+            <li><a href="/usllc/"><i class="fa-solid fa-building-columns"></i> USLLC — US LLC & EIN Setup</a></li>
+            <li><a href="/foreigncare/"><i class="fa-solid fa-user-doctor"></i> FOREIGNCARE — Foreign Customer & Patient Acquisition</a></li>
+            <li><a href="/dbmigrate/"><i class="fa-solid fa-database"></i> DBMIGRATE — Database Migration & Transfer</a></li>
+            <li><a href="/webseo/"><i class="fa-solid fa-globe"></i> WEBSEO — Global Website Development & SEO</a></li>
+            <li><a href="/logoboost/"><i class="fa-solid fa-pen-nib"></i> LOGOBOOST — Global Logo Design</a></li>
+</ul>
+  </div>
+
+  <main>
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <div class="eyebrow" data-i18n="hero-eyebrow">Shopify growth infrastructure</div>
+        <h1 data-i18n="hero-title">SHOPDATA — Shopify Analytics & CAPI Setup</h1>
+        <p class="hero-desc" data-i18n="hero-desc">Accurate ecommerce tracking, server-side events, and Klaviyo automation for Shopify brands scaling globally.</p>
+        <div class="hero-pills">
+          <span data-i18n="pill-ga4">GA4 Ecommerce</span>
+          <span data-i18n="pill-capi">Meta CAPI</span>
+          <span data-i18n="pill-klaviyo">Klaviyo Flows</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#packages" class="btn-primary" data-i18n="hero-cta">View Packages</a>
+          <a href="#faq" class="btn-secondary" data-i18n="hero-cta-secondary">Read FAQ</a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="stat-card"><span>GA4</span><strong data-i18n="stat-1">Ecommerce Events</strong></div>
+        <div class="stat-card"><span>CAPI</span><strong data-i18n="stat-2">Server-side Tracking</strong></div>
+        <div class="stat-card"><span>48h</span><strong data-i18n="stat-3">QA Verification</strong></div>
+        <div class="stat-card"><span>3</span><strong data-i18n="stat-4">Setup Tiers</strong></div>
+      </div>
+    </section>
+
+    <section id="packages" class="section-shell">
+      <div class="section-head">
+        <h2 data-i18n="packages-title">Package Options</h2>
+        <p data-i18n="packages-subtitle">Built from a real Shopify tracking workflow, doubled from the original KRW marketplace price and converted to USD.</p>
+      </div>
+      <div id="packages-grid" class="packages-grid"></div>
+    </section>
+
+    <section class="section-shell">
+      <div class="section-head">
+        <h2 data-i18n="how-title">What’s Included</h2>
+        <p data-i18n="how-subtitle">Clear scope for Shopify founders, D2C teams, and agencies that need reliable revenue attribution.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card"><i class="fa-solid fa-chart-line"></i><h3 data-i18n="feature-1-title">Analytics setup</h3><p data-i18n="feature-1-desc">GA4 ecommerce events, search console link, and conversion goals.</p></article>
+        <article class="feature-card"><i class="fa-solid fa-shield-halved"></i><h3 data-i18n="feature-2-title">Tracking quality</h3><p data-i18n="feature-2-desc">Pixel + server-side CAPI with deduplication and QA checks.</p></article>
+        <article class="feature-card"><i class="fa-solid fa-envelope-open-text"></i><h3 data-i18n="feature-3-title">CRM automation</h3><p data-i18n="feature-3-desc">Klaviyo flows for welcome, cart abandonment, and browse abandonment.</p></article>
+      </div>
+    </section>
+
+    <section id="orders" class="section-shell">
+      <div class="section-head">
+        <h2 data-i18n="orders-title">My Orders</h2>
+        <p data-i18n="orders-subtitle">Orders are stored locally in your browser and used to generate the receipt data for the form redirect.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="orders-table">
+          <thead>
+            <tr>
+              <th data-i18n="th-date">Order Date</th>
+              <th data-i18n="th-order-id">Transaction ID</th>
+              <th data-i18n="th-product">Product</th>
+              <th data-i18n="th-tier">Package Tier</th>
+              <th data-i18n="th-qty">Qty</th>
+              <th data-i18n="th-total">Total Paid</th>
+              <th data-i18n="th-status">Status</th>
+            </tr>
+          </thead>
+          <tbody id="orders-tbody"></tbody>
+        </table>
+        <div id="no-orders-msg" class="empty-state" data-i18n="no-orders-msg">No purchase records found. Make your first order to see history here.</div>
+      </div>
+    </section>
+
+    <section id="faq" class="section-shell">
+      <div class="section-head">
+        <h2 data-i18n="faq-title">Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-grid">
+        <details class="faq-item" open>
+          <summary data-i18n="faq-q1">What does SHOPDATA do?</summary>
+          <p data-i18n="faq-a1">It sets up Shopify analytics, tracking, and retention automation so you can trust your revenue data.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq-q2">Is the visible total price clickable?</summary>
+          <p data-i18n="faq-a2">Yes. In the purchase modal the total price text is clickable and launches the test checkout flow.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq-q3">What is the payment flow?</summary>
+          <p data-i18n="faq-a3">PayPal handles the secure checkout. After purchase completion the receipt data is encoded into a Google Form redirect.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq-q4">Who is this for?</summary>
+          <p data-i18n="faq-a4">Shopify store owners, D2C founders, agencies, and cross-border e-commerce teams that need trustworthy attribution.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="section-shell footer-shell">
+    <div class="footer-brand">
+      <a href="/" class="logo-group footer-logo"><span class="logo-title">BibleForAI</span><span class="logo-subtitle" data-i18n="logo-subtitle">SHOPDATA</span></a>
+      <p data-i18n="footer-desc">Shopify analytics and growth infrastructure for brands selling globally.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/shopdata/">SHOPDATA</a>
+      <a href="/shopglobal/">SHOPGLOBAL</a>
+      <a href="/b2cdb/">B2CDB</a>
+      <a href="/b2bdb/">B2BDB</a>
+    </div>
+    <p class="copyright" data-i18n="copyright">&copy; 2026 BibleForAI. All rights reserved.</p>
+  </footer>
+
+  <div class="modal-overlay" id="purchase-modal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close modal">&times;</button>
+      <div class="modal-head">
+        <div class="modal-kicker" data-i18n="modal-kicker">Secure checkout</div>
+        <h3 id="modal-product-title">SHOPDATA</h3>
+        <p id="modal-package-name"></p>
+        <div class="modal-price-box">
+          <span data-i18n="modal-total-label">Total Amount:</span>
+          <span id="modal-total-price" class="modal-total-price" role="button" tabindex="0" onclick="triggerTestCheckout()">$0.00</span>
+        </div>
+        <p class="modal-note" data-i18n="modal-note">Click the total price to run the test checkout and continue to the receipt flow.</p>
+      </div>
+      <div class="modal-body">
+        <label for="order-email" data-i18n="modal-email-label">Email Address *</label>
+        <input type="email" id="order-email" placeholder="name@example.com">
+        <div id="email-error" class="email-error"></div>
+
+        <div class="qty-row">
+          <label for="order-quantity" data-i18n="modal-qty-label">Quantity</label>
+          <div class="qty-selector">
+            <button class="qty-btn" onclick="adjustQty(-1)" aria-label="Decrease quantity"><i class="fa-solid fa-minus"></i></button>
+            <input type="number" id="order-quantity" value="1" min="1" oninput="updateModalPrice()">
+            <button class="qty-btn" onclick="adjustQty(1)" aria-label="Increase quantity"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+
+        <div class="paypal-wrapper"><div id="paypal-button-container"></div></div>
+        <div class="payment-badges">
+          <span><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL Secured Checkout</span></span>
+          <span><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal Verified</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

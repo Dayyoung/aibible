@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="../">
+  <title>BibleForAI - SHOPDATA | 쇼피파이 분석 & CAPI 세팅</title>
+  <meta name="description" content="쇼피파이 브랜드를 위한 GA4 전자상거래 추적, Meta CAPI, Klaviyo 자동화 세팅 서비스입니다.">
+  <meta name="keywords" content="쇼피파이 분석, GA4 전자상거래, Meta CAPI, Klaviyo, 쇼피파이 세팅, 이커머스 추적">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bibleforai.com/shopdata/kr/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bibleforai.com/shopdata/kr/">
+  <meta property="og:title" content="BibleForAI - SHOPDATA | 쇼피파이 분석 & CAPI 세팅">
+  <meta property="og:description" content="정확한 쇼피파이 데이터 세팅으로 GA4, Meta CAPI, Klaviyo 플로우를 구축합니다.">
+  <meta property="og:image" content="https://bibleforai.com/assets/og-preview.png">
+  <meta property="og:site_name" content="BibleForAI SHOPDATA">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://bibleforai.com/shopdata/kr/">
+  <meta name="twitter:title" content="BibleForAI - SHOPDATA | 쇼피파이 분석 & CAPI 세팅">
+  <meta name="twitter:description" content="정확한 쇼피파이 데이터 세팅으로 GA4, Meta CAPI, Klaviyo 플로우를 구축합니다.">
+  <meta name="twitter:image" content="https://bibleforai.com/assets/og-preview.png">
+
+  <script>localStorage.setItem('bibleforai_lang', 'ko');</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "SHOPDATA는 무엇을 세팅하나요?",
+        "acceptedAnswer": { "@type": "Answer", "text": "SHOPDATA는 GA4 전자상거래 이벤트, Meta Pixel과 CAPI, 이벤트 중복 제거, Klaviyo 플로우를 세팅합니다." }
+      },
+      {
+        "@type": "Question",
+        "name": "이 서비스는 누구에게 필요한가요?",
+        "acceptedAnswer": { "@type": "Answer", "text": "쇼피파이 스토어 운영자, D2C 브랜드, 에이전시, 해외 이커머스 팀에게 적합합니다." }
+      },
+      {
+        "@type": "Question",
+        "name": "구매 후 무엇이 제공되나요?",
+        "acceptedAnswer": { "@type": "Answer", "text": "세팅 작업, QA 검증, 그리고 Google Form 리디렉션용 영수증 데이터가 제공됩니다." }
+      },
+      {
+        "@type": "Question",
+        "name": "총액 텍스트를 클릭할 수 있나요?",
+        "acceptedAnswer": { "@type": "Answer", "text": "네. 구매 모달의 총액 텍스트를 클릭하면 테스트 결제 흐름이 실행됩니다." }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "SHOPDATA - Shopify Analytics & CAPI Setup",
+    "image": "https://bibleforai.com/assets/og-preview.png",
+    "description": "쇼피파이 분석, GA4 전자상거래 추적, Meta CAPI, Klaviyo 세팅 서비스입니다.",
+    "brand": { "@type": "Brand", "name": "BibleForAI" },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "USD",
+      "lowPrice": "271.00",
+      "highPrice": "1271.00",
+      "offerCount": "3"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root { --font-heading: 'Noto Sans KR', 'Inter', sans-serif; --font-body: 'Noto Sans KR', 'Inter', sans-serif; }
+  </style>
+  <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+</head>
+<body>
+  <header id="app-header">
+    <div class="header-container">
+      <button class="menu-toggle" id="menu-toggle" onclick="toggleMobileMenu()" aria-label="메뉴 열기"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+      <a href="../" class="logo-group"><span class="logo-title">BibleForAI</span><span class="logo-subtitle" data-i18n="logo-subtitle">SHOPDATA</span></a>
+      <div class="header-actions">
+        <select class="lang-selector" id="language-selector" onchange="changeLanguage(this.value)">
+          <option value="en">🌐 English</option>
+          <option value="ko" selected>🇰🇷 한국어</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobile-drawer">
+    <ul class="mobile-nav-links unified-service-menu">
+      <li class="mobile-menu-heading" data-i18n="menu-heading-database">데이터베이스 & 스크래핑</li>
+      <li><a href="/b2bdb/"><i class="fa-solid fa-database"></i> <span data-i18n="menu-b2bdb">B2B 핵심 데이터베이스</span></a></li>
+      <li><a href="/b2cdb/"><i class="fa-solid fa-database"></i> <span data-i18n="menu-b2cdb">B2C 리드 데이터베이스</span></a></li>
+      <li><a href="/databoost/"><i class="fa-solid fa-spider"></i> <span data-i18n="menu-databoost">DATABOOST — 웹 스크래핑</span></a></li>
+      <li class="mobile-menu-heading" data-i18n="menu-heading-design">디자인 & 코딩</li>
+      <li><a href="/landPage/"><i class="fa-solid fa-code"></i> <span data-i18n="menu-land">AI 랜딩페이지</span></a></li>
+      <li><a href="/opencode/"><i class="fa-solid fa-code"></i> <span data-i18n="menu-opencode">OpenCode AI</span></a></li>
+      <li><a href="/shopboost/"><i class="fa-solid fa-store"></i> <span data-i18n="menu-shopboost">SHOPBOOST — 이커머스 진입</span></a></li>
+      <li><a href="/flowboost/"><i class="fa-solid fa-diagram-project"></i> <span data-i18n="menu-flowboost">FLOWBOOST — 업무 자동화</span></a></li>
+      <li><a href="/imgboost/"><i class="fa-solid fa-camera-retro"></i> <span data-i18n="menu-imgboost">IMGBOOST — 상품 사진</span></a></li>
+      <li><a href="/pitchboost/"><i class="fa-solid fa-chart-line"></i> <span data-i18n="menu-pitchboost">PITCHBOOST — AI 프레젠테이션</span></a></li>
+      <li class="mobile-menu-heading" data-i18n="menu-heading-marketing">마케팅 & SEO</li>
+      <li><a href="/boostsm/"><i class="fa-solid fa-arrow-up-right-dots"></i> <span data-i18n="menu-boostsm">SMM 성장 부스터</span></a></li>
+      <li><a href="/prboost/"><i class="fa-solid fa-newspaper"></i> <span data-i18n="menu-prboost">PRBOOST — 글로벌 보도자료 배포</span></a></li>
+      <li><a href="/mailboost/"><i class="fa-solid fa-envelope"></i> <span data-i18n="menu-mailboost">MAILBOOST — 이메일 마케팅</span></a></li>
+      <li><a href="/searchboost/"><i class="fa-solid fa-magnifying-glass"></i> <span data-i18n="menu-searchboost">SEARCHBOOST — AI SEO</span></a></li>
+      <li><a href="/mkboost/"><i class="fa-solid fa-magnifying-glass-chart"></i> <span data-i18n="menu-mkboost">MKBOOST — 시장 조사</span></a></li>
+      <li><a href="/contentboost/"><i class="fa-solid fa-newspaper"></i> <span data-i18n="menu-contentboost">CONTENTBOOST — AI 퍼블리싱</span></a></li>
+      <li class="mobile-menu-heading" data-i18n="menu-heading-media">미디어 & 오디오</li>
+      <li><a href="/clipboost/"><i class="fa-solid fa-clapperboard"></i> <span data-i18n="menu-clipboost">CLIPBOOST — 숏폼 영상</span></a></li>
+      <li><a href="/voiceboost/"><i class="fa-solid fa-microphone"></i> <span data-i18n="menu-voiceboost">VOICEBOOST — AI 보이스</span></a></li>
+      <li><a href="/transboost/"><i class="fa-solid fa-language"></i> <span data-i18n="menu-transboost">TRANSBOOST — 번역</span></a></li>
+      <li class="mobile-menu-heading" data-i18n="menu-heading-strategy">전략 & 분석</li>
+      <li><a href="/aiboost/"><i class="fa-solid fa-brain"></i> <span data-i18n="menu-aiboost">AIBOOST — AI 컨설팅</span></a></li>
+      <li><a href="/insightboost/"><i class="fa-solid fa-chart-bar"></i> <span data-i18n="menu-insightboost">INSIGHTBOOST — 데이터 분석</span></a></li>
+                <li><a href="/tikshop/"><i class="fa-brands fa-tiktok"></i> TIKSHOP — TikTok Shop Setup</a></li>
+            <li><a href="/tradeboost/"><i class="fa-solid fa-ship"></i> TRADEBOOST — Global Trade Agency</a></li>
+            <li><a href="/linkboost/"><i class="fa-brands fa-linkedin"></i> LINKBOOST — LinkedIn Growth</a></li>
+            <li><a href="/careerlink/"><i class="fa-brands fa-linkedin"></i> CAREERLINK — LinkedIn Optimization</a></li>
+            <li><a href="/atsresume/"><i class="fa-solid fa-file-lines"></i> ATSRESUME — 이력서 &amp; 커버레터 최적화</a></li>
+            <li><a href="/influboost/"><i class="fa-solid fa-bullhorn"></i> INFLUBOOST — Global Influencer Seeding</a></li>
+            <li><a href="/fdaboost/"><i class="fa-solid fa-vial-circle-check"></i> FDABOOST — FDA Labeling & Certification</a></li>
+            <li><a href="/globalbank/"><i class="fa-solid fa-building-columns"></i> GLOBALBANK — Overseas Business Bank Account Setup</a></li>
+            <li><a href="/sysboost/"><i class="fa-solid fa-circle"></i> SYSBOOST</a></li>
+            <li><a href="/aideploy/"><i class="fa-solid fa-circle"></i> AIDEPLOY</a></li>
+            <li><a href="/autoboost/"><i class="fa-solid fa-circle"></i> AUTOBOOST</a></li>
+            <li><a href="/webcreate/"><i class="fa-solid fa-circle"></i> WEBCREATE</a></li>
+            <li><a href="/adsboost/"><i class="fa-solid fa-bullhorn"></i> ADSBOOST — Google Ads Optimization</a></li>
+            <li><a href="/rfpboost/"><i class="fa-solid fa-file-signature"></i> RFPBOOST — Proposal Writing</a></li>
+            <li><a href="/globalup/"><i class="fa-solid fa-user-tie"></i> GLOBALUP — Global Recruiting</a></li>
+            <li><a href="/eventboost/"><i class="fa-solid fa-microphone-lines"></i> EVENTBOOST — Global Event MC</a></li>
+            <li><a href="/micemc/"><i class="fa-solid fa-microphone-lines"></i> MICEMC — International MC & Interpretation</a></li>
+            <li><a href="/indiaboost/"><i class="fa-solid fa-earth-asia"></i> INDIABOOST — India Market Entry Advisory</a></li>
+            <li><a href="/medboost/"><i class="fa-solid fa-stethoscope"></i> MEDBOOST — Clinical Translation</a></li>
+            <li><a href="/amzboost/"><i class="fa-solid fa-store"></i> AMZBOOST — Amazon FBA PPC</a></li>
+            <li><a href="/amzbrand/"><i class="fa-brands fa-amazon"></i> AMZBRAND — Amazon Brand Registry & Storefront</a></li>
+            <li><a href="/amzfba/"><i class="fa-solid fa-truck-fast"></i> AMZFBA — Amazon FBA & 3PL Logistics Optimization</a></li>
+            <li><a href="/alicat/"><i class="fa-solid fa-box-open"></i> ALICAT — Alibaba & B2B Catalog</a></li>
+            <li><a href="/chinaboost/"><i class="fa-solid fa-earth-asia"></i> CHINABOOST — China Market Entry</a></li>
+            <li><a href="/surveyboost/"><i class="fa-solid fa-square-poll-vertical"></i> SURVEYBOOST — Market Validation Surveys</a></li>
+            <li><a href="/complianceboost/"><i class="fa-solid fa-shield-halved"></i> COMPLIANCEBOOST — Compliance Docs & Audit Prep</a></li>
+            <li><a href="/aicash/"><i class="fa-solid fa-wand-magic-sparkles"></i> AICASH — Global AI Content Monetization</a></li>
+            <li><a href="/igboost/"><i class="fa-brands fa-instagram"></i> IGBOOST — Global Instagram Management</a></li>
+            <li><a href="/globalweb/"><i class="fa-solid fa-globe"></i> GLOBALWEB — 다국어 웹사이트 &amp; 글로벌 SEO</a></li>
+            <li><a href="/affboost/"><i class="fa-solid fa-rocket"></i> AFFBOOST — AI 제휴 웹사이트 빌더</a></li>
+            <li><a href="/sbvi/"><i class="fa-solid fa-building-columns"></i> SBVI — 싱가포르, 홍콩 &amp; BVI 법인설립</a></li>
+            <li><a href="/pdpboost/"><i class="fa-solid fa-box-open"></i> PDPBOOST — 상세페이지 디자인</a></li>
+            <li><a href="/usllc/"><i class="fa-solid fa-building-columns"></i> USLLC — 미국 LLC &amp; EIN 설립</a></li>
+            <li><a href="/foreigncare/"><i class="fa-solid fa-user-doctor"></i> FOREIGNCARE — 외국인 고객·환자 유치</a></li>
+            <li><a href="/dbmigrate/"><i class="fa-solid fa-database"></i> DBMIGRATE — 데이터베이스 이전 & 전환</a></li>
+            <li><a href="/webseo/"><i class="fa-solid fa-globe"></i> WEBSEO — 글로벌 웹사이트 개발 &amp; SEO</a></li>
+            <li><a href="/logoboost/"><i class="fa-solid fa-pen-nib"></i> LOGOBOOST — 글로벌 로고 디자인</a></li>
+</ul>
+  </div>
+
+  <main>
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <div class="eyebrow" data-i18n="hero-eyebrow">쇼피파이 성장 인프라</div>
+        <h1 data-i18n="hero-title">SHOPDATA — 쇼피파이 분석 & CAPI 세팅</h1>
+        <p class="hero-desc" data-i18n="hero-desc">글로벌 시장에서 판매하는 쇼피파이 브랜드를 위한 정확한 이커머스 추적, 서버사이드 이벤트, Klaviyo 자동화 서비스입니다.</p>
+        <div class="hero-pills">
+          <span data-i18n="pill-ga4">GA4 전자상거래</span>
+          <span data-i18n="pill-capi">Meta CAPI</span>
+          <span data-i18n="pill-klaviyo">Klaviyo 플로우</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#packages" class="btn-primary" data-i18n="hero-cta">패키지 보기</a>
+          <a href="#faq" class="btn-secondary" data-i18n="hero-cta-secondary">FAQ 보기</a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="stat-card"><span>GA4</span><strong data-i18n="stat-1">이커머스 이벤트</strong></div>
+        <div class="stat-card"><span>CAPI</span><strong data-i18n="stat-2">서버사이드 추적</strong></div>
+        <div class="stat-card"><span>48h</span><strong data-i18n="stat-3">QA 검증</strong></div>
+        <div class="stat-card"><span>3</span><strong data-i18n="stat-4">세팅 티어</strong></div>
+      </div>
+    </section>
+
+    <section id="packages" class="section-shell">
+      <div class="section-head">
+        <h2 data-i18n="packages-title">패키지 옵션</h2>
+        <p data-i18n="packages-subtitle">실제 쇼피파이 트래킹 워크플로우를 바탕으로, 원래 크몽 원화 가격의 2배를 USD로 환산했습니다.</p>
+      </div>
+      <div id="packages-grid" class="packages-grid"></div>
+    </section>
+
+    <section class="section-shell">
+      <div class="section-head">
+        <h2 data-i18n="how-title">포함 항목</h2>
+        <p data-i18n="how-subtitle">신뢰 가능한 매출 귀속이 필요한 쇼피파이 창업자, D2C 팀, 에이전시를 위한 명확한 범위입니다.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card"><i class="fa-solid fa-chart-line"></i><h3 data-i18n="feature-1-title">분석 세팅</h3><p data-i18n="feature-1-desc">GA4 전자상거래 이벤트, 서치 콘솔 연결, 전환 목표 설정.</p></article>
+        <article class="feature-card"><i class="fa-solid fa-shield-halved"></i><h3 data-i18n="feature-2-title">추적 품질</h3><p data-i18n="feature-2-desc">픽셀 + 서버사이드 CAPI, 중복 제거, QA 검증 포함.</p></article>
+        <article class="feature-card"><i class="fa-solid fa-envelope-open-text"></i><h3 data-i18n="feature-3-title">CRM 자동화</h3><p data-i18n="feature-3-desc">웰컴, 장바구니 이탈, 브라우즈 이탈용 Klaviyo 플로우 구성.</p></article>
+      </div>
+    </section>
+
+    <section id="orders" class="section-shell">
+      <div class="section-head">
+        <h2 data-i18n="orders-title">내 주문 내역</h2>
+        <p data-i18n="orders-subtitle">주문은 브라우저 로컬 저장소에 저장되며, 폼 리디렉션용 영수증 데이터로 사용됩니다.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="orders-table">
+          <thead>
+            <tr>
+              <th data-i18n="th-date">주문 날짜</th>
+              <th data-i18n="th-order-id">거래 ID</th>
+              <th data-i18n="th-product">상품명</th>
+              <th data-i18n="th-tier">패키지 등급</th>
+              <th data-i18n="th-qty">수량</th>
+              <th data-i18n="th-total">총 결제금액</th>
+              <th data-i18n="th-status">상태</th>
+            </tr>
+          </thead>
+          <tbody id="orders-tbody"></tbody>
+        </table>
+        <div id="no-orders-msg" class="empty-state" data-i18n="no-orders-msg">구매 기록이 없습니다. 첫 주문을 완료하면 여기에서 확인할 수 있습니다.</div>
+      </div>
+    </section>
+
+    <section id="faq" class="section-shell">
+      <div class="section-head"><h2 data-i18n="faq-title">자주 묻는 질문</h2></div>
+      <div class="faq-grid">
+        <details class="faq-item" open><summary data-i18n="faq-q1">SHOPDATA는 무엇을 하나요?</summary><p data-i18n="faq-a1">쇼피파이 분석, 추적, 리텐션 자동화를 세팅해 매출 데이터를 정확하게 볼 수 있게 합니다.</p></details>
+        <details class="faq-item"><summary data-i18n="faq-q2">보이는 총액 텍스트를 클릭할 수 있나요?</summary><p data-i18n="faq-a2">네. 구매 모달에서 총액 텍스트를 클릭하면 테스트 결제 흐름이 실행됩니다.</p></details>
+        <details class="faq-item"><summary data-i18n="faq-q3">결제 흐름은 어떻게 되나요?</summary><p data-i18n="faq-a3">안전 결제는 PayPal이 담당하고, 결제 완료 후 영수증 데이터가 인코딩되어 Google Form으로 이동합니다.</p></details>
+        <details class="faq-item"><summary data-i18n="faq-q4">누구를 위한 서비스인가요?</summary><p data-i18n="faq-a4">정확한 귀속 데이터가 필요한 쇼피파이 스토어 운영자, D2C 창업자, 에이전시, 크로스보더 이커머스 팀을 위한 서비스입니다.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="section-shell footer-shell">
+    <div class="footer-brand">
+      <a href="../" class="logo-group footer-logo"><span class="logo-title">BibleForAI</span><span class="logo-subtitle" data-i18n="logo-subtitle">SHOPDATA</span></a>
+      <p data-i18n="footer-desc">전 세계에 판매하는 브랜드를 위한 쇼피파이 분석 및 성장 인프라입니다.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/shopdata/">SHOPDATA</a>
+      <a href="/shopglobal/">SHOPGLOBAL</a>
+      <a href="/b2cdb/">B2CDB</a>
+      <a href="/b2bdb/">B2BDB</a>
+    </div>
+    <p class="copyright" data-i18n="copyright">&copy; 2026 BibleForAI. All rights reserved.</p>
+  </footer>
+
+  <div class="modal-overlay" id="purchase-modal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal()" aria-label="닫기">&times;</button>
+      <div class="modal-head">
+        <div class="modal-kicker" data-i18n="modal-kicker">안전 결제</div>
+        <h3 id="modal-product-title">SHOPDATA</h3>
+        <p id="modal-package-name"></p>
+        <div class="modal-price-box">
+          <span data-i18n="modal-total-label">총 결제금액:</span>
+          <span id="modal-total-price" class="modal-total-price" role="button" tabindex="0" onclick="triggerTestCheckout()">$0.00</span>
+        </div>
+        <p class="modal-note" data-i18n="modal-note">총액 텍스트를 클릭하면 테스트 결제 흐름이 실행되고 영수증 단계로 이동합니다.</p>
+      </div>
+      <div class="modal-body">
+        <label for="order-email" data-i18n="modal-email-label">이메일 주소 *</label>
+        <input type="email" id="order-email" placeholder="name@example.com">
+        <div id="email-error" class="email-error"></div>
+
+        <div class="qty-row">
+          <label for="order-quantity" data-i18n="modal-qty-label">수량</label>
+          <div class="qty-selector">
+            <button class="qty-btn" onclick="adjustQty(-1)" aria-label="수량 감소"><i class="fa-solid fa-minus"></i></button>
+            <input type="number" id="order-quantity" value="1" min="1" oninput="updateModalPrice()">
+            <button class="qty-btn" onclick="adjustQty(1)" aria-label="수량 증가"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+
+        <div class="paypal-wrapper"><div id="paypal-button-container"></div></div>
+        <div class="payment-badges">
+          <span><i class="fa-solid fa-lock"></i> <span data-i18n="badge-ssl">SSL 보안 결제</span></span>
+          <span><i class="fa-brands fa-paypal"></i> <span data-i18n="badge-paypal">PayPal 인증됨</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
