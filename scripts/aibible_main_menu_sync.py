@@ -125,7 +125,19 @@ def build_catalog_entries():
     added_map = {s['id']: service_added_at(s['link']) for s in CATALOG}
     max_added = max(added_map.values(), default=0)
     lines = []
+    
+    EXCLUDED_IDS = {
+        # Policy-sensitive (relocated to beta)
+        'boostsm', 'appboost', 'databoost', 'b2cdb', 'b2bdb', 
+        'opencode', 'apostboost', 'sourcboost', 'repboost', 
+        'prboost', 'usllc', 'ustax', 'ustaxboost',
+        # Consolidated duplicates
+        'localize', 'engtranslate', 'medboost', 'mk'
+    }
+    
     for s in CATALOG:
+        if s['id'] in EXCLUDED_IDS:
+            continue
         added_at = added_map[s['id']]
         if s['id'] in ('globalup', 'eventboost'):
             added_at = max(added_at, max_added + 1)
@@ -156,8 +168,8 @@ def patch_index_html():
     text = p.read_text()
     
     marker_start = "        const servicesCatalog = [\n"
-    # Match correct 8-space indentation
-    marker_end = "        ];\n        let activeCategory = 'all';\n"
+    # Match correct current spacing in index.html
+    marker_end = "\n        ];\n\n        const bundlesCatalog = [\n"
     
     start = text.index(marker_start)
     end = text.index(marker_end)
@@ -222,7 +234,6 @@ def patch_all_service_pages():
         '            <li><a href="/eventboost/"><i class="fa-solid fa-microphone-lines"></i> EVENTBOOST — Global Event MC</a></li>\n',
         '            <li><a href="/micemc/"><i class="fa-solid fa-microphone-lines"></i> MICEMC — International MC & Interpretation</a></li>\n',
         '            <li><a href="/indiaboost/"><i class="fa-solid fa-earth-asia"></i> INDIABOOST — India Market Entry Advisory</a></li>\n',
-        '            <li><a href="/medboost/"><i class="fa-solid fa-stethoscope"></i> MEDBOOST — Clinical Translation</a></li>\n',
         '            <li><a href="/amzboost/"><i class="fa-solid fa-store"></i> AMZBOOST — Amazon FBA PPC</a></li>\n',
         '            <li><a href="/amzbrand/"><i class="fa-brands fa-amazon"></i> AMZBRAND — Amazon Brand Registry & Storefront</a></li>\n',
         '            <li><a href="/amzfba/"><i class="fa-solid fa-truck-fast"></i> AMZFBA — Amazon FBA & 3PL Logistics Optimization</a></li>\n',
@@ -291,8 +302,6 @@ def patch_all_service_pages():
             affboost_item_ko if '/kr/' in str(path) else affboost_item_en,
             sbvi_item_ko if '/kr/' in str(path) else sbvi_item_en,
             pdp_item_ko if '/kr/' in str(path) else pdp_item_en,
-            usllc_item_ko if '/kr/' in str(path) else usllc_item_en,
-            prboost_item_ko if '/kr/' in str(path) else prboost_item_en,
             foreigncare_item_ko if '/kr/' in str(path) else foreigncare_item_en,
             aicash_item_ko if '/kr/' in str(path) else aicash_item_en,
             igboost_item_ko if '/kr/' in str(path) else igboost_item_en,
