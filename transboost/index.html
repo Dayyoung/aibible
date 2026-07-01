@@ -117,7 +117,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- PayPal SDK -->
-    <script src="https://www.paypal.com/sdk/js?client-id=Ae_xg2SjogcseJVcjXldc_TEnVWBzmPw8aNimrSncYBb0Wrn_m93w_PkMgdxWTQ2fJExV8QKWHR2-7hK&currency=USD"></script>
+    
+    <link rel="stylesheet" href="/shared/common.css">
 </head>
 <body>
 
@@ -315,6 +316,14 @@
                 <h2 data-i18n="card-translation-title">Translation & Localization</h2>
                 <p data-i18n="view-translation-sub">Select a package and get your content translated by our AI-powered system with expert human review. Fast, accurate, and culturally adapted.</p>
             </div>
+            
+            <!-- Tier selector tabs -->
+            <div class="tier-tabs-container" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2.5rem; flex-wrap: wrap;">
+                <button class="tier-tab-btn active" id="tab-translation" onclick="switchTranslationTier('translation')" style="background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.2); color: #c084fc; padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: var(--transition); font-size: 0.9rem;" data-i18n="tab-general">General Translation</button>
+                <button class="tier-tab-btn" id="tab-technical" onclick="switchTranslationTier('technical')" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); color: var(--text-muted); padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: var(--transition); font-size: 0.9rem;" data-i18n="tab-technical">Technical Translation</button>
+                <button class="tier-tab-btn" id="tab-medical" onclick="switchTranslationTier('medical')" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); color: var(--text-muted); padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: var(--transition); font-size: 0.9rem;" data-i18n="tab-medical">Medical Translation</button>
+            </div>
+
             <div class="packages-grid" id="translation-packages">
                 <!-- Loaded dynamically by JS -->
             </div>
@@ -459,5 +468,6 @@
 
     <!-- App Logic script -->
     <script src="app.js"></script>
+    <script src="/shared/common.js"></script>
 </body>
 </html>

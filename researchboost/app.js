@@ -375,41 +375,10 @@ function toggleMobileMenu() {
 
 // Dynamic Rendering of Product Packages
 function renderAllPackages() {
-    const isKo = currentLang === 'ko';
-    
-    Object.keys(packageCatalog).forEach(categoryKey => {
-        const categoryData = packageCatalog[categoryKey];
-        const container = document.getElementById(`${categoryKey}-packages`);
-        if (!container) return;
-
-        container.innerHTML = categoryData.packages.map(pkg => {
-            const featuredClass = pkg.featured ? 'featured' : '';
-            const badgeIcon = getCategoryIcon(categoryKey);
-            
-            const name = isKo ? pkg.name_ko : pkg.name_en;
-            const desc = isKo ? pkg.desc_ko : pkg.desc_en;
-            const features = isKo ? pkg.features_ko : pkg.features_en;
-            const btnText = translations[currentLang]['order-button'] || 'Order Package';
-            const featuredBadge = translations[currentLang]['featured-badge'] || 'Best Seller';
-            
-            return `
-                <div class="package-card ${featuredClass}" ${pkg.featured ? `data-badge="${featuredBadge}"` : ''}>
-                    <h3>${name}</h3>
-                    <p class="package-desc">${desc}</p>
-                    <div class="package-price-box">
-                        <span class="price">${formatPrice(pkg.price, false)}</span>
-                        <span class="currency">${currentLang === 'ko' ? 'KRW' : 'USD'}</span>
-                    </div>
-                    <ul class="package-features">
-                        ${features.map(feat => `<li><i class="fa-solid fa-circle-check"></i> ${feat}</li>`).join('')}
-                    </ul>
-                    <button class="btn-buy" onclick="openPurchaseModal('${categoryKey}', '${pkg.id}')">
-                        <i class="${badgeIcon}"></i> ${btnText}
-                    </button>
-                </div>
-            `;
-        }).join('');
-    });
+    window.packageCatalog = packageCatalog;
+    if (typeof initStandardPricingTable === 'function') {
+        initStandardPricingTable();
+    }
 }
 
 function getCategoryIcon(category) {

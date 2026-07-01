@@ -2706,6 +2706,179 @@
     .btn-foreigncare { background: #059669; color: #ffffff; border: none; box-shadow: 0 4px 15px rgba(5, 150, 105, 0.2); }
     .btn-foreigncare:hover { background: #047857; box-shadow: 0 8px 25px rgba(5, 150, 105, 0.35); }
     .icon-foreigncare { color: #059669; background: rgba(5, 150, 105, 0.08); border-color: rgba(5, 150, 105, 0.15); }
+
+    /* IA Restructuring Styles */
+    .quick-filters-container {
+        max-width: 1000px;
+        margin: -1.5rem auto 2.5rem auto;
+        padding: 0 1.5rem;
+        text-align: center;
+    }
+    .quick-filters-title {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 1rem;
+    }
+    .quick-filters-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+    }
+    .quick-filter-btn {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: var(--text-main);
+        padding: 0.6rem 1.2rem;
+        border-radius: 30px;
+        font-family: var(--font-heading);
+        font-size: 0.88rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: var(--transition);
+        outline: none;
+    }
+    .quick-filter-btn:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: var(--primary-cyan);
+        color: #ffffff;
+        transform: translateY(-2px);
+    }
+    .quick-filter-btn.active {
+        background: linear-gradient(135deg, var(--primary-purple), var(--primary-indigo));
+        border-color: var(--primary-purple);
+        color: #ffffff;
+        box-shadow: 0 4px 15px rgba(139, 92, 246, 0.25);
+    }
+
+    .bundles-container {
+        max-width: 1200px;
+        margin: 0 auto 4rem auto;
+        padding: 0 1.5rem;
+    }
+    .bundles-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    @media (max-width: 968px) {
+        .bundles-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (max-width: 640px) {
+        .bundles-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    .bundle-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-card);
+        border-radius: 20px;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transition: var(--transition);
+        min-height: 250px;
+        cursor: pointer;
+        text-align: left;
+    }
+    .bundle-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary-purple);
+        box-shadow: 0 10px 30px rgba(139, 92, 246, 0.08);
+    }
+    .bundle-card-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+    }
+    .bundle-card-icon {
+        font-size: 1.5rem;
+        color: var(--primary-cyan);
+        background: rgba(6, 182, 212, 0.08);
+        border-radius: 10px;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .bundle-card h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0;
+    }
+    .bundle-card p {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+    }
+    .bundle-card .bundle-cta {
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--primary-purple);
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        transition: gap 0.2s;
+    }
+    .bundle-card:hover .bundle-cta {
+        gap: 0.6rem;
+        color: var(--primary-cyan);
+    }
+
+    .middle-catalog-header {
+        max-width: 1200px;
+        margin: 2rem auto 1.5rem auto;
+        padding: 0 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        padding-bottom: 1rem;
+        text-align: left;
+    }
+    .middle-catalog-info h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 0.25rem;
+    }
+    .middle-catalog-info p {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+    }
+    .btn-view-all-services {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--text-main);
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        outline: none;
+    }
+    .btn-view-all-services:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+    }
 </style>
 </head>
 <body>
@@ -2725,6 +2898,10 @@
                 <div class="logo-text">Bible<span>ForAI</span></div>
             </a>
         </div>
+        <div class="header-search-box" style="flex-grow: 1; max-width: 400px; margin: 0 1.5rem; position: relative;">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.85rem;"></i>
+            <input type="text" id="header-search" oninput="handleHeaderSearch(this.value)" placeholder="Search services..." style="width: 100%; padding: 0.5rem 1rem 0.5rem 2.2rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: #ffffff; font-family: var(--font-heading); font-size: 0.88rem; outline: none; transition: var(--transition);">
+        </div>
         <select class="lang-selector" onchange="toggleLang(this.value)">
             <option value="en">🌐 English</option>
             <option value="ko">🇰🇷 한국어</option>
@@ -2737,90 +2914,8 @@
             <span class="sidebar-title">BibleForAI Services</span>
             <button class="sidebar-close" onclick="toggleSidebar()">&times;</button>
         </div>
-        
-        <div class="sidebar-category">
-            <span class="sidebar-category-title" id="side-cat-designdev">Design & Coding</span>
-            <a href="/landPage/" class="sidebar-link"><i class="fa-solid fa-code"></i> <span id="side-title-land">AI Landing Page</span></a>
-            <a href="/pdpboost/" class="sidebar-link"><i class="fa-solid fa-box-open"></i> <span id="side-title-pdp">PDPBOOST — Product Detail Page Design</span></a>
-            <a href="/mvpboost/" class="sidebar-link"><i class="fa-solid fa-rocket"></i> <span id="side-title-mvp">MVPBOOST</span></a>
-            <a href="/aideploy/" class="sidebar-link"><i class="fa-solid fa-cloud-arrow-up"></i> <span id="side-title-aideploy">AIDEPLOY</span></a>
-            <a href="/autoboost/" class="sidebar-link"><i class="fa-solid fa-arrows-rotate"></i> <span id="side-title-autoboost">AUTOBOOST</span></a>
-            <a href="/webcreate/" class="sidebar-link"><i class="fa-solid fa-globe"></i> <span id="side-title-webcreate">WEBCREATE</span></a>
-            <a href="/logoboost/" class="sidebar-link"><i class="fa-solid fa-pen-nib"></i> <span id="side-title-logoboost">LOGOBOOST — Global Logo Design</span></a>
-            <a href="/shopboost/" class="sidebar-link"><i class="fa-solid fa-store"></i> <span id="side-title-shop">E-Commerce Entry</span></a>
-            <a href="/shopglobal/" class="sidebar-link"><i class="fa-brands fa-shopify"></i> <span id="side-title-shopglobal">SHOPGLOBAL — Shopify Global Expansion</span></a>
-            <a href="/shopdata/" class="sidebar-link"><i class="fa-brands fa-shopify"></i> <span id="side-title-shopdata">SHOPDATA — Shopify Analytics &amp; CAPI Setup</span></a>
-            <a href="/globalbank/" class="sidebar-link"><i class="fa-solid fa-building-columns"></i> <span id="side-title-globalbank">GLOBALBANK — Overseas Business Bank Account Setup</span></a>
-            <a href="/fdaboost/" class="sidebar-link"><i class="fa-solid fa-vial-circle-check"></i> <span id="side-title-fdaboost">FDABOOST — FDA Labeling &amp; Certification</span></a>
-            <a href="/amzbrand/" class="sidebar-link"><i class="fa-brands fa-amazon"></i> <span id="side-title-amzbrand">AMZBRAND — Amazon Brand Registry &amp; Storefront</span></a>
-            <a href="/amzfba/" class="sidebar-link"><i class="fa-solid fa-truck-fast"></i> <span id="side-title-amzfba">AMZFBA — Amazon FBA &amp; 3PL Logistics Optimization</span></a>
-            <a href="/flowboost/" class="sidebar-link"><i class="fa-solid fa-diagram-project"></i> <span id="side-title-flow">Flow Automation</span></a>
-            <a href="/imgboost/" class="sidebar-link"><i class="fa-solid fa-camera-retro"></i> <span id="side-title-img">Product Photography</span></a>
-            <a href="/pitchboost/" class="sidebar-link"><i class="fa-solid fa-chart-line"></i> <span id="side-title-pitch">AI Presentations</span></a>
-            <a href="/opencode/" class="sidebar-link"><i class="fa-solid fa-code"></i> <span id="side-title-opencode">OpenCode AI</span></a>
-            <a href="/databoost/" class="sidebar-link"><i class="fa-solid fa-database"></i> <span id="side-title-databoost">DATABOOST</span></a>
-        </div>
-
-        <div class="sidebar-category">
-            <span class="sidebar-category-title" id="side-cat-marketing">Marketing & SEO</span>
-            <a href="/adsboost/" class="sidebar-link"><i class="fa-solid fa-bullhorn"></i> <span id="side-title-adsboost">ADSBOOST Google Ads Optimization</span></a>
-            <a href="/linkboost/" class="sidebar-link"><i class="fa-brands fa-linkedin"></i> <span id="side-title-linkboost">LINKBOOST LinkedIn Growth</span></a>
-            <a href="/careerlink/" class="sidebar-link"><i class="fa-brands fa-linkedin"></i> <span id="side-title-careerlink">CAREERLINK LinkedIn Optimization</span></a>
-            <a href="/atsresume/" class="sidebar-link"><i class="fa-solid fa-file-lines"></i> <span id="side-title-atsresume">ATSRESUME Resume &amp; Cover Letter Optimization</span></a>
-            <a href="/globalweb/" class="sidebar-link"><i class="fa-solid fa-globe"></i> <span id="side-title-globalweb">GLOBALWEB — Multilingual Website &amp; Global SEO</span></a>
-            <a href="/influboost/" class="sidebar-link"><i class="fa-solid fa-bullhorn"></i> <span id="side-title-influboost">INFLUBOOST Global Influencer Seeding</span></a>
-            <a href="/growthconsult/" class="sidebar-link"><i class="fa-solid fa-newspaper"></i> <span id="side-title-growthconsult">GROWTHCONSULT — Integrated Marketing Consulting</span></a>
-            <a href="/foreigncare/" class="sidebar-link"><i class="fa-solid fa-user-doctor"></i> <span id="side-title-foreigncare">FOREIGNCARE — Foreign Customer & Patient Acquisition</span></a>
-            <a href="/aicash/" class="sidebar-link"><i class="fa-solid fa-wand-magic-sparkles"></i> <span id="side-title-aicash">AICASH — Global AI Content Monetization</span></a>
-            <a href="/dbmigrate/" class="sidebar-link"><i class="fa-solid fa-database"></i> <span id="side-title-dbmigrate">DBMIGRATE — Database Migration & Transfer</span></a>
-            <a href="/prboost/" class="sidebar-link"><i class="fa-solid fa-newspaper"></i> <span id="side-title-prboost">PRBOOST — Global PR & Guest Posting</span></a>
-            <a href="/tradeboost/" class="sidebar-link"><i class="fa-solid fa-ship"></i> <span id="side-title-tradeboost">TRADEBOOST Global Trade Agency</span></a>
-
-            <a href="/tikshop/" class="sidebar-link"><i class="fa-brands fa-tiktok"></i> <span id="side-title-tikshop">TIKSHOP TikTok Shop Setup</span></a>
-            <a href="/globalup/" class="sidebar-link"><i class="fa-solid fa-user-tie"></i> <span id="side-title-globalup">GLOBALUP Global Recruiting</span></a>
-            <a href="/eventboost/" class="sidebar-link"><i class="fa-solid fa-microphone-lines"></i> <span id="side-title-eventboost">EVENTBOOST Global Event MC</span></a>
-            <a href="/micemc/" class="sidebar-link"><i class="fa-solid fa-microphone-lines"></i> <span id="side-title-micemc">MICEMC International MC</span></a>
-            <a href="/alicat/" class="sidebar-link"><i class="fa-solid fa-box-open"></i> <span id="side-title-alicat">ALICAT Alibaba &amp; B2B Catalog</span></a>
-            <a href="/mailboost/" class="sidebar-link"><i class="fa-solid fa-envelope"></i> <span id="side-title-mail">Email Marketing</span></a>
-            <a href="/searchboost/" class="sidebar-link"><i class="fa-solid fa-magnifying-glass"></i> <span id="side-title-search">AI SEO & Content</span></a>
-            <a href="/mkboost/" class="sidebar-link"><i class="fa-solid fa-magnifying-glass-chart"></i> <span id="side-title-mk">Market Research</span></a>
-            <a href="/contentboost/" class="sidebar-link"><i class="fa-solid fa-newspaper"></i> <span id="side-title-content">AI Publishing System</span></a>
-            <a href="/affboost/" class="sidebar-link"><i class="fa-solid fa-rocket"></i> <span id="side-title-affboost">AFFBOOST AI Affiliate Builder</span></a>
-            <a href="/appboost/" class="sidebar-link"><i class="fa-solid fa-mobile-screen-button"></i> <span id="side-title-appboost">APPBOOST</span></a>
-            <a href="/igboost/" class="sidebar-link"><i class="fa-brands fa-instagram"></i> <span id="side-title-igboost">IGBOOST — Global Instagram Management</span></a>
-            <a href="/boostsm/" class="sidebar-link"><i class="fa-solid fa-share-nodes"></i> <span id="side-title-boostsm">BOOSTSM</span></a>
-            <a href="/repboost/" class="sidebar-link"><i class="fa-solid fa-comments"></i> <span id="side-title-repboost">REPBOOST</span></a>
-        </div>
-
-        <div class="sidebar-category">
-            <span class="sidebar-category-title" id="side-cat-media">Media & Audio</span>
-            <a href="/clipboost/" class="sidebar-link"><i class="fa-solid fa-clapperboard"></i> <span id="side-title-clip">Short-Form Video</span></a>
-            <a href="/voiceboost/" class="sidebar-link"><i class="fa-solid fa-microphone"></i> <span id="side-title-voice">AI Voice Cloning</span></a>
-            <a href="/transboost/" class="sidebar-link"><i class="fa-solid fa-language"></i> <span id="side-title-trans">AI Translation</span></a>
-            <a href="/medboost/" class="sidebar-link"><i class="fa-solid fa-stethoscope"></i> <span id="side-title-medboost">MEDBOOST Medical Translation</span></a>
-        </div>
-
-        <div class="sidebar-category">
-            <span class="sidebar-category-title" id="side-cat-strategy">Strategy & Analytics</span>
-            <a href="/aiboost/" class="sidebar-link"><i class="fa-solid fa-brain"></i> <span id="side-title-ai">AI Consulting</span></a>
-            <a href="/localize/" class="sidebar-link"><i class="fa-solid fa-language"></i> <span id="side-title-localize">LOCALIZE — Native Translation & Localization</span></a>
-            <a href="/engtranslate/" class="sidebar-link"><i class="fa-solid fa-language"></i> <span id="side-title-engtranslate">ENGTRANSLATE — English Translation & Localization</span></a>
-            <a href="/indiaboost/" class="sidebar-link"><i class="fa-solid fa-earth-asia"></i> <span id="side-title-indiaboost">INDIABOOST — India Market Entry Advisory</span></a>
-            <a href="/insightboost/" class="sidebar-link"><i class="fa-solid fa-chart-bar"></i> <span id="side-title-insight">AI Data Analytics</span></a>
-            <a href="/usllc/" class="sidebar-link"><i class="fa-solid fa-building-columns"></i> <span id="side-title-usllc">USLLC — US LLC & EIN Setup</span></a>
-            <a href="/sbvi/" class="sidebar-link"><i class="fa-solid fa-building-columns"></i> <span id="side-title-sbvi">SBVI — Singapore, Hong Kong & BVI Incorporation</span></a>
-            <a href="/chatboost/" class="sidebar-link"><i class="fa-solid fa-robot"></i> <span id="side-title-chat">AI Chatbot</span></a>
-            <a href="/buyerboost/" class="sidebar-link"><i class="fa-solid fa-handshake"></i> <span id="side-title-buyer">Global Buyer Discovery</span></a>
-            <a href="/lawboost/" class="sidebar-link"><i class="fa-solid fa-scale-balanced"></i> <span id="side-title-law">Global Legal Advisory</span></a>
-            <a href="/complianceboost/" class="sidebar-link"><i class="fa-solid fa-shield-halved"></i> <span id="side-title-complianceboost">COMPLIANCEBOOST Compliance Docs &amp; Audit Prep</span></a>
-            <a href="/certboost/" class="sidebar-link"><i class="fa-solid fa-certificate"></i> <span id="side-title-cert">Certification Consulting</span></a>
-            <a href="/ipboost/" class="sidebar-link"><i class="fa-solid fa-shield-halved"></i> <span id="side-title-ip">IP Protection</span></a>
-            <a href="/apostboost/" class="sidebar-link"><i class="fa-solid fa-stamp"></i> <span id="side-title-apostboost">APOSTBOOST</span></a>
-            <a href="/b2bdb/" class="sidebar-link"><i class="fa-solid fa-envelope-open-text"></i> <span id="side-title-b2bdb">B2B DATABASE</span></a>
-            <a href="/b2cdb/" class="sidebar-link"><i class="fa-solid fa-users"></i> <span id="side-title-b2cdb">B2C DATABASE</span></a>
-            <a href="/sourcboost/" class="sidebar-link"><i class="fa-solid fa-shield-halved"></i> <span id="side-title-sourcboost">SOURCEBOOST</span></a>
-            <a href="/ustax/" class="sidebar-link"><i class="fa-solid fa-receipt"></i> <span id="side-title-ustax">USTAX</span></a>
-            <a href="/ustaxboost/" class="sidebar-link"><i class="fa-solid fa-coins"></i> <span id="side-title-ustaxboost">USTAXBOOST</span></a>
+        <div id="dynamic-sidebar-content" style="padding: 1.5rem 1rem;">
+            <!-- Rendered dynamically -->
         </div>
     </div>
     <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
@@ -2832,12 +2927,41 @@
             <p id="hero-desc">Maximize reach, database intelligence, and organic engagement through our advanced, AI-driven digital ecosystems.</p>
         </section>
 
+        <!-- P1: Quick Goal Finder & Bundles View -->
+        <section class="quick-filters-container" id="quick-filters-container">
+            <div class="quick-filters-title" id="filter-title-label">Quick Goal Finder</div>
+            <div class="quick-filters-row">
+                <button class="quick-filter-btn" onclick="selectQuickFilter('global-expansion', this)" id="qf-expansion">처음 해외 진출해요</button>
+                <button class="quick-filter-btn" onclick="selectQuickFilter('global-marketing', this)" id="qf-marketing">마케팅을 늘리고 싶어요</button>
+                <button class="quick-filter-btn" onclick="selectQuickFilter('ai-mvp', this)" id="qf-mvp">제품을 빨리 만들고 싶어요</button>
+                <button class="quick-filter-btn" onclick="selectQuickFilter('content-translation', this)" id="qf-content">콘텐츠를 다국어로 만들고 싶어요</button>
+                <button class="quick-filter-btn" onclick="selectQuickFilter('data-research', this)" id="qf-data">잠재고객을 찾고 싶어요</button>
+            </div>
+        </section>
+
+        <section class="bundles-container" id="bundles-view">
+            <div class="bundles-grid" id="bundles-grid">
+                <!-- Loaded dynamically by JS -->
+            </div>
+        </section>
+
         <!-- Solutions Banners Section -->
-        <section class="solutions-container">
-            <div class="section-label" id="sec-label">Our Service Catalog</div>
+        <section class="solutions-container" id="catalog-view" style="display: none;">
+            <!-- Middle-stage Catalog Header -->
+            <div class="middle-catalog-header" id="middle-catalog-header">
+                <div class="middle-catalog-info">
+                    <h2 id="middle-title">Selected Bundle</h2>
+                    <p id="middle-desc">Explore targeted solutions for your business goal.</p>
+                </div>
+                <button class="btn-view-all-services" onclick="showAllServices()" id="btn-show-all">
+                    <i class="fa-solid fa-list"></i> <span id="label-show-all">View All Services</span>
+                </button>
+            </div>
+
+            <div class="section-label" id="sec-label" style="display: none;">Our Service Catalog</div>
             
             <!-- Search, Filter & Sort Bar -->
-            <div class="catalog-controls">
+            <div class="catalog-controls" id="catalog-controls" style="display: none;">
                 <div class="search-box">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="text" id="catalog-search" oninput="filterCatalog()" placeholder="Search services...">
@@ -2852,7 +2976,7 @@
                 </div>
             </div>
             
-            <div class="category-tabs" id="category-tabs">
+            <div class="category-tabs" id="category-tabs" style="display: none;">
                 <button class="category-tab active" onclick="setCategory('all')" id="cat-tab-all" data-cat="all">All</button>
                 <button class="category-tab" onclick="setCategory('database')" id="cat-tab-database" data-cat="database">Database & Scraping</button>
                 <button class="category-tab" onclick="setCategory('design-dev')" id="cat-tab-designdev" data-cat="design-dev">Design & Coding</button>
@@ -3753,99 +3877,42 @@
             if (sideCatMkt) sideCatMkt.innerText = dict['cat-marketing'];
             
             const sideCatMed = document.getElementById('side-cat-media');
-            if (sideCatMed) sideCatMed.innerText = dict['cat-media'];
-            
-            const sideCatStr = document.getElementById('side-cat-strategy');
-            if (sideCatStr) sideCatStr.innerText = dict['cat-strategy'];
-            
-            // Translate Sidebar links
-            servicesCatalog.forEach(pkg => {
-                const el = document.getElementById(`side-title-${pkg.id}`);
-                if (el) {
-                    const title = dict[`${pkg.id}-title`] || pkg.id.toUpperCase();
-                    el.innerText = title.split('—')[0].split(' - ')[0].trim();
-                }
-            });
-            
-            // Render grid
-            renderServices();
-
-            // Badges
-            document.querySelectorAll('[data-i18n="badge-active"]').forEach(el => {
-                el.innerText = dict['badge-active'];
-            });
-            document.querySelectorAll('[data-i18n="badge-soon"]').forEach(el => {
-                el.innerText = dict['badge-soon'];
-            });
-        }
-
-        // Micro-interaction: Track mouse coordinates on card overlay for lighting effect
-        
-        const servicesCatalog = [
+const servicesCatalog = [
             { id: 'land', category: 'design-dev', link: '/landPage/', icon: 'fa-solid fa-code', cardClass: 'card-active-land', btnClass: 'btn-land', iconBoxClass: 'icon-land', popularity: 88, addedAt: 1782455609 },
             { id: 'pdp', category: 'design-dev', link: '/pdpboost/', icon: 'fa-solid fa-box-open', cardClass: 'card-active-pdp', btnClass: 'btn-pdp', iconBoxClass: 'icon-pdp', popularity: 86, addedAt: 1782858122 },
             { id: 'mvp', category: 'design-dev', link: '/mvpboost/', icon: 'fa-solid fa-rocket', cardClass: 'card-active-mvp', btnClass: 'btn-mvp', iconBoxClass: 'icon-mvp', popularity: 91, addedAt: 1782602632 },
             { id: 'aideploy', category: 'design-dev', link: '/aideploy/', icon: 'fa-solid fa-cloud-arrow-up', cardClass: 'card-active-aideploy', btnClass: 'btn-aideploy', iconBoxClass: 'icon-aideploy', popularity: 93, addedAt: 1782547509 },
             { id: 'autoboost', category: 'design-dev', link: '/autoboost/', icon: 'fa-solid fa-arrows-rotate', cardClass: 'card-active-autoboost', btnClass: 'btn-autoboost', iconBoxClass: 'icon-autoboost', popularity: 89, addedAt: 1782575846 },
-            { id: 'fdaboost', category: 'strategy', link: '/fdaboost/', icon: 'fa-solid fa-vial-circle-check', cardClass: 'card-active-fdaboost', btnClass: 'btn-fdaboost', iconBoxClass: 'icon-fdaboost', popularity: 78, addedAt: 1782700087 },
-            { id: 'globalbank', category: 'strategy', link: '/globalbank/', icon: 'fa-solid fa-building-columns', cardClass: 'card-active-globalbank', btnClass: 'btn-globalbank', iconBoxClass: 'icon-globalbank', popularity: 79, addedAt: 1782705236 },
-            { id: 'webcreate', category: 'design-dev', link: '/webcreate/', icon: 'fa-solid fa-globe', cardClass: 'card-active-webcreate', btnClass: 'btn-webcreate', iconBoxClass: 'icon-webcreate', popularity: 84, addedAt: 1782537153 },
-            { id: 'logoboost', category: 'design-dev', link: '/logoboost/', icon: 'fa-solid fa-pen-nib', cardClass: 'card-active-logoboost', btnClass: 'btn-logoboost', iconBoxClass: 'icon-logoboost', popularity: 90, addedAt: 1782854598 },
-            { id: 'adsboost', category: 'marketing', link: '/adsboost/', icon: 'fa-solid fa-bullhorn', cardClass: 'card-active-adsboost', btnClass: 'btn-adsboost', iconBoxClass: 'icon-adsboost', popularity: 83, addedAt: 1782681547 },
-            { id: 'linkboost', category: 'marketing', link: '/linkboost/', icon: 'fa-brands fa-linkedin', cardClass: 'card-active-linkboost', btnClass: 'btn-linkboost', iconBoxClass: 'icon-linkboost', popularity: 83, addedAt: 1782660139 },
             { id: 'careerlink', category: 'marketing', link: '/careerlink/', icon: 'fa-brands fa-linkedin', cardClass: 'card-active-careerlink', btnClass: 'btn-careerlink', iconBoxClass: 'icon-careerlink', popularity: 84, addedAt: 1782689143 },
             { id: 'atsresume', category: 'marketing', link: '/atsresume/', icon: 'fa-solid fa-file-lines', cardClass: 'card-active-atsresume', btnClass: 'btn-atsresume', iconBoxClass: 'icon-atsresume', popularity: 85, addedAt: 1782705236 },
             { id: 'globalweb', category: 'design-dev', link: '/globalweb/', icon: 'fa-solid fa-globe', cardClass: 'card-active-globalweb', btnClass: 'btn-globalweb', iconBoxClass: 'icon-globalweb', popularity: 87, addedAt: 1782698277 },
             { id: 'cloudinfra', category: 'design-dev', link: '/cloudinfra/', icon: 'fa-solid fa-cloud', cardClass: 'card-active-cloudinfra', btnClass: 'btn-cloudinfra', iconBoxClass: 'icon-cloudinfra', popularity: 84, addedAt: 1782816107 },
             { id: 'japanbiz', category: 'strategy', link: '/japanbiz/', icon: 'fa-solid fa-earth-asia', cardClass: 'card-active-japanbiz', btnClass: 'btn-japanbiz', iconBoxClass: 'icon-japanbiz', popularity: 83, addedAt: 1782816107 },
-            { id: 'webseo', category: 'design-dev', link: '/webseo/', icon: 'fa-solid fa-globe', cardClass: 'card-active-webseo', btnClass: 'btn-webseo', iconBoxClass: 'icon-webseo', popularity: 88, addedAt: 1782816107 },
-            { id: 'influboost', category: 'marketing', link: '/influboost/', icon: 'fa-solid fa-bullhorn', cardClass: 'card-active-influboost', btnClass: 'btn-influboost', iconBoxClass: 'icon-influboost', popularity: 88, addedAt: 1782718377 },
-            { id: 'localize', category: 'strategy', link: '/localize/', icon: 'fa-solid fa-language', cardClass: 'card-active-localize', btnClass: 'btn-localize', iconBoxClass: 'icon-localize', popularity: 86, addedAt: 1782656191 },
-            { id: 'engtranslate', category: 'strategy', link: '/engtranslate/', icon: 'fa-solid fa-language', cardClass: 'card-active-engtranslate', btnClass: 'btn-engtranslate', iconBoxClass: 'icon-engtranslate', popularity: 88, addedAt: 1782829515 },
-            { id: 'tradeboost', category: 'strategy', link: '/tradeboost/', icon: 'fa-solid fa-ship', cardClass: 'card-active-tradeboost', btnClass: 'btn-tradeboost', iconBoxClass: 'icon-tradeboost', popularity: 85, addedAt: 1782652898 },
-            { id: 'amzboost', category: 'marketing', link: '/amzboost/', icon: 'fa-solid fa-store', cardClass: 'card-active-amzboost', btnClass: 'btn-amzboost', iconBoxClass: 'icon-amzboost', popularity: 88, addedAt: 1782634998 },
-            { id: 'amzbrand', category: 'marketing', link: '/amzbrand/', icon: 'fa-brands fa-amazon', cardClass: 'card-active-amzbrand', btnClass: 'btn-amzbrand', iconBoxClass: 'icon-amzbrand', popularity: 87, addedAt: 1782689143 },
-            { id: 'amzfba', category: 'marketing', link: '/amzfba/', icon: 'fa-solid fa-truck-fast', cardClass: 'card-active-amzfba', btnClass: 'btn-amzfba', iconBoxClass: 'icon-amzfba', popularity: 94, addedAt: 1782842859 },
-            { id: 'tikshop', category: 'marketing', link: '/tikshop/', icon: 'fa-brands fa-tiktok', cardClass: 'card-active-tikshop', btnClass: 'btn-tikshop', iconBoxClass: 'icon-tikshop', popularity: 89, addedAt: 1782638348 },
-            { id: 'rfp', category: 'strategy', link: '/rfpboost/', icon: 'fa-solid fa-file-signature', cardClass: 'card-active-rfp', btnClass: 'btn-rfp', iconBoxClass: 'icon-rfp', popularity: 84, addedAt: 1782627449 },
-            { id: 'complianceboost', category: 'strategy', link: '/complianceboost/', icon: 'fa-solid fa-shield-halved', cardClass: 'card-active-complianceboost', btnClass: 'btn-complianceboost', iconBoxClass: 'icon-complianceboost', popularity: 82, addedAt: 1782689143 },
-            { id: 'globalup', category: 'strategy', link: '/globalup/', icon: 'fa-solid fa-user-tie', cardClass: 'card-active-globalup', btnClass: 'btn-globalup', iconBoxClass: 'icon-globalup', popularity: 81, addedAt: 1782864466 },
-            { id: 'eventboost', category: 'strategy', link: '/eventboost/', icon: 'fa-solid fa-microphone-lines', cardClass: 'card-active-eventboost', btnClass: 'btn-eventboost', iconBoxClass: 'icon-eventboost', popularity: 82, addedAt: 1782864466 },
-            { id: 'micemc', category: 'strategy', link: '/micemc/', icon: 'fa-solid fa-microphone-lines', cardClass: 'card-active-micemc', btnClass: 'btn-micemc', iconBoxClass: 'icon-micemc', popularity: 83, addedAt: 1782689143 },
-            { id: 'alicat', category: 'marketing', link: '/alicat/', icon: 'fa-solid fa-box-open', cardClass: 'card-active-alicat', btnClass: 'btn-alicat', iconBoxClass: 'icon-alicat', popularity: 83, addedAt: 1782617466 },
-            { id: 'etsyboost', category: 'strategy', link: '/etsyboost/', icon: 'fa-brands fa-etsy', cardClass: 'card-active-etsyboost', btnClass: 'btn-etsyboost', iconBoxClass: 'icon-etsyboost', popularity: 91, addedAt: 1782645513 },
-            { id: 'clip', category: 'media', link: '/clipboost/', icon: 'fa-solid fa-clapperboard', cardClass: 'card-active-clip', btnClass: 'btn-clip', iconBoxClass: 'icon-clip', popularity: 85, addedAt: 1782465454 },
-            { id: 'mail', category: 'marketing', link: '/mailboost/', icon: 'fa-solid fa-envelope', cardClass: 'card-active-mail', btnClass: 'btn-mail', iconBoxClass: 'icon-mail', popularity: 80, addedAt: 1782468649 },
-            { id: 'chat', category: 'strategy', link: '/chatboost/', icon: 'fa-solid fa-robot', cardClass: 'card-active-chat', btnClass: 'btn-chat', iconBoxClass: 'icon-chat', popularity: 87, addedAt: 1782472204 },
-            { id: 'search', category: 'marketing', link: '/searchboost/', icon: 'fa-solid fa-magnifying-glass', cardClass: 'card-active-search', btnClass: 'btn-search', iconBoxClass: 'icon-search', popularity: 84, addedAt: 1782475741 },
-            { id: 'aso', category: 'marketing', link: '/aso/', icon: 'fa-solid fa-chart-line', cardClass: 'card-active-aso', btnClass: 'btn-aso', iconBoxClass: 'icon-aso', popularity: 86, addedAt: 1782835949 },
-            { id: 'mk', category: 'marketing', link: '/mkboost/', icon: 'fa-solid fa-magnifying-glass-chart', cardClass: 'card-active-mk', btnClass: 'btn-mk', iconBoxClass: 'icon-mk', popularity: 78, addedAt: 1782479830 },
-            { id: 'img', category: 'design-dev', link: '/imgboost/', icon: 'fa-solid fa-camera-retro', cardClass: 'card-active-img', btnClass: 'btn-img', iconBoxClass: 'icon-img', popularity: 83, addedAt: 1782486651 },
-            { id: 'flow', category: 'design-dev', link: '/flowboost/', icon: 'fa-solid fa-diagram-project', cardClass: 'card-active-flow', btnClass: 'btn-flow', iconBoxClass: 'icon-flow', popularity: 81, addedAt: 1782490382 },
-            { id: 'ai', category: 'strategy', link: '/aiboost/', icon: 'fa-solid fa-brain', cardClass: 'card-active-ai', btnClass: 'btn-ai', iconBoxClass: 'icon-ai', popularity: 89, addedAt: 1782494152 },
-            { id: 'voice', category: 'media', link: '/voiceboost/', icon: 'fa-solid fa-microphone', cardClass: 'card-active-voice', btnClass: 'btn-voice', iconBoxClass: 'icon-voice', popularity: 77, addedAt: 1782497620 },
-            { id: 'trans', category: 'media', link: '/transboost/', icon: 'fa-solid fa-language', cardClass: 'card-active-trans', btnClass: 'btn-trans', iconBoxClass: 'icon-trans', popularity: 76, addedAt: 1782504778 },
-            { id: 'medboost', category: 'media', link: '/medboost/', icon: 'fa-solid fa-stethoscope', cardClass: 'card-active-medboost', btnClass: 'btn-medboost', iconBoxClass: 'icon-medboost', popularity: 77, addedAt: 1782631935 },
-            { id: 'pitch', category: 'media', link: '/pitchboost/', icon: 'fa-solid fa-chart-line', cardClass: 'card-active-pitch', btnClass: 'btn-pitch', iconBoxClass: 'icon-pitch', popularity: 79, addedAt: 1782504778 },
-            { id: 'insight', category: 'strategy', link: '/insightboost/', icon: 'fa-solid fa-chart-bar', cardClass: 'card-active-insight', btnClass: 'btn-insight', iconBoxClass: 'icon-insight', popularity: 75, addedAt: 1782508154 },
-            { id: 'shop', category: 'strategy', link: '/shopboost/', icon: 'fa-solid fa-store', cardClass: 'card-active-shop', btnClass: 'btn-shop', iconBoxClass: 'icon-shop', popularity: 77, addedAt: 1782512020 },
-            { id: 'buyer', category: 'strategy', link: '/buyerboost/', icon: 'fa-solid fa-handshake', cardClass: 'card-active-buyer', btnClass: 'btn-buyer', iconBoxClass: 'icon-buyer', popularity: 80, addedAt: 1782515719 },
-            { id: 'research', category: 'strategy', link: '/researchboost/', icon: 'fa-solid fa-chart-line', cardClass: 'card-active-research', btnClass: 'btn-research', iconBoxClass: 'icon-research', popularity: 78, addedAt: 1782531420 },
-            { id: 'content', category: 'marketing', link: '/contentboost/', icon: 'fa-solid fa-newspaper', cardClass: 'card-active-content', btnClass: 'btn-content', iconBoxClass: 'icon-content', popularity: 86, addedAt: 1782518987 },
-            { id: 'affboost', category: 'marketing', link: '/affboost/', icon: 'fa-solid fa-rocket', cardClass: 'card-active-affboost', btnClass: 'btn-affboost', iconBoxClass: 'icon-affboost', popularity: 92, addedAt: 1782667255 },
-            { id: 'sales', category: 'strategy', link: '/salesboost/', icon: 'fa-solid fa-receipt', cardClass: 'card-active-sales', btnClass: 'btn-sales', iconBoxClass: 'icon-sales', popularity: 77, addedAt: 1782537153 },
-            { id: 'law', category: 'strategy', link: '/lawboost/', icon: 'fa-solid fa-scale-balanced', cardClass: 'card-active-law', btnClass: 'btn-law', iconBoxClass: 'icon-law', popularity: 76, addedAt: 1782524924 },
-            { id: 'aiweb', category: 'design-dev', link: '/aiweb/', icon: 'fa-solid fa-globe', cardClass: 'card-active-aiweb', btnClass: 'btn-aiweb', iconBoxClass: 'icon-aiweb', popularity: 83, addedAt: 1782547509 },
-            { id: 'cert', category: 'strategy', link: '/certboost/', icon: 'fa-solid fa-certificate', cardClass: 'card-active-cert', btnClass: 'btn-cert', iconBoxClass: 'icon-cert', popularity: 75, addedAt: 1782526024 },
-            { id: 'hr', category: 'strategy', link: '/hrboost/', icon: 'fa-solid fa-user-tie', cardClass: 'card-active-hr', btnClass: 'btn-hr', iconBoxClass: 'icon-hr', popularity: 80, addedAt: 1782558823 },
-            { id: 'sys', category: 'design-dev', link: '/sysboost/', icon: 'fa-solid fa-network-wired', cardClass: 'card-active-sys', btnClass: 'btn-sys', iconBoxClass: 'icon-sys', popularity: 80, addedAt: 1782562170 },
-            { id: 'loyalty', category: 'strategy', link: '/loyaltyboost/', icon: 'fa-solid fa-gift', cardClass: 'card-active-loyalty', btnClass: 'btn-loyalty', iconBoxClass: 'icon-loyalty', popularity: 80, addedAt: 1782576294 },
-            { id: 'book', category: 'design-dev', link: '/bookboost/', icon: 'fa-solid fa-calendar-check', cardClass: 'card-active-book', btnClass: 'btn-book', iconBoxClass: 'icon-book', popularity: 80, addedAt: 1782600698 },
-            { id: 'eduooost', category: 'strategy', link: '/eduooost/', icon: 'fa-solid fa-graduation-cap', cardClass: 'card-active-eduooost', btnClass: 'btn-eduooost', iconBoxClass: 'icon-eduooost', popularity: 80, addedAt: 1782600698 },
-            { id: 'chinaboost', category: 'strategy', link: '/chinaboost/', icon: 'fa-solid fa-earth-asia', cardClass: 'card-active-chinaboost', btnClass: 'btn-chinaboost', iconBoxClass: 'icon-chinaboost', popularity: 87, addedAt: 1782670293 },
-            { id: 'surveyboost', category: 'strategy', link: '/surveyboost/', icon: 'fa-solid fa-square-poll-vertical', cardClass: 'card-active-surveyboost', btnClass: 'btn-surveyboost', iconBoxClass: 'icon-surveyboost', popularity: 84, addedAt: 1782674064 },
-            { id: 'shopglobal', category: 'strategy', link: '/shopglobal/', icon: 'fa-brands fa-shopify', cardClass: 'card-active-shopglobal', btnClass: 'btn-shopglobal', iconBoxClass: 'icon-shopglobal', popularity: 86, addedAt: 1782677930 },
-            { id: 'shopdata', category: 'marketing', link: '/shopdata/', icon: 'fa-brands fa-shopify', cardClass: 'card-active-shopdata', btnClass: 'btn-shopdata', iconBoxClass: 'icon-shopdata', popularity: 87, addedAt: 1782864474 },
+            { id: 'alicat', category: 'marketing', link: '/alicat/', icon: 'fa-solid fa-box-open', cardClass: 'card-active-alicat', btnClass: 'btn-alicat', iconBoxClass: 'icon-alicat', popularity: 83, addedAt: 1782855609 },
+            { id: 'sourcboost', category: 'strategy', link: '/sourcboost/', icon: 'fa-solid fa-fingerprint', cardClass: 'card-active-sourcboost', btnClass: 'btn-sourcboost', iconBoxClass: 'icon-sourcboost', popularity: 84, addedAt: 1782600698 },
+            { id: 'complianceboost', category: 'strategy', link: '/complianceboost/', icon: 'fa-solid fa-shield-halved', cardClass: 'card-active-complianceboost', btnClass: 'btn-complianceboost', iconBoxClass: 'icon-complianceboost', popularity: 80, addedAt: 1782524924 },
+            { id: 'aiweb', category: 'design-dev', link: '/aiweb/', icon: 'fa-solid fa-code', cardClass: 'card-active-aiweb', btnClass: 'btn-aiweb', iconBoxClass: 'icon-aiweb', popularity: 88, addedAt: 1782864472 },
+            { id: 'localize', category: 'strategy', link: '/localize/', icon: 'fa-solid fa-language', cardClass: 'card-active-localize', btnClass: 'btn-localize', iconBoxClass: 'icon-localize', popularity: 88, addedAt: 1782864473 },
+            { id: 'clipboost', category: 'media', link: '/clipboost/', icon: 'fa-solid fa-clapperboard', cardClass: 'card-active-clip', btnClass: 'btn-clip', iconBoxClass: 'icon-clip', popularity: 94, addedAt: 1782864467 },
+            { id: 'voiceboost', category: 'media', link: '/voiceboost/', icon: 'fa-solid fa-microphone', cardClass: 'card-active-voice', btnClass: 'btn-voice', iconBoxClass: 'icon-voice', popularity: 87, addedAt: 1782864469 },
+            { id: 'transboost', category: 'media', link: '/transboost/', icon: 'fa-solid fa-language', cardClass: 'card-active-trans', btnClass: 'btn-trans', iconBoxClass: 'icon-trans', popularity: 89, addedAt: 1782864470 },
+            { id: 'medboost', category: 'media', link: '/medboost/', icon: 'fa-solid fa-stethoscope', cardClass: 'card-active-medboost', btnClass: 'btn-medboost', iconBoxClass: 'icon-medboost', popularity: 81, addedAt: 1782864471 },
+            { id: 'pitchboost', category: 'media', link: '/pitchboost/', icon: 'fa-solid fa-chart-line', cardClass: 'card-active-pitch', btnClass: 'btn-pitch', iconBoxClass: 'icon-pitch', popularity: 84, addedAt: 1782613308 },
+            { id: 'insightboost', category: 'strategy', link: '/insightboost/', icon: 'fa-solid fa-chart-bar', cardClass: 'card-active-insight', btnClass: 'btn-insight', iconBoxClass: 'icon-insight', popularity: 83, addedAt: 1782609992 },
+            { id: 'shopboost', category: 'strategy', link: '/shopboost/', icon: 'fa-solid fa-store', cardClass: 'card-active-shop', btnClass: 'btn-shop', iconBoxClass: 'icon-shop', popularity: 85, addedAt: 1782455609 },
+            { id: 'buyerboost', category: 'strategy', link: '/buyerboost/', icon: 'fa-solid fa-handshake', cardClass: 'card-active-buyer', btnClass: 'btn-buyer', iconBoxClass: 'icon-buyer', popularity: 82, addedAt: 1782444943 },
+            { id: 'researchboost', category: 'strategy', link: '/researchboost/', icon: 'fa-solid fa-chart-line', cardClass: 'card-active-research', btnClass: 'btn-research', iconBoxClass: 'icon-research', popularity: 83, addedAt: 1782287994 },
+            { id: 'contentboost', category: 'marketing', link: '/contentboost/', icon: 'fa-solid fa-newspaper', cardClass: 'card-active-content', btnClass: 'btn-content', iconBoxClass: 'icon-content', popularity: 86, addedAt: 1782482980 },
+            { id: 'salesboost', category: 'strategy', link: '/salesboost/', icon: 'fa-solid fa-receipt', cardClass: 'card-active-sales', btnClass: 'btn-sales', iconBoxClass: 'icon-sales', popularity: 84, addedAt: 1782861239 },
+            { id: 'lawboost', category: 'strategy', link: '/lawboost/', icon: 'fa-solid fa-scale-balanced', cardClass: 'card-active-law', btnClass: 'btn-law', iconBoxClass: 'icon-law', popularity: 80, addedAt: 1782512885 },
+            { id: 'certboost', category: 'strategy', link: '/certboost/', icon: 'fa-solid fa-certificate', cardClass: 'card-active-cert', btnClass: 'btn-cert', iconBoxClass: 'icon-cert', popularity: 83, addedAt: 1782554492 },
+            { id: 'hrboost', category: 'strategy', link: '/hrboost/', icon: 'fa-solid fa-user-group', cardClass: 'card-active-hr', btnClass: 'btn-hr', iconBoxClass: 'icon-hr', popularity: 81, addedAt: 1782600698 },
+            { id: 'sysboost', category: 'design-dev', link: '/sysboost/', icon: 'fa-solid fa-gear', cardClass: 'card-active-sys', btnClass: 'btn-sys', iconBoxClass: 'icon-sys', popularity: 82, addedAt: 1782610434 },
+            { id: 'loyaltyboost', category: 'strategy', link: '/loyaltyboost/', icon: 'fa-solid fa-gift', cardClass: 'card-active-loyalty', btnClass: 'btn-loyalty', iconBoxClass: 'icon-loyalty', popularity: 80, addedAt: 1782606020 },
+            { id: 'bookboost', category: 'design-dev', link: '/bookboost/', icon: 'fa-solid fa-calendar-check', cardClass: 'card-active-book', btnClass: 'btn-book', iconBoxClass: 'icon-book', popularity: 80, addedAt: 1782606020 },
+            { id: 'eduooost', category: 'strategy', link: '/eduooost/', icon: 'fa-solid fa-graduation-cap', cardClass: 'card-active-eduooost', btnClass: 'btn-eduooost', iconBoxClass: 'icon-eduooost', popularity: 80, addedAt: 1782606020 },
+            { id: 'chinaboost', category: 'strategy', link: '/chinaboost/', icon: 'fa-solid fa-earth-asia', cardClass: 'card-active-chinaboost', btnClass: 'btn-chinaboost', iconBoxClass: 'icon-chinaboost', popularity: 87, addedAt: 1782864472 },
+            { id: 'surveyboost', category: 'strategy', link: '/surveyboost/', icon: 'fa-solid fa-square-poll-vertical', cardClass: 'card-active-surveyboost', btnClass: 'btn-surveyboost', iconBoxClass: 'icon-surveyboost', popularity: 84, addedAt: 1782864473 },
             { id: 'indiaboost', category: 'strategy', link: '/indiaboost/', icon: 'fa-solid fa-earth-asia', cardClass: 'card-active-indiaboost', btnClass: 'btn-indiaboost', iconBoxClass: 'icon-indiaboost', popularity: 88, addedAt: 1782689143 },
             { id: 'ip', category: 'strategy', link: '/ipboost/', icon: 'fa-solid fa-shield-halved', cardClass: 'card-active-ip', btnClass: 'btn-ip', iconBoxClass: 'icon-ip', popularity: 82, addedAt: 1782524924 },
             { id: 'map', category: 'marketing', link: '/mapboost/', icon: 'fa-solid fa-map-location-dot', cardClass: 'card-active-map', btnClass: 'btn-map', iconBoxClass: 'icon-map', popularity: 80, addedAt: 1782580445 },
@@ -3869,7 +3936,271 @@
             { id: 'ustax', category: 'strategy', link: '/ustax/', icon: 'fa-solid fa-scale-balanced', cardClass: 'card-active-ustax', btnClass: 'btn-ustax', iconBoxClass: 'icon-ustax', popularity: 88, addedAt: 1782610434 },
             { id: 'ustaxboost', category: 'strategy', link: '/ustaxboost/', icon: 'fa-solid fa-scale-balanced', cardClass: 'card-active-ustaxboost', btnClass: 'btn-ustaxboost', iconBoxClass: 'icon-ustaxboost', popularity: 89, addedAt: 1782606020 }
         ];
+
+        const bundlesCatalog = [
+            {
+                id: "global-expansion",
+                title: { en: "Global Market Entry & Entity Setup", ko: "해외 진출 & 법인 설립 패키지" },
+                desc: { en: "Start selling globally. Establish your entity, open corporate accounts, register your brand, and manage compliance.", ko: "해외 법인 설립부터 무역 대행, 아마존 입점 및 금융 계좌 연계까지 글로벌 확장의 모든 것을 대행합니다." },
+                includedSkus: ["usllc", "fdaboost", "amzbrand", "globalbank", "tradeboost"],
+                icon: "fa-solid fa-earth-asia"
+            },
+            {
+                id: "ai-mvp",
+                title: { en: "AI Products & MVP Workspace", ko: "AI 제품 & MVP 런칭 패키지" },
+                desc: { en: "Launch your AI application rapidly. Deploy chatbots, configure custom workflows, and build MVP codebases.", ko: "구독형 AI 모델 연동, 맞춤형 챗봇 구축, 클라우드 자동 배포까지 최단기로 AI MVP를 완성합니다." },
+                includedSkus: ["mvpboost", "aideploy", "chatboost", "aiboost"],
+                icon: "fa-solid fa-rocket"
+            },
+            {
+                id: "global-marketing",
+                title: { en: "Global Marketing & Brand Viral", ko: "글로벌 마케팅 & 브랜드 바이럴 패키지" },
+                desc: { en: "Grow international organic traffic. Launch targeted ads, boost social channels, and seed influencers.", ko: "해외 검색엔진 노출, SNS 채널 유기적 성장, 구글 애즈 운영 및 해외 인플루언서 매칭을 원스톱 지원합니다." },
+                includedSkus: ["adsboost", "influboost", "linkboost", "boostsm"],
+                icon: "fa-solid fa-bullhorn"
+            },
+            {
+                id: "content-translation",
+                title: { en: "Creative Content & Translation", ko: "콘텐츠 마케팅 & 다국어 번역 패키지" },
+                desc: { en: "Translate and localize. Generate high-ranking multilingual blogs, translate professional clinical/business logs, and distribute PR.", ko: "글로벌 비즈니스용 다국어 웹사이트 제작, 해외 보도자료 배포 및 전문 학술·기술 자료 번역/검수를 제공합니다." },
+                includedSkus: ["transboost", "localize", "engtranslate", "contentboost"],
+                icon: "fa-solid fa-language"
+            },
+            {
+                id: "data-research",
+                title: { en: "Target Database & Web Scraping", ko: "B2B/B2C 잠재고객 디비 & 리서치 패키지" },
+                desc: { en: "Acquire verified sales intelligence. Download compliant business contact lists and scrape target directories.", ko: "수출 및 글로벌 영업을 위한 해외 바이어 이메일 확보, 규정 준수 고객 DB 및 맞춤형 웹 데이터 크롤링을 지원합니다." },
+                includedSkus: ["b2bdb", "b2cdb", "databoost", "mkboost"],
+                icon: "fa-solid fa-database"
+            }
+        ];
+
         let activeCategory = 'all';
+        let activeBundleId = null;
+
+        // Dynamic Simplified Sidebar Builder
+        function buildDynamicSidebar() {
+            const container = document.getElementById('dynamic-sidebar-content');
+            if (!container) return;
+
+            const categories = [
+                { id: 'database', title: { en: 'Database & Scraping', ko: '데이터베이스 & 스크래핑' } },
+                { id: 'design-dev', title: { en: 'Design & Coding', ko: '디자인 & 코딩' } },
+                { id: 'marketing', title: { en: 'Marketing & SEO', ko: '마케팅 & SEO' } },
+                { id: 'media', title: { en: 'Media & Audio', ko: '미디어 & 오디오' } },
+                { id: 'strategy', title: { en: 'Strategy & Analytics', ko: '비즈니스 전략 & 분석' } }
+            ];
+
+            const dict = trans[currentLang];
+            let html = '';
+
+            categories.forEach(cat => {
+                // Find top 3 popular services in this category
+                const catServices = servicesCatalog
+                    .filter(s => s.category === cat.id)
+                    .sort((a, b) => b.popularity - a.popularity)
+                    .slice(0, 3);
+
+                html += `
+                    <div class="sidebar-category" style="margin-bottom: 1.25rem;">
+                        <span class="sidebar-category-title" style="font-size: 0.8rem; font-weight: 700; color: var(--primary-cyan); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 0.25rem;">
+                            ${cat.title[currentLang]}
+                        </span>
+                `;
+
+                catServices.forEach(s => {
+                    const title = dict[`${s.id}-title`] || s.id.toUpperCase();
+                    const shortTitle = title.split('—')[0].split(' - ')[0].trim();
+                    html += `
+                        <a href="${s.link}${currentLang === 'ko' ? 'kr/' : ''}" class="sidebar-link" style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-main); text-decoration: none; padding: 0.4rem 0.5rem; font-size: 0.88rem; transition: var(--transition); border-radius: 6px;">
+                            <i class="${s.icon}" style="width: 16px; text-align: center; color: var(--text-muted);"></i>
+                            <span>${shortTitle}</span>
+                        </a>
+                    `;
+                });
+
+                html += '</div>';
+            });
+
+            // Insert "View All Services" link at bottom of sidebar
+            html += `
+                <div style="margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem;">
+                    <a href="#catalog-view" onclick="toggleSidebar(); showAllServices(); return false;" class="sidebar-link" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-weight: 600; color: var(--primary-purple); background: rgba(139,92,246,0.08); padding: 0.6rem; border-radius: 8px; text-align: center; text-decoration: none; transition: var(--transition);">
+                        <i class="fa-solid fa-border-all"></i>
+                        <span>${currentLang === 'ko' ? '전체 서비스 보기' : 'View All Services'}</span>
+                    </a>
+                </div>
+            `;
+
+            container.innerHTML = html;
+        }
+
+        // Render Bundles Cards
+        function renderBundles() {
+            const grid = document.getElementById('bundles-grid');
+            if (!grid) return;
+
+            grid.innerHTML = bundlesCatalog.map(b => {
+                const title = b.title[currentLang];
+                const desc = b.desc[currentLang];
+                const cta = currentLang === 'ko' ? '패키지 솔루션 보기' : 'View Bundle Solutions';
+                
+                return `
+                    <div class="bundle-card" onclick="selectBundle('${b.id}')">
+                        <div>
+                            <div class="bundle-card-header">
+                                <div class="bundle-card-icon"><i class="${b.icon}"></i></div>
+                                <h3>${title}</h3>
+                            </div>
+                            <p>${desc}</p>
+                        </div>
+                        <div class="bundle-cta">
+                            <span>${cta}</span> <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function selectBundle(bundleId) {
+            activeBundleId = bundleId;
+            
+            // Sync with Quick Filters highlighting
+            document.querySelectorAll('.quick-filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            const matchingQf = document.querySelector(`[onclick*="'${bundleId}'"]`);
+            if (matchingQf) matchingQf.classList.add('active');
+
+            // Find Bundle Meta
+            const bundleMeta = bundlesCatalog.find(b => b.id === bundleId);
+            if (!bundleMeta) return;
+
+            // Update Middle-stage Catalog Header
+            document.getElementById('middle-title').innerText = bundleMeta.title[currentLang];
+            document.getElementById('middle-desc').innerText = bundleMeta.desc[currentLang];
+
+            // Toggle Visibility
+            document.getElementById('bundles-view').style.display = 'none';
+            
+            const catalogView = document.getElementById('catalog-view');
+            catalogView.style.display = 'block';
+            
+            // Hide full search and filter controls to maintain clean list page visual
+            document.getElementById('catalog-controls').style.display = 'none';
+            document.getElementById('category-tabs').style.display = 'none';
+
+            // Scroll to catalog section smoothly
+            catalogView.scrollIntoView({ behavior: 'smooth' });
+
+            renderServices();
+        }
+
+        function selectQuickFilter(bundleId, btnElement) {
+            selectBundle(bundleId);
+        }
+
+        function showAllServices() {
+            activeBundleId = null;
+
+            // Reset Quick Filters highlighting
+            document.querySelectorAll('.quick-filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Update Middle-stage Header back to default catalog context
+            document.getElementById('middle-title').innerText = currentLang === 'ko' ? '전체 서비스 카탈로그' : 'Full Service Catalog';
+            document.getElementById('middle-desc').innerText = currentLang === 'ko' ? '원하는 비즈니스 분야별 전체 솔루션을 찾아보세요.' : 'Explore every digital ecosystem service tailored to your target needs.';
+
+            // Show controls & grids
+            document.getElementById('catalog-controls').style.display = 'flex';
+            document.getElementById('category-tabs').style.display = 'flex';
+            document.getElementById('bundles-view').style.display = 'none';
+            
+            const catalogView = document.getElementById('catalog-view');
+            catalogView.style.display = 'block';
+
+            renderServices();
+        }
+
+        // Header Natural Language Search Input Handler
+        function handleHeaderSearch(query) {
+            const trimmedQuery = query.toLowerCase().trim();
+            
+            // Sync with catalog page search input
+            const catalogSearchInput = document.getElementById('catalog-search');
+            if (catalogSearchInput) {
+                catalogSearchInput.value = query;
+            }
+
+            if (trimmedQuery === '') {
+                // If query is cleared, restore bundles landing page state
+                document.getElementById('bundles-view').style.display = 'block';
+                document.getElementById('catalog-view').style.display = 'none';
+                activeBundleId = null;
+                return;
+            }
+
+            // Otherwise, switch instantly to full catalog search view
+            activeBundleId = null;
+            document.getElementById('bundles-view').style.display = 'none';
+            document.getElementById('catalog-view').style.display = 'block';
+            
+            // Show all controls
+            document.getElementById('catalog-controls').style.display = 'flex';
+            document.getElementById('category-tabs').style.display = 'flex';
+            
+            document.getElementById('middle-title').innerText = currentLang === 'ko' ? '검색 결과' : 'Search Results';
+            document.getElementById('middle-desc').innerText = currentLang === 'ko' ? `"${query}" 검색 결과입니다.` : `Showing results matching "${query}"`;
+
+            renderServices();
+        }
+
+        // Apply Translations Overrides
+        const originalApplyTranslations = applyTranslations;
+        applyTranslations = function(lang) {
+            originalApplyTranslations(lang);
+
+            // Translate Custom IA items
+            const filterTitle = document.getElementById('filter-title-label');
+            if (filterTitle) {
+                filterTitle.innerText = lang === 'ko' ? '목표별 빠른 솔루션 찾기' : 'Quick Goal Finder';
+            }
+
+            const qfExpansion = document.getElementById('qf-expansion');
+            if (qfExpansion) qfExpansion.innerText = lang === 'ko' ? '처음 해외 진출해요' : 'Launch Overseas';
+
+            const qfMarketing = document.getElementById('qf-marketing');
+            if (qfMarketing) qfMarketing.innerText = lang === 'ko' ? '마케팅을 늘리고 싶어요' : 'Boost Marketing';
+
+            const qfMvp = document.getElementById('qf-mvp');
+            if (qfMvp) qfMvp.innerText = lang === 'ko' ? '제품을 빨리 만들고 싶어요' : 'Build MVP Quickly';
+
+            const qfContent = document.getElementById('qf-content');
+            if (qfContent) qfContent.innerText = lang === 'ko' ? '콘텐츠를 다국어로 만들고 싶어요' : 'Translate Content';
+
+            const qfData = document.getElementById('qf-data');
+            if (qfData) qfData.innerText = lang === 'ko' ? '잠재고객을 찾고 싶어요' : 'Find Target Leads';
+
+            const labelShowAll = document.getElementById('label-show-all');
+            if (labelShowAll) {
+                labelShowAll.innerText = lang === 'ko' ? '전체 서비스 목록 보기' : 'View All Services';
+            }
+
+            const headerSearch = document.getElementById('header-search');
+            if (headerSearch) {
+                headerSearch.placeholder = lang === 'ko' ? '필요한 서비스를 검색해보세요... (예: 아마존, 번역)' : 'Search services... (e.g. Amazon, translation)';
+            }
+
+            // Re-render components with selected language
+            renderBundles();
+            buildDynamicSidebar();
+            if (activeBundleId) {
+                selectBundle(activeBundleId);
+            } else {
+                renderServices();
+            }
+        };
 
         // Initial render after servicesCatalog is initialized
         applyTranslations(currentLang);
@@ -3916,11 +4247,26 @@
             let filtered = servicesCatalog.filter(pkg => {
                 const title = (dict[`${pkg.id}-title`] || "").toLowerCase();
                 const desc = (dict[`${pkg.id}-desc`] || "").toLowerCase();
-                const matchesSearch = title.includes(query) || desc.includes(query);
                 
+                // Full text natural search mapping
+                const matchesSearch = title.includes(query) || 
+                                      desc.includes(query) || 
+                                      pkg.category.toLowerCase().includes(query) || 
+                                      pkg.id.toLowerCase().includes(query);
+                
+                // Category Filter
                 const matchesCategory = (activeCategory === 'all' || pkg.category === activeCategory);
                 
-                return matchesSearch && matchesCategory;
+                // Bundle Filter
+                let matchesBundle = true;
+                if (activeBundleId) {
+                    const bundle = bundlesCatalog.find(b => b.id === activeBundleId);
+                    if (bundle) {
+                        matchesBundle = bundle.includedSkus.includes(pkg.id);
+                    }
+                }
+                
+                return matchesSearch && matchesCategory && matchesBundle;
             });
             
             // Sort
@@ -3956,7 +4302,45 @@
                 resultsCountEl.innerHTML = countText;
             }
             
-            // Render
+            // If no results found, render suggestion layout containing 3 bundles
+            if (filtered.length === 0) {
+                const noResultLabel = currentLang === 'ko' ? '검색 결과가 없습니다. 이런 추천 패키지는 어떠신가요?' : 'No matches found. Here are some packages you might like:';
+                
+                let suggestedHtml = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 3rem 1.5rem; background: rgba(255,255,255,0.02); border: 1px dashed rgba(255,255,255,0.1); border-radius: 16px;">
+                        <i class="fa-solid fa-magnifying-glass-minus" style="font-size: 2.5rem; color: var(--text-muted); margin-bottom: 1rem; display: block;"></i>
+                        <p style="color: var(--text-muted); margin-bottom: 2rem;">${noResultLabel}</p>
+                        <div class="bundles-grid" style="max-width: 1000px; margin: 0 auto;">
+                `;
+
+                // Suggest 3 representative bundles
+                bundlesCatalog.slice(0, 3).forEach(b => {
+                    suggestedHtml += `
+                        <div class="bundle-card" onclick="selectBundle('${b.id}')" style="min-height: 200px;">
+                            <div>
+                                <div class="bundle-card-header">
+                                    <div class="bundle-card-icon"><i class="${b.icon}"></i></div>
+                                    <h3>${b.title[currentLang]}</h3>
+                                </div>
+                                <p style="font-size:0.85rem; margin-bottom:1rem;">${b.desc[currentLang]}</p>
+                            </div>
+                            <div class="bundle-cta" style="font-size: 0.8rem;">
+                                <span>${currentLang === 'ko' ? '솔루션 보기' : 'Explore'}</span> <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                suggestedHtml += `
+                        </div>
+                    </div>
+                `;
+                
+                grid.innerHTML = suggestedHtml;
+                return;
+            }
+
+            // Render matching services
             grid.innerHTML = filtered.map(pkg => {
                 const title = dict[`${pkg.id}-title`] || "";
                 const desc = dict[`${pkg.id}-desc`] || "";
@@ -3981,7 +4365,7 @@
                             <h3>${title}</h3>
                             <p>${desc}</p>
                         </div>
-                        <a href="${pkg.link}" class="card-btn ${pkg.btnClass}">${btnText}</a>
+                        <a href="${pkg.link}${currentLang === 'ko' ? 'kr/' : ''}" class="card-btn ${pkg.btnClass}">${btnText}</a>
                     </div>
                 `;
             }).join('');

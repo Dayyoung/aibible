@@ -4,16 +4,33 @@ let currentPackage = null;
 let orderQuantity = 1;
 let paypalButtonInstance = null;
 
-// Package Catalog with Localized Keys
+// // Package Catalog with Localized Keys
 const packageCatalog = {
     translation: {
-        title_en: 'Translation & Localization',
-        title_ko: '번역 및 현지화',
+        title_en: 'General Translation & Localization',
+        title_ko: '일반 번역 및 현지화',
         packages: [
             { id: 'trans-starter', name_en: 'Starter (1K Words)', name_ko: '스타터 (1,000단어)', desc_en: 'Basic document translation for personal or small business needs. Up to 1,000 words in 2 languages with 48-hour delivery.', desc_ko: '개인 및 소규모 비즈니스를 위한 기본 문서 번역. 최대 1,000단어, 2개 언어 지원, 48시간 내 전달.', price: 29, featured: false, features_en: ['Up to 1,000 words', '2 language pair', '48-hour delivery', 'Basic proofreading', 'Email support'], features_ko: ['최대 1,000단어', '2개 언어 지원', '48시간 내 전달', '기본 교정 포함', '이메일 지원'] },
             { id: 'trans-growth', name_en: 'Growth (5K Words)', name_ko: '그로스 (5,000단어)', desc_en: 'Professional business translation for growing companies. Up to 5,000 words, 5 languages, certified proofreading, and 24-hour express delivery.', desc_ko: '성장하는 기업을 위한 전문 비즈니스 번역. 최대 5,000단어, 5개 언어, 인증된 교정, 24시간 익스프레스 전달.', price: 79, featured: true, features_en: ['Up to 5,000 words', '5 language pairs', '24-hour express delivery', 'Certified proofreading', 'Priority support'], features_ko: ['최대 5,000단어', '5개 언어 지원', '24시간 익스프레스 전달', '인증된 전문 교정', '우선 고객 지원'] },
-            { id: 'trans-enterprise', name_en: 'Enterprise (20K Words)', name_ko: '엔터프라이즈 (20,000단어)', desc_en: 'Full localization suite for enterprises. Up to 20,000 words, unlimited languages, cultural adaptation, SEO localization, and dedicated project manager.', desc_ko: '기업을 위한 풀 현지화 서비스. 최대 20,000단어, 무제한 언어, 문화적 각색, SEO 현지화, 전담 프로젝트 매니저.', price: 199, featured: false, features_en: ['Up to 20,000 words', 'Unlimited languages', 'Cultural adaptation', 'SEO localization', 'Dedicated PM'], features_ko: ['최대 20,000단어', '무제한 언어 지원', '문화적 각색 포함', 'SEO 현지화', '전담 PM 배정'] },
-            { id: 'trans-ultimate', name_en: 'Ultimate (50K Words)', name_ko: '얼티밋 (50,000단어)', desc_en: 'Global enterprise suite with 50,000+ words, unlimited languages, full cultural adaptation, SEO & ASO localization, API access, and dedicated linguist team.', desc_ko: '50,000단어 이상, 무제한 언어, 완전한 문화적 각색, SEO 및 ASO 현지화, API 접근, 전담 언어학자 팀이 포함된 글로벌 기업용 스위트.', price: 499, featured: false, features_en: ['50,000+ words', 'Unlimited languages', 'Full cultural adaptation', 'SEO + ASO localization', 'API access & linguist team'], features_ko: ['50,000단어 이상', '무제한 언어 지원', '완전한 문화적 각색', 'SEO + ASO 현지화', 'API 접근 및 언어학자 팀'] }
+            { id: 'trans-enterprise', name_en: 'Enterprise (20K Words)', name_ko: '엔터프라이즈 (20,000단어)', desc_en: 'Full localization suite for enterprises. Up to 20,000 words, unlimited languages, cultural adaptation, SEO localization, and dedicated project manager.', desc_ko: '기업을 위한 풀 현지화 서비스. 최대 20,000단어, 무제한 언어, 문화적 각색, SEO 현지화, 전담 프로젝트 매니저.', price: 199, featured: false, features_en: ['Up to 20,000 words', 'Unlimited languages', 'Cultural adaptation', 'SEO localization', 'Dedicated PM'], features_ko: ['최대 20,000단어', '무제한 언어 지원', '문화적 각색 포함', 'SEO 현지화', '전담 PM 배정'] }
+        ]
+    },
+    technical: {
+        title_en: 'Technical Document & Software Translation',
+        title_ko: '기술 문서 및 소프트웨어 번역',
+        packages: [
+            { id: 'tech-starter', name_en: 'Technical Basic (1K Words)', name_ko: '기술 기본 (1,000단어)', desc_en: 'Accurate technical vocabulary adaptation for simple product descriptions and manual reviews.', desc_ko: '간단한 제품 설명서 및 매뉴얼 검수를 위한 정확한 기술 용어 매칭 번역.', price: 49, featured: false, features_en: ['Up to 1,000 words', 'Glossary alignment', 'Technical formatting', '3 business days delivery'], features_ko: ['최대 1,000단어', '용어집 매칭', '기술 문서 서식 유지', '영업일 3일 내 전달'] },
+            { id: 'tech-growth', name_en: 'Technical Standard (5K Words)', name_ko: '기술 표준 (5,000단어)', desc_en: 'In-depth translation for software UI strings, API references, complex catalogs, and manuals.', desc_ko: '소프트웨어 UI 스트링, API 레퍼런스, 복잡한 카탈로그 및 사용자 매뉴얼 번역.', price: 129, featured: true, features_en: ['Up to 5,000 words', 'Software localized tone', 'Consistency checks', 'Interactive review'], features_ko: ['최대 5,000단어', '소프트웨어 전용 톤', '용어 일관성 감사', '대화형 피드백 제공'] },
+            { id: 'tech-enterprise', name_en: 'Technical Premium (20K Words)', name_ko: '기술 고급 (20,000단어)', desc_en: 'Complete localization suite with software translation, database mapping validation, and manual layout QA.', desc_ko: '소프트웨어 현지화, 데이터베이스 매핑 검증 및 매뉴얼 레이아웃 QA가 포함된 완벽한 스위트.', price: 299, featured: false, features_en: ['Up to 20,000 words', 'API layout QA', 'Custom terminology sheet', 'Priority delivery support'], features_ko: ['최대 20,000단어', 'API 레이아웃 QA', '맞춤형 기술 용어집', '우선 대응 지원'] }
+        ]
+    },
+    medical: {
+        title_en: 'Medical Document & Clinical Trial Translation',
+        title_ko: '의료 문서 및 임상 시험 번역',
+        packages: [
+            { id: 'med-starter', name_en: 'Medical Basic (1K Words)', name_ko: '의료 기본 (1,000단어)', desc_en: 'Translate patient letters, medical summaries, and patient-facing materials with terminology validation.', desc_ko: '환자 안내문, 의학 요약본, 환자용 설명 자료를 의학 용어 검수와 함께 번역합니다.', price: 79, featured: false, features_en: ['Up to 1,000 words', 'Medical terminology QA', 'Patient letter format', '3 business days delivery'], features_ko: ['최대 1,000단어', '의학 용어 검수 포함', '환자 설명 자료 전용 톤', '영업일 3일 내 전달'] },
+            { id: 'med-growth', name_en: 'Medical Standard (5K Words)', name_ko: '의료 표준 (5,000단어)', desc_en: 'Localize clinical trial protocol summaries, informed consent forms, and investigator materials.', desc_ko: '임상 시험 프로토콜 요약본, 환자 동의서, 연구자용 임상 자료 현지화.', price: 199, featured: true, features_en: ['Up to 5,000 words', 'Clinical trial QA', 'IRB-friendly phrasing', 'Priority timeline support'], features_ko: ['최대 5,000단어', '임상시험 전용 QA', 'IRB 적합성 문구', '우선 일정 관리 지원'] },
+            { id: 'med-enterprise', name_en: 'Medical Premium (20K Words)', name_ko: '의료 고급 (20,000단어)', desc_en: 'Translate drug labels, compliance inserts, regulatory briefs, and high-stakes medical catalog items.', desc_ko: '의약품 라벨, 패키지 인서트, 규제 대응 요약문 및 중요한 의학 카탈로그 번역.', price: 499, featured: false, features_en: ['Up to 20,000 words', 'Regulatory labeling check', 'Layout-safe terminology QA', 'Dedicated support PM'], features_ko: ['최대 20,000단어', '규제 라벨링 교정', '레이아웃 안전 의학용어 QA', '전담 프로젝트 매니저'] }
         ]
     }
 };
@@ -91,6 +108,10 @@ const translations = {
         
         "order-button": "Order Package",
         "featured-badge": "Best Seller",
+        
+        "tab-general": "General Translation",
+        "tab-technical": "Technical Translation",
+        "tab-medical": "Medical Translation",
         
         // Receipts
         "receipt-header": "BIBLEFORAI - TRANSBOOST RECEIPT",
@@ -179,6 +200,10 @@ const translations = {
         "order-button": "패키지 주문하기",
         "featured-badge": "베스트 셀러",
         
+        "tab-general": "일반 번역",
+        "tab-technical": "기술 번역",
+        "tab-medical": "의료 번역",
+        
         // Receipts
         "receipt-header": "BIBLEFORAI - TRANSBOOST 영수증",
         "receipt-date": "주문 날짜",
@@ -234,11 +259,6 @@ function applyTranslations() {
         window.location.href = window.location.pathname.replace('/kr/', '/');
         return;
     }
- else if (preferredLang === 'en' && isKrPage) {
-        window.location.href = window.location.pathname.replace('/kr/', '/');
-        return;
-    }
-
     const lang = currentLang;
     const isKo = lang === 'ko';
     
@@ -356,57 +376,72 @@ function toggleMobileMenu() {
     drawer.classList.toggle('active');
 }
 
+let activeTranslationTier = 'translation';
+
+function switchTranslationTier(tierKey) {
+    activeTranslationTier = tierKey;
+    
+    // Toggle active state on buttons
+    document.querySelectorAll('.tier-tab-btn').forEach(btn => {
+        if (btn.id === `tab-${tierKey}`) {
+            btn.classList.add('active');
+            btn.style.background = 'rgba(139,92,246,0.1)';
+            btn.style.borderColor = 'rgba(139,92,246,0.2)';
+            btn.style.color = '#c084fc';
+        } else {
+            btn.classList.remove('active');
+            btn.style.background = 'rgba(255,255,255,0.02)';
+            btn.style.borderColor = 'rgba(255,255,255,0.08)';
+            btn.style.color = 'var(--text-muted)';
+        }
+    });
+    
+    // Dynamically update view-translation-sub header description
+    const isKo = currentLang === 'ko';
+    const subDescEl = document.querySelector('[data-i18n="view-translation-sub"]');
+    if (subDescEl) {
+        if (tierKey === 'translation') {
+            subDescEl.innerText = isKo ? 
+                '패키지를 선택하고 AI 기반 번역 시스템과 전문가 검토를 통해 콘텐츠를 번역받으세요. 빠르고 정확하며 문화적으로 각색됩니다.' : 
+                'Select a package and get your content translated by our AI-powered system with expert human review. Fast, accurate, and culturally adapted.';
+        } else if (tierKey === 'technical') {
+            subDescEl.innerText = isKo ? 
+                '소프트웨어 UI, 개발 명세서, 사용자 매뉴얼, API 가이드 등 정교한 기술 문서의 완벽한 번역 및 일관성을 보장합니다.' : 
+                'Ensure accurate translation and terminology alignment for software UI, product manuals, API guides, and technical specifications.';
+        } else if (tierKey === 'medical') {
+            subDescEl.innerText = isKo ? 
+                '환자 동의서, 임상시험 프로토콜, 라벨 문안, 의학 연구 학술 보고서 등 철저한 전문 의학 용어 검증 및 규정 준수를 보장합니다.' : 
+                'Validate clinical trials, consent forms, regulatory drug labels, and academic research briefs with precise medical terminology review.';
+        }
+    }
+
+    renderAllPackages();
+}
+
+window.switchTranslationTier = switchTranslationTier;
+
 // Dynamic Rendering of Product Packages
 function renderAllPackages() {
-    const isKo = currentLang === 'ko';
-    
-    Object.keys(packageCatalog).forEach(categoryKey => {
-        const categoryData = packageCatalog[categoryKey];
-        const container = document.getElementById(`${categoryKey}-packages`);
-        if (!container) return;
-
-        container.innerHTML = categoryData.packages.map(pkg => {
-            const featuredClass = pkg.featured ? 'featured' : '';
-            const badgeIcon = getCategoryIcon(categoryKey);
-            
-            const name = isKo ? pkg.name_ko : pkg.name_en;
-            const desc = isKo ? pkg.desc_ko : pkg.desc_en;
-            const features = isKo ? pkg.features_ko : pkg.features_en;
-            const btnText = translations[currentLang]['order-button'] || 'Order Package';
-            const featuredBadge = translations[currentLang]['featured-badge'] || 'Best Seller';
-            
-            return `
-                <div class="package-card ${featuredClass}">
-                    ${pkg.featured ? `<div class="featured-ribbon">${featuredBadge}</div>` : ''}
-                    <h3>${name}</h3>
-                    <p class="package-desc">${desc}</p>
-                    <div class="package-price-box">
-                        <span class="price">${formatPrice(pkg.price, false)}</span>
-                        <span class="currency">${currentLang === 'ko' ? 'KRW' : 'USD'}</span>
-                    </div>
-                    <ul class="package-features">
-                        ${features.map(feat => `<li><i class="fa-solid fa-circle-check"></i> ${feat}</li>`).join('')}
-                    </ul>
-                    <button class="btn-buy" onclick="openPurchaseModal('${categoryKey}', '${pkg.id}')">
-                        <i class="${badgeIcon}"></i> ${btnText}
-                    </button>
-                </div>
-            `;
-        }).join('');
-    });
+    window.packageCatalog = { packages: packageCatalog[activeTranslationTier].packages };
+    if (typeof initStandardPricingTable === 'function') {
+        initStandardPricingTable();
+    }
 }
 
 function getCategoryIcon(category) {
     switch (category) {
         case 'translation': return 'fa-solid fa-language';
+        case 'technical': return 'fa-solid fa-code';
+        case 'medical': return 'fa-solid fa-stethoscope';
         default: return 'fa-solid fa-globe';
     }
 }
 
 // Purchase Modal Management
 function openPurchaseModal(categoryKey, packageId) {
-    const category = packageCatalog[categoryKey];
-    const pkg = category.packages.find(p => p.id === packageId);
+    const resolvedCatKey = ['basic', 'standard', 'premium', 'packages'].includes(categoryKey) ? activeTranslationTier : categoryKey;
+    const category = packageCatalog[resolvedCatKey];
+    const pkg = category ? category.packages.find(p => p.id === packageId) : null;
     
     if (!pkg) return;
     
@@ -415,7 +450,7 @@ function openPurchaseModal(categoryKey, packageId) {
     const pkgName = isKo ? pkg.name_ko : pkg.name_en;
     
     currentPackage = {
-        categoryKey: categoryKey,
+        categoryKey: resolvedCatKey,
         categoryName: catTitle,
         tierName: pkgName,
         basePrice: pkg.price

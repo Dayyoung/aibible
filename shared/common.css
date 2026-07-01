@@ -1,0 +1,209 @@
+/* Shared Common Styles for BibleForAI Services */
+
+/* Standardized Pricing Table (Basic / Standard / Premium) */
+.standard-pricing-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+.pricing-table-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: stretch;
+}
+
+@media (max-width: 968px) {
+    .pricing-table-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.pricing-card-standard {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+
+.pricing-card-standard:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-purple, #8b5cf6);
+    box-shadow: 0 15px 35px rgba(139, 92, 246, 0.1), 0 0 15px rgba(139, 92, 246, 0.05);
+}
+
+.pricing-card-standard.featured {
+    background: rgba(139, 92, 246, 0.03);
+    border-color: rgba(139, 92, 246, 0.25);
+}
+
+.pricing-card-standard.featured::before {
+    content: 'Popular';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.pricing-card-standard h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #ffffff;
+}
+
+.pricing-card-standard .tier-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+}
+
+.pricing-card-standard .tier-price span {
+    font-size: 1rem;
+    color: var(--text-muted, #9ca3af);
+    font-weight: 500;
+}
+
+.pricing-card-standard .tier-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted, #9ca3af);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    min-height: 3.5rem;
+}
+
+.pricing-card-standard .tier-specs {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-muted, #9ca3af);
+}
+
+.pricing-card-standard .spec-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.pricing-card-standard .spec-item i {
+    color: var(--primary-cyan, #06b6d4);
+}
+
+.pricing-card-standard .tier-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.pricing-card-standard .tier-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    color: #e5e7eb;
+    line-height: 1.4;
+}
+
+.pricing-card-standard .tier-features li i {
+    color: var(--primary-emerald, #10b981);
+    margin-top: 0.2rem;
+}
+
+.pricing-card-standard .btn-tier-action {
+    width: 100%;
+    padding: 0.85rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none;
+}
+
+.pricing-card-standard .btn-tier-action.primary {
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+}
+
+.pricing-card-standard .btn-tier-action.primary:hover {
+    background: linear-gradient(135deg, #7c3aed, #4f46e5);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.35);
+}
+
+.pricing-card-standard .btn-tier-action.secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pricing-card-standard .btn-tier-action.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Sidebar Custom Filtering Layout Improvements */
+.sidebar .sidebar-category {
+    margin-bottom: 1.5rem;
+}
+
+.sidebar-category-header {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary-cyan, #06b6d4);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 0.75rem;
+}
+
+/* Fail-safe PayPal notice stylings */
+.paypal-failsafe-box {
+    margin: 1.5rem 0;
+    padding: 1.25rem;
+    background: rgba(239, 68, 68, 0.04);
+    border: 1px solid rgba(239, 68, 68, 0.15);
+    border-radius: 12px;
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+}
+.paypal-failsafe-box p {
+    color: #f87171 !important;
+    font-size: 0.9rem !important;
+    font-weight: 600;
+    margin: 0 0 0.75rem 0 !important;
+}
