@@ -132,7 +132,11 @@ def build_catalog_entries():
         'opencode', 'apostboost', 'sourcboost', 'repboost', 
         'prboost', 'usllc', 'ustax', 'ustaxboost',
         # Consolidated duplicates
-        'localize', 'engtranslate', 'medboost', 'mk'
+        'localize', 'engtranslate', 'medboost', 'mk',
+        # Additional sensitive business categories to avoid policy flagging (for Google Ads compliance)
+        'fdaboost', 'globalbank', 'sbvi', 'complianceboost', 'cert', 'law', 
+        'tradeboost', 'dbmigrate', 'sales', 'buyer', 'atsresume', 'aicash', 
+        'japanbiz', 'chinaboost', 'indiaboost', 'globalup', 'hr', 'ip'
     }
     
     for s in CATALOG:
