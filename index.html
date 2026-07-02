@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-980426001"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'AW-980426001');
+    </script>
+
     <!-- Geographic Metadata (SEO/GEO Optimization) -->
     <meta name="geo.region" content="KR-11">
     <meta name="geo.placename" content="Seoul">
@@ -3048,8 +3058,8 @@
             </a>
         </div>
         <div class="header-search-box" style="flex-grow: 1; max-width: 400px; margin: 0 1.5rem; position: relative;">
-            <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.85rem;"></i>
-            <input type="text" id="header-search" oninput="handleHeaderSearch(this.value)" placeholder="Search services..." style="width: 100%; padding: 0.5rem 1rem 0.5rem 2.2rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: #ffffff; font-family: var(--font-heading); font-size: 0.88rem; outline: none; transition: var(--transition);">
+            <i class="fa-solid fa-magnifying-glass" onclick="handleHeaderSearch(document.getElementById('header-search').value, true)" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.85rem; cursor: pointer;"></i>
+            <input type="text" id="header-search" oninput="handleHeaderSearch(this.value)" onkeydown="if(event.key === 'Enter') { handleHeaderSearch(this.value, true); this.blur(); }" placeholder="Search services..." style="width: 100%; padding: 0.5rem 1rem 0.5rem 2.2rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: #ffffff; font-family: var(--font-heading); font-size: 0.88rem; outline: none; transition: var(--transition);">
         </div>
         <select class="lang-selector" onchange="toggleLang(this.value)">
             <option value="en">🌐 English</option>
@@ -4377,8 +4387,10 @@
             renderServices();
         }
 
+        let headerSearchScrollTimeout = null;
+
         // Header Natural Language Search Input Handler
-        function handleHeaderSearch(query) {
+        function handleHeaderSearch(query, immediateScroll = false) {
             const trimmedQuery = query.toLowerCase().trim();
             
             // Sync with catalog page search input
@@ -4392,6 +4404,9 @@
                 document.getElementById('bundles-view').style.display = 'block';
                 document.getElementById('catalog-view').style.display = 'none';
                 activeBundleId = null;
+                if (headerSearchScrollTimeout) {
+                    clearTimeout(headerSearchScrollTimeout);
+                }
                 return;
             }
 
@@ -4408,6 +4423,23 @@
             document.getElementById('middle-desc').innerText = currentLang === 'ko' ? `"${query}" 검색 결과입니다.` : `Showing results matching "${query}"`;
 
             renderServices();
+
+            // Clear previous timeout
+            if (headerSearchScrollTimeout) {
+                clearTimeout(headerSearchScrollTimeout);
+            }
+
+            const catalogView = document.getElementById('catalog-view');
+            if (catalogView) {
+                if (immediateScroll) {
+                    catalogView.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    // Debounce scroll by 800ms to avoid scrolling away from header while user is actively typing
+                    headerSearchScrollTimeout = setTimeout(() => {
+                        catalogView.scrollIntoView({ behavior: 'smooth' });
+                    }, 800);
+                }
+            }
         }
 
         // Apply Translations Overrides
