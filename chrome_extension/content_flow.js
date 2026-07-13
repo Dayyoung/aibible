@@ -948,10 +948,10 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         let dataUrl = "";
         
         if (mode === "character") {
-          filename = `bible/${bookTitle}/Chapter_${chapterNum}/character_${promptItem.characterName}.jpg`;
+          filename = `bible/${bookTitle}/Chapter_${chapterNum}/${promptItem.characterName}.jpg`;
           dataUrl = await convertUrlToBase64(targetUrl);
         } else {
-          filename = `bible/${bookTitle}/Chapter_${chapterNum}/verse_${promptItem.verseNumber}.jpg`;
+          filename = `bible/${bookTitle}/Chapter_${chapterNum}/${promptItem.verseNumber}.jpg`;
         }
 
         chrome.runtime.sendMessage({
