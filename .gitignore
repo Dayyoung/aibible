@@ -9,4 +9,6 @@ __pycache__/
 token.json
 *.json
 !boostsm/*.json
+!bible/json/*.json
+!bible/ko_ko.json
 _session/
