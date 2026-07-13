@@ -169,20 +169,40 @@ async function navigateToNextChapterAndContinue(nextChapterInfo) {
     });
   });
 
-  await sleep(2500);
-  await ensureBibleContentScriptInjected(bibleTab.id);
+  await sleep(1500);
 
-  chrome.tabs.sendMessage(bibleTab.id, { action: "extract_screens" }, async (response) => {
-    if (chrome.runtime.lastError || !response || !response.ok) {
-      console.error("[BG] Failed to extract screens after navigation:", chrome.runtime.lastError?.message);
-      chrome.storage.local.set({
-        active_state: "stopped",
-        pipeline_status: "에러: 다음 장에서 구절을 추출하지 못했습니다."
+  let response = null;
+  for (let retry = 0; retry < 5; retry++) {
+    try {
+      await ensureBibleContentScriptInjected(bibleTab.id);
+      response = await new Promise((resolve, reject) => {
+        chrome.tabs.sendMessage(bibleTab.id, { action: "extract_screens" }, (res) => {
+          if (chrome.runtime.lastError) {
+            reject(new Error(chrome.runtime.lastError.message));
+          } else {
+            resolve(res);
+          }
+        });
       });
-      return;
+      if (response && response.ok) {
+        break;
+      }
+    } catch (e) {
+      console.warn(`[BG] Extract screens attempt ${retry + 1} failed, retrying:`, e.message);
+      await sleep(1000);
     }
+  }
 
-    const { info } = response;
+  if (!response || !response.ok) {
+    console.error("[BG] Failed to extract screens after navigation retries.");
+    chrome.storage.local.set({
+      active_state: "stopped",
+      pipeline_status: "에러: 다음 장에서 구절을 추출하지 못했습니다."
+    });
+    return;
+  }
+
+  const { info } = response;
     const { bookTitle, chapterNum, screens } = info;
     
     let characterDb = {};
