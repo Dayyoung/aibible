@@ -745,6 +745,27 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         const sceneNum = index + 1;
         const currentLabel = mode === "character" ? `인물 [${promptItem.characterName}]` : `구절 [${promptItem.verseNumber}]`;
         
+        // 0. Check if image already exists in local downloads
+        const checkFilename = mode === "character" 
+          ? `bible/${bookTitle}/Chapter_${chapterNum}/${promptItem.characterName}.jpg`
+          : `bible/${bookTitle}/Chapter_${chapterNum}/${promptItem.verseNumber}.jpg`;
+
+        const checkResponse = await sendRuntimeMessage({
+          action: "check_file_exists",
+          filename: checkFilename
+        });
+
+        if (checkResponse && checkResponse.ok && checkResponse.exists) {
+          console.log(`[Flow-CS] Image already exists: ${checkFilename}. Skipping generation.`);
+          showOverlay(index + 1, totalCount, `${currentLabel} 이미 존재함. 건너뜀.`);
+          chrome.storage.local.set({
+            current_count: index + 1,
+            pipeline_status: `${currentLabel} 이미 존재하여 건너뜀`
+          });
+          await sleep(300);
+          continue;
+        }
+
         showOverlay(index, totalCount, `${currentLabel} 대기 중...`);
         chrome.storage.local.set({
           current_count: index,

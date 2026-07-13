@@ -348,6 +348,30 @@ function sanitizeFilenamePart(value) {
   return String(value || "").replace(/[<>:"/\\|?*\x00-\x1F]/g, "_").trim();
 }
 
+async function checkFileExists(filename) {
+  const normalized = String(filename || "").replace(/\\/g, "/");
+  const parts = normalized.split("/");
+  const escapedParts = parts.map(p => escapeRegex(sanitizeFilenamePart(p)));
+  const filenameRegex = escapedParts.join("[/\\\\]") + "$";
+
+  const matches = await new Promise((resolve) => {
+    chrome.downloads.search({
+      filenameRegex,
+      exists: true,
+      state: "complete",
+      limit: 1
+    }, (items) => {
+      if (chrome.runtime.lastError) {
+        resolve([]);
+        return;
+      }
+      resolve(items || []);
+    });
+  });
+
+  return matches.length > 0;
+}
+
 function buildFallbackCharacterImagePaths(bookTitle, chapterNum, characterName) {
   const safeBookTitle = sanitizeFilenamePart(bookTitle);
   const safeChapterNum = sanitizeFilenamePart(chapterNum);
@@ -729,6 +753,11 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         });
       }
     })();
+  } else if (request.action === "check_file_exists") {
+    checkFileExists(request.filename)
+      .then(exists => sendResponse({ ok: true, exists }))
+      .catch(err => sendResponse({ ok: false, error: err.message }));
+    return true;
   }
   return true;
 });
