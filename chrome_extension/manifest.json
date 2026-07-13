@@ -1,0 +1,63 @@
+{
+  "manifest_version": 3,
+  "name": "AI Bible Image Generator",
+  "version": "1.0",
+  "description": "AI Bible App Character and Screen image auto generator",
+  "permissions": [
+    "storage",
+    "downloads",
+    "activeTab",
+    "tabs",
+    "scripting",
+    "debugger",
+    "unlimitedStorage"
+  ],
+  "host_permissions": [
+    "https://labs.google/fx/*",
+    "http://localhost:*/*",
+    "http://127.0.0.1:*/*",
+    "https://bibleforai.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://labs.google/fx/*/tools/flow/project/*"
+      ],
+      "js": [
+        "content_flow.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "http://localhost:*/*",
+        "http://127.0.0.1:*/*",
+        "https://bibleforai.com/*"
+      ],
+      "js": [
+        "content_bible.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "json/*.json",
+        "character_prompts.json"
+      ],
+      "matches": [
+        "http://localhost/*",
+        "http://127.0.0.1/*",
+        "https://bibleforai.com/*",
+        "https://labs.google/*"
+      ]
+    }
+  ]
+}
