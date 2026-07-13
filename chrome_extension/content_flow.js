@@ -909,6 +909,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
           if (newUrl) {
             targetUrl = newUrl;
             console.log("[Flow-CS] Detected new image URL during generation:", newUrl);
+            break; // 이미지가 감지되면 즉시 대기를 종료하고 루프를 탈출합니다.
           }
 
           // B. Check if the loading screen is still active
@@ -920,11 +921,12 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             generationStarted = true;
           }
 
-          await sleep(1000);
+          await sleep(500); // 체크 주기를 1초에서 0.5초로 줄여 반응 속도를 높입니다.
         }
 
         // Settle delay after generation completes to let image render fully
-        await sleep(2500);
+        // 이미지가 감지되었거나 루프가 완료되었으므로 대기 시간을 2.5초에서 0.8초로 단축합니다.
+        await sleep(800);
 
         // Fallback: If targetUrl was not set by URL comparison, get the first visible image on the page
         if (!targetUrl) {
