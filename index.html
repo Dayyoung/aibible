@@ -80,6 +80,26 @@
             background-color: #1e3a8a;
             color: #eff6ff;
         }
+
+        .verse-item p {
+            white-space: pre-wrap;
+        }
+
+        /* Google Translate Hiding and Customizations */
+        .goog-te-banner-frame.skiptranslate, .goog-te-banner-frame, #goog-gt-tt {
+            display: none !important;
+        }
+        body {
+            top: 0px !important;
+        }
+        .goog-tooltip, .goog-tooltip:hover {
+            display: none !important;
+        }
+        .goog-text-highlight {
+            background-color: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
     </style>
     <link rel="stylesheet" href="/shared/common.css">
 </head>
@@ -285,8 +305,40 @@
 
         function getFooterHTML(isDark) {
             return `
-            <footer class="w-full h-[100px] flex flex-col items-center justify-center text-xs opacity-40 font-sans pointer-events-none select-none pb-safe">
+            <footer class="w-full h-[130px] flex flex-col items-center justify-center text-xs opacity-40 font-sans pb-safe">
                 <p class="font-bold tracking-widest">BibleForAi.com 2026</p>
+                <div class="mt-1 flex items-center gap-2">
+                    <select class="language-translator bg-transparent border-none outline-none cursor-pointer text-current font-bold" onchange="translatePage(this.value)">
+                        <option value="en">English (Original)</option>
+                        <option value="ko">한국어 (Korean)</option>
+                        <option value="zh-CN">简体中文 (Chinese Simplified)</option>
+                        <option value="zh-TW">繁體中文 (Chinese Traditional)</option>
+                        <option value="ja">日本語 (Japanese)</option>
+                        <option value="es">Español (Spanish)</option>
+                        <option value="fr">Français (French)</option>
+                        <option value="de">Deutsch (German)</option>
+                        <option value="ru">Русский (Russian)</option>
+                        <option value="pt">Português (Portuguese)</option>
+                        <option value="vi">Tiếng Việt (Vietnamese)</option>
+                        <option value="ar">العربية (Arabic)</option>
+                        <option value="it">Italiano (Italian)</option>
+                        <option value="tr">Türkçe (Turkish)</option>
+                        <option value="pl">Polski (Polish)</option>
+                        <option value="nl">Nederlands (Dutch)</option>
+                        <option value="sv">Svenska (Swedish)</option>
+                        <option value="id">Bahasa Indonesia (Indonesian)</option>
+                        <option value="hi">हिन्दी (Hindi)</option>
+                        <option value="th">ไทย (Thai)</option>
+                        <option value="ms">Bahasa Melayu (Malay)</option>
+                        <option value="el">Ελληνικά (Greek)</option>
+                        <option value="he">עברית (Hebrew)</option>
+                        <option value="fi">Suomi (Finnish)</option>
+                        <option value="no">Norsk (Norwegian)</option>
+                        <option value="da">Dansk (Danish)</option>
+                        <option value="ro">Română (Romanian)</option>
+                        <option value="uk">Ukranian (Ukrainian)</option>
+                    </select>
+                </div>
                 <p class="mt-1 font-mono opacity-70">${APP_VERSION}</p>
             </footer>`;
         }
@@ -309,9 +361,9 @@
             // Multilingual support
             availableVersions: [],
             currentVersion: {
-                abbreviation: 'en_kjv',
+                abbreviation: 'en_wev',
                 language: 'English',
-                name: 'King James Version'
+                name: 'World English Version'
             },
             uiLang: 'en', // 'en' or 'ko'
 
@@ -794,19 +846,36 @@
                             </button>` : ''}
 
                             <div class="relative w-full">
-                                <select onchange="changeVersion(this.value)"
+                                <select id="language-translator" onchange="translatePage(this.value)"
                                     class="w-full py-2 px-3 bg-white/10 hover:bg-white/20 rounded text-sm text-center appearance-none cursor-pointer outline-none border border-white/10 text-white">
-                                    ${state.availableVersions.map(langGroup => {
-                                        const displayLang = langGroup.language === 'Korean' ? '한국어' :
-                                            langGroup.language === 'English' ? 'English' : langGroup.language;
-                                        return `<optgroup label="${displayLang}">
-                                            ${langGroup.versions.map(v =>
-                                            `<option value="${v.abbreviation}"
-                                                ${state.currentVersion.abbreviation === v.abbreviation ? 'selected' : ''}>
-                                                ${v.name}</option>`
-                                        ).join('')}
-                                        </optgroup>`;
-                                    }).join('')}
+                                    <option value="en">English (Original)</option>
+                                    <option value="ko">한국어 (Korean)</option>
+                                    <option value="zh-CN">简体中文 (Chinese Simplified)</option>
+                                    <option value="zh-TW">繁體中文 (Chinese Traditional)</option>
+                                    <option value="ja">日本語 (Japanese)</option>
+                                    <option value="es">Español (Spanish)</option>
+                                    <option value="fr">Français (French)</option>
+                                    <option value="de">Deutsch (German)</option>
+                                    <option value="ru">Русский (Russian)</option>
+                                    <option value="pt">Português (Portuguese)</option>
+                                    <option value="vi">Tiếng Việt (Vietnamese)</option>
+                                    <option value="ar">العربية (Arabic)</option>
+                                    <option value="it">Italiano (Italian)</option>
+                                    <option value="tr">Türkçe (Turkish)</option>
+                                    <option value="pl">Polski (Polish)</option>
+                                    <option value="nl">Nederlands (Dutch)</option>
+                                    <option value="sv">Svenska (Swedish)</option>
+                                    <option value="id">Bahasa Indonesia (Indonesian)</option>
+                                    <option value="hi">हिन्दी (Hindi)</option>
+                                    <option value="th">ไทย (Thai)</option>
+                                    <option value="ms">Bahasa Melayu (Malay)</option>
+                                    <option value="el">Ελληνικά (Greek)</option>
+                                    <option value="he">עברית (Hebrew)</option>
+                                    <option value="fi">Suomi (Finnish)</option>
+                                    <option value="no">Norsk (Norwegian)</option>
+                                    <option value="da">Dansk (Danish)</option>
+                                    <option value="ro">Română (Romanian)</option>
+                                    <option value="uk">Українська (Ukrainian)</option>
                                 </select>
                                 <div
                                     class="absolute inset-y-0 right-2 flex items-center pointer-events-none opacity-50">
@@ -814,8 +883,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mt-4 text-xs opacity-30">
-                        ${getUiString('sampleLoaded')}
+                    <div class="mt-4 text-xs opacity-30 text-center leading-relaxed">
+                        Created by BibleForAI<br>
+                        World English Version
                     </div>
                     ${getFooterHTML(state.isDarkMode)}
                     </div>`;
@@ -1013,6 +1083,7 @@
                     </div>`;
             }
             lucide.createIcons();
+            initTranslationSelect();
             if (state.view === 'reader' && state.isSpeaking) {
                 updateSpeakerIcon();
                 updateHighlight();
@@ -1036,50 +1107,45 @@
             return false;
         }
 
-        async function changeVersion(abbrev) {
-            // Find version in availableVersions
-            let selectedVersion = null;
-            let selectedLangGroup = null;
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
 
-            for (const group of state.availableVersions) {
-                const v = group.versions.find(v => v.abbreviation === abbrev);
-                if (v) {
-                    selectedVersion = v;
-                    selectedLangGroup = group;
-                    break;
+        function translatePage(langCode) {
+            document.cookie = `googtrans=/en/${langCode}; path=/;`;
+            
+            document.querySelectorAll('.language-translator, #language-translator').forEach(select => {
+                select.value = langCode;
+            });
+            
+            const gtSelect = document.querySelector('.goog-te-combo');
+            if (gtSelect) {
+                gtSelect.value = langCode;
+                gtSelect.dispatchEvent(new Event('change'));
+            } else {
+                setTimeout(() => translatePage(langCode), 500);
+            }
+        }
+
+        function initTranslationSelect() {
+            const cookieVal = getCookie('googtrans');
+            let lang = 'en';
+            if (cookieVal) {
+                const parts = cookieVal.split('/');
+                if (parts.length >= 3) {
+                    lang = parts[2];
                 }
             }
-
-            if (selectedVersion) {
-                state.currentVersion = {
-                    ...selectedVersion,
-                    language: selectedLangGroup.language
-                };
-
-                // Update UI Language based on selected Bible language if supported
-                if (state.currentVersion.language === 'Korean') state.uiLang = 'ko';
-                else state.uiLang = 'en';
-
-                const success = await loadBibleData(abbrev);
-                if (success) {
-                    localStorage.setItem('bible_selected_version', abbrev);
-                } else {
-                    alert("Failed to load selected version.");
-                }
-            }
+            document.querySelectorAll('.language-translator, #language-translator').forEach(select => {
+                select.value = lang;
+            });
         }
 
         async function initApp() {
             const saved = localStorage.getItem('bible_saved_position');
             if (saved) state.savedPosition = JSON.parse(saved);
-
-            // Load Index
-            try {
-                const indexResp = await fetch('/bible/json/index.json');
-                if (indexResp.ok) {
-                    state.availableVersions = await indexResp.json();
-                }
-            } catch (e) { console.error("Failed to load index", e); }
 
             // [URL Parameter Handling - Early for lang]
             const urlParams = new URLSearchParams(window.location.search);
@@ -1087,29 +1153,27 @@
 
             // [Browser Language Support]
             const browserLang = navigator.language || navigator.userLanguage;
-            let isKorean = browserLang.startsWith('ko');
-            if (langParam === 'ko') isKorean = true;
-            else if (langParam === 'en') isKorean = false;
-
-            // Default to saved version or based on browser language
-            let lastVersion = localStorage.getItem('bible_selected_version');
-            if (!lastVersion || langParam) {
-                if (langParam === 'ko') lastVersion = 'ko_ko';
-                else if (langParam === 'en') lastVersion = 'en_kjv';
-                else if (!lastVersion) lastVersion = isKorean ? 'ko_ko' : 'en_kjv';
+            let defaultLang = 'en';
+            if (langParam) {
+                defaultLang = langParam;
+            } else if (browserLang) {
+                defaultLang = browserLang.split('-')[0];
             }
 
-            // Set initial state for currentVersion based on index if available
-            if (state.availableVersions.length > 0) {
-                for (const group of state.availableVersions) {
-                    const v = group.versions.find(v => v.abbreviation === lastVersion);
-                    if (v) {
-                        state.currentVersion = { ...v, language: group.language };
-                        state.uiLang = (group.language === 'Korean' || group.language === '한국어') ? 'ko' : 'en';
-                        break;
-                    }
-                }
+            // Set the googtrans cookie if not already set, so Google Translate triggers automatically on load
+            if (!getCookie('googtrans') && defaultLang !== 'en') {
+                document.cookie = `googtrans=/en/${defaultLang}; path=/;`;
             }
+
+            // Force World English Version as base Bible translation
+            const lastVersion = 'en_wev';
+
+            state.currentVersion = {
+                abbreviation: 'en_wev',
+                language: 'English',
+                name: 'World English Version'
+            };
+            state.uiLang = 'en';
 
             await loadBibleData(lastVersion);
 
@@ -1179,6 +1243,7 @@
             }
 
             render();
+            setTimeout(initTranslationSelect, 100);
 
             // Render 이후 스크롤 및 하이라이트 재처리 (특히 URL로 직접 들어왔을 때)
             if (state.view === 'reader' && state.speakingVerseIndex !== -1) {
@@ -1195,6 +1260,18 @@
         window.onload = initApp;
     </script>
     <script src="/shared/common.js"></script>
+
+    <div id="google_translate_element" style="display:none"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>

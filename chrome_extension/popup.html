@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+    
+    body {
+      width: 340px;
+      margin: 0;
+      padding: 20px;
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #f1f3f9;
+      user-select: none;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .logo-glow {
+      font-size: 20px;
+      font-weight: 800;
+      background: linear-gradient(90deg, #38bdf8, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+    }
+
+    .status-card {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 14px;
+      box-sizing: border-box;
+      backdrop-filter: blur(8px);
+      text-align: center;
+    }
+
+    .status-text {
+      font-size: 13px;
+      color: #94a3b8;
+      margin-bottom: 4px;
+      word-break: break-all;
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, #38bdf8, #3b82f6);
+      border-radius: 3px;
+      transition: width 0.4s ease;
+    }
+
+    .control-panel {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 12px;
+      padding: 12px;
+      box-sizing: border-box;
+    }
+
+    .field-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #94a3b8;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .action-btn {
+      width: 100%;
+      height: 44px;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      background: linear-gradient(90deg, #2563eb, #1d4ed8);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .action-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.45);
+    }
+
+    .action-btn:active {
+      transform: translateY(0);
+    }
+
+    .action-btn.character {
+      background: linear-gradient(90deg, #0ea5e9, #2563eb);
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+    }
+
+    .action-btn.character:hover {
+      box-shadow: 0 6px 16px rgba(14, 165, 233, 0.45);
+    }
+
+    .action-btn.screen {
+      background: linear-gradient(90deg, #8b5cf6, #6d28d9);
+      box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+    }
+
+    .action-btn.screen:hover {
+      box-shadow: 0 6px 16px rgba(139, 92, 246, 0.45);
+    }
+
+    .action-btn.stop {
+      background: linear-gradient(90deg, #475569, #334155);
+      box-shadow: 0 4px 12px rgba(71, 85, 105, 0.3);
+    }
+
+    .action-btn:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .file-name {
+      color: #94a3b8;
+      font-size: 11px;
+      line-height: 1.35;
+      word-break: break-all;
+    }
+
+    .footer {
+      font-size: 10px;
+      color: #64748b;
+      text-align: center;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <span class="logo-glow">AI BIBLE GENERATOR</span>
+    </div>
+    
+    <div class="status-card">
+      <div class="status-text" id="status-desc">대기 중...</div>
+      <div class="status-text" id="status-counter" style="font-weight: 600; color: #f1f3f9;">진행도: 0 / 0</div>
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-indicator"></div>
+      </div>
+    </div>
+
+    <div class="control-panel">
+      <label class="field-label">1. 인물 생성 (Character Gen)</label>
+      <button class="action-btn character" id="character-btn">GENERATE CHARACTER</button>
+    </div>
+
+    <div class="control-panel">
+      <label class="field-label">2. 장면 생성 (Screen Gen)</label>
+      <button class="action-btn screen" id="screen-btn">GENERATE SCREEN</button>
+      <button class="action-btn stop" id="stop-btn" style="display: none;">중지 (STOP)</button>
+    </div>
+
+    <div class="control-panel">
+      <label class="field-label">수동 이미지 폴더 선택 (선택 사항)</label>
+      <input id="image-folder-input" type="file" accept="image/*" webkitdirectory multiple hidden>
+      <button class="action-btn character" id="folder-select-btn" style="background: rgba(255,255,255,0.06); box-shadow: none; border: 1px solid rgba(255,255,255,0.12); color: #cbd5e1;">SELECT FOLDER</button>
+      <div class="file-name" id="image-folder-label">이미지 폴더 미선택 (자동 캐시 사용 가능)</div>
+    </div>
+    
+    <div class="footer">
+      Powered by Antigravity Automation System V3
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
