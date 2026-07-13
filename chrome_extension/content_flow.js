@@ -716,16 +716,17 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "ping") {
     sendResponse({ ok: true, status: "pong" });
   } else if (request.action === "execute_bible_flow_generation") {
-    if (isPipelineActive) {
-      console.warn("[Flow-CS] Pipeline is already active. Ignoring duplicate execution request.");
-      sendResponse({ ok: false, error: "Pipeline already active" });
-      return;
-    }
-    isPipelineActive = true;
     sendResponse({ ok: true });
     
     (async () => {
+      if (isPipelineActive) {
+        console.warn("[Flow-CS] Pipeline is already active. Resetting for new execution request.");
+        isAborted = true; // Abort existing run
+        await sleep(600); // Give previous loop time to exit
+      }
+
       try {
+        isPipelineActive = true;
         isAborted = false;
         const { prompts, mode, bookTitle, chapterNum } = request;
         const totalCount = prompts.length;
@@ -984,6 +985,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         });
 
         await sleep(1500);
+        // Keep V3 service worker awake during long generation runs
+        chrome.runtime.sendMessage({ action: "keep_alive_ping" }).catch(() => null);
       }
 
       if (!isAborted) {

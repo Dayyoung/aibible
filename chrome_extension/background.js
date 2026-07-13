@@ -67,8 +67,8 @@ async function getNextChapter(bookTitleOrAbbrev, chapterNum) {
 
   if (!bookData) return null;
 
-  // Find max chapter number in this book data
-  const textItems = bookData.filter(item => item.type === "paragraph text");
+  // Find max chapter number in this book data (supporting both paragraph and line text types)
+  const textItems = bookData.filter(item => item.type === "paragraph text" || item.type === "line text");
   const chapters = new Set(textItems.map(item => item.chapterNumber));
   const maxChapter = chapters.size > 0 ? Math.max(...chapters) : 0;
   
@@ -268,8 +268,7 @@ async function navigateToNextChapterAndContinue(nextChapterInfo) {
         });
       }
     }
-  });
-}
+  }
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -380,29 +379,86 @@ function sanitizeFilenamePart(value) {
   return String(value || "").replace(/[<>:"/\\|?*\x00-\x1F]/g, "_").trim();
 }
 
-async function checkFileExists(filename) {
+async function checkFileExists(filename, origin = "https://bibleforai.com") {
   const normalized = String(filename || "").replace(/\\/g, "/");
-  const parts = normalized.split("/");
-  const escapedParts = parts.map(p => escapeRegex(sanitizeFilenamePart(p)));
-  const filenameRegex = escapedParts.join("[/\\\\]") + "$";
+  const lowerKey = normalized.toLowerCase();
 
-  const matches = await new Promise((resolve) => {
+  // 1. If running on localhost, use custom Node.js server API to query local physical file existence
+  if (origin.includes("localhost") || origin.includes("127.0.0.1")) {
+    try {
+      const apiUrl = `${origin}/api/check_file?path=${encodeURIComponent(normalized)}`;
+      const res = await fetch(apiUrl, { cache: "no-cache" });
+      const data = await res.json();
+      if (data && data.exists) {
+        console.log("[BG] Image exists physically in local Downloads (via LocalHost API):", normalized);
+        
+        // Cache in storage to avoid redundant network checks next time
+        chrome.storage.local.get("downloaded_bible_images", (storage) => {
+          const db = storage.downloaded_bible_images || {};
+          db[lowerKey] = true;
+          chrome.storage.local.set({ downloaded_bible_images: db });
+        });
+        return true;
+      }
+    } catch (e) {
+      console.warn("[BG] Local physical file check API query failed:", e.message);
+    }
+  }
+
+  // 2. Fallback 1: Check local extension storage permanent cache (helps if server is not local)
+  const storage = await new Promise((resolve) => {
+    chrome.storage.local.get("downloaded_bible_images", resolve);
+  });
+  const db = storage.downloaded_bible_images || {};
+  if (db[lowerKey]) {
+    console.log("[BG] Image found in Extension Permanent Storage Cache:", lowerKey);
+    return true;
+  }
+
+  // 3. Fallback 2: Check remote server hosting via HTTP HEAD
+  const imageUrl = `${origin}/${lowerKey}`;
+  try {
+    const response = await fetch(imageUrl, { method: "HEAD", cache: "no-cache" });
+    if (response.ok) {
+      console.log("[BG] Image found on remote server repository:", imageUrl);
+      db[lowerKey] = true;
+      chrome.storage.local.set({ downloaded_bible_images: db });
+      return true;
+    }
+  } catch (e) {
+    console.warn("[BG] Remote server check failed for URL:", imageUrl, e.message);
+  }
+
+  // 4. Fallback 3: Check Chrome local download history (used as final backup)
+  const items = await new Promise((resolve) => {
     chrome.downloads.search({
-      filenameRegex,
       exists: true,
-      state: "complete",
-      limit: 1
-    }, (items) => {
+      state: "complete"
+    }, (res) => {
       if (chrome.runtime.lastError) {
         resolve([]);
-        return;
+      } else {
+        resolve(res || []);
       }
-      resolve(items || []);
     });
   });
 
-  return matches.length > 0;
+  const foundInDownloads = items.some(item => {
+    const itemPath = String(item.filename || "").replace(/\\/g, "/").toLowerCase();
+    return itemPath.endsWith(lowerKey);
+  });
+
+  if (foundInDownloads) {
+    console.log("[BG] Image found in Chrome local downloads:", lowerKey);
+    db[lowerKey] = true;
+    chrome.storage.local.set({ downloaded_bible_images: db });
+    return true;
+  }
+
+  return false;
 }
+
+
 
 function buildFallbackCharacterImagePaths(bookTitle, chapterNum, characterName) {
   const safeBookTitle = sanitizeFilenamePart(bookTitle);
@@ -690,6 +746,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
           console.log(`[BG] Download started for ${filename}: id=${downloadId}`);
           if (typeof downloadId === "number") {
             activeDownloads.set(downloadId, filename);
+            
+            // 영구 스토리지 캐시에 등록하여 크롬이 이력을 지워도 100% 감지되도록 보장합니다.
+            const normalizedKey = filename.replace(/\\/g, "/").toLowerCase();
+            chrome.storage.local.get("downloaded_bible_images", (storage) => {
+              const db = storage.downloaded_bible_images || {};
+              db[normalizedKey] = true;
+              chrome.storage.local.set({ downloaded_bible_images: db });
+            });
           }
         }
       });
@@ -786,9 +850,23 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       }
     })();
   } else if (request.action === "check_file_exists") {
-    checkFileExists(request.filename)
-      .then(exists => sendResponse({ ok: true, exists }))
-      .catch(err => sendResponse({ ok: false, error: err.message }));
+    (async () => {
+      try {
+        const tabs = await new Promise((resolve) => {
+          chrome.tabs.query({}, resolve);
+        });
+        const bibleTab = tabs.find(t => t.url && (t.url.includes("localhost:8888") || t.url.includes("bibleforai.com")));
+        const origin = bibleTab ? new URL(bibleTab.url).origin : "https://bibleforai.com";
+
+        const exists = await checkFileExists(request.filename, origin);
+        sendResponse({ ok: true, exists });
+      } catch (err) {
+        sendResponse({ ok: false, error: err.message });
+      }
+    })();
+    return true;
+  } else if (request.action === "keep_alive_ping") {
+    sendResponse({ status: "alive" });
     return true;
   }
   return true;

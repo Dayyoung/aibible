@@ -102,8 +102,61 @@ const server = http.createServer((req, res) => {
         }
     }
 
+    // Helper function for case-insensitive file existence check on physical disk
+    function fileExistsCaseInsensitive(targetPath) {
+        const normalized = targetPath.replace(/\\/g, '/');
+        const parts = normalized.split('/');
+        let currentPath = parts[0] || (normalized.startsWith('/') ? '/' : '.');
+        const startIdx = (normalized.startsWith('/') || parts[0].includes(':')) ? 1 : 0;
 
+        for (let i = startIdx; i < parts.length; i++) {
+            const part = parts[i].toLowerCase();
+            if (!part) continue;
 
+            try {
+                const files = fs.readdirSync(currentPath);
+                const found = files.find(f => f.toLowerCase() === part);
+                if (!found) {
+                    return false;
+                }
+                currentPath = path.join(currentPath, found);
+            } catch (e) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Check physical file existence in user's Downloads folder
+    if (filePath === '/api/check_file') {
+        const urlParts = req.url.split('?');
+        const searchParams = new URLSearchParams(urlParts[1] || '');
+        const targetPath = searchParams.get('path');
+        
+        if (!targetPath) {
+            res.writeHead(400, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+            res.end(JSON.stringify({ exists: false, error: 'Missing path parameter' }));
+            return;
+        }
+
+        const homeDir = process.env.USERPROFILE || process.env.HOME;
+        const downloadsDir = path.join(homeDir, 'Downloads');
+        const absolutePath = path.join(downloadsDir, targetPath);
+
+        // Security check: ensure path is inside Downloads folder
+        if (!absolutePath.startsWith(downloadsDir)) {
+            res.writeHead(403, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+            res.end(JSON.stringify({ exists: false, error: 'Forbidden path' }));
+            return;
+        }
+
+        // Use case-insensitive check instead of strict existsSync to bypass case mismatch bugs
+        const exists = fileExistsCaseInsensitive(absolutePath);
+        
+        res.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+        res.end(JSON.stringify({ exists }));
+        return;
+    }
 
     if (filePath === '/' || filePath.endsWith('/')) {
         filePath += 'index.html';

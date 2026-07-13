@@ -112,13 +112,38 @@ async function getCharactersAndScreens() {
         const bookData = await fetchBookData(targetAbbrev);
         if (!bookData) return null;
         
-        // 5. Extract verses for the target chapter
-        const verses = bookData
-            .filter(item => item.type === "paragraph text" && item.chapterNumber === targetChapterNum)
-            .map(item => item.value.trim());
+        // 5. Extract verses for the target chapter, merging "paragraph text" and "line text" fragments by verseNumber
+        const chapterItems = bookData.filter(item => 
+            (item.type === "paragraph text" || item.type === "line text") && 
+            item.chapterNumber === targetChapterNum
+        );
+
+        if (chapterItems.length === 0) {
+            console.error("[Extension] Chapter not found in book data:", targetChapterNum);
+            return null;
+        }
+
+        // Group fragments by verseNumber
+        const verseMap = new Map();
+        chapterItems.forEach(item => {
+            const vNum = item.verseNumber;
+            if (typeof vNum !== "number") return;
+            const currentVal = item.value || "";
+            if (!verseMap.has(vNum)) {
+                verseMap.set(vNum, []);
+            }
+            verseMap.get(vNum).push(currentVal);
+        });
+
+        // Merge fragments and sort by verse number
+        const sortedVerses = Array.from(verseMap.keys()).sort((a, b) => a - b);
+        const verses = sortedVerses.map(vNum => {
+            const fragments = verseMap.get(vNum);
+            return fragments.join(" ").replace(/\s+/g, " ").trim();
+        });
 
         if (verses.length === 0) {
-            console.error("[Extension] Chapter not found in book data:", targetChapterNum);
+            console.error("[Extension] No valid verses extracted after merging");
             return null;
         }
         
