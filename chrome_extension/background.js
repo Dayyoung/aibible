@@ -3,6 +3,252 @@
 const FLOW_PROJECT_URL = "https://labs.google/fx/ko/tools/flow/project/15375760-e695-4b2f-ad56-71b7f69b4dc5";
 const FALLBACK_BIBLE_DOWNLOAD_ROOT = "/Users/dayyoung/Downloads/bible";
 
+const abbrevToEnglishName = {
+    "gn": "Genesis", "ex": "Exodus", "lv": "Leviticus", "nm": "Numbers", "dt": "Deuteronomy",
+    "js": "Joshua", "jud": "Judges", "rt": "Ruth", "1sm": "1Samuel", "2sm": "2Samuel",
+    "1kgs": "1Kings", "2kgs": "2Kings", "1ch": "1Chronicles", "2ch": "2Chronicles",
+    "ezr": "Ezra", "ne": "Nehemiah", "et": "Esther", "job": "Job", "ps": "Psalms",
+    "prv": "Proverbs", "ec": "Ecclesiastes", "so": "SongofSolomon", "is": "Isaiah",
+    "jr": "Jeremiah", "lm": "Lamentations", "ez": "Ezekiel", "dn": "Daniel", "ho": "Hosea",
+    "jl": "Joel", "am": "Amos", "ob": "Obadiah", "jn": "Jonah", "mi": "Micah",
+    "na": "Nahum", "hk": "Habakkuk", "zp": "Zephaniah", "hg": "Haggai", "zc": "Zechariah",
+    "ml": "Malachi", "mt": "Matthew", "mk": "Mark", "lk": "Luke", "jo": "John",
+    "act": "Acts", "rm": "Romans", "1co": "1Corinthians", "2co": "2Corinthians",
+    "gl": "Galatians", "eph": "Ephesians", "ph": "Philippians", "cl": "Colossians",
+    "1ts": "1Thessalonians", "2ts": "2Thessalonians", "1tm": "1Timothy", "2tm": "2Timothy",
+    "tt": "Titus", "phm": "Philemon", "hb": "Hebrews", "jm": "James", "1pe": "1Peter",
+    "2pe": "2Peter", "1jo": "1John", "2jo": "2John", "3jo": "3John", "jd": "Jude", "re": "Revelation"
+};
+
+async function getSelectedVersion() {
+  const storage = await new Promise(r => chrome.storage.local.get("bible_selected_version", r));
+  let version = storage.bible_selected_version;
+  if (!version) {
+    version = "en_wev";
+  }
+  return version;
+}
+
+async function getNextChapter(bookTitleOrAbbrev, chapterNum) {
+  const abbrevList = Object.keys(abbrevToEnglishName);
+  
+  // Find current book abbrev
+  const query = bookTitleOrAbbrev.toLowerCase().trim();
+  let currentAbbrev = abbrevList.find(a => a === query);
+  if (!currentAbbrev) {
+    currentAbbrev = abbrevList.find(a => {
+      const engName = abbrevToEnglishName[a] || "";
+      return engName.toLowerCase() === query;
+    });
+  }
+
+  if (!currentAbbrev) {
+    console.error("[BG] Could not find book abbrev for:", bookTitleOrAbbrev);
+    return null;
+  }
+
+  const englishName = abbrevToEnglishName[currentAbbrev];
+  if (!englishName) return null;
+
+  const fileName = englishName.toLowerCase() + ".json";
+  const jsonUrl = chrome.runtime.getURL(`json/${fileName}`);
+  
+  let bookData = null;
+  try {
+    const response = await fetch(jsonUrl);
+    if (response.ok) {
+      bookData = await response.json();
+    }
+  } catch (e) {
+    console.error("[BG] Failed to load book data for next chapter check", e);
+  }
+
+  if (!bookData) return null;
+
+  // Find max chapter number in this book data
+  const textItems = bookData.filter(item => item.type === "paragraph text");
+  const chapters = new Set(textItems.map(item => item.chapterNumber));
+  const maxChapter = chapters.size > 0 ? Math.max(...chapters) : 0;
+  
+  const currentChapterNum = parseInt(chapterNum);
+
+  if (currentChapterNum < maxChapter) {
+    // Next chapter in current book
+    return {
+      bookAbbrev: currentAbbrev,
+      bookTitle: englishName,
+      chapterNum: currentChapterNum + 1
+    };
+  } else {
+    // Move to next book
+    const currentIdx = abbrevList.indexOf(currentAbbrev);
+    if (currentIdx !== -1 && currentIdx + 1 < abbrevList.length) {
+      const nextAbbrev = abbrevList[currentIdx + 1];
+      const nextEnglishName = abbrevToEnglishName[nextAbbrev];
+      return {
+        bookAbbrev: nextAbbrev,
+        bookTitle: nextEnglishName,
+        chapterNum: 1
+      };
+    } else {
+      // Last book completed
+      return null;
+    }
+  }
+}
+
+async function ensureBibleContentScriptInjected(tabId) {
+  try {
+    await new Promise((resolve, reject) => {
+      chrome.tabs.sendMessage(tabId, { action: "ping" }, (response) => {
+        if (chrome.runtime.lastError || !response || response.status !== "pong") {
+          reject(new Error("Not loaded"));
+        } else {
+          resolve();
+        }
+      });
+    });
+    return false;
+  } catch (e) {
+    console.log("[BG] Bible content script not loaded. Injecting...");
+    await new Promise((resolve, reject) => {
+      chrome.scripting.executeScript({
+        target: { tabId },
+        files: ["content_bible.js"]
+      }, () => {
+        if (chrome.runtime.lastError) {
+          reject(new Error(chrome.runtime.lastError.message));
+        } else {
+          resolve();
+        }
+      });
+    });
+    await sleep(600);
+    return true;
+  }
+}
+
+async function navigateToNextChapterAndContinue(nextChapterInfo) {
+  const tabs = await new Promise((resolve) => {
+    chrome.tabs.query({}, resolve);
+  });
+  
+  const bibleTab = tabs.find(t => t.url && (t.url.includes("localhost:8888") || t.url.includes("bibleforai.com")));
+  if (!bibleTab || typeof bibleTab.id !== "number") {
+    console.error("[BG] Bible tab not found for navigation.");
+    chrome.storage.local.set({
+      active_state: "stopped",
+      pipeline_status: "에러: 성경 읽기 페이지를 찾을 수 없어 연속 생성을 중단합니다."
+    });
+    return;
+  }
+
+  const urlObj = new URL(bibleTab.url);
+  urlObj.searchParams.set("chapter", nextChapterInfo.bookAbbrev);
+  urlObj.searchParams.set("number", String(nextChapterInfo.chapterNum));
+  urlObj.searchParams.delete("verse");
+  
+  const newUrl = urlObj.toString();
+  console.log("[BG] Navigating bible tab to next chapter:", newUrl);
+  
+  chrome.storage.local.set({
+    pipeline_status: `다음 장으로 이동 중: ${nextChapterInfo.bookTitle} ${nextChapterInfo.chapterNum}장...`
+  });
+
+  await new Promise((resolve) => {
+    chrome.tabs.update(bibleTab.id, { url: newUrl }, (tab) => {
+      const listener = (tabId, changeInfo) => {
+        if (tabId === bibleTab.id && changeInfo.status === "complete") {
+          chrome.tabs.onUpdated.removeListener(listener);
+          resolve();
+        }
+      };
+      chrome.tabs.onUpdated.addListener(listener);
+    });
+  });
+
+  await sleep(2500);
+  await ensureBibleContentScriptInjected(bibleTab.id);
+
+  chrome.tabs.sendMessage(bibleTab.id, { action: "extract_screens" }, async (response) => {
+    if (chrome.runtime.lastError || !response || !response.ok) {
+      console.error("[BG] Failed to extract screens after navigation:", chrome.runtime.lastError?.message);
+      chrome.storage.local.set({
+        active_state: "stopped",
+        pipeline_status: "에러: 다음 장에서 구절을 추출하지 못했습니다."
+      });
+      return;
+    }
+
+    const { info } = response;
+    const { bookTitle, chapterNum, screens } = info;
+    
+    let characterDb = {};
+    try {
+      const res = await fetch(chrome.runtime.getURL("character_prompts.json"));
+      characterDb = await res.json();
+    } catch (err) {
+      console.warn("[BG] Failed to load character_prompts.json", err);
+    }
+
+    const prompts = screens.map((screen) => {
+      const characterNames = Array.isArray(screen.characters) ? screen.characters : [];
+      const descParts = [];
+      characterNames.forEach((name) => {
+        const cleanName = name.replace(/^character_/i, "").trim();
+        const desc = characterDb[cleanName];
+        if (desc) {
+          descParts.push(`${cleanName}: ${desc}`);
+        }
+      });
+
+      let promptText = screen.text;
+      if (descParts.length > 0) {
+        promptText += `, ${descParts.join(", ")}`;
+      }
+
+      return {
+        type: "screen",
+        verseNumber: screen.verseNumber,
+        verseText: screen.text,
+        characterNames,
+        imagePrompt: `${promptText}, Chibi bible 2D Style. --no text`,
+        bookTitle,
+        chapterNum
+      };
+    });
+
+    const storageData = await new Promise(r => chrome.storage.local.get("generation_mode", r));
+    const mode = storageData.generation_mode || "screen";
+
+    await new Promise((resolve) => {
+      chrome.storage.local.set({
+        active_state: "running",
+        current_count: 0,
+        total_count: prompts.length,
+        pipeline_status: `${screens.length}개 구절 감지됨. Flow에서 연속 생성 진행 중...`,
+        bible_prompts: prompts,
+        current_book: bookTitle,
+        current_chapter: chapterNum
+      }, resolve);
+    });
+
+    const { tab, created } = await findOrOpenFlowTab();
+    if (!created) {
+      const injected = await ensureFlowContentScriptInjected(tab.id);
+      if (!injected) {
+        chrome.tabs.sendMessage(tab.id, {
+          action: "execute_bible_flow_generation",
+          prompts: prompts,
+          mode: mode,
+          bookTitle: bookTitle,
+          chapterNum: chapterNum
+        });
+      }
+    }
+  });
+}
+
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -463,6 +709,21 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         sendResponse({ ok: false, error: err.message });
       });
     return true;
+  } else if (request.action === "bible_chapter_completed") {
+    console.log(`[BG] Chapter completed: ${request.bookTitle} Chapter ${request.chapterNum}. Planning next...`);
+    (async () => {
+      const nextInfo = await getNextChapter(request.bookTitle, request.chapterNum);
+      if (nextInfo) {
+        console.log(`[BG] Next chapter found: ${nextInfo.bookTitle} ${nextInfo.chapterNum}`);
+        await navigateToNextChapterAndContinue(nextInfo);
+      } else {
+        console.log("[BG] No more chapters. Pipeline fully complete.");
+        chrome.storage.local.set({
+          active_state: "stopped",
+          pipeline_status: "성경 전체 이미지 생성 완료!"
+        });
+      }
+    })();
   }
   return true;
 });

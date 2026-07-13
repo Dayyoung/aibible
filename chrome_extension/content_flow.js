@@ -963,12 +963,21 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         await sleep(1500);
       }
 
-      showOverlay(totalCount, totalCount, "생성 완료! 모든 이미지가 저장되었습니다.");
-      chrome.storage.local.set({
-        active_state: "stopped",
-        current_count: totalCount,
-        pipeline_status: "작업 완료"
-      });
+      if (!isAborted) {
+        showOverlay(totalCount, totalCount, "생성 완료! 다음 장 이동 준비 중...");
+        chrome.runtime.sendMessage({
+          action: "bible_chapter_completed",
+          bookTitle: bookTitle,
+          chapterNum: chapterNum
+        });
+      } else {
+        showOverlay(totalCount, totalCount, "생성 중단되었습니다.");
+        chrome.storage.local.set({
+          active_state: "stopped",
+          current_count: totalCount,
+          pipeline_status: "작업 중단"
+        });
+      }
       await sleep(2000);
       removeOverlay();
       } finally {

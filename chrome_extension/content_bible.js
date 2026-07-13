@@ -59,16 +59,23 @@ async function getCharactersAndScreens() {
         const chapterParam = urlParams.get('chapter') || urlParams.get('chapter_number');
         const numberParam = urlParams.get('number') || urlParams.get('chapter_number');
         
-        // Helper to fetch the English WEV json file
-        const fetchBibleData = async () => {
-            if (bibleData) return bibleData;
-            const response = await fetch('/bible/json/en_wev.json');
-            if (!response.ok) {
-                console.error("[Extension] Failed to fetch en_wev.json");
+        const fetchBookData = async (abbrev) => {
+            const englishName = abbrevToEnglishName[abbrev.toLowerCase()];
+            if (!englishName) {
+                console.error("[Extension] No english name mapping for abbrev:", abbrev);
                 return null;
             }
-            bibleData = await response.json();
-            return bibleData;
+            const fileName = englishName.toLowerCase() + ".json";
+            const jsonUrl = chrome.runtime.getURL(`json/${fileName}`);
+            try {
+                const response = await fetch(jsonUrl);
+                if (response.ok) {
+                    return await response.json();
+                }
+            } catch (e) {
+                console.error(`[Extension] Failed to fetch book data for ${fileName}`, e);
+            }
+            return null;
         };
 
         if (chapterParam && numberParam) {
@@ -81,9 +88,10 @@ async function getCharactersAndScreens() {
                 if (savedStr) {
                     const saved = JSON.parse(savedStr);
                     if (saved && typeof saved.bookIndex === 'number' && typeof saved.chapterIndex === 'number') {
-                        const data = await fetchBibleData();
-                        if (data && data[saved.bookIndex]) {
-                            targetAbbrev = data[saved.bookIndex].abbrev.toLowerCase();
+                        const abbrevList = Object.keys(abbrevToEnglishName);
+                        const abbrev = abbrevList[saved.bookIndex];
+                        if (abbrev) {
+                            targetAbbrev = abbrev;
                             targetChapterNum = saved.chapterIndex + 1;
                         }
                     }
@@ -100,22 +108,17 @@ async function getCharactersAndScreens() {
             targetChapterNum = 1;
         }
 
-        // 4. Fetch bible data if not fetched yet
-        const data = await fetchBibleData();
-        if (!data) return null;
-
-        // 5. Find the book
-        const book = data.find(b => b.abbrev.toLowerCase() === targetAbbrev);
-        if (!book) {
-            console.error("[Extension] Book not found for abbreviation:", targetAbbrev);
-            return null;
-        }
+        // 4. Fetch Book JSON
+        const bookData = await fetchBookData(targetAbbrev);
+        if (!bookData) return null;
         
-        // 6. Get the chapter verses
-        const chapterIndex = targetChapterNum - 1;
-        const verses = book.chapters[chapterIndex];
-        if (!verses) {
-            console.error("[Extension] Chapter not found:", targetChapterNum);
+        // 5. Extract verses for the target chapter
+        const verses = bookData
+            .filter(item => item.type === "paragraph text" && item.chapterNumber === targetChapterNum)
+            .map(item => item.value.trim());
+
+        if (verses.length === 0) {
+            console.error("[Extension] Chapter not found in book data:", targetChapterNum);
             return null;
         }
         

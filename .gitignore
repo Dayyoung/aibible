@@ -11,4 +11,6 @@ token.json
 !boostsm/*.json
 !bible/json/*.json
 !bible/ko_ko.json
+!chrome_extension/json/*.json
+!chrome_extension/character_prompts.json
 _session/
