@@ -3,6 +3,8 @@
 const FLOW_PROJECT_URL = "https://labs.google/fx/ko/tools/flow/project/15375760-e695-4b2f-ad56-71b7f69b4dc5";
 const FALLBACK_BIBLE_DOWNLOAD_ROOT = "/Users/dayyoung/Downloads/bible";
 
+const activeDownloads = new Map();
+
 const abbrevToEnglishName = {
     "gn": "Genesis", "ex": "Exodus", "lv": "Leviticus", "nm": "Numbers", "dt": "Deuteronomy",
     "js": "Joshua", "jud": "Judges", "rt": "Ruth", "1sm": "1Samuel", "2sm": "2Samuel",
@@ -630,6 +632,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
           console.error(`[BG] Download failed for ${filename}:`, chrome.runtime.lastError.message);
         } else {
           console.log(`[BG] Download started for ${filename}: id=${downloadId}`);
+          if (typeof downloadId === "number") {
+            activeDownloads.set(downloadId, filename);
+          }
         }
       });
 
@@ -730,19 +735,40 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
 // Force all downloaded files to have .jpg extension (avoiding Windows chrome .jfif bug)
 chrome.downloads.onDeterminingFilename.addListener((item, suggest) => {
-  let filename = item.filename;
-  const lower = filename.toLowerCase();
+  let originalFilename = activeDownloads.get(item.id);
 
-  if (lower.endsWith(".jfif")) {
-    filename = filename.slice(0, -5) + ".jpg";
-    suggest({ filename: filename, conflictAction: "overwrite" });
-  } else if (lower.endsWith(".jpeg")) {
-    filename = filename.slice(0, -5) + ".jpg";
-    suggest({ filename: filename, conflictAction: "overwrite" });
-  } else if (lower.endsWith(".png")) {
-    filename = filename.slice(0, -4) + ".jpg";
+  if (originalFilename) {
+    activeDownloads.delete(item.id);
+
+    let filename = originalFilename;
+    const lower = filename.toLowerCase();
+
+    if (lower.endsWith(".jfif")) {
+      filename = filename.slice(0, -5) + ".jpg";
+    } else if (lower.endsWith(".jpeg")) {
+      filename = filename.slice(0, -5) + ".jpg";
+    } else if (lower.endsWith(".png")) {
+      filename = filename.slice(0, -4) + ".jpg";
+    } else if (!lower.endsWith(".jpg")) {
+      filename = filename + ".jpg";
+    }
+
     suggest({ filename: filename, conflictAction: "overwrite" });
   } else {
-    suggest();
+    let filename = item.filename;
+    const lower = filename.toLowerCase();
+
+    if (lower.endsWith(".jfif")) {
+      filename = filename.slice(0, -5) + ".jpg";
+      suggest({ filename: filename, conflictAction: "overwrite" });
+    } else if (lower.endsWith(".jpeg")) {
+      filename = filename.slice(0, -5) + ".jpg";
+      suggest({ filename: filename, conflictAction: "overwrite" });
+    } else if (lower.endsWith(".png")) {
+      filename = filename.slice(0, -4) + ".jpg";
+      suggest({ filename: filename, conflictAction: "overwrite" });
+    } else {
+      suggest();
+    }
   }
 });
