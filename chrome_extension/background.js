@@ -283,13 +283,25 @@ async function findOrOpenFlowTab() {
   const flowTab = tabs.find(t => t.url && t.url.includes("labs.google/fx/") && t.url.includes("/tools/flow/project/"));
   if (flowTab && typeof flowTab.id === "number") {
     await new Promise((resolve) => {
-      chrome.tabs.update(flowTab.id, { active: true }, resolve);
+      chrome.tabs.update(flowTab.id, { active: true }, (tab) => {
+        if (tab && typeof tab.windowId === "number") {
+          chrome.windows.update(tab.windowId, { focused: true }, () => resolve());
+        } else {
+          resolve();
+        }
+      });
     });
     return { tab: flowTab, created: false };
   }
 
   const createdTab = await new Promise((resolve) => {
-    chrome.tabs.create({ url: FLOW_PROJECT_URL, active: true }, resolve);
+    chrome.tabs.create({ url: FLOW_PROJECT_URL, active: true }, (tab) => {
+      if (tab && typeof tab.windowId === "number") {
+        chrome.windows.update(tab.windowId, { focused: true }, () => resolve(tab));
+      } else {
+        resolve(tab);
+      }
+    });
   });
   await sleep(4000);
   return { tab: createdTab, created: true };

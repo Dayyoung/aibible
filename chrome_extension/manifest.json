@@ -13,7 +13,7 @@
     "unlimitedStorage"
   ],
   "host_permissions": [
-    "https://labs.google/fx/*",
+    "https://labs.google/*",
     "http://localhost:*/*",
     "http://127.0.0.1:*/*",
     "https://bibleforai.com/*"
