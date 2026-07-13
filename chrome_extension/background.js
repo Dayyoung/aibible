@@ -727,3 +727,22 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   }
   return true;
 });
+
+// Force all downloaded files to have .jpg extension (avoiding Windows chrome .jfif bug)
+chrome.downloads.onDeterminingFilename.addListener((item, suggest) => {
+  let filename = item.filename;
+  const lower = filename.toLowerCase();
+
+  if (lower.endsWith(".jfif")) {
+    filename = filename.slice(0, -5) + ".jpg";
+    suggest({ filename: filename, conflictAction: "overwrite" });
+  } else if (lower.endsWith(".jpeg")) {
+    filename = filename.slice(0, -5) + ".jpg";
+    suggest({ filename: filename, conflictAction: "overwrite" });
+  } else if (lower.endsWith(".png")) {
+    filename = filename.slice(0, -4) + ".jpg";
+    suggest({ filename: filename, conflictAction: "overwrite" });
+  } else {
+    suggest();
+  }
+});
