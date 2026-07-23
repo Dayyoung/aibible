@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AI Bible Video Player & Recorder</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+      color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+    }
+
+    #stage {
+      width: 100vw;
+      height: 100vh;
+      display: block;
+      background: #000;
+    }
+
+    #caption {
+      position: fixed;
+      left: 50%;
+      bottom: 6vh;
+      transform: translateX(-50%);
+      width: min(980px, calc(100vw - 48px));
+      padding: 18px 24px;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #f8fafc;
+      font-size: clamp(18px, 2.2vw, 28px);
+      line-height: 1.45;
+      text-align: center;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+      box-sizing: border-box;
+      display: block; /* Show subtitles/verses by default */
+    }
+
+    #badge {
+      position: fixed;
+      top: 22px;
+      left: 24px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.58);
+      color: #cbd5e1;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="stage"></canvas>
+  <div id="badge">AI Bible Video Maker</div>
+  <div id="caption"></div>
+  <script src="player.js"></script>
+</body>
+</html>

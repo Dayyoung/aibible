@@ -868,6 +868,34 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   } else if (request.action === "keep_alive_ping") {
     sendResponse({ status: "alive" });
     return true;
+  } else if (request.action === "manual_slideshow_finished") {
+    (async () => {
+      try {
+        const data = await new Promise((resolve) => {
+          chrome.storage.local.get("active_manual_player", resolve);
+        });
+        const player = data.active_manual_player;
+        if (player && player.tabId) {
+          await new Promise((resolve) => chrome.tabs.remove(player.tabId, resolve));
+        }
+
+        const statusText = request.reason === "completed"
+          ? `${request.bookTitle} ${request.chapterNum}장 비디오 저장 완료!`
+          : `비디오 저장 실패/취소됨: ${request.reason}`;
+
+        await new Promise((resolve) => {
+          chrome.storage.local.set({
+            active_state: "stopped",
+            pipeline_status: statusText
+          }, resolve);
+        });
+
+        console.log(`[BG] Video slideshow finished for ${request.bookTitle} ${request.chapterNum}. Status: ${statusText}`);
+      } catch (err) {
+        console.error("[BG] Failed to process manual_slideshow_finished", err);
+      }
+    })();
+    return true;
   }
   return true;
 });

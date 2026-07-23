@@ -34,16 +34,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
         statusDesc.innerText = pipelineStatus;
 
+        const videoBtn = document.getElementById("video-btn");
+        const videoStopBtn = document.getElementById("video-stop-btn");
+
         if (activeState === "running") {
           characterBtn.disabled = true;
           screenBtn.disabled = true;
+          if (videoBtn) videoBtn.disabled = true;
           stopBtn.style.display = "block";
+          if (videoStopBtn) videoStopBtn.style.display = "block";
           statusCounter.innerText = `진행도: ${currentCount} / ${totalCount}`;
           progressIndicator.style.width = `${totalCount > 0 ? (currentCount / totalCount) * 100 : 0}%`;
         } else {
           characterBtn.disabled = false;
           screenBtn.disabled = false;
+          if (videoBtn) videoBtn.disabled = false;
           stopBtn.style.display = "none";
+          if (videoStopBtn) videoStopBtn.style.display = "none";
           statusCounter.innerText = `진행도: ${currentCount} / ${totalCount}`;
           progressIndicator.style.width = `${totalCount > 0 ? (currentCount / totalCount) * 100 : 0}%`;
         }
@@ -306,6 +313,165 @@ document.addEventListener("DOMContentLoaded", () => {
     updateUI();
     chrome.runtime.sendMessage({ action: "stop_bible_pipeline" });
   });
+
+  const videoBtn = document.getElementById("video-btn");
+  const videoStopBtn = document.getElementById("video-stop-btn");
+
+  // Trigger Video generation
+  if (videoBtn) {
+    videoBtn.addEventListener("click", async () => {
+      let targetTab = null;
+      const tabs = await new Promise(r => chrome.tabs.query({ currentWindow: true }, r));
+      const activeTab = tabs.find(t => t.active);
+      if (activeTab && activeTab.url && (activeTab.url.includes("localhost:8888") || activeTab.url.includes("bibleforai.com"))) {
+        targetTab = activeTab;
+      } else {
+        targetTab = tabs.find(t => t.url && (t.url.includes("localhost:8888") || t.url.includes("bibleforai.com")));
+      }
+
+      if (!targetTab || !targetTab.id) {
+        await setStorageLocal({
+          active_state: "stopped",
+          pipeline_status: "성경 읽기 페이지(localhost:8888 등)를 찾을 수 없습니다."
+        });
+        updateUI();
+        return;
+      }
+
+      try {
+        await setStorageLocal({ pipeline_status: "성경 연결성 확인 중..." });
+        updateUI();
+        await ensureContentScriptInjected(targetTab.id);
+      } catch (err) {
+        await setStorageLocal({
+          active_state: "stopped",
+          pipeline_status: `스크립트 주입 실패: ${err.message}`
+        });
+        updateUI();
+        return;
+      }
+
+      await setStorageLocal({ pipeline_status: "성경 구절 및 이미지 경로 수집 중..." });
+      updateUI();
+
+      chrome.tabs.sendMessage(targetTab.id, { action: "extract_screens" }, async (response) => {
+        if (chrome.runtime.lastError || !response || !response.ok) {
+          const errMsg = response && response.error
+            ? `데이터 추출 실패: ${response.error}`
+            : "데이터 추출 실패: 성경 페이지에서 실행 중인지 확인하세요.";
+          await setStorageLocal({ active_state: "stopped", pipeline_status: errMsg });
+          updateUI();
+          return;
+        }
+
+        const { info } = response;
+        const { bookTitle, chapterNum, screens } = info;
+        if (!screens || !screens.length) {
+          await setStorageLocal({ active_state: "stopped", pipeline_status: "성경 본문에서 추출된 구절이 없습니다." });
+          updateUI();
+          return;
+        }
+
+        // 1. Try to load kids summarized bible from ollama folder, then fallback to forkid, then fallback to original text
+        let narrationTexts = [];
+        let summaryLoaded = false;
+        
+        const tryFetchSummary = async (folder) => {
+          try {
+            const res = await fetch(chrome.runtime.getURL(`${folder}/${bookTitle.toLowerCase()}.json`));
+            if (res.ok) {
+              const data = await res.json();
+              const chNum = parseInt(chapterNum);
+              // Filter chapter items
+              const chItems = data.filter(item => item.chapterNumber === chNum && item.type === "paragraph text");
+              if (chItems.length > 0) {
+                narrationTexts = chItems.map(item => item.value);
+                summaryLoaded = true;
+                return true;
+              }
+            }
+          } catch (e) {
+            console.warn(`Summary not found in ${folder}`, e);
+          }
+          return false;
+        };
+
+        await tryFetchSummary("ollama");
+        if (!summaryLoaded) {
+          await tryFetchSummary("forkid");
+        }
+
+        if (!summaryLoaded) {
+          // Fallback: Use original verses, inject narration prefix on first verse
+          narrationTexts = screens.map((s, idx) => {
+            if (idx === 0) {
+              return `${bookTitle} ${chapterNum}장 1절. ${s.text}`;
+            }
+            return s.text;
+          });
+        }
+
+        // 2. Generate local web server image URLs
+        const origin = new URL(targetTab.url).origin;
+        const images = screens.map(s => {
+          return `${origin}/bible/${bookTitle}/Chapter_${chapterNum}/${s.verseNumber}.jpg`;
+        });
+
+        const payload = {
+          sessionId: `video_${Date.now()}_${Math.random().toString(16).slice(2)}`,
+          bookTitle,
+          chapterNum,
+          filename: `bible/${bookTitle}/Chapter_${chapterNum}/${bookTitle}_Chapter_${chapterNum}_video.webm`,
+          images,
+          verses: narrationTexts,
+          ttsSettings: { rate: 0.95, volume: 1 }
+        };
+
+        await setStorageLocal({
+          active_state: "running",
+          current_count: 0,
+          total_count: screens.length,
+          pipeline_status: "성경 비디오 플레이어 탭 생성 중...",
+          manual_player_payload: payload,
+          active_manual_player: { tabId: null }
+        });
+        updateUI();
+
+        // 3. Create player tab and save its tabId
+        chrome.tabs.create({
+          url: chrome.runtime.getURL(`player.html?sessionId=${payload.sessionId}`),
+          active: false, // background recording
+          pinned: true
+        }, async (newTab) => {
+          await setStorageLocal({
+            active_manual_player: { tabId: newTab.id }
+          });
+          await setStorageLocal({
+            pipeline_status: `${bookTitle} ${chapterNum}장 비디오 생성 시작...`
+          });
+          updateUI();
+        });
+      });
+    });
+  }
+
+  // Stop video recording manually
+  if (videoStopBtn) {
+    videoStopBtn.addEventListener("click", async () => {
+      const data = await getStorageLocal("active_manual_player");
+      const player = data.active_manual_player;
+      if (player && player.tabId) {
+        chrome.tabs.sendMessage(player.tabId, { target: "snshero_player", action: "stop_player", sessionId: "" }, () => {
+          chrome.tabs.remove(player.tabId);
+        });
+      }
+      await setStorageLocal({
+        active_state: "stopped",
+        pipeline_status: "동영상 생성이 사용자 요청으로 중지되었습니다."
+      });
+      updateUI();
+    });
+  }
 
   // Handle folder upload for manual files mapping
   folderSelectBtn.addEventListener("click", () => {

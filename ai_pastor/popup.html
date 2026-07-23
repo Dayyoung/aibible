@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Minister</title>
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #0f172a, #1e1b4b);
+      --card-bg: rgba(30, 41, 59, 0.7);
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --accent: #10b981;
+      --accent-hover: #059669;
+      --danger: #ef4444;
+      --border: rgba(99, 102, 241, 0.2);
+    }
+
+    body {
+      width: 460px;
+      height: 680px;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .container {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 800;
+      background: linear-gradient(to right, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      color: var(--text-sub);
+      margin-top: 4px;
+    }
+
+    .upload-zone {
+      border: 2px dashed var(--border);
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      background: var(--card-bg);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 12px;
+    }
+
+    .upload-zone:hover {
+      border-color: var(--primary);
+      background: rgba(99, 102, 241, 0.1);
+    }
+
+    .upload-icon {
+      font-size: 24px;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .upload-text {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .upload-subtext {
+      font-size: 11px;
+      color: var(--text-sub);
+      margin-top: 2px;
+    }
+
+    #file-input,
+    #manual-video-input {
+      display: none;
+    }
+
+    .input-textarea {
+      width: 100%;
+      height: 70px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-main);
+      padding: 8px;
+      box-sizing: border-box;
+      resize: none;
+      font-size: 12px;
+      margin-bottom: 12px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .input-textarea:focus {
+      border-color: var(--primary);
+    }
+
+    .settings-panel {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+
+    .settings-title {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .form-field {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 11px;
+      color: var(--text-sub);
+      margin-bottom: 5px;
+    }
+
+    .select-input,
+    .text-input {
+      width: 100%;
+      height: 34px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-main);
+      padding: 0 8px;
+      box-sizing: border-box;
+      font-size: 12px;
+      outline: none;
+    }
+
+    .select-input:focus,
+    .text-input:focus,
+    .prompt-textarea:focus {
+      border-color: var(--primary);
+    }
+
+    .prompt-textarea {
+      width: 100%;
+      height: 56px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-main);
+      padding: 8px;
+      box-sizing: border-box;
+      resize: none;
+      font-size: 12px;
+      outline: none;
+    }
+
+    .settings-help {
+      font-size: 10px;
+      color: var(--text-sub);
+      margin-top: 5px;
+      line-height: 1.35;
+    }
+
+    .status-panel {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .status-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .status-label {
+      color: var(--text-sub);
+    }
+
+    .status-value {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transition: width 0.3s ease;
+    }
+
+    .sentences-container {
+      flex: 1;
+      background: rgba(15, 23, 42, 0.4);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow-y: auto;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+
+    .sentence-item {
+      padding: 8px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      margin-bottom: 6px;
+      background: rgba(255, 255, 255, 0.03);
+      border-left: 3px solid transparent;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sentence-item.active {
+      background: rgba(99, 102, 241, 0.15);
+      border-left-color: var(--primary);
+      font-weight: bold;
+    }
+
+    .sentence-item.completed {
+      background: rgba(16, 185, 129, 0.05);
+      border-left-color: var(--accent);
+      color: var(--text-sub);
+      text-decoration: line-through;
+    }
+
+    .sentence-text {
+      flex: 1;
+      margin-right: 10px;
+      word-break: break-all;
+    }
+
+    .sentence-badge {
+      font-size: 9px;
+      padding: 2px 6px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      white-space: nowrap;
+    }
+
+    .sentence-item.active .sentence-badge {
+      background: var(--primary);
+      color: white;
+    }
+
+    .sentence-item.completed .sentence-badge {
+      background: var(--accent);
+      color: white;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    button.btn {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #818cf8);
+      color: white;
+      box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-danger {
+      background: rgba(239, 68, 68, 0.2);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      color: #fca5a5;
+    }
+
+    .btn-danger:hover {
+      background: var(--danger);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      color: var(--text-main);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      background: rgba(16, 185, 129, 0.12);
+      transform: translateY(-1px);
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none !important;
+    }
+
+    /* Tabs layout */
+    .tabs-nav {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 4px;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 6px;
+      background: transparent;
+      border: none;
+      color: var(--text-sub);
+      font-weight: 600;
+      font-size: 12px;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .tab-btn:hover {
+      color: var(--text-main);
+    }
+
+    .tab-btn.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    .tab-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 0;
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AI Pastor</h1>
+      <div class="subtitle">Sermon Creator & Google Vids Automation Helper</div>
+    </header>
+
+    <!-- Tabs navigation -->
+    <div class="tabs-nav">
+      <button class="tab-btn" id="tab-btn-script" data-tab="script-tab">비디오 스크립트 작성</button>
+      <button class="tab-btn active" id="tab-btn-sermon" data-tab="sermon-tab">설교 생성</button>
+    </div>
+
+    <!-- Tab 1: Script splitter -->
+    <div id="script-tab" class="tab-content" style="display: none;">
+      <!-- Upload area -->
+      <div class="upload-zone" id="drop-zone">
+        <span class="upload-icon">📂</span>
+        <span class="upload-text">여기에 텍스트 파일(.txt)을 끌어다 놓거나 클릭하세요</span>
+        <span class="upload-subtext">파일을 로딩하면 문장 단위로 자동 분할됩니다.</span>
+        <input type="file" id="file-input" accept=".txt">
+      </div>
+
+      <!-- Text area fallback/custom input -->
+      <textarea class="input-textarea" id="text-input" placeholder="또는 여기에 텍스트를 직접 입력한 뒤 아래 분할 버튼을 누르세요..."></textarea>
+
+      <!-- Avatar and prompt settings -->
+      <div class="settings-panel">
+        <div class="settings-title">아바타 및 프롬프트 설정</div>
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-label" for="avatar-select">아바타</label>
+            <select class="select-input" id="avatar-select">
+              <option value="actor30">Benjamin / 3D 만화</option>
+              <option value="first">첫 번째 보이는 아바타</option>
+              <option value="custom">직접 입력</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="avatar-id-input">직접 입력 ID</label>
+            <input class="text-input" id="avatar-id-input" type="text" placeholder="예: actor30">
+          </div>
+        </div>
+        <label class="form-label" for="prompt-input">프롬프트</label>
+        <textarea class="prompt-textarea" id="prompt-input" placeholder="예: 따뜻하고 차분한 목회자 톤으로 말해줘. {text}"></textarea>
+        <div class="settings-help">{text} 또는 {sentence}를 넣으면 각 문장으로 치환됩니다. 없으면 프롬프트 뒤에 문장을 이어붙입니다.</div>
+      </div>
+
+      <!-- Status panel -->
+      <div class="status-panel">
+        <div class="status-row">
+          <span class="status-label">자동화 상태:</span>
+          <span class="status-value" id="status-text">대기 중</span>
+        </div>
+        <div class="status-row">
+          <span class="status-label">진행 상황:</span>
+          <span id="progress-text">0 / 0 문장 (0%)</span>
+        </div>
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="progress-indicator"></div>
+        </div>
+      </div>
+
+      <!-- Sentence list -->
+      <div class="sentences-container" id="sentences-list">
+        <div style="text-align: center; color: var(--text-sub); margin-top: 50px; font-size: 12px;">
+          로딩된 문장이 없습니다.
+        </div>
+      </div>
+
+      <!-- Control Buttons -->
+      <div class="actions">
+        <button class="btn btn-danger" id="btn-reset" disabled>초기화</button>
+        <button class="btn btn-primary" id="btn-start" disabled>비디오 생성 시작</button>
+      </div>
+    </div>
+
+    <!-- Tab 2: Sermon generator -->
+    <div id="sermon-tab" class="tab-content">
+      <div class="settings-panel">
+        <div class="settings-title">성경 챕터 및 장 선택 (정렬: 성경 순서)</div>
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-label" for="sermon-book-select">성경 책 (챕터)</label>
+            <select class="select-input" id="sermon-book-select">
+              <!-- Dynamically populated -->
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="sermon-chapter-select">장 (Chapter)</label>
+            <select class="select-input" id="sermon-chapter-select">
+              <!-- Dynamically populated -->
+            </select>
+          </div>
+        </div>
+        <div class="settings-help">생성 버튼을 누르면 선택한 장부터 NotebookLM 비디오를 다운로드하고, 중지할 때까지 다음 장을 계속 생성합니다. 인트로 결합은 수동병합에서 처리합니다.</div>
+        <input type="file" id="manual-video-input" accept="video/mp4,.mp4" multiple>
+      </div>
+
+      <!-- Status panel -->
+      <div class="status-panel">
+        <div class="status-row">
+          <span class="status-label">설교 생성 상태:</span>
+          <span class="status-value" id="sermon-status-text">대기 중</span>
+        </div>
+        <div class="status-row" id="sermon-progress-row" style="display: none;">
+          <span class="status-label">진행 상황:</span>
+          <span id="sermon-progress-text">대기 중...</span>
+        </div>
+      </div>
+
+      <!-- Control Button -->
+      <div class="actions" style="margin-top: auto;">
+        <button class="btn btn-danger" id="btn-sermon-reset" disabled>중지</button>
+        <button class="btn btn-secondary" id="btn-manual-merge">수동병합</button>
+        <button class="btn btn-primary" id="btn-sermon-start">설교 비디오 연속 생성 시작</button>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

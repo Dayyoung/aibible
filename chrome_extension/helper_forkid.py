@@ -3,6 +3,13 @@ import os
 import re
 
 BIBLE_MAPPING = {
+    'ezekiel': '에스겔',
+    'daniel': '다니엘',
+    'hosea': '호세아',
+    'joel': '요엘',
+    'amos': '아모스',
+    'obadiah': '오바디야',
+    'jonah': '요나',
     'micah': '미가',
     'nahum': '나훔',
     'habakkuk': '하박국',

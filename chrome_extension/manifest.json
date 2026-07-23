@@ -50,7 +50,9 @@
     {
       "resources": [
         "json/*.json",
-        "character_prompts.json"
+        "character_prompts.json",
+        "ollama/*.json",
+        "forkid/*.json"
       ],
       "matches": [
         "http://localhost/*",

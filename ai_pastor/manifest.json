@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "AI Pastor",
+  "version": "1.0",
+  "description": "Text splitter & NotebookLM / Google Vids automation helper",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs",
+    "scripting",
+    "debugger",
+    "downloads"
+  ],
+  "host_permissions": [
+    "https://docs.google.com/*",
+    "https://notebooklm.google.com/*",
+    "http://localhost:8888/*",
+    "http://127.0.0.1:8888/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://docs.google.com/videos/*",
+        "https://docs.google.com/presentation/*",
+        "https://notebooklm.google.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}
