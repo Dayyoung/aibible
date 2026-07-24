@@ -617,11 +617,36 @@ main.app-main {
 
 @media (max-width: 600px) {
   header.app-header {
-    padding: 0 12px;
+    height: auto;
+    padding: 10px 12px;
+    align-items: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .logo-area {
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
   .logo-title {
-    font-size: 22px;
+    font-size: 20px;
+    line-height: 1.05;
+  }
+
+  .header-controls {
+    flex: 1 1 100%;
+    justify-content: flex-start;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .btn-icon {
+    font-size: 14px;
+    height: 38px;
+    padding: 0 12px;
+    white-space: nowrap;
+    max-width: 100%;
   }
 
   .storybook-viewport {
