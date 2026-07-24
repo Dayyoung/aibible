@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = 8888;
+const PORT = process.env.PORT || 9090;
 const ROOT = __dirname;
 const manualMergeJobs = new Map();
 
@@ -536,7 +536,9 @@ const server = http.createServer((req, res) => {
     if (filePath === '/' || filePath.endsWith('/')) {
         filePath += 'index.html';
     }
-    filePath = path.join(ROOT, filePath);
+    const relativePath = filePath.replace(/^\/+/, '');
+    filePath = path.join(ROOT, relativePath);
+    console.log('[Static Router] Resolved filePath:', filePath, '| ROOT:', ROOT);
 
     if (!filePath.startsWith(ROOT)) {
         res.statusCode = 403;

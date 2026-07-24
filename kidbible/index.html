@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>어린이 성경 동화책 (KidBible) - 사랑과 지혜의 성경 이야기</title>
+  <meta name="description" content="어린이를 위한 친근하고 따뜻한 성경 동화책 웹앱입니다. 구약 39권과 신약 27권의 성경 이야기를 스마트폰과 PC에서 동화책으로 읽어보세요.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-cream">
+
+  <!-- Header Section -->
+  <header class="app-header">
+    <div class="logo-area" id="logo-btn">
+      <span class="logo-icon">📖</span>
+      <h1 class="logo-title">어린이 성경 동화책</h1>
+    </div>
+
+    <div class="header-controls">
+      <button class="btn-icon" id="btn-toc" aria-label="목차 보기">
+        <span>📚</span> 목차 보기
+      </button>
+      <button class="btn-icon" id="btn-bookmark" aria-label="이어서 읽기">
+        <span>🔖</span> 이어서 읽기
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Storybook Viewport -->
+  <main class="app-main">
+    <div class="storybook-viewport">
+      
+      <!-- Previous Page Button -->
+      <button class="nav-arrow nav-arrow-left" id="btn-prev" aria-label="이전 페이지">
+        <span>❮</span>
+      </button>
+
+      <!-- Book Spread Frame -->
+      <div class="book-wrapper" id="book-wrapper">
+        <!-- Dynamic Book Content Rendered by app.js -->
+        <div class="book-spread" id="book-spread">
+          <!-- Left & Right Pages will be injected here -->
+        </div>
+        <div class="book-spine"></div>
+      </div>
+
+      <!-- Next Page Button -->
+      <button class="nav-arrow nav-arrow-right" id="btn-next" aria-label="다음 페이지">
+        <span>❯</span>
+      </button>
+
+    </div>
+
+    <!-- Floating Reading Toolbar -->
+    <div class="floating-toolbar">
+      <div class="tool-group">
+        <button class="btn-icon" id="btn-tts" aria-label="음성으로 읽어주기">
+          <span id="tts-icon">🎧</span> <span id="tts-label">읽어주기</span>
+        </button>
+        <button class="btn-icon" id="btn-autoplay" aria-label="자동 다음장 넘김">
+          <span>🔄</span> <span id="autoplay-label">자동넘김 끔</span>
+        </button>
+      </div>
+
+      <div class="tool-divider"></div>
+
+      <div class="tool-group">
+        <button class="btn-icon" id="btn-font-size" aria-label="글자 크기 조절">
+          <span>🔤</span> <span id="font-size-label">보통</span>
+        </button>
+        <button class="btn-icon" id="btn-theme" aria-label="배경 테마 변경">
+          <span>🎨</span> 테마
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Table of Contents Modal -->
+  <div class="modal-overlay" id="toc-modal">
+    <div class="toc-modal">
+      <div class="toc-header">
+        <h2 class="toc-title"><span>📚</span> 성경 동화책 목차</h2>
+        <button class="btn-icon" id="btn-close-toc" aria-label="닫기">
+          <span>✖</span> 닫기
+        </button>
+      </div>
+
+      <!-- OT / NT Filter Tabs -->
+      <div class="toc-tabs">
+        <button class="toc-tab-btn active" id="tab-ot">📜 구약 성경 (39권)</button>
+        <button class="toc-tab-btn" id="tab-nt">🌟 신약 성경 (27권)</button>
+      </div>
+
+      <!-- Main Contents Grid / Picker -->
+      <div class="toc-content" id="toc-content">
+        <!-- Books Grid or Chapter Selector Rendered Dynamically -->
+        <div class="books-grid" id="books-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

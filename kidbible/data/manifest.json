@@ -1,0 +1,596 @@
+[
+  {
+    "id": "Genesis",
+    "name": "창세기",
+    "testament": "OT",
+    "category": "율법서",
+    "icon": "🌱",
+    "total_chapters": 50,
+    "available_chapters": 50
+  },
+  {
+    "id": "Exodus",
+    "name": "출애굽기",
+    "testament": "OT",
+    "category": "율법서",
+    "icon": "🌊",
+    "total_chapters": 40,
+    "available_chapters": 40
+  },
+  {
+    "id": "Leviticus",
+    "name": "레위기",
+    "testament": "OT",
+    "category": "율법서",
+    "icon": "🕊️",
+    "total_chapters": 27,
+    "available_chapters": 27
+  },
+  {
+    "id": "Numbers",
+    "name": "민수기",
+    "testament": "OT",
+    "category": "율법서",
+    "icon": "⛺",
+    "total_chapters": 36,
+    "available_chapters": 36
+  },
+  {
+    "id": "Deuteronomy",
+    "name": "신명기",
+    "testament": "OT",
+    "category": "율법서",
+    "icon": "📜",
+    "total_chapters": 34,
+    "available_chapters": 34
+  },
+  {
+    "id": "Joshua",
+    "name": "여호수아",
+    "testament": "OT",
+    "category": "역사서",
+    "icon": "⚔️",
+    "total_chapters": 24,
+    "available_chapters": 24
+  },
+  {
+    "id": "Judges",
+    "name": "사사기",
+    "testament": "OT",
+    "category": "역사서",
+    "icon": "🎺",
+    "total_chapters": 21,
+    "available_chapters": 21
+  },
+  {
+    "id": "Ruth",
+    "name": "룻기",
+    "testament": "OT",
+    "category": "역사서",
+    "icon": "🌾",
+    "total_chapters": 4,
+    "available_chapters": 4
+  },
+  {
+    "id": "1Samuel",
+    "name": "사무엘상",
+    "testament": "OT",
+    "category": "역사서",
+    "icon": "👑",
+    "total_chapters": 31,
+    "available_chapters": 31
+  },
+  {
+    "id": "2Samuel",
+    "name": "사무엘하",
+    "testament": "OT",
+    "category": "역사서",
+    "icon": "🏰",
+    "total_chapters": 24,
+    "available_chapters": 24
+  },
+  {
+    "id": "1Kings",
+    "name": "열왕기상",
+    "testament": "OT",
+    "category": "역사서",
+    "icon": "🏛️",
+    "total_chapters": 22,
+    "available_chapters": 22
+  },
+  {
+    "id": "2Kings",
+    "name": "열왕기하",
+    "testament": "OT",
+    "category": "역사서",
+    "icon": "🛡️",
+    "total_chapters": 25,
+    "available_chapters": 25
+  },
+  {
+    "id": "1Chronicles",
+    "name": "역대기상",
+    "testament": "OT",
+    "category": "역사서",
+    "icon": "📖",
+    "total_chapters": 29,
+    "available_chapters": 29
+  },
+  {
+    "id": "2Chronicles",
+    "name": "역대기하",
+    "testament": "OT",
+    "category": "역사서",
+    "icon": "🕌",
+    "total_chapters": 36,
+    "available_chapters": 36
+  },
+  {
+    "id": "Ezra",
+    "name": "에스라",
+    "testament": "OT",
+    "category": "역사서",
+    "icon": "✍️",
+    "total_chapters": 10,
+    "available_chapters": 10
+  },
+  {
+    "id": "Nehemiah",
+    "name": "느헤미야",
+    "testament": "OT",
+    "category": "역사서",
+    "icon": "🧱",
+    "total_chapters": 13,
+    "available_chapters": 13
+  },
+  {
+    "id": "Esther",
+    "name": "에스더",
+    "testament": "OT",
+    "category": "역사서",
+    "icon": "👸",
+    "total_chapters": 10,
+    "available_chapters": 10
+  },
+  {
+    "id": "Job",
+    "name": "욥기",
+    "testament": "OT",
+    "category": "시가서",
+    "icon": "🌤️",
+    "total_chapters": 42,
+    "available_chapters": 42
+  },
+  {
+    "id": "Psalms",
+    "name": "시편",
+    "testament": "OT",
+    "category": "시가서",
+    "icon": "🎵",
+    "total_chapters": 150,
+    "available_chapters": 150
+  },
+  {
+    "id": "Proverbs",
+    "name": "잠언",
+    "testament": "OT",
+    "category": "시가서",
+    "icon": "💡",
+    "total_chapters": 31,
+    "available_chapters": 31
+  },
+  {
+    "id": "Ecclesiastes",
+    "name": "전도서",
+    "testament": "OT",
+    "category": "시가서",
+    "icon": "⏳",
+    "total_chapters": 12,
+    "available_chapters": 12
+  },
+  {
+    "id": "SongofSolomon",
+    "name": "아가",
+    "testament": "OT",
+    "category": "시가서",
+    "icon": "❤️",
+    "total_chapters": 8,
+    "available_chapters": 8
+  },
+  {
+    "id": "Isaiah",
+    "name": "이사야",
+    "testament": "OT",
+    "category": "선지서",
+    "icon": "🦅",
+    "total_chapters": 66,
+    "available_chapters": 66
+  },
+  {
+    "id": "Jeremiah",
+    "name": "예레미야",
+    "testament": "OT",
+    "category": "선지서",
+    "icon": "💧",
+    "total_chapters": 52,
+    "available_chapters": 52
+  },
+  {
+    "id": "Lamentations",
+    "name": "예레미야 애가",
+    "testament": "OT",
+    "category": "선지서",
+    "icon": "🕯️",
+    "total_chapters": 5,
+    "available_chapters": 5
+  },
+  {
+    "id": "Ezekiel",
+    "name": "에스겔",
+    "testament": "OT",
+    "category": "선지서",
+    "icon": "🔥",
+    "total_chapters": 48,
+    "available_chapters": 48
+  },
+  {
+    "id": "Daniel",
+    "name": "다니엘",
+    "testament": "OT",
+    "category": "선지서",
+    "icon": "🦁",
+    "total_chapters": 12,
+    "available_chapters": 12
+  },
+  {
+    "id": "Hosea",
+    "name": "호세아",
+    "testament": "OT",
+    "category": "선지서",
+    "icon": "🌻",
+    "total_chapters": 14,
+    "available_chapters": 14
+  },
+  {
+    "id": "Joel",
+    "name": "요엘",
+    "testament": "OT",
+    "category": "선지서",
+    "icon": "🦗",
+    "total_chapters": 3,
+    "available_chapters": 3
+  },
+  {
+    "id": "Amos",
+    "name": "아모스",
+    "testament": "OT",
+    "category": "선지서",
+    "icon": "⚖️",
+    "total_chapters": 9,
+    "available_chapters": 9
+  },
+  {
+    "id": "Obadiah",
+    "name": "오바디야",
+    "testament": "OT",
+    "category": "선지서",
+    "icon": "🏔️",
+    "total_chapters": 1,
+    "available_chapters": 1
+  },
+  {
+    "id": "Jonah",
+    "name": "요나",
+    "testament": "OT",
+    "category": "선지서",
+    "icon": "🐳",
+    "total_chapters": 4,
+    "available_chapters": 4
+  },
+  {
+    "id": "Micah",
+    "name": "미가",
+    "testament": "OT",
+    "category": "선지서",
+    "icon": "⭐",
+    "total_chapters": 7,
+    "available_chapters": 7
+  },
+  {
+    "id": "Nahum",
+    "name": "나훔",
+    "testament": "OT",
+    "category": "선지서",
+    "icon": "⚡",
+    "total_chapters": 3,
+    "available_chapters": 3
+  },
+  {
+    "id": "Habakkuk",
+    "name": "하박국",
+    "testament": "OT",
+    "category": "선지서",
+    "icon": "🎺",
+    "total_chapters": 3,
+    "available_chapters": 3
+  },
+  {
+    "id": "Zephaniah",
+    "name": "스바냐",
+    "testament": "OT",
+    "category": "선지서",
+    "icon": "🌅",
+    "total_chapters": 3,
+    "available_chapters": 3
+  },
+  {
+    "id": "Haggai",
+    "name": "학개",
+    "testament": "OT",
+    "category": "선지서",
+    "icon": "🛠️",
+    "total_chapters": 2,
+    "available_chapters": 2
+  },
+  {
+    "id": "Zechariah",
+    "name": "스가랴",
+    "testament": "OT",
+    "category": "선지서",
+    "icon": "🌿",
+    "total_chapters": 14,
+    "available_chapters": 14
+  },
+  {
+    "id": "Malachi",
+    "name": "말라기",
+    "testament": "OT",
+    "category": "선지서",
+    "icon": "☀️",
+    "total_chapters": 4,
+    "available_chapters": 4
+  },
+  {
+    "id": "Matthew",
+    "name": "마태복음",
+    "testament": "NT",
+    "category": "복음서",
+    "icon": "🌟",
+    "total_chapters": 28,
+    "available_chapters": 28
+  },
+  {
+    "id": "Mark",
+    "name": "마가복음",
+    "testament": "NT",
+    "category": "복음서",
+    "icon": "✝️",
+    "total_chapters": 16,
+    "available_chapters": 16
+  },
+  {
+    "id": "Luke",
+    "name": "누가복음",
+    "testament": "NT",
+    "category": "복음서",
+    "icon": "🩺",
+    "total_chapters": 24,
+    "available_chapters": 24
+  },
+  {
+    "id": "John",
+    "name": "요한복음",
+    "testament": "NT",
+    "category": "복음서",
+    "icon": "💡",
+    "total_chapters": 21,
+    "available_chapters": 21
+  },
+  {
+    "id": "Acts",
+    "name": "사도행전",
+    "testament": "NT",
+    "category": "역사서",
+    "icon": "⛵",
+    "total_chapters": 28,
+    "available_chapters": 28
+  },
+  {
+    "id": "Romans",
+    "name": "로마서",
+    "testament": "NT",
+    "category": "서신서",
+    "icon": "💌",
+    "total_chapters": 16,
+    "available_chapters": 16
+  },
+  {
+    "id": "1Corinthians",
+    "name": "고린도전서",
+    "testament": "NT",
+    "category": "서신서",
+    "icon": "💖",
+    "total_chapters": 16,
+    "available_chapters": 16
+  },
+  {
+    "id": "2Corinthians",
+    "name": "고린도후서",
+    "testament": "NT",
+    "category": "서신서",
+    "icon": "✉️",
+    "total_chapters": 13,
+    "available_chapters": 13
+  },
+  {
+    "id": "Galatians",
+    "name": "갈라디아서",
+    "testament": "NT",
+    "category": "서신서",
+    "icon": "🕊️",
+    "total_chapters": 6,
+    "available_chapters": 6
+  },
+  {
+    "id": "Ephesians",
+    "name": "에베소서",
+    "testament": "NT",
+    "category": "서신서",
+    "icon": "🛡️",
+    "total_chapters": 6,
+    "available_chapters": 6
+  },
+  {
+    "id": "Philippians",
+    "name": "빌립보서",
+    "testament": "NT",
+    "category": "서신서",
+    "icon": "😊",
+    "total_chapters": 4,
+    "available_chapters": 4
+  },
+  {
+    "id": "Colossians",
+    "name": "골로새서",
+    "testament": "NT",
+    "category": "서신서",
+    "icon": "🌿",
+    "total_chapters": 4,
+    "available_chapters": 4
+  },
+  {
+    "id": "1Thessalonians",
+    "name": "데살로니가전서",
+    "testament": "NT",
+    "category": "서신서",
+    "icon": "🔔",
+    "total_chapters": 5,
+    "available_chapters": 5
+  },
+  {
+    "id": "2Thessalonians",
+    "name": "데살로니가후서",
+    "testament": "NT",
+    "category": "서신서",
+    "icon": "✨",
+    "total_chapters": 3,
+    "available_chapters": 3
+  },
+  {
+    "id": "1Timothy",
+    "name": "디모데전서",
+    "testament": "NT",
+    "category": "서신서",
+    "icon": "📜",
+    "total_chapters": 6,
+    "available_chapters": 6
+  },
+  {
+    "id": "2Timothy",
+    "name": "디모데후서",
+    "testament": "NT",
+    "category": "서신서",
+    "icon": "🏆",
+    "total_chapters": 4,
+    "available_chapters": 4
+  },
+  {
+    "id": "Titus",
+    "name": "디도서",
+    "testament": "NT",
+    "category": "서신서",
+    "icon": "⚓",
+    "total_chapters": 3,
+    "available_chapters": 3
+  },
+  {
+    "id": "Philemon",
+    "name": "빌레몬서",
+    "testament": "NT",
+    "category": "서신서",
+    "icon": "🤝",
+    "total_chapters": 1,
+    "available_chapters": 1
+  },
+  {
+    "id": "Hebrews",
+    "name": "히브리서",
+    "testament": "NT",
+    "category": "서신서",
+    "icon": "🌈",
+    "total_chapters": 13,
+    "available_chapters": 13
+  },
+  {
+    "id": "James",
+    "name": "야고보서",
+    "testament": "NT",
+    "category": "서신서",
+    "icon": "🌲",
+    "total_chapters": 5,
+    "available_chapters": 5
+  },
+  {
+    "id": "1Peter",
+    "name": "베드로전서",
+    "testament": "NT",
+    "category": "서신서",
+    "icon": "⚓",
+    "total_chapters": 5,
+    "available_chapters": 5
+  },
+  {
+    "id": "2Peter",
+    "name": "베드로후서",
+    "testament": "NT",
+    "category": "서신서",
+    "icon": "🕯️",
+    "total_chapters": 3,
+    "available_chapters": 3
+  },
+  {
+    "id": "1John",
+    "name": "요한일서",
+    "testament": "NT",
+    "category": "서신서",
+    "icon": "❤️",
+    "total_chapters": 5,
+    "available_chapters": 5
+  },
+  {
+    "id": "2John",
+    "name": "요한이서",
+    "testament": "NT",
+    "category": "서신서",
+    "icon": "💌",
+    "total_chapters": 1,
+    "available_chapters": 1
+  },
+  {
+    "id": "3John",
+    "name": "요한삼서",
+    "testament": "NT",
+    "category": "서신서",
+    "icon": "🤝",
+    "total_chapters": 1,
+    "available_chapters": 1
+  },
+  {
+    "id": "Jude",
+    "name": "유다서",
+    "testament": "NT",
+    "category": "서신서",
+    "icon": "🛡️",
+    "total_chapters": 1,
+    "available_chapters": 1
+  },
+  {
+    "id": "Revelation",
+    "name": "요한계시록",
+    "testament": "NT",
+    "category": "예언서",
+    "icon": "👑",
+    "total_chapters": 22,
+    "available_chapters": 22
+  }
+]
