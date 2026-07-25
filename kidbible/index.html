@@ -37,7 +37,6 @@
 
       <!-- Book Frame -->
       <div class="book-wrapper" id="book-wrapper">
-        <!-- Dynamic Book Content Rendered by app.js -->
         <div class="book-spread" id="book-spread">
           <!-- Left & Right Pages will be injected here -->
         </div>
@@ -49,6 +48,15 @@
         <span>❯</span>
       </button>
 
+    </div>
+
+    <!-- 🌟 CENTERED READING PROGRESS INDICATOR (현재페이지 / 전체페이지 (진행도%)) 🌟 -->
+    <div class="progress-indicator-chip" id="progress-indicator-chip">
+      <span class="progress-icon">📖</span>
+      <span class="progress-text" id="progress-text">1 / 31 페이지 (3%)</span>
+      <div class="progress-mini-bar">
+        <div class="progress-mini-fill" id="progress-mini-fill" style="width: 3%;"></div>
+      </div>
     </div>
 
     <!-- Floating Reading Toolbar -->
@@ -66,7 +74,7 @@
 
       <div class="tool-group">
         <button class="btn-icon" id="btn-bg-illust" aria-label="배경 동화 일러스트 변경">
-          <span>🎨</span> <span id="bg-illust-label">자연과 동물</span>
+          <span>🎨</span> <span id="bg-illust-label">창조와 자연</span>
         </button>
         <button class="btn-icon" id="btn-font-size" aria-label="글자 크기 조절">
           <span>🔤</span> <span id="font-size-label">보통</span>
@@ -88,15 +96,12 @@
         </button>
       </div>
 
-      <!-- OT / NT Filter Tabs -->
       <div class="toc-tabs">
         <button class="toc-tab-btn active" id="tab-ot">📜 구약 성경 (39권)</button>
         <button class="toc-tab-btn" id="tab-nt">🌟 신약 성경 (27권)</button>
       </div>
 
-      <!-- Main Contents Grid / Picker -->
       <div class="toc-content" id="toc-content">
-        <!-- Books Grid or Chapter Selector Rendered Dynamically -->
         <div class="books-grid" id="books-grid"></div>
       </div>
     </div>

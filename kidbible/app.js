@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentBookId = 'Genesis';
   let currentChapter = 1;
   let currentChapterData = { pages: [] };
-  let pageIndex = 0; // 0 = Chapter Cover Mode, 1..N = Verse Story Pages
+  let pageIndex = 0; // 0 = Chapter Cover + Verse 1 Spread Mode
 
   let isReadingTTS = false;
   let isAutoplay = false;
@@ -17,15 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let startX = 0;
   let startY = 0;
   let startTime = 0;
-
-  // 100% Pastel Watercolor Storybook Illustration Assets
-  const bgIllustrations = [
-    { label: '🌿 창조와 자연', file: 'assets/bg_nature.jpg', key: 'nature' },
-    { label: '💖 예수님과 사랑', file: 'assets/bg_jesus.jpg', key: 'jesus' },
-    { label: '🐳 홍해와 기적', file: 'assets/bg_miracle.jpg', key: 'miracle' },
-    { label: '🌙 별빛과 예배', file: 'assets/bg_worship.jpg', key: 'worship' }
-  ];
-  let currentBgIndex = 0;
 
   const themes = ['theme-cream', 'theme-pink', 'theme-blue', 'theme-night'];
   let currentThemeIndex = 0;
@@ -39,12 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Smart Keyword Illustration Mapping Engine
   const keywordIllustMap = [
-    { keywords: ['빛', '해', '밝은', '반짝', '낮', '하늘', '별'], icon: '✨', title: '빛과 하늘 이야기', bgIdx: 0 },
-    { keywords: ['물', '바다', '강', '배', '방주', '물고기', '비', '홍수'], icon: '🌊', title: '신비로운 기적과 바다 이야기', bgIdx: 2 },
-    { keywords: ['풀', '나무', '열매', '땅', '동산', '동물', '사자', '양', '꽃'], icon: '🌿', title: '푸른 자연과 생명 이야기', bgIdx: 0 },
-    { keywords: ['사랑', '마음', '기쁨', '축복', '예수', '하나님', '아이', '은혜'], icon: '💖', title: '예수님의 사랑 이야기', bgIdx: 1 },
-    { keywords: ['왕', '성전', '집', '금', '보물', '지혜', '말씀'], icon: '🏰', title: '지혜로운 성경 이야기', bgIdx: 1 },
-    { keywords: ['기도', '찬양', '노래', '감사', '평안', '꿈', '밤'], icon: '🕊️', title: '따스한 별빛과 기도 이야기', bgIdx: 3 }
+    { keywords: ['빛', '해', '밝은', '반짝', '낮', '하늘', '별'], icon: '✨', title: '빛과 하늘 이야기' },
+    { keywords: ['물', '바다', '강', '배', '방주', '물고기', '비', '홍수'], icon: '🌊', title: '신비로운 기적과 바다 이야기' },
+    { keywords: ['풀', '나무', '열매', '땅', '동산', '동물', '사자', '양', '꽃'], icon: '🌿', title: '푸른 자연과 생명 이야기' },
+    { keywords: ['사랑', '마음', '기쁨', '축복', '예수', '하나님', '아이', '은혜'], icon: '💖', title: '예수님의 사랑 이야기' },
+    { keywords: ['왕', '성전', '집', '금', '보물', '지혜', '말씀'], icon: '🏰', title: '지혜로운 성경 이야기' },
+    { keywords: ['기도', '찬양', '노래', '감사', '평안', '꿈', '밤'], icon: '🕊️', title: '따스한 별빛과 기도 이야기' }
   ];
 
   // DOM Elements
@@ -125,14 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       currentChapterData = { pages: [] };
     }
-
-    const bookInfo = manifestData.find(b => b.id === currentBookId);
-    if (bookInfo && bookInfo.bg_theme) {
-      if (bookInfo.bg_theme === 'jesus') currentBgIndex = 1;
-      else if (bookInfo.bg_theme === 'miracle') currentBgIndex = 2;
-      else if (bookInfo.bg_theme === 'worship') currentBgIndex = 3;
-      else currentBgIndex = 0;
-    }
     applyBackgroundIllustration();
   }
 
@@ -140,13 +123,18 @@ document.addEventListener('DOMContentLoaded', () => {
     return window.innerWidth >= 1024;
   }
 
+  // 🌟 66 BIBLE BOOKS UNIQUE STORYBOOK ILLUSTRATION ENGINE 🌟
   function applyBackgroundIllustration() {
-    const bgObj = bgIllustrations[currentBgIndex];
+    const bookInfo = manifestData.find(b => b.id === currentBookId) || { name: '성경', illust: 'assets/cover.jpg' };
+    const bookIllustPath = bookInfo.illust || `assets/books/${currentBookId}.jpg`;
+
     if (bookWrapper) {
-      bookWrapper.style.backgroundImage = `url('${bgObj.file}')`;
+      // 66 Book Unique Watercolor Illustration with Safe Fallback!
+      bookWrapper.style.backgroundImage = `url('${bookIllustPath}'), url('assets/cover.jpg')`;
     }
+
     if (bgIllustLabel) {
-      bgIllustLabel.textContent = bgObj.label.split(' ')[1] || bgObj.label;
+      bgIllustLabel.textContent = `${bookInfo.name} 동화`;
     }
   }
 
@@ -156,57 +144,129 @@ document.addEventListener('DOMContentLoaded', () => {
         return item;
       }
     }
-    return { icon: '✨', title: '사랑스런 성경 이야기', bgIdx: 0 };
+    return { icon: '✨', title: '사랑스런 성경 이야기' };
+  }
+
+  function updateProgressIndicator() {
+    const progressText = document.getElementById('progress-text');
+    const progressMiniFill = document.getElementById('progress-mini-fill');
+    if (!progressText || !progressMiniFill) return;
+
+    const bookData = storybookData[currentBookId];
+    if (!bookData || !bookData.chapters) return;
+
+    // 1. Calculate total pages/verses of current Book (e.g. Genesis = 1,533 pages)
+    let totalBookVerses = 0;
+    const chapterKeys = Object.keys(bookData.chapters).map(Number).sort((a, b) => a - b);
+    chapterKeys.forEach(ch => {
+      totalBookVerses += (bookData.chapters[ch].pages || []).length;
+    });
+
+    if (totalBookVerses === 0) {
+      progressText.textContent = '0 / 0 페이지 (0%)';
+      progressMiniFill.style.width = '0%';
+      return;
+    }
+
+    // 2. Calculate cumulative current page up to currentChapter and pageIndex
+    let cumulativePage = 0;
+    for (const ch of chapterKeys) {
+      if (ch < currentChapter) {
+        cumulativePage += (bookData.chapters[ch].pages || []).length;
+      } else if (ch === currentChapter) {
+        const chPages = (bookData.chapters[ch].pages || []).length;
+        if (pageIndex === 0) {
+          cumulativePage += 0;
+        } else if (isDesktopView()) {
+          cumulativePage += Math.min(pageIndex + 1, chPages);
+        } else {
+          cumulativePage += Math.min(pageIndex, chPages);
+        }
+        break;
+      }
+    }
+
+    const pct = Math.min(100, Math.round((cumulativePage / totalBookVerses) * 100));
+    const currentBookInfo = manifestData.find(b => b.id === currentBookId) || { name: '성경' };
+
+    progressText.textContent = `${currentBookInfo.name} ${cumulativePage.toLocaleString()} / ${totalBookVerses.toLocaleString()} 페이지 (${pct}%)`;
+    progressMiniFill.style.width = `${pct}%`;
   }
 
   // Render Storybook Pages
   function renderBook() {
     stopTTS();
     applyBackgroundIllustration();
+    updateProgressIndicator();
 
-    const currentBookInfo = manifestData.find(b => b.id === currentBookId) || { name: '성경', icon: '📖' };
+    const currentBookInfo = manifestData.find(b => b.id === currentBookId) || { name: '성경', icon: '📖', story: '어린이 성경 이야기' };
     const pagesList = currentChapterData.pages || [];
     const totalPages = pagesList.length;
+    const bookIllustPath = currentBookInfo.illust || `assets/books/${currentBookId}.jpg`;
 
-    // 1) CHAPTER COVER MODE (pageIndex === 0)
+    // 1) CHAPTER START SPREAD MODE (pageIndex === 0)
     if (pageIndex === 0) {
-      bookSpread.innerHTML = `
+      const page1 = pagesList.length > 0 ? pagesList[0] : null;
+
+      const coverHtml = `
         <div class="chapter-cover-mode">
           <div class="chapter-cover-card">
             <span class="chapter-cover-badge">${currentBookInfo.icon} ${currentBookInfo.name}</span>
             <h2 class="chapter-cover-title">${currentBookInfo.name} ${currentChapter}장 이야기</h2>
             
+            <!-- 66 Book Unique Storybook Art Frame -->
             <div style="margin: 6px 0;">
-              <img src="assets/cover.jpg" 
-                   alt="${currentBookInfo.name} ${currentChapter}장 일러스트" 
+              <img src="${bookIllustPath}" 
+                   onerror="this.onerror=null; this.src='assets/cover.jpg';" 
+                   alt="${currentBookInfo.name} ${currentChapter}장 동화 일러스트" 
                    class="cover-img">
             </div>
 
-            <p style="font-size: 22px; color: var(--text-sub);">하나님의 따스한 사랑 이야기가 시작됩니다.</p>
-            <button class="btn-icon active" id="btn-start-chapter" style="font-size:22px; padding: 12px 30px;">
-              ✨ ${currentChapter}장 이야기 읽기 시작 (1절부터)
+            <p style="font-size: 20px; color: var(--text-sub); font-weight:700;">${currentBookInfo.story || '하나님의 따스한 사랑 이야기가 시작됩니다.'}</p>
+            <button class="btn-icon active" id="btn-start-chapter" style="font-size:20px; padding: 10px 24px; margin-top:4px;">
+              ✨ ${currentChapter}장 이야기 시작
             </button>
           </div>
         </div>
       `;
 
-      document.getElementById('btn-start-chapter').addEventListener('click', (e) => {
-        e.stopPropagation();
-        nextPage();
-      });
+      if (isDesktopView()) {
+        bookSpread.innerHTML = `
+          <div class="page page-left" data-action="prev">
+            ${coverHtml}
+          </div>
+          <div class="page page-right" data-action="next">
+            ${page1 ? renderSingleVersePageContent(currentBookInfo, page1, 1, totalPages) : renderChapterFinishedPrompt(currentBookInfo)}
+          </div>
+        `;
+      } else {
+        bookSpread.innerHTML = `
+          <div class="page page-left" data-action="next">
+            ${coverHtml}
+          </div>
+        `;
+      }
+
+      const btnStart = document.getElementById('btn-start-chapter');
+      if (btnStart) {
+        btnStart.addEventListener('click', (e) => {
+          e.stopPropagation();
+          nextPage();
+        });
+      }
 
       saveBookmark();
       return;
     }
 
-    // 2) PC Dual Page Spread (Left: Verse N, Right: Verse N+1) vs Mobile Single Page (Verse N)
+    // 2) REGULAR SPREAD MODE (pageIndex >= 1)
     if (isDesktopView()) {
-      if (pageIndex % 2 === 0 && pageIndex > 1) {
-        pageIndex -= 1;
+      let p1Index = pageIndex;
+      if (p1Index % 2 === 1 && p1Index > 1) {
+        p1Index -= 1;
       }
 
-      const p1Index = pageIndex;
-      const p2Index = pageIndex + 1;
+      const p2Index = p1Index + 1;
 
       const page1 = pagesList[p1Index - 1];
       const page2 = p2Index <= totalPages ? pagesList[p2Index - 1] : null;
@@ -215,13 +275,11 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="page page-left" data-action="prev">
           ${renderSingleVersePageContent(currentBookInfo, page1, p1Index, totalPages)}
         </div>
-        
         <div class="page page-right" data-action="next">
           ${page2 ? renderSingleVersePageContent(currentBookInfo, page2, p2Index, totalPages) : renderChapterFinishedPrompt(currentBookInfo)}
         </div>
       `;
     } else {
-      // Mobile Single Page (1 Verse)
       const page1 = pagesList[pageIndex - 1];
       bookSpread.innerHTML = `
         <div class="page page-left" data-action="next">
@@ -283,14 +341,15 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   }
 
-  // 🌟 REALISTIC 3D PAPER PAGE FLIPPER ENGINE 🌟
-  function triggerRealBookFlip(direction, callback) {
+  // 🌟 DYNAMIC 3D LEAF FLIPPER ENGINE (PC 50% vs Mobile 100%) 🌟
+  function triggerLeafFlip(direction, callback) {
     if (isAnimating) return;
     isAnimating = true;
 
-    // Create Dynamic 3D Paper Leaf Element
+    const isPC = isDesktopView();
     const leaf = document.createElement('div');
-    leaf.className = `flipping-leaf ${direction === 'next' ? 'flip-next-leaf' : 'flip-prev-leaf'}`;
+    const leafTypeClass = isPC ? 'pc-leaf' : 'mobile-leaf';
+    leaf.className = `flipping-leaf ${leafTypeClass} ${direction === 'next' ? 'flip-next-leaf' : 'flip-prev-leaf'}`;
 
     const currentSpreadContent = bookSpread.innerHTML;
 
@@ -309,12 +368,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     bookWrapper.appendChild(leaf);
 
-    // Update state & re-render underlying spread mid-flip
     setTimeout(() => {
       callback();
     }, 250);
 
-    // Clean up leaf element after 3D flip finishes
     setTimeout(() => {
       if (leaf.parentNode) {
         leaf.parentNode.removeChild(leaf);
@@ -324,29 +381,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function nextPage() {
-    triggerRealBookFlip('next', () => {
+    triggerLeafFlip('next', () => {
       const pagesList = currentChapterData.pages || [];
       const totalPages = pagesList.length;
-      const step = isDesktopView() ? 2 : 1;
 
       if (pageIndex === 0) {
-        pageIndex = 1;
-      } else if (pageIndex + step <= totalPages) {
-        pageIndex += step;
-      } else {
-        const bookInfo = manifestData.find(b => b.id === currentBookId);
-        if (currentChapter < bookInfo.available_chapters) {
-          currentChapter++;
-          pageIndex = 0;
-          updateChapterData();
+        pageIndex = isDesktopView() ? 2 : 1;
+      } else if (isDesktopView()) {
+        let currentRightIndex = (pageIndex % 2 === 1 && pageIndex > 1) ? pageIndex : pageIndex + 1;
+        if (currentRightIndex < totalPages) {
+          pageIndex = currentRightIndex + 1;
         } else {
-          const bIdx = manifestData.findIndex(b => b.id === currentBookId);
-          if (bIdx < manifestData.length - 1) {
-            currentBookId = manifestData[bIdx + 1].id;
-            currentChapter = 1;
-            pageIndex = 0;
-            updateChapterData();
-          }
+          goToNextChapter();
+        }
+      } else {
+        if (pageIndex < totalPages) {
+          pageIndex++;
+        } else {
+          goToNextChapter();
         }
       }
       renderBook();
@@ -354,23 +406,40 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function prevPage() {
-    triggerRealBookFlip('prev', () => {
-      const step = isDesktopView() ? 2 : 1;
-
-      if (pageIndex > step) {
-        pageIndex -= step;
-      } else if (pageIndex > 0) {
+    triggerLeafFlip('prev', () => {
+      if (pageIndex > 2 && isDesktopView()) {
+        pageIndex -= 2;
+      } else if (pageIndex > 1) {
+        pageIndex -= 1;
+      } else if (pageIndex === 1) {
         pageIndex = 0;
       } else if (pageIndex === 0) {
         if (currentChapter > 1) {
           currentChapter--;
           updateChapterData();
           const prevPages = currentChapterData.pages || [];
-          pageIndex = Math.max(1, prevPages.length - (step - 1));
+          pageIndex = Math.max(0, prevPages.length - 1);
         }
       }
       renderBook();
     });
+  }
+
+  function goToNextChapter() {
+    const bookInfo = manifestData.find(b => b.id === currentBookId);
+    if (currentChapter < bookInfo.available_chapters) {
+      currentChapter++;
+      pageIndex = 0;
+      updateChapterData();
+    } else {
+      const bIdx = manifestData.findIndex(b => b.id === currentBookId);
+      if (bIdx < manifestData.length - 1) {
+        currentBookId = manifestData[bIdx + 1].id;
+        currentChapter = 1;
+        pageIndex = 0;
+        updateChapterData();
+      }
+    }
   }
 
   btnNext.addEventListener('click', (e) => {
@@ -623,8 +692,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   btnBgIllust.addEventListener('click', (e) => {
     e.stopPropagation();
-    currentBgIndex = (currentBgIndex + 1) % bgIllustrations.length;
-    applyBackgroundIllustration();
+    // Toggle manual fallback illustrations if desired
+    renderBook();
   });
 
   btnFontSize.addEventListener('click', (e) => {
