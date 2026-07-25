@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = process.env.PORT || 9090;
+const PORT = process.env.PORT || 8888;
 const ROOT = __dirname;
 const manualMergeJobs = new Map();
 
@@ -77,7 +77,7 @@ function runManualMergeJob(jobId, intro, items, cleanupPaths) {
     const cleanupFiles = Array.isArray(cleanupPaths) ? cleanupPaths : (cleanupPaths ? [cleanupPaths] : []);
     const cleanup = () => {
         cleanupFiles.forEach(file => {
-            try { fs.unlinkSync(file); } catch (e) {}
+            try { fs.unlinkSync(file); } catch (e) { }
         });
     };
 
@@ -170,7 +170,7 @@ const server = http.createServer((req, res) => {
     // API endpoints handling
     if (filePath.startsWith('/api/orders')) {
         const ordersFilePath = path.join(ROOT, 'orders.json');
-        
+
         if (req.method === 'POST') {
             let body = '';
             req.on('data', chunk => { body += chunk.toString(); });
@@ -187,7 +187,7 @@ const server = http.createServer((req, res) => {
                     }
                     orders.unshift(newOrder);
                     fs.writeFileSync(ordersFilePath, JSON.stringify(orders, null, 2), 'utf8');
-                    
+
                     res.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
                     res.end(JSON.stringify({ success: true, order: newOrder }));
                 } catch (err) {
@@ -200,7 +200,7 @@ const server = http.createServer((req, res) => {
             const urlParts = req.url.split('?');
             const searchParams = new URLSearchParams(urlParts[1] || '');
             const email = searchParams.get('email');
-            
+
             let orders = [];
             if (fs.existsSync(ordersFilePath)) {
                 try {
@@ -209,11 +209,11 @@ const server = http.createServer((req, res) => {
                     orders = [];
                 }
             }
-            
+
             if (email) {
                 orders = orders.filter(order => order.email && order.email.toLowerCase() === email.toLowerCase());
             }
-            
+
             res.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
             res.end(JSON.stringify(orders));
             return;
@@ -255,7 +255,7 @@ const server = http.createServer((req, res) => {
                 const params = JSON.parse(body);
                 const book = params.book || 'UnknownBook';
                 const chapter = params.chapter || '1';
-                
+
                 const homeDir = process.env.USERPROFILE || process.env.HOME;
                 const downloadsDir = path.join(homeDir, 'Downloads');
                 const introPath = path.join(ROOT, 'ai_pastor', 'AI_Pastor_intro.mp4');
@@ -272,7 +272,7 @@ const server = http.createServer((req, res) => {
                 // Poll for the latest downloaded sermon video
                 let attempts = 0;
                 const maxAttempts = 180; // 6 minutes max wait for NotebookLM downloads
-                
+
                 function checkAndMerge() {
                     try {
                         const files = fs.readdirSync(downloadsDir);
@@ -293,11 +293,11 @@ const server = http.createServer((req, res) => {
                         if (mp4Files.length > 0) {
                             const newest = mp4Files[0];
                             const timeDiff = Date.now() - newest.mtime;
-                            
+
                             // Ensure the file is recent and no browser partial download is still active.
                             // and has non-zero size (not an empty placeholder)
                             if (timeDiff < 600000 && newest.size > 100000 && partialDownloads.length === 0) {
-                                console.log(`[Backend] Detected downloaded sermon video: ${newest.name} (${(newest.size/1024/1024).toFixed(2)} MB)`);
+                                console.log(`[Backend] Detected downloaded sermon video: ${newest.name} (${(newest.size / 1024 / 1024).toFixed(2)} MB)`);
                                 runFfmpegMerge(introPath, [newest.path], outputPath, res);
                                 return;
                             }
@@ -487,7 +487,7 @@ const server = http.createServer((req, res) => {
             if (error) {
                 console.error(`[Backend] FFmpeg error: ${error.message}`);
                 if (cleanupPath) {
-                    try { fs.unlinkSync(cleanupPath); } catch (e) {}
+                    try { fs.unlinkSync(cleanupPath); } catch (e) { }
                 }
                 responseObj.writeHead(500, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
                 responseObj.end(JSON.stringify({ success: false, error: `FFmpeg execution failed: ${error.message}` }));
@@ -495,7 +495,7 @@ const server = http.createServer((req, res) => {
             }
             console.log('[Backend] FFmpeg merge completed successfully.');
             if (cleanupPath) {
-                try { fs.unlinkSync(cleanupPath); } catch (e) {}
+                try { fs.unlinkSync(cleanupPath); } catch (e) { }
             }
             responseObj.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
             responseObj.end(JSON.stringify({ success: true, outputPath: output }));
@@ -507,7 +507,7 @@ const server = http.createServer((req, res) => {
         const urlParts = req.url.split('?');
         const searchParams = new URLSearchParams(urlParts[1] || '');
         const targetPath = searchParams.get('path');
-        
+
         if (!targetPath) {
             res.writeHead(400, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
             res.end(JSON.stringify({ exists: false, error: 'Missing path parameter' }));
@@ -527,7 +527,7 @@ const server = http.createServer((req, res) => {
 
         // Use case-insensitive check instead of strict existsSync to bypass case mismatch bugs
         const exists = fileExistsCaseInsensitive(absolutePath);
-        
+
         res.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
         res.end(JSON.stringify({ exists }));
         return;

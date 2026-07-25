@@ -5,6 +5,7 @@
     "testament": "OT",
     "category": "율법서",
     "icon": "🌱",
+    "bg_theme": "nature",
     "total_chapters": 50,
     "available_chapters": 50
   },
@@ -14,6 +15,7 @@
     "testament": "OT",
     "category": "율법서",
     "icon": "🌊",
+    "bg_theme": "miracle",
     "total_chapters": 40,
     "available_chapters": 40
   },
@@ -23,6 +25,7 @@
     "testament": "OT",
     "category": "율법서",
     "icon": "🕊️",
+    "bg_theme": "worship",
     "total_chapters": 27,
     "available_chapters": 27
   },
@@ -32,6 +35,7 @@
     "testament": "OT",
     "category": "율법서",
     "icon": "⛺",
+    "bg_theme": "nature",
     "total_chapters": 36,
     "available_chapters": 36
   },
@@ -41,6 +45,7 @@
     "testament": "OT",
     "category": "율법서",
     "icon": "📜",
+    "bg_theme": "wisdom",
     "total_chapters": 34,
     "available_chapters": 34
   },
@@ -50,6 +55,7 @@
     "testament": "OT",
     "category": "역사서",
     "icon": "⚔️",
+    "bg_theme": "kingdom",
     "total_chapters": 24,
     "available_chapters": 24
   },
@@ -59,6 +65,7 @@
     "testament": "OT",
     "category": "역사서",
     "icon": "🎺",
+    "bg_theme": "kingdom",
     "total_chapters": 21,
     "available_chapters": 21
   },
@@ -68,6 +75,7 @@
     "testament": "OT",
     "category": "역사서",
     "icon": "🌾",
+    "bg_theme": "love",
     "total_chapters": 4,
     "available_chapters": 4
   },
@@ -77,6 +85,7 @@
     "testament": "OT",
     "category": "역사서",
     "icon": "👑",
+    "bg_theme": "kingdom",
     "total_chapters": 31,
     "available_chapters": 31
   },
@@ -86,6 +95,7 @@
     "testament": "OT",
     "category": "역사서",
     "icon": "🏰",
+    "bg_theme": "kingdom",
     "total_chapters": 24,
     "available_chapters": 24
   },
@@ -95,6 +105,7 @@
     "testament": "OT",
     "category": "역사서",
     "icon": "🏛️",
+    "bg_theme": "kingdom",
     "total_chapters": 22,
     "available_chapters": 22
   },
@@ -104,6 +115,7 @@
     "testament": "OT",
     "category": "역사서",
     "icon": "🛡️",
+    "bg_theme": "kingdom",
     "total_chapters": 25,
     "available_chapters": 25
   },
@@ -113,6 +125,7 @@
     "testament": "OT",
     "category": "역사서",
     "icon": "📖",
+    "bg_theme": "wisdom",
     "total_chapters": 29,
     "available_chapters": 29
   },
@@ -122,6 +135,7 @@
     "testament": "OT",
     "category": "역사서",
     "icon": "🕌",
+    "bg_theme": "wisdom",
     "total_chapters": 36,
     "available_chapters": 36
   },
@@ -131,6 +145,7 @@
     "testament": "OT",
     "category": "역사서",
     "icon": "✍️",
+    "bg_theme": "wisdom",
     "total_chapters": 10,
     "available_chapters": 10
   },
@@ -140,6 +155,7 @@
     "testament": "OT",
     "category": "역사서",
     "icon": "🧱",
+    "bg_theme": "kingdom",
     "total_chapters": 13,
     "available_chapters": 13
   },
@@ -149,6 +165,7 @@
     "testament": "OT",
     "category": "역사서",
     "icon": "👸",
+    "bg_theme": "love",
     "total_chapters": 10,
     "available_chapters": 10
   },
@@ -158,6 +175,7 @@
     "testament": "OT",
     "category": "시가서",
     "icon": "🌤️",
+    "bg_theme": "nature",
     "total_chapters": 42,
     "available_chapters": 42
   },
@@ -167,6 +185,7 @@
     "testament": "OT",
     "category": "시가서",
     "icon": "🎵",
+    "bg_theme": "worship",
     "total_chapters": 150,
     "available_chapters": 150
   },
@@ -176,6 +195,7 @@
     "testament": "OT",
     "category": "시가서",
     "icon": "💡",
+    "bg_theme": "wisdom",
     "total_chapters": 31,
     "available_chapters": 31
   },
@@ -185,6 +205,7 @@
     "testament": "OT",
     "category": "시가서",
     "icon": "⏳",
+    "bg_theme": "wisdom",
     "total_chapters": 12,
     "available_chapters": 12
   },
@@ -194,6 +215,7 @@
     "testament": "OT",
     "category": "시가서",
     "icon": "❤️",
+    "bg_theme": "love",
     "total_chapters": 8,
     "available_chapters": 8
   },
@@ -203,6 +225,7 @@
     "testament": "OT",
     "category": "선지서",
     "icon": "🦅",
+    "bg_theme": "miracle",
     "total_chapters": 66,
     "available_chapters": 66
   },
@@ -212,6 +235,7 @@
     "testament": "OT",
     "category": "선지서",
     "icon": "💧",
+    "bg_theme": "nature",
     "total_chapters": 52,
     "available_chapters": 52
   },
@@ -221,6 +245,7 @@
     "testament": "OT",
     "category": "선지서",
     "icon": "🕯️",
+    "bg_theme": "worship",
     "total_chapters": 5,
     "available_chapters": 5
   },
@@ -230,6 +255,7 @@
     "testament": "OT",
     "category": "선지서",
     "icon": "🔥",
+    "bg_theme": "miracle",
     "total_chapters": 48,
     "available_chapters": 48
   },
@@ -239,6 +265,7 @@
     "testament": "OT",
     "category": "선지서",
     "icon": "🦁",
+    "bg_theme": "miracle",
     "total_chapters": 12,
     "available_chapters": 12
   },
@@ -248,6 +275,7 @@
     "testament": "OT",
     "category": "선지서",
     "icon": "🌻",
+    "bg_theme": "love",
     "total_chapters": 14,
     "available_chapters": 14
   },
@@ -257,6 +285,7 @@
     "testament": "OT",
     "category": "선지서",
     "icon": "🦗",
+    "bg_theme": "nature",
     "total_chapters": 3,
     "available_chapters": 3
   },
@@ -266,6 +295,7 @@
     "testament": "OT",
     "category": "선지서",
     "icon": "⚖️",
+    "bg_theme": "wisdom",
     "total_chapters": 9,
     "available_chapters": 9
   },
@@ -275,6 +305,7 @@
     "testament": "OT",
     "category": "선지서",
     "icon": "🏔️",
+    "bg_theme": "nature",
     "total_chapters": 1,
     "available_chapters": 1
   },
@@ -284,6 +315,7 @@
     "testament": "OT",
     "category": "선지서",
     "icon": "🐳",
+    "bg_theme": "miracle",
     "total_chapters": 4,
     "available_chapters": 4
   },
@@ -293,6 +325,7 @@
     "testament": "OT",
     "category": "선지서",
     "icon": "⭐",
+    "bg_theme": "love",
     "total_chapters": 7,
     "available_chapters": 7
   },
@@ -302,6 +335,7 @@
     "testament": "OT",
     "category": "선지서",
     "icon": "⚡",
+    "bg_theme": "miracle",
     "total_chapters": 3,
     "available_chapters": 3
   },
@@ -311,6 +345,7 @@
     "testament": "OT",
     "category": "선지서",
     "icon": "🎺",
+    "bg_theme": "worship",
     "total_chapters": 3,
     "available_chapters": 3
   },
@@ -320,6 +355,7 @@
     "testament": "OT",
     "category": "선지서",
     "icon": "🌅",
+    "bg_theme": "nature",
     "total_chapters": 3,
     "available_chapters": 3
   },
@@ -329,6 +365,7 @@
     "testament": "OT",
     "category": "선지서",
     "icon": "🛠️",
+    "bg_theme": "kingdom",
     "total_chapters": 2,
     "available_chapters": 2
   },
@@ -338,6 +375,7 @@
     "testament": "OT",
     "category": "선지서",
     "icon": "🌿",
+    "bg_theme": "nature",
     "total_chapters": 14,
     "available_chapters": 14
   },
@@ -347,6 +385,7 @@
     "testament": "OT",
     "category": "선지서",
     "icon": "☀️",
+    "bg_theme": "love",
     "total_chapters": 4,
     "available_chapters": 4
   },
@@ -356,6 +395,7 @@
     "testament": "NT",
     "category": "복음서",
     "icon": "🌟",
+    "bg_theme": "jesus",
     "total_chapters": 28,
     "available_chapters": 28
   },
@@ -365,6 +405,7 @@
     "testament": "NT",
     "category": "복음서",
     "icon": "✝️",
+    "bg_theme": "jesus",
     "total_chapters": 16,
     "available_chapters": 16
   },
@@ -374,6 +415,7 @@
     "testament": "NT",
     "category": "복음서",
     "icon": "🩺",
+    "bg_theme": "jesus",
     "total_chapters": 24,
     "available_chapters": 24
   },
@@ -383,6 +425,7 @@
     "testament": "NT",
     "category": "복음서",
     "icon": "💡",
+    "bg_theme": "jesus",
     "total_chapters": 21,
     "available_chapters": 21
   },
@@ -392,6 +435,7 @@
     "testament": "NT",
     "category": "역사서",
     "icon": "⛵",
+    "bg_theme": "miracle",
     "total_chapters": 28,
     "available_chapters": 28
   },
@@ -401,6 +445,7 @@
     "testament": "NT",
     "category": "서신서",
     "icon": "💌",
+    "bg_theme": "love",
     "total_chapters": 16,
     "available_chapters": 16
   },
@@ -410,6 +455,7 @@
     "testament": "NT",
     "category": "서신서",
     "icon": "💖",
+    "bg_theme": "love",
     "total_chapters": 16,
     "available_chapters": 16
   },
@@ -419,6 +465,7 @@
     "testament": "NT",
     "category": "서신서",
     "icon": "✉️",
+    "bg_theme": "love",
     "total_chapters": 13,
     "available_chapters": 13
   },
@@ -428,6 +475,7 @@
     "testament": "NT",
     "category": "서신서",
     "icon": "🕊️",
+    "bg_theme": "worship",
     "total_chapters": 6,
     "available_chapters": 6
   },
@@ -437,6 +485,7 @@
     "testament": "NT",
     "category": "서신서",
     "icon": "🛡️",
+    "bg_theme": "worship",
     "total_chapters": 6,
     "available_chapters": 6
   },
@@ -446,6 +495,7 @@
     "testament": "NT",
     "category": "서신서",
     "icon": "😊",
+    "bg_theme": "love",
     "total_chapters": 4,
     "available_chapters": 4
   },
@@ -455,6 +505,7 @@
     "testament": "NT",
     "category": "서신서",
     "icon": "🌿",
+    "bg_theme": "nature",
     "total_chapters": 4,
     "available_chapters": 4
   },
@@ -464,6 +515,7 @@
     "testament": "NT",
     "category": "서신서",
     "icon": "🔔",
+    "bg_theme": "worship",
     "total_chapters": 5,
     "available_chapters": 5
   },
@@ -473,6 +525,7 @@
     "testament": "NT",
     "category": "서신서",
     "icon": "✨",
+    "bg_theme": "worship",
     "total_chapters": 3,
     "available_chapters": 3
   },
@@ -482,6 +535,7 @@
     "testament": "NT",
     "category": "서신서",
     "icon": "📜",
+    "bg_theme": "wisdom",
     "total_chapters": 6,
     "available_chapters": 6
   },
@@ -491,6 +545,7 @@
     "testament": "NT",
     "category": "서신서",
     "icon": "🏆",
+    "bg_theme": "wisdom",
     "total_chapters": 4,
     "available_chapters": 4
   },
@@ -500,6 +555,7 @@
     "testament": "NT",
     "category": "서신서",
     "icon": "⚓",
+    "bg_theme": "wisdom",
     "total_chapters": 3,
     "available_chapters": 3
   },
@@ -509,6 +565,7 @@
     "testament": "NT",
     "category": "서신서",
     "icon": "🤝",
+    "bg_theme": "love",
     "total_chapters": 1,
     "available_chapters": 1
   },
@@ -518,6 +575,7 @@
     "testament": "NT",
     "category": "서신서",
     "icon": "🌈",
+    "bg_theme": "miracle",
     "total_chapters": 13,
     "available_chapters": 13
   },
@@ -527,6 +585,7 @@
     "testament": "NT",
     "category": "서신서",
     "icon": "🌲",
+    "bg_theme": "wisdom",
     "total_chapters": 5,
     "available_chapters": 5
   },
@@ -536,6 +595,7 @@
     "testament": "NT",
     "category": "서신서",
     "icon": "⚓",
+    "bg_theme": "worship",
     "total_chapters": 5,
     "available_chapters": 5
   },
@@ -545,6 +605,7 @@
     "testament": "NT",
     "category": "서신서",
     "icon": "🕯️",
+    "bg_theme": "worship",
     "total_chapters": 3,
     "available_chapters": 3
   },
@@ -554,6 +615,7 @@
     "testament": "NT",
     "category": "서신서",
     "icon": "❤️",
+    "bg_theme": "love",
     "total_chapters": 5,
     "available_chapters": 5
   },
@@ -563,6 +625,7 @@
     "testament": "NT",
     "category": "서신서",
     "icon": "💌",
+    "bg_theme": "love",
     "total_chapters": 1,
     "available_chapters": 1
   },
@@ -572,6 +635,7 @@
     "testament": "NT",
     "category": "서신서",
     "icon": "🤝",
+    "bg_theme": "love",
     "total_chapters": 1,
     "available_chapters": 1
   },
@@ -581,6 +645,7 @@
     "testament": "NT",
     "category": "서신서",
     "icon": "🛡️",
+    "bg_theme": "worship",
     "total_chapters": 1,
     "available_chapters": 1
   },
@@ -590,6 +655,7 @@
     "testament": "NT",
     "category": "예언서",
     "icon": "👑",
+    "bg_theme": "miracle",
     "total_chapters": 22,
     "available_chapters": 22
   }
